@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoodTools S.R.L.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="RUTA_TU_LOGO_AQUI.jpg" alt="WoodTools S.R.L.">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">NOSOTROS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-shop">SHOP ONLINE</a>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="RUTA_IMAGEN_BANNER_1.jpg" alt="Cuchillas">
+                <div class="slide-content">
+                    <h1>CUCHILLAS</h1>
+                    <p>Acero rápido y metal duro para machimbradoras, moldureras, garlopas y cepilladoras</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="RUTA_IMAGEN_BANNER_2.jpg" alt="Banner 2">
+                <div class="slide-content">
+                    <h1>OTRO TÍTULO</h1>
+                    <p>Descripción del segundo banner</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="RUTA_IMAGEN_BANNER_3.jpg" alt="Banner 3">
+                <div class="slide-content">
+                    <h1>TERCER TÍTULO</h1>
+                    <p>Descripción del tercer banner</p>
+                </div>
+            </div>
+
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+            <div class="dots-container">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos">
+        <h2>Productos</h2>
+        <div class="productos-grid">
+            <div class="card">
+                <img src="RUTA_IMAGEN_SIERRAS.jpg" alt="Sierras en HM">
+                <h3>SIERRAS EN HM</h3>
+                <p>La más amplia variedad de sierras para la industria de la madera, tanto para el corte de madera sólida como compensada...</p>
+            </div>
+            <div class="card">
+                <img src="RUTA_IMAGEN_FRESAS.jpg" alt="Fresas en HM">
+                <h3>FRESAS EN HM</h3>
+                <p>Todo tipo de fresas especiales y standard, para ranurar, cepillar, realizar rebajes, espigas, zócalos, machimbres...</p>
+            </div>
+            <div class="card">
+                <img src="RUTA_IMAGEN_CABEZALES.jpg" alt="Cabezales">
+                <h3>CABEZALES</h3>
+                <p>La más completa gama de cabezales para los diversos trabajos tanto para molduras como para cepillar...</p>
+            </div>
+            <div class="card">
+                <img src="RUTA_IMAGEN_CUCHILLAS.jpg" alt="Cuchillas">
+                <h3>CUCHILLAS</h3>
+                <p>Cuchillas de Acero Súper Rápido aleado al 18% de Wo de alta resistencia a la abrasión y alta tenacidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="novedades">
+        <h2>Novedades</h2>
+        <div class="banner-contacto" style="background-image: url('RUTA_IMAGEN_FONDO_NOVEDADES.jpg');">
+            <div class="banner-text">
+                <h3>"Desde hace 25 años somos los principales proveedores de herramientas de calidad y eficiencia para la industria maderera"</h3>
+                <a href="#" class="btn-rojo">CONTACTANOS</a>
+            </div>
+        </div>
+        <div class="franja-roja">
+            <p>En Woodtools contamos con un microscopio electrónico para el control previo y post afilado de tus sierras.</p>
+        </div>
+        <div class="texto-inferior">
+            <p>Las sierras son controladas antes de ser afiladas para determinar el grado de desgaste que tienen...</p>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="video-block">
+            <h2>Afilado y Reparación de Sierras para Madera</h2>
+            <div class="video-wrapper">
+                <iframe src="LINK_DE_TU_VIDEO_YOUTUBE_1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="video-block">
+            <h2>Sistema de Reparación y Afilado de Sierras para Madera</h2>
+            <div class="video-wrapper">
+                <iframe src="LINK_DE_TU_VIDEO_YOUTUBE_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="video-block">
+            <h2>Control de Calidad de Sierras para Madera</h2>
+            <div class="video-wrapper">
+                <iframe src="LINK_DE_TU_VIDEO_YOUTUBE_3" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas">
+        <img src="RUTA_LOGO_ILMA.jpg" alt="Ilma">
+        <img src="RUTA_LOGO_SCHIAVON.jpg" alt="Schiavon">
+        <img src="RUTA_LOGO_FREUD.jpg" alt="Freud">
+        <img src="RUTA_LOGO_FRANZOI.jpg" alt="Franzoi">
+        <img src="RUTA_LOGO_NORDUTENSILI.jpg" alt="Nordutensili">
+    </section>
+
+    <footer>
+        <p>WoodTools S.R.L.: Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="mailto:woodtoolsmarketing@gmail.com" class="float-email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/5491134609057" class="float-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
