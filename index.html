@@ -36,39 +36,45 @@
 
     <section id="hero">
         <div class="slider-container">
-            <div class="slide active">
-                <img src="imagenes/banner/Cuchillas.jpeg" alt="Cuchillas">
-                <div class="slide-content">
-                    <h1>CUCHILLAS</h1>
-                    <p>Acero rápido y metal duro para machimbradoras, moldureras, garlopas y cepilladoras</p>
+            <div class="slides-wrapper">
+                <div class="slide">
+                    <img src="imagenes/banner/Cuchillas.jpeg" alt="Cuchillas">
+                    <div class="slide-content">
+                        <h1>CUCHILLAS</h1>
+                        <p>Acero rápido y metal duro para machimbradoras, moldureras, garlopas y cepilladoras</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/banner/Fresas.jpeg" alt="Fresas">
+                    <div class="slide-content">
+                        <h1>FRESAS</h1>
+                        <p>Todo tipo de fresas especiales y standard, para ranurar, cepillas, realizar rebajes, espigas, zócalos, machimbres, molduras de puertas y ventanas</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/banner/Mechas.jpeg" alt="Mechas">
+                    <div class="slide-content">
+                        <h1>MECHAS</h1>
+                        <p>La más amplia gama en brocas y mechas. Con un stock permanente de brocas standard para todo tipo de trabajo en agujereadoras múltiples y pantógrafo.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/banner/Sierra Circular.jpeg" alt="Sierras Freud">
+                    <div class="slide-content">
+                        <h1>SIERRAS FREUD</h1>
+                        <p>Representantes en Argentina de Freud Sierras.</p>
+                        <a href="pagina-sierras.html" class="btn-rojo btn-slider">Conocé la nueva linea</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/banner/Afilado.jpeg" alt="Afilado">
+                    <div class="slide-content">
+                        <h1>AFILADO Y SERVICE</h1>
+                        <p>Equipamiento de última generación en Argentina para afilado y service de herramientas de corte</p>
+                        <a href="pagina-afilado.html" class="btn-rojo btn-slider">Conocé más</a>
+                    </div>
                 </div>
             </div>
-            <div class="slide">
-                <img src="imagenes/banner/Fresas.jpeg" alt="Fresas">
-                <div class="slide-content">
-                    <h1>FRESAS</h1>
-                    <p>Todo tipo de fresas especiales y standard, para ranurar, cepillas, realizar rebajes, espigas, zócalos, machimbres, molduras de puertas y ventanas</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="imagenes/banner/Mechas.jpeg" alt="Mechas">
-                <div class="slide-content">
-                    <h1>MECHAS</h1>
-                    <p>La más amplia gama en brocas y mechas. Con un stock permanente de brocas standard para todo tipo de trabajo en agujereadoras múltiples y pantógrafo.</p>
-            </div>
-            <div class="slide">
-                <img src="imagenes/banner/Sierra Circular.jpeg" alt="Sierras Freud">
-                <div class="slide-content">
-                    <h1>SIERRAS FREUD</h1>
-                    <p>Representantes en Argentina de Freud Sierras.</p>
-            </div>
-             <div class="slide">
-                <img src="imagenes/banner/Afilado.jpeg" alt="Afilado">
-                <div class="slide-content">
-                    <h1>AFILADO Y SERVICE</h1>
-                    <p>Equipamiento de última generación en Argentina para afilado y service de herramientas de corte</p>
-            </div>
-        </div>
 
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
             <button class="next" onclick="changeSlide(1)">&#10095;</button>
@@ -77,6 +83,8 @@
                 <span class="dot active" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
             </div>
         </div>
     </section>
@@ -85,22 +93,42 @@
         <h2>Productos</h2>
         <div class="productos-grid">
             <div class="card">
-                <img src="imagenes/herramientas/Sierra.jpeg" alt="Sierras en HM">
+                <div class="img-container">
+                    <img src="imagenes/herramientas/Sierra.jpeg" alt="Sierras en HM">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <h3>SIERRAS EN HM</h3>
                 <p>La más amplia variedad de sierras para la industria de la madera, tanto para el corte de madera sólida como compensada...</p>
             </div>
             <div class="card">
-                <img src="imagenes/herramientas/Fresa.jpeg" alt="Fresas en HM">
+                <div class="img-container">
+                    <img src="imagenes/herramientas/Fresa.jpeg" alt="Fresas en HM">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <h3>FRESAS EN HM</h3>
                 <p>Todo tipo de fresas especiales y standard, para ranurar, cepillar, realizar rebajes, espigas, zócalos, machimbres...</p>
             </div>
             <div class="card">
-                <img src="imagenes/herramientas/Cabezal.jpeg" alt="Cabezales">
+                <div class="img-container">
+                    <img src="imagenes/herramientas/Cabezal.jpeg" alt="Cabezales">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <h3>CABEZALES</h3>
                 <p>La más completa gama de cabezales para los diversos trabajos tanto para molduras como para cepillar...</p>
             </div>
             <div class="card">
-                <img src="imagenes/herramientas/Cuchillas.jpeg" alt="Cuchillas">
+                <div class="img-container">
+                    <img src="imagenes/herramientas/Cuchillas.jpeg" alt="Cuchillas">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <h3>CUCHILLAS</h3>
                 <p>Cuchillas de Acero Súper Rápido aleado al 18% de Wo de alta resistencia a la abrasión y alta tenacidad.</p>
             </div>
@@ -127,19 +155,19 @@
         <div class="video-block">
             <h2>Afilado y Reparación de Sierras para Madera</h2>
             <div class="video-wrapper">
-                <iframe src="https://youtu.be/W3QvFSr8INQ" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/W3QvFSr8INQ" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video-block">
             <h2>Sistema de Reparación y Afilado de Sierras para Madera</h2>
             <div class="video-wrapper">
-                <iframe src="https://youtu.be/__-Yl5MG-Jc" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/__-Yl5MG-Jc" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video-block">
             <h2>Control de Calidad de Sierras para Madera</h2>
             <div class="video-wrapper">
-                <iframe src="https://youtu.be/YAUKNjc_37E" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/YAUKNjc_37E" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -160,7 +188,7 @@
         <a href="mailto:woodtoolsmarketing@gmail.com" target="_blank">
             <img src="imagenes/logos/mail.png" alt="Enviar Email">
         </a>
-        <a href="https://wa.me/5491157528428" target="_blank">
+        <a href="https://wa.me/5491134609057" target="_blank">
             <img src="imagenes/logos/Whatsapp.png" alt="Enviar WhatsApp">
         </a>
     </div>

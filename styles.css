@@ -1,4 +1,3 @@
-/* Configuraciones generales */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Header */
 header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -30,7 +28,8 @@ header {
 }
 
 .logo img {
-    height: 50px; /* Ajustar según tu logo */
+    width: 171px;
+    margin-top: -21px;
 }
 
 nav ul {
@@ -71,32 +70,55 @@ nav a i {
     margin-left: 10px;
 }
 
-/* Hero Slider */
 #hero {
     position: relative;
     width: 100%;
-    height: 500px; /* Altura del banner */
+    /* AJUSTE: Alto reducido para que aparezcan los productos abajo */
+    height: 380px; 
     overflow: hidden;
+    background-color: #000; /* Fondo negro por si acaso */
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slides-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
 }
 
 .slide {
-    display: none;
-    width: 100%;
+    flex: 0 0 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.slide.active {
-    display: block;
+    position: relative;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* AJUSTE: Cover para eliminar franjas negras y llenar el espacio */
+    object-fit: cover; 
+    /* Posición por defecto centrada */
+    object-position: center center; 
 }
+
+/* AJUSTES ESPECÍFICOS DE POSICIÓN DE IMAGEN */
+
+/* Slide 3: Mechas - Priorizar que se vea la punta (arriba) */
+.slide:nth-child(3) img {
+    object-position: center top;
+}
+
+/* Slide 4: Sierras - Priorizar que se vean los dientes (derecha) */
+/* Asumiendo que el disco está centrado o a la derecha en la foto original */
+.slide:nth-child(4) img {
+    object-position: right center;
+}
+
 
 .slide-content {
     position: absolute;
@@ -104,15 +126,28 @@ nav a i {
     left: 10%;
     transform: translateY(-50%);
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
 }
 
 .slide-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Botones y Puntos del Slider */
+.slide-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.btn-slider {
+    display: inline-block;
+    margin-top: 20px;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -127,6 +162,7 @@ nav a i {
     border-radius: 0 3px 3px 0;
     background-color: rgba(200, 50, 50, 0.6);
     border: none;
+    z-index: 10;
 }
 
 .next {
@@ -143,24 +179,25 @@ nav a i {
     bottom: 20px;
     width: 100%;
     text-align: center;
+    z-index: 10;
 }
 
 .dot {
     cursor: pointer;
-    height: 12px;
-    width: 12px;
+    height: 15px;
+    width: 15px;
     margin: 0 5px;
-    background-color: #bbb;
+    background-color: #ffffff;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .dot.active, .dot:hover {
-    background-color: #fff;
+    background-color: #d32f2f;
 }
 
-/* Productos */
 #productos {
     text-align: center;
     padding: 50px 5%;
@@ -181,12 +218,51 @@ nav a i {
     gap: 30px;
 }
 
-.card img {
+.card {
+    background: #fff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.img-container {
+    position: relative;
     width: 100%;
-    background-color: #222;
-    height: 200px;
-    object-fit: contain;
-    padding: 20px;
+    height: 250px; 
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    padding: 15px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i {
+    color: white;
+    font-size: 3rem;
 }
 
 .card h3 {
@@ -198,9 +274,9 @@ nav a i {
     font-size: 0.9rem;
     color: #777;
     line-height: 1.5;
+    padding: 0 15px;
 }
 
-/* Novedades */
 #novedades {
     text-align: center;
 }
@@ -220,7 +296,7 @@ nav a i {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: #333; /* Color de respaldo si no hay imagen */
+    background-color: #333; 
 }
 
 .banner-text {
@@ -242,6 +318,8 @@ nav a i {
     text-decoration: none;
     font-weight: bold;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
 }
 
 .franja-roja {
@@ -257,7 +335,6 @@ nav a i {
     line-height: 1.6;
 }
 
-/* Videos */
 #videos {
     background-color: #b0b5b9;
     padding: 50px 0;
@@ -277,9 +354,9 @@ nav a i {
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
-    background-color: #000; /* Fondo negro mientras carga */
+    background-color: #000; 
 }
 
 .video-wrapper iframe {
@@ -290,7 +367,6 @@ nav a i {
     height: 100%;
 }
 
-/* Marcas */
 #marcas {
     display: flex;
     justify-content: center;
@@ -306,7 +382,6 @@ nav a i {
     object-fit: contain;
 }
 
-/* Footer */
 footer {
     background-color: #383c40;
     color: #aaa;
@@ -316,7 +391,6 @@ footer {
     border-top: 1px solid #555;
 }
 
-/* Botones Flotantes */
 .floating-buttons {
     position: fixed;
     bottom: 20px;

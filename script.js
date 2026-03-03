@@ -1,39 +1,44 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 0; 
+let slideInterval;
 
-// Control de las flechas Prev/Next
+showSlides(slideIndex);
+iniciarTemporizador();
+
 function changeSlide(n) {
     showSlides(slideIndex += n);
+    reiniciarTemporizador();
 }
 
-// Control de los puntos (círculos)
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+    showSlides(slideIndex = n - 1); 
+    reiniciarTemporizador();
 }
 
-// Función principal que muestra la diapositiva correcta
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slide");
+    let slidesWrapper = document.querySelector(".slides-wrapper");
     let dots = document.getElementsByClassName("dot");
+    let totalSlides = dots.length;
     
-    // Si llegamos al final, volvemos al principio
-    if (n > slides.length) { slideIndex = 1 }    
+    if (n >= totalSlides) { slideIndex = 0 }    
     
-    // Si retrocedemos más allá del inicio, vamos al final
-    if (n < 1) { slideIndex = slides.length }
+    if (n < 0) { slideIndex = totalSlides - 1 }
     
-    // Ocultar todas las diapositivas
-    for (i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");  
-    }
+    slidesWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
     
-    // Desactivar todos los puntos
-    for (i = 0; i < dots.length; i++) {
+    for (let i = 0; i < dots.length; i++) {
         dots[i].classList.remove("active");
     }
     
-    // Mostrar la diapositiva actual y activar su punto correspondiente
-    slides[slideIndex - 1].classList.add("active");  
-    dots[slideIndex - 1].classList.add("active");
+    dots[slideIndex].classList.add("active");
+}
+
+function iniciarTemporizador() {
+    slideInterval = setInterval(function() {
+        changeSlide(1);
+    }, 15000);
+}
+
+function reiniciarTemporizador() {
+    clearInterval(slideInterval);
+    iniciarTemporizador();
 }
