@@ -55,6 +55,16 @@ nav a i {
     gap: 20px;
 }
 
+/* Colores institucionales de las redes sociales */
+.social-icons a {
+    font-size: 24px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+.facebook { color: #1877F2; }
+.youtube { color: #FF0000; }
+.instagram { color: #E4405F; }
+
 .btn-shop {
     background-color: #a41e22;
     color: #fff;
@@ -62,17 +72,14 @@ nav a i {
     text-decoration: none;
     font-weight: bold;
     border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
-.social-icons a {
-    color: #333;
-    font-size: 24px;
-    margin-left: 10px;
+.btn-shop:hover {
+    background-color: #7d161a;
 }
 
-/* =========================================
-   NUEVO CARRUSEL ESTILO BOOTSTRAP (3D)
-   ========================================= */
+/* HERO BANNER */
 #hero {
     position: relative;
     width: 100%;
@@ -87,29 +94,17 @@ nav a i {
 }
 
 .slides-wrapper {
-    position: relative;
+    display: flex;
     width: 100%;
     height: 100%;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1a1a1a;
-    display: none; /* Oculto por defecto */
     transition: transform 0.8s ease-in-out;
 }
 
-/* Solo se muestran la activa y la que está entrando/saliendo */
-.slide.active, .slide.animating {
-    display: block;
-}
-
-.slide.active {
-    transform: translate3d(0, 0, 0);
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+    background-color: #1a1a1a;
 }
 
 .slide img {
@@ -119,20 +114,19 @@ nav a i {
     object-position: bottom; 
 }
 
-/* AJUSTES ESPECÍFICOS DE POSICIÓN Y ROTACIÓN DE IMAGEN */
+/* AJUSTES ESPECÍFICOS DEL BANNER */
 .slide:nth-child(2) img {
-    transform: rotate(360deg); /* Fresas dadas vuelta */
+    object-position: top;
+    transform: rotate(180deg);
 }
 
 .slide:nth-child(3) img {
-    object-position: top; /* Mechas: Puntas visibles */
+    object-position: top;
 }
 
 .slide:nth-child(4) img {
-    object-position: top; /* Sierras: Dientes superiores visibles */
+    object-position: top;
 }
-
-/* ========================================= */
 
 .slide-content {
     position: absolute;
@@ -144,7 +138,6 @@ nav a i {
     padding: 30px;
     border-radius: 8px;
     max-width: 600px;
-    z-index: 5; 
 }
 
 .slide-content h1 {
@@ -180,14 +173,8 @@ nav a i {
     z-index: 10;
 }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: #a41e22;
-}
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: #a41e22; }
 
 .dots-container {
     position: absolute;
@@ -209,11 +196,9 @@ nav a i {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-.dot.active, .dot:hover {
-    background-color: #a41e22;
-}
+.dot.active, .dot:hover { background-color: #a41e22; }
 
-/* PRODUCTOS - GRILLA DE 3 COLUMNAS */
+/* PRODUCTOS */
 #productos {
     text-align: center;
     padding: 60px 5%;
@@ -245,9 +230,7 @@ nav a i {
     transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+.card:hover { transform: translateY(-5px); }
 
 .img-container {
     position: relative;
@@ -268,26 +251,14 @@ nav a i {
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; transition: opacity 0.3s ease;
 }
 
-.card:hover .overlay {
-    opacity: 1;
-}
-
-.overlay i {
-    color: white;
-    font-size: 3rem;
-}
+.card:hover .overlay { opacity: 1; }
+.overlay i { color: white; font-size: 3rem; }
 
 .card h1 {
     font-size: 1.2rem;
@@ -303,10 +274,8 @@ nav a i {
     padding: 0 15px;
 }
 
-/* NOVEDADES Y DEMÁS */
-#novedades {
-    text-align: center;
-}
+/* NOVEDADES */
+#novedades { text-align: center; }
 
 .banner-contacto {
     background-size: cover;
@@ -319,11 +288,7 @@ nav a i {
     background-color: #333; 
 }
 
-.banner-text {
-    color: white;
-    z-index: 1;
-    padding: 20px;
-}
+.banner-text { color: white; z-index: 1; padding: 20px; }
 
 .banner-text h3 {
     font-size: 1.8rem;
@@ -340,7 +305,10 @@ nav a i {
     border-radius: 3px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+.btn-rojo:hover { background-color: #7d161a; }
 
 .franja-roja {
     background-color: #a41e22;
@@ -355,6 +323,7 @@ nav a i {
     line-height: 1.6;
 }
 
+/* VIDEOS CON MINIATURAS OPTIMIZADAS */
 #videos {
     background-color: #b0b5b9;
     padding: 50px 0;
@@ -381,12 +350,63 @@ nav a i {
 
 .video-wrapper iframe {
     position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Estilos para la miniatura falsa de Youtube */
+.youtube-thumbnail {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    background-color: #000;
 }
 
+.youtube-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que queden bordes negros feos de youtube */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.youtube-thumbnail:hover img {
+    opacity: 1;
+}
+
+/* Estilo del botón rojo de Youtube falso */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 50px;
+    background-color: rgba(33, 33, 33, 0.8);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Triángulo blanco del botón Play */
+.play-button::before {
+    content: '';
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 5px;
+}
+
+.youtube-thumbnail:hover .play-button {
+    background-color: #ff0000; /* Se pone rojo original al pasar el mouse */
+}
+
+
+/* MARCAS */
 #marcas {
     display: flex;
     justify-content: center;
@@ -402,6 +422,7 @@ nav a i {
     object-fit: contain;
 }
 
+/* FOOTER & BOTONES FLOTANTES */
 footer {
     background-color: #383c40;
     color: #aaa;
@@ -428,9 +449,7 @@ footer {
     text-decoration: none;
 }
 
-.floating-buttons a:hover {
-    transform: scale(1.1);
-}
+.floating-buttons a:hover { transform: scale(1.1); }
 
 .floating-buttons img {
     width: 100%;
@@ -438,15 +457,10 @@ footer {
     object-fit: contain; 
 }
 
-/* Responsive para la grilla de productos */
 @media (max-width: 900px) {
-    .productos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .productos-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .productos-grid {
-        grid-template-columns: 1fr;
-    }
+    .productos-grid { grid-template-columns: 1fr; }
 }

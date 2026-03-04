@@ -1,80 +1,35 @@
 let slideIndex = 0; 
 let slideInterval;
-let isAnimating = false;
 
-// Arrancar carrusel
+showSlides(slideIndex);
 iniciarTemporizador();
 
-// Flechas
 function changeSlide(n) {
-    if (isAnimating) return; // Evita que se buguee si hacés muchos clics rápido
-    let direction = n > 0 ? 'next' : 'prev';
-    moveSlide(slideIndex + n, direction);
+    showSlides(slideIndex += n);
     reiniciarTemporizador();
 }
 
-// Puntos (círculos)
 function currentSlide(n) {
-    if (isAnimating) return;
-    let newIndex = n - 1;
-    if (newIndex === slideIndex) return; // Si toca el mismo punto, no hace nada
-    
-    // Calcula para qué lado tiene que deslizar
-    let direction = newIndex > slideIndex ? 'next' : 'prev';
-    moveSlide(newIndex, direction);
+    showSlides(slideIndex = n - 1); 
     reiniciarTemporizador();
 }
 
-// Lógica de transición 3D tipo Bootstrap
-function moveSlide(newIndex, direction) {
-    let slides = document.getElementsByClassName("slide");
+function showSlides(n) {
+    let slidesWrapper = document.querySelector(".slides-wrapper");
     let dots = document.getElementsByClassName("dot");
-    let totalSlides = slides.length;
+    let totalSlides = dots.length;
     
-    // Bucle infinito
-    if (newIndex >= totalSlides) newIndex = 0;
-    if (newIndex < 0) newIndex = totalSlides - 1;
+    if (n >= totalSlides) { slideIndex = 0 }    
     
-    isAnimating = true;
+    if (n < 0) { slideIndex = totalSlides - 1 }
     
-    let current = slides[slideIndex];
-    let next = slides[newIndex];
+    slidesWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
     
-    // 1. Acomodar la NUEVA imagen del lado de afuera antes de que entre
-    if (direction === 'next') {
-        next.style.transform = 'translate3d(100%, 0, 0)'; // La espera a la derecha
-    } else {
-        next.style.transform = 'translate3d(-100%, 0, 0)'; // La espera a la izquierda
-    }
-    
-    // Le damos display: block para que empiece a existir en la pantalla (escondida a un costado)
-    next.classList.add("animating");
-    
-    // Pequeño truco para forzar al navegador a procesar la posición antes de animar
-    void next.offsetWidth; 
-    
-    // 2. Animar: La actual se va, la nueva entra al centro
-    current.style.transform = direction === 'next' ? 'translate3d(-100%, 0, 0)' : 'translate3d(100%, 0, 0)';
-    next.style.transform = 'translate3d(0, 0, 0)';
-    
-    // Actualizar los puntos
     for (let i = 0; i < dots.length; i++) {
         dots[i].classList.remove("active");
     }
-    dots[newIndex].classList.add("active");
     
-    // 3. Cuando termina la animación (0.8s), limpiamos las clases
-    setTimeout(() => {
-        current.classList.remove("active");
-        current.classList.remove("animating");
-        current.style.transform = ''; // Limpiar estilos en línea
-        
-        next.classList.remove("animating");
-        next.classList.add("active"); // Dejarla como la única activa
-        
-        slideIndex = newIndex;
-        isAnimating = false;
-    }, 800); // Este tiempo tiene que coincidir con el transition: 0.8s del CSS
+    dots[slideIndex].classList.add("active");
 }
 
 function iniciarTemporizador() {
@@ -86,4 +41,26 @@ function iniciarTemporizador() {
 function reiniciarTemporizador() {
     clearInterval(slideInterval);
     iniciarTemporizador();
+}
+
+// NUEVA FUNCIÓN PARA LOS VIDEOS DE YOUTUBE (Lazy Load)
+function playVideo(element, videoId) {
+    // Creamos el reproductor iframe en el momento exacto en que se hace clic
+    let iframe = document.createElement("iframe");
+    
+    // Le asignamos el link con "?autoplay=1" para que empiece solo
+    iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?autoplay=1");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    iframe.setAttribute("allowfullscreen", "true");
+    
+    // Aseguramos que cubra todo el bloque negro
+    iframe.style.position = "absolute";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    
+    // Reemplazamos la imagen (miniatura) por el video real
+    element.parentNode.replaceChild(iframe, element);
 }
