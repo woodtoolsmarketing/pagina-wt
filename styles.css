@@ -56,7 +56,7 @@ nav a i {
 }
 
 .btn-shop {
-    background-color: #d32f2f;
+    background-color: #a41e22;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -70,13 +70,15 @@ nav a i {
     margin-left: 10px;
 }
 
+/* =========================================
+   NUEVO CARRUSEL ESTILO BOOTSTRAP (3D)
+   ========================================= */
 #hero {
     position: relative;
     width: 100%;
-    /* AJUSTE: Alto reducido para que aparezcan los productos abajo */
     height: 380px; 
     overflow: hidden;
-    background-color: #000; /* Fondo negro por si acaso */
+    background-color: #000; 
 }
 
 .slider-container {
@@ -85,40 +87,52 @@ nav a i {
 }
 
 .slides-wrapper {
-    display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease-in-out;
 }
 
 .slide {
-    flex: 0 0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    position: relative;
+    background-color: #1a1a1a;
+    display: none; /* Oculto por defecto */
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Solo se muestran la activa y la que está entrando/saliendo */
+.slide.active, .slide.animating {
+    display: block;
+}
+
+.slide.active {
+    transform: translate3d(0, 0, 0);
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    /* AJUSTE: Cover para eliminar franjas negras y llenar el espacio */
     object-fit: cover; 
-    /* Posición por defecto centrada */
-    object-position: center center; 
+    object-position: bottom; 
 }
 
-/* AJUSTES ESPECÍFICOS DE POSICIÓN DE IMAGEN */
+/* AJUSTES ESPECÍFICOS DE POSICIÓN Y ROTACIÓN DE IMAGEN */
+.slide:nth-child(2) img {
+    transform: rotate(360deg); /* Fresas dadas vuelta */
+}
 
-/* Slide 3: Mechas - Priorizar que se vea la punta (arriba) */
 .slide:nth-child(3) img {
-    object-position: center top;
+    object-position: top; /* Mechas: Puntas visibles */
 }
 
-/* Slide 4: Sierras - Priorizar que se vean los dientes (derecha) */
-/* Asumiendo que el disco está centrado o a la derecha en la foto original */
 .slide:nth-child(4) img {
-    object-position: right center;
+    object-position: top; /* Sierras: Dientes superiores visibles */
 }
 
+/* ========================================= */
 
 .slide-content {
     position: absolute;
@@ -130,6 +144,7 @@ nav a i {
     padding: 30px;
     border-radius: 8px;
     max-width: 600px;
+    z-index: 5; 
 }
 
 .slide-content h1 {
@@ -160,7 +175,7 @@ nav a i {
     font-size: 24px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
-    background-color: rgba(200, 50, 50, 0.6);
+    background-color: rgba(164, 30, 34, 0.6);
     border: none;
     z-index: 10;
 }
@@ -171,7 +186,7 @@ nav a i {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(200, 50, 50, 1);
+    background-color: #a41e22;
 }
 
 .dots-container {
@@ -195,34 +210,43 @@ nav a i {
 }
 
 .dot.active, .dot:hover {
-    background-color: #d32f2f;
+    background-color: #a41e22;
 }
 
+/* PRODUCTOS - GRILLA DE 3 COLUMNAS */
 #productos {
     text-align: center;
-    padding: 50px 5%;
-    max-width: 1200px;
+    padding: 60px 5%;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
-#productos h2 {
+.titulo-seccion {
     font-weight: 300;
     color: #666;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
 }
 
 .card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     background: #fff;
     border-radius: 5px;
     padding-bottom: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .img-container {
@@ -232,6 +256,7 @@ nav a i {
     background-color: #fff;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
 }
 
 .img-container img {
@@ -253,10 +278,9 @@ nav a i {
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    cursor: pointer;
 }
 
-.img-container:hover .overlay {
+.card:hover .overlay {
     opacity: 1;
 }
 
@@ -265,27 +289,23 @@ nav a i {
     font-size: 3rem;
 }
 
-.card h3 {
-    margin: 20px 0 10px;
-    font-size: 1.1rem;
+.card h1 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .card p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #777;
     line-height: 1.5;
     padding: 0 15px;
 }
 
+/* NOVEDADES Y DEMÁS */
 #novedades {
     text-align: center;
-}
-
-#novedades h2 {
-    font-weight: 300;
-    color: #666;
-    margin: 40px 0;
-    font-size: 2rem;
 }
 
 .banner-contacto {
@@ -312,7 +332,7 @@ nav a i {
 }
 
 .btn-rojo {
-    background-color: #d32f2f;
+    background-color: #a41e22;
     color: #fff;
     padding: 10px 30px;
     text-decoration: none;
@@ -323,7 +343,7 @@ nav a i {
 }
 
 .franja-roja {
-    background-color: #c62828;
+    background-color: #a41e22;
     color: white;
     padding: 20px;
     font-size: 1.2rem;
@@ -416,4 +436,17 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: contain; 
+}
+
+/* Responsive para la grilla de productos */
+@media (max-width: 900px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
 }
