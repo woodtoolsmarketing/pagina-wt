@@ -116,8 +116,8 @@ nav a i {
 
 /* AJUSTES ESPECÍFICOS DEL BANNER */
 .slide:nth-child(2) img {
-    object-position: top;
-    transform: rotate(180deg);
+    object-position: bottom;
+    transform: rotate(360deg);
 }
 
 .slide:nth-child(3) img {
