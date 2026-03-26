@@ -38,16 +38,70 @@ nav ul {
     gap: 20px;
 }
 
+nav ul li {
+    position: relative; /* Necesario para ubicar el menú desplegable debajo de cada ítem */
+}
+
 nav a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
     font-size: 14px;
+    display: block;
+    padding: 10px 0; /* Agregado para hacer un área de hover más cómoda */
 }
 
 nav a i {
     font-size: 12px;
 }
+
+/* ==========================================
+   ESTILOS PARA EL MENÚ DESPLEGABLE (DROPDOWN) 
+   ========================================== */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Justo debajo del ítem del menú principal */
+    left: 0;
+    background-color: #a41e22; /* Color corporativo Woodtools */
+    min-width: 230px; /* Ancho del menú desplegable */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2000;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden; /* Para respetar el borde redondeado */
+}
+
+/* Mostrar el menú cuando el mouse pasa por encima del "li" principal */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    color: #ffffff; /* Letras blancas como en tu captura */
+    padding: 15px 20px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linea sutil entre items */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none; /* Quitamos la linea del último elemento */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #7d161a; /* Rojo más oscuro al hacer hover */
+    padding-left: 25px; /* Pequeño efecto de movimiento al pasar el mouse */
+}
+/* ========================================== */
 
 .header-actions {
     display: flex;
