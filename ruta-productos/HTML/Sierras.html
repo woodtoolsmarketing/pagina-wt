@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresas - WoodTools S.R.L.</title>
+    <title>Sierras Circulares - WoodTools S.R.L.</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/lista-productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,14 +41,17 @@
 
     <main class="main-container">
         <aside class="filters-sidebar">
-            <h2>Fresas</h2>
+            <h2>Sierras</h2>
             
             <div class="filter-group">
                 <h3>Categoría</h3>
                 <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="moldura">Fresas de Moldura</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="cepillado">Fresas de Cepillado</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="encastre">Fresas de Encastre</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="aluminio">Sierras Aluminio</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="madera">Sierras Madera</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="melamina">Sierras Melamina</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="multiple">Sierras Múltiples</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="seccionadora">Sierras Seccionadora</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="triturador">Discos Trituradores</a></li>
                     <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
                 </ul>
             </div>
@@ -58,6 +61,7 @@
                 <ul>
                     <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="freud">Freud</a></li>
                     <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="franzoi">Franzoi</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="schiavon">Schiavon</a></li>
                 </ul>
             </div>
         </aside>
@@ -65,32 +69,42 @@
         <section class="products-content">
             <div class="products-grid" id="contenedor-productos">
                 
-                <a href="#" class="product-card" data-categoria="moldura" data-marca="freud">
+                <a href="#" class="product-card" data-categoria="melamina" data-marca="freud">
                     <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Moldura">
+                        <img src="../../imagenes/herramientas/Sierras/Melamina.jpeg" alt="Sierra Melamina">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Fresa de Moldura Freud</div>
+                        <div class="product-title">Sierra Circular Freud para Melamina LP67M</div>
                         <div class="product-price">Consultar</div>
                     </div>
                 </a>
 
-                <a href="#" class="product-card" data-categoria="cepillado" data-marca="franzoi">
+                <a href="#" class="product-card" data-categoria="madera" data-marca="franzoi">
                     <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Cepillado">
+                        <img src="../../imagenes/herramientas/Sierras/Madera.jpeg" alt="Sierra Madera">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Fresa de Cepillado Franzoi</div>
+                        <div class="product-title">Sierra para Madera Maciza Franzoi</div>
                         <div class="product-price">Consultar</div>
                     </div>
                 </a>
 
-                <a href="#" class="product-card" data-categoria="encastre" data-marca="freud">
+                <a href="#" class="product-card" data-categoria="aluminio" data-marca="freud">
                     <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Encastre">
+                        <img src="../../imagenes/herramientas/Sierras/Aluminio.jpeg" alt="Sierra Aluminio">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Fresa de Encastre Freud HM</div>
+                        <div class="product-title">Sierra para Aluminio Freud</div>
+                        <div class="product-price">Consultar</div>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card" data-categoria="triturador" data-marca="franzoi">
+                    <div class="product-img">
+                        <img src="../../imagenes/herramientas/Sierras/Trituradores.jpeg" alt="Disco Triturador">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Disco Triturador Franzoi para Escuadradora</div>
                         <div class="product-price">Consultar</div>
                     </div>
                 </a>
@@ -102,6 +116,7 @@
     <section id="marcas" style="display: flex; justify-content: center; gap: 40px; padding: 40px; background: #fff; flex-wrap: wrap;">
         <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud" height="50">
         <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi" height="50">
+        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon" height="50">
     </section>
 
     <footer>

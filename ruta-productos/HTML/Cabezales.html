@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresas - WoodTools S.R.L.</title>
+    <title>Cabezales - WoodTools S.R.L.</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/lista-productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,10 +21,10 @@
                     <li class="dropdown">
                         <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Sierras.html">Sierras en HM</a></li>
-                            <li><a href="Fresas.html">Fresas en HM</a></li>
+                            <li><a href="sc-en-hm.html">Sierras en HM</a></li>
+                            <li><a href="fresas-madera.html">Fresas en HM</a></li>
                             <li><a href="Cuchillas.html">Cuchillas</a></li>
-                            <li><a href="Mechas.html">Mechas y Brocas</a></li>
+                            <li><a href="mechas-madera.html">Mechas y Brocas</a></li>
                             <li><a href="Diamante.html">Herramientas de Diamante</a></li>
                             <li><a href="Cabezales.html">Cabezales</a></li>
                         </ul>
@@ -41,14 +41,13 @@
 
     <main class="main-container">
         <aside class="filters-sidebar">
-            <h2>Fresas</h2>
+            <h2>Cabezales</h2>
             
             <div class="filter-group">
-                <h3>Categoría</h3>
+                <h3>Categorías</h3>
                 <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="moldura">Fresas de Moldura</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="cepillado">Fresas de Cepillado</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="encastre">Fresas de Encastre</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="simples">Cabezales Simples</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="portacuchillas">Cabezales Portacuchillas</a></li>
                     <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
                 </ul>
             </div>
@@ -56,8 +55,8 @@
             <div class="filter-group">
                 <h3>Marca</h3>
                 <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="freud">Freud</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="franzoi">Franzoi</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="ilma">Ilma</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="nordutensili">Nordutensili</a></li>
                 </ul>
             </div>
         </aside>
@@ -65,33 +64,25 @@
         <section class="products-content">
             <div class="products-grid" id="contenedor-productos">
                 
-                <a href="#" class="product-card" data-categoria="moldura" data-marca="freud">
+                <a href="#" class="product-card" data-categoria="simples" data-marca="ilma">
                     <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Moldura">
+                        <img src="../../imagenes/herramientas/Cabezal.jpeg" alt="Cabezales Simples">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Fresa de Moldura Freud</div>
+                        <div class="product-title">Cabezal Simple para Molduras Ilma</div>
                         <div class="product-price">Consultar</div>
+                        <div class="product-badge">Envío a todo el país</div>
                     </div>
                 </a>
 
-                <a href="#" class="product-card" data-categoria="cepillado" data-marca="franzoi">
+                <a href="#" class="product-card" data-categoria="portacuchillas" data-marca="nordutensili">
                     <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Cepillado">
+                        <img src="../../imagenes/herramientas/Cabezal.jpeg" alt="Cabezales Portacuchillas">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Fresa de Cepillado Franzoi</div>
+                        <div class="product-title">Cabezal Portacuchillas Nordutensili</div>
                         <div class="product-price">Consultar</div>
-                    </div>
-                </a>
-
-                <a href="#" class="product-card" data-categoria="encastre" data-marca="freud">
-                    <div class="product-img">
-                        <img src="../../imagenes/herramientas/Fresa.jpeg" alt="Fresa de Encastre">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Fresa de Encastre Freud HM</div>
-                        <div class="product-price">Consultar</div>
+                        <div class="product-badge">Stock disponible</div>
                     </div>
                 </a>
 
@@ -100,8 +91,11 @@
     </main>
 
     <section id="marcas" style="display: flex; justify-content: center; gap: 40px; padding: 40px; background: #fff; flex-wrap: wrap;">
+        <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma" height="50">
+        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon" height="50">
         <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud" height="50">
         <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi" height="50">
+        <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili" height="50">
     </section>
 
     <footer>
@@ -110,6 +104,7 @@
             <p>&copy; 2024 Todos los derechos reservados.</p>
         </div>
     </footer>
+
     <div class="floating-buttons" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">
         <a href="mailto:woodtoolsmarketing@gmail.com" target="_blank"><img src="../../imagenes/logos/mail.png" width="50" alt="Email"></a>
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" width="50" alt="WhatsApp"></a>
