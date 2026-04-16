@@ -5,20 +5,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Proxima Nova', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #ededed; /* Gris claro de fondo tipo ML */
+    background-color: #f8f8f8;
     color: #333;
 }
 
 /* ==========================================
-   HEADER Y NAVEGACIÓN (UNIFICADO)
+   HEADER Y NAVEGACIÓN
    ========================================== */
 header {
     background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,133 +28,152 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
-    max-width: 1200px;
+    padding: 15px 5%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .logo img {
-    width: 150px;
+    width: 171px;
+    margin-top: -21px;
 }
 
-nav ul {
+nav > ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
-nav ul li {
+nav > ul > li {
     position: relative;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
-    font-size: 14px;
     font-weight: 600;
-    padding: 10px 0;
+    font-size: 14px;
     display: block;
+    padding: 10px 0;
 }
 
-/* MENÚ DESPLEGABLE */
+/* MENÚ DESPLEGABLE VERTICAL */
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #a41e22;
-    min-width: 220px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 2000;
     padding: 0;
     border-radius: 4px;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 .dropdown-menu li {
     width: 100%;
+    display: block;
 }
 
 .dropdown-menu li a {
-    color: #fff;
-    padding: 12px 20px;
-    font-size: 13px;
+    color: #ffffff;
+    padding: 15px 20px;
+    display: block;
+    font-size: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s;
 }
 
 .dropdown-menu li:last-child a {
     border-bottom: none;
 }
 
-.dropdown-menu li a:hover {
-    background-color: #7d161a;
-    padding-left: 25px;
+/* BOTÓN TIENDA Y ACCIONES */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-shop {
+    background-color: #a41e22;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
 }
 
 /* ==========================================
-   MARCAS
+   SECCIÓN DE MARCAS (NUEVA)
    ========================================== */
 #marcas {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
-    padding: 40px 5%;
+    gap: 50px;
+    padding: 60px 5%;
     background-color: #fff;
-    margin-top: 40px;
+    border-top: 1px solid #eee;
 }
 
 #marcas img {
-    height: 50px;
+    height: 55px;
     object-fit: contain;
 }
 
 /* ==========================================
-   FOOTER Y BOTONES FLOTANTES
+   FOOTER (ESTILO TRIPLE NIVEL)
    ========================================== */
-footer {
-    background-color: #fff;
-    padding: 40px 0;
-    border-top: 1px solid #e6e6e6;
+.footer-contact-bar {
+    background-color: #383c40; /* Gris oscuro del banner */
+    color: #ffffff;
+    padding: 20px 10px;
     text-align: center;
+    font-size: 14px;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+.footer-bottom {
+    background-color: #ffffff;
+    padding: 30px 10px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-social {
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    color: #333;
+    font-size: 26px;
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+.footer-bottom p {
+    color: #666;
     font-size: 13px;
-    color: #999;
+    font-weight: 500;
 }
 
+/* BOTONES FLOTANTES */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     z-index: 1000;
 }
 
-.floating-buttons a {
-    display: inline-block;
+.floating-buttons img {
     width: 50px;
     height: 50px;
-    transition: transform 0.3s;
-}
-
-.floating-buttons a:hover {
-    transform: scale(1.1);
-}
-
-.floating-buttons img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
