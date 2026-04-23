@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service y Reparación - WoodTools S.R.L.</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .faq-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            min-height: 50vh;
+        }
+        .faq-section h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #fdfdfd;
+            color: #a41e22;
+        }
+        .faq-question i {
+            font-size: 20px;
+            color: #a41e22;
+            transition: transform 0.4s ease;
+        }
+        /* Rotación del triángulo al abrir */
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background-color: #fafafa;
+        }
+        .faq-answer p {
+            padding: 0 25px 25px 25px;
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .faq-link {
+            color: #a41e22;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .faq-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../imagenes/logos/WoodTools.png" alt="WoodTools S.R.L."></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ruta-productos/Sierras.html">Sierras en HM</a></li>
+                            <li><a href="ruta-productos/fresas.html">Fresas en HM</a></li>
+                            <li><a href="ruta-productos/Cuchillas.html">Cuchillas</a></li>
+                            <li><a href="ruta-productos/mechas.html">Mechas y Brocas</a></li>
+                            <li><a href="ruta-productos/Diamante.html">Herramientas de Diamante</a></li>
+                            <li><a href="ruta-productos/cabezales.html">Cabezales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#videos">NOSOTROS</a></li>
+                    <li><a href="index.html#novedades">SERVICE</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions" style="display: flex; align-items: center; gap: 20px;">
+                <div class="header-social" style="display: flex; gap: 15px; font-size: 20px;">
+                    <a href="https://www.facebook.com/woodtoolsargentina" target="_blank" style="color: #333;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank" style="color: #333;"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/woodtoolssrl/" target="_blank" style="color: #333;"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools" target="_blank" class="btn-shop" style="background: #a41e22; color: #fff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold;">TIENDA ONLINE</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq-section">
+            <h1>Preguntas Frecuentes: Service, Afilado y Reparación</h1>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Conviene reparar una herramienta dañada o comprar una nueva?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nuestro objetivo es ofrecerle siempre la solución más económica y eficiente. Antes de descartar una pieza, nuestro departamento técnico evalúa su estado para brindarle un servicio de afilado o reparación que le devuelva su rendimiento original, optimizando así los costos de su producción.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué diferencia al afilado de Wood Tools del resto del mercado?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La tecnología. Somos el primer centro robotizado en Argentina y el tercero en Sudamérica dedicado exclusivamente al afilado de sierras circulares con cortantes de Carburo de Tungsteno (Widia). Esto nos permite superar los métodos tradicionales y garantizar una calidad de afilado un 30% superior a cualquier máquina CNC convencional.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo impacta esta tecnología robotizada en mi producción?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Se traduce directamente en rentabilidad. Nuestro sistema de afilado logra hasta un 40% de aumento en la durabilidad de la sierra. Esto significa que su herramienta soportará una mayor cantidad de reafilados y le entregará muchos más metros de corte antes de necesitar un reemplazo. <br><br>(▶️ <a href="index.html#videos" class="faq-link">Ver Videos de Nuestro Equipamiento</a>)</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Necesito una herramienta con un perfil muy específico que no consigo, ¿pueden ayudarme?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Contamos con un departamento técnico especializado en el diseño de todo tipo de herramientas de corte para la industria maderera. Diseñamos y fabricamos a medida herramientas especiales, rectas o perfiladas, basándonos exactamente en las necesidades de su proyecto.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo es la logística para enviar mis herramientas a afilar?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Para las industrias ubicadas en el Gran Buenos Aires, brindamos un servicio de retiro y entrega a domicilio para que su producción no pierda tiempo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Atienden a industrias del interior del país?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con servicio de despachos a toda la Argentina. Además, nos apoyamos en nuestra extensa red de distribuidores y representantes a nivel nacional, lo que nos permite garantizarle la misma calidad de atención y servicio técnico sin importar dónde se encuentre su fábrica. Consúltenos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="marcas">
+        <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
+        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
+        <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
+        <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
+        <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
+    </section>
+
+    <footer>
+        <div class="footer-contact-bar">
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="mailto:woodtoolsmarketing@gmail.com" target="_blank"><img src="../../imagenes/logos/mail.png" alt="Email"></a>
+        <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // Cierra todas las otras preguntas abiertas si quieres modo "Acordeón estricto" (Opcional)
+                    // faqQuestions.forEach(q => {
+                    //     if (q !== question) {
+                    //         q.classList.remove('active');
+                    //         q.nextElementSibling.style.maxHeight = null;
+                    //     }
+                    // });
+
+                    // Alterna la clase active para la pregunta actual
+                    question.classList.toggle('active');
+                    
+                    // Controla la altura máxima para animar el texto
+                    const answer = question.nextElementSibling;
+                    if (question.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
