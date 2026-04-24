@@ -1,98 +1,107 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn:not(#btn-limpiar)');
     const btnLimpiar = document.getElementById('btn-limpiar');
     const productos = document.querySelectorAll('.product-card');
 
-    // 1. Estado inicial de los filtros
-    let filtrosActivos = {};
+    // =====================================================================
+    // PARCHE: CORRECCIÓN DE CATEGORÍAS PARA SIERRAS DE MELAMINA
+    // Ahora busca el código en el enlace (href) para no depender del título
+    // =====================================================================
+    const codigosMelamina = [
+        "LU2C 1200", "LU2C 1500", "LU2C 2000", "LU2C 2100", 
+        "LU3D 0200", "LU3D 0400", "LU3D 0600", "LU3D 1700", 
+        "LU3E 0200", "LU3F 0100", "LU3F 0200", "LU3F 0300", "LU3F 0400", 
+        "LSB25003X", "LSB29001X", "LSB30001X", "LSB32001X", "LSB35003X", 
+        "LSB38002X", "LSB40007X", "LSB43007X", "LSB43013X", "LSB45007X", 
+        "LSB45018X", "LSB45019X", "LSB48001X", "FR12L001H"
+    ];
 
-    // Rastrear todos los tipos de filtro que existen en la página actual
+    productos.forEach(producto => {
+        const enlace = producto.getAttribute('href');
+        if (enlace) {
+            // Verificamos si la ruta del enlace contiene alguno de los códigos de la lista
+            const esMelamina = codigosMelamina.some(codigo => enlace.includes(codigo));
+            if (esMelamina) {
+                producto.setAttribute('data-categoria', 'melamina');
+            }
+        }
+    });
+    // =====================================================================
+
+    // 1. Detectamos automáticamente qué categorías de filtros existen
+    let filtrosActivos = {};
     filterButtons.forEach(btn => {
-        let tipo = btn.getAttribute('data-filter-type');
+        const tipo = btn.getAttribute('data-filter-type');
         if (tipo && !filtrosActivos[tipo]) {
-            filtrosActivos[tipo] = 'todos';
+            filtrosActivos[tipo] = 'todos'; 
         }
     });
 
-    // 2. Función principal que muestra u oculta productos
+    // Función principal para aplicar los filtros
     function aplicarFiltros() {
         productos.forEach(producto => {
-            let mostrar = true;
+            let coincideTodo = true;
 
-            // Revisamos cada filtro
-            for (let tipo in filtrosActivos) {
-                let valorEsperado = filtrosActivos[tipo];
-                let valorProducto = producto.getAttribute('data-' + tipo);
+            for (let tipoFiltro in filtrosActivos) {
+                const valorSeleccionado = filtrosActivos[tipoFiltro];
+                const valorProducto = producto.getAttribute(`data-${tipoFiltro}`) || 'todos';
 
-                // Si hay un filtro seleccionado y el producto no lo tiene, lo ocultamos
-                if (valorEsperado !== 'todos') {
-                    if (valorProducto !== valorEsperado) {
-                        mostrar = false;
-                    }
+                if (valorSeleccionado !== 'todos' && valorSeleccionado !== valorProducto) {
+                    coincideTodo = false;
+                    break;
                 }
             }
 
-            // Aplicamos visualmente (se usa '' para que respete el display original de tu CSS)
-            if (mostrar) {
-                producto.style.display = ''; 
+            // Mostramos u ocultamos
+            if (coincideTodo) {
+                producto.style.display = 'flex'; 
             } else {
                 producto.style.display = 'none';
             }
         });
     }
 
-    // 3. Acción para cada botón del menú lateral
+    // Le asignamos el comportamiento a cada botón del menú lateral
     filterButtons.forEach(boton => {
         boton.addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); 
 
-            // Si es el botón de limpiar, no hacemos la lógica normal aquí
-            if (this.id === 'btn-limpiar') return;
+            const tipoFiltro = this.getAttribute('data-filter-type'); 
+            const valorFiltro = this.getAttribute('data-filter-value'); 
 
-            let tipo = this.getAttribute('data-filter-type');
-            let valor = this.getAttribute('data-filter-value');
-
-            // Si tocamos el que ya está activo, lo apagamos
             if (this.classList.contains('activo')) {
                 this.classList.remove('activo');
-                filtrosActivos[tipo] = 'todos';
+                filtrosActivos[tipoFiltro] = 'todos';
             } else {
-                // Apagamos los otros de la misma familia (ej: otras categorías)
-                document.querySelectorAll(`.filter-btn[data-filter-type="${tipo}"]`).forEach(b => {
-                    b.classList.remove('activo');
+                document.querySelectorAll(`.filter-btn[data-filter-type="${tipoFiltro}"]`).forEach(btn => {
+                    btn.classList.remove('activo');
                 });
-                // Encendemos el nuevo
                 this.classList.add('activo');
-                filtrosActivos[tipo] = valor;
+                filtrosActivos[tipoFiltro] = valorFiltro;
             }
 
             aplicarFiltros();
         });
     });
 
-    // 4. Acción para el botón "Limpiar Filtros"
+    // Comportamiento del botón "Limpiar Filtros"
     if (btnLimpiar) {
         btnLimpiar.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Reseteamos el estado
             for (let tipo in filtrosActivos) {
                 filtrosActivos[tipo] = 'todos';
             }
+            filterButtons.forEach(btn => btn.classList.remove('activo'));
             
-            // Quitamos clases activas de todos los botones
-            filterButtons.forEach(b => b.classList.remove('activo'));
-            
-            // Limpiamos la URL (por si venía de un link externo)
+            // Limpiamos también la URL
             window.history.replaceState({}, document.title, window.location.pathname);
 
             aplicarFiltros();
         });
     }
 
-    // ==========================================
-    // 5. LECTURA DE FILTROS DESDE LA URL AL CARGAR
-    // ==========================================
+    // LECTURA DE FILTROS DESDE LA URL
     const urlParams = new URLSearchParams(window.location.search);
     let aplicarAlInicio = false;
 
