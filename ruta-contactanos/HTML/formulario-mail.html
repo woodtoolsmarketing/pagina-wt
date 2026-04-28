@@ -7,18 +7,30 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+<<<<<<< HEAD
         main { background-color: #f8f8f8; padding: 60px 20px; }
+=======
+        main { background-color: #f8f8f8; padding: 60px 20px; min-height: 60vh; }
+>>>>>>> prueba
         .form-card {
             max-width: 700px;
             margin: 0 auto;
             background: white;
             padding: 40px;
             border-radius: 8px;
+<<<<<<< HEAD
             border: 2px solid #a41e22;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         .form-card h1 { color: #a41e22; text-align: center; margin-bottom: 10px; }
         .form-card p { text-align: center; color: #666; margin-bottom: 30px; }
+=======
+            border-top: 4px solid #a41e22;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .form-card h1 { color: #a41e22; text-align: center; margin-bottom: 10px; font-size: 32px; }
+        .form-card p { text-align: center; color: #666; margin-bottom: 30px; font-size: 16px; }
+>>>>>>> prueba
         
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
@@ -29,6 +41,10 @@
             border-radius: 4px;
             font-size: 16px;
             transition: border-color 0.3s;
+<<<<<<< HEAD
+=======
+            font-family: inherit;
+>>>>>>> prueba
         }
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
@@ -47,10 +63,19 @@
             transition: background 0.3s;
         }
         .btn-submit:hover { background-color: #7d161a; }
+<<<<<<< HEAD
     </style>
 </head>
 <body>
         <header>
+=======
+        .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <header>
+>>>>>>> prueba
         <div class="header-container">
             <div class="logo">
                 <a href="../../index.html">
@@ -80,7 +105,11 @@
                         <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="https://wa.me/5491134609057" target="_blank">Ventas WhatsApp</a></li>
+<<<<<<< HEAD
                             <li><a href="formulario-mail.html" target="_blank">Vía Email</a></li>
+=======
+                            <li><a href="formulario-mail.html">Vía Email</a></li>
+>>>>>>> prueba
                             <li><a href="casa-central.html">Ubicación de Casa Central</a></li>
                         </ul>
                     </li>
@@ -88,7 +117,11 @@
             </nav>
             <div class="header-actions">
                 <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
+<<<<<<< HEAD
                 <div class="social-icons" style="display: flex; align-items: center;">
+=======
+                <div class="social-icons">
+>>>>>>> prueba
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
                     <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
                     <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram instagram"></i></a>
@@ -96,11 +129,16 @@
             </div>
         </div>
     </header>
+<<<<<<< HEAD
+=======
+
+>>>>>>> prueba
     <main>
         <div class="form-card">
             <h1>Dejanos tu consulta</h1>
             <p>Completá el formulario y un asesor técnico se pondrá en contacto a la brevedad.</p>
             
+<<<<<<< HEAD
             <form action="https://formspree.io/f/tu_codigo_aqui" method="POST">
                 <div class="form-group">
                     <label>Nombre y Apellido *</label>
@@ -127,16 +165,121 @@
         </div>
     </main>
         <section id="marcas">
+=======
+            <form id="formularioContacto">
+                <div class="form-group">
+                    <label>Nombre y Apellido *</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico *</label>
+                    <input type="email" id="email" required placeholder="Ej: compras@empresa.com.ar">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Ej: +54 9 11 ...">
+                </div>
+                <div class="form-group">
+                    <label>Empresa / Taller</label>
+                    <input type="text" id="empresa" placeholder="Nombre de su empresa">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje *</label>
+                    <textarea id="mensaje" rows="5" required placeholder="¿En qué herramienta o servicio está interesado?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="btnEnviar">ENVIAR CONSULTA</button>
+                <p id="mensajeEstado" style="display: none; margin-top: 15px; font-weight: bold; text-align: center;"></p>
+            </form>
+        </div>
+    </main>
+
+    <section id="marcas">
+>>>>>>> prueba
         <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
         <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
         <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
         <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
         <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
     </section>
+<<<<<<< HEAD
+=======
+
+>>>>>>> prueba
     <footer>
         <div class="footer-contact-bar">
             <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
         </div>
+<<<<<<< HEAD
     </footer>
     </body>
+=======
+        <div class="footer-bottom">
+            <div class="social-icons" style="margin-bottom: 15px; justify-content: center; display: flex;">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram instagram"></i></a>
+            </div>
+            <p>© 2024 WoodTools S.R.L. - WoodTools Marketing</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="mailto:ventas@woodtools.com.ar" target="_blank"><img src="../../imagenes/logos/mail.png" alt="Email"></a>
+        <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
+    </div>
+
+    <script>
+        document.getElementById('formularioContacto').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Evita que la página salte
+            
+            const btn = document.getElementById('btnEnviar');
+            const msjEstado = document.getElementById('mensajeEstado');
+            
+            // Animación de botón cargando
+            btn.innerText = "ENVIANDO...";
+            btn.disabled = true;
+            msjEstado.style.display = "none";
+
+            // Agrupamos la info
+            const datos = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                empresa: document.getElementById('empresa').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+
+            try {
+                // Enviamos los datos a TU propio servidor en Render
+                const respuesta = await fetch('https://servidor-page-wt.onrender.com/enviar-correo', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos)
+                });
+
+                const resultado = await respuesta.json();
+
+                if(resultado.success) {
+                    // Si todo salió bien
+                    msjEstado.style.display = "block";
+                    msjEstado.style.color = "green";
+                    msjEstado.innerText = "¡Consulta enviada! Nos pondremos en contacto a la brevedad.";
+                    document.getElementById('formularioContacto').reset(); // Limpia el form
+                } else {
+                    throw new Error('El servidor respondió con error');
+                }
+            } catch (error) {
+                // Si algo falló
+                msjEstado.style.display = "block";
+                msjEstado.style.color = "red";
+                msjEstado.innerText = "Hubo un error al enviar el mensaje. Por favor intente nuevamente o contáctenos por WhatsApp.";
+            } finally {
+                // Devolvemos el botón a la normalidad
+                btn.innerText = "ENVIAR CONSULTA";
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+>>>>>>> prueba
 </html>
