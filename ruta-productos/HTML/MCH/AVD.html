@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecha para Avellanadores AVD / AVI - Nordutensili | WoodTools</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../CSS/styles.css">
+    <link rel="stylesheet" href="../../CSS/producto-detalle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../../index.html">
+                    <img src="../../../imagenes/logos/WoodTools.png" alt="WoodTools S.R.L.">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../sc-en-hm.html">Sierras circulares</a></li>
+                            <li><a href="../../fresas-madera.html">Fresas</a></li>
+                            <li><a href="../../cuchillas-madera.html">Cuchillas</a></li>
+                            <li><a href="../../mechas-madera.html">Mechas y Brocas</a></li>
+                            <li><a href="../../diamante-en-hm.html">Herramientas de Diamante</a></li>
+                            <li><a href="../../cabezales.html">Cabezales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
+                    <li><a href="../../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
+                    <li class="dropdown">
+                        <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/5491134609057" target="_blank">Ventas WhatsApp</a></li>
+                            <li><a href="../../../ruta-contactanos/HTML/formulario-mail.html" target="_blank">Vía Email</a></li>
+                            <li><a href="../../../ruta-contactanos/HTML/casa-central.html">Ubicación de Casa Central</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
+                    <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/marcas/Nordutensili.jpeg" alt="Mecha para Avellanadores AVD / AVI">
+        </div>
+        
+        <div class="producto-info">
+            <h1 id="producto-titulo">Mecha para Avellanadores AVD / AVI</h1>
+            <p class="marca">Marca: Nordutensili</p>
+
+            <div class="selector-modelo" style="margin: 25px 0;">
+                <label for="variante-selector" style="font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 10px;">Seleccioná la Medida:</label>
+                <select id="variante-selector" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 1rem; cursor: pointer; outline: none;">
+                    <option value="" disabled selected>-- Elegí una medida --</option>
+                    <option value="Medida 1">Medida 1 (Completar)</option>
+                    <option value="Medida 2">Medida 2 (Completar)</option>
+                </select>
+            </div>
+
+            <button id="btn-whatsapp" class="btn-comprar" style="margin-top: 15px; width: 100%; padding: 15px; font-size: 1.1rem; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp" style="width: 24px; margin-right: 10px;"> Consultar Precio
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contact-bar">
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 WoodTools S.R.L. - WoodTools Marketing</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnWhatsapp = document.getElementById("btn-whatsapp");
+            const varianteSelector = document.getElementById("variante-selector");
+            const productoTitulo = document.getElementById("producto-titulo").innerText;
+
+            btnWhatsapp.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (varianteSelector.value === "") {
+                    alert("Por favor, seleccioná una medida antes de consultar.");
+                    varianteSelector.style.borderColor = "#a41e22";
+                    return;
+                }
+                const varianteSeleccionada = varianteSelector.value;
+                const numeroTelefono = "5491134609057";
+                const mensaje = `Hola WoodTools! Estoy interesado en la ${productoTitulo}. Me interesa específicamente la medida: ${varianteSeleccionada}. ¿Me podrían pasar precio y disponibilidad?`;
+                const mensajeCodificado = encodeURIComponent(mensaje);
+                window.open(`https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`, "_blank");
+            });
+            
+            varianteSelector.addEventListener("change", function() {
+                this.style.borderColor = "#ccc";
+            });
+        });
+    </script>
+</body>
+</html>
