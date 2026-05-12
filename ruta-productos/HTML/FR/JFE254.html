@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresa Especial para ensamble - WoodTools S.R.L.</title>
+    <title>Fresa Ensamble #23 P=7 H t=3.5 - Franzoi | WoodTools</title>
+    <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="../../CSS/styles.css">
-    <link rel="stylesheet" href="../../CSS/lista-productos.css">
     <link rel="stylesheet" href="../../CSS/producto-detalle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../styles.css">
 </head>
 <body>
-
-            <header>
+    <header>
         <div class="header-container">
             <div class="logo">
                 <a href="../../../index.html">
@@ -22,7 +20,6 @@
             <nav>
                 <ul>
                     <li><a href="../../../index.html">INICIO</a></li>
-                    
                     <li class="dropdown">
                         <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
@@ -34,10 +31,8 @@
                             <li><a href="../../cabezales.html">Cabezales</a></li>
                         </ul>
                     </li>
-                    
                     <li><a href="../../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
                     <li><a href="../../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
-                    
                     <li class="dropdown">
                         <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
@@ -59,67 +54,88 @@
         </div>
     </header>
 
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/marcas/Franzoi.jpeg" alt="Fresa Ensamble #23 P=7 H t=3.5">
+        </div>
+        
+        <div class="producto-info">
+            <h1 id="producto-titulo">Fresa Ensamble #23 P=7 H t=3.5</h1>
+            <p class="marca">Marca: Franzoi</p>
 
-
-    <div class="breadcrumb">
-        <a href="../../../index.html">Inicio</a> > <a href="../fresas.html">Fresas</a> > Detalle
-    </div>
-
-    <main class="detalle-container">
-        <div class="detalle-layout">
-            <div class="detalle-galeria">
-                <div class="galeria-miniaturas">
-                    <img src="../../../imagenes/herramientas/FR/JFE254-1.png" class="mini-img activa" onmouseover="cambiarImagen(this)" onerror="this.src='../../../imagenes/logos/WoodTools.png'">
-                    <img src="../../../imagenes/herramientas/FR/JFE254-2.png" class="mini-img" onmouseover="cambiarImagen(this)" onerror="this.style.display='none'">
-                    <img src="../../../imagenes/herramientas/FR/JFE254-3.png" class="mini-img" onmouseover="cambiarImagen(this)" onerror="this.style.display='none'">
-                </div>
-                <div class="imagen-principal-contenedor" id="zoom-container">
-                    <img src="../../../imagenes/herramientas/FR/JFE254-1.png" id="main-image" class="imagen-principal" alt="Fresa Especial para ensamble" onerror="this.src='../../../imagenes/logos/WoodTools.png'">
-                </div>
+            <div class="selector-modelo" style="margin: 25px 0;">
+                <label for="variante-selector" style="font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 10px;">Seleccioná la Medida:</label>
+                <select id="variante-selector" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 1rem; cursor: pointer; outline: none;">
+                    <option value="" disabled selected>-- Elegí una medida --</option>
+                    <option value="Medida 1">Medida 1 (Completar)</option>
+                    <option value="Medida 2">Medida 2 (Completar)</option>
+                </select>
             </div>
 
-            <div class="detalle-info">
-                <span class="producto-estado">Nuevo | WoodTools Oficial</span>
-                <h1 class="producto-titulo">Fresa Especial para ensamble</h1>
-                
-                <div class="producto-envio">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <div>
-                        <p class="envio-titulo">Envío a acordar con WoodTools</p>
-                        <p class="envio-sub">Despachos a todo el país desde Avellaneda, Buenos Aires.</p>
-                    </div>
-                </div>
+            <button id="btn-whatsapp" class="btn-comprar" style="margin-top: 15px; width: 100%; padding: 15px; font-size: 1.1rem; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp" style="width: 24px; margin-right: 10px;"> Consultar Precio
+            </button>
+        </div>
 
-                <div class="producto-botones">
-                    <a href="https://wa.me/5491134609057?text=Hola,%20quiero%20consultar%20por%20el%20producto%20JFE254" target="_blank" class="btn-comprar">Consultar por WhatsApp</a>
-                </div>
-
-                <div class="producto-specs">
-                    <h3>Características técnicas</h3>
-                    <ul>
-                        <li><strong>Código:</strong> JFE254</li>
-                        <li><strong>Marca:</strong> WoodTools</li>
-                        <li><strong>Función:</strong> ensamble</li><li><strong>Medidas Técnicas:</strong> 23 x 150 mm</li><li><strong>Filos (Z):</strong> 4</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="caracteristicas-principales" style="flex-basis: 100%; margin-top: 30px; border-top: 1px solid #e6e6e6; padding-top: 30px;">
+            <h2 style="font-size: 24px; color: rgba(0,0,0,.9); margin-bottom: 24px; font-weight: 400;">Características principales</h2>
+            <table class="tabla-caracteristicas" style="width: 100%; max-width: 600px; border-collapse: collapse; border-radius: 8px; overflow: hidden; border: 1px solid #ededed;">
+                <tbody>
+                    <tr>
+                        <th class="caracteristica-label" style="background-color: #f5f5f5; color: rgba(0,0,0,.9); font-weight: 600; width: 35%; padding: 16px; font-size: 16px; text-align: left; border-bottom: 1px solid #ededed;">Marca</th>
+                        <td class="caracteristica-value" style="background-color: #ffffff; color: rgba(0,0,0,.9); font-weight: 400; padding: 16px; font-size: 16px; text-align: left; border-bottom: 1px solid #ededed;">Franzoi</td>
+                    </tr>
+                    <tr>
+                        <th class="caracteristica-label" style="background-color: #f5f5f5; color: rgba(0,0,0,.9); font-weight: 600; width: 35%; padding: 16px; font-size: 16px; text-align: left; border-bottom: 1px solid #ededed;">Uso Principal</th>
+                        <td class="caracteristica-value" style="background-color: #ffffff; color: rgba(0,0,0,.9); font-weight: 400; padding: 16px; font-size: 16px; text-align: left; border-bottom: 1px solid #ededed;">Especificar Uso</td>
+                    </tr>
+                    <tr>
+                        <th class="caracteristica-label" style="background-color: #f5f5f5; color: rgba(0,0,0,.9); font-weight: 600; width: 35%; padding: 16px; font-size: 16px; text-align: left;">Tipo de Fresa</th>
+                        <td class="caracteristica-value" style="background-color: #ffffff; color: rgba(0,0,0,.9); font-weight: 400; padding: 16px; font-size: 16px; text-align: left;">Especificar Tipo</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
-
-    <section id="marcas">
-        <img src="../../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
-        <img src="../../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
-        <img src="../../../imagenes/marcas/Freud.jpeg" alt="Freud">
-        <img src="../../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
-        <img src="../../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
-    </section>
 
     <footer>
         <div class="footer-contact-bar">
             <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
         </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 WoodTools S.R.L. - WoodTools Marketing</p>
+        </div>
     </footer>
 
-    <script src="../../JS/producto.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnWhatsapp = document.getElementById("btn-whatsapp");
+            const varianteSelector = document.getElementById("variante-selector");
+            const productoTitulo = document.getElementById("producto-titulo").innerText;
+
+            btnWhatsapp.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (varianteSelector.value === "") {
+                    alert("Por favor, seleccioná una medida antes de consultar.");
+                    varianteSelector.style.borderColor = "#a41e22";
+                    return;
+                }
+                const varianteSeleccionada = varianteSelector.value;
+                const numeroTelefono = "5491134609057";
+                const mensaje = `Hola WoodTools! Estoy interesado en la ${productoTitulo}. Me interesa específicamente la medida: ${varianteSeleccionada}. ¿Me podrían pasar precio y disponibilidad?`;
+                const mensajeCodificado = encodeURIComponent(mensaje);
+                window.open(`https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`, "_blank");
+            });
+            
+            varianteSelector.addEventListener("change", function() {
+                this.style.borderColor = "#ccc";
+            });
+        });
+    </script>
 </body>
 </html>
