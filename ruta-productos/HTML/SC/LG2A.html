@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra para Madera LG2A - Freud | WoodTools</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../CSS/styles.css">
+    <link rel="stylesheet" href="../../CSS/producto-detalle.css">
+</head>
+<body>
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/herramientas/Sierras/LG2A/1 (2).jpg" alt="LG2A">
+        </div>
+        <div class="producto-info">
+            <h1 id="producto-titulo">Sierra para Madera LG2A</h1>
+            <p class="marca">Marca: Freud</p>
+            <div class="selector-modelo" style="margin: 25px 0;">
+                <label for="variante-selector" style="font-weight: bold; display: block; margin-bottom: 10px;">Seleccioná la Medida:</label>
+                <select id="variante-selector" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px;">
+                    <option value="" disabled selected>-- Elegí una medida --</option>
+                    <option value="LG2A 1900 (300mm - 36 Dientes)">LG2A 1900 - 300mm | 36 Dientes</option>
+                    <option value="LG2A 2100 (300mm - 48 Dientes)">LG2A 2100 - 300mm | 48 Dientes</option>
+                    <option value="LG2A 2800 (350mm - 54 Dientes)">LG2A 2800 - 350mm | 54 Dientes</option>
+                </select>
+            </div>
+            <button id="btn-whatsapp" class="btn-comprar" style="background-color: #25D366; color: white; padding: 15px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; border: none;">
+                Consultar Precio WhatsApp
+            </button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("btn-whatsapp");
+            const sel = document.getElementById("variante-selector");
+            const tit = document.getElementById("producto-titulo").innerText;
+            btn.addEventListener("click", function() {
+                if (sel.value === "") { alert("Seleccioná una medida"); return; }
+                const msg = encodeURIComponent("Hola! Consulto por la " + tit + " medida " + sel.value);
+                window.open("https://wa.me/5491134609057?text=" + msg, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>

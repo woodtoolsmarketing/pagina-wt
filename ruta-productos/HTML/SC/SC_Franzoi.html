@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sierra para Madera SC - Franzoi | WoodTools</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../CSS/styles.css">
+    <link rel="stylesheet" href="../../CSS/producto-detalle.css">
+</head>
+<body>
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/marcas/Franzoi.jpeg" alt="SC Franzoi">
+        </div>
+        <div class="producto-info">
+            <h1 id="producto-titulo">Sierra para Madera SC</h1>
+            <p class="marca">Marca: Franzoi</p>
+            <div class="selector-modelo" style="margin: 25px 0;">
+                <label for="variante-selector">Seleccioná la Medida:</label>
+                <select id="variante-selector" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px;">
+                    <option value="" disabled selected>-- Elegí una medida --</option>
+                    <option value="SC125324F (125mm - 24 dientes)">125mm | 24 dientes</option>
+                    <option value="SC150324F (150mm - 24 dientes)">150mm | 24 dientes</option>
+                    <option value="SC2504144F (250mm - 14+4 dientes)">250mm | 14+4 dientes</option>
+                    <option value="SC3004164F (300mm - 16+4 dientes)">300mm | 16+4 dientes</option>
+                    <option value="SC35045184F (350mm - 18+4 dientes)">350mm | 18+4 dientes</option>
+                    <option value="SC40045184F (400mm - 18+4 dientes)">400mm | 18+4 dientes</option>
+                    <option value="SC4504496F (450mm - 96 dientes)">450mm | 96 dientes</option>
+                    <option value="SC5005184F (500mm - 18+4 dientes)">500mm | 18+4 dientes</option>
+                    <option value="SC60055244F (600mm - 24+4 dientes)">600mm | 24+4 dientes</option>
+                </select>
+            </div>
+            <button id="btn-whatsapp" class="btn-comprar" style="background-color: #25D366; color: white; padding: 15px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; border: none;">
+                Consultar Precio WhatsApp
+            </button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("btn-whatsapp");
+            const sel = document.getElementById("variante-selector");
+            const tit = document.getElementById("producto-titulo").innerText;
+            btn.addEventListener("click", function() {
+                if (sel.value === "") { alert("Seleccioná una medida"); return; }
+                const msg = encodeURIComponent("Hola! Consulto por la " + tit + " medida " + sel.value);
+                window.open("https://wa.me/5491134609057?text=" + msg, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>
