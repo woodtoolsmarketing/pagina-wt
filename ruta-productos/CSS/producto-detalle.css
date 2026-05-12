@@ -1,13 +1,20 @@
-/* Contenedor gris de fondo */
+/* ======================================================
+   ESTILO TIPO MERCADO LIBRE PARA DETALLE DE PRODUCTO
+   ====================================================== */
+
+/* Fondo general de la página (para que la tarjeta blanca resalte) */
 body {
-    background-color: #ebebeb;
+    background-color: #ebebeb; 
+    font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
+/* Breadcrumb (migas de pan) opcional */
 .breadcrumb {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 15px auto;
     font-size: 14px;
     color: #333;
+    padding: 0 10px;
 }
 
 .breadcrumb a {
@@ -15,241 +22,178 @@ body {
     text-decoration: none;
 }
 
-.detalle-container {
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
-    padding: 20px;
-}
-
-.detalle-layout {
+/* Contenedor Principal (La "Tarjeta" Blanca) */
+.producto-container {
     display: flex;
     flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
+    max-width: 1100px;
+    margin: 20px auto 40px auto;
+    padding: 32px;
     gap: 30px;
 }
 
-/* Columna Izquierda: Galería y Zoom */
-.detalle-galeria {
-    flex: 1 1 60%;
-    display: flex;
-    gap: 15px;
-    min-width: 400px;
-}
-
-.galeria-miniaturas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.mini-img {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    object-fit: contain;
-    padding: 2px;
-}
-
-.mini-img.activa, .mini-img:hover {
-    border-color: #3483fa;
-    border-width: 2px;
-}
-
-.imagen-principal-contenedor {
-    flex: 1;
+/* SECCIÓN IZQUIERDA: IMAGEN */
+.producto-imagen {
+    flex: 1.2; /* Ocupa un poco más de la mitad */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden; /* Clave para que el zoom no se salga de la caja */
-    cursor: zoom-in;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    height: 500px;
+    padding: 20px;
+    min-width: 300px;
 }
 
-.imagen-principal {
+.producto-imagen img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 500px;
     object-fit: contain;
-    transition: transform 0.1s ease; /* Transición suave al mover el mouse */
+    border: 1px solid rgba(0,0,0,.05); 
+    border-radius: 4px;
+    padding: 10px;
 }
 
-/* Columna Derecha: Información */
-.detalle-info {
-    flex: 1 1 35%;
+/* SECCIÓN DERECHA: INFORMACIÓN Y BOTONES */
+.producto-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border-left: 1px solid #eee;
+    padding-left: 30px;
+    border-left: 1px solid #e6e6e6; /* La típica línea divisoria gris clara */
+    min-width: 300px;
 }
 
-.producto-estado {
+/* Textos (Título y Marca) */
+.producto-info .marca {
     font-size: 14px;
-    color: #0000008c;
-    margin-bottom: 5px;
+    color: rgba(0,0,0,.55);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.producto-titulo {
-    font-size: 22px;
+#producto-titulo {
+    font-size: 24px;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
+    color: rgba(0,0,0,.9);
+    margin-top: 0;
+    margin-bottom: 24px;
     line-height: 1.2;
 }
 
-.producto-precio-bloque {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.precio-simbolo {
-    font-size: 24px;
-    margin-top: 5px;
-}
-
-.precio-entero {
-    font-size: 36px;
-    font-weight: 300;
-}
-
-.precio-decimal {
-    font-size: 18px;
-    margin-top: 5px;
-}
-
-.precio-iva {
-    font-size: 14px;
-    color: #00a650;
-    margin-left: 10px;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-.producto-envio {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.producto-envio i {
-    color: #00a650;
-    font-size: 20px;
-    margin-top: 2px;
-}
-
-.envio-titulo {
-    color: #00a650;
-    font-weight: 600;
-    margin: 0 0 3px 0;
-}
-
-.envio-sub {
-    color: #0000008c;
-    font-size: 14px;
-    margin: 0;
-}
-
-.producto-stock {
-    margin-bottom: 25px;
-}
-
-.producto-stock p {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.cantidad-selector select {
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.producto-botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.btn-comprar, .btn-carrito {
-    text-align: center;
-    padding: 15px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background-color 0.2s;
-}
-
-.btn-comprar {
-    background-color: #3483fa;
-    color: #fff;
-}
-
-.btn-comprar:hover { background-color: #2968c8; }
-
-.btn-carrito {
-    background-color: rgba(65,137,230,.15);
-    color: #3483fa;
-}
-
-.btn-carrito:hover { background-color: rgba(65,137,230,.2); }
-
-.producto-garantia {
-    font-size: 14px;
-    color: #0000008c;
-    margin-bottom: 30px;
-}
-
-.producto-garantia i { color: #3483fa; }
-
-.producto-specs {
-    background-color: #f5f5f5;
+/* RECUADRO DEL SELECTOR DE MEDIDAS */
+.selector-modelo {
+    background-color: #f5f5f5; /* Fondo gris súper sutil */
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 24px;
 }
 
-.producto-specs h3 {
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 15px;
+.selector-modelo label {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0,0,0,.9);
+    display: block;
+    margin-bottom: 12px;
 }
 
-.producto-specs ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* El desplegable (Select) */
+.selector-modelo select {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: rgba(0,0,0,.9);
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
+    /* Reseteo de apariencia por defecto del navegador para mejorar el diseño */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Flecha personalizada (estilo ML) */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
 }
 
-.producto-specs li {
-    font-size: 14px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 5px;
+/* Efecto al pasar el mouse y al hacer click (Azul Mercado Libre) */
+.selector-modelo select:hover {
+    border-color: rgba(0,0,0,.3);
 }
 
-.detalle-descripcion {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
-    width: 60%;
+.selector-modelo select:focus {
+    border-color: #3483fa; 
+    box-shadow: 0 0 0 2px rgba(52,131,250,.2);
 }
 
-.detalle-descripcion h2 {
-    font-size: 24px;
+/* BOTÓN DE WHATSAPP CON ESTRUCTURA ML */
+.btn-comprar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #25D366; 
+    border: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
-.detalle-descripcion p {
-    font-size: 20px;
-    color: #666;
+.btn-comprar img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.btn-comprar:hover {
+    background-color: #1ebd5a; 
+}
+
+/* ZONA DE DESCRIPCIÓN */
+.descripcion {
+    margin-top: auto; 
+    padding-top: 24px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.descripcion h3 {
+    font-size: 18px;
+    color: rgba(0,0,0,.9);
+    margin-bottom: 12px;
+}
+
+.descripcion p {
+    font-size: 16px;
+    color: rgba(0,0,0,.55);
     line-height: 1.5;
+}
+
+/* ======================================================
+   RESPONSIVE: ADAPTACIÓN A CELULARES
+   ====================================================== */
+@media (max-width: 768px) {
+    .producto-container {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    .producto-info {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #e6e6e6;
+        padding-top: 20px;
+    }
 }

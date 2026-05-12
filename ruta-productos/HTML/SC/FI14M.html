@@ -1,199 +1,121 @@
-/* ======================================================
-   ESTILO TIPO MERCADO LIBRE PARA DETALLE DE PRODUCTO
-   ====================================================== */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra para Madera FI14M - Freud | WoodTools</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../CSS/styles.css">
+    <link rel="stylesheet" href="../../CSS/producto-detalle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../../index.html">
+                    <img src="../../../imagenes/logos/WoodTools.png" alt="WoodTools S.R.L.">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../sc-en-hm.html">Sierras circulares</a></li>
+                            <li><a href="../../fresas-madera.html">Fresas</a></li>
+                            <li><a href="../../cuchillas-madera.html">Cuchillas</a></li>
+                            <li><a href="../../mechas-madera.html">Mechas y Brocas</a></li>
+                            <li><a href="../../diamante-en-hm.html">Herramientas de Diamante</a></li>
+                            <li><a href="../../cabezales.html">Cabezales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
+                    <li><a href="../../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
+                    <li class="dropdown">
+                        <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/5491134609057" target="_blank">Ventas WhatsApp</a></li>
+                            <li><a href="../../../ruta-contactanos/HTML/formulario-mail.html" target="_blank">Vía Email</a></li>
+                            <li><a href="../../../ruta-contactanos/HTML/casa-central.html">Ubicación de Casa Central</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
+                    <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-/* Fondo general de la página (para que la tarjeta blanca resalte) */
-body {
-    background-color: #ebebeb; 
-    font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-}
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/herramientas/Sierras/FI14M AA3/1 (1).jpg" alt="Sierra para Madera FI14M">
+        </div>
+        
+        <div class="producto-info">
+            <h1 id="producto-titulo">Sierra para Madera FI14M</h1>
+            <p class="marca">Marca: Freud</p>
 
-/* Breadcrumb (migas de pan) opcional */
-.breadcrumb {
-    max-width: 1100px;
-    margin: 15px auto;
-    font-size: 14px;
-    color: #333;
-    padding: 0 10px;
-}
+            <div class="selector-modelo" style="margin: 25px 0;">
+                <label for="variante-selector" style="font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 10px;">Seleccioná la Medida:</label>
+                <select id="variante-selector" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 1rem; cursor: pointer; outline: none;">
+                    <option value="" disabled selected>-- Elegí una medida --</option>
+                    <option value="Medida 1">Medida 1 (Completar)</option>
+                    <option value="Medida 2">Medida 2 (Completar)</option>
+                </select>
+            </div>
 
-.breadcrumb a {
-    color: #3483fa;
-    text-decoration: none;
-}
+            <button id="btn-whatsapp" class="btn-comprar" style="margin-top: 15px; width: 100%; padding: 15px; font-size: 1.1rem; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp" style="width: 24px; margin-right: 10px;"> Consultar Precio
+            </button>
+        </div>
+    </main>
 
-/* Contenedor Principal (La "Tarjeta" Blanca) */
-.producto-container {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
-    max-width: 1100px;
-    margin: 20px auto 40px auto;
-    padding: 32px;
-    gap: 30px;
-}
+    <footer>
+        <div class="footer-contact-bar">
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 WoodTools S.R.L. - WoodTools Marketing</p>
+        </div>
+    </footer>
 
-/* SECCIÓN IZQUIERDA: IMAGEN */
-.producto-imagen {
-    flex: 1.2; /* Ocupa un poco más de la mitad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-width: 300px;
-}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnWhatsapp = document.getElementById("btn-whatsapp");
+            const varianteSelector = document.getElementById("variante-selector");
+            const productoTitulo = document.getElementById("producto-titulo").innerText;
 
-.producto-imagen img {
-    max-width: 100%;
-    max-height: 500px;
-    object-fit: contain;
-    border: 1px solid rgba(0,0,0,.05); 
-    border-radius: 4px;
-    padding: 10px;
-}
-
-/* SECCIÓN DERECHA: INFORMACIÓN Y BOTONES */
-.producto-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding-left: 30px;
-    border-left: 1px solid #e6e6e6; /* La típica línea divisoria gris clara */
-    min-width: 300px;
-}
-
-/* Textos (Título y Marca) */
-.producto-info .marca {
-    font-size: 14px;
-    color: rgba(0,0,0,.55);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-#producto-titulo {
-    font-size: 24px;
-    font-weight: 600;
-    color: rgba(0,0,0,.9);
-    margin-top: 0;
-    margin-bottom: 24px;
-    line-height: 1.2;
-}
-
-/* RECUADRO DEL SELECTOR DE MEDIDAS */
-.selector-modelo {
-    background-color: #f5f5f5; /* Fondo gris súper sutil */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-}
-
-.selector-modelo label {
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(0,0,0,.9);
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* El desplegable (Select) */
-.selector-modelo select {
-    width: 100%;
-    height: 48px;
-    padding: 0 16px;
-    font-size: 16px;
-    color: rgba(0,0,0,.9);
-    background-color: #ffffff;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 6px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
-    /* Reseteo de apariencia por defecto del navegador para mejorar el diseño */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    /* Flecha personalizada (estilo ML) */
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
-    background-size: .65em auto, 100%;
-}
-
-/* Efecto al pasar el mouse y al hacer click (Azul Mercado Libre) */
-.selector-modelo select:hover {
-    border-color: rgba(0,0,0,.3);
-}
-
-.selector-modelo select:focus {
-    border-color: #3483fa; 
-    box-shadow: 0 0 0 2px rgba(52,131,250,.2);
-}
-
-/* BOTÓN DE WHATSAPP CON ESTRUCTURA ML */
-.btn-comprar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 48px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: #25D366; 
-    border: transparent;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    margin-bottom: 20px;
-    text-decoration: none;
-}
-
-.btn-comprar img {
-    width: 20px;
-    margin-right: 10px;
-}
-
-.btn-comprar:hover {
-    background-color: #1ebd5a; 
-}
-
-/* ZONA DE DESCRIPCIÓN */
-.descripcion {
-    margin-top: auto; 
-    padding-top: 24px;
-    border-top: 1px solid #e6e6e6;
-}
-
-.descripcion h3 {
-    font-size: 18px;
-    color: rgba(0,0,0,.9);
-    margin-bottom: 12px;
-}
-
-.descripcion p {
-    font-size: 16px;
-    color: rgba(0,0,0,.55);
-    line-height: 1.5;
-}
-
-/* ======================================================
-   RESPONSIVE: ADAPTACIÓN A CELULARES
-   ====================================================== */
-@media (max-width: 768px) {
-    .producto-container {
-        flex-direction: column;
-        padding: 20px;
-        margin: 20px 10px;
-    }
-
-    .producto-info {
-        padding-left: 0;
-        border-left: none;
-        border-top: 1px solid #e6e6e6;
-        padding-top: 20px;
-    }
-}
+            btnWhatsapp.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (varianteSelector.value === "") {
+                    alert("Por favor, seleccioná una medida antes de consultar.");
+                    varianteSelector.style.borderColor = "#a41e22";
+                    return;
+                }
+                const varianteSeleccionada = varianteSelector.value;
+                const numeroTelefono = "5491134609057";
+                const mensaje = `Hola WoodTools! Estoy interesado en la ${productoTitulo}. Me interesa específicamente la medida: ${varianteSeleccionada}. ¿Me podrían pasar precio y disponibilidad?`;
+                const mensajeCodificado = encodeURIComponent(mensaje);
+                window.open(`https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`, "_blank");
+            });
+            
+            varianteSelector.addEventListener("change", function() {
+                this.style.borderColor = "#ccc";
+            });
+        });
+    </script>
+</body>
+</html>
