@@ -6,7 +6,7 @@ const baseDatosProductos = {
     // SIERRAS
     // ---------------------------------------------------------
     "LG3D": {
-        codigoBase: "LG3D", categoriaImg: "Sierras", carpetaImg: "LG3D 0600",
+        codigoBase: "LG3D", categoriaImg: "Sierras", carpetaImg: "LG3D",
         titulo: "Sierra para Melamina", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Carburo de tungsteno (HM) Widia", "Uso": "Melamina (Ángulo Positivo - Máquinas Industriales)", "Tipo de diente": "Trapezoidal-Plano / Positivo" },
         variantes: [ { id: "LG3D 0400", nombre: "LG3D 0400 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LG3D 0600", nombre: "LG3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LG3D 0800", nombre: "LG3D 0800 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
@@ -210,10 +210,28 @@ const baseDatosProductos = {
         variantes: [{ id: "TR15MS CA3", nombre: "D: 300mm | B: 30mm" }]
     },
     "TR15MD": {
-        codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS", // Reutiliza carpeta
+        codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS", // Reutiliza carpeta de imágenes
         titulo: "Triturador Doble", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
         variantes: [{ id: "TR15MD CA3", nombre: "D: 300mm | B: 30mm" }]
+    },
+    "SCC_Freud": { 
+        codigoBase: "SCC_Freud", categoriaImg: "Sierras", carpetaImg: "Incisor", 
+        titulo: "Incisor SCC Freud", marca: "Freud", 
+        caracteristicasBasicas: { "Material": "Widia", "Uso": "Incisor" }, 
+        variantes: [{ id: "1", nombre: "Consultar Medidas" }] 
+    },
+    "SCC_Franzoi": { 
+        codigoBase: "SCC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Incisor Santi", 
+        titulo: "Incisor SCC Franzoi", marca: "Franzoi", 
+        caracteristicasBasicas: { "Material": "Widia", "Uso": "Incisor" }, 
+        variantes: [{ id: "1", nombre: "Consultar Medidas" }] 
+    },
+    "SC_Franzoi": { 
+        codigoBase: "SC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Sierra con racadores Franzoi", 
+        titulo: "Sierra Franzoi SC", marca: "Franzoi", 
+        caracteristicasBasicas: { "Material": "Metal Duro", "Uso": "Madera y Múltiple" }, 
+        variantes: [{ id: "1", nombre: "Consultar Medidas" }] 
     },
 
     // ---------------------------------------------------------
@@ -252,12 +270,14 @@ let codigoReal = "";
 
 document.addEventListener("DOMContentLoaded", function() {
     
+    // 1. Obtener código de la URL
     let ruta = window.location.pathname;
     let nombreArchivo = ruta.split('/').pop();
     let codigoLimpio = decodeURIComponent(nombreArchivo.replace('.html', '').trim());
     
     codigoReal = codigoLimpio; 
 
+    // Buscar coincidencias
     let keys = Object.keys(baseDatosProductos).sort((a, b) => b.length - a.length);
     for (let key of keys) {
         if (codigoReal.startsWith(key) || codigoReal.includes(key)) {
@@ -280,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function cargarEstructuraProducto(info) {
     if(!info) {
         info = {
-            codigoBase: "Generico", categoriaImg: "Sierras", carpetaImg: "Sierras",
+            codigoBase: "Generico", categoriaImg: "Generico", carpetaImg: "Generico",
             titulo: "Herramienta", marca: "Consultar",
             caracteristicasBasicas: { "Marca": "Consultar" },
             variantes: [{ nombre: "Consultar especificaciones" }]
@@ -311,42 +331,48 @@ function cargarEstructuraProducto(info) {
         }
     }
 
-    // C. INYECTAR GALERÍA (ORDEN: MINIATURAS PRIMERO, LUEGO FOTO GRANDE PARA QUE EL CSS LAS APONGA AL COSTADO)
+    // C. INYECTAR GALERÍA A PRUEBA DE FALLOS CON LOGO WOODTOOLS COMO FALLBACK
     const contenedorImagen = document.querySelector(".producto-imagen");
     if (contenedorImagen) {
+        // Enlace base a la imagen por defecto
+        const defaultLogo = "../../../imagenes/logos/WoodTools.png";
+        
         let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${info.carpetaImg}/`;
         
-        // Primero generamos el div con las miniaturas
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         
+        // Array masivo de combinaciones de fotos
         const combinaciones = [
-            "1.jpg", "1 (1).jpg", "1.jpeg", "1 (2).jpg",
-            "2.jpg", "2.jpeg", "2 (1).jpg", "2 (2).jpg",
-            "3.jpg", "3.jpeg", "3 (1).jpg", "3 (2).jpg",
-            "4.jpg", "4.jpeg", "4 (1).jpg", "4 (2).jpg",
-            "5.jpg", "5 (1).jpg", "5.jpeg", "5 (2).jpg",
-            "6.jpg", "6.jpeg", "6 (1).jpg", "6 (2).jpg"
+            "1.jpg", "1 (1).jpg", "1.jpeg", "1 (2).jpg", "1.png", "Incisor.png",
+            "2.jpg", "2.jpeg", "2 (1).jpg", "2 (2).jpg", "2.png",
+            "3.jpg", "3.jpeg", "3 (1).jpg", "3 (2).jpg", "3.png",
+            "4.jpg", "4.jpeg", "4 (1).jpg", "4 (2).jpg", "4.png",
+            "5.jpg", "5 (1).jpg", "5.jpeg", "5 (2).jpg", "5.png",
+            "6.jpg", "6.jpeg", "6 (1).jpg", "6 (2).jpg", "6.png"
         ];
 
         combinaciones.forEach(nombreFoto => {
-            galeriaHTML += `<img src="${basePath}${nombreFoto}" class="mini-img" 
-                onload="if(document.getElementById('main-image').src.includes('WoodTools.png')) { document.getElementById('main-image').src = this.src; this.classList.add('activa'); }" 
+            let rutaSegura = `${basePath}${nombreFoto}`.replace(/ /g, "%20");
+            
+            // Onload: Si es la primera que carga bien (el main image sigue con el logo), se asigna a la principal.
+            galeriaHTML += `<img src="${rutaSegura}" class="mini-img" 
+                onload="window.setMainImage(this)" 
                 onerror="this.style.display='none'; this.classList.remove('mini-img');" 
                 onclick="cambiarImagen(this)">`;
         });
         
         galeriaHTML += `</div>`;
         
-        // Y después generamos el div de la foto grande (zoom-container)
         galeriaHTML += `
             <div id="zoom-container" class="zoom-container">
-                <img id="main-image" src="../../../imagenes/logos/WoodTools.png" alt="${info.titulo}" onerror="this.src='../../../imagenes/logos/WoodTools.png'; this.onerror=null;">
+                <img id="main-image" src="${defaultLogo}" alt="${info.titulo}">
             </div>
         `;
         
         contenedorImagen.innerHTML = galeriaHTML;
 
-        activarZoom();
+        // Retrasamos un poco el zoom para dar tiempo a que carguen las fotos reales
+        setTimeout(activarZoom, 200);
     }
 
     // D. RELLENAR TABLA SIN EL CÓDIGO
@@ -373,17 +399,30 @@ function cargarEstructuraProducto(info) {
     });
 }
 
+// Función helper: la primera foto real en cargar pasa a ser la foto grande
+window.setMainImage = function(elemento) {
+    const mainImage = document.getElementById("main-image");
+    if (mainImage && !mainImage.hasAttribute("data-loaded")) {
+        mainImage.src = elemento.src;
+        mainImage.setAttribute("data-loaded", "true");
+        elemento.classList.add("activa");
+    }
+};
+
 function activarZoom() {
     const contenedorZoom = document.getElementById("zoom-container");
     const imagenPrincipal = document.getElementById("main-image");
 
     if (contenedorZoom && imagenPrincipal) {
         contenedorZoom.addEventListener("mousemove", function(e) {
-            const rect = contenedorZoom.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            imagenPrincipal.style.transformOrigin = `${x}% ${y}%`;
-            imagenPrincipal.style.transform = "scale(2.5)";
+            // Solo hace zoom si la imagen NO ES el logo de WoodTools
+            if(!imagenPrincipal.src.includes('WoodTools.png')) {
+                const rect = contenedorZoom.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                imagenPrincipal.style.transformOrigin = `${x}% ${y}%`;
+                imagenPrincipal.style.transform = "scale(2.5)";
+            }
         });
 
         contenedorZoom.addEventListener("mouseleave", function() {
