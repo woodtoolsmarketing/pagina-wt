@@ -80,12 +80,33 @@ body {
 
 .selector-modelo select {
     width: 100%;
-    height: 45px;
-    padding: 0 10px;
+    height: 48px; /* Ajustado ligeramente para mejor clickabilidad */
+    padding: 0 16px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
+    /* Flecha personalizada estilo ML */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+.selector-modelo select:hover {
+    border-color: rgba(0,0,0,.3);
+}
+
+.selector-modelo select:focus {
+    border-color: #3483fa; 
+    box-shadow: 0 0 0 2px rgba(52,131,250,.2);
 }
 
 /* BOTÓN WHATSAPP */
@@ -101,10 +122,16 @@ body {
     justify-content: center;
     gap: 10px;
     transition: background 0.3s;
+    margin-top: 15px;
 }
 
-.btn-comprar:hover { background-color: #1ebd5a; }
-.btn-comprar img { width: 20px; }
+.btn-comprar:hover { 
+    background-color: #1ebd5a; 
+}
+
+.btn-comprar img { 
+    width: 20px; 
+}
 
 /* ======================================================
    TABLA DE CARACTERÍSTICAS (ABAJO - 100% ANCHO)
@@ -135,6 +162,11 @@ body {
     border-bottom: 1px solid #ededed;
 }
 
+/* Evitar borde inferior en la última fila */
+.tabla-caracteristicas tr:last-child {
+    border-bottom: none;
+}
+
 .caracteristica-label {
     background-color: #f5f5f5;
     width: 30%;
@@ -151,13 +183,14 @@ body {
 }
 
 /* ======================================================
-   FOOTER OSCURO
+   FOOTER OSCURO CON MARCAS
    ====================================================== */
 .footer-moderno {
     background-color: #1a1a1a;
     color: white;
     padding: 60px 20px 30px;
     font-size: 14px;
+    margin-top: 60px;
 }
 
 .footer-main-content {
@@ -168,15 +201,104 @@ body {
     align-items: center;
 }
 
-.footer-links-col { display: flex; flex-direction: column; gap: 10px; }
-.footer-links-col a { color: white; text-decoration: none; font-weight: 700; }
-.footer-marcas-right { display: flex; gap: 15px; }
-.footer-marcas-right img { height: 30px; background: white; border-radius: 3px; padding: 2px; }
+/* Columna de Links */
+.footer-links-col { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    flex: 1;
+    align-items: flex-start; /* Alinea los links a la izquierda por defecto */
+}
 
-/* RESPONSIVE */
+.footer-links-col a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 700; 
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-links-col a:hover {
+    color: #a41e22; /* Rojo WoodTools */
+}
+
+/* Columna de Marcas a Color con Hover */
+.footer-marcas-right { 
+    display: flex; 
+    gap: 15px; 
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-marcas-right img { 
+    height: 35px; 
+    background-color: white; 
+    border-radius: 4px; 
+    padding: 5px; /* Margen blanco alrededor del logo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover: El logo "salta" y genera sombra */
+.footer-marcas-right img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Información de contacto al fondo */
+.footer-bottom-info {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 25px;
+    margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom-info p {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 4px 0;
+}
+
+/* ======================================================
+   RESPONSIVE: ADAPTACIÓN A CELULARES Y TABLETS
+   ====================================================== */
 @media (max-width: 768px) {
-    .producto-container { flex-direction: column; padding: 20px; }
-    .producto-imagen, .producto-info { width: 100%; padding: 0; border: none; }
-    .producto-info { padding-top: 20px; border-top: 1px solid #eee; }
-    .footer-main-content { flex-direction: column; gap: 30px; text-align: center; }
+    .producto-container { 
+        flex-direction: column; 
+        padding: 20px; 
+        margin: 20px 10px;
+    }
+    
+    .producto-imagen, .producto-info { 
+        width: 100%; 
+        padding: 0; 
+        border: none; 
+    }
+    
+    .producto-info { 
+        padding-top: 20px; 
+        border-top: 1px solid #eee; 
+    }
+
+    .caracteristicas-principales {
+        margin-top: 30px;
+    }
+    
+    .footer-main-content { 
+        flex-direction: column; 
+        gap: 30px; 
+        text-align: center; 
+    }
+
+    .footer-links-col {
+        align-items: center; /* Centra los links en móvil */
+    }
+
+    .footer-marcas-right {
+        justify-content: center; /* Centra las marcas en móvil */
+    }
 }
