@@ -9,13 +9,14 @@
     
     
     
+    
     <link rel="stylesheet" href="../../CSS/styles.css">
     <link rel="stylesheet" href="../../CSS/producto-detalle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-                    <header>
+                        <header>
         <div class="header-container">
             <div class="logo">
                 <a href="../../../index.html">
@@ -61,49 +62,33 @@
 
 
 
-    <div class="breadcrumb">
-        <a href="../../../index.html">Inicio</a> > <a href="../Cabezales.html">Cabezales e Insertos</a> > Detalle
-    </div>
-
-    <main class="detalle-container">
-        <div class="detalle-layout">
-            <div class="detalle-galeria">
-                <div class="galeria-miniaturas">
-                    <img src="../../../imagenes/herramientas/CBZ/AT03M AA9-1.png" class="mini-img activa" onmouseover="cambiarImagen(this)" onerror="this.src='../../../imagenes/logos/WoodTools.png'">
-                    <img src="../../../imagenes/herramientas/CBZ/AT03M AA9-2.png" class="mini-img" onmouseover="cambiarImagen(this)" onerror="this.style.display='none'">
-                    <img src="../../../imagenes/herramientas/CBZ/AT03M AA9-3.png" class="mini-img" onmouseover="cambiarImagen(this)" onerror="this.style.display='none'">
-                </div>
-                <div class="imagen-principal-contenedor" id="zoom-container">
-                    <img src="../../../imagenes/herramientas/CBZ/AT03M AA9-1.png" id="main-image" class="imagen-principal" alt="Accesorio / Repuesto para Cabezal Freud" onerror="this.src='../../../imagenes/logos/WoodTools.png'">
-                </div>
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../imagenes/herramientas/CBZ/AT03M AA9-1.png" alt="Accesorio / Repuesto para Cabezal Freud">
+        </div>
+        <div class="producto-info">
+            <p class="marca">Marca: Freud</p>
+            <h1 id="producto-titulo">Accesorio / Repuesto para Cabezal Freud</h1>
+            <div class="selector-modelo">
+                <label>Seleccioná la Variante:</label>
+                <select id="variante-selector">
+                    <option value="" disabled selected>-- Elegí una opción --</option>
+                    <option value="Estándar">Medida Estándar</option>
+                </select>
             </div>
-
-            <div class="detalle-info">
-                <span class="producto-estado">Nuevo | WoodTools Oficial</span>
-                <h1 class="producto-titulo">Accesorio / Repuesto para Cabezal Freud</h1>
-                
-                <div class="producto-envio">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <div>
-                        <p class="envio-titulo">Envío a acordar con WoodTools</p>
-                        <p class="envio-sub">Despachos a todo el país desde Avellaneda, Buenos Aires.</p>
-                    </div>
-                </div>
-
-                <div class="producto-botones">
-                    <a href="https://wa.me/5491134609057?text=Hola,%20quiero%20consultar%20por%20el%20producto%20AT03M AA9" target="_blank" class="btn-comprar">Consultar por WhatsApp</a>
-                </div>
-
-                <div class="producto-specs">
-                    <h3>Características técnicas</h3>
-                    <ul>
-                        <li><strong>Código de artículo:</strong> AT03M AA9</li><li><strong>Marca:</strong> Freud</li>
-                    </ul>
-                </div>
-            </div>
+            <a href="#" id="btn-whatsapp" class="btn-comprar" onclick="event.preventDefault(); const s=document.getElementById('variante-selector'); if(!s.value){alert('Elegí una opción');return;} const msg=encodeURIComponent('Hola! Consulto por Accesorio / Repuesto para Cabezal Freud (Código: AT03M AA9)'); window.open('https://wa.me/5491134609057?text='+msg, '_blank');">
+                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp"> Consultar Precio
+            </a>
+        </div>
+        <div class="caracteristicas-principales">
+            <h2>Características principales</h2>
+            <table class="tabla-caracteristicas">
+                <tr><th class="caracteristica-label">Código de artículo</th><td class="caracteristica-value">AT03M AA9</td></tr>
+                <tr><th class="caracteristica-label">Marca</th><td class="caracteristica-value">Freud</td></tr>
+            </table>
         </div>
     </main>
-    <section id="marcas">
+        <section id="marcas">
         <img src="../../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
         <img src="../../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
         <img src="../../../imagenes/marcas/Freud.jpeg" alt="Freud">
