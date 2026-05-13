@@ -62,30 +62,34 @@
 
 
 
-    <main class="producto-container">
-        <div class="producto-imagen" id="zoom-container" style="overflow: hidden; position: relative; cursor: zoom-in; display: flex; justify-content: center; align-items: center;">
-            <img id="main-image" style="transition: transform 0.1s ease; max-width: 100%; object-fit: contain;" src="../../../imagenes/herramientas/CBZ/TP40M AB3-1.png" alt="Cabezal Multiperfil de 160mm para Multiperfil">
-        </div>
+        <main class="producto-container" style="max-width: 1200px; margin: 40px auto; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 8px;">
+        <div class="producto-imagen">
+            </div>
         <div class="producto-info">
-            <p class="marca">Marca: Freud</p>
-            <h1 id="producto-titulo">Cabezal Multiperfil de 160mm para Multiperfil</h1>
-            <div class="selector-modelo">
-                <label>Seleccioná la Variante:</label>
-                <select id="variante-selector">
-                    <option value="" disabled selected>-- Elegí una opción --</option>
-                    <option value="Estándar">Medida Estándar</option>
+            <p class="marca">Marca: Cargando...</p>
+            <h1 id="producto-titulo" style="font-size: 24px; color: #333; margin-bottom: 20px;">Cargando Producto...</h1>
+            
+            <div class="selector-modelo" style="margin-bottom: 20px;">
+                <label style="font-weight: bold; display: block; margin-bottom: 8px;">Seleccioná la Variante:</label>
+                <select id="variante-selector" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;">
+                    <option value="" disabled selected>Cargando medidas...</option>
                 </select>
             </div>
-            <a href="#" id="btn-whatsapp" class="btn-comprar" onclick="event.preventDefault(); const s=document.getElementById('variante-selector'); if(!s.value){alert('Elegí una opción');return;} const msg=encodeURIComponent('Hola! Consulto por Cabezal Multiperfil de 160mm para Multiperfil (Código: TP40M AB3)'); window.open('https://wa.me/5491134609057?text='+msg, '_blank');">
-                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp"> Consultar Precio
+            
+            <a href="#" id="btn-whatsapp" class="btn-comprar" style="display: flex; align-items: center; justify-content: center; background-color: #25D366; color: white; padding: 15px 20px; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 6px; transition: background-color 0.3s ease;">
+                <img src="../../../imagenes/logos/Whatsapp.png" alt="WhatsApp" style="width: 24px; margin-right: 10px; filter: brightness(0) invert(1);"> Consultar Precio y Stock
             </a>
-        </div>
-        <div class="caracteristicas-principales">
-            <h2>Características principales</h2>
-            <table class="tabla-caracteristicas">
-                <tr><th class="caracteristica-label">Código de artículo</th><td class="caracteristica-value">TP40M AB3</td></tr>
-                <tr><th class="caracteristica-label">Marca</th><td class="caracteristica-value">Freud</td></tr>
-            </table>
+
+            <div class="caracteristicas-principales" style="margin-top: 40px;">
+                <h2 style="font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Características principales</h2>
+                <table class="tabla-caracteristicas" style="width: 100%; border-collapse: collapse;">
+                    <tr><th class="caracteristica-label" style="background: #f5f5f5; padding: 10px; border: 1px solid #eee; text-align: left; width: 40%;">Código de artículo</th><td class="caracteristica-value" style="padding: 10px; border: 1px solid #eee;"></td></tr>
+                    <tr><th class="caracteristica-label" style="background: #f5f5f5; padding: 10px; border: 1px solid #eee; text-align: left;">Marca</th><td class="caracteristica-value" style="padding: 10px; border: 1px solid #eee;"></td></tr>
+                    <tr><th class="caracteristica-label" style="background: #f5f5f5; padding: 10px; border: 1px solid #eee; text-align: left;">Material</th><td class="caracteristica-value" style="padding: 10px; border: 1px solid #eee;"></td></tr>
+                    <tr><th class="caracteristica-label" style="background: #f5f5f5; padding: 10px; border: 1px solid #eee; text-align: left;">Uso</th><td class="caracteristica-value" style="padding: 10px; border: 1px solid #eee;"></td></tr>
+                    <tr><th class="caracteristica-label" style="background: #f5f5f5; padding: 10px; border: 1px solid #eee; text-align: left;">Tipo de diente</th><td class="caracteristica-value" style="padding: 10px; border: 1px solid #eee;"></td></tr>
+                </table>
+            </div>
         </div>
     </main>
         <section id="marcas">
