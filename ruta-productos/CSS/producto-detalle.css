@@ -1,5 +1,5 @@
 /* ======================================================
-   ESTILO FINAL TIPO MERCADO LIBRE (Sin Header)
+   ESTILO FINAL TIPO MERCADO LIBRE (Con fotos al costado)
    ====================================================== */
 
 body {
@@ -22,23 +22,74 @@ body {
     gap: 0;
 }
 
-/* SECCIÓN IZQUIERDA: IMAGEN */
+/* ======================================================
+   SECCIÓN IZQUIERDA: IMAGEN Y GALERÍA (Estilo ML)
+   ====================================================== */
 .producto-imagen {
     width: 55%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row; /* Coloca las miniaturas a la izquierda y la foto grande a la derecha */
+    align-items: flex-start;
     padding-right: 40px;
     box-sizing: border-box;
+    gap: 20px; /* Separación entre miniaturas y foto principal */
 }
 
-.producto-imagen img {
-    max-width: 100%;
-    max-height: 450px;
+/* Contenedor de las fotos chiquitas (a la izquierda) */
+.galeria-miniaturas {
+    display: flex;
+    flex-direction: column; /* Apila las miniaturas verticalmente */
+    justify-content: flex-start;
+    gap: 10px;
+    width: 50px;
+    flex-shrink: 0; /* Evita que las miniaturas se encojan */
+}
+
+.mini-img {
+    width: 50px;
+    height: 50px;
     object-fit: contain;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
 }
 
-/* SECCIÓN DERECHA: INFO Y BOTÓN */
+.mini-img:hover {
+    border-color: #999;
+}
+
+/* Clase de la miniatura activa */
+.mini-img.activa {
+    border-color: #3483fa; /* Azul ML, podés cambiarlo a #a41e22 (rojo) si preferís */
+}
+
+/* Caja de la foto principal (Donde ocurre el Zoom) */
+.zoom-container {
+    flex: 1; /* Ocupa el resto del espacio a la derecha */
+    width: 100%;
+    max-width: 500px; 
+    height: 400px;    
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease-out; /* Suaviza el inicio del zoom */
+}
+
+
+/* ======================================================
+   SECCIÓN DERECHA: INFO Y BOTÓN
+   ====================================================== */
 .producto-info {
     width: 45%;
     padding-left: 40px;
@@ -80,7 +131,7 @@ body {
 
 .selector-modelo select {
     width: 100%;
-    height: 48px; /* Ajustado ligeramente para mejor clickabilidad */
+    height: 48px;
     padding: 0 16px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -89,7 +140,6 @@ body {
     outline: none;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
-    /* Flecha personalizada estilo ML */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -134,10 +184,10 @@ body {
 }
 
 /* ======================================================
-   TABLA DE CARACTERÍSTICAS (ABAJO - 100% ANCHO)
+   TABLA DE CARACTERÍSTICAS
    ====================================================== */
 .caracteristicas-principales {
-    width: 100%; /* Ocupa todo el ancho abajo */
+    width: 100%;
     margin-top: 50px;
     border-top: 1px solid #eee;
     padding-top: 30px;
@@ -162,7 +212,6 @@ body {
     border-bottom: 1px solid #ededed;
 }
 
-/* Evitar borde inferior en la última fila */
 .tabla-caracteristicas tr:last-child {
     border-bottom: none;
 }
@@ -201,13 +250,12 @@ body {
     align-items: center;
 }
 
-/* Columna de Links */
 .footer-links-col { 
     display: flex; 
     flex-direction: column; 
     gap: 10px; 
     flex: 1;
-    align-items: flex-start; /* Alinea los links a la izquierda por defecto */
+    align-items: flex-start;
 }
 
 .footer-links-col a { 
@@ -219,10 +267,9 @@ body {
 }
 
 .footer-links-col a:hover {
-    color: #a41e22; /* Rojo WoodTools */
+    color: #a41e22; 
 }
 
-/* Columna de Marcas a Color con Hover */
 .footer-marcas-right { 
     display: flex; 
     gap: 15px; 
@@ -236,17 +283,15 @@ body {
     height: 35px; 
     background-color: white; 
     border-radius: 4px; 
-    padding: 5px; /* Margen blanco alrededor del logo */
+    padding: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto hover: El logo "salta" y genera sombra */
 .footer-marcas-right img:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Información de contacto al fondo */
 .footer-bottom-info {
     text-align: center;
     border-top: 1px solid #333;
@@ -273,15 +318,25 @@ body {
         margin: 20px 10px;
     }
     
-    .producto-imagen, .producto-info { 
+    .producto-imagen { 
         width: 100%; 
         padding: 0; 
         border: none; 
+        flex-direction: column-reverse; /* En celular: la foto grande va arriba y las miniaturas abajo */
     }
-    
+
+    .galeria-miniaturas {
+        flex-direction: row; /* Las miniaturas en horizontal para celular */
+        width: 100%;
+        justify-content: center;
+    }
+
     .producto-info { 
+        width: 100%;
+        padding-left: 0;
         padding-top: 20px; 
         border-top: 1px solid #eee; 
+        border-left: none;
     }
 
     .caracteristicas-principales {
@@ -295,10 +350,10 @@ body {
     }
 
     .footer-links-col {
-        align-items: center; /* Centra los links en móvil */
+        align-items: center; 
     }
 
     .footer-marcas-right {
-        justify-content: center; /* Centra las marcas en móvil */
+        justify-content: center; 
     }
 }
