@@ -58,8 +58,8 @@
         </div>
     </header>
     <main class="producto-container">
-        <div class="producto-imagen">
-            <img src="../../../imagenes/marcas/Franzoi.jpeg" alt="SC Franzoi">
+        <div class="producto-imagen" id="zoom-container" style="overflow: hidden; position: relative; cursor: zoom-in; display: flex; justify-content: center; align-items: center;">
+            <img id="main-image" style="transition: transform 0.1s ease; max-width: 100%; object-fit: contain;" src="../../../imagenes/marcas/Franzoi.jpeg" alt="SC Franzoi">
         </div>
         <div class="producto-info">
             <h1 id="producto-titulo">Sierra para Madera SC</h1>
@@ -104,19 +104,7 @@
         </table>
     </div>
 </main>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const btn = document.getElementById("btn-whatsapp");
-            const sel = document.getElementById("variante-selector");
-            const tit = document.getElementById("producto-titulo").innerText;
-            btn.addEventListener("click", function() {
-                if (sel.value === "") { alert("Seleccioná una medida"); return; }
-                const msg = encodeURIComponent("Hola! Consulto por la " + tit + " medida " + sel.value);
-                window.open("https://wa.me/5491134609057?text=" + msg, "_blank");
-            });
-        });
-    </script>
-
+    
     <script src="../../JS/producto.js"></script>
 </body>
 </html>

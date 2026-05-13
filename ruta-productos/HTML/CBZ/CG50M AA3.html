@@ -63,8 +63,8 @@
 
 
     <main class="producto-container">
-        <div class="producto-imagen">
-            <img src="../../../imagenes/herramientas/CBZ/CG50M AA3-1.png" alt="Inserto / Cuchilla para Cabezal Freud">
+        <div class="producto-imagen" id="zoom-container" style="overflow: hidden; position: relative; cursor: zoom-in; display: flex; justify-content: center; align-items: center;">
+            <img id="main-image" style="transition: transform 0.1s ease; max-width: 100%; object-fit: contain;" src="../../../imagenes/herramientas/CBZ/CG50M AA3-1.png" alt="Inserto / Cuchilla para Cabezal Freud">
         </div>
         <div class="producto-info">
             <p class="marca">Marca: Freud</p>
@@ -101,5 +101,7 @@
             <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
         </div>
     </footer>
+
+    <script src="../../JS/producto.js"></script>
 </body>
 </html>
