@@ -1,9 +1,9 @@
 /* ==========================================================================
-   1. BASE DE CONOCIMIENTO (Con Mapeo Directo a tus Carpetas de Imágenes)
+   1. BASE DE CONOCIMIENTO (Sierras y Familias Exactas de Fresas)
    ========================================================================== */
 const baseDatosProductos = {
     // ---------------------------------------------------------
-    // SIERRAS
+    // SIERRAS Y TRITURADORES
     // ---------------------------------------------------------
     "LG3D": {
         codigoBase: "LG3D", categoriaImg: "Sierras", carpetaImg: "LG3D",
@@ -203,17 +203,35 @@ const baseDatosProductos = {
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Máquinas Seccionadoras" },
         variantes: [{ id: "LI25M 28 BA3", nombre: "LI25M 28 BA3 - D: 120mm" }, { id: "LI25M 31 CA3", nombre: "LI25M 31 CA3 - D: 125mm" }]
     },
+    "TR15MD": {
+        codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS",
+        titulo: "Triturador Doble", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
+        variantes: [{ id: "TR15MD CA3", nombre: "D: 300mm | B: 30mm" }]
+    },
     "TR15MS": {
         codigoBase: "TR15MS", categoriaImg: "Sierras", carpetaImg: "TR15MS",
         titulo: "Triturador Simple", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
         variantes: [{ id: "TR15MS CA3", nombre: "D: 300mm | B: 30mm" }]
     },
-    "TR15MD": {
-        codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS", // Reutiliza carpeta de imágenes
-        titulo: "Triturador Doble", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
-        variantes: [{ id: "TR15MD CA3", nombre: "D: 300mm | B: 30mm" }]
+    "LT14": {
+        codigoBase: "LT14", categoriaImg: "Sierras", carpetaImg: "TR15MS",
+        titulo: "Sierra Trituradora LT14", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
+        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
+    },
+    "LT16": {
+        codigoBase: "LT16", categoriaImg: "Sierras", carpetaImg: "TR15MS",
+        titulo: "Sierra Trituradora LT16", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
+        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
+    },
+    "LT18": {
+        codigoBase: "LT18", categoriaImg: "Sierras", carpetaImg: "TR15MS",
+        titulo: "Sierra Trituradora LT18", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
+        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
     },
     "SCC_Freud": { 
         codigoBase: "SCC_Freud", categoriaImg: "Sierras", carpetaImg: "Incisor", 
@@ -229,9 +247,113 @@ const baseDatosProductos = {
     },
     "SC_Franzoi": { 
         codigoBase: "SC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Sierra con racadores Franzoi", 
-        titulo: "Sierra Franzoi SC", marca: "Franzoi", 
-        caracteristicasBasicas: { "Material": "Metal Duro", "Uso": "Madera y Múltiple" }, 
-        variantes: [{ id: "1", nombre: "Consultar Medidas" }] 
+        titulo: "Sierra Múltiple SC", marca: "Franzoi", 
+        caracteristicasBasicas: { "Material": "Metal Duro", "Uso": "Madera (Múltiples)" }, 
+        variantes: [
+            { id: "SC2504144F", nombre: "SC2504144F - D: 250mm | B: 4.0mm | Z: 14+4" },
+            { id: "SC25042144F", nombre: "SC25042144F - D: 250mm | B: 4.2mm | Z: 14+4" },
+            { id: "SC3004164F", nombre: "SC3004164F - D: 300mm | B: 4.0mm | d: 30mm | Z: 16+4" },
+            { id: "SC30042164F", nombre: "SC30042164F - D: 300mm | B: 4.2mm | Z: 16+4" },
+            { id: "SC35045184F", nombre: "SC35045184F - D: 350mm | B: 4.5mm | Z: 18+4" },
+            { id: "SC35045244F", nombre: "SC35045244F - D: 350mm | B: 4.5mm | Z: 24+4" },
+            { id: "SC60055244F", nombre: "SC60055244F - D: 600mm | B: 5.5mm | d: 30mm | Z: 24+4" }
+        ] 
+    },
+
+    // ---------------------------------------------------------
+    // FRESAS ESTÁNDAR (CON SUS CÓDIGOS REALES DEL SISTEMA)
+    // ---------------------------------------------------------
+    "FRS": {
+        codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "Recta",
+        titulo: "Fresas Rectas HM", marca: "Franzoi / WT",
+        caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar y rebajes", "Material": "HM" },
+        variantes: [
+            { id: "FRS0054", nombre: "FRS0054 (Consultar medidas)" },
+            { id: "FRS0104", nombre: "FRS0104 (Consultar medidas)" },
+            { id: "FRS0106", nombre: "FRS0106 (Consultar medidas)" },
+            { id: "FRS0154", nombre: "FRS0154 (Consultar medidas)" },
+            { id: "FRS0204", nombre: "FRS0204 (Consultar medidas)" },
+            { id: "FRS0304", nombre: "FRS0304 (Consultar medidas)" },
+            { id: "FRS0404", nombre: "FRS0404 (Consultar medidas)" },
+            { id: "FRS0504", nombre: "FRS0504 (Consultar medidas)" },
+            { id: "FRS0804", nombre: "FRS0804 (Consultar medidas)" },
+            { id: "FRS1006", nombre: "FRS1006 (Consultar medidas)" }
+        ]
+    },
+    "FRI": {
+        codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "Recta",
+        titulo: "Fresas Rectas con Incisores HM", marca: "Franzoi / WT",
+        caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar sin astillar", "Material": "HM" },
+        variantes: [
+            { id: "FRI01542", nombre: "FRI01542 (Consultar medidas)" },
+            { id: "FRI01544", nombre: "FRI01544 (Consultar medidas)" },
+            { id: "FRI01566", nombre: "FRI01566 (Consultar medidas)" },
+            { id: "FRI02042", nombre: "FRI02042 (Consultar medidas)" },
+            { id: "FRI02066", nombre: "FRI02066 (Consultar medidas)" },
+            { id: "FRI03044", nombre: "FRI03044 (Consultar medidas)" },
+            { id: "FRI04066", nombre: "FRI04066 (Consultar medidas)" },
+            { id: "FRI05044", nombre: "FRI05044 (Consultar medidas)" },
+            { id: "FRI10066", nombre: "FRI10066 (Consultar medidas)" }
+        ]
+    },
+    "F1M": {
+        codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresas Helicoidales 1 Corte", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Corte en CNC", "Material": "Metal Duro Integral" },
+        variantes: [
+            { id: "F1M01", nombre: "F1M01 (Consultar medidas)" },
+            { id: "F1M03", nombre: "F1M03 (Consultar medidas)" },
+            { id: "F1M04", nombre: "F1M04 (Consultar medidas)" },
+            { id: "F1M08", nombre: "F1M08 (Consultar medidas)" },
+            { id: "F1M09", nombre: "F1M09 (Consultar medidas)" },
+            { id: "F1M10", nombre: "F1M10 (Consultar medidas)" },
+            { id: "F1M12", nombre: "F1M12 (Consultar medidas)" },
+            { id: "F1M13", nombre: "F1M13 (Consultar medidas)" }
+        ]
+    },
+    "F2C": {
+        codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresas de 2 Cortes", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Terminación", "Material": "Metal Duro Integral" },
+        variantes: [
+            { id: "F2C014", nombre: "F2C014 (Consultar medidas)" },
+            { id: "F2C016", nombre: "F2C016 (Consultar medidas)" },
+            { id: "F2C054", nombre: "F2C054 (Consultar medidas)" },
+            { id: "F2C056", nombre: "F2C056 (Consultar medidas)" },
+            { id: "F2C104", nombre: "F2C104 (Consultar medidas)" },
+            { id: "F2C106", nombre: "F2C106 (Consultar medidas)" },
+            { id: "F2C154", nombre: "F2C154 (Consultar medidas)" },
+            { id: "F2C156", nombre: "F2C156 (Consultar medidas)" },
+            { id: "F2C204", nombre: "F2C204 (Consultar medidas)" },
+            { id: "F2C206", nombre: "F2C206 (Consultar medidas)" },
+            { id: "F2C254", nombre: "F2C254 (Consultar medidas)" },
+            { id: "F2C256", nombre: "F2C256 (Consultar medidas)" }
+        ]
+    },
+    "FA": {
+        codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "Recta",
+        titulo: "Fresas de Ranurar", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurado", "Material": "Widia" },
+        variantes: [
+            { id: "FA104", nombre: "FA104 (Consultar medidas)" },
+            { id: "FA106", nombre: "FA106 (Consultar medidas)" },
+            { id: "FA154", nombre: "FA154 (Consultar medidas)" },
+            { id: "FA156", nombre: "FA156 (Consultar medidas)" },
+            { id: "FA204", nombre: "FA204 (Consultar medidas)" },
+            { id: "FA206", nombre: "FA206 (Consultar medidas)" },
+            { id: "FA254", nombre: "FA254 (Consultar medidas)" },
+            { id: "FA256", nombre: "FA256 (Consultar medidas)" },
+            { id: "FA304", nombre: "FA304 (Consultar medidas)" },
+            { id: "FA306", nombre: "FA306 (Consultar medidas)" },
+            { id: "FA354", nombre: "FA354 (Consultar medidas)" },
+            { id: "FA356", nombre: "FA356 (Consultar medidas)" },
+            { id: "FA404", nombre: "FA404 (Consultar medidas)" },
+            { id: "FA406", nombre: "FA406 (Consultar medidas)" },
+            { id: "FA454", nombre: "FA454 (Consultar medidas)" },
+            { id: "FA456", nombre: "FA456 (Consultar medidas)" },
+            { id: "FA504", nombre: "FA504 (Consultar medidas)" },
+            { id: "FA506", nombre: "FA506 (Consultar medidas)" }
+        ]
     },
 
     // ---------------------------------------------------------
@@ -245,10 +367,8 @@ const baseDatosProductos = {
     "MBD": { codigoBase: "MBD", categoriaImg: "Mechas", carpetaImg: "bisagra", titulo: "Fresa Bisagra (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
 
     // ---------------------------------------------------------
-    // FRESAS Y CUCHILLAS
+    // FRESAS Y CUCHILLAS ADICIONALES
     // ---------------------------------------------------------
-    "FRS": { codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "Recta", titulo: "Fresas Rectas HM", marca: "Franzoi / WT", caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar y rebajes" }, variantes: [ { id: "1", nombre: "Consultar medida exacta" } ] },
-    "FRI": { codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "Recta", titulo: "Fresas Rectas con Incisores HM", marca: "Franzoi / WT", caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar sin astillar" }, variantes: [ { id: "1", nombre: "Consultar medida exacta" } ] },
     "CHC": { codigoBase: "CHC", categoriaImg: "Cuchillas", carpetaImg: "plana", titulo: "Insertos de corte planas", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cepillado" }, variantes: [ { id: "1", nombre: "HSS o MD - Consultar largos" } ] },
     "CHCR": { codigoBase: "CHCR", categoriaImg: "Cuchillas", carpetaImg: "dorso ranurado", titulo: "Insertos de dorso ranurado", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Industrial" }, variantes: [ { id: "1", nombre: "Consultar anchos y largos" } ] },
 
@@ -334,27 +454,24 @@ function cargarEstructuraProducto(info) {
     // C. INYECTAR GALERÍA A PRUEBA DE FALLOS CON LOGO WOODTOOLS COMO FALLBACK
     const contenedorImagen = document.querySelector(".producto-imagen");
     if (contenedorImagen) {
-        // Enlace base a la imagen por defecto
         const defaultLogo = "../../../imagenes/logos/WoodTools.png";
         
         let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${info.carpetaImg}/`;
         
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         
-        // Array masivo de combinaciones de fotos
-        const combinaciones = [
-            "1.jpg", "1 (1).jpg", "1.jpeg", "1 (2).jpg", "1.png", "Incisor.png",
-            "2.jpg", "2.jpeg", "2 (1).jpg", "2 (2).jpg", "2.png",
-            "3.jpg", "3.jpeg", "3 (1).jpg", "3 (2).jpg", "3.png",
-            "4.jpg", "4.jpeg", "4 (1).jpg", "4 (2).jpg", "4.png",
-            "5.jpg", "5 (1).jpg", "5.jpeg", "5 (2).jpg", "5.png",
-            "6.jpg", "6.jpeg", "6 (1).jpg", "6 (2).jpg", "6.png"
+        const combinacionesSeguras = [
+            "1.jpg", "1%20(1).jpg", "1.jpeg", "1%20(2).jpg", "1.png", "Incisor.png",
+            "2.jpg", "2.jpeg", "2%20(1).jpg", "2%20(2).jpg", "2.png",
+            "3.jpg", "3.jpeg", "3%20(1).jpg", "3%20(2).jpg", "3.png",
+            "4.jpg", "4.jpeg", "4%20(1).jpg", "4%20(2).jpg", "4.png",
+            "5.jpg", "5%20(1).jpg", "5.jpeg", "5%20(2).jpg", "5.png",
+            "6.jpg", "6.jpeg", "6%20(1).jpg", "6%20(2).jpg", "6.png"
         ];
 
-        combinaciones.forEach(nombreFoto => {
-            let rutaSegura = `${basePath}${nombreFoto}`.replace(/ /g, "%20");
+        combinacionesSeguras.forEach(nombreFotoSeguro => {
+            let rutaSegura = `${basePath}${nombreFotoSeguro}`;
             
-            // Onload: Si es la primera que carga bien (el main image sigue con el logo), se asigna a la principal.
             galeriaHTML += `<img src="${rutaSegura}" class="mini-img" 
                 onload="window.setMainImage(this)" 
                 onerror="this.style.display='none'; this.classList.remove('mini-img');" 
@@ -371,7 +488,6 @@ function cargarEstructuraProducto(info) {
         
         contenedorImagen.innerHTML = galeriaHTML;
 
-        // Retrasamos un poco el zoom para dar tiempo a que carguen las fotos reales
         setTimeout(activarZoom, 200);
     }
 
@@ -399,7 +515,6 @@ function cargarEstructuraProducto(info) {
     });
 }
 
-// Función helper: la primera foto real en cargar pasa a ser la foto grande
 window.setMainImage = function(elemento) {
     const mainImage = document.getElementById("main-image");
     if (mainImage && !mainImage.hasAttribute("data-loaded")) {
@@ -415,7 +530,6 @@ function activarZoom() {
 
     if (contenedorZoom && imagenPrincipal) {
         contenedorZoom.addEventListener("mousemove", function(e) {
-            // Solo hace zoom si la imagen NO ES el logo de WoodTools
             if(!imagenPrincipal.src.includes('WoodTools.png')) {
                 const rect = contenedorZoom.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
