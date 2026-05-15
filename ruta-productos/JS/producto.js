@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. BASE DE CONOCIMIENTO (Sierras y Familias Exactas de Fresas)
+   1. BASE DE CONOCIMIENTO (Sierras, Fresas Puras y Mechas)
    ========================================================================== */
 const baseDatosProductos = {
     // ---------------------------------------------------------
@@ -261,98 +261,98 @@ const baseDatosProductos = {
     },
 
     // ---------------------------------------------------------
-    // FRESAS ESTÁNDAR (CON SUS CÓDIGOS REALES DEL SISTEMA)
+    // FRESAS ESTÁNDAR (PURAS)
     // ---------------------------------------------------------
     "FRS": {
         codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresas Rectas HM", marca: "Franzoi / WT",
-        caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar y rebajes", "Material": "HM" },
+        titulo: "Fresas Rectas HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurar y rebajes", "Material": "HM" },
         variantes: [
-            { id: "FRS0054", nombre: "FRS0054 (Consultar medidas)" },
-            { id: "FRS0104", nombre: "FRS0104 (Consultar medidas)" },
-            { id: "FRS0106", nombre: "FRS0106 (Consultar medidas)" },
-            { id: "FRS0154", nombre: "FRS0154 (Consultar medidas)" },
-            { id: "FRS0204", nombre: "FRS0204 (Consultar medidas)" },
-            { id: "FRS0304", nombre: "FRS0304 (Consultar medidas)" },
-            { id: "FRS0404", nombre: "FRS0404 (Consultar medidas)" },
-            { id: "FRS0504", nombre: "FRS0504 (Consultar medidas)" },
-            { id: "FRS0804", nombre: "FRS0804 (Consultar medidas)" },
-            { id: "FRS1006", nombre: "FRS1006 (Consultar medidas)" }
+            { id: "FRS0054", nombre: "FRS0054 - FRESA RECTA DE #5mm Z:4" },
+            { id: "FRS0104", nombre: "FRS0104 - FRESA RECTA DE #10mm Z:4" },
+            { id: "FRS0106", nombre: "FRS0106 - FRESA RECTA DE #10mm Z:6" },
+            { id: "FRS0154", nombre: "FRS0154 - FRESA RECTA DE #15mm Z:4" },
+            { id: "FRS0204", nombre: "FRS0204 - FRESA RECTA DE #20mm Z:4 | Axial" },
+            { id: "FRS0304", nombre: "FRS0304 - FRESA RECTA DE #30mm Z:4 | Axial" },
+            { id: "FRS0404", nombre: "FRS0404 - FRESA RECTA DE #40mm Z:4 | Axial" },
+            { id: "FRS0504", nombre: "FRS0504 - FRESA RECTA DE #50mm Z:4 | Axial" },
+            { id: "FRS0804", nombre: "FRS0804 - FRESA RECTA DE #80mm Z:4 | Axial" },
+            { id: "FRS1006", nombre: "FRS1006 - FRESA RECTA DE 100mm Z:6 | Axial" }
         ]
     },
     "FRI": {
         codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresas Rectas con Incisores HM", marca: "Franzoi / WT",
-        caracteristicasBasicas: { "Marca": "Franzoi / WT", "Uso": "Ranurar sin astillar", "Material": "HM" },
+        titulo: "Fresas Rectas con Incisores HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurar sin astillar", "Material": "HM" },
         variantes: [
-            { id: "FRI01542", nombre: "FRI01542 (Consultar medidas)" },
-            { id: "FRI01544", nombre: "FRI01544 (Consultar medidas)" },
-            { id: "FRI01566", nombre: "FRI01566 (Consultar medidas)" },
-            { id: "FRI02042", nombre: "FRI02042 (Consultar medidas)" },
-            { id: "FRI02066", nombre: "FRI02066 (Consultar medidas)" },
-            { id: "FRI03044", nombre: "FRI03044 (Consultar medidas)" },
-            { id: "FRI04066", nombre: "FRI04066 (Consultar medidas)" },
-            { id: "FRI05044", nombre: "FRI05044 (Consultar medidas)" },
-            { id: "FRI10066", nombre: "FRI10066 (Consultar medidas)" }
+            { id: "FRI01542", nombre: "FRI01542 - FR.RECTA C/INCISOR #15mm Z:4+2" },
+            { id: "FRI01544", nombre: "FRI01544 - FR.RECTA C/INCISOR #15mm Z:4+4" },
+            { id: "FRI01566", nombre: "FRI01566 - FR.RECTA C/INCISOR #15mm Z:6+6" },
+            { id: "FRI02042", nombre: "FRI02042 - FR.RECTA C/INCISOR #20mm Z:4+2" },
+            { id: "FRI02066", nombre: "FRI02066 - FR.RECTA C/INCISOR #20mm Z:6+6" },
+            { id: "FRI03044", nombre: "FRI03044 - FR.RECTA C/INCISOR #30mm Z:4+4" },
+            { id: "FRI04066", nombre: "FRI04066 - FR.RECTA C/INCISOR #40mm Z:6+6" },
+            { id: "FRI05044", nombre: "FRI05044 - FR.RECTA C/INCISOR #50mm Z:4+4" },
+            { id: "FRI10066", nombre: "FRI10066 - FR.RECTA C/INCISOR 100mm Z:6+6" }
         ]
     },
     "F1M": {
         codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresas Helicoidales 1 Corte", marca: "Franzoi",
-        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Corte en CNC", "Material": "Metal Duro Integral" },
+        titulo: "Fresas para Machimbre 1", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Despiece de Machimbre" },
         variantes: [
-            { id: "F1M01", nombre: "F1M01 (Consultar medidas)" },
-            { id: "F1M03", nombre: "F1M03 (Consultar medidas)" },
-            { id: "F1M04", nombre: "F1M04 (Consultar medidas)" },
-            { id: "F1M08", nombre: "F1M08 (Consultar medidas)" },
-            { id: "F1M09", nombre: "F1M09 (Consultar medidas)" },
-            { id: "F1M10", nombre: "F1M10 (Consultar medidas)" },
-            { id: "F1M12", nombre: "F1M12 (Consultar medidas)" },
-            { id: "F1M13", nombre: "F1M13 (Consultar medidas)" }
+            { id: "F1M01", nombre: "F1M01 - FR. MACHO | 1/2´ A 3/4´ Z=4" },
+            { id: "F1M03", nombre: "F1M03 - FR. RECTA PARA HEMBRA | 1/2´ A 3/4´ Z=4" },
+            { id: "F1M04", nombre: "F1M04 - JGO.S.C. REG.HEMBRA | 1/2´ A 3/4´ Z=16" },
+            { id: "F1M08", nombre: "F1M08 - FR. CHANFLE 23º | 1/2´ A 3/4´ Z=4" },
+            { id: "F1M09", nombre: "F1M09 - FR. CHANFLE 45º | 1/2´ A 3/4´ Z=4" },
+            { id: "F1M10", nombre: "F1M10 - Jgo. Reg. Hembra Mach. Piso | D=180/200 d=30 Z=24+6+6" },
+            { id: "F1M12", nombre: "F1M12 - FR. BAJOFONDO C/S BISEL | 1/2´ A 3/4´ Z=4 L=10mm" },
+            { id: "F1M13", nombre: "F1M13 - FR. BAJOFONDO C/S BISEL | 1/2´ A 3/4´ Z=4 L=15mm" }
         ]
     },
     "F2C": {
         codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresas de 2 Cortes", marca: "Franzoi",
-        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Terminación", "Material": "Metal Duro Integral" },
+        titulo: "Fresas de Medio Círculo", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Moldura de Medio Círculo" },
         variantes: [
-            { id: "F2C014", nombre: "F2C014 (Consultar medidas)" },
-            { id: "F2C016", nombre: "F2C016 (Consultar medidas)" },
-            { id: "F2C054", nombre: "F2C054 (Consultar medidas)" },
-            { id: "F2C056", nombre: "F2C056 (Consultar medidas)" },
-            { id: "F2C104", nombre: "F2C104 (Consultar medidas)" },
-            { id: "F2C106", nombre: "F2C106 (Consultar medidas)" },
-            { id: "F2C154", nombre: "F2C154 (Consultar medidas)" },
-            { id: "F2C156", nombre: "F2C156 (Consultar medidas)" },
-            { id: "F2C204", nombre: "F2C204 (Consultar medidas)" },
-            { id: "F2C206", nombre: "F2C206 (Consultar medidas)" },
-            { id: "F2C254", nombre: "F2C254 (Consultar medidas)" },
-            { id: "F2C256", nombre: "F2C256 (Consultar medidas)" }
+            { id: "F2C014", nombre: "F2C014 - FR. 1/2 CIRCULO DE 1/2 Z=4" },
+            { id: "F2C016", nombre: "F2C016 - FR. 1/2 CIRCULO DE 1/2 Z=6" },
+            { id: "F2C054", nombre: "F2C054 - FR. 1/2 CIRCULO DE 5/8 Z=4" },
+            { id: "F2C056", nombre: "F2C056 - FR. 1/2 CIRCULO DE 5/8 Z=6" },
+            { id: "F2C104", nombre: "F2C104 - FR. 1/2 CIRCULO DE 3/4 Z=4" },
+            { id: "F2C106", nombre: "F2C106 - FR. 1/2 CIRCULO DE 3/4 Z=6" },
+            { id: "F2C154", nombre: "F2C154 - FR. 1/2 CIRCULO DE 1 Z=4" },
+            { id: "F2C156", nombre: "F2C156 - FR. 1/2 CIRCULO DE 1 Z=6" },
+            { id: "F2C204", nombre: "F2C204 - FR. 1/2 CIRCULO DE 1 1/2 Z=4" },
+            { id: "F2C206", nombre: "F2C206 - FR. 1/2 CIRCULO DE 1 1/2 Z=6" },
+            { id: "F2C254", nombre: "F2C254 - FR. 1/2 CIRCULO DE 2 Z=4" },
+            { id: "F2C256", nombre: "F2C256 - FR. 1/2 CIRCULO DE 2 Z=6" }
         ]
     },
     "FA": {
         codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresas de Ranurar", marca: "Franzoi",
-        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurado", "Material": "Widia" },
+        titulo: "Fresas de Ángulo 25° a 45°", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ángulo" },
         variantes: [
-            { id: "FA104", nombre: "FA104 (Consultar medidas)" },
-            { id: "FA106", nombre: "FA106 (Consultar medidas)" },
-            { id: "FA154", nombre: "FA154 (Consultar medidas)" },
-            { id: "FA156", nombre: "FA156 (Consultar medidas)" },
-            { id: "FA204", nombre: "FA204 (Consultar medidas)" },
-            { id: "FA206", nombre: "FA206 (Consultar medidas)" },
-            { id: "FA254", nombre: "FA254 (Consultar medidas)" },
-            { id: "FA256", nombre: "FA256 (Consultar medidas)" },
-            { id: "FA304", nombre: "FA304 (Consultar medidas)" },
-            { id: "FA306", nombre: "FA306 (Consultar medidas)" },
-            { id: "FA354", nombre: "FA354 (Consultar medidas)" },
-            { id: "FA356", nombre: "FA356 (Consultar medidas)" },
-            { id: "FA404", nombre: "FA404 (Consultar medidas)" },
-            { id: "FA406", nombre: "FA406 (Consultar medidas)" },
-            { id: "FA454", nombre: "FA454 (Consultar medidas)" },
-            { id: "FA456", nombre: "FA456 (Consultar medidas)" },
-            { id: "FA504", nombre: "FA504 (Consultar medidas)" },
-            { id: "FA506", nombre: "FA506 (Consultar medidas)" }
+            { id: "FA104", nombre: "FA104 - FR. ANGULO 25° A 45° 10mm Z:4" },
+            { id: "FA106", nombre: "FA106 - FR. ANGULO 25° A 45° 10mm Z:6" },
+            { id: "FA154", nombre: "FA154 - FR. ANGULO 25° A 45° 15mm Z:4" },
+            { id: "FA156", nombre: "FA156 - FR. ANGULO 25° A 45° 15mm Z:6" },
+            { id: "FA204", nombre: "FA204 - FR. ANGULO 25° A 45° 20mm Z:4" },
+            { id: "FA206", nombre: "FA206 - FR. ANGULO 25° A 45° 20mm Z:6" },
+            { id: "FA254", nombre: "FA254 - FR. ANGULO 25° A 45° 25mm Z:4" },
+            { id: "FA256", nombre: "FA256 - FR. ANGULO 25° A 45° 25mm Z:6" },
+            { id: "FA304", nombre: "FA304 - FR. ANGULO 25° A 45° 30mm Z:4" },
+            { id: "FA306", nombre: "FA306 - FR. ANGULO 25° A 45° 30mm Z:6" },
+            { id: "FA354", nombre: "FA354 - FR. ANGULO 25° A 45° 35mm Z:4" },
+            { id: "FA356", nombre: "FA356 - FR. ANGULO 25° A 45° 35mm Z:6" },
+            { id: "FA404", nombre: "FA404 - FR. ANGULO 25° A 45° 40mm Z:4" },
+            { id: "FA406", nombre: "FA406 - FR. ANGULO 25° A 45° 40mm Z:6" },
+            { id: "FA454", nombre: "FA454 - FR. ANGULO 25° A 45° 45mm Z:4" },
+            { id: "FA456", nombre: "FA456 - FR. ANGULO 25° A 45° 45mm Z:6" },
+            { id: "FA504", nombre: "FA504 - FR. ANGULO 25° A 45° 50mm Z:4" },
+            { id: "FA506", nombre: "FA506 - FR. ANGULO 25° A 45° 50mm Z:6" }
         ]
     },
 
@@ -365,12 +365,15 @@ const baseDatosProductos = {
     "MCD": { codigoBase: "MCD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Mecha Ciega (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "MBI": { codigoBase: "MBI", categoriaImg: "Mechas", carpetaImg: "bisagra", titulo: "Fresa Bisagra (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "MBD": { codigoBase: "MBD", categoriaImg: "Mechas", carpetaImg: "bisagra", titulo: "Fresa Bisagra (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-
-    // ---------------------------------------------------------
-    // FRESAS Y CUCHILLAS ADICIONALES
-    // ---------------------------------------------------------
-    "CHC": { codigoBase: "CHC", categoriaImg: "Cuchillas", carpetaImg: "plana", titulo: "Insertos de corte planas", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cepillado" }, variantes: [ { id: "1", nombre: "HSS o MD - Consultar largos" } ] },
-    "CHCR": { codigoBase: "CHCR", categoriaImg: "Cuchillas", carpetaImg: "dorso ranurado", titulo: "Insertos de dorso ranurado", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Industrial" }, variantes: [ { id: "1", nombre: "Consultar anchos y largos" } ] },
+    "BRDD": { codigoBase: "BRDD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Broca para Defondadora", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Defondado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MID": { codigoBase: "MID", categoriaImg: "Mechas", carpetaImg: "integral", titulo: "Mecha Integral p/ CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
+    "MIIR": { codigoBase: "MIIR", categoriaImg: "Mechas", carpetaImg: "integral", titulo: "Mecha Integral Recta p/ CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
+    "MAM": { codigoBase: "MAM", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mandril Adaptador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción de herramientas" }, variantes: [{ id: "1", nombre: "Consultar modelo" }] },
+    "PINZAER": { codigoBase: "PINZAER", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Pinza ER para Sujeción", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción en Mandriles" }, variantes: [{ id: "1", nombre: "Consultar ER32 / ER40" }] },
+    "MCAR": { codigoBase: "MCAR", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Mecha Ciega con Avellanador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforado y avellanado simultáneo" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MBA": { codigoBase: "MBA", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mecha para Barrenos", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Barrenado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "AVD": { codigoBase: "AVD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Avellanador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Avellanado" }, variantes: [{ id: "1", nombre: "Consultar modelos (AVD / AVI)" }] },
+    "Router_Franzoi": { codigoBase: "Router_Franzoi", categoriaImg: "Mechas", carpetaImg: "compresión", titulo: "Mecha para Router CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Mecanizado Router CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
 
     // ---------------------------------------------------------
     // HERRAMIENTAS PCD DIAMANTE
@@ -390,14 +393,12 @@ let codigoReal = "";
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. Obtener código de la URL
     let ruta = window.location.pathname;
     let nombreArchivo = ruta.split('/').pop();
     let codigoLimpio = decodeURIComponent(nombreArchivo.replace('.html', '').trim());
     
     codigoReal = codigoLimpio; 
 
-    // Buscar coincidencias
     let keys = Object.keys(baseDatosProductos).sort((a, b) => b.length - a.length);
     for (let key of keys) {
         if (codigoReal.startsWith(key) || codigoReal.includes(key)) {
@@ -427,7 +428,6 @@ function cargarEstructuraProducto(info) {
         };
     }
 
-    // A. TÍTULO CON FORMATO
     const tituloDOM = document.getElementById("producto-titulo");
     const marcaDOM = document.querySelector(".producto-info .marca");
     
@@ -437,7 +437,6 @@ function cargarEstructuraProducto(info) {
     }
     if (marcaDOM) marcaDOM.innerText = `Marca: ${info.marca}`;
 
-    // B. SELECTOR
     const selector = document.getElementById("variante-selector");
     if (selector) {
         selector.innerHTML = ""; 
@@ -451,13 +450,10 @@ function cargarEstructuraProducto(info) {
         }
     }
 
-    // C. INYECTAR GALERÍA A PRUEBA DE FALLOS CON LOGO WOODTOOLS COMO FALLBACK
     const contenedorImagen = document.querySelector(".producto-imagen");
     if (contenedorImagen) {
         const defaultLogo = "../../../imagenes/logos/WoodTools.png";
-        
         let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${info.carpetaImg}/`;
-        
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         
         const combinacionesSeguras = [
@@ -471,7 +467,6 @@ function cargarEstructuraProducto(info) {
 
         combinacionesSeguras.forEach(nombreFotoSeguro => {
             let rutaSegura = `${basePath}${nombreFotoSeguro}`;
-            
             galeriaHTML += `<img src="${rutaSegura}" class="mini-img" 
                 onload="window.setMainImage(this)" 
                 onerror="this.style.display='none'; this.classList.remove('mini-img');" 
@@ -479,19 +474,15 @@ function cargarEstructuraProducto(info) {
         });
         
         galeriaHTML += `</div>`;
-        
         galeriaHTML += `
             <div id="zoom-container" class="zoom-container">
                 <img id="main-image" src="${defaultLogo}" alt="${info.titulo}">
             </div>
         `;
-        
         contenedorImagen.innerHTML = galeriaHTML;
-
         setTimeout(activarZoom, 200);
     }
 
-    // D. RELLENAR TABLA SIN EL CÓDIGO
     const filas = document.querySelectorAll(".tabla-caracteristicas tr");
     filas.forEach(fila => {
         const th = fila.querySelector(".caracteristica-label");
