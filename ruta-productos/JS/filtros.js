@@ -1,7 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // =====================================================================
+    // DETECTAR SELECTORES DINÁMICAMENTE
+    // =====================================================================
+    const gridContainer = document.getElementById('ml-grid') || 
+                          document.getElementById('contenedor-productos');
+    
     const filterButtons = document.querySelectorAll('.filter-btn:not(#btn-limpiar)');
     const btnLimpiar = document.getElementById('btn-limpiar');
-    const productos = document.querySelectorAll('.product-card');
+    const noResultsDiv = document.getElementById('ml-no-data');
+    
+    // Si no encontramos el contenedor, salir
+    if (!gridContainer) return;
+    
+    const productos = gridContainer.querySelectorAll('.product-card');
 
     // =====================================================================
     // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas y Mechas intactos)
@@ -58,27 +69,59 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================================================
     // 2. ESTADO DE LOS FILTROS
     // =====================================================================
-    let filtrosActivos = { categoria: 'todos', marca: 'todos', tipo: 'todos' };
+    let filtrosActivos = { 
+        categoria: 'todos', 
+        marca: 'todos', 
+        tipo: 'todos',
+        formato: 'todos',
+        material: 'todos'
+    };
 
     // =====================================================================
     // 3. LÓGICA PRINCIPAL DE FILTRADO
     // =====================================================================
     function aplicarFiltros() {
+        let productosVisibles = 0;
+
         productos.forEach(producto => {
-            const catProd = producto.getAttribute('data-categoria') || 'todos';
-            const marcaProd = producto.getAttribute('data-marca') || 'todos';
-            const tipoProd = producto.getAttribute('data-tipo') || 'todos';
+            // Obtener atributos del producto (soporta múltiples nombres)
+            const atributos = {
+                categoria: producto.getAttribute('data-categoria'),
+                marca: producto.getAttribute('data-marca'),
+                tipo: producto.getAttribute('data-tipo'),
+                formato: producto.getAttribute('data-formato'),
+                material: producto.getAttribute('data-material')
+            };
 
-            const coincideCat = (filtrosActivos.categoria === 'todos' || filtrosActivos.categoria === catProd);
-            const coincideMarca = (filtrosActivos.marca === 'todos' || filtrosActivos.marca === marcaProd);
-            const coincideTipo = (filtrosActivos.tipo === 'todos' || filtrosActivos.tipo === tipoProd);
+            // Verificar coincidencias
+            let mostrar = true;
 
-            if (coincideCat && coincideMarca && coincideTipo) {
-                producto.style.display = 'flex'; 
+            for (const [filtro, valor] of Object.entries(filtrosActivos)) {
+                if (valor !== 'todos') {
+                    const valorProducto = atributos[filtro];
+                    if (!valorProducto || valorProducto.toLowerCase() !== valor.toLowerCase()) {
+                        mostrar = false;
+                        break;
+                    }
+                }
+            }
+
+            if (mostrar) {
+                producto.style.display = 'flex';
+                productosVisibles++;
             } else {
                 producto.style.display = 'none';
             }
         });
+
+        // Mostrar/ocultar mensaje de "sin resultados" si existe
+        if (noResultsDiv) {
+            if (productosVisibles === 0) {
+                noResultsDiv.style.display = 'flex';
+            } else {
+                noResultsDiv.style.display = 'none';
+            }
+        }
     }
 
     // =====================================================================
@@ -129,7 +172,14 @@ document.addEventListener("DOMContentLoaded", function() {
         btnLimpiar.addEventListener('click', function(e) {
             e.preventDefault();
             
-            filtrosActivos = { categoria: 'todos', marca: 'todos', tipo: 'todos' };
+            filtrosActivos = { 
+                categoria: 'todos', 
+                marca: 'todos', 
+                tipo: 'todos',
+                formato: 'todos',
+                material: 'todos'
+            };
+            
             filterButtons.forEach(btn => btn.classList.remove('activo'));
             window.history.replaceState({}, document.title, window.location.pathname);
             aplicarFiltros();
