@@ -375,6 +375,387 @@ const baseDatosProductos = {
     "AVD": { codigoBase: "AVD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Avellanador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Avellanado" }, variantes: [{ id: "1", nombre: "Consultar modelos (AVD / AVI)" }] },
     "Router_Franzoi": { codigoBase: "Router_Franzoi", categoriaImg: "Mechas", carpetaImg: "compresión", titulo: "Mecha para Router CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Mecanizado Router CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
 
+    "F04C014": {
+        codigoBase: "F04C014", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C014", nombre: "F04C014 - Consultar medidas" }]
+    },
+    "F04C016": {
+        codigoBase: "F04C016", categoriaImg: "Fresas", carpetaImg: "F04C016",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C016", nombre: "F04C016 - Consultar medidas" }]
+    },
+    "F04C054": {
+        codigoBase: "F04C054", categoriaImg: "Fresas", carpetaImg: "F04C054",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C054", nombre: "F04C054 - Consultar medidas" }]
+    },
+    "F04C056": {
+        codigoBase: "F04C056", categoriaImg: "Fresas", carpetaImg: "F04C056",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C056", nombre: "F04C056 - Consultar medidas" }]
+    },
+    "F1M01": {
+        codigoBase: "F1M01", categoriaImg: "Fresas", carpetaImg: "F1M01",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M01", nombre: "F1M01 - Consultar medidas" }]
+    },
+    "F1M03": {
+        codigoBase: "F1M03", categoriaImg: "Fresas", carpetaImg: "F1M03",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M03", nombre: "F1M03 - Consultar medidas" }]
+    },
+    "FP2226": {
+        codigoBase: "FP2226", categoriaImg: "Fresas", carpetaImg: "FP2226",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP2226", nombre: "FP2226 - Consultar medidas" }]
+    },
+    "FP402": {
+        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP402", nombre: "FP402 - Consultar medidas" }]
+    },
+    "FRG0510": {
+        codigoBase: "FRG0510", categoriaImg: "Fresas", carpetaImg: "FRG0510",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG0510", nombre: "FRG0510 - Consultar medidas" }]
+    },
+    "FRG1039": {
+        codigoBase: "FRG1039", categoriaImg: "Fresas", carpetaImg: "FRG1039",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG1039", nombre: "FRG1039 - Consultar medidas" }]
+    },
+    "FRI01566": {
+        codigoBase: "FRI01566", categoriaImg: "Fresas", carpetaImg: "FRI01566",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRI01566", nombre: "FRI01566 - Consultar medidas" }]
+    },
+    "FRP5533": {
+        codigoBase: "FRP5533", categoriaImg: "Fresas", carpetaImg: "FRP5533",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRP5533", nombre: "FRP5533 - Consultar medidas" }]
+    },
+    "FRS0606": {
+        codigoBase: "FRS0606", categoriaImg: "Fresas", carpetaImg: "FRS0606",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0606", nombre: "FRS0606 - Consultar medidas" }]
+    },
+    "FRS0704": {
+        codigoBase: "FRS0704", categoriaImg: "Fresas", carpetaImg: "FRS0704",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0704", nombre: "FRS0704 - Consultar medidas" }]
+    },
+    "JFDE4": {
+        codigoBase: "JFDE4", categoriaImg: "Fresas", carpetaImg: "JFDE4",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFDE4", nombre: "JFDE4 - Consultar medidas" }]
+    },
+    "JFE254": {
+        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE254", nombre: "JFE254 - Consultar medidas" }]
+    },
+    "JFE5022": {
+        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE5022", nombre: "JFE5022 - Consultar medidas" }]
+    },
+    "JFE8Z124": {
+        codigoBase: "JFE8Z124", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE8Z124", nombre: "JFE8Z124 - Consultar medidas" }]
+    },
+    "JFMPV14": {
+        codigoBase: "JFMPV14", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFMPV14", nombre: "JFMPV14 - Consultar medidas" }]
+    },
+    "JFPMS10": {
+        codigoBase: "JFPMS10", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFPMS10", nombre: "JFPMS10 - Consultar medidas" }]
+    },
+    "LIMMUE": {
+        codigoBase: "LIMMUE", categoriaImg: "Fresas", carpetaImg: "LIMMUE",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "LIMMUE", nombre: "LIMMUE - Consultar medidas" }]
+    },
+
+    "F04C014": {
+        codigoBase: "F04C014", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C014", nombre: "F04C014 - Consultar medidas" }]
+    },
+    "F04C016": {
+        codigoBase: "F04C016", categoriaImg: "Fresas", carpetaImg: "F04C016",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C016", nombre: "F04C016 - Consultar medidas" }]
+    },
+    "F04C054": {
+        codigoBase: "F04C054", categoriaImg: "Fresas", carpetaImg: "F04C054",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C054", nombre: "F04C054 - Consultar medidas" }]
+    },
+    "F04C056": {
+        codigoBase: "F04C056", categoriaImg: "Fresas", carpetaImg: "F04C056",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C056", nombre: "F04C056 - Consultar medidas" }]
+    },
+    "F1M01": {
+        codigoBase: "F1M01", categoriaImg: "Fresas", carpetaImg: "F1M01",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M01", nombre: "F1M01 - Consultar medidas" }]
+    },
+    "F1M03": {
+        codigoBase: "F1M03", categoriaImg: "Fresas", carpetaImg: "F1M03",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M03", nombre: "F1M03 - Consultar medidas" }]
+    },
+    "FP2226": {
+        codigoBase: "FP2226", categoriaImg: "Fresas", carpetaImg: "FP2226",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP2226", nombre: "FP2226 - Consultar medidas" }]
+    },
+    "FP402": {
+        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP402", nombre: "FP402 - Consultar medidas" }]
+    },
+    "FRG0510": {
+        codigoBase: "FRG0510", categoriaImg: "Fresas", carpetaImg: "FRG0510",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG0510", nombre: "FRG0510 - Consultar medidas" }]
+    },
+    "FRG1039": {
+        codigoBase: "FRG1039", categoriaImg: "Fresas", carpetaImg: "FRG1039",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG1039", nombre: "FRG1039 - Consultar medidas" }]
+    },
+    "FRI01566": {
+        codigoBase: "FRI01566", categoriaImg: "Fresas", carpetaImg: "FRI01566",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRI01566", nombre: "FRI01566 - Consultar medidas" }]
+    },
+    "FRP5533": {
+        codigoBase: "FRP5533", categoriaImg: "Fresas", carpetaImg: "FRP5533",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRP5533", nombre: "FRP5533 - Consultar medidas" }]
+    },
+    "FRS0606": {
+        codigoBase: "FRS0606", categoriaImg: "Fresas", carpetaImg: "FRS0606",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0606", nombre: "FRS0606 - Consultar medidas" }]
+    },
+    "FRS0704": {
+        codigoBase: "FRS0704", categoriaImg: "Fresas", carpetaImg: "FRS0704",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0704", nombre: "FRS0704 - Consultar medidas" }]
+    },
+    "JFDE4": {
+        codigoBase: "JFDE4", categoriaImg: "Fresas", carpetaImg: "JFDE4",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFDE4", nombre: "JFDE4 - Consultar medidas" }]
+    },
+    "JFE254": {
+        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE254", nombre: "JFE254 - Consultar medidas" }]
+    },
+    "JFE5022": {
+        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE5022", nombre: "JFE5022 - Consultar medidas" }]
+    },
+    "JFE8Z124": {
+        codigoBase: "JFE8Z124", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE8Z124", nombre: "JFE8Z124 - Consultar medidas" }]
+    },
+    "JFMPV14": {
+        codigoBase: "JFMPV14", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFMPV14", nombre: "JFMPV14 - Consultar medidas" }]
+    },
+    "JFPMS10": {
+        codigoBase: "JFPMS10", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFPMS10", nombre: "JFPMS10 - Consultar medidas" }]
+    },
+    "LIMMUE": {
+        codigoBase: "LIMMUE", categoriaImg: "Fresas", carpetaImg: "LIMMUE",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "LIMMUE", nombre: "LIMMUE - Consultar medidas" }]
+    },
+
+    "F04C014": {
+        codigoBase: "F04C014", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C014", nombre: "F04C014 - Consultar medidas" }]
+    },
+    "F04C016": {
+        codigoBase: "F04C016", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C016", nombre: "F04C016 - Consultar medidas" }]
+    },
+    "F04C054": {
+        codigoBase: "F04C054", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C054", nombre: "F04C054 - Consultar medidas" }]
+    },
+    "F04C056": {
+        codigoBase: "F04C056", categoriaImg: "Fresas", carpetaImg: "F04C014",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F04C056", nombre: "F04C056 - Consultar medidas" }]
+    },
+    "F1M01": {
+        codigoBase: "F1M01", categoriaImg: "Fresas", carpetaImg: "F1M01",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M01", nombre: "F1M01 - Consultar medidas" }]
+    },
+    "F1M03": {
+        codigoBase: "F1M03", categoriaImg: "Fresas", carpetaImg: "F1M03",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "F1M03", nombre: "F1M03 - Consultar medidas" }]
+    },
+    "FP2226": {
+        codigoBase: "FP2226", categoriaImg: "Fresas", carpetaImg: "FP2226",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP2226", nombre: "FP2226 - Consultar medidas" }]
+    },
+    "FP402": {
+        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FP402", nombre: "FP402 - Consultar medidas" }]
+    },
+    "FRG0510": {
+        codigoBase: "FRG0510", categoriaImg: "Fresas", carpetaImg: "FRG0510",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG0510", nombre: "FRG0510 - Consultar medidas" }]
+    },
+    "FRG1039": {
+        codigoBase: "FRG1039", categoriaImg: "Fresas", carpetaImg: "FRG1039",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRG1039", nombre: "FRG1039 - Consultar medidas" }]
+    },
+    "FRI01566": {
+        codigoBase: "FRI01566", categoriaImg: "Fresas", carpetaImg: "FRI01566",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRI01566", nombre: "FRI01566 - Consultar medidas" }]
+    },
+    "FRP5533": {
+        codigoBase: "FRP5533", categoriaImg: "Fresas", carpetaImg: "FRP5533",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRP5533", nombre: "FRP5533 - Consultar medidas" }]
+    },
+    "FRS0606": {
+        codigoBase: "FRS0606", categoriaImg: "Fresas", carpetaImg: "FRS0606",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0606", nombre: "FRS0606 - Consultar medidas" }]
+    },
+    "FRS0704": {
+        codigoBase: "FRS0704", categoriaImg: "Fresas", carpetaImg: "FRS0704",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "FRS0704", nombre: "FRS0704 - Consultar medidas" }]
+    },
+    "JFDE4": {
+        codigoBase: "JFDE4", categoriaImg: "Fresas", carpetaImg: "JFDE4",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFDE4", nombre: "JFDE4 - Consultar medidas" }]
+    },
+    "JFE254": {
+        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE254", nombre: "JFE254 - Consultar medidas" }]
+    },
+    "JFE5022": {
+        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE5022", nombre: "JFE5022 - Consultar medidas" }]
+    },
+    "JFE8Z124": {
+        codigoBase: "JFE8Z124", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFE8Z124", nombre: "JFE8Z124 - Consultar medidas" }]
+    },
+    "JFMPV14": {
+        codigoBase: "JFMPV14", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFMPV14", nombre: "JFMPV14 - Consultar medidas" }]
+    },
+    "JFPMS10": {
+        codigoBase: "JFPMS10", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "JFPMS10", nombre: "JFPMS10 - Consultar medidas" }]
+    },
+    "LIMMUE": {
+        codigoBase: "LIMMUE", categoriaImg: "Fresas", carpetaImg: "LIMMUE",
+        titulo: "Fresa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Fresas para madera", "Material": "Metal Duro" },
+        variantes: [{ id: "LIMMUE", nombre: "LIMMUE - Consultar medidas" }]
+    },
+
     // ---------------------------------------------------------
     // HERRAMIENTAS PCD DIAMANTE
     // ---------------------------------------------------------
