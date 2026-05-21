@@ -1,4 +1,32 @@
-
+/* ==========================================
+    1. BASE DE CONOCIMIENTO (Sierras, Fresas Puras y Mechas)
+   ========================================== */
+const baseDatosProductos = {
+    // ---------------------------------------------------------
+    // SIERRAS Y TRTITURADOS
+    // ---------------------------------------------------------
+    "LG3D": {
+        codigoBase: "LG3D", categoriaImg: "Sierras", carpetaImg: "LG3D",
+        titulo: "Sierra para Melamina", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Carburo de tungsteno (HM) Widia", "Uso": "Melamina (ángulo Positivo - máquinas Industriales)", "Tipo de diente": "Trapezoidal-Plano / Positivo" },
+        variantes: [ { id: "LG3D 0400", nombre: "LG3D 0400 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LG3D 0600", nombre: "LG3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LG3D 0800", nombre: "LG3D 0800 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
+    },
+    "SSK12": {
+        codigoBase: "SSK12", categoriaImg: "Sierras", carpetaImg: "SSK12",
+        titulo: "Sierra para Melamina", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Melamina (máquinas Industriales)" },
+        variantes: [{ id: "SSK12 001", nombre: "SSK12 001 - Consultar medidas" }]
+    },
+    "LU3F": {
+        codigoBase: "LU3F", categoriaImg: "Sierras", carpetaImg: "LU3F 0200",
+        titulo: "Sierra para Melamina", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aglomerado, MDF, Madera y Melamina", "Tipo de diente": "Ángulo Negativo" },
+        variantes: [ { id: "LU3F 0200", nombre: "LU3F 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU3F 0300", nombre: "LU3F 0300 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LU3F 0400", nombre: "LU3F 0400 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
+    },
+    "LU3E": {
+        codigoBase: "LU3E", categoriaImg: "Sierras", carpetaImg: "LU3E 0200",
+        titulo: "Sierra para Melamina", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Melamina" },
         variantes: [{ id: "LU3E 0200", nombre: "LU3E 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }]
     },
     "FR12L": {
