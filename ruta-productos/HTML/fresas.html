@@ -3,32 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresas para Madera - Catálogo Técnico Oficial | WoodTools</title>
+    <title>Fresas - WoodTools S.R.L.</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/lista-productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Estilos para el botón limpiar y feedback visual de los filtros */
-        #btn-limpiar { margin-top: 10px; margin-bottom: 15px; width: 100%; padding: 8px; cursor: pointer; background: #e0e0e0; border: none; border-radius: 4px; font-weight: bold; }
-        #btn-limpiar:hover { background: #d0d0d0; }
-        
-        .filter-btn { 
-            cursor: pointer; 
-            transition: 0.2s; 
-            list-style: none; 
-            padding: 4px 0;
-        }
-        .filter-btn:hover { 
-            color: #d32f2f; 
-        }
-        .filter-btn.activo { 
-            font-weight: bold; 
-            color: #d32f2f; 
-            border-left: 3px solid #d32f2f;
-            padding-left: 5px;
-        }
-    </style>
 </head>
 <body>
 
@@ -44,14 +23,14 @@
                     <li><a href="../../index.html">INICIO</a></li>
                     
                     <li class="dropdown">
-                        <a href="#" class="active">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../sc-en-hm.html">Sierras circulares</a></li>
-                            <li><a href="../fresas-madera.html">Fresas (Líneas)</a></li>
-                            <li><a href="../cuchillas-madera.html">Cuchillas</a></li>
-                            <li><a href="../mechas-madera.html">Mechas y Brocas</a></li>
-                            <li><a href="../diamante-en-hm.html">Herramientas de Diamante</a></li>
-                            <li><a href="../cabezales.html">Cabezales</a></li>
+                            <li><a href="Sierras.html">Sierras circulares</a></li>
+                            <li><a href="fresas.html">Fresas</a></li>
+                            <li><a href="Cuchillas.html">Cuchillas</a></li>
+                            <li><a href="mechas.html">Mechas y Brocas</a></li>
+                            <li><a href="Diamante.html">Herramientas de Diamante</a></li>
+                            <li><a href="Cabezales.html">Cabezales</a></li>
                         </ul>
                     </li>
                     
@@ -69,7 +48,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" class="btn-shop">SHOP NOW</a>
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
                     <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
@@ -79,351 +58,190 @@
         </div>
     </header>
 
-    <div class="ml-breadcrumbs">
-        <a href="../../index.html">Herramientas</a> > <a href="../fresas-madera.html">Fresas para Madera</a> > <span>Catálogo Oficial</span>
-    </div>
-
-    <div class="main-container">
-
+    <main class="main-container">
         <aside class="filters-sidebar">
             <h2>Fresas</h2>
-            <div class="ml-results-count" id="results-count">16 productos encontrados</div>
             
-            <!-- Botón limpiar -->
-            <button id="btn-limpiar">Limpiar Filtros</button>
-
             <div class="filter-group">
-                <h3>Buscar por código</h3>
-                <input type="text" id="ml-code-input" class="ml-sidebar-search" placeholder="Ej: F04C, FRG0510, JFE...">
-            </div>
-
-            <div class="filter-group">
-                <h3>Tipo de fresa</h3>
+                <h3>Categoría</h3>
                 <ul>
-                    <li class="filter-item filter-btn activo" data-filter-type="tipo" data-filter-value="todos">Todas las tipologías</li>
-                    <li class="filter-item filter-btn" data-filter-type="tipo" data-filter-value="moldura">Perfilado y Molduras</li>
-                    <li class="filter-item filter-btn" data-filter-type="tipo" data-filter-value="regulable">Juegos Regulables</li>
-                    <li class="filter-item filter-btn" data-filter-type="tipo" data-filter-value="encastre">Sistemas de Encastre</li>
-                    <li class="filter-item filter-btn" data-filter-type="tipo" data-filter-value="rectas">Rectas y Desbaste</li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="moldura">Perfilado y Molduras</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="regulable">Juegos Regulables</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="encastre">Sistemas de Encastre</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="rectas">Rectas y Desbaste</a></li>
+                    <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
                 </ul>
             </div>
 
             <div class="filter-group">
                 <h3>Marca</h3>
                 <ul>
-                    <li class="filter-item filter-btn activo" data-filter-type="marca" data-filter-value="todos">Todas las marcas</li>
-                    <li class="filter-item filter-btn" data-filter-type="marca" data-filter-value="Franzoi">Franzoi (16)</li>
-                    <li class="filter-item filter-btn" data-filter-type="marca" data-filter-value="Freud">Freud (0)</li>
-                    <li class="filter-item filter-btn" data-filter-type="marca" data-filter-value="Schiavon">Schiavon (0)</li>
-                </ul>
-            </div>
-
-            <div class="filter-group">
-                <h3>Costo de envío</h3>
-                <ul>
-                    <li class="filter-item shipping-highlight">
-                        <i class="fa-solid fa-truck-fast"></i> Envío gratuito disponible
-                    </li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="freud">Freud</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="franzoi">Franzoi</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="marca" data-filter-value="schiavon">Schiavon</a></li>
                 </ul>
             </div>
         </aside>
 
-        <section class="ml-main-content">
+        <section class="products-content">
+            <div class="products-grid" id="contenedor-productos">
 
-            <div class="ml-sort-bar">
-                <span>Ordenar por:</span>
-                <select class="ml-sort-select" id="ml-sort">
-                    <option value="relevancia">Relevancia industrial</option>
-                    <option value="codigo">Código correlativo (A-Z)</option>
-                </select>
-            </div>
-
-            <div class="products-grid" id="ml-grid">
-
-                <!-- PRODUCTOS -->
-
-                <a href="FR/F04C014.html" class="product-card" data-code="f04c014" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" alt="Fresa F04C014">
-                    </div>
+                <a href="FR/F04C014.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F04C014"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">Fresa de 1/4 Círculo (Radio 1/2 a 3/4) para Redondear Madera</span>
-                        <h2 class="product-title">WoodTools</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Medida</div>
-                            <div class="ml-shipping-tag">Envío inmediato <span class="shipping-detail">a todo el país</span></div>
-                        </div>
-                        <span class="ml-stock-badge">Stock Permanente</span>
+                        <div class="product-title">Fresa de 1/4 Círculo (Radio 1/2 a 3/4) para Redondear Madera</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/F04C016.html" class="product-card" data-code="f04c016" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" alt="Fresa F04C016">
-                    </div>
+                <a href="FR/F04C016.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F04C016"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">Fresa de 1/4 Círculo Industrial para Tupí / Moldurera</span>
-                        <h2 class="product-title">WoodTools</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Vástago</div>
-                            <div class="ml-shipping-tag">Envío inmediato</div>
-                        </div>
-                        <span class="ml-stock-badge">Garantía de Balanceo</span>
+                        <div class="product-title">Fresa de 1/4 Círculo Industrial para Tupí / Moldurera</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/F04C054.html" class="product-card" data-code="f04c054" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" alt="Fresa F04C054">
-                    </div>
+                <a href="FR/F04C054.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F04C054"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código F04C054</span>
-                        <h2 class="product-title">Fresa Boleadora de Alto Rendimiento para Bordes Suaves</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Radio</div>
-                            <div class="ml-shipping-tag">Envío gratis <span class="shipping-detail">en Casa Central</span></div>
-                        </div>
-                        <span class="ml-stock-badge">Insertos de Widia</span>
+                        <div class="product-title">Fresa Boleadora de Alto Rendimiento para Bordes Suaves</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/F04C056.html" class="product-card" data-code="f04c056" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" alt="Fresa F04C056">
-                    </div>
+                <a href="FR/F04C056.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F04C056"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código F04C056</span>
-                        <h2 class="product-title">Fresa de Perfil Redondeado Reforzada para Producción Continua</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Eje</div>
-                            <div class="ml-shipping-tag">Envío inmediato</div>
-                        </div>
-                        <span class="ml-stock-badge">Alta Resistencia</span>
+                        <div class="product-title">Fresa de Perfil Redondeado Reforzada para Producción Continua</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRG0510.html" class="product-card" data-code="frg0510" data-marca="Franzoi" data-tipo="regulable">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRG0510/1.jpeg" alt="Fresa FRG0510">
-                    </div>
+                <a href="FR/FRG0510.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRG0510/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRG0510"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRG0510</span>
-                        <h2 class="product-title">Fresa Juego Regulable de 5 a 10mm para Canales y Ranuras</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Kit</div>
-                            <div class="ml-shipping-tag">Envío gratis <span class="shipping-detail">Inmediato</span></div>
-                        </div>
-                        <span class="ml-stock-badge">Doble Cuerpo Acoplable</span>
+                        <div class="product-title">Fresa Juego Regulable de 5 a 10mm para Canales y Ranuras</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRG1039.html" class="product-card" data-code="frg1039" data-marca="Franzoi" data-tipo="regulable">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRG1039/1.jpeg" alt="Fresa FRG1039">
-                    </div>
+                <a href="FR/FRG1039.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRG1039/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRG1039"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRG1039</span>
-                        <h2 class="product-title">Juego de Fresas Regulable Extendido Multi-Cuerpo Modular</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consulte Ancho Máx</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Ideal Carpintería Pesada</span>
+                        <div class="product-title">Juego de Fresas Regulable Extendido Multi-Cuerpo Modular</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRI01566.html" class="product-card" data-code="fri01566" data-marca="Franzoi" data-tipo="rectas">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRI01566/1.jpeg" alt="Fresa FRI01566">
-                    </div>
+                <a href="FR/FRI01566.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRI01566/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRI01566"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRI01566</span>
-                        <h2 class="product-title">Fresa Helicoidal Placa Integral de Metal Duro para CNC Router</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Vástago</div>
-                            <div class="ml-shipping-tag">Llega mañana <span class="shipping-detail">a tu Taller</span></div>
-                        </div>
-                        <span class="ml-stock-badge">Descarga Positiva Superior</span>
+                        <div class="product-title">Fresa Helicoidal Placa Integral de Metal Duro para CNC Router</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRP5533.html" class="product-card" data-code="frp5533" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRP5533/1.jpeg" alt="Fresa FRP5533">
-                    </div>
+                <a href="FR/FRP5533.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRP5533/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRP5533"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRP5533</span>
-                        <h2 class="product-title">Fresa de Perfilado Decorativo Avanzado para Puertas Placa</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Diseño</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Terminación sin Marcas</span>
+                        <div class="product-title">Fresa de Perfilado Decorativo Avanzado para Puertas Placa</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRS0104.html" class="product-card" data-code="frs0104" data-marca="Franzoi" data-tipo="rectas">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" alt="Fresa FRS0104">
-                    </div>
+                <a href="FR/FRS0104.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0104"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRS0104</span>
-                        <h2 class="product-title">Fresa Recta Plana de Desbaste Rápido con Micro-Cuchillas</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Altura</div>
-                            <div class="ml-shipping-tag">Envío inmediato</div>
-                        </div>
-                        <span class="ml-stock-badge">Filos Europeos</span>
+                        <div class="product-title">Fresa Recta Plana de Desbaste Rápido con Micro-Cuchillas</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/FRS0106.html" class="product-card" data-code="frs0106" data-marca="Franzoi" data-tipo="rectas">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" alt="Fresa FRS0106">
-                    </div>
+                <a href="FR/FRS0106.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0106"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código FRS0106</span>
-                        <h2 class="product-title">Fresa Recta de Ranurado Milimétrico Estándar Industrial</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Diámetro</div>
-                            <div class="ml-shipping-tag">Llega mañana</div>
-                        </div>
-                        <span class="ml-stock-badge">Calidad Widia Superior</span>
+                        <div class="product-title">Fresa Recta de Ranurado Milimétrico Estándar Industrial</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFDE4.html" class="product-card" data-code="jfde4" data-marca="Franzoi" data-tipo="encastre">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFDE4/1.jpeg" alt="Fresa JFDE4">
-                    </div>
+                <a href="FR/JFDE4.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFDE4/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFDE4"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFDE4</span>
-                        <h2 class="product-title">Juego de Fresas para Encastre Machimbrado en Pisos y Techos</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Acople</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Kit Macho y Hembra</span>
+                        <div class="product-title">Juego de Fresas para Encastre Machimbrado en Pisos y Techos</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFE254.html" class="product-card" data-code="jfe254" data-marca="Franzoi" data-tipo="encastre">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFE254/1.jpg" alt="Fresa JFE254">
-                    </div>
+                <a href="FR/JFE254.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFE254/1.jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE254"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFE254</span>
-                        <h2 class="product-title">Juego de Fresas para Uniones Estructurales y Tableros</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Set</div>
-                            <div class="ml-shipping-tag">Envío gratis <span class="shipping-detail">a todo el país</span></div>
-                        </div>
-                        <span class="ml-stock-badge">Ajuste de Precisión</span>
+                        <div class="product-title">Juego de Fresas para Uniones Estructurales y Tableros</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFE5022.html" class="product-card" data-code="jfe5022" data-marca="Franzoi" data-tipo="regulable">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFE5022/1.jpeg" alt="Fresa JFE5022">
-                    </div>
+                <a href="FR/JFE5022.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFE5022/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE5022"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFE5022</span>
-                        <h2 class="product-title">Juego de Fresas Acoplables Combinadas para Molduras y Marcos</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Espesores</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Multi-Perfil Modular</span>
+                        <div class="product-title">Juego de Fresas Acoplables Combinadas para Molduras y Marcos</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFE8Z124.html" class="product-card" data-code="jfe8z124" data-marca="Franzoi" data-tipo="encastre">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFE8Z124/1.jpeg" alt="Fresa JFE8Z124">
-                    </div>
+                <a href="FR/JFE8Z124.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFE8Z124/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE8Z124"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFE8Z124</span>
-                        <h2 class="product-title">Juego de Fresas Z8 para Puertas de Madera Maciza y Marcos</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consulte el Eje</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Uso Industrial Pesado</span>
+                        <div class="product-title">Juego de Fresas Z8 para Puertas de Madera Maciza y Marcos</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFMPV14.html" class="product-card" data-code="jfmpv14" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFMPV14/1.jpeg" alt="Fresa JFMPV14">
-                    </div>
+                <a href="FR/JFMPV14.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMPV14/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMPV14"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFMPV14</span>
-                        <h2 class="product-title">Juego de Fresas para Moldura Tradicional de Puertas Placa</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Modelos</div>
-                            <div class="ml-shipping-tag">Llega mañana</div>
-                        </div>
-                        <span class="ml-stock-badge">Widia Balanceada</span>
+                        <div class="product-title">Juego de Fresas para Moldura Tradicional de Puertas Placa</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/JFPMS10.html" class="product-card" data-code="jfpms10" data-marca="Franzoi" data-tipo="regulable">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFPMS10/1.jpeg" alt="Fresa JFPMS10">
-                    </div>
+                <a href="FR/JFPMS10.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFPMS10/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFPMS10"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código JFPMS10</span>
-                        <h2 class="product-title">Juego de Fresas para Muebles Modulares y Frentes de Cocina</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consultar Set</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Acabado Profesional</span>
+                        <div class="product-title">Juego de Fresas para Muebles Modulares y Frentes de Cocina</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-                <a href="FR/LIMMUE.html" class="product-card" data-code="limmue" data-marca="Franzoi" data-tipo="moldura">
-                    <div class="product-img">
-                        <i class="fa-regular fa-heart fav-icon"></i>
-                        <img src="../../imagenes/herramientas/Fresas/JFPMS10LIMMUE/1.jpeg" alt="Fresa LIMMUE">
-                    </div>
+                <a href="FR/LIMMUE.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFPMS10LIMMUE/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="LIMMUE"></div>
                     <div class="product-info">
-                        <span class="ml-brand-badge">WoodTools ♦ Código LIMMUE</span>
-                        <h2 class="product-title">Fresa Especial para Molduras de Línea Mueblera y Terminaciones</h2>
-                        <div class="ml-price-section">
-                            <div class="product-price">Consulte Diámetro</div>
-                            <div class="ml-shipping-tag">Envío gratis</div>
-                        </div>
-                        <span class="ml-stock-badge">Edición Industrial</span>
+                        <div class="product-title">Fresa Especial para Molduras de Línea Mueblera y Terminaciones</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
 
-            </div>
-
-            <div class="ml-no-results" id="ml-no-data">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h2>No encontramos resultados con esos parámetros</h2>
-                <p>Verifiqá la escritura del código o seleccioná otra tipología de la barra lateral.</p>
             </div>
         </section>
-
-    </div>
+    </main>
 
     <section id="marcas">
         <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
@@ -434,7 +252,9 @@
     </section>
 
     <footer>
-        <p>WoodTools S.R.L.: Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        <div class="footer-contact-bar">
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
     </footer>
 
     <div class="floating-buttons">
@@ -442,7 +262,6 @@
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <!-- Asegúrate de que la ruta coincida con el nombre real de tu archivo JS -->
-    <script src="../JS/filtros.js"></script> 
+    <script src="../JS/filtros.js?v=3"></script>
 </body>
 </html>
