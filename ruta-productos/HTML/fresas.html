@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo">
@@ -21,11 +20,10 @@
             <nav>
                 <ul>
                     <li><a href="../../index.html">INICIO</a></li>
-                    
                     <li class="dropdown">
                         <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Sierras.html">Sierras circulares</a></li>
+                            <li><a href="Sierras.html">Discos de corte circulares</a></li>
                             <li><a href="fresas.html">Fresas</a></li>
                             <li><a href="Cuchillas.html">Cuchillas</a></li>
                             <li><a href="mechas.html">Mechas y Brocas</a></li>
@@ -33,10 +31,8 @@
                             <li><a href="Cabezales.html">Cabezales</a></li>
                         </ul>
                     </li>
-                    
                     <li><a href="../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
                     <li><a href="../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
-                    
                     <li class="dropdown">
                         <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
@@ -68,8 +64,16 @@
                     <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="moldura">Perfilado y Molduras</a></li>
                     <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="regulable">Juegos Regulables</a></li>
                     <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="encastre">Sistemas de Encastre</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="rectas">Rectas y Desbaste</a></li>
                     <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3>Tipo</h3>
+                <ul>
+                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="rectas">Rectas y Desbaste</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="helicoidales">Helicoidales</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="diamante">Diamante</a></li>
                 </ul>
             </div>
 
@@ -85,8 +89,7 @@
 
         <section class="products-content">
             <div class="products-grid" id="contenedor-productos">
-
-                <a href="FR/CB0750660.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/CB0750660.html" class="product-card" data-tipo="helicoidales" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/CB0750660/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="CB0750660"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta Helicoidal CB0750660</div>
@@ -95,7 +98,7 @@
                     </div>
                 </a>
 
-                <a href="FR/CB13006100.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/CB13006100.html" class="product-card" data-tipo="helicoidales" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/CB13006100/1.png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="CB13006100"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta Helicoidal CB13006100</div>
@@ -104,7 +107,7 @@
                     </div>
                 </a>
 
-                <a href="FR/FRI01566.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/FRI01566.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRI01566/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRI01566"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Helicoidal Placa Integral de Metal Duro para CNC Router</div>
@@ -113,7 +116,7 @@
                     </div>
                 </a>
 
-                <a href="FR/FRS0104.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/FRS0104.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0104"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta Plana de Desbaste Rápido con Micro-Cuchillas</div>
@@ -122,7 +125,7 @@
                     </div>
                 </a>
 
-                <a href="FR/FRS0106.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/FRS0106.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0106"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta de Ranurado Milimétrico Estándar Industrial</div>
@@ -131,7 +134,7 @@
                     </div>
                 </a>
 
-                <a href="FR/FRS0606.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/FRS0606.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0606"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta de Desbaste FRS0606</div>
@@ -140,7 +143,7 @@
                     </div>
                 </a>
 
-                <a href="FR/FRS0704.html" class="product-card" data-categoria="rectas" data-marca="franzoi">
+                <a href="FR/FRS0704.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
                     <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FRS0704/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0704"></div>
                     <div class="product-info">
                         <div class="product-title">Fresa Recta de Desbaste FRS0704</div>

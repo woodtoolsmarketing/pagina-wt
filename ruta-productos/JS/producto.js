@@ -359,19 +359,26 @@ const baseDatosProductos = {
     // ---------------------------------------------------------
     // MECHAS Y BROCAS
     // ---------------------------------------------------------
-    "MPI": { codigoBase: "MPI", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mecha Pasante (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-    "MPD": { codigoBase: "MPD", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mecha Pasante (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-    "MCI": { codigoBase: "MCI", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Mecha Ciega (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-    "MCD": { codigoBase: "MCD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Mecha Ciega (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MPD": { codigoBase: "MPD", categoriaImg: "Mechas", carpetaImg: "Familias MPD  MPI", titulo: "Mecha Pasante (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MPI": { codigoBase: "MPI", categoriaImg: "Mechas", carpetaImg: "Familias MPD  MPI", titulo: "Mecha Pasante (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MCD-MCI3": { codigoBase: "MCD-MCI3", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI 3", titulo: "Mecha Ciega MCD-MCI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MCD-MCI2": { codigoBase: "MCD-MCI2", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI 2", titulo: "Mecha Ciega MCD-MCI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MCD-MCI": { codigoBase: "MCD-MCI", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", titulo: "Mecha Ciega MCD-MCI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MCD": { codigoBase: "MCD", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", titulo: "Mecha Ciega (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MCI": { codigoBase: "MCI", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", titulo: "Mecha Ciega (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "MBI": { codigoBase: "MBI", categoriaImg: "Mechas", carpetaImg: "bisagra", titulo: "Fresa Bisagra (Izquierda)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "MBD": { codigoBase: "MBD", categoriaImg: "Mechas", carpetaImg: "bisagra", titulo: "Fresa Bisagra (Derecha)", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "BRDD": { codigoBase: "BRDD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Broca para Defondadora", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Defondado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-    "MID": { codigoBase: "MID", categoriaImg: "Mechas", carpetaImg: "integral", titulo: "Mecha Integral p/ CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
+    "MIDN": { codigoBase: "MIDN", categoriaImg: "Mechas", carpetaImg: "Familia MIDN", titulo: "Mecha Integral MIDN", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
+    "MID": { codigoBase: "MID", categoriaImg: "Mechas", carpetaImg: "Familia MID", titulo: "Mecha Integral MID", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
     "MIIR": { codigoBase: "MIIR", categoriaImg: "Mechas", carpetaImg: "integral", titulo: "Mecha Integral Recta p/ CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
-    "MAM": { codigoBase: "MAM", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mandril Adaptador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción de herramientas" }, variantes: [{ id: "1", nombre: "Consultar modelo" }] },
-    "PINZAER": { codigoBase: "PINZAER", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Pinza ER para Sujeción", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción en Mandriles" }, variantes: [{ id: "1", nombre: "Consultar ER32 / ER40" }] },
+    "MI": { codigoBase: "MI", categoriaImg: "Mechas", carpetaImg: "Familia MI", titulo: "Mecha Integral MI", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
+    "MAM-PINZA": { codigoBase: "MAM-PINZA", categoriaImg: "Mechas", carpetaImg: "Familias MAM  PINZA/mandril para máquina", titulo: "Mandril Adaptador / Pinza", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción de herramientas" }, variantes: [{ id: "1", nombre: "Consultar modelo" }] },
+    "MAM": { codigoBase: "MAM", categoriaImg: "Mechas", carpetaImg: "Familias MAM  PINZA/mandril para máquina", titulo: "Mandril Adaptador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción de herramientas" }, variantes: [{ id: "1", nombre: "Consultar modelo" }] },
+    "PINZAER": { codigoBase: "PINZAER", categoriaImg: "Mechas", carpetaImg: "Familias MAM  PINZA/mandril para máquina", titulo: "Pinza ER para Sujeción", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Sujeción en Mandriles" }, variantes: [{ id: "1", nombre: "Consultar ER32 / ER40" }] },
     "MCAR": { codigoBase: "MCAR", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Mecha Ciega con Avellanador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforado y avellanado simultáneo" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
-    "MBA": { codigoBase: "MBA", categoriaImg: "Mechas", carpetaImg: "Pasante", titulo: "Mecha para Barrenos", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Barrenado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MBA": { codigoBase: "MBA", categoriaImg: "Mechas", carpetaImg: "Familia MBA", titulo: "Mecha para Barrenos MBA", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Barrenado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "MB": { codigoBase: "MB", categoriaImg: "Mechas", carpetaImg: "Familia MB", titulo: "Mecha para Bisagras MB", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Bisagras" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
     "AVD": { codigoBase: "AVD", categoriaImg: "Mechas", carpetaImg: "Ciega", titulo: "Avellanador", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Avellanado" }, variantes: [{ id: "1", nombre: "Consultar modelos (AVD / AVI)" }] },
     "Router_Franzoi": { codigoBase: "Router_Franzoi", categoriaImg: "Mechas", carpetaImg: "compresión", titulo: "Mecha para Router CNC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Mecanizado Router CNC" }, variantes: [{ id: "1", nombre: "Consultar especificaciones" }] },
 
@@ -602,17 +609,18 @@ function cargarEstructuraProducto(info) {
         let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${info.carpetaImg}/`;
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         
+        // Se agregaron versiones con espacios reales ("1 (1).jpg") para mayor compatibilidad
         const combinacionesSeguras = [
-            "1.jpg", "1%20(1).jpg", "1.jpeg", "1%20(2).jpg", "1.png", "Incisor.png",
-            "2.jpg", "2.jpeg", "2%20(1).jpg", "2%20(2).jpg", "2.png",
-            "3.jpg", "3.jpeg", "3%20(1).jpg", "3%20(2).jpg", "3.png",
-            "4.jpg", "4.jpeg", "4%20(1).jpg", "4%20(2).jpg", "4.png",
-            "5.jpg", "5%20(1).jpg", "5.jpeg", "5%20(2).jpg", "5.png",
-            "6.jpg", "6.jpeg", "6%20(1).jpg", "6%20(2).jpg", "6.png",
-            "7.jpg", "7.jpeg", "7%20(1).jpg", "7%20(2).jpg", "7.png",
-            "8.jpg", "8.jpeg", "8%20(1).jpg", "8%20(2).jpg", "8.png",
-            "9.jpg", "9.jpeg", "9%20(1).jpg", "9%20(2).jpg", "9.png",
-            "10.jpg", "10.jpeg", "10%20(1).jpg", "10%20(2).jpg", "10.png"
+            "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1.png", "Incisor.png",
+            "2.jpg", "2 (1).jpg", "2%20(1).jpg", "2.jpeg", "2 (2).jpg", "2%20(2).jpg", "2.png",
+            "3.jpg", "3 (1).jpg", "3%20(1).jpg", "3.jpeg", "3 (2).jpg", "3%20(2).jpg", "3.png",
+            "4.jpg", "4 (1).jpg", "4%20(1).jpg", "4.jpeg", "4 (2).jpg", "4%20(2).jpg", "4.png",
+            "5.jpg", "5 (1).jpg", "5%20(1).jpg", "5.jpeg", "5 (2).jpg", "5%20(2).jpg", "5.png",
+            "6.jpg", "6 (1).jpg", "6%20(1).jpg", "6.jpeg", "6 (2).jpg", "6%20(2).jpg", "6.png",
+            "7.jpg", "7 (1).jpg", "7%20(1).jpg", "7.jpeg", "7 (2).jpg", "7%20(2).jpg", "7.png",
+            "8.jpg", "8 (1).jpg", "8%20(1).jpg", "8.jpeg", "8 (2).jpg", "8%20(2).jpg", "8.png",
+            "9.jpg", "9 (1).jpg", "9%20(1).jpg", "9.jpeg", "9 (2).jpg", "9%20(2).jpg", "9.png",
+            "10.jpg", "10 (1).jpg", "10%20(1).jpg", "10.jpeg", "10 (2).jpg", "10%20(2).jpg", "10.png"
         ];
 
         combinacionesSeguras.forEach(nombreFotoSeguro => {
