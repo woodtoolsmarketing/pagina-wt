@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. BASE DE CONOCIMIENTO (Sierras, Fresas Puras y Mechas)
+   1. BASE DE CONOCIMIENTO (Sierras, Fresas Puras, Mechas, Diamante y Cuchillas)
    ========================================================================== */
 const baseDatosProductos = {
     // ---------------------------------------------------------
@@ -531,10 +531,59 @@ const baseDatosProductos = {
     // ---------------------------------------------------------
     // HERRAMIENTAS PCD DIAMANTE
     // ---------------------------------------------------------
-    "SCCD": { codigoBase: "SCCD", categoriaImg: "Diamante", carpetaImg: "Sierra Circular", titulo: "Incisor de Diamante PCD", marca: "Schiavon", caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD" }, variantes: [{ id: "1", nombre: "Consultar Medida" }] },
-    "SCID": { codigoBase: "SCID", categoriaImg: "Diamante", carpetaImg: "Sierra Circular", titulo: "Incisor de Diamante PCD", marca: "Schiavon", caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD" }, variantes: [{ id: "1", nombre: "Consultar Medida" }] },
-    "SCED": { codigoBase: "SCED", categoriaImg: "Diamante", carpetaImg: "Sierra Circular", titulo: "Sierra de Diamante PCD", marca: "Schiavon", caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD" }, variantes: [{ id: "1", nombre: "Consultar Medida" }] },
-    "MBDD": { codigoBase: "MBDD", categoriaImg: "Diamante", carpetaImg: "Mecha", titulo: "Mecha de Diamante PCD", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Diamante PCD" }, variantes: [{ id: "1", nombre: "Consultar Medidas" }] }
+    "SCCD": { 
+        codigoBase: "SCCD", categoriaImg: "Diamante", carpetaImg: "Incisor diamante", 
+        titulo: "Incisor Cónico de Diamante PCD", marca: "Schiavon", 
+        caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD", "Uso": "Seccionadoras y Escuadradoras" }, 
+        variantes: [
+            { id: "SCCD150322", nombre: "SCCD150322 - D: 125-200mm | B: 3.2-4.2mm | Z: 24 | H: 4" },
+            { id: "SCCD150323", nombre: "SCCD150323 - D: 125-200mm | B: 3.2-4.2mm | Z: 36 | H: 4" }
+        ] 
+    },
+    "SCID": { 
+        codigoBase: "SCID", categoriaImg: "Diamante", carpetaImg: "Incisor diamante", 
+        titulo: "Incisor de Diamante PCD", marca: "Schiavon", 
+        caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD", "Uso": "Incisor" }, 
+        variantes: [{ id: "1", nombre: "Consultar Medida" }] 
+    },
+    "SCED": { 
+        codigoBase: "SCED", categoriaImg: "Diamante", carpetaImg: "Sierras diamante", 
+        titulo: "Disco de Diamante PCD", marca: "Schiavon", 
+        caracteristicasBasicas: { "Marca": "Schiavon", "Material": "Diamante PCD", "Uso": "Corte de Placas y Melamina" }, 
+        variantes: [
+            { id: "SCSD350447", nombre: "SCSD350447 - D: 350mm | B: 4.4mm | Z: 72 | H: 2.5" }
+        ] 
+    },
+    "MBDD": { 
+        codigoBase: "MBDD", categoriaImg: "Diamante", carpetaImg: "Mechas diamante", 
+        titulo: "Mecha de Diamante para Bisagra", marca: "Franzoi", 
+        caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Diamante PCD", "Uso": "Bisagras" }, 
+        variantes: [
+            { id: "MBDD3557", nombre: "MBDD3557 - D: 35mm | L: 57.5mm" },
+            { id: "MBID3557", nombre: "MBID3557 - D: 35mm | L: 57mm" }
+        ] 
+    },
+    "MDD": { 
+        codigoBase: "MDD", categoriaImg: "Diamante", carpetaImg: "Mechas diamante", 
+        titulo: "Mecha Diamante Forante HM", marca: "Franzoi", 
+        caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Diamante PCD / HM", "Uso": "Perforaciones" }, 
+        variantes: [
+            { id: "MDD1225H", nombre: "MDD1225H - D: 12mm | L: 25mm | H: 2.5" },
+            { id: "MDD1643H", nombre: "MDD1643H - D: 16mm | L: 43mm | H: 2.5" }
+        ] 
+    },
+
+    // ---------------------------------------------------------
+    // CUCHILLAS
+    // ---------------------------------------------------------
+    "CHC_HSS": { codigoBase: "CHC_HSS", categoriaImg: "Cuchillas", carpetaImg: "CHC_HSS", titulo: "Cuchilla Plana HSS CHC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "HSS (Acero Súper Rápido)", "Uso": "Maderas blandas y semi-duras", "Formato": "Plana" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CHC_MD": { codigoBase: "CHC_MD", categoriaImg: "Cuchillas", carpetaImg: "CHC_MD", titulo: "Cuchilla Plana Widia CHC", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro (Widia)", "Uso": "Maderas duras y abrasivas", "Formato": "Plana" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CHCR_HSS": { codigoBase: "CHCR_HSS", categoriaImg: "Cuchillas", carpetaImg: "CHCR_HSS", titulo: "Cuchilla Dorso Ranurado HSS CHCR", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "HSS (Acero Súper Rápido)", "Uso": "Maderas blandas y semi-duras", "Formato": "Dorso Ranurado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CHCR_MD": { codigoBase: "CHCR_MD", categoriaImg: "Cuchillas", carpetaImg: "CHCR_MD", titulo: "Cuchilla Dorso Ranurado Widia CHCR", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Metal Duro (Widia)", "Uso": "Maderas duras y abrasivas", "Formato": "Dorso Ranurado" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CHCECH": { codigoBase: "CHCECH", categoriaImg: "Cuchillas", carpetaImg: "CHC_ECH", titulo: "Cuchilla para Chipera CHCECH", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Material": "Acero Especial", "Uso": "Chiperas / Triturado", "Formato": "Chipera" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CBP": { codigoBase: "CBP", categoriaImg: "Cuchillas", carpetaImg: "CBP", titulo: "Cuchilla para Cabezal CBP", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cabezales" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CBR": { codigoBase: "CBR", categoriaImg: "Cuchillas", carpetaImg: "CBR", titulo: "Cuchilla para Cabezal CBR", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cabezales" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] },
+    "CBRH": { codigoBase: "CBRH", categoriaImg: "Cuchillas", carpetaImg: "CBRH", titulo: "Cuchilla para Cabezal CBRH", marca: "Franzoi", caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cabezales" }, variantes: [{ id: "1", nombre: "Consultar medidas" }] }
 };
 
 /* ==========================================================================
@@ -609,9 +658,8 @@ function cargarEstructuraProducto(info) {
         let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${info.carpetaImg}/`;
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         
-        // Se agregaron versiones con espacios reales ("1 (1).jpg") para mayor compatibilidad
         const combinacionesSeguras = [
-            "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1.png", "Incisor.png",
+            "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "1.png", "Incisor.png",
             "2.jpg", "2 (1).jpg", "2%20(1).jpg", "2.jpeg", "2 (2).jpg", "2%20(2).jpg", "2.png",
             "3.jpg", "3 (1).jpg", "3%20(1).jpg", "3.jpeg", "3 (2).jpg", "3%20(2).jpg", "3.png",
             "4.jpg", "4 (1).jpg", "4%20(1).jpg", "4.jpeg", "4 (2).jpg", "4%20(2).jpg", "4.png",

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <header>
         <div class="header-container">
             <div class="logo">
@@ -20,10 +21,11 @@
             <nav>
                 <ul>
                     <li><a href="../../index.html">INICIO</a></li>
+                    
                     <li class="dropdown">
                         <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../sc-en-hm.html">Discos de corte circulares</a></li>
+                            <li><a href="../sc-en-hm.html">Discos de corte</a></li>
                             <li><a href="../fresas-madera.html">Fresas</a></li>
                             <li><a href="../cuchillas-madera.html">Cuchillas</a></li>
                             <li><a href="../mechas-madera.html">Mechas y Brocas</a></li>
@@ -31,8 +33,10 @@
                             <li><a href="../cabezales.html">Cabezales</a></li>
                         </ul>
                     </li>
+                    
                     <li><a href="../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
                     <li><a href="../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
+                    
                     <li class="dropdown">
                         <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
@@ -44,7 +48,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" class="btn-shop">SHOP NOW</a>
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
                     <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
@@ -61,9 +65,9 @@
             <div class="filter-group">
                 <h3>Categoría</h3>
                 <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="discos">Discos de corte PCD</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="incisores">Incisores PCD</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="mechas">Mechas PCD</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="sierra">Discos de Corte</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="incisor">Incisores</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="mecha">Mechas / Brocas</a></li>
                     <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
                 </ul>
             </div>
@@ -79,49 +83,41 @@
 
         <section class="products-content">
             <div class="products-grid" id="contenedor-productos">
-                <a href="DM/SCCD150.html" class="product-card" data-categoria="incisores" data-marca="schiavon" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Schiavon.jpeg" alt="SCCD150"></div>
-                    <div class="product-info"><div class="product-title">Incisor de diamante PCD de 125mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+
+                <a href="DM/SCED.html" class="product-card" data-categoria="sierra" data-marca="schiavon">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Diamante/Sierras diamante/1.jpg" onerror="this.src='../../imagenes/marcas/Schiavon.jpeg'" alt="Discos de corte de Diamante"></div>
+                    <div class="product-info">
+                        <div class="product-title">Disco de corte de Diamante PCD SCED</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
                 </a>
 
-                <a href="DM/SCID150.html" class="product-card" data-categoria="incisores" data-marca="schiavon" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Schiavon.jpeg" alt="SCID150"></div>
-                    <div class="product-info"><div class="product-title">Incisor de diamante PCD de 150-200mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                <a href="DM/SCCD.html" class="product-card" data-categoria="incisor" data-marca="schiavon">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Diamante/Incisor diamante/1.jpg" onerror="this.src='../../imagenes/marcas/Schiavon.jpeg'" alt="Incisores Cónicos Diamante"></div>
+                    <div class="product-info">
+                        <div class="product-title">Incisor Cónico de Diamante SCCD</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
                 </a>
 
-                <a href="DM/SCED300.html" class="product-card" data-categoria="discos" data-marca="schiavon" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Schiavon.jpeg" alt="SCED300"></div>
-                    <div class="product-info"><div class="product-title">Disco de corte de diamante PCD de 300mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
-                </a>
-                
-                <a href="DM/SCED350.html" class="product-card" data-categoria="discos" data-marca="schiavon" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Schiavon.jpeg" alt="SCED350"></div>
-                    <div class="product-info"><div class="product-title">Disco de corte de diamante PCD de 350mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
-                </a>
-
-                <a href="DM/SCSD350.html" class="product-card" data-categoria="discos" data-marca="schiavon" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Schiavon.jpeg" alt="SCSD350"></div>
-                    <div class="product-info"><div class="product-title">Disco de corte de diamante PCD de 350mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                <a href="DM/MBDD.html" class="product-card" data-categoria="mecha" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Diamante/Mechas diamante/1 (3).jpg" onerror="this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="Mechas Diamante Bisagra"></div>
+                    <div class="product-info">
+                        <div class="product-title">Mecha de Diamante Bisagra MBDD</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
                 </a>
 
-                <a href="DM/MBDD.html" class="product-card" data-categoria="mechas" data-marca="franzoi" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Franzoi.jpeg" alt="MBDD"></div>
-                    <div class="product-info"><div class="product-title">Mecha de diamante PCD de 35mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
-                </a>
-                
-                <a href="DM/MBID.html" class="product-card" data-categoria="mechas" data-marca="franzoi" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Franzoi.jpeg" alt="MBID"></div>
-                    <div class="product-info"><div class="product-title">Mecha de diamante PCD de 35mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
-                </a>
-                
-                <a href="DM/MCED.html" class="product-card" data-categoria="mechas" data-marca="franzoi" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Franzoi.jpeg" alt="MCED"></div>
-                    <div class="product-info"><div class="product-title">Mecha de diamante PCD</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
-                </a>
-                
-                <a href="DM/MDD.html" class="product-card" data-categoria="mechas" data-marca="franzoi" data-tipo="diamante">
-                    <div class="product-img"><img src="../../imagenes/marcas/Franzoi.jpeg" alt="MDD"></div>
-                    <div class="product-info"><div class="product-title">Mecha de diamante PCD (Varias medidas)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                <a href="DM/MDD.html" class="product-card" data-categoria="mecha" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Diamante/Mechas diamante/2.jpg" onerror="this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="Mechas Forantes"></div>
+                    <div class="product-info">
+                        <div class="product-title">Mecha Forante Diamante MDD</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
                 </a>
 
             </div>
@@ -139,6 +135,14 @@
     <footer>
         <div class="footer-contact-bar">
             <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 WoodTools S.R.L. - WoodTools Marketing</p>
         </div>
     </footer>
 

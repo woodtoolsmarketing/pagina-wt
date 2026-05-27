@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const productos = gridContainer.querySelectorAll('.product-card');
 
     // =====================================================================
-    // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas y Mechas intactos)
+    // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas, Mechas, Cuchillas y Diamante)
     // =====================================================================
     const codigosMelamina = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
     const codigosMadera = ["LU1F", "LU1D"]; 
@@ -33,41 +33,91 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // --- FRESAS (Asigna data-tipo automáticamente) ---
+        // --- FRESAS ---
         if (enlace.includes("/FR/FRS") || enlace.includes("/FR/FRI") || enlace.includes("/FR/FA")) {
             producto.setAttribute('data-tipo', 'rectas');
         } else if (enlace.includes("/FR/F1M") || enlace.includes("/FR/F2C") || enlace.includes("/FR/F2M")) {
             producto.setAttribute('data-tipo', 'helicoidales');
-        } else if (enlace.includes("/DM/")) {
-            producto.setAttribute('data-tipo', 'diamante');
         }
 
-        // --- MECHAS Y BROCAS (Sub-rubros numéricos) ---
+        // --- MECHAS Y BROCAS ---
         if (enlace.includes("/MCH/MPD") || enlace.includes("/MCH/MPI")) {
-            producto.setAttribute('data-categoria', '300'); // Pasantes
+            producto.setAttribute('data-categoria', '300'); 
         } else if (enlace.includes("/MCH/MCD") || enlace.includes("/MCH/MCI")) {
-            producto.setAttribute('data-categoria', '301'); // Ciegas
+            producto.setAttribute('data-categoria', '301'); 
         } else if (enlace.includes("/MCH/BRDD")) {
-            producto.setAttribute('data-categoria', '302'); // Defondadora
-        } else if (enlace.includes("/MCH/MID") || enlace.includes("/MCH/MIIR")) {
-            producto.setAttribute('data-categoria', '303'); // Integrales Widia
-        } else if (enlace.includes("/MCH/MBD") || enlace.includes("/MCH/MBI")) {
-            producto.setAttribute('data-categoria', '304'); // Bisagra
+            producto.setAttribute('data-categoria', '302'); 
+        } else if (enlace.includes("/MCH/MID") || enlace.includes("/MCH/MIIR") || enlace.includes("/MCH/MI.") || enlace.includes("/MCH/MIDN")) {
+            producto.setAttribute('data-categoria', '303'); 
+        } else if (enlace.includes("/MCH/MBD") || enlace.includes("/MCH/MBI") || enlace.includes("/MCH/MB.")) {
+            producto.setAttribute('data-categoria', '304'); 
         } else if (enlace.includes("/MCH/MAM") || enlace.includes("/MCH/PINZAER")) {
-            producto.setAttribute('data-categoria', '305'); // Mandriles y Pinzas
+            producto.setAttribute('data-categoria', '305'); 
         } else if (enlace.includes("/MCH/MCAR")) {
-            producto.setAttribute('data-categoria', '306'); // Ciega con Avellanador
+            producto.setAttribute('data-categoria', '306'); 
         } else if (enlace.includes("/MCH/MBA")) {
-            producto.setAttribute('data-categoria', '307'); // Barreno
+            producto.setAttribute('data-categoria', '307'); 
         } else if (enlace.includes("/MCH/AVD")) {
-            producto.setAttribute('data-categoria', '308'); // Avellanadores
+            producto.setAttribute('data-categoria', '308'); 
         } else if (enlace.includes("/MCH/Router_Franzoi")) {
-            producto.setAttribute('data-categoria', '309'); // Router
+            producto.setAttribute('data-categoria', '309'); 
+        }
+
+        // --- CUCHILLAS ---
+        if (enlace.includes("/CH/CHC_HSS") || enlace.includes("/CH/CHC_MD")) {
+            producto.setAttribute('data-formato', 'planas');
+        } else if (enlace.includes("/CH/CHCR_HSS") || enlace.includes("/CH/CHCR_MD")) {
+            producto.setAttribute('data-formato', 'dr');
+        } else if (enlace.includes("/CH/CHCECH")) {
+            producto.setAttribute('data-formato', 'chipera');
+        } else if (enlace.includes("/CH/CBP") || enlace.includes("/CH/CBR")) {
+            producto.setAttribute('data-formato', 'cabezales');
+        }
+        
+        if (enlace.includes("_HSS")) {
+            producto.setAttribute('data-material', 'hss');
+        } else if (enlace.includes("_MD")) {
+            producto.setAttribute('data-material', 'widia');
+        } else if (enlace.includes("CHCECH") || enlace.includes("CBP") || enlace.includes("CBR")) {
+            producto.setAttribute('data-material', 'otros');
+        }
+
+        // --- DIAMANTE ---
+        if (enlace.includes("/DM/SCED")) {
+            producto.setAttribute('data-categoria', 'sierra');
+            producto.setAttribute('data-marca', 'schiavon');
+        } else if (enlace.includes("/DM/SCCD") || enlace.includes("/DM/SCID")) {
+            producto.setAttribute('data-categoria', 'incisor');
+            producto.setAttribute('data-marca', 'schiavon');
+        } else if (enlace.includes("/DM/MBDD") || enlace.includes("/DM/MDD") || enlace.includes("/DM/MCED")) {
+            producto.setAttribute('data-categoria', 'mecha');
+            producto.setAttribute('data-marca', 'franzoi');
         }
     });
 
     // =====================================================================
-    // 2. ESTADO DE LOS FILTROS
+    // 2. ALIAS DE FILTROS (un valor en URL/botón puede equivaler a varios data-*)
+    //    Esto resuelve el caso de la página Diamante.html, donde la URL trae
+    //    ?categoria=discos  -> debe mostrar productos con data-categoria
+    //    "sierra" Y "incisor" a la vez. Y ?categoria=mechas -> "mecha".
+    //    Si más adelante querés agregar otros alias, simplemente sumás acá.
+    // =====================================================================
+    const aliasFiltros = {
+        categoria: {
+            discos: ['sierra', 'incisor'],
+            mechas: ['mecha']
+        }
+    };
+
+    function resolverAlias(tipoFiltro, valor) {
+        if (aliasFiltros[tipoFiltro] && aliasFiltros[tipoFiltro][valor]) {
+            return aliasFiltros[tipoFiltro][valor]; // array
+        }
+        return valor; // string (comportamiento original)
+    }
+
+    // =====================================================================
+    // 3. ESTADO DE LOS FILTROS
     // =====================================================================
     let filtrosActivos = { 
         categoria: 'todos', 
@@ -78,13 +128,13 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // =====================================================================
-    // 3. LÓGICA PRINCIPAL DE FILTRADO
+    // 4. LÓGICA PRINCIPAL DE FILTRADO
+    //    Soporta tanto strings (lógica original) como arrays (alias).
     // =====================================================================
     function aplicarFiltros() {
         let productosVisibles = 0;
 
         productos.forEach(producto => {
-            // Obtener atributos del producto (soporta múltiples nombres)
             const atributos = {
                 categoria: producto.getAttribute('data-categoria'),
                 marca: producto.getAttribute('data-marca'),
@@ -93,15 +143,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 material: producto.getAttribute('data-material')
             };
 
-            // Verificar coincidencias
             let mostrar = true;
 
             for (const [filtro, valor] of Object.entries(filtrosActivos)) {
                 if (valor !== 'todos') {
                     const valorProducto = atributos[filtro];
-                    if (!valorProducto || valorProducto.toLowerCase() !== valor.toLowerCase()) {
-                        mostrar = false;
-                        break;
+
+                    if (Array.isArray(valor)) {
+                        // Caso alias: el producto debe coincidir con alguno de los valores
+                        if (!valorProducto || !valor.some(v => v.toLowerCase() === valorProducto.toLowerCase())) {
+                            mostrar = false;
+                            break;
+                        }
+                    } else {
+                        // Caso original: comparación directa
+                        if (!valorProducto || valorProducto.toLowerCase() !== valor.toLowerCase()) {
+                            mostrar = false;
+                            break;
+                        }
                     }
                 }
             }
@@ -114,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Mostrar/ocultar mensaje de "sin resultados" si existe
         if (noResultsDiv) {
             if (productosVisibles === 0) {
                 noResultsDiv.style.display = 'flex';
@@ -125,23 +183,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // =====================================================================
-    // 4. LECTURA DE FILTROS DESDE LA URL
+    // 5. LECTURA DE FILTROS DESDE LA URL
+    //    Ahora si el valor de la URL tiene un alias definido, se aplica
+    //    el array correspondiente. Si no, se comporta como antes.
     // =====================================================================
     const urlParams = new URLSearchParams(window.location.search);
     
     urlParams.forEach((valorUrl, tipoFiltroUrl) => {
         if (filtrosActivos[tipoFiltroUrl] !== undefined) {
-            filtrosActivos[tipoFiltroUrl] = valorUrl;
+            filtrosActivos[tipoFiltroUrl] = resolverAlias(tipoFiltroUrl, valorUrl);
             
-            const botonCorrespondiente = document.querySelector(`.filter-btn[data-filter-type="${tipoFiltroUrl}"][data-filter-value="${valorUrl}"]`);
-            if (botonCorrespondiente) {
-                botonCorrespondiente.classList.add('activo');
+            // Si el valor tiene alias (array), intentamos marcar un botón cuyo
+            // data-filter-value coincida con el alias (ej: "discos"). Si no
+            // existe ese botón, marcamos los botones de cada valor real.
+            const valorResuelto = filtrosActivos[tipoFiltroUrl];
+
+            if (Array.isArray(valorResuelto)) {
+                let botonAlias = document.querySelector(`.filter-btn[data-filter-type="${tipoFiltroUrl}"][data-filter-value="${valorUrl}"]`);
+                if (botonAlias) {
+                    botonAlias.classList.add('activo');
+                } else {
+                    valorResuelto.forEach(v => {
+                        const b = document.querySelector(`.filter-btn[data-filter-type="${tipoFiltroUrl}"][data-filter-value="${v}"]`);
+                        if (b) b.classList.add('activo');
+                    });
+                }
+            } else {
+                const botonCorrespondiente = document.querySelector(`.filter-btn[data-filter-type="${tipoFiltroUrl}"][data-filter-value="${valorUrl}"]`);
+                if (botonCorrespondiente) {
+                    botonCorrespondiente.classList.add('activo');
+                }
             }
         }
     });
 
     // =====================================================================
-    // 5. EVENTOS: Clics en los botones del menú lateral
+    // 6. EVENTOS: Clics en los botones del menú lateral
+    //    También respetan alias si el botón tiene como data-filter-value
+    //    una clave de alias (ej. "discos").
     // =====================================================================
     filterButtons.forEach(boton => {
         boton.addEventListener('click', function(e) {
@@ -158,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     btn.classList.remove('activo');
                 });
                 this.classList.add('activo');
-                filtrosActivos[tipoFiltro] = valorFiltro;
+                filtrosActivos[tipoFiltro] = resolverAlias(tipoFiltro, valorFiltro);
             }
 
             aplicarFiltros();
@@ -166,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // =====================================================================
-    // 6. BOTÓN: Limpiar Filtros
+    // 7. BOTÓN: Limpiar Filtros
     // =====================================================================
     if (btnLimpiar) {
         btnLimpiar.addEventListener('click', function(e) {
@@ -187,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // =====================================================================
-    // 7. INICIAR: Forzamos la ejecución apenas carga la página
+    // 8. INICIAR: Forzamos la ejecución apenas carga la página
     // =====================================================================
     aplicarFiltros();
 });
