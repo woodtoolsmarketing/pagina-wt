@@ -277,8 +277,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 016: Fresas Rectas Simples ---
     "FRS": {
         codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresa Recta HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar y rebajes", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresas Rectas HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "FRS0054", nombre: "FRS0054 - RECTA #5mm Z:4" },
             { id: "FRS0056", nombre: "FRS0056 - RECTA #5mm Z:6" },
@@ -340,7 +340,7 @@ const baseDatosProductos = {
     // --- Sub-rubro 017: Fresas Rectas con Incisores ---
     "FRI": {
         codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresa Recta con Incisores HM", marca: "WoodTools",
+        titulo: "Fresas Rectas con Incisores HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar sin astillar", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "FRI01542", nombre: "FRI01542 - C/INCISOR #15mm Z:4+2" },
@@ -397,8 +397,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Fresas 1/2 Círculo (Molduras) ---
     "F2C": {
         codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa de Medio Círculo", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura de Medio Círculo", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresas 1/2 círculo cóncavo y convexo HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "F2C014", nombre: "F2C014 - 1/2 CIRCULO DE 1/2 Z:4" },
             { id: "F2C016", nombre: "F2C016 - 1/2 CIRCULO DE 1/2 Z:6" },
@@ -418,8 +418,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Fresas 1/4 Círculo ---
     "F04C": {
         codigoBase: "F04C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa 1/4 Círculo", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura 1/4 Círculo", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresas 1/4 círculo cóncavo y convexo HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "F04C014", nombre: "F04C014 - 1/4 CIRCULO 1/2 A 3/4 Z:4" },
             { id: "F04C016", nombre: "F04C016 - 1/4 CIRCULO 1/2 A 3/4 Z:6" },
@@ -428,28 +428,24 @@ const baseDatosProductos = {
         ]
     },
 
-    // --- Sub-rubro 011: Fresas Rinconeras ---
+    // --- Rinconera Simple HM (catálogo pág. 5) ---
     "FR": {
         codigoBase: "FR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa Rinconera", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Rinconera / Moldura", "Material": "Widia (Metal Duro)" },
+        titulo: "Rinconera Simple HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Rinconera según modelos 1 ó 2", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "FR014", nombre: "FR014 - RINCONERA DE 3/4 Z:4" },
-            { id: "FR016", nombre: "FR016 - RINCONERA DE 3/4 Z:6" },
-            { id: "FR054", nombre: "FR054 - RINCONERA DE 1' Z:4" },
-            { id: "FR056", nombre: "FR056 - RINCONERA DE 1' Z:6" },
-            { id: "FR104", nombre: "FR104 - RINCONERA DE 1 1/4 Z:4" },
-            { id: "FR106", nombre: "FR106 - RINCONERA DE 1 1/4 Z:6" },
-            { id: "FR154", nombre: "FR154 - RINCONERA DE 1 1/2 Z:4" },
-            { id: "FR156", nombre: "FR156 - RINCONERA DE 1 1/2 Z:6" }
+            { id: "FR104", nombre: "FR104 - RINCONERA DE 3/4 Z:4" },
+            { id: "FR106", nombre: "FR106 - RINCONERA DE 3/4 Z:6" },
+            { id: "FR154", nombre: "FR154 - RINCONERA 1 1/2 Z:4" },
+            { id: "FR156", nombre: "FR156 - RINCONERA 1 1/2 Z:6" }
         ]
     },
 
-    // --- Sub-rubro 014: Fresas de Ángulo ---
+    // --- Fresas en ángulo HM (catálogo pág. 4) ---
     "FA": {
         codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresa de Ángulo 25° a 45°", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ángulo / Chanfle", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresas en ángulo HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar ángulos (α)", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "FA104", nombre: "FA104 - ANGULO 25°A 45° 10mm Z:4" },
             { id: "FA106", nombre: "FA106 - ANGULO 25°A 45° 10mm Z:6" },
@@ -520,8 +516,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 015: Fresas Regulables (suplementos) ---
     "FRG": {
         codigoBase: "FRG", categoriaImg: "Fresas", carpetaImg: "Recta",
-        titulo: "Fresa / Juego Regulable", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurado Regulable", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresas para Ranurar Regulables HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranuras, rebajes y espigas", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "FRG010", nombre: "FRG010 - SUPL. P/REGULABLE #10mm Z=4" },
             { id: "FRG020", nombre: "FRG020 - SUPLEMENTO P/REG. #20 Z=4" },
@@ -541,8 +537,7 @@ const baseDatosProductos = {
             { id: "FP2286", nombre: "FP2286 - 2 PALOS ESCOBA D=28 #75 Z=6" },
             { id: "FP3226", nombre: "FP3226 - 3 PALOS ESCOBA D=22.5 #88 Z=6" },
             { id: "FP3286", nombre: "FP3286 - 3 PALOS ESCOBA D=28 #100 Z=6" },
-            { id: "FP4226", nombre: "FP4226 - 4 PALOS ESCOBA D=22.5 #115 Z=6" },
-            { id: "FP402", nombre: "FP402 - MULTIMOLDURAS D=150 d=40 #45 Z=2" }
+            { id: "FP4226", nombre: "FP4226 - 4 PALOS ESCOBA D=22.5 #115 Z=6" }
         ]
     },
 
@@ -576,17 +571,57 @@ const baseDatosProductos = {
         ]
     },
 
-    // --- Sub-rubro 008: Fresas de Ensamble (JFE) ---
+    // --- Fresa para Finger HM (catálogo pág. 11) ---
+    "JFE254": {
+        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa para Finger HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFE254", nombre: "JFE254 - D=150 B=22 d=40 Z=4" }
+        ]
+    },
+    "JFE5022": {
+        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa para Finger HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFE5022", nombre: "JFE5022 - D=150 B=45 d=40 Z=2+2" }
+        ]
+    },
+    // --- Fresa para Ensamble Cónico HM (catálogo pág. 11) ---
+    "JFE81": {
+        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFE8122", nombre: "JFE8122 - D=150 B=10-45 d=40 Z=4x4" },
+            { id: "JFE8121", nombre: "JFE8121 - D=160 B=3,8 d=40 Z=1x4" }
+        ]
+    },
+    // --- Fresa para Encastre HM (catálogo pág. 12) ---
+    "JFE8Z": {
+        codigoBase: "JFE8Z", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa para Encastre HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFE8Z122", nombre: "JFE8Z122 - D=180 B=19-40 d=40 Z=3+3 (A)" },
+            { id: "JFE8Z124", nombre: "JFE8Z124 - D=180 B=19-40 d=40 Z=3+3 (B)" }
+        ]
+    },
+    "JFME68": {
+        codigoBase: "JFME68", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa para Encastre HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFME68", nombre: "JFME68 - D=245 B=22-68 d=40 Z=3+3 (B)" }
+        ]
+    },
+    // --- Otros juegos de ensamble (no listados individualmente en pág. 5-14) ---
     "JFE": {
         codigoBase: "JFE", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Juego de Fresas de Ensamble", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble / Encastre", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "JFE254", nombre: "JFE254 - ENSAMBLE #23 P=7 H t=3.5" },
-            { id: "JFE5022", nombre: "JFE5022 - ENSAMBLE D=150 d=40 #46mm Z=4 P=5" },
-            { id: "JFE8122", nombre: "JFE8122 - ENSAMBLE FINGER A 180° D=150 d=40 Z=4" },
-            { id: "JFE8Z122", nombre: "JFE8Z122 - ENSAMBLE 90° y 180° 'A' D=180 #19 a 47 Z=3" },
-            { id: "JFE8Z124", nombre: "JFE8Z124 - ENSAMBLE 90° y 180° 'B' D=180 19-47 Z=3" },
             { id: "JFE8Z34", nombre: "JFE8Z34 - ENSAMBLE 90° y 180° 'A' D=150 12 a 22" }
         ]
     },
@@ -594,33 +629,50 @@ const baseDatosProductos = {
     // --- Sub-rubro 012: Moldura Puertas y Ventanas (JFMPV) ---
     "JFMPV": {
         codigoBase: "JFMPV", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Juego Moldura Puertas y Ventanas", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Aberturas", "Material": "Widia (Metal Duro)" },
+        titulo: "Moldura de Puertas y Ventanas HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "JFMPV14", nombre: "JFMPV14 - MOLD. PTAS. VNA. 3 FRESAS Z:14 35 a 44mm" },
-            { id: "JFMPVR", nombre: "JFMPVR - Mold. Contramol. Replan 3Fr. D=180 #35-44 Z=2+2" }
+            { id: "JFMPV14", nombre: "JFMPV14 - D=150 B=1 1/2 a 2\" d=40 Z=2x4 y 1x6" }
         ]
     },
 
     // --- Sub-rubro 012: Puerta Mueble de Cocina (JFPMS) ---
     "JFPMS": {
         codigoBase: "JFPMS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Juego Puerta Mueble de Cocina", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Muebles / Cocinas", "Material": "Widia (Metal Duro)" },
+        titulo: "Puerta de Muebles HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "JFPMS10", nombre: "JFPMS10 - PTA. MUEBLE COCINA Y=160 Z=4+6" }
+            { id: "JFPMS10", nombre: "JFPMS10 - D=160 B=1\" d=40 Z=1x4 y 1x6" }
         ]
     },
 
-    // --- Sub-rubro 010: Deck para Machimbre (JFDE / JFDR) ---
-    "JFD": {
-        codigoBase: "JFD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Juego Fresas Deck", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck / Machimbre", "Material": "Widia (Metal Duro)" },
+    // --- Deck Standard HM (catálogo pág. 8) ---
+    "JFDE": {
+        codigoBase: "JFDE", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Deck Standard HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "JFDE4", nombre: "JFDE4 - 2 FR. DECK ESTANDAR #33mm D=150 Z=4" },
-            { id: "JFDR4", nombre: "JFDR4 - 2 FR. DECK REGULABLE #10 A 25mm D=150 Z=4" },
-            { id: "JFDSG16", nombre: "JFDSG16 - DECK HEMBRA y SC GRAMPA #22mm D=160 Z=6+2x12" }
+            { id: "JFDE4", nombre: "JFDE4 - D=150 B=3/4 a 1\" d=40 Z=2x4" },
+            { id: "JFDE6", nombre: "JFDE6 - D=160 B=3/4 a 1\" d=40 Z=2x6" }
+        ]
+    },
+    // --- Deck para Grampa HM (catálogo pág. 8) ---
+    "JFDSG": {
+        codigoBase: "JFDSG", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Deck para Grampa HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck para montaje con grampa plástica (machimbradora)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFDSG14", nombre: "JFDSG14 - D=160 B=1\" d=40 Z=4x4 y 2x8" },
+            { id: "JFDSG16", nombre: "JFDSG16 - D=160 B=1\" d=40 Z=4x6 y 2x12" }
+        ]
+    },
+    // --- Deck regulable (no listado individualmente en pág. 5-14) ---
+    "JFDR": {
+        codigoBase: "JFDR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Juego de Fresas Deck Regulable", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck regulable", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFDR4", nombre: "JFDR4 - 2 FR. DECK REGULABLE #10 A 25mm D=150 Z=4" }
         ]
     },
 
@@ -634,31 +686,31 @@ const baseDatosProductos = {
         ]
     },
 
-    // --- Sub-rubro 013: Multirradio (FMR) ---
+    // --- Fresa para Radios Múltiples HM (catálogo pág. 12) ---
     "FMR": {
         codigoBase: "FMR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa Multirradio", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura Multirradio", "Material": "Widia (Metal Duro)" },
+        titulo: "Fresa para Radios Múltiples HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "FMR04", nombre: "FMR04 - MULTIRRADIO D=160 d=40 #55 Z=4" }
+            { id: "FMR04", nombre: "FMR04 - D=140 B=35 d=40 Z=4" }
         ]
     },
 
     // --- Sub-rubro 013: Replan Tablero (FRP) ---
     "FRP": {
         codigoBase: "FRP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa Replan Tablero", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replan Tablero", "Material": "Widia (Metal Duro)" },
+        titulo: "Replán de Tablero HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Widia (Metal Duro)" },
         variantes: [
-            { id: "FRP5533", nombre: "FRP5533 - REPLAN TABLERO 55mm Y=200 #55 Z=3+3" }
+            { id: "FRP5533", nombre: "FRP5533 - D=200 B=55 d=40 Z=3+3 b=20" }
         ]
     },
 
     // --- Sub-rubro 018: Cabezales Cepilladores (CB) ---
     "CB": {
         codigoBase: "CB", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Cabezal Cepillador Helicoidal", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillado Industrial", "Material": "Widia (Metal Duro)" },
+        titulo: "Cabezales Cepilladores HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Widia (Metal Duro)" },
         variantes: [
             { id: "CB0500640", nombre: "CB0500640 - Y=125 #50(6) Z=36 3 ENTRADAS" },
             { id: "CB0750660", nombre: "CB0750660 - Y=125 #75(6) Z=54 3 ENTRADAS" },
@@ -668,6 +720,112 @@ const baseDatosProductos = {
             { id: "CB1801280", nombre: "CB1801280 - Y=125 #180(12) Z=76 3 ENTRADAS" },
             { id: "CB2001286", nombre: "CB2001286 - Y=125 #200(12) Z=86" },
             { id: "CB22012100", nombre: "CB22012100 - #220(12) Z=96" }
+        ]
+    },
+
+    // --- Zócalo Simple y Contramarco HM (catálogo pág. 5) ---
+    "FZS": {
+        codigoBase: "FZS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Zócalo Simple y Contramarco HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar zócalos y contramarcos", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "FZS128", nombre: "FZS128 - D=150 B=1/2-3/4\" d=40 Z=4 (A y B)" },
+            { id: "FZS129", nombre: "FZS129 - D=150 B=1/2-3/4\" d=40 Z=4 (A y A)" }
+        ]
+    },
+    // --- Rinconera Doble HM (catálogo pág. 6) ---
+    "JFRD": {
+        codigoBase: "JFRD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Rinconera Doble HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar Rinconera Doble (modelos 1 ó 2)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFRD", nombre: "JFRD - D=160 B=1\" d=40 Z=2x4 y 1x10" }
+        ]
+    },
+    // --- Frente Inglés HM (catálogo pág. 6) ---
+    "JFFI": {
+        codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Frente Inglés HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFFI01", nombre: "JFFI01 - D=175 B=1/2-1\" d=40 Z=4x4 (A)" },
+            { id: "JFFI05", nombre: "JFFI05 - D=175 B=1/2-1\" d=40 Z=4x4 (B)" }
+        ]
+    },
+    // --- Machimbre Simple HM (catálogo pág. 6) ---
+    "JFMS": {
+        codigoBase: "JFMS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Machimbre Simple HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMS1234", nombre: "JFMS1234 - D=155 B=1/2-3/4\" d=40 Z=5x4 y 1x16" },
+            { id: "JFMS34114", nombre: "JFMS34114 - D=155 B=3/4-1 1/4\" d=40 Z=6x4" }
+        ]
+    },
+    // --- Machimbre Doble HM (catálogo pág. 7) ---
+    "JFMD": {
+        codigoBase: "JFMD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Machimbre Doble HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMD1234", nombre: "JFMD1234 - D=155 B=1/2-3/4\" d=40 Z=10x4 y 2x16" }
+        ]
+    },
+    // --- Machimbre Piso para Grampa y Microbisel (catálogo pág. 8) ---
+    "JFMP34166M": {
+        codigoBase: "JFMP34166M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Machimbre Piso para Grampa y Microbisel", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta, microbisel y aristas redondeadas para grampa de sujeción", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMP34166M", nombre: "JFMP34166M - D=180 B=5/8-1\" d=40 Z=8x6+6" }
+        ]
+    },
+    // --- Machimbre Piso para Grampa (catálogo pág. 7) ---
+    "JFMP3416G": {
+        codigoBase: "JFMP3416G", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Machimbre Piso para Grampa", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMP3416G", nombre: "JFMP3416G - D=180 B=5/8-1\" d=40 Z=4x6+6" }
+        ]
+    },
+    // --- Machimbre Piso Standard (catálogo pág. 7) ---
+    "JFMP": {
+        codigoBase: "JFMP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Machimbre Piso Standard", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta (macho y hembra redondeados)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMP3411", nombre: "JFMP3411 - D=150 B=3/4-1 1/4\" d=40 Z=4x4" },
+            { id: "JFMP3416", nombre: "JFMP3416 - D=160 B=5/8-1\" d=40 Z=4x6" }
+        ]
+    },
+    // --- Contramolduras de Puertas y Ventanas HM (catálogo pág. 9) ---
+    "FCPV": {
+        codigoBase: "FCPV", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Contramolduras de Puertas y Ventanas HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Contramolduras en Espigadoras o Tupíes", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "FCPV41", nombre: "FCPV41 - D=150 B=1 1/2 a 2\" d=40 Z=4" },
+            { id: "FCPV6", nombre: "FCPV6 - D=250 B=1 1/2 a 2\" d=40 Z=6" },
+            { id: "FCPV61", nombre: "FCPV61 - D=320 B=1 1/2 a 2\" d=40 Z=6" }
+        ]
+    },
+    // --- Moldura de Puertas y Ventanas Simple HM (catálogo pág. 10) ---
+    "JFMPVR": {
+        codigoBase: "JFMPVR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Moldura de Puertas y Ventanas Simple HM", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "JFMPVR", nombre: "JFMPVR - D=180 B=35-45 d=40 Z=1x2+2 y 2x4" }
+        ]
+    },
+    // --- Fresa Multimoldura (catálogo pág. 12) ---
+    "FP402": {
+        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        titulo: "Fresa Multimoldura", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Widia (Metal Duro)" },
+        variantes: [
+            { id: "FP402", nombre: "FP402 - D=150 B=45 d=40 Z=2" }
         ]
     },
 
@@ -1263,7 +1421,14 @@ const baseDatosProductos = {
 };
 
 /* ==========================================================================
-   2. LÓGICA DE INTERFAZ Y RENDERIZADO INTELIGENTE
+   2. CONFIGURACIÓN DE COTIZACIÓN POR MAIL
+   ========================================================================== */
+// Ruta dedicada a cotizaciones (separada del formulario de contacto general).
+const ENDPOINT_COTIZACION = "https://servidor-page-wt.onrender.com/enviar-cotizacion";
+const WHATSAPP_NUMERO = "5491134609057";
+
+/* ==========================================================================
+   3. LÓGICA DE INTERFAZ Y RENDERIZADO INTELIGENTE
    ========================================================================== */
 
 let productoActualInfo = null;
@@ -1271,21 +1436,12 @@ let codigoReal = "";
 
 /**
  * Detecta la familia a la que pertenece un código de archivo.
- * Estrategia (en orden):
- * 1. Match EXACTO con una clave (la clave ES el código completo).
- * 2. Match por PREFIJO: la clave más larga con la que el código EMPIEZA.
- * Se ordena por longitud DESC para que, por ejemplo, "FMES..." gane sobre
- * "FMR"/"FA" y "FRI"/"FRS"/"FRG"/"FRP" ganen sobre "FR0", etc.
- * Se usa startsWith (NO includes) para evitar falsos positivos.
  */
 function detectarFamilia(codigo) {
     const keys = Object.keys(baseDatosProductos).sort((a, b) => b.length - a.length);
-
-    // 1) Match exacto
     for (let key of keys) {
         if (codigo === key) return baseDatosProductos[key];
     }
-    // 2) Match por prefijo (la clave más larga que el código empiece con ella)
     for (let key of keys) {
         if (codigo.startsWith(key)) return baseDatosProductos[key];
     }
@@ -1304,13 +1460,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     cargarEstructuraProducto(productoActualInfo);
 
-    const btnWhatsapp = document.getElementById("btn-whatsapp");
-    if (btnWhatsapp) {
-        btnWhatsapp.addEventListener("click", function(e) {
-            e.preventDefault();
-            generarEnlaceWhatsApp();
-        });
-    }
+    // Inyectamos el botón "Pedir cotización" y el modal en todas las páginas
+    // de producto, sin necesidad de tocar los 47 HTML. El botón verde original
+    // de WhatsApp se oculta dentro de esta función.
+    inyectarBotonYModalCotizacion();
 });
 
 function renderizarGaleria(codigoActivo, info) {
@@ -1320,7 +1473,6 @@ function renderizarGaleria(codigoActivo, info) {
     const defaultLogo = "../../../imagenes/logos/WoodTools.png";
     let carpetaBase = info.carpetaImg;
 
-    // Lógica específica para MCD/MCI 03 y 15 solicitada (Actualiza la carpeta de imágenes)
     if (codigoActivo && (codigoActivo.startsWith("MCD03") || codigoActivo.startsWith("MCI03"))) {
         carpetaBase = "Familias MCD  MCI 3";
     } else if (codigoActivo && (codigoActivo.startsWith("MCD15") || codigoActivo.startsWith("MCI15"))) {
@@ -1328,8 +1480,6 @@ function renderizarGaleria(codigoActivo, info) {
     }
 
     let carpetasImg = [carpetaBase];
-    // Si no estamos en la vista de familia genérica, o si seleccionaron una variante específica,
-    // buscamos también la carpeta de esa variante.
     if (codigoActivo && codigoActivo !== info.codigoBase) {
         carpetasImg = [codigoActivo, carpetaBase];
     }
@@ -1414,13 +1564,11 @@ function cargarEstructuraProducto(info) {
             });
         }
 
-        // Listener para que al seleccionar una medida, se actualicen las fotos en tiempo real.
         selector.onchange = function() {
             renderizarGaleria(this.value, info);
         };
     }
 
-    // Renderizamos la galería con la medida precargada
     renderizarGaleria(codigoReal, info);
 
     const filas = document.querySelectorAll(".tabla-caracteristicas tr");
@@ -1486,26 +1634,425 @@ window.cambiarImagen = function(elemento) {
     }
 };
 
-function generarEnlaceWhatsApp() {
-    const selector = document.getElementById("variante-selector");
+/* ==========================================================================
+   4. UTILIDADES DE PRODUCTO / VARIANTE SELECCIONADA
+   ========================================================================== */
+
+function obtenerNombreProducto() {
     let nombreLimpio = productoActualInfo ? productoActualInfo.titulo.split('(')[0].trim() : "Herramienta";
-    let nombreProducto = (codigoReal && productoActualInfo && codigoReal !== productoActualInfo.codigoBase)
+    return (codigoReal && productoActualInfo && codigoReal !== productoActualInfo.codigoBase)
         ? `${nombreLimpio} ${codigoReal}`
         : nombreLimpio;
-    
-    let varianteSeleccionada = "";
+}
+
+function obtenerVarianteSeleccionada() {
+    const selector = document.getElementById("variante-selector");
     if (selector && selector.selectedIndex >= 0) {
-         let option = selector.options[selector.selectedIndex];
-         if(!option.disabled) {
-             varianteSeleccionada = option.getAttribute("data-nombre") || option.text;
-         }
+        let option = selector.options[selector.selectedIndex];
+        if (!option.disabled) {
+            return option.getAttribute("data-nombre") || option.text;
+        }
+    }
+    return "";
+}
+
+/**
+ * Extrae el código/modelo de la variante seleccionada. La variante viene como
+ * "SC2504144F - D: 250mm | B: 4.0mm | Z: 14+4"; el modelo es lo previo al " - ".
+ * Si no hay guion, usa el value del option (que es el id del modelo).
+ */
+function obtenerModeloSeleccionado() {
+    const selector = document.getElementById("variante-selector");
+    if (selector && selector.selectedIndex >= 0) {
+        const option = selector.options[selector.selectedIndex];
+        if (!option.disabled) {
+            const texto = option.getAttribute("data-nombre") || option.text || "";
+            const partes = texto.split(" - ");
+            if (partes.length > 1 && partes[0].trim()) {
+                return partes[0].trim();
+            }
+            // Sin guion: el value suele ser el id/código del modelo
+            if (option.value && option.value !== "") return option.value.trim();
+            return texto.trim();
+        }
+    }
+    return "";
+}
+
+/* ==========================================================================
+   5. MODAL "PEDIR COTIZACIÓN" (mail + whatsapp con datos)
+   ========================================================================== */
+
+function inyectarBotonYModalCotizacion() {
+    const btnWhatsapp = document.getElementById("btn-whatsapp");
+
+    // Ocultamos el botón verde original de WhatsApp ("Consultar Precio y Stock").
+    // Queda solo "Pedir cotización" como acción principal.
+    if (btnWhatsapp) {
+        btnWhatsapp.style.display = "none";
     }
 
-    if (selector && !varianteSeleccionada) {
-        alert("Por favor, elegí una medida o variante antes de consultar.");
+    // --- Botón "Pedir cotización" (acción principal de la página) ---
+    if (!document.getElementById("btn-cotizar-mail")) {
+        const btnMail = document.createElement("a");
+        btnMail.href = "#";
+        btnMail.id = "btn-cotizar-mail";
+        btnMail.className = "btn-cotizar-mail";
+        btnMail.innerHTML = `<i class="fa-solid fa-envelope"></i> Pedir cotización`;
+        btnMail.addEventListener("click", function(e) {
+            e.preventDefault();
+            abrirModalCotizacion("mail");
+        });
+
+        // Lo colocamos donde estaba el botón verde; si no existiera, lo
+        // agregamos al contenedor de info del producto.
+        if (btnWhatsapp) {
+            btnWhatsapp.insertAdjacentElement("afterend", btnMail);
+        } else {
+            const contenedor = document.querySelector(".producto-info") || document.body;
+            contenedor.appendChild(btnMail);
+        }
+    }
+
+    // --- Estilos del botón y el modal (inyectados una sola vez) ---
+    if (!document.getElementById("estilos-cotizacion")) {
+        const estilos = document.createElement("style");
+        estilos.id = "estilos-cotizacion";
+        estilos.textContent = `
+            .btn-cotizar-mail {
+                display: flex; align-items: center; justify-content: center; gap: 8px;
+                background-color: #a41e22; color: #fff; border: none;
+                padding: 13px 20px; font-size: 16px; font-weight: bold;
+                border-radius: 4px; cursor: pointer; width: 100%;
+                margin-top: 8px; text-decoration: none;
+                transition: background 0.3s;
+            }
+            .btn-cotizar-mail:hover { background-color: #7d161a; }
+            .btn-cotizar-mail i { font-size: 16px; }
+
+            .wt-modal-overlay {
+                position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+                display: none; align-items: center; justify-content: center;
+                z-index: 9999; padding: 16px;
+            }
+            .wt-modal-overlay.activo { display: flex; }
+            .wt-modal {
+                background: #fff; border-radius: 8px; width: 100%; max-width: 480px;
+                max-height: 90vh; overflow-y: auto; padding: 26px;
+                border-top: 4px solid #a41e22; box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+                font-family: inherit;
+            }
+            .wt-modal h2 { color: #a41e22; margin: 0 0 6px; font-size: 22px; text-align: center; }
+            .wt-modal .wt-sub { text-align: center; color: #666; font-size: 14px; margin: 0 0 20px; }
+            .wt-modal .wt-prod {
+                background: #f5f5f5; border-radius: 4px; padding: 10px 12px;
+                font-size: 14px; color: #333; margin-bottom: 18px;
+            }
+            .wt-field { margin-bottom: 14px; }
+            .wt-field label { display: block; font-weight: bold; margin-bottom: 6px; color: #333; font-size: 14px; }
+            .wt-field input, .wt-field select {
+                width: 100%; padding: 11px; border: 1px solid #ddd; border-radius: 4px;
+                font-size: 15px; font-family: inherit; box-sizing: border-box;
+            }
+            .wt-field input:focus, .wt-field select:focus { outline: none; border-color: #a41e22; }
+            .wt-field small { color: #888; font-size: 12px; }
+            .wt-row { display: flex; gap: 10px; }
+            .wt-row .wt-field { flex: 1; }
+            .wt-error { color: #c0392b; font-size: 12px; margin-top: 4px; display: none; }
+            .wt-error.activo { display: block; }
+            .wt-acciones { display: flex; gap: 10px; margin-top: 18px; }
+            .wt-btn {
+                flex: 1; border: none; border-radius: 4px; padding: 13px;
+                font-size: 15px; font-weight: bold; cursor: pointer; transition: opacity 0.2s;
+                display: flex; align-items: center; justify-content: center; gap: 8px;
+            }
+            .wt-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+            .wt-btn-mail { background: #a41e22; color: #fff; }
+            .wt-btn-mail:hover { background: #7d161a; }
+            .wt-btn-wa { background: #25D366; color: #fff; }
+            .wt-btn-wa:hover { background: #1da851; }
+            .wt-cerrar {
+                background: none; border: none; font-size: 24px; color: #999;
+                cursor: pointer; float: right; line-height: 1; margin-top: -8px;
+            }
+            .wt-estado { text-align: center; font-weight: bold; margin-top: 14px; display: none; }
+            @media (max-width: 520px) { .wt-row { flex-direction: column; gap: 0; } }
+        `;
+        document.head.appendChild(estilos);
+    }
+
+    // --- Estructura del modal (inyectada una sola vez) ---
+    if (!document.getElementById("wt-modal-overlay")) {
+        const overlay = document.createElement("div");
+        overlay.id = "wt-modal-overlay";
+        overlay.className = "wt-modal-overlay";
+        overlay.innerHTML = `
+            <div class="wt-modal" role="dialog" aria-modal="true">
+                <button type="button" class="wt-cerrar" id="wt-cerrar" aria-label="Cerrar">&times;</button>
+                <h2>Pedí tu cotización</h2>
+                <p class="wt-sub">Completá tus datos y te respondemos a la brevedad.</p>
+
+                <div class="wt-prod" id="wt-prod-resumen"></div>
+
+                <div class="wt-field">
+                    <label for="wt-nombre">Nombre completo *</label>
+                    <input type="text" id="wt-nombre" placeholder="Ej: Juan Pérez" autocomplete="name">
+                    <div class="wt-error" id="wt-err-nombre">Ingresá tu nombre completo.</div>
+                </div>
+
+                <label style="display:block;font-weight:bold;margin-bottom:6px;color:#333;font-size:14px;">Información de contacto *</label>
+                <div class="wt-row">
+                    <div class="wt-field">
+                        <input type="tel" id="wt-telefono" inputmode="numeric" placeholder="Teléfono (solo números)" autocomplete="tel">
+                        <div class="wt-error" id="wt-err-telefono">Ingresá un teléfono válido (solo números).</div>
+                    </div>
+                    <div class="wt-field">
+                        <input type="email" id="wt-email" placeholder="correo@dominio.com" autocomplete="email">
+                        <div class="wt-error" id="wt-err-email">Ingresá un email válido (debe terminar en @dominio.com).</div>
+                    </div>
+                </div>
+                <small>Completá al menos uno de los dos.</small>
+
+                <div class="wt-field" style="margin-top:14px;">
+                    <label for="wt-es-cliente">¿Ya es cliente de WoodTools? *</label>
+                    <select id="wt-es-cliente">
+                        <option value="" disabled selected>-- Elegí una opción --</option>
+                        <option value="si">Sí, ya soy cliente</option>
+                        <option value="no">No, es mi primera consulta</option>
+                    </select>
+                    <div class="wt-error" id="wt-err-cliente">Indicá si ya sos cliente.</div>
+                </div>
+
+                <div class="wt-field" id="wt-campo-cuit" style="display:none;">
+                    <label for="wt-cuit">DNI *</label>
+                    <input type="text" id="wt-cuit" inputmode="numeric" placeholder="Ej: 30123456 (solo números)">
+                    <div class="wt-error" id="wt-err-cuit">Ingresá tu DNI (7 u 8 números).</div>
+                </div>
+
+                <div class="wt-acciones">
+                    <button type="button" class="wt-btn wt-btn-mail" id="wt-btn-enviar-mail">
+                        <i class="fa-solid fa-envelope"></i> Enviar por mail
+                    </button>
+                    <button type="button" class="wt-btn wt-btn-wa" id="wt-btn-enviar-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
+                    </button>
+                </div>
+
+                <p class="wt-estado" id="wt-estado"></p>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // --- Eventos del modal ---
+        document.getElementById("wt-cerrar").addEventListener("click", cerrarModalCotizacion);
+        overlay.addEventListener("click", function(e) {
+            if (e.target === overlay) cerrarModalCotizacion();
+        });
+
+        // Teléfono: solo números
+        document.getElementById("wt-telefono").addEventListener("input", function() {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+        // CUIT: solo números
+        document.getElementById("wt-cuit").addEventListener("input", function() {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+
+        // Mostrar/ocultar campo CUIT según sea cliente o no
+        document.getElementById("wt-es-cliente").addEventListener("change", function() {
+            const campoCuit = document.getElementById("wt-campo-cuit");
+            campoCuit.style.display = (this.value === "si") ? "block" : "none";
+        });
+
+        document.getElementById("wt-btn-enviar-mail").addEventListener("click", enviarCotizacionMail);
+        document.getElementById("wt-btn-enviar-wa").addEventListener("click", enviarCotizacionWhatsApp);
+    }
+}
+
+function abrirModalCotizacion(origen) {
+    const overlay = document.getElementById("wt-modal-overlay");
+    if (!overlay) return;
+
+    // Validamos que haya una variante elegida antes de abrir
+    const selector = document.getElementById("variante-selector");
+    if (selector && !obtenerVarianteSeleccionada()) {
+        alert("Por favor, elegí una medida o variante antes de continuar.");
         return;
     }
 
-    const mensaje = `Hola! Consulto por ${nombreProducto}. Me interesa la variante: ${varianteSeleccionada}. ¿Me podrían pasar precio y stock?`;
-    window.open(`https://wa.me/5491134609057?text=${encodeURIComponent(mensaje)}`, "_blank");
+    // Resumen del producto
+    const resumen = document.getElementById("wt-prod-resumen");
+    const variante = obtenerVarianteSeleccionada();
+    resumen.innerHTML = `<strong>Producto:</strong> ${obtenerNombreProducto()}` +
+        (variante ? `<br><strong>Variante:</strong> ${variante}` : "");
+
+    // Reiniciamos estado
+    document.getElementById("wt-estado").style.display = "none";
+    overlay.classList.add("activo");
+}
+
+function cerrarModalCotizacion() {
+    const overlay = document.getElementById("wt-modal-overlay");
+    if (overlay) overlay.classList.remove("activo");
+}
+
+/**
+ * Valida los campos del modal. Devuelve un objeto con los datos si es válido,
+ * o null si hay errores (mostrando los mensajes correspondientes).
+ */
+function validarFormularioCotizacion() {
+    let ok = true;
+
+    // Helpers para mostrar/ocultar errores
+    const setError = (idError, mostrar) => {
+        const el = document.getElementById(idError);
+        if (el) el.classList.toggle("activo", mostrar);
+    };
+
+    const nombre = document.getElementById("wt-nombre").value.trim();
+    const telefono = document.getElementById("wt-telefono").value.trim();
+    const email = document.getElementById("wt-email").value.trim();
+    const esCliente = document.getElementById("wt-es-cliente").value;
+    const cuit = document.getElementById("wt-cuit").value.trim();
+
+    // Nombre obligatorio
+    setError("wt-err-nombre", false);
+    if (nombre.length < 3) { setError("wt-err-nombre", true); ok = false; }
+
+    // Email: debe tener formato usuario@dominio.tld válido. Vacío se permite
+    // si hay teléfono; si tiene contenido, debe ser válido.
+    // - Antes del @: sin espacios ni @
+    // - Después del @: al menos un dominio, un punto, y un TLD de 2+ letras
+    // - No permite puntos consecutivos ni punto al final
+    const emailRegex = /^[^\s@]+@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+    setError("wt-err-email", false);
+    const emailValido = email === "" ? true : emailRegex.test(email);
+    if (!emailValido) { setError("wt-err-email", true); ok = false; }
+
+    // Teléfono: si tiene contenido, mínimo 6 dígitos
+    setError("wt-err-telefono", false);
+    const telefonoValido = telefono === "" ? true : /^[0-9]{6,}$/.test(telefono);
+    if (!telefonoValido) { setError("wt-err-telefono", true); ok = false; }
+
+    // Al menos un medio de contacto válido y no vacío
+    if (email === "" && telefono === "") {
+        setError("wt-err-telefono", true);
+        setError("wt-err-email", true);
+        ok = false;
+    }
+
+    // ¿Es cliente?
+    setError("wt-err-cliente", false);
+    if (esCliente !== "si" && esCliente !== "no") { setError("wt-err-cliente", true); ok = false; }
+
+    // DNI obligatorio sólo si es cliente
+    setError("wt-err-cuit", false);
+    if (esCliente === "si") {
+        if (!/^[0-9]{7,8}$/.test(cuit)) { setError("wt-err-cuit", true); ok = false; }
+    }
+
+    if (!ok) return null;
+
+    return {
+        nombre,
+        telefono,
+        email,
+        esCliente, // "si" | "no"
+        cuit: esCliente === "si" ? cuit : "",
+        producto: obtenerNombreProducto(),
+        variante: obtenerVarianteSeleccionada(),
+        modelo: obtenerModeloSeleccionado()
+    };
+}
+
+async function enviarCotizacionMail() {
+    const datos = validarFormularioCotizacion();
+    if (!datos) return;
+
+    const btn = document.getElementById("wt-btn-enviar-mail");
+    const estado = document.getElementById("wt-estado");
+    const textoOriginal = btn.innerHTML;
+
+    btn.disabled = true;
+    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Enviando...`;
+    estado.style.display = "none";
+
+    // Payload para la ruta /enviar-cotizacion (campos limpios y separados).
+    const payload = {
+        nombre: datos.nombre,
+        email: datos.email,
+        telefono: datos.telefono,
+        esCliente: datos.esCliente === "si",
+        cuit: datos.cuit,
+        producto: datos.producto,
+        variante: datos.variante,
+        modelo: datos.modelo
+    };
+
+    try {
+        const respuesta = await fetch(ENDPOINT_COTIZACION, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const resultado = await respuesta.json();
+
+        if (resultado.success) {
+            estado.style.display = "block";
+            estado.style.color = "green";
+            estado.innerText = "¡Consulta enviada! Nos pondremos en contacto a la brevedad.";
+            setTimeout(cerrarModalCotizacion, 2500);
+        } else {
+            throw new Error("El servidor respondió con error");
+        }
+    } catch (error) {
+        estado.style.display = "block";
+        estado.style.color = "#c0392b";
+        estado.innerText = "Hubo un error al enviar. Probá de nuevo o usá el botón de WhatsApp.";
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = textoOriginal;
+    }
+}
+
+function enviarCotizacionWhatsApp() {
+    const datos = validarFormularioCotizacion();
+    if (!datos) return;
+
+    const mensaje = armarMensajeWhatsApp(datos);
+
+    window.open(`https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, "_blank");
+    cerrarModalCotizacion();
+}
+
+/**
+ * Arma el mensaje de WhatsApp en tono natural.
+ * Formato: "Hola, quiero pedir cotización de [Herramienta] [medidas], mi nombre
+ * es [nombre], mi número es [tel], mi mail es [mail] y [estado cliente]."
+ */
+function armarMensajeWhatsApp(d) {
+    // Herramienta + medidas. La variante suele venir como "CODIGO - medidas";
+    // nos quedamos sólo con la parte de medidas para que la frase fluya.
+    let medidas = "";
+    if (d.variante) {
+        const partes = d.variante.split(" - ");
+        medidas = partes.length > 1 ? partes.slice(1).join(" - ").trim() : d.variante.trim();
+    }
+    const herramienta = medidas ? `${d.producto} (${medidas})` : d.producto;
+
+    // Estado del cliente
+    let estado;
+    if (d.esCliente === "si") {
+        estado = `soy cliente, mi DNI es ${d.cuit}`;
+    } else {
+        estado = `es mi primera consulta`;
+    }
+
+    // Armamos las partes de contacto disponibles
+    let contacto = [];
+    if (d.telefono) contacto.push(`mi número es ${d.telefono}`);
+    if (d.email) contacto.push(`mi mail es ${d.email}`);
+    const contactoTexto = contacto.length > 0 ? `, ${contacto.join(", ")}` : "";
+
+    return `Hola, quiero pedir cotización de ${herramienta}, mi nombre es ${d.nombre}${contactoTexto} y ${estado}.`;
 }
