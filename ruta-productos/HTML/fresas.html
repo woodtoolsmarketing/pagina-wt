@@ -57,23 +57,21 @@
     <main class="main-container">
         <aside class="filters-sidebar">
             <h2>Fresas</h2>
-            
-            <div class="filter-group">
-                <h3>Categoría</h3>
-                <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="moldura">Perfilado y Molduras</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="regulable">Juegos Regulables</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="categoria" data-filter-value="encastre">Sistemas de Encastre</a></li>
-                    <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
-                </ul>
-            </div>
 
             <div class="filter-group">
-                <h3>Tipo</h3>
+                <h3>Tipo de fresa</h3>
                 <ul>
-                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="rectas">Rectas y Desbaste</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="helicoidales">Helicoidales</a></li>
-                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="diamante">Diamante</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="canales">Realizar canales</a></li>
+                    <li><a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="cepillado">Cepillado</a></li>
+                    <li>
+                        <a href="#" class="filter-btn" data-filter-type="tipo" data-filter-value="moldura">Molduras</a>
+                        <!-- Submenú que se despliega al elegir "Molduras" -->
+                        <ul id="submenu-moldura" class="submenu-moldura" style="display: none;">
+                            <li><a href="#" class="filter-btn" data-filter-type="subtipo" data-filter-value="individual">Fresa Individual</a></li>
+                            <li><a href="#" class="filter-btn" data-filter-type="subtipo" data-filter-value="combo">Combo de fresas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="filter-btn" id="btn-limpiar" style="color: #a41e22; font-weight: bold; margin-top: 10px; display: inline-block;">Limpiar Filtros</a></li>
                 </ul>
             </div>
 
@@ -219,6 +217,160 @@
                     </div>
                 </a>
 
+                <!-- ============================================================ -->
+                <!-- ===== HERRAMIENTAS NUEVAS DEL CATÁLOGO (pág. 5-14) ========= -->
+                <!-- ============================================================ -->
+
+                <!-- ===== FRESAS EN ÁNGULO (familia FA) ===== -->
+                <a href="FR/FA104.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FA104/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FA104"></div>
+                    <div class="product-info">
+                        <div class="product-title">Fresas en ángulo HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== 1/2 CÍRCULO CÓNCAVO Y CONVEXO (familia F2C) ===== -->
+                <a href="FR/F2C014.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/F2C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F2C014"></div>
+                    <div class="product-info">
+                        <div class="product-title">Fresas 1/2 círculo cóncavo y convexo HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== ZÓCALO SIMPLE Y CONTRAMARCO (familia FZS) ===== -->
+                <a href="FR/FZS128.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FZS128/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FZS128"></div>
+                    <div class="product-info">
+                        <div class="product-title">Zócalo Simple y Contramarco HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== RINCONERA SIMPLE (familia FR) ===== -->
+                <a href="FR/FR104.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/FR104/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FR104"></div>
+                    <div class="product-info">
+                        <div class="product-title">Rinconera Simple HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== RINCONERA DOBLE (familia JFRD) ===== -->
+                <a href="FR/JFRD.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFRD/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFRD"></div>
+                    <div class="product-info">
+                        <div class="product-title">Rinconera Doble HM</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== FRENTE INGLÉS (familia JFFI) ===== -->
+                <a href="FR/JFFI01.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFFI01/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFFI01"></div>
+                    <div class="product-info">
+                        <div class="product-title">Frente Inglés HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MACHIMBRE SIMPLE (familia JFMS) ===== -->
+                <a href="FR/JFMS1234.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMS1234/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMS1234"></div>
+                    <div class="product-info">
+                        <div class="product-title">Machimbre Simple HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MACHIMBRE DOBLE (familia JFMD) ===== -->
+                <a href="FR/JFMD1234.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMD1234/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMD1234"></div>
+                    <div class="product-info">
+                        <div class="product-title">Machimbre Doble HM</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MACHIMBRE PISO STANDARD (familia JFMP) ===== -->
+                <a href="FR/JFMP3411.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMP3411/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMP3411"></div>
+                    <div class="product-info">
+                        <div class="product-title">Machimbre Piso Standard (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MACHIMBRE PISO PARA GRAMPA (familia JFMP3416G) ===== -->
+                <a href="FR/JFMP3416G.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMP3416G/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMP3416G"></div>
+                    <div class="product-info">
+                        <div class="product-title">Machimbre Piso para Grampa</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MACHIMBRE PISO PARA GRAMPA Y MICROBISEL (familia JFMP34166M) ===== -->
+                <a href="FR/JFMP34166M.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMP34166M/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMP34166M"></div>
+                    <div class="product-info">
+                        <div class="product-title">Machimbre Piso para Grampa y Microbisel</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== DECK PARA GRAMPA (familia JFDSG) ===== -->
+                <a href="FR/JFDSG14.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFDSG14/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFDSG14"></div>
+                    <div class="product-info">
+                        <div class="product-title">Deck para Grampa HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== MOLDURA P/V SIMPLE (familia JFMPVR) ===== -->
+                <a href="FR/JFMPVR.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFMPVR/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMPVR"></div>
+                    <div class="product-info">
+                        <div class="product-title">Moldura de Puertas y Ventanas Simple HM</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== ENSAMBLE CÓNICO (familia JFE81) ===== -->
+                <a href="FR/JFE8122.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFE8122/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE8122"></div>
+                    <div class="product-info">
+                        <div class="product-title">Fresa para Ensamble Cónico HM (varias medidas)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
+                <!-- ===== ENCASTRE GRANDE D=245 (familia JFME68) ===== -->
+                <a href="FR/JFME68.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                    <div class="product-img"><img src="../../imagenes/herramientas/Fresas/JFME68/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFME68"></div>
+                    <div class="product-info">
+                        <div class="product-title">Fresa para Encastre HM D=245 (19-68 mm)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+
             </div>
         </section>
     </main>
@@ -242,6 +394,6 @@
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <script src="../JS/filtros.js?v=3"></script>
+    <script src="../JS/filtros.js?v=4"></script>
 </body>
 </html>

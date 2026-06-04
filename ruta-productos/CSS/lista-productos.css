@@ -469,3 +469,49 @@ select {
 .ml-no-results.active {
     display: flex;
 }
+
+/* ==========================================
+   SUBMENÚ DESPLEGABLE "MOLDURAS"
+   (Fresa Individual / Combo de fresas)
+   Se muestra/oculta vía JS mediante #submenu-moldura.
+   Por defecto va oculto (display:none en el HTML) y el
+   JS lo pone en "block" cuando se elige "Molduras".
+   ========================================== */
+.submenu-moldura {
+    list-style: none;
+    margin: 8px 0 4px 0;
+    padding-left: 14px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.submenu-moldura li {
+    margin-bottom: 6px;
+}
+
+.submenu-moldura li a,
+.submenu-moldura li .filter-btn {
+    font-size: 12px;
+    color: #555;
+    display: block;
+    padding: 2px 0;
+}
+
+.submenu-moldura li a:hover,
+.submenu-moldura li .filter-btn:hover {
+    color: #d32f2f;
+}
+
+.submenu-moldura .filter-btn.activo {
+    font-weight: 700 !important;
+    color: #d32f2f !important;
+}
+
+/* Animación suave al desplegarse el submenú */
+.submenu-moldura[style*="block"] {
+    animation: desplegarMoldura 0.18s ease-out;
+}
+
+@keyframes desplegarMoldura {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

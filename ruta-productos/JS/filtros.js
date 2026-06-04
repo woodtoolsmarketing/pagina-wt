@@ -33,11 +33,63 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // --- FRESAS ---
-        if (enlace.includes("/FR/FRS") || enlace.includes("/FR/FRI") || enlace.includes("/FR/FA")) {
-            producto.setAttribute('data-tipo', 'rectas');
-        } else if (enlace.includes("/FR/F1M") || enlace.includes("/FR/F2C") || enlace.includes("/FR/F2M")) {
-            producto.setAttribute('data-tipo', 'helicoidales');
+        // --- FRESAS (clasificación por familia de código) ---
+        // Sólo aplica a las páginas de fresas (enlaces dentro de /FR/).
+        // tipo:    canales | cepillado | moldura
+        // subtipo: individual | combo   (sólo para las de moldura)
+        // El orden de las reglas IMPORTA: los códigos más largos van primero
+        // para que, por ejemplo, JFMP3416G no sea capturado por JFMP, ni
+        // FRS/FRI/FRG sean capturados por FR (Rinconera).
+        if (enlace.includes("FR/")) {
+            // Tomamos el nombre de archivo (código) que va después de "FR/"
+            const mFR = enlace.match(/FR\/([^\/]+?)\.html/i);
+            const codigoFresa = mFR ? mFR[1].toUpperCase() : "";
+
+            const reglasFresas = [
+                // --- MOLDURA: COMBOS (específicos largos primero) ---
+                ["JFMP34166M", "moldura", "combo"],
+                ["JFMP3416G",  "moldura", "combo"],
+                ["JFMPVR",     "moldura", "combo"],
+                ["JFMPV",      "moldura", "combo"],
+                ["JFMP",       "moldura", "combo"],
+                ["JFMS",       "moldura", "combo"],
+                ["JFMD",       "moldura", "combo"],
+                ["JFDSG",      "moldura", "combo"],
+                ["JFDE",       "moldura", "combo"],
+                ["JFRD",       "moldura", "combo"],
+                ["JFFI",       "moldura", "combo"],
+                ["JFPMS",      "moldura", "combo"],
+                ["JFE81",      "moldura", "combo"],
+                ["FZS",        "moldura", "combo"],
+                // --- MOLDURA: INDIVIDUALES ---
+                ["JFE8Z",      "moldura", "individual"],
+                ["JFME68",     "moldura", "individual"],
+                ["JFE254",     "moldura", "individual"],
+                ["JFE5022",    "moldura", "individual"],
+                ["FRP",        "moldura", "individual"],
+                ["F04C",       "moldura", "individual"],
+                ["F2C",        "moldura", "individual"],
+                ["FMR",        "moldura", "individual"],
+                ["FP402",      "moldura", "individual"],
+                ["FA",         "moldura", "individual"],
+                ["FP",         "moldura", "individual"],
+                // --- REALIZAR CANALES (FRS/FRI/FRG antes que FR) ---
+                ["FRS",        "canales", null],
+                ["FRI",        "canales", null],
+                ["FRG",        "canales", null],
+                // --- MOLDURA: Rinconera Simple (FR, después de FRS/FRI/FRG/FRP) ---
+                ["FR",         "moldura", "individual"],
+                // --- CEPILLADO ---
+                ["CB",         "cepillado", null]
+            ];
+
+            for (const [pref, tipo, sub] of reglasFresas) {
+                if (codigoFresa.startsWith(pref)) {
+                    producto.setAttribute('data-tipo', tipo);
+                    if (sub) producto.setAttribute('data-subtipo', sub);
+                    break;
+                }
+            }
         }
 
         // --- MECHAS Y BROCAS ---
@@ -123,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
         categoria: 'todos', 
         marca: 'todos', 
         tipo: 'todos',
+        subtipo: 'todos',
         formato: 'todos',
         material: 'todos'
     };
@@ -139,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 categoria: producto.getAttribute('data-categoria'),
                 marca: producto.getAttribute('data-marca'),
                 tipo: producto.getAttribute('data-tipo'),
+                subtipo: producto.getAttribute('data-subtipo'),
                 formato: producto.getAttribute('data-formato'),
                 material: producto.getAttribute('data-material')
             };
@@ -240,6 +294,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 filtrosActivos[tipoFiltro] = resolverAlias(tipoFiltro, valorFiltro);
             }
 
+            // --- Submenú Moldura (Individual / Combo) ---
+            // El subtipo sólo tiene sentido dentro de "moldura". Si el usuario
+            // cambia el filtro de tipo a algo que no es moldura (o lo desactiva),
+            // limpiamos cualquier subtipo activo para no dejar un filtro colgado.
+            if (tipoFiltro === 'tipo' && filtrosActivos.tipo !== 'moldura') {
+                filtrosActivos.subtipo = 'todos';
+                document.querySelectorAll('.filter-btn[data-filter-type="subtipo"]').forEach(btn => btn.classList.remove('activo'));
+            }
+
+            // Mostrar u ocultar el submenú de Moldura según corresponda
+            const subMenu = document.getElementById('submenu-moldura');
+            if (subMenu) {
+                subMenu.style.display = (filtrosActivos.tipo === 'moldura') ? 'block' : 'none';
+            }
+
             aplicarFiltros();
         });
     });
@@ -255,11 +324,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 categoria: 'todos', 
                 marca: 'todos', 
                 tipo: 'todos',
+                subtipo: 'todos',
                 formato: 'todos',
                 material: 'todos'
             };
             
             filterButtons.forEach(btn => btn.classList.remove('activo'));
+            const subMenuL = document.getElementById('submenu-moldura');
+            if (subMenuL) subMenuL.style.display = 'none';
             window.history.replaceState({}, document.title, window.location.pathname);
             aplicarFiltros();
         });
@@ -268,5 +340,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================================================
     // 8. INICIAR: Forzamos la ejecución apenas carga la página
     // =====================================================================
+    // Si al cargar (por URL) el tipo activo es "moldura", mostramos el submenú.
+    const subMenuInit = document.getElementById('submenu-moldura');
+    if (subMenuInit) {
+        subMenuInit.style.display = (filtrosActivos.tipo === 'moldura') ? 'block' : 'none';
+    }
     aplicarFiltros();
 });
