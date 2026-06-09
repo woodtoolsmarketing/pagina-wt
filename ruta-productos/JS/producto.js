@@ -1416,7 +1416,77 @@ const baseDatosProductos = {
             { id: "CBR1222304", nombre: "CBR1222304 - Y=122 B=230 Z=4" },
             { id: "CBR1222404", nombre: "CBR1222404 - Y=122 B=240 Z=4" },
             { id: "PRESET", nombre: "PRESET - Alineador de Cuchillas" }
-        ] 
+        ]
+    },
+
+    // ---------------------------------------------------------
+    // CABEZALES FREUD  (categoriaImg: "Cabezales")
+    //  - Cada página vive en HTML/CBZ/<código>.html y detecta su
+    //    familia por prefijo (startsWith). carpetaImg apunta a la
+    //    carpeta real dentro de imagenes/herramientas/Cabezales/.
+    //  - Cuando una familia agrupa varias medidas (ej. TM06M, T198M)
+    //    todas comparten la misma carpeta de imágenes.
+    // ---------------------------------------------------------
+
+    // --- Cepilladores ---
+    "T194M": {
+        codigoBase: "T194M", categoriaImg: "Cabezales", carpetaImg: "T194M-BB3",
+        titulo: "Cabezal Cepillador Corte Alterno HM", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera" },
+        variantes: [
+            { id: "T194M BB3", nombre: "T194M BB3 - Cabezal Cepillador Corte Alterno D=125mm" }
+        ]
+    },
+    "TM06M": {
+        codigoBase: "TM06M", categoriaImg: "Cabezales", carpetaImg: "TM06M",
+        titulo: "Cabezal Cepillador Helicoidal HM", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera (bajo ruido)" },
+        variantes: [
+            { id: "TM06M AB3", nombre: "TM06M AB3 - Cepillador Helicoidal D=125mm" },
+            { id: "TM06M AD3", nombre: "TM06M AD3 - Cepillador Helicoidal D=125mm" },
+            { id: "TM06M AH3", nombre: "TM06M AH3 - Cepillador Helicoidal D=125mm" },
+            { id: "TM06M AL3", nombre: "TM06M AL3 - Cepillador Helicoidal D=125mm" },
+            { id: "TM06M CG3", nombre: "TM06M CG3 - Cepillador Helicoidal D=120mm" }
+        ]
+    },
+
+    // --- Ranuradores ---
+    "T198M": {
+        codigoBase: "T198M", categoriaImg: "Cabezales", carpetaImg: "T198M",
+        titulo: "Cabezal Ranurador HM", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Ranurado de madera" },
+        variantes: [
+            { id: "T198M FC3", nombre: "T198M FC3 - Cabezal Ranurador D=140mm" },
+            { id: "T198M GC3", nombre: "T198M GC3 - Cabezal Ranurador D=140mm" }
+        ]
+    },
+
+    // --- Multiperfil ---
+    "TP23M": {
+        codigoBase: "TP23M", categoriaImg: "Cabezales", carpetaImg: "TP23M AB3",
+        titulo: "Cabezal 1/2 Círculo Exterior para Multiperfil", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (1/2 círculo exterior)" },
+        variantes: [
+            { id: "TP23M AB3", nombre: "TP23M AB3 - Cabezal 1/2 Círculo Ext. D=120mm" }
+        ]
+    },
+
+    // --- Finger Joint (Juntar) ---
+    "TW01M": {
+        codigoBase: "TW01M", categoriaImg: "Cabezales", carpetaImg: "TW01MAB3",
+        titulo: "Cabezal para Juntar Perfil Intercambiable", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint (perfil intercambiable)" },
+        variantes: [
+            { id: "TW01M AB3", nombre: "TW01M AB3 - Cabezal para Juntar D=136mm" }
+        ]
+    },
+    "TW20M": {
+        codigoBase: "TW20M", categoriaImg: "Cabezales", carpetaImg: "TW20M BF3",
+        titulo: "Cabezal para Juntar", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint" },
+        variantes: [
+            { id: "TW20M BF3", nombre: "TW20M BF3 - Cabezal para Juntar D=140mm" }
+        ]
     }
 };
 
@@ -1487,7 +1557,7 @@ function renderizarGaleria(codigoActivo, info) {
     let galeriaHTML = `<div class="galeria-miniaturas">`;
 
     const combinacionesSeguras = [
-        "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "1.png", "Incisor.png",
+        "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "1.png", "1 (1).png", "1%20(1).png", "Incisor.png",
         "2.jpg", "2 (1).jpg", "2%20(1).jpg", "2.jpeg", "2 (2).jpg", "2%20(2).jpg", "2.png",
         "3.jpg", "3 (1).jpg", "3%20(1).jpg", "3.jpeg", "3 (2).jpg", "3%20(2).jpg", "3.png", "3(.jpeg",
         "4.jpg", "4 (1).jpg", "4%20(1).jpg", "4.jpeg", "4 (2).jpg", "4%20(2).jpg", "4.png",
