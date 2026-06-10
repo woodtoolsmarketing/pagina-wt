@@ -37,15 +37,23 @@ document.addEventListener("DOMContentLoaded", function() {
         // Sólo aplica a las páginas de fresas (enlaces dentro de /FR/).
         // tipo:    canales | cepillado | moldura
         // subtipo: individual | combo   (sólo para las de moldura)
-        // El orden de las reglas IMPORTA: los códigos más largos van primero
-        // para que, por ejemplo, JFMP3416G no sea capturado por JFMP, ni
-        // FRS/FRI/FRG sean capturados por FR (Rinconera).
+        // Reglas generales:
+        //   CB*  -> cepillado (todas las que inician con CB)
+        //   FR*  -> canales / rectas (todas las que inician con FR:
+        //           FRS, FRI, FRG, FR rinconera, FRP replán, etc.)
+        //   resto -> moldura (con subtipo individual/combo; el orden de
+        //           las reglas IMPORTA: códigos largos primero para que,
+        //           por ejemplo, JFMP3416G no sea capturado por JFMP).
         if (enlace.includes("FR/")) {
             // Tomamos el nombre de archivo (código) que va después de "FR/"
             const mFR = enlace.match(/FR\/([^\/]+?)\.html/i);
             const codigoFresa = mFR ? mFR[1].toUpperCase() : "";
 
             const reglasFresas = [
+                // --- CEPILLADO: todo código que inicia con CB ---
+                ["CB",         "cepillado", null],
+                // --- REALIZAR CANALES (rectas): todo código que inicia con FR ---
+                ["FR",         "canales", null],
                 // --- MOLDURA: COMBOS (específicos largos primero) ---
                 ["JFMP34166M", "moldura", "combo"],
                 ["JFMP3416G",  "moldura", "combo"],
@@ -66,21 +74,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 ["JFME68",     "moldura", "individual"],
                 ["JFE254",     "moldura", "individual"],
                 ["JFE5022",    "moldura", "individual"],
-                ["FRP",        "moldura", "individual"],
                 ["F04C",       "moldura", "individual"],
                 ["F2C",        "moldura", "individual"],
                 ["FMR",        "moldura", "individual"],
                 ["FP402",      "moldura", "individual"],
                 ["FA",         "moldura", "individual"],
                 ["FP",         "moldura", "individual"],
-                // --- REALIZAR CANALES (FRS/FRI/FRG antes que FR) ---
-                ["FRS",        "canales", null],
-                ["FRI",        "canales", null],
-                ["FRG",        "canales", null],
-                // --- MOLDURA: Rinconera Simple (FR, después de FRS/FRI/FRG/FRP) ---
-                ["FR",         "moldura", "individual"],
-                // --- CEPILLADO ---
-                ["CB",         "cepillado", null]
+                // --- RESTO: cualquier otra fresa cae en MOLDURA ---
+                ["",           "moldura", "individual"]
             ];
 
             for (const [pref, tipo, sub] of reglasFresas) {

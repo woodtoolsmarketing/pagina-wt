@@ -276,7 +276,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 016: Fresas Rectas Simples ---
     "FRS": {
-        codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "Recta",
+        codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "FRS0606",
         titulo: "Fresas Rectas HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -339,7 +339,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 017: Fresas Rectas con Incisores ---
     "FRI": {
-        codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "Recta",
+        codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "FRI01566",
         titulo: "Fresas Rectas con Incisores HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar sin astillar", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -396,7 +396,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 011: Fresas 1/2 Círculo (Molduras) ---
     "F2C": {
-        codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "F2C014",
         titulo: "Fresas 1/2 círculo cóncavo y convexo HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -417,7 +417,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 011: Fresas 1/4 Círculo ---
     "F04C": {
-        codigoBase: "F04C", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "F04C", categoriaImg: "Fresas", carpetaImg: "F04C014",
         titulo: "Fresas 1/4 círculo cóncavo y convexo HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -443,7 +443,7 @@ const baseDatosProductos = {
 
     // --- Fresas en ángulo HM (catálogo pág. 4) ---
     "FA": {
-        codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "Recta",
+        codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "FA104",
         titulo: "Fresas en ángulo HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar ángulos (α)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -515,7 +515,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 015: Fresas Regulables (suplementos) ---
     "FRG": {
-        codigoBase: "FRG", categoriaImg: "Fresas", carpetaImg: "Recta",
+        codigoBase: "FRG", categoriaImg: "Fresas", carpetaImg: "FRG0510",
         titulo: "Fresas para Ranurar Regulables HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranuras, rebajes y espigas", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -529,7 +529,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 011: Fresas Palos de Escoba (FP) ---
     "FP": {
-        codigoBase: "FP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "FP", categoriaImg: "Fresas", carpetaImg: "FP2226",
         titulo: "Fresa Palos de Escoba / Multimoldura", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Palos de escoba / Perfilado", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -543,7 +543,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 009: Despiece de Machimbre (F1M) ---
     "F1M": {
-        codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "F1M0",
         titulo: "Fresa Despiece de Machimbre (1/2 a 3/4)", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -573,7 +573,7 @@ const baseDatosProductos = {
 
     // --- Fresa para Finger HM (catálogo pág. 11) ---
     "JFE254": {
-        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
         titulo: "Fresa para Finger HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -581,7 +581,7 @@ const baseDatosProductos = {
         ]
     },
     "JFE5022": {
-        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
         titulo: "Fresa para Finger HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -590,7 +590,7 @@ const baseDatosProductos = {
     },
     // --- Fresa para Ensamble Cónico HM (catálogo pág. 11) ---
     "JFE81": {
-        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE",
         titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -600,7 +600,7 @@ const baseDatosProductos = {
     },
     // --- Fresa para Encastre HM (catálogo pág. 12) ---
     "JFE8Z": {
-        codigoBase: "JFE8Z", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFE8Z", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
         titulo: "Fresa para Encastre HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -618,7 +618,7 @@ const baseDatosProductos = {
     },
     // --- Otros juegos de ensamble (no listados individualmente en pág. 5-14) ---
     "JFE": {
-        codigoBase: "JFE", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFE", categoriaImg: "Fresas", carpetaImg: "JFE",
         titulo: "Juego de Fresas de Ensamble", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble / Encastre", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -628,7 +628,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 012: Moldura Puertas y Ventanas (JFMPV) ---
     "JFMPV": {
-        codigoBase: "JFMPV", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFMPV", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
         titulo: "Moldura de Puertas y Ventanas HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -638,7 +638,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 012: Puerta Mueble de Cocina (JFPMS) ---
     "JFPMS": {
-        codigoBase: "JFPMS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFPMS", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
         titulo: "Puerta de Muebles HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -648,7 +648,7 @@ const baseDatosProductos = {
 
     // --- Deck Standard HM (catálogo pág. 8) ---
     "JFDE": {
-        codigoBase: "JFDE", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFDE", categoriaImg: "Fresas", carpetaImg: "JFDE4",
         titulo: "Deck Standard HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -688,7 +688,7 @@ const baseDatosProductos = {
 
     // --- Fresa para Radios Múltiples HM (catálogo pág. 12) ---
     "FMR": {
-        codigoBase: "FMR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "FMR", categoriaImg: "Fresas", carpetaImg: "FMR04",
         titulo: "Fresa para Radios Múltiples HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -698,7 +698,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 013: Replan Tablero (FRP) ---
     "FRP": {
-        codigoBase: "FRP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "FRP", categoriaImg: "Fresas", carpetaImg: "FRP5533",
         titulo: "Replán de Tablero HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -708,7 +708,7 @@ const baseDatosProductos = {
 
     // --- Sub-rubro 018: Cabezales Cepilladores (CB) ---
     "CB": {
-        codigoBase: "CB", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "CB", categoriaImg: "Fresas", carpetaImg: "CB0750660",
         titulo: "Cabezales Cepilladores HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -744,7 +744,7 @@ const baseDatosProductos = {
     },
     // --- Frente Inglés HM (catálogo pág. 6) ---
     "JFFI": {
-        codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "JFFI01",
         titulo: "Frente Inglés HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -754,7 +754,7 @@ const baseDatosProductos = {
     },
     // --- Machimbre Simple HM (catálogo pág. 6) ---
     "JFMS": {
-        codigoBase: "JFMS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFMS", categoriaImg: "Fresas", carpetaImg: "JFMS1234",
         titulo: "Machimbre Simple HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -764,7 +764,7 @@ const baseDatosProductos = {
     },
     // --- Machimbre Doble HM (catálogo pág. 7) ---
     "JFMD": {
-        codigoBase: "JFMD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFMD", categoriaImg: "Fresas", carpetaImg: "JFMD1234",
         titulo: "Machimbre Doble HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -812,7 +812,7 @@ const baseDatosProductos = {
     },
     // --- Moldura de Puertas y Ventanas Simple HM (catálogo pág. 10) ---
     "JFMPVR": {
-        codigoBase: "JFMPVR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFMPVR", categoriaImg: "Fresas", carpetaImg: "JFMPVR",
         titulo: "Moldura de Puertas y Ventanas Simple HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -821,7 +821,7 @@ const baseDatosProductos = {
     },
     // --- Fresa Multimoldura (catálogo pág. 12) ---
     "FP402": {
-        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
         titulo: "Fresa Multimoldura", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -1424,11 +1424,23 @@ const baseDatosProductos = {
     //  - Cada página vive en HTML/CBZ/<código>.html y detecta su
     //    familia por prefijo (startsWith). carpetaImg apunta a la
     //    carpeta real dentro de imagenes/herramientas/Cabezales/.
-    //  - Cuando una familia agrupa varias medidas (ej. TM06M, T198M)
-    //    todas comparten la misma carpeta de imágenes.
+    //  - Las familias agrupan por las primeras letras del código
+    //    (ej. TP junta TP22M/TP23M/TP31M/TP40M/TPSCM) y los modelos
+    //    se listan como variantes de una misma publicación.
+    //  - Si una variante tiene carpeta propia con su código, la
+    //    galería la usa primero; si no, cae en carpetaImg (familia).
     // ---------------------------------------------------------
 
     // --- Cepilladores ---
+    "T102M": {
+        codigoBase: "T102M", categoriaImg: "Cabezales", carpetaImg: "T102M",
+        titulo: "Cabezal Cepillador HM", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera" },
+        variantes: [
+            { id: "T102M AC3", nombre: "T102M AC3 - Cepillador D=125mm" },
+            { id: "T102M AF3", nombre: "T102M AF3 - Cepillador para Aplanar D=125mm" }
+        ]
+    },
     "T194M": {
         codigoBase: "T194M", categoriaImg: "Cabezales", carpetaImg: "T194M-BB3",
         titulo: "Cabezal Cepillador Corte Alterno HM", marca: "Freud",
@@ -1460,32 +1472,72 @@ const baseDatosProductos = {
             { id: "T198M GC3", nombre: "T198M GC3 - Cabezal Ranurador D=140mm" }
         ]
     },
-
-    // --- Multiperfil ---
-    "TP23M": {
-        codigoBase: "TP23M", categoriaImg: "Cabezales", carpetaImg: "TP23M AB3",
-        titulo: "Cabezal 1/2 Círculo Exterior para Multiperfil", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (1/2 círculo exterior)" },
+    "F107M": {
+        codigoBase: "F107M", categoriaImg: "Cabezales", carpetaImg: "F107M",
+        titulo: "Cabezal para Ranurar Regulable con Precortante", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Ranurado de madera (regulable)" },
         variantes: [
-            { id: "TP23M AB3", nombre: "TP23M AB3 - Cabezal 1/2 Círculo Ext. D=120mm" }
+            { id: "F107M AB3", nombre: "F107M AB3 - Ranurar Regulable c/Precortante D=150mm" }
         ]
     },
 
     // --- Finger Joint (Juntar) ---
-    "TW01M": {
-        codigoBase: "TW01M", categoriaImg: "Cabezales", carpetaImg: "TW01MAB3",
-        titulo: "Cabezal para Juntar Perfil Intercambiable", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint (perfil intercambiable)" },
-        variantes: [
-            { id: "TW01M AB3", nombre: "TW01M AB3 - Cabezal para Juntar D=136mm" }
-        ]
-    },
-    "TW20M": {
-        codigoBase: "TW20M", categoriaImg: "Cabezales", carpetaImg: "TW20M BF3",
-        titulo: "Cabezal para Juntar", marca: "Freud",
+    "TW": {
+        codigoBase: "TW", categoriaImg: "Cabezales", carpetaImg: "TW01MAB3",
+        titulo: "Cabezal para Juntar (Finger Joint)", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint" },
         variantes: [
-            { id: "TW20M BF3", nombre: "TW20M BF3 - Cabezal para Juntar D=140mm" }
+            { id: "TW01M AB3", nombre: "TW01M AB3 - Para Juntar Perfil Intercambiable D=136mm" },
+            { id: "TW20M BF3", nombre: "TW20M BF3 - Para Juntar D=140mm" }
+        ]
+    },
+    "FG46S": {
+        codigoBase: "FG46S", categoriaImg: "Cabezales", carpetaImg: "FG46S",
+        titulo: "Cabezal Juntas Minizinken", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint (minizinken)" },
+        variantes: [
+            { id: "FG46S CB2", nombre: "FG46S CB2 - Juntas Minizinken D=160mm" }
+        ]
+    },
+
+    // --- Multiperfil ---
+    "TP": {
+        codigoBase: "TP", categoriaImg: "Cabezales", carpetaImg: "TP23M AB3",
+        titulo: "Cabezal Multiperfil", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil" },
+        variantes: [
+            { id: "TP22M AB3", nombre: "TP22M AB3 - 1/2 Círculo Exterior D=120mm" },
+            { id: "TP23M AB3", nombre: "TP23M AB3 - 1/2 Círculo Exterior D=120mm" },
+            { id: "TP31M AB3", nombre: "TP31M AB3 - 1/4 Círculo Ext. R8-10-12-15 D=150mm" },
+            { id: "TP31M CB3", nombre: "TP31M CB3 - 1/4 Círculo Ext. R8-10-12-15-17 D=160mm" },
+            { id: "TP40M AB3", nombre: "TP40M AB3 - Para Multiperfiles D=160mm" },
+            { id: "TPSCM AB3", nombre: "TPSCM AB3 - Multiuso para Madera 22mm D=160mm" }
+        ]
+    },
+    "TD": {
+        codigoBase: "TD", categoriaImg: "Cabezales", carpetaImg: "TD51M",
+        titulo: "Cabezal Replan para Multiperfil", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (replan)" },
+        variantes: [
+            { id: "TD21M GB3", nombre: "TD21M GB3 - Replan con 5 Perfiles D=140mm" },
+            { id: "TD52M HB3", nombre: "TD52M HB3 - Replan D=200mm" }
+        ]
+    },
+    "TF04MC": {
+        codigoBase: "TF04MC", categoriaImg: "Cabezales", carpetaImg: "TF04MC",
+        titulo: "Cabezal Perfil Universal Ch", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (perfil universal)" },
+        variantes: [
+            { id: "TF04MC GE3", nombre: "TF04MC GE3 - Perfil Universal Ch Intercambiable D=144mm" },
+            { id: "TF04MC GH3", nombre: "TF04MC GH3 - Perfil Universal Ch Afilable D=144mm" }
+        ]
+    },
+    "GL20701M": {
+        codigoBase: "GL20701M", categoriaImg: "Cabezales", carpetaImg: "GL20701M",
+        titulo: "Cabezal Multiperfil Estandar", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil" },
+        variantes: [
+            { id: "GL20701M", nombre: "GL20701M - Estandar 207 x 30-34" }
         ]
     }
 };
@@ -1547,17 +1599,23 @@ function renderizarGaleria(codigoActivo, info) {
         carpetaBase = "Familias MCD  MCI 3";
     } else if (codigoActivo && (codigoActivo.startsWith("MCD15") || codigoActivo.startsWith("MCI15"))) {
         carpetaBase = "Familias MCD  MCI 2";
+    } else if (codigoActivo && codigoActivo.startsWith("TW20M")) {
+        // Familia TW (cabezales para juntar): cada modelo tiene carpeta propia
+        carpetaBase = "TW20M BF3";
     }
 
     let carpetasImg = [carpetaBase];
     if (codigoActivo && codigoActivo !== info.codigoBase) {
         carpetasImg = [codigoActivo, carpetaBase];
     }
+    // Si el código activo coincide con la carpeta base, evitamos duplicar la galería
+    carpetasImg = [...new Set(carpetasImg)];
 
     let galeriaHTML = `<div class="galeria-miniaturas">`;
 
     const combinacionesSeguras = [
-        "1.jpg", "1 (1).jpg", "1%20(1).jpg", "1.jpeg", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "1.png", "1 (1).png", "1%20(1).png", "Incisor.png",
+        // "1 (1)" va PRIMERO: es la foto principal/render del producto
+        "1 (1).jpg", "1%20(1).jpg", "1 (1).png", "1%20(1).png", "1.jpg", "1.jpeg", "1.png", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "Incisor.png",
         "2.jpg", "2 (1).jpg", "2%20(1).jpg", "2.jpeg", "2 (2).jpg", "2%20(2).jpg", "2.png",
         "3.jpg", "3 (1).jpg", "3%20(1).jpg", "3.jpeg", "3 (2).jpg", "3%20(2).jpg", "3.png", "3(.jpeg",
         "4.jpg", "4 (1).jpg", "4%20(1).jpg", "4.jpeg", "4 (2).jpg", "4%20(2).jpg", "4.png",
