@@ -23,14 +23,14 @@
                     <li><a href="../../index.html">INICIO</a></li>
                     
                     <li class="dropdown">
-                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <a href="productos.html" onclick="if(!this.dataset.abierto){this.dataset.abierto='1';this.parentElement.classList.add('open');return false;}">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../sc-en-hm.html">Discos de corte</a></li>
-                            <li><a href="../fresas-madera.html">Fresas</a></li>
-                            <li><a href="../cuchillas-madera.html">Cuchillas</a></li>
-                            <li><a href="../mechas-madera.html">Mechas y Brocas</a></li>
-                            <li><a href="../diamante-en-hm.html">Herramientas de Diamante</a></li>
-                            <li><a href="../cabezales.html">Cabezales</a></li>
+                            <li><a href="../sc-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.jpg" alt="" class="menu-icon">Discos de corte</a></li>
+                            <li><a href="../fresas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Fresas.png" alt="" class="menu-icon">Fresas</a></li>
+                            <li><a href="../cuchillas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Cuchillas.png" alt="" class="menu-icon">Cuchillas</a></li>
+                            <li><a href="../mechas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Mechas.png" alt="" class="menu-icon">Mechas y Brocas</a></li>
+                            <li><a href="../diamante-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Diamante.png" alt="" class="menu-icon">Herramientas de Diamante</a></li>
+                            <li><a href="../cabezales.html"><img src="../../imagenes/herramientas/Productos-slide/Cabezales.png" alt="" class="menu-icon">Cabezales</a></li>
                         </ul>
                     </li>
                     
@@ -92,71 +92,74 @@
         </aside>
 
         <section class="products-content">
+            <div class="buscador-productos" style="margin: 0 0 20px 0;">
+                <input type="search" id="buscador-productos" placeholder="Buscar por código o nombre del producto..." style="width: 100%; padding: 12px 16px; font-size: 15px; border: 2px solid #a41e22; border-radius: 6px; box-sizing: border-box; outline: none;">
+            </div>
             <div class="products-grid" id="contenedor-productos">
                 
                 <!-- ===== CEPILLADORES (agrupados por familia de código) ===== -->
                 <!-- T102M OCULTO temporalmente: sin carpeta de fotos aún (no borrar) -->
                 <!--
                 <a href="CBZ/T102M AC3.html" class="product-card" data-categoria="cepillado" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/simple.png" alt="Familia T102M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/simple.png" alt="Familia T102M"></div>
                     <div class="product-info"><div class="product-title">Cabezal Cepillador de 125mm (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
                 <a href="CBZ/T194M BB3.html" class="product-card" data-categoria="cepillado" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/T194M-BB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="T194M BB3"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/T194M-BB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="T194M BB3"></div>
                     <div class="product-info"><div class="product-title">Cabezal Cepillador Corte Alterno de 125mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/TM06M AB3.html" class="product-card" data-categoria="cepillado" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/TM06M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TM06M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TM06M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TM06M"></div>
                     <div class="product-info"><div class="product-title">Cabezal Cepillador Helicoidal (5 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
 
                 <!-- ===== RANURADORES (agrupados por familia de código) ===== -->
                 <a href="CBZ/T198M FC3.html" class="product-card" data-categoria="ranurado" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/T198M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia T198M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/T198M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia T198M"></div>
                     <div class="product-info"><div class="product-title">Cabezal Ranurador de 140mm (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <!-- F107M OCULTO temporalmente: sin carpeta de fotos aún (no borrar) -->
                 <!--
                 <a href="CBZ/F107M AB3.html" class="product-card" data-categoria="ranurado" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/simple.png" alt="F107M AB3"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/simple.png" alt="F107M AB3"></div>
                     <div class="product-info"><div class="product-title">Cabezal Ranurar Regul. c/Precortante de 150mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
 
                 <!-- ===== FINGER JOINT / JUNTAR (agrupados por familia de código) ===== -->
                 <a href="CBZ/TW01M AB3.html" class="product-card" data-categoria="juntar" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/TW01MAB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TW"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TW01MAB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TW"></div>
                     <div class="product-info"><div class="product-title">Cabezal para Juntar Finger Joint (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <!-- FG46S OCULTO temporalmente: sin carpeta de fotos aún (no borrar) -->
                 <!--
                 <a href="CBZ/FG46S CB2.html" class="product-card" data-categoria="juntar" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/simple.png" alt="FG46S CB2"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/simple.png" alt="FG46S CB2"></div>
                     <div class="product-info"><div class="product-title">Cabezal Juntas Minizinken de 160mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
 
                 <!-- ===== MULTIPERFIL (agrupados por familia de código) ===== -->
                 <a href="CBZ/TP23M AB3.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/TP23M AB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TP"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TP23M AB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TP"></div>
                     <div class="product-info"><div class="product-title">Cabezal Multiperfil TP (6 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/TD21M GB3.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/TD51M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TD51M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TD"></div>
                     <div class="product-info"><div class="product-title">Cabezal Replan para Multiperfil (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <!-- TF04MC OCULTO temporalmente: sin carpeta de fotos aún (no borrar) -->
                 <!--
                 <a href="CBZ/TF04MC GE3.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/simple.png" alt="Familia TF04MC"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/simple.png" alt="Familia TF04MC"></div>
                     <div class="product-info"><div class="product-title">Cabezal Perfil Universal Ch de 144mm (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
                 <!-- GL20701M OCULTO temporalmente: sin carpeta de fotos aún (no borrar) -->
                 <!--
                 <a href="CBZ/GL20701M.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cabezales/simple.png" alt="GL20701M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/simple.png" alt="GL20701M"></div>
                     <div class="product-info"><div class="product-title">Cabezal Estandar 207 x 30-34 para Multiperfil</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
@@ -169,71 +172,71 @@
                 ============================================================== -->
                 <!--
                 <a href="CBZ/CG50M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CG50M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CG50M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CW10M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CW10M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CW10M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CW16M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CW16M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CW16M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CW28MA AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CW28MA AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CW28MA AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CP22M A080.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CP22M A080"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CP22M A080"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CP31M C100.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CP31M C100"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CP31M C100"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CP40M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CP40M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CP40M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CPSCM BB3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CPSCM BB3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CPSCM BB3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CT52M DA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CT52M DA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CT52M DA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CG05M BA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CG05M BA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CG05M BA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CG05M FC3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CG05M FC3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CG05M FC3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/INSRAS1.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="INSRAS1"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="INSRAS1"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/INSREF3A.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="INSREF3A"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="INSREF3A"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CG08M FA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CG08M FA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CG08M FA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/RG01M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="RG01M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="RG01M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/IG01M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="IG01M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="IG01M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/CG03M AA3.html" class="product-card" data-categoria="insertos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="CG03M AA3"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="CG03M AA3"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
@@ -246,23 +249,23 @@
                 ============================================================== -->
                 <!--
                 <a href="CBZ/SD02M AA9.html" class="product-card" data-categoria="repuestos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="SD02M AA9"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="SD02M AA9"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/SD04MA AA9.html" class="product-card" data-categoria="repuestos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="SD04MA AA9"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="SD04MA AA9"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/SD01M DG9.html" class="product-card" data-categoria="repuestos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="SD01M DG9"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="SD01M DG9"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/AT03M AA9.html" class="product-card" data-categoria="repuestos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="AT03M AA9"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="AT03M AA9"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 <a href="CBZ/AT03M AD9.html" class="product-card" data-categoria="repuestos" data-marca="freud">
-                    <div class="product-img"><img src="" alt="AT03M AD9"></div>
+                    <div class="product-img"><img loading="lazy" src="" alt="AT03M AD9"></div>
                     <div class="product-info"><div class="product-title">Accesorio / Inserto para Cabezal</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
                 </a>
                 -->
@@ -272,11 +275,11 @@
     </main>
 
     <section id="marcas">
-        <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
-        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
-        <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
-        <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
-        <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
+        <img loading="lazy" src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
+        <img loading="lazy" src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
+        <img loading="lazy" src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
+        <img loading="lazy" src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
+        <img loading="lazy" src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
     </section>
 
     <footer>
@@ -298,6 +301,6 @@
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <script src="../JS/filtros.js?v=2"></script>
+    <script src="../JS/filtros.js?v=6"></script>
 </body>
 </html>

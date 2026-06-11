@@ -515,3 +515,42 @@ select {
     from { opacity: 0; transform: translateY(-4px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+/* ==========================================================
+   RESPONSIVE MOBILE - FILTROS COMO CHIPS Y GRILLA 2 COLUMNAS
+   (antes el sidebar se ocultaba en celular; ahora los filtros
+   se muestran compactos arriba de la grilla)
+   ========================================================== */
+@media (max-width: 480px) {
+    .main-container { margin: 15px auto; }
+
+    .filters-sidebar { display: block; }
+    .filters-sidebar h2 { font-size: 17px; margin-bottom: 10px; }
+    .filter-group { margin-bottom: 12px; }
+    .filter-group h3 { margin-bottom: 8px; }
+    .filter-group ul { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-group ul li { margin-bottom: 0; }
+    .filter-group ul li a,
+    .filter-group ul li .filter-btn {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        padding: 6px 12px !important;
+        font-size: 12px;
+    }
+    .filter-group ul li a:hover { text-decoration: none; }
+    .filter-btn.activo { border-color: #d32f2f; background: #fdf0f0; }
+    #btn-limpiar { border: none; background: none; padding: 6px 4px !important; }
+    .submenu-moldura {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        margin: 4px 0;
+    }
+
+    /* Grilla estilo e-commerce: 2 columnas compactas */
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .product-img { height: 130px; padding: 10px; }
+    .product-info { padding: 10px; }
+    .product-title { font-size: 12px; }
+    .product-more-info { font-size: 12px; padding: 8px 6px; }
+}

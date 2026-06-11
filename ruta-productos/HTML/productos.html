@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Productos - WoodTools S.R.L.</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/lista-productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../imagenes/logos/WoodTools.png" alt="WoodTools S.R.L.">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">INICIO</a></li>
+
+                    <li class="dropdown">
+                        <a href="productos.html" onclick="if(!this.dataset.abierto){this.dataset.abierto='1';this.parentElement.classList.add('open');return false;}">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Sierras.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.jpg" alt="" class="menu-icon">Sierras circulares</a></li>
+                            <li><a href="fresas.html"><img src="../../imagenes/herramientas/Productos-slide/Fresas.png" alt="" class="menu-icon">Fresas</a></li>
+                            <li><a href="Cuchillas.html"><img src="../../imagenes/herramientas/Productos-slide/Cuchillas.png" alt="" class="menu-icon">Cuchillas</a></li>
+                            <li><a href="mechas.html"><img src="../../imagenes/herramientas/Productos-slide/Mechas.png" alt="" class="menu-icon">Mechas y Brocas</a></li>
+                            <li><a href="Diamante.html"><img src="../../imagenes/herramientas/Productos-slide/Diamante.png" alt="" class="menu-icon">Herramientas de Diamante</a></li>
+                            <li><a href="Cabezales.html"><img src="../../imagenes/herramientas/Productos-slide/Cabezales.png" alt="" class="menu-icon">Cabezales</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../../ruta-contactanos/HTML/Quienes-somos.html">NOSOTROS</a></li>
+                    <li><a href="../../ruta-contactanos/HTML/Service.html">SERVICE</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">CONTACTANOS <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/5491134609057" target="_blank">Ventas WhatsApp</a></li>
+                            <li><a href="../../ruta-contactanos/HTML/formulario-mail.html" target="_blank">Vía Email</a></li>
+                            <li><a href="../../ruta-contactanos/HTML/casa-central.html">Ubicación de Casa Central</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
+                    <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <aside class="filters-sidebar">
+            <h2>Todos los Productos</h2>
+
+            <div class="filter-group">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="Sierras.html">Discos de corte</a></li>
+                    <li><a href="fresas.html">Fresas</a></li>
+                    <li><a href="Cuchillas.html">Cuchillas</a></li>
+                    <li><a href="mechas.html">Mechas y Brocas</a></li>
+                    <li><a href="Diamante.html">Herramientas de Diamante</a></li>
+                    <li><a href="Cabezales.html">Cabezales</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="products-content">
+            <div class="buscador-productos" style="margin: 0 0 20px 0;">
+                <input type="search" id="buscador-productos" placeholder="Buscar por código o nombre del producto..." style="width: 100%; padding: 12px 16px; font-size: 15px; border: 2px solid #a41e22; border-radius: 6px; box-sizing: border-box; outline: none;">
+            </div>
+            <div class="products-grid" id="contenedor-productos">
+
+                <a href="SC/SC_Franzoi.html" class="product-card" data-categoria="multiple" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/Sierra con racadores Franzoi/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SC Franzoi"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple SC Franzoi</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/SCC_Franzoi.html" class="product-card" data-categoria="incisor" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/Incisor Santi/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SCC Franzoi"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Incisores SCC Franzoi</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/FI14M.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/FI14M AA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FI14M"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera FI14M</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LG2A.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG2A/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2A"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LG2A</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LG2B.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG2B/1 (1).jpg"this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2B"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LG2B</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LG3D.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG3D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG3D"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LG3D</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU2A.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2A/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2A"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LU2A</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU2B.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2B 2100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2B"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LU2B</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/FR09W.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/FR09W003H/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FR09W"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera FR09W</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LP40M.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LP40M 016P/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LP40M"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LP40M</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU1D.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU1D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1D"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LU1D</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU1F.html" class="product-card" data-categoria="madera" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU1F/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1F"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Madera LU1F</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU2C.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2C 1200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2C"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LU2C</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU3D.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3D 0200/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3D"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LU3D</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU3E.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3E 0200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3E"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LU3E</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU3F.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3F 0100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3F"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LU3F</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LSB.html" class="product-card" data-categoria="melamina" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LSB25003X/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LSB"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Melamina LSB</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM01.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM01/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM01"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM01</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM02.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM02/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM02"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM02</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM04.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM04/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM04"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM04</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM05.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM05/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM05"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM05</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM06.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM06/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM06"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM06</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LM63M.html" class="product-card" data-categoria="multiple" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM63M/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM63M"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra Múltiple LM63M</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LSA.html" class="product-card" data-categoria="seccionadora" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" alt="LSA"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Seccionadoras LSA</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LI13MD.html" class="product-card" data-categoria="incisor" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MDAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MD"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Incisores LI13MD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LI13MS.html" class="product-card" data-categoria="incisor" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MS"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Incisores LI13MS</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LI16M.html" class="product-card" data-categoria="incisor" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI16MAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI16M"></div>
+                <div class="product-info">
+                <div class="product-title">Incisor Cónico LI16M / LI16H</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LI25M.html" class="product-card" data-categoria="incisor" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI25M31BA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI25M"></div>
+                <div class="product-info">
+                <div class="product-title">Incisor Regulable LI25M</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT14MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="Trituradoras LT"></div>
+                <div class="product-info"><div class="product-title">Sierra para Trituradores LT (6 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <!-- Modelos LT individuales: accesibles desde el selector de la pagina LT. Ocultos para no repetir. No borrar.
+<a href="SC/LT14MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MD"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT14MD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT14MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MS"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT14MS</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT16MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT16MD"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT16MD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT16MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT16MS"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT16MS</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT18MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT18MD"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT18MD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LT18MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT18MS"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores LT18MS</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                -->
+                <a href="SC/TR15MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MD"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores TR15MD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/TR15MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MS"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Trituradores TR15MS</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU4A.html" class="product-card" data-categoria="aluminio" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU4A 0100/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU4A"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Aluminio LU4A</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU5B.html" class="product-card" data-categoria="aluminio" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5B/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5B"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Aluminio LU5B</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU5D.html" class="product-card" data-categoria="aluminio" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5D"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Aluminio LU5D</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="SC/LU5E.html" class="product-card" data-categoria="aluminio" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5E/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5E"></div>
+                <div class="product-info">
+                <div class="product-title">Sierra para Aluminio LU5E</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/CB0750660.html" class="product-card" data-tipo="helicoidales" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/CB0750660/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="CB0750660"></div>
+                <div class="product-info">
+                <div class="product-title">Cabezal Cepillador Helicoidal (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FRI01566.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FRI01566/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRI01566"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa Recta con Incisores HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FRS0104.html" class="product-card" data-tipo="rectas" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FRS0606/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRS0104"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa Recta HM de Ranurar (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/F04C014.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/F04C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F04C014"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa de 1/4 Círculo para Redondear Madera (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FMR04.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FMR04/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FMR04"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa Multi-perfil FMR04</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FP2226.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FP2226/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FP2226"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa Palos de Escoba / Multimoldura (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FRP5533.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FRP5533/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRP5533"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa de Perfilado Avanzado para Puertas Placa FRP5533</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFMPV14.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFMPV14/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMPV14"></div>
+                <div class="product-info">
+                <div class="product-title">Juego Moldura Tradicional de Puertas y Ventanas (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/LIMMUE.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/LIMMUE/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="LIMMUE"></div>
+                <div class="product-info">
+                <div class="product-title">Disco Limitador para Molduras de Línea Mueblera</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FRG0510.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FRG0510/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FRG0510"></div>
+                <div class="product-info">
+                <div class="product-title">Juego de Fresas Regulable para Canales y Ranuras (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFE254.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFE254/1.jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE254"></div>
+                <div class="product-info">
+                <div class="product-title">Juego de Fresas de Ensamble y Uniones Estructurales (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFPMS10.html" class="product-card" data-categoria="regulable" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFPMS10/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFPMS10"></div>
+                <div class="product-info">
+                <div class="product-title">Juego de Fresas para Muebles Modulares y Frentes de Cocina</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFDE4.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFDE4/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFDE4"></div>
+                <div class="product-info">
+                <div class="product-title">Juego de Fresas Deck para Encastre Machimbrado (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/FA104.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/FA104/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="FA104"></div>
+                <div class="product-info">
+                <div class="product-title">Fresas en ángulo HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/F2C014.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/F2C014/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="F2C014"></div>
+                <div class="product-info">
+                <div class="product-title">Fresas 1/2 círculo cóncavo y convexo HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFFI01.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFFI01/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFFI01"></div>
+                <div class="product-info">
+                <div class="product-title">Frente Inglés HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFMS1234.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFMS1234/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMS1234"></div>
+                <div class="product-info">
+                <div class="product-title">Machimbre Simple HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFMD1234.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFMD1234/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMD1234"></div>
+                <div class="product-info">
+                <div class="product-title">Machimbre Doble HM</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFMPVR.html" class="product-card" data-categoria="moldura" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFMPVR/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFMPVR"></div>
+                <div class="product-info">
+                <div class="product-title">Moldura de Puertas y Ventanas Simple HM</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="FR/JFE8122.html" class="product-card" data-categoria="encastre" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Fresas/JFE/1.jpeg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="JFE8122"></div>
+                <div class="product-info">
+                <div class="product-title">Fresa para Ensamble Cónico HM (varias medidas)</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CHC_HSS.html" class="product-card" data-formato="planas" data-material="hss" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CHC HSS"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla Plana HSS Franzoi CHC</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CHC_MD.html" class="product-card" data-formato="planas" data-material="widia" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_MD/1.jpg" alt="CHC Widia"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla Plana Widia Franzoi CHC</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CHCR_HSS.html" class="product-card" data-formato="dr" data-material="hss" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHCR_HSS/1.jpg" alt="CHCR HSS"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla Dorso Ranurado HSS Franzoi CHCR</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CHCR_MD.html" class="product-card" data-formato="dr" data-material="widia" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHCR_MD/1.jpg" alt="CHCR Widia"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla Dorso Ranurado Widia Franzoi CHCR</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CBP.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBP"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla para Cabezal Franzoi CBP</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CBR.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBR"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla para Cabezal Franzoi CBR</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CBRH.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBRH"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla para Cabezal Franzoi CBRH</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CH/CHCECH.html" class="product-card" data-formato="chipera" data-material="otros" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_ECH/1 (1).jpg" alt="CHCECH"></div>
+                <div class="product-info">
+                <div class="product-title">Cuchilla para Chipera Franzoi CHCECH</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="MCH/MPD.html" class="product-card" data-categoria="300" data-marca="nordutensili">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familias MPD  MPI/1.jpeg" alt="MPD"></div>
+                <div class="product-info"><div class="product-title">Mecha Pasante MPD</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MCD-MCI.html" class="product-card" data-categoria="301" data-marca="nordutensili">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familias MCD  MCI/1.jpeg" alt="MCD-MCI"></div>
+                <div class="product-info"><div class="product-title">Mecha Ciega MCD-MCI</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MID.html" class="product-card" data-categoria="303" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familia MID/1.jpeg" alt="MID"></div>
+                <div class="product-info"><div class="product-title">Mecha Integral MID</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MIDN.html" class="product-card" data-categoria="303" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familia MIDN/2.jpg" alt="MIDN"></div>
+                <div class="product-info"><div class="product-title">Mecha Integral MIDN</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MI.html" class="product-card" data-categoria="303" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familia MI/1.jpeg" alt="MI"></div>
+                <div class="product-info"><div class="product-title">Mecha Integral MI</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MB.html" class="product-card" data-categoria="304" data-marca="nordutensili">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familia MB/1.jpeg" alt="MB"></div>
+                <div class="product-info"><div class="product-title">Mechas para Bisagra MB</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MAM-PINZA.html" class="product-card" data-categoria="305" data-marca="nordutensili">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familias MAM  PINZA/mandril para máquina/1.jpeg" alt="MAM-PINZA"></div>
+                <div class="product-info"><div class="product-title">Mandril y Pinza MAM</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="MCH/MBA.html" class="product-card" data-categoria="307" data-marca="nordutensili">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Mechas/Familia MBA/1.jpeg" alt="MBA"></div>
+                <div class="product-info"><div class="product-title">Mecha para Barrenos MBA</div><p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="DM/SCED.html" class="product-card" data-categoria="sierra" data-marca="schiavon">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Diamante/Sierras diamante/1.jpg" onerror="this.src='../../imagenes/marcas/Schiavon.jpeg'" alt="Discos de corte de Diamante"></div>
+                <div class="product-info">
+                <div class="product-title">Disco de corte de Diamante PCD SCED</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="DM/SCCD.html" class="product-card" data-categoria="incisor" data-marca="schiavon">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Diamante/Incisor diamante/1.jpg" onerror="this.src='../../imagenes/marcas/Schiavon.jpeg'" alt="Incisores Cónicos Diamante"></div>
+                <div class="product-info">
+                <div class="product-title">Incisor Cónico de Diamante SCCD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="DM/MBDD.html" class="product-card" data-categoria="mecha" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Diamante/Mechas diamante/1 (3).jpg" onerror="this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="Mechas Diamante Bisagra"></div>
+                <div class="product-info">
+                <div class="product-title">Mecha de Diamante Bisagra MBDD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="DM/MDD.html" class="product-card" data-categoria="mecha" data-marca="franzoi">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Diamante/Mechas diamante/2.jpg" onerror="this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="Mechas Forantes"></div>
+                <div class="product-info">
+                <div class="product-title">Mecha Forante Diamante MDD</div>
+                <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                </div>
+                </a>
+                <a href="CBZ/T194M BB3.html" class="product-card" data-categoria="cepillado" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/T194M-BB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="T194M BB3"></div>
+                <div class="product-info"><div class="product-title">Cabezal Cepillador Corte Alterno de 125mm</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="CBZ/TM06M AB3.html" class="product-card" data-categoria="cepillado" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TM06M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TM06M"></div>
+                <div class="product-info"><div class="product-title">Cabezal Cepillador Helicoidal (5 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="CBZ/T198M FC3.html" class="product-card" data-categoria="ranurado" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/T198M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia T198M"></div>
+                <div class="product-info"><div class="product-title">Cabezal Ranurador de 140mm (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="CBZ/TW01M AB3.html" class="product-card" data-categoria="juntar" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TW01MAB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TW"></div>
+                <div class="product-info"><div class="product-title">Cabezal para Juntar Finger Joint (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="CBZ/TP23M AB3.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TP23M AB3/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TP"></div>
+                <div class="product-info"><div class="product-title">Cabezal Multiperfil TP (6 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+                <a href="CBZ/TD21M GB3.html" class="product-card" data-categoria="multiperfil" data-marca="freud">
+                <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cabezales/TD51M/1 (1).png" onerror="this.onerror=null; this.src='../../imagenes/herramientas/Cabezales/simple.png'" alt="Familia TD"></div>
+                <div class="product-info"><div class="product-title">Cabezal Replan para Multiperfil (2 modelos)</div><div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div></div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <section id="marcas">
+        <img loading="lazy" src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
+        <img loading="lazy" src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
+        <img loading="lazy" src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
+        <img loading="lazy" src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
+        <img loading="lazy" src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
+    </section>
+
+    <footer>
+        <div class="footer-contact-bar">
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 WoodTools S.R.L. - WoodTools Marketing</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="mailto:woodtoolsmarketing@gmail.com" target="_blank"><img src="../../imagenes/logos/mail.png" alt="Email"></a>
+        <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
+    </div>
+
+    <script src="../JS/filtros.js?v=6"></script>
+</body>
+</html>

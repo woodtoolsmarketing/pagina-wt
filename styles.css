@@ -518,3 +518,96 @@ footer {
 @media (max-width: 600px) {
     .productos-grid { grid-template-columns: 1fr; }
 }
+/* ==========================================
+   ICONOS DE HERRAMIENTAS EN EL MENÚ PRODUCTOS
+   ========================================== */
+.dropdown-menu li a img.menu-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+/* Menú desplegado por clic (1er toque en celular / 1er clic) */
+.dropdown.open .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE - HEADER Y NAVEGACIÓN
+   (logo arriba, menú abajo a ancho completo, desplegables
+   ocupando todo el ancho del header)
+   ========================================================== */
+@media (max-width: 900px) {
+    .header-container {
+        flex-wrap: wrap;
+        padding: 10px 4%;
+        row-gap: 4px;
+    }
+    .logo { order: 1; }
+    .logo img { width: 110px; margin-top: 0; }
+    .header-actions { order: 2; gap: 10px; }
+    .btn-shop { padding: 8px 12px; font-size: 12px; }
+    .social-icons a { font-size: 20px; margin-left: 8px; }
+    nav { order: 3; width: 100%; }
+    nav > ul, nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px 14px;
+    }
+    nav a { font-size: 13px; padding: 8px 4px; white-space: nowrap; }
+
+    /* Los desplegables dejan de colgar del ítem y ocupan el ancho del header */
+    nav > ul > li, nav ul li { position: static; }
+    .dropdown-menu {
+        left: 3%;
+        right: 3%;
+        min-width: 0;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img { width: 95px; }
+    .social-icons { display: none; }
+    .btn-shop { font-size: 11px; padding: 7px 10px; }
+    nav > ul, nav ul { gap: 0 10px; }
+    nav a { font-size: 12.5px; }
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE - PORTADA (hero, secciones, marcas)
+   ========================================================== */
+@media (max-width: 700px) {
+    #hero { height: 320px; }
+    .slide-content {
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        padding: 18px;
+    }
+    .slide-content h1 { font-size: 1.7rem; }
+    .slide-content p { font-size: 1rem; }
+    .prev, .next { padding: 10px; font-size: 18px; }
+    .dot { height: 11px; width: 11px; }
+    .titulo-seccion { font-size: 1.9rem; margin-bottom: 30px; }
+    #productos { padding: 40px 5%; }
+    .img-container { height: 200px; }
+    .texto-inferior { padding: 25px 6%; }
+    .franja-roja { font-size: 1rem; }
+    .banner-contacto { height: 240px; }
+    .banner-text h3 { font-size: 1.4rem; }
+    #marcas { gap: 24px; padding: 35px 5%; }
+    #marcas img { height: 40px; }
+    .floating-buttons { bottom: 15px; right: 15px; gap: 10px; }
+    .floating-buttons a { width: 44px; height: 44px; }
+    footer { padding: 30px 15px; }
+}

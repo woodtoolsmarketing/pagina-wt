@@ -357,3 +357,20 @@ body {
         justify-content: center; 
     }
 }
+/* ==========================================================
+   RESPONSIVE MOBILE - AJUSTES FINOS PÁGINA DE PRODUCTO
+   ========================================================== */
+@media (max-width: 768px) {
+    .producto-container {
+        margin: 15px 8px;
+        padding: 16px;
+    }
+    .zoom-container { height: 300px; max-width: 100%; }
+    #producto-titulo { font-size: 20px; }
+    .galeria-miniaturas { flex-wrap: wrap; }
+    .selector-modelo { padding: 14px; }
+    .caracteristicas-principales { padding-top: 20px; }
+    .caracteristicas-principales h2 { font-size: 20px; }
+    .caracteristica-label, .caracteristica-value { padding: 12px; font-size: 14px; }
+    .caracteristica-label { width: 38%; }
+}

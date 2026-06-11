@@ -225,23 +225,22 @@ const baseDatosProductos = {
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
         variantes: [{ id: "TR15MS CA3", nombre: "D: 300mm | B: 30mm" }]
     },
-    "LT14": {
-        codigoBase: "LT14", categoriaImg: "Sierras", carpetaImg: "TR15MS",
-        titulo: "Sierra Trituradora LT14", marca: "Freud",
+    // Familia LT (Sierras Trituradoras): LT14 / LT16 / LT18 en giro
+    // derecho (MD) e izquierdo (MS). Antes eran 3 familias separadas;
+    // ahora una sola con sus 6 modelos como variantes. Comparten la
+    // carpeta de fotos "TR15MS".
+    "LT": {
+        codigoBase: "LT", categoriaImg: "Sierras", carpetaImg: "TR15MS",
+        titulo: "Sierra Trituradora", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
-        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
-    },
-    "LT16": {
-        codigoBase: "LT16", categoriaImg: "Sierras", carpetaImg: "TR15MS",
-        titulo: "Sierra Trituradora LT16", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
-        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
-    },
-    "LT18": {
-        codigoBase: "LT18", categoriaImg: "Sierras", carpetaImg: "TR15MS",
-        titulo: "Sierra Trituradora LT18", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
-        variantes: [{ id: "1", nombre: "Consultar Giro (MD/MS)" }]
+        variantes: [
+            { id: "LT14MD", nombre: "LT14MD - Trituradora LT14 Giro Derecho (MD)" },
+            { id: "LT14MS", nombre: "LT14MS - Trituradora LT14 Giro Izquierdo (MS)" },
+            { id: "LT16MD", nombre: "LT16MD - Trituradora LT16 Giro Derecho (MD)" },
+            { id: "LT16MS", nombre: "LT16MS - Trituradora LT16 Giro Izquierdo (MS)" },
+            { id: "LT18MD", nombre: "LT18MD - Trituradora LT18 Giro Derecho (MD)" },
+            { id: "LT18MS", nombre: "LT18MS - Trituradora LT18 Giro Izquierdo (MS)" }
+        ]
     },
     "SCC_Freud": {
         codigoBase: "SCC_Freud", categoriaImg: "Sierras", carpetaImg: "Incisor",

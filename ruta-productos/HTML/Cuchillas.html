@@ -23,14 +23,14 @@
                     <li><a href="../../index.html">INICIO</a></li>
                     
                     <li class="dropdown">
-                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <a href="productos.html" onclick="if(!this.dataset.abierto){this.dataset.abierto='1';this.parentElement.classList.add('open');return false;}">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../sc-en-hm.html">Discos de corte</a></li>
-                            <li><a href="../fresas-madera.html">Fresas</a></li>
-                            <li><a href="../cuchillas-madera.html">Cuchillas</a></li>
-                            <li><a href="../mechas-madera.html">Mechas y Brocas</a></li>
-                            <li><a href="../diamante-en-hm.html">Herramientas de Diamante</a></li>
-                            <li><a href="../cabezales.html">Cabezales</a></li>
+                            <li><a href="../sc-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.jpg" alt="" class="menu-icon">Discos de corte</a></li>
+                            <li><a href="../fresas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Fresas.png" alt="" class="menu-icon">Fresas</a></li>
+                            <li><a href="../cuchillas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Cuchillas.png" alt="" class="menu-icon">Cuchillas</a></li>
+                            <li><a href="../mechas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Mechas.png" alt="" class="menu-icon">Mechas y Brocas</a></li>
+                            <li><a href="../diamante-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Diamante.png" alt="" class="menu-icon">Herramientas de Diamante</a></li>
+                            <li><a href="../cabezales.html"><img src="../../imagenes/herramientas/Productos-slide/Cabezales.png" alt="" class="menu-icon">Cabezales</a></li>
                         </ul>
                     </li>
                     
@@ -91,10 +91,13 @@
         </aside>
 
         <section class="products-content">
+            <div class="buscador-productos" style="margin: 0 0 20px 0;">
+                <input type="search" id="buscador-productos" placeholder="Buscar por código o nombre del producto..." style="width: 100%; padding: 12px 16px; font-size: 15px; border: 2px solid #a41e22; border-radius: 6px; box-sizing: border-box; outline: none;">
+            </div>
             <div class="products-grid" id="contenedor-productos">
 
                 <a href="CH/CHC_HSS.html" class="product-card" data-formato="planas" data-material="hss" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CHC HSS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CHC HSS"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla Plana HSS Franzoi CHC</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -103,7 +106,7 @@
                 </a>
 
                 <a href="CH/CHC_MD.html" class="product-card" data-formato="planas" data-material="widia" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_MD/1.jpg" alt="CHC Widia"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_MD/1.jpg" alt="CHC Widia"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla Plana Widia Franzoi CHC</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -112,7 +115,7 @@
                 </a>
 
                 <a href="CH/CHCR_HSS.html" class="product-card" data-formato="dr" data-material="hss" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHCR_HSS/1.jpg" alt="CHCR HSS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHCR_HSS/1.jpg" alt="CHCR HSS"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla Dorso Ranurado HSS Franzoi CHCR</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -121,7 +124,7 @@
                 </a>
 
                 <a href="CH/CHCR_MD.html" class="product-card" data-formato="dr" data-material="widia" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHCR_MD/1.jpg" alt="CHCR Widia"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHCR_MD/1.jpg" alt="CHCR Widia"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla Dorso Ranurado Widia Franzoi CHCR</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -130,7 +133,7 @@
                 </a>
 
                 <a href="CH/CBP.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBP"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBP"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla para Cabezal Franzoi CBP</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -139,7 +142,7 @@
                 </a>
                 
                 <a href="CH/CBR.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBR"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBR"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla para Cabezal Franzoi CBR</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -148,7 +151,7 @@
                 </a>
                 
                 <a href="CH/CBRH.html" class="product-card" data-formato="cabezales" data-material="otros" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBRH"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_HSS/1.jpg" alt="CBRH"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla para Cabezal Franzoi CBRH</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -157,7 +160,7 @@
                 </a>
 
                 <a href="CH/CHCECH.html" class="product-card" data-formato="chipera" data-material="otros" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Cuchillas/CHC_ECH/1 (1).jpg" alt="CHCECH"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Cuchillas/CHC_ECH/1 (1).jpg" alt="CHCECH"></div>
                     <div class="product-info">
                         <div class="product-title">Cuchilla para Chipera Franzoi CHCECH</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -170,11 +173,11 @@
     </main>
 
     <section id="marcas">
-        <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
-        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
-        <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
-        <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
-        <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
+        <img loading="lazy" src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
+        <img loading="lazy" src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
+        <img loading="lazy" src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
+        <img loading="lazy" src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
+        <img loading="lazy" src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
     </section>
 
     <footer>
@@ -188,6 +191,6 @@
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <script src="../JS/filtros.js"></script>
+    <script src="../JS/filtros.js?v=6"></script>
 </body>
 </html>

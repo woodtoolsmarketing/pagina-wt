@@ -172,14 +172,31 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================================================
     // 3. ESTADO DE LOS FILTROS
     // =====================================================================
-    let filtrosActivos = { 
-        categoria: 'todos', 
-        marca: 'todos', 
+    let filtrosActivos = {
+        categoria: 'todos',
+        marca: 'todos',
         tipo: 'todos',
         subtipo: 'todos',
         formato: 'todos',
         material: 'todos'
     };
+
+    // =====================================================================
+    // 3b. BUSCADOR POR CÓDIGO O NOMBRE (input #buscador-productos)
+    //     Filtra las tarjetas por el texto del título y por el código del
+    //     producto (nombre del archivo .html del enlace). Convive con los
+    //     filtros de categoría/marca: ambos se aplican a la vez.
+    // =====================================================================
+    const inputBusqueda = document.getElementById('buscador-productos');
+    let textoBusqueda = '';
+
+    function textoDeProducto(producto) {
+        const tituloEl = producto.querySelector('.product-title');
+        const titulo = tituloEl ? tituloEl.innerText : '';
+        let codigo = (producto.getAttribute('href') || '').split('/').pop().replace('.html', '');
+        try { codigo = decodeURIComponent(codigo); } catch (e) {}
+        return (titulo + ' ' + codigo).toLowerCase();
+    }
 
     // =====================================================================
     // 4. LÓGICA PRINCIPAL DE FILTRADO
@@ -200,7 +217,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let mostrar = true;
 
-            for (const [filtro, valor] of Object.entries(filtrosActivos)) {
+            // --- Buscador: si hay texto, el producto debe contenerlo ---
+            if (textoBusqueda && !textoDeProducto(producto).includes(textoBusqueda)) {
+                mostrar = false;
+            }
+
+            if (mostrar) for (const [filtro, valor] of Object.entries(filtrosActivos)) {
                 if (valor !== 'todos') {
                     const valorProducto = atributos[filtro];
 
@@ -235,6 +257,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 noResultsDiv.style.display = 'none';
             }
         }
+    }
+
+    // --- Conexión del buscador (si la página tiene el input) ---
+    if (inputBusqueda) {
+        inputBusqueda.addEventListener('input', function() {
+            textoBusqueda = this.value.trim().toLowerCase();
+            aplicarFiltros();
+        });
     }
 
     // =====================================================================
@@ -333,6 +363,8 @@ document.addEventListener("DOMContentLoaded", function() {
             filterButtons.forEach(btn => btn.classList.remove('activo'));
             const subMenuL = document.getElementById('submenu-moldura');
             if (subMenuL) subMenuL.style.display = 'none';
+            // Limpiar también el buscador
+            if (inputBusqueda) { inputBusqueda.value = ''; textoBusqueda = ''; }
             window.history.replaceState({}, document.title, window.location.pathname);
             aplicarFiltros();
         });

@@ -23,14 +23,14 @@
                     <li><a href="../../index.html">INICIO</a></li>
                     
                     <li class="dropdown">
-                        <a href="#">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
+                        <a href="productos.html" onclick="if(!this.dataset.abierto){this.dataset.abierto='1';this.parentElement.classList.add('open');return false;}">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Sierras.html">Sierras circulares</a></li>
-                            <li><a href="fresas.html">Fresas</a></li>
-                            <li><a href="Cuchillas.html">Cuchillas</a></li>
-                            <li><a href="mechas.html">Mechas y Brocas</a></li>
-                            <li><a href="Diamante.html">Herramientas de Diamante</a></li>
-                            <li><a href="Cabezales.html">Cabezales</a></li>
+                            <li><a href="Sierras.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.jpg" alt="" class="menu-icon">Sierras circulares</a></li>
+                            <li><a href="fresas.html"><img src="../../imagenes/herramientas/Productos-slide/Fresas.png" alt="" class="menu-icon">Fresas</a></li>
+                            <li><a href="Cuchillas.html"><img src="../../imagenes/herramientas/Productos-slide/Cuchillas.png" alt="" class="menu-icon">Cuchillas</a></li>
+                            <li><a href="mechas.html"><img src="../../imagenes/herramientas/Productos-slide/Mechas.png" alt="" class="menu-icon">Mechas y Brocas</a></li>
+                            <li><a href="Diamante.html"><img src="../../imagenes/herramientas/Productos-slide/Diamante.png" alt="" class="menu-icon">Herramientas de Diamante</a></li>
+                            <li><a href="Cabezales.html"><img src="../../imagenes/herramientas/Productos-slide/Cabezales.png" alt="" class="menu-icon">Cabezales</a></li>
                         </ul>
                     </li>
                     
@@ -87,10 +87,13 @@
         </aside>
 
         <section class="products-content">
+            <div class="buscador-productos" style="margin: 0 0 20px 0;">
+                <input type="search" id="buscador-productos" placeholder="Buscar por código o nombre del producto..." style="width: 100%; padding: 12px 16px; font-size: 15px; border: 2px solid #a41e22; border-radius: 6px; box-sizing: border-box; outline: none;">
+            </div>
             <div class="products-grid" id="contenedor-productos">
 
                 <a href="SC/SC_Franzoi.html" class="product-card" data-categoria="multiple" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/Sierra con racadores Franzoi/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SC Franzoi"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/Sierra con racadores Franzoi/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SC Franzoi"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple SC Franzoi</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -98,7 +101,7 @@
                     </div>
                 </a>
                 <a href="SC/SCC_Franzoi.html" class="product-card" data-categoria="incisor" data-marca="franzoi">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/Incisor Santi/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SCC Franzoi"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/Incisor Santi/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Franzoi.jpeg'" alt="SCC Franzoi"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Incisores SCC Franzoi</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -107,7 +110,7 @@
                 </a>
 
                 <a href="SC/FI14M.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/FI14M AA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FI14M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/FI14M AA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FI14M"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera FI14M</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -115,7 +118,7 @@
                     </div>
                 </a>
                 <a href="SC/LG2A.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LG2A/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2A"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG2A/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2A"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LG2A</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -123,7 +126,7 @@
                     </div>
                 </a>
                 <a href="SC/LG2B.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LG2B/1 (1).jpg"this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2B"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG2B/1 (1).jpg"this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG2B"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LG2B</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -131,7 +134,7 @@
                     </div>
                 </a>
                 <a href="SC/LG3D.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LG3D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG3D"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LG3D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LG3D"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LG3D</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -139,7 +142,7 @@
                     </div>
                 </a>
                 <a href="SC/LU2A.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU2A/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2A"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2A/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2A"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LU2A</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -147,7 +150,7 @@
                     </div>
                 </a>
                 <a href="SC/LU2B.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU2B 2100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2B"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2B 2100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2B"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LU2B</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -155,7 +158,7 @@
                     </div>
                 </a>
                 <a href="SC/FR09W.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/FR09W003H/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FR09W"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/FR09W003H/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="FR09W"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera FR09W</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -163,7 +166,7 @@
                     </div>
                 </a>
                 <a href="SC/LP40M.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LP40M 016P/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LP40M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LP40M 016P/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LP40M"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LP40M</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -171,7 +174,7 @@
                     </div>
                 </a>
                 <a href="SC/LU1D.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU1D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1D"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU1D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1D"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LU1D</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -179,7 +182,7 @@
                     </div>
                 </a>
                 <a href="SC/LU1F.html" class="product-card" data-categoria="madera" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU1F/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1F"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU1F/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU1F"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Madera LU1F</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -188,7 +191,7 @@
                 </a>
 
                 <a href="SC/LU2C.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU2C 1200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2C"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU2C 1200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU2C"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LU2C</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -196,7 +199,7 @@
                     </div>
                 </a>
                 <a href="SC/LU3D.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU3D 0200/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3D"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3D 0200/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3D"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LU3D</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -204,7 +207,7 @@
                     </div>
                 </a>
                 <a href="SC/LU3E.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU3E 0200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3E"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3E 0200/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3E"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LU3E</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -212,7 +215,7 @@
                     </div>
                 </a>
                 <a href="SC/LU3F.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU3F 0100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3F"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU3F 0100/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU3F"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LU3F</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -220,7 +223,7 @@
                     </div>
                 </a>
                 <a href="SC/LSB.html" class="product-card" data-categoria="melamina" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LSB25003X/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LSB"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LSB25003X/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LSB"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Melamina LSB</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -229,7 +232,7 @@
                 </a>
 
                 <a href="SC/LM01.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM01/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM01"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM01/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM01"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM01</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -237,7 +240,7 @@
                     </div>
                 </a>
                 <a href="SC/LM02.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM02/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM02"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM02/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM02"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM02</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -245,7 +248,7 @@
                     </div>
                 </a>
                 <a href="SC/LM04.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM04/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM04"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM04/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM04"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM04</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -253,7 +256,7 @@
                     </div>
                 </a>
                 <a href="SC/LM05.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM05/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM05"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM05/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM05"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM05</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -261,7 +264,7 @@
                     </div>
                 </a>
                 <a href="SC/LM06.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM06/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM06"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM06/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM06"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM06</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -269,7 +272,7 @@
                     </div>
                 </a>
                 <a href="SC/LM63M.html" class="product-card" data-categoria="multiple" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LM63M/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM63M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LM63M/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LM63M"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra Múltiple LM63M</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -278,7 +281,7 @@
                 </a>
 
                 <a href="SC/LSA.html" class="product-card" data-categoria="seccionadora" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" alt="LSA"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" alt="LSA"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Seccionadoras LSA</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -287,7 +290,7 @@
                 </a>
 
                 <a href="SC/LI13MD.html" class="product-card" data-categoria="incisor" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LI13MDAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MDAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MD"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Incisores LI13MD</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -295,7 +298,7 @@
                     </div>
                 </a>
                 <a href="SC/LI13MS.html" class="product-card" data-categoria="incisor" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI13MSAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI13MS"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Incisores LI13MS</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -303,7 +306,7 @@
                     </div>
                 </a>
                 <a href="SC/LI16M.html" class="product-card" data-categoria="incisor" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LI16MAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI16M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI16MAA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI16M"></div>
                     <div class="product-info">
                         <div class="product-title">Incisor Cónico LI16M / LI16H</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -311,14 +314,24 @@
                     </div>
                 </a>
                 <a href="SC/LI25M.html" class="product-card" data-categoria="incisor" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LI25M31BA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI25M"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LI25M31BA3/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LI25M"></div>
                     <div class="product-info">
                         <div class="product-title">Incisor Regulable LI25M</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
                         <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
+                </a>
                 <a href="SC/LT14MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="Trituradoras LT"></div>
+                    <div class="product-info">
+                        <div class="product-title">Sierra para Trituradores LT (6 modelos)</div>
+                        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
+                        <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
+                    </div>
+                </a>
+                <!-- Modelos LT individuales: accesibles desde el selector de la pagina LT. Ocultos para no repetir. No borrar.
+<a href="SC/LT14MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MD"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT14MD</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -326,7 +339,7 @@
                     </div>
                 </a>
                 <a href="SC/LT14MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" alt="LT14MS"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT14MS</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -334,7 +347,7 @@
                     </div>
                 </a>
                 <a href="SC/LT16MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/marcas/Freud.jpeg" alt="LT16MD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT16MD"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT16MD</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -342,7 +355,7 @@
                     </div>
                 </a>
                 <a href="SC/LT16MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/marcas/Freud.jpeg" alt="LT16MS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT16MS"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT16MS</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -350,7 +363,7 @@
                     </div>
                 </a>
                 <a href="SC/LT18MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/marcas/Freud.jpeg" alt="LT18MD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT18MD"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT18MD</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -358,15 +371,16 @@
                     </div>
                 </a>
                 <a href="SC/LT18MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/marcas/Freud.jpeg" alt="LT18MS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LT18MS"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores LT18MS</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
                         <div class="product-more-info" style="background-color: #a41e22; color: #ffffff; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box;">Más información</div>
                     </div>
                 </a>
+                -->
                 <a href="SC/TR15MD.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MD"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MD"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores TR15MD</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -374,7 +388,7 @@
                     </div>
                 </a>
                 <a href="SC/TR15MS.html" class="product-card" data-categoria="triturador" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MS"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/TR15MS/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="TR15MS"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Trituradores TR15MS</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -383,7 +397,7 @@
                 </a>
 
                 <a href="SC/LU4A.html" class="product-card" data-categoria="aluminio" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU4A 0100/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU4A"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU4A 0100/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU4A"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Aluminio LU4A</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -391,7 +405,7 @@
                     </div>
                 </a>
                 <a href="SC/LU5B.html" class="product-card" data-categoria="aluminio" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU5B/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5B"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5B/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5B"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Aluminio LU5B</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -399,7 +413,7 @@
                     </div>
                 </a>
                 <a href="SC/LU5D.html" class="product-card" data-categoria="aluminio" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU5D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5D"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5D/1 (1).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5D"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Aluminio LU5D</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -407,7 +421,7 @@
                     </div>
                 </a>
                 <a href="SC/LU5E.html" class="product-card" data-categoria="aluminio" data-marca="freud">
-                    <div class="product-img"><img src="../../imagenes/herramientas/Sierras/LU5E/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5E"></div>
+                    <div class="product-img"><img loading="lazy" src="../../imagenes/herramientas/Sierras/LU5E/1 (2).jpg" onerror="this.onerror=null; this.src='../../imagenes/marcas/Freud.jpeg'" alt="LU5E"></div>
                     <div class="product-info">
                         <div class="product-title">Sierra para Aluminio LU5E</div>
                         <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 5px;">Ver medidas</p>
@@ -420,11 +434,11 @@
     </main>
 
     <section id="marcas">
-        <img src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
-        <img src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
-        <img src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
-        <img src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
-        <img src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
+        <img loading="lazy" src="../../imagenes/marcas/Ilma.jpeg" alt="Ilma">
+        <img loading="lazy" src="../../imagenes/marcas/Schiavon.jpeg" alt="Schiavon">
+        <img loading="lazy" src="../../imagenes/marcas/Freud.jpeg" alt="Freud">
+        <img loading="lazy" src="../../imagenes/marcas/Franzoi.jpeg" alt="Franzoi">
+        <img loading="lazy" src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
     </section>
 
     <footer>
@@ -438,6 +452,6 @@
         <a href="https://wa.me/5491134609057" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <script src="../JS/filtros.js?v=4"></script>
+    <script src="../JS/filtros.js?v=6"></script>
 </body>
 </html>
