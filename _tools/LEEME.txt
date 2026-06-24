@@ -1,0 +1,31 @@
+CÓMO ACTUALIZAR LAS FOTOS DE LOS PRODUCTOS
+===========================================
+
+El sitio muestra las fotos de cada producto leyendo un índice llamado
+"galeria-manifest.json" (lista de qué fotos tiene cada carpeta). Eso hace
+que las páginas carguen rápido. Cuando cambian las fotos, hay que
+regenerar ese índice.
+
+PASO A PASO
+-----------
+1) Poné las fotos nuevas dentro de la carpeta del producto, en:
+      imagenes\herramientas\<Categoría>\<CÓDIGO>\
+   (Categoría = Sierras, Fresas, Cuchillas, Mechas, Diamante o Cabezales)
+   Nombrá la foto principal como  1 (1).jpg  o  1 (1).png  (o 1.jpeg),
+   y las demás  2.jpeg, 3.jpeg, 4.jpeg ...
+
+2) Hacé DOBLE CLIC en:
+      Regenerar-fotos-galeria.bat
+   Se abre una ventana negra, dice cuántas carpetas y fotos encontró,
+   y listo. Cerrala.
+
+3) Subí por FTP al servidor:
+   - la(s) carpeta(s) de fotos nuevas, y
+   - el archivo  imagenes\herramientas\galeria-manifest.json  (lo regenera el paso 2)
+
+   Tip: conviene comprimir/achicar las fotos pesadas antes de subir.
+
+LISTO. Las fotos nuevas aparecen solas en la página del producto.
+
+(No hace falta tocar nada de código. Si una carpeta no figura en el índice,
+el producto simplemente muestra el logo hasta que regeneres y subas.)

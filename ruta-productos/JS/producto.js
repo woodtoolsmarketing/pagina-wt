@@ -1587,6 +1587,22 @@ document.addEventListener("DOMContentLoaded", function() {
     inyectarBotonYModalCotizacion();
 });
 
+// Cache del manifiesto de galería (lista de fotos REALES por carpeta). Se descarga
+// una sola vez por sesión y se cachea; así la galería pide únicamente las fotos que
+// existen, en vez de sondear decenas de nombres inexistentes (404) en cada producto.
+let _galeriaManifestPromise = null;
+function cargarGaleriaManifest() {
+    if (!_galeriaManifestPromise) {
+        // 'no-cache' = el navegador revalida con el servidor en cada carga (304 si no
+        // cambió, liviano). Así, al regenerar y subir el manifiesto, las fotos nuevas
+        // aparecen sin necesidad de cambiar versiones ni tocar código.
+        _galeriaManifestPromise = fetch('../../../imagenes/herramientas/galeria-manifest.json', { cache: 'no-cache' })
+            .then(r => r.ok ? r.json() : {})
+            .catch(() => ({}));
+    }
+    return _galeriaManifestPromise;
+}
+
 function renderizarGaleria(codigoActivo, info) {
     const contenedorImagen = document.querySelector(".producto-imagen");
     if (!contenedorImagen) return;
@@ -1610,41 +1626,41 @@ function renderizarGaleria(codigoActivo, info) {
     // Si el código activo coincide con la carpeta base, evitamos duplicar la galería
     carpetasImg = [...new Set(carpetasImg)];
 
-    let galeriaHTML = `<div class="galeria-miniaturas">`;
-
+    // Fallback: SOLO se usa si la carpeta no figura en el manifiesto (foto nueva
+    // todavía no indexada, o manifiesto ausente). Set acotado de nombres comunes.
     const combinacionesSeguras = [
-        // "1 (1)" va PRIMERO: es la foto principal/render del producto
-        "1 (1).jpg", "1%20(1).jpg", "1 (1).png", "1%20(1).png", "1.jpg", "1.jpeg", "1.png", "1 (2).jpg", "1%20(2).jpg", "1 (3).jpg", "1%20(3).jpg", "Incisor.png",
-        "2.jpg", "2 (1).jpg", "2%20(1).jpg", "2.jpeg", "2 (2).jpg", "2%20(2).jpg", "2.png",
-        "3.jpg", "3 (1).jpg", "3%20(1).jpg", "3.jpeg", "3 (2).jpg", "3%20(2).jpg", "3.png", "3(.jpeg",
-        "4.jpg", "4 (1).jpg", "4%20(1).jpg", "4.jpeg", "4 (2).jpg", "4%20(2).jpg", "4.png",
-        "5.jpg", "5 (1).jpg", "5%20(1).jpg", "5.jpeg", "5 (2).jpg", "5%20(2).jpg", "5.png",
-        "6.jpg", "6 (1).jpg", "6%20(1).jpg", "6.jpeg", "6 (2).jpg", "6%20(2).jpg", "6.png",
-        "7.jpg", "7 (1).jpg", "7%20(1).jpg", "7.jpeg", "7 (2).jpg", "7%20(2).jpg", "7.png",
-        "8.jpg", "8 (1).jpg", "8%20(1).jpg", "8.jpeg", "8 (2).jpg", "8%20(2).jpg", "8.png",
-        "9.jpg", "9 (1).jpg", "9%20(1).jpg", "9.jpeg", "9 (2).jpg", "9%20(2).jpg", "9.png",
-        "10.jpg", "10 (1).jpg", "10%20(1).jpg", "10.jpeg", "10 (2).jpg", "10%20(2).jpg", "10.png"
+        "1 (1).jpg", "1 (1).png", "1.jpg", "1.jpeg", "1.png", "1 (2).jpg", "1 (3).jpg", "Incisor.png",
+        "2.jpg", "2.jpeg", "2.png", "3.jpg", "3.jpeg", "3.png", "4.jpg", "4.jpeg", "4.png",
+        "5.jpg", "5.jpeg", "5.png", "6.jpg", "6.jpeg", "6.png", "7.jpg", "7.jpeg", "7.png",
+        "8.jpg", "8.jpeg", "8.png", "9.jpg", "9.jpeg", "9.png", "10.jpg", "10.jpeg", "10.png"
     ];
 
-    carpetasImg.forEach(carpeta => {
-        let basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${carpeta}/`;
-        combinacionesSeguras.forEach(nombreFotoSeguro => {
-            let rutaSegura = `${basePath}${nombreFotoSeguro}`;
-            galeriaHTML += `<img src="${rutaSegura}" class="mini-img"
-                onload="window.setMainImage(this)"
-                onerror="this.style.display='none'; this.classList.remove('mini-img');"
-                onclick="cambiarImagen(this)">`;
+    cargarGaleriaManifest().then(manifest => {
+        // Si el manifiesto cargó bien, confiamos en él: las carpetas que no figuran
+        // NO existen en disco -> se saltean (cero pedidos 404). El sondeo por nombres
+        // comunes solo se usa si el manifiesto no se pudo cargar (ausente/red caída).
+        const manifestOk = manifest && Object.keys(manifest).length > 0;
+        let galeriaHTML = `<div class="galeria-miniaturas">`;
+        carpetasImg.forEach(carpeta => {
+            const basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${carpeta}/`;
+            const key = `${info.categoriaImg}/${carpeta}`;
+            const lista = manifestOk ? (manifest[key] || []) : combinacionesSeguras;
+            lista.forEach(nombre => {
+                galeriaHTML += `<img src="${basePath}${nombre}" class="mini-img"
+                    onload="window.setMainImage(this)"
+                    onerror="this.style.display='none'; this.classList.remove('mini-img');"
+                    onclick="cambiarImagen(this)">`;
+            });
         });
+        galeriaHTML += `</div>`;
+        galeriaHTML += `
+            <div id="zoom-container" class="zoom-container">
+                <img id="main-image" src="${defaultLogo}" alt="${info.titulo}">
+            </div>
+        `;
+        contenedorImagen.innerHTML = galeriaHTML;
+        setTimeout(activarZoom, 200);
     });
-
-    galeriaHTML += `</div>`;
-    galeriaHTML += `
-        <div id="zoom-container" class="zoom-container">
-            <img id="main-image" src="${defaultLogo}" alt="${info.titulo}">
-        </div>
-    `;
-    contenedorImagen.innerHTML = galeriaHTML;
-    setTimeout(activarZoom, 200);
 }
 
 function cargarEstructuraProducto(info) {
