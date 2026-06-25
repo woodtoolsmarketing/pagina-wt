@@ -1,0 +1,11 @@
+{
+  "_ayuda": "COPIA este archivo como  ftp-config.json  y completa tus datos (los mismos de FileZilla). NUNCA subas ftp-config.json al servidor: queda solo en tu PC.",
+  "host": "ftp.tudominio.com",
+  "port": 21,
+  "user": "tu_usuario",
+  "password": "tu_contrasena",
+  "secure": false,
+  "_ayuda_secure": "Poné secure=true solo si en FileZilla usás 'FTP con TLS/Explícito'. Si usás FTP normal, dejá false.",
+  "remoteDir": "/",
+  "_ayuda_remoteDir": "Carpeta del servidor donde vive el sitio (lo ves en el panel derecho de FileZilla). Suele ser '/', '/public_html', '/htdocs' o '/www'."
+}

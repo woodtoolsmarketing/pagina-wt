@@ -1,31 +1,67 @@
-CÓMO ACTUALIZAR LAS FOTOS DE LOS PRODUCTOS
-===========================================
+HERRAMIENTAS PARA ACTUALIZAR LAS FOTOS DE LOS PRODUCTOS
+========================================================
 
-El sitio muestra las fotos de cada producto leyendo un índice llamado
-"galeria-manifest.json" (lista de qué fotos tiene cada carpeta). Eso hace
-que las páginas carguen rápido. Cuando cambian las fotos, hay que
-regenerar ese índice.
+El sitio carga rápido porque (1) las fotos están comprimidas y (2) usa un
+índice ("galeria-manifest.json") que dice qué fotos tiene cada producto.
+Cuando agregás o cambiás fotos, hay que rehacer esos dos pasos. Para eso
+están estos archivos. Tenés que tener Node instalado (https://nodejs.org).
 
-PASO A PASO
------------
-1) Poné las fotos nuevas dentro de la carpeta del producto, en:
+PASO A PASO (lo normal)
+-----------------------
+1) Poné las fotos nuevas en la carpeta del producto:
       imagenes\herramientas\<Categoría>\<CÓDIGO>\
-   (Categoría = Sierras, Fresas, Cuchillas, Mechas, Diamante o Cabezales)
-   Nombrá la foto principal como  1 (1).jpg  o  1 (1).png  (o 1.jpeg),
-   y las demás  2.jpeg, 3.jpeg, 4.jpeg ...
+   Categoría = Sierras, Fresas, Cuchillas, Mechas, Diamante o Cabezales.
+   Foto principal:  1 (1).jpg  o  1 (1).png   (o 1.jpeg)
+   Las demás:       2.jpeg, 3.jpeg, 4.jpeg ...
 
-2) Hacé DOBLE CLIC en:
-      Regenerar-fotos-galeria.bat
-   Se abre una ventana negra, dice cuántas carpetas y fotos encontró,
-   y listo. Cerrala.
+2) DOBLE CLIC en:
+      Optimizar-y-preparar-fotos.bat
+   Hace todo de una: achica las fotos pesadas y regenera el índice.
+   (La PRIMERA vez instala una herramienta y tarda ~1 minuto con internet.)
 
 3) Subí por FTP al servidor:
    - la(s) carpeta(s) de fotos nuevas, y
-   - el archivo  imagenes\herramientas\galeria-manifest.json  (lo regenera el paso 2)
+   - el archivo  imagenes\herramientas\galeria-manifest.json
 
-   Tip: conviene comprimir/achicar las fotos pesadas antes de subir.
+LISTO. Las fotos aparecen solas y livianas. No hay que tocar código.
 
-LISTO. Las fotos nuevas aparecen solas en la página del producto.
+LOS BOTONES
+-----------
+* Optimizar-y-preparar-fotos.bat  -> achica las fotos + regenera el índice.
+                                     USÁ ESTE casi siempre al cambiar fotos.
+* Regenerar-fotos-galeria.bat     -> SOLO regenera el índice (sin tocar las
+                                     fotos). Útil si solo borraste/renombraste.
+* Subir-cambios-al-servidor.bat   -> sube por FTP SOLO lo que cambió. (ver abajo)
+* Marcar-todo-como-subido.bat     -> marca todo como ya subido, sin subir.
 
-(No hace falta tocar nada de código. Si una carpeta no figura en el índice,
-el producto simplemente muestra el logo hasta que regeneres y subas.)
+SUBIR CAMBIOS POR FTP (en lugar de arrastrar a mano en FileZilla)
+-----------------------------------------------------------------
+Configuración (una sola vez):
+1) Copiá  ftp-config.example.json  y renombrá la copia a  ftp-config.json
+2) Abrila con el Bloc de notas y completá tus datos (los MISMOS de FileZilla):
+   - host       (ej. ftp.tudominio.com)
+   - user       (tu usuario)
+   - password   (tu contraseña)
+   - remoteDir  (la carpeta del sitio en el panel derecho de FileZilla:
+                 suele ser "/", "/public_html" o "/htdocs")
+   - secure     (poné true SOLO si en FileZilla usás "FTP con TLS"; si no, false)
+
+Uso de todos los días:
+- Editás fotos/nombres (con el panel o los .bat de arriba) y después
+  DOBLE CLIC en  Subir-cambios-al-servidor.bat
+  Sube por FTP únicamente los archivos que cambiaron. NUNCA borra nada.
+
+Primera vez (elegí una):
+- Opción simple: la primera corrida de "Subir cambios" sube TODO el sitio
+  (puede tardar). Las siguientes, solo lo que edites.
+- Opción rápida: si ya subiste todo con FileZilla, corré una vez
+  "Marcar-todo-como-subido.bat" y de ahí en más subirá solo lo nuevo.
+
+IMPORTANTE
+----------
+- NO subas la carpeta "_tools" ni "_admin" al servidor: son solo para tu PC.
+  (El botón "Subir cambios" ya las excluye automáticamente.)
+- El archivo  ftp-config.json  tiene tu contraseña: queda SOLO en tu PC,
+  nunca se sube (el subidor lo excluye).
+- Si una foto no aparece en el sitio, fijate que la carpeta tenga el nombre
+  EXACTO del código y volvé a correr el .bat.

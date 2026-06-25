@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de productos — WoodTools (interno)</title>
+<style>
+  :root { --rojo:#a41e22; --rojo2:#7d161a; --gris:#f8f8f8; --bd:#ddd; }
+  * { box-sizing:border-box; font-family:'Segoe UI',Tahoma,sans-serif; }
+  body { margin:0; background:var(--gris); color:#333; }
+  header { background:var(--rojo); color:#fff; padding:14px 22px; display:flex; align-items:center; gap:14px; }
+  header h1 { font-size:18px; margin:0; }
+  header .tag { background:rgba(255,255,255,.2); padding:3px 8px; border-radius:4px; font-size:12px; }
+  .wrap { padding:18px 22px; }
+  button { background:var(--rojo); color:#fff; border:none; padding:9px 14px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:600; }
+  button:hover { background:var(--rojo2); }
+  button.sec { background:#fff; color:var(--rojo); border:1px solid var(--rojo); }
+  button.del { background:#fff; color:#b00; border:1px solid #e3a0a0; padding:5px 9px; font-size:12px; }
+  button.del:hover { background:#fdeaea; }
+  input[type=text], input[type=number] { padding:8px 10px; border:1px solid var(--bd); border-radius:6px; font-size:14px; }
+  #noSupport { background:#fff3cd; border:1px solid #ffe08a; color:#664d03; padding:14px 18px; border-radius:8px; margin:18px 22px; }
+  #paso1 { padding:18px 22px; }
+  #rootName { margin-left:12px; color:#2a7d2a; font-weight:600; }
+  main { display:grid; grid-template-columns:320px 1fr; gap:18px; padding:0 22px 40px; }
+  @media (max-width:800px){ main { grid-template-columns:1fr; } }
+  aside { background:#fff; border:1px solid var(--bd); border-radius:8px; padding:12px; height:78vh; overflow:auto; }
+  #buscar { width:100%; margin-bottom:10px; }
+  #prodList { list-style:none; margin:0; padding:0; }
+  #prodList li { padding:9px 10px; border-radius:6px; cursor:pointer; border-bottom:1px solid #f0f0f0; }
+  #prodList li:hover { background:#faf0f0; }
+  #prodList li.activo { background:var(--rojo); color:#fff; }
+  #prodList li small { display:block; opacity:.7; font-size:11px; }
+  #detalle { background:#fff; border:1px solid var(--bd); border-radius:8px; padding:20px; min-height:78vh; }
+  .campo { margin:14px 0; }
+  .campo label { font-weight:600; display:block; margin-bottom:6px; }
+  .controls { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-end; background:var(--gris); padding:12px; border-radius:8px; margin:14px 0; }
+  .controls .c { display:flex; flex-direction:column; gap:4px; font-size:13px; }
+  .controls input { width:120px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; margin-top:14px; }
+  .foto { border:1px solid var(--bd); border-radius:8px; padding:8px; text-align:center; background:#fff; }
+  .foto img { width:100%; height:110px; object-fit:contain; background:#f3f3f3; border-radius:4px; }
+  .foto .n { font-size:12px; margin:6px 0; word-break:break-all; }
+  .foto .kb { font-size:11px; color:#777; }
+  .muted { color:#777; }
+  #log { position:fixed; bottom:0; left:0; right:0; max-height:120px; overflow:auto; background:#1e1e1e; color:#c8e6c9; font-family:monospace; font-size:12px; padding:8px 14px; }
+  #log:empty { display:none; }
+  .badge { display:inline-block; background:#eee; color:#555; border-radius:4px; padding:2px 7px; font-size:12px; margin-left:6px; }
+  h2 .badge { font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Panel de productos</h1>
+  <span class="tag">USO INTERNO · no publicar</span>
+</header>
+
+<div id="noSupport" hidden>
+  <strong>Tu navegador no permite editar archivos.</strong> Abrí esta página con <b>Google Chrome</b> o <b>Microsoft Edge</b>
+  (no funciona en Firefox/Safari). Si la abriste con doble clic en el .html, usá el botón <b>Abrir-panel.bat</b> en su lugar.
+</div>
+
+<section id="paso1">
+  <button id="btnAbrir">📁 Abrir carpeta del proyecto</button>
+  <span id="rootName"></span>
+  <p class="muted" style="margin:10px 0 0">Elegí la carpeta raíz del proyecto (la que contiene <code>index.html</code>, <code>ruta-productos</code> e <code>imagenes</code>). El navegador te pedirá permiso para editar.</p>
+</section>
+
+<main id="app" hidden>
+  <aside>
+    <input type="text" id="buscar" placeholder="Buscar por código o nombre…">
+    <ul id="prodList"></ul>
+  </aside>
+  <section id="detalle">
+    <p class="muted">Elegí un producto de la lista para editar su nombre y sus fotos.</p>
+  </section>
+</main>
+
+<div id="log"></div>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const logEl = $('#log');
+function log(msg, err){ const l=document.createElement('div'); l.textContent=(err?'⚠ ':'• ')+msg; if(err)l.style.color='#ef9a9a'; logEl.appendChild(l); logEl.scrollTop=logEl.scrollHeight; }
+
+let root=null, srcProducto='', productos={}, current=null;
+
+if(!window.showDirectoryPicker){ $('#noSupport').hidden=false; }
+
+/* ---------- File System Access helpers ---------- */
+async function getDir(parts, create=false){ let h=root; for(const p of parts){ h=await h.getDirectoryHandle(p,{create}); } return h; }
+async function getFileHandle(parts, create=false){ parts=parts.slice(); const name=parts.pop(); const d=await getDir(parts,create); return d.getFileHandle(name,{create}); }
+async function readText(parts){ const fh=await getFileHandle(parts,false); return (await fh.getFile()).text(); }
+async function writeText(parts, str){ const fh=await getFileHandle(parts,true); const w=await fh.createWritable(); await w.write(str); await w.close(); }
+async function writeBlob(parts, blob){ const fh=await getFileHandle(parts,true); const w=await fh.createWritable(); await w.write(blob); await w.close(); }
+
+/* ---------- Parseo de producto.js ---------- */
+// Recorta el objeto baseDatosProductos respetando llaves dentro de strings.
+function extraerObjeto(src){
+  const i=src.indexOf('baseDatosProductos'); if(i<0) throw new Error('No encontré baseDatosProductos');
+  const start=src.indexOf('{', src.indexOf('=', i));
+  let depth=0, str=null, esc=false;
+  for(let j=start;j<src.length;j++){
+    const c=src[j];
+    if(str){ if(esc){esc=false;} else if(c==='\\'){esc=true;} else if(c===str){str=null;} continue; }
+    if(c==='"'||c==="'"||c==='`'){ str=c; continue; }
+    if(c==='{') depth++;
+    else if(c==='}'){ depth--; if(depth===0) return src.slice(start, j+1); }
+  }
+  throw new Error('No pude cerrar el objeto');
+}
+function parseProductos(src){ return Function('return ('+extraerObjeto(src)+')')(); }
+
+// Renombra el titulo de una familia en el texto del archivo (edición puntual y segura).
+function renombrarTitulo(src, key, nuevo){
+  const ki=src.indexOf('"'+key+'":'); if(ki<0) return null;
+  const ti=src.indexOf('titulo:', ki); if(ti<0) return null;
+  const q1=src.indexOf('"', ti); if(q1<0) return null;
+  let q2=q1+1; while(q2<src.length){ if(src[q2]==='\\'){q2+=2;continue;} if(src[q2]==='"')break; q2++; }
+  // JSON.stringify escapa comillas, backslash, saltos de línea y caracteres de
+  // control; quitamos las comillas externas para insertar dentro del string existente.
+  const escapado=JSON.stringify(String(nuevo)).slice(1,-1);
+  return src.slice(0,q1+1)+escapado+src.slice(q2);
+}
+
+/* ---------- Orden de fotos (igual que el generador de manifest) ---------- */
+function ordenarNombres(arr){
+  return arr.slice().sort((a,b)=>{
+    const na=parseInt((String(a).match(/^(\d+)/)||[])[1]||'9999',10);
+    const nb=parseInt((String(b).match(/^(\d+)/)||[])[1]||'9999',10);
+    if(na!==nb) return na-nb;
+    return String(a).localeCompare(String(b));
+  });
+}
+
+/* ---------- Compresión a un peso objetivo (KB) ---------- */
+async function comprimir(file, maxLado, targetKB){
+  let bmp;
+  try { bmp = await createImageBitmap(file, {imageOrientation:'from-image'}); }
+  catch { bmp = await createImageBitmap(file); }
+  try {
+    let w=bmp.width, h=bmp.height;
+    const s=Math.min(1, maxLado/Math.max(w,h));
+    w=Math.max(1,Math.round(w*s)); h=Math.max(1,Math.round(h*s));
+    const c=document.createElement('canvas'); c.width=w; c.height=h;
+    const ctx=c.getContext('2d');
+    ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h);   // fondo blanco: JPEG no tiene transparencia (evita fondo negro en PNG)
+    ctx.drawImage(bmp,0,0,w,h);
+    const toBlob=q=>new Promise(res=>c.toBlob(res,'image/jpeg',q));
+    let lo=0.30, hi=0.95, best=null;
+    for(let i=0;i<7;i++){ const q=(lo+hi)/2; const b=await toBlob(q); if(b && b.size/1024<=targetKB){ best=b; lo=q; } else { hi=q; } }
+    if(!best) best=await toBlob(0.30);   // no se pudo alcanzar el objetivo: mejor esfuerzo
+    return best;
+  } finally { if(bmp && bmp.close) bmp.close(); }   // libera memoria del bitmap
+}
+
+/* ---------- Carga inicial ---------- */
+$('#btnAbrir').onclick = async ()=>{
+  try{
+    root = await window.showDirectoryPicker({mode:'readwrite'});
+    // validar que sea la raíz del proyecto
+    try{ await root.getDirectoryHandle('ruta-productos'); await root.getDirectoryHandle('imagenes'); }
+    catch{ alert('Esa no parece la carpeta raíz del proyecto. Elegí la que contiene "index.html", "ruta-productos" e "imagenes".'); root=null; return; }
+    $('#rootName').textContent = '✔ '+root.name;
+    await cargarProductos();
+    $('#app').hidden=false;
+    log('Proyecto abierto: '+root.name);
+  }catch(e){ if(e && e.name!=='AbortError') log('No se pudo abrir: '+e.message, true); }
+};
+
+async function cargarProductos(){
+  srcProducto = await readText(['ruta-productos','JS','producto.js']);
+  productos = parseProductos(srcProducto);
+  renderLista();
+}
+
+function renderLista(){
+  const filtro=($('#buscar').value||'').toLowerCase();
+  const ul=$('#prodList'); ul.innerHTML='';
+  Object.keys(productos).forEach(key=>{
+    const p=productos[key];
+    const txt=(key+' '+(p.titulo||'')).toLowerCase();
+    if(filtro && !txt.includes(filtro)) return;
+    const li=document.createElement('li');
+    if(current===key) li.className='activo';
+    li.innerHTML=`<b>${key}</b><small>${(p.titulo||'').replace(/</g,'&lt;')} · ${p.categoriaImg||''}</small>`;
+    li.onclick=()=>seleccionar(key);
+    ul.appendChild(li);
+  });
+}
+$('#buscar').oninput=renderLista;
+
+/* ---------- Detalle de un producto ---------- */
+async function seleccionar(key){
+  current=key; renderLista();
+  const p=productos[key];
+  const d=$('#detalle');
+  d.innerHTML=`
+    <h2>${key} <span class="badge">${p.categoriaImg||''}</span></h2>
+    <div class="campo">
+      <label>Nombre del producto (título)</label>
+      <input type="text" id="inpNombre" value="${(p.titulo||'').replace(/"/g,'&quot;')}" style="width:min(520px,100%)">
+      <button id="btnNombre" style="margin-left:8px">Guardar nombre</button>
+    </div>
+    <div class="muted">Carpeta de fotos: <code>imagenes/herramientas/${p.categoriaImg}/${p.carpetaImg}</code></div>
+    <div class="controls">
+      <div class="c"><label>Peso máx. por foto (KB)</label><input type="number" id="inpKB" value="200" min="20" max="2000"></div>
+      <div class="c"><label>Lado máx. (px)</label><input type="number" id="inpMax" value="1280" min="300" max="3000"></div>
+      <div class="c"><label>Agregar fotos</label><input type="file" id="inpFiles" multiple accept="image/png,image/jpeg,image/webp"></div>
+      <button id="btnAgregar">Comprimir y agregar</button>
+    </div>
+    <div id="fotos" class="grid"><p class="muted">Cargando fotos…</p></div>
+  `;
+  $('#btnNombre').onclick=()=>guardarNombre(key);
+  $('#btnAgregar').onclick=()=>agregarFotos(key);
+  await refrescarFotos(key);
+}
+
+async function guardarNombre(key){
+  const nuevo=$('#inpNombre').value.replace(/[\r\n\t]+/g,' ').trim();
+  if(!nuevo){ alert('El nombre no puede quedar vacío.'); return; }
+  const nuevoSrc=renombrarTitulo(srcProducto, key, nuevo);
+  if(!nuevoSrc){ log('No pude ubicar el título de '+key+' en producto.js', true); return; }
+  await writeText(['ruta-productos','JS','producto.js'], nuevoSrc);
+  srcProducto=nuevoSrc; productos[key].titulo=nuevo; renderLista();
+  log('Nombre guardado: '+key+' → "'+nuevo+'"');
+  alert('Nombre guardado. Acordate de subir producto.js por FTP.');
+}
+
+function carpetaDe(key){ const p=productos[key]; return ['imagenes','herramientas',p.categoriaImg,p.carpetaImg]; }
+
+async function listarFotos(key, conURL){
+  const parts=carpetaDe(key);
+  let dir;
+  try{ dir=await getDir(parts,false); }catch{ return []; }
+  const out=[];
+  for await (const [name,h] of dir.entries()){
+    if(h.kind==='file' && /\.(jpe?g|png|webp)$/i.test(name)){
+      const f=await h.getFile();
+      out.push({name, size:f.size, url: conURL ? URL.createObjectURL(f) : null});
+    }
+  }
+  out.sort((a,b)=>ordenarNombres([a.name,b.name])[0]===a.name?-1:1);
+  return out;
+}
+
+async function refrescarFotos(key){
+  key=key||current;
+  const cont=$('#fotos'); if(!cont) return;
+  // revocar las Object URLs anteriores para no acumular memoria
+  cont.querySelectorAll('img').forEach(img=>{ if(img.src && img.src.startsWith('blob:')) URL.revokeObjectURL(img.src); });
+  const fotos=await listarFotos(key, true);
+  if(!fotos.length){ cont.innerHTML='<p class="muted">Sin fotos todavía. Agregá con el botón de arriba.</p>'; return; }
+  cont.innerHTML='';
+  fotos.forEach((f,i)=>{
+    const div=document.createElement('div'); div.className='foto';
+    div.innerHTML=`<img src="${f.url}"><div class="n">${f.name}${i===0?' <span class="badge">principal</span>':''}</div><div class="kb">${Math.round(f.size/1024)} KB</div>`;
+    const btn=document.createElement('button'); btn.className='del'; btn.textContent='Quitar';
+    btn.onclick=()=>quitarFoto(key, f.name);
+    div.appendChild(btn); cont.appendChild(div);
+  });
+}
+
+async function agregarFotos(key){
+  const files=[...$('#inpFiles').files];
+  if(!files.length){ alert('Elegí una o más fotos primero.'); return; }
+  const targetKB=Math.max(20, parseInt($('#inpKB').value||'200',10));
+  const maxLado=Math.max(300, parseInt($('#inpMax').value||'1280',10));
+  const parts=carpetaDe(key);
+  const existentes=await listarFotos(key);
+  let maxN=existentes.reduce((m,f)=>{const n=parseInt(f.name); return isNaN(n)?m:Math.max(m,n);},0);
+  $('#btnAgregar').disabled=true;
+  for(const file of files){
+    try{
+      const blob=await comprimir(file, maxLado, targetKB);
+      maxN++; const nombre=maxN+'.jpg';
+      await writeBlob(parts.concat(nombre), blob);
+      const kb=Math.round(blob.size/1024);
+      log(`+ ${nombre} (${kb} KB)`+(kb>targetKB?` — no bajó de ${targetKB}KB, quedó en lo mínimo`:''));
+    }catch(e){ log('Error con '+file.name+': '+e.message, true); }
+  }
+  try{
+    await actualizarManifest(key);
+    await refrescarFotos(key);
+    alert('Fotos agregadas. Acordate de subir por FTP la carpeta de fotos y el galeria-manifest.json.');
+  }catch(e){
+    log('Las fotos se guardaron, pero falló actualizar el índice: '+e.message, true);
+    alert('Se guardaron las fotos, pero hubo un problema al actualizar el índice. Reabrí el producto; si hace falta, corré Regenerar-fotos-galeria.bat.');
+  }finally{
+    $('#btnAgregar').disabled=false;
+    $('#inpFiles').value='';
+  }
+}
+
+async function quitarFoto(key, nombre){
+  if(!confirm('¿Quitar la foto '+nombre+'? (se borra del proyecto)')) return;
+  try{
+    const dir=await getDir(carpetaDe(key),false);
+    await dir.removeEntry(nombre);
+    await actualizarManifest(key);
+    await refrescarFotos(key);
+    log('Quitada: '+nombre);
+  }catch(e){ log('No se pudo quitar '+nombre+': '+e.message, true); }
+}
+
+async function actualizarManifest(key){
+  const p=productos[key];
+  const manParts=['imagenes','herramientas','galeria-manifest.json'];
+  let man={};
+  try{ man=JSON.parse(await readText(manParts)); }catch{ man={}; }
+  const lista=(await listarFotos(key)).map(f=>f.name);
+  const mkey=p.categoriaImg+'/'+p.carpetaImg;
+  if(lista.length) man[mkey]=ordenarNombres(lista); else delete man[mkey];
+  await writeText(manParts, JSON.stringify(man));
+  log('Índice (manifest) actualizado para '+mkey);
+}
+
+/* ---------- Hooks de prueba (no afectan el uso normal) ---------- */
+window.__test = { extraerObjeto, parseProductos, renombrarTitulo, ordenarNombres, comprimir };
+</script>
+</body>
+</html>

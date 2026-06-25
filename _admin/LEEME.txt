@@ -1,0 +1,40 @@
+PANEL DE PRODUCTOS (uso interno) — NO PUBLICAR
+================================================
+
+Es una página secreta que corre en TU computadora para editar el nombre y
+las fotos de los productos, y comprimir las fotos al peso que vos elijas.
+Edita los archivos del proyecto en tu PC; después subís por FTP como siempre.
+
+REQUISITOS
+----------
+- Tener Node instalado (https://nodejs.org).
+- Usar Google Chrome o Microsoft Edge (NO funciona en Firefox/Safari).
+
+CÓMO ABRIRLO
+------------
+1) Doble clic en  Abrir-panel.bat
+   Se abre una ventana negra (dejala abierta) y el panel en el navegador.
+2) En el panel, clic en "Abrir carpeta del proyecto" y elegí la carpeta raíz
+   (la que tiene index.html, ruta-productos e imagenes). Dale permiso para editar.
+
+QUÉ PODÉS HACER
+---------------
+- EDITAR EL NOMBRE de un producto y guardarlo.
+- AGREGAR FOTOS: elegís las fotos, ponés el "Peso máx. por foto (KB)" (ej. 200)
+  y el panel las comprime y achica solas antes de guardarlas.
+- QUITAR FOTOS.
+- El índice de la galería (galeria-manifest.json) se actualiza solo.
+
+DESPUÉS DE EDITAR: SUBIR POR FTP
+--------------------------------
+- Si cambiaste NOMBRES:  subí  ruta-productos\JS\producto.js
+- Si cambiaste FOTOS:     subí  la carpeta de fotos del producto  +
+                                imagenes\herramientas\galeria-manifest.json
+(Si cambiaste un nombre y no lo ves en la web al toque, es la caché del
+ navegador: entrá con Ctrl+F5.)
+
+IMPORTANTE
+----------
+- NO subas la carpeta "_admin" al servidor. Es solo para tu PC.
+- El panel solo edita los archivos de la carpeta que vos elijas; no toca
+  nada en internet hasta que subas por FTP.
