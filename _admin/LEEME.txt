@@ -24,12 +24,21 @@ QUÉ PODÉS HACER
   y el panel las comprime y achica solas antes de guardarlas.
 - QUITAR FOTOS.
 - El índice de la galería (galeria-manifest.json) se actualiza solo.
+- PUBLICAR: botón "⬆ Publicar al servidor" (arriba a la derecha) que sube por
+  FTP todo lo que cambiaste, sin salir del panel.
 
-DESPUÉS DE EDITAR: SUBIR POR FTP
---------------------------------
-- Si cambiaste NOMBRES:  subí  ruta-productos\JS\producto.js
-- Si cambiaste FOTOS:     subí  la carpeta de fotos del producto  +
-                                imagenes\herramientas\galeria-manifest.json
+DESPUÉS DE EDITAR: PUBLICAR
+---------------------------
+Forma fácil (recomendada):
+- Clic en "⬆ Publicar al servidor" (arriba a la derecha del panel).
+  Sube solo lo que cambiaste y te muestra el avance abajo. Listo.
+  ("Ver qué subiría" te muestra qué enviaría, sin subir nada.)
+  * Requiere haber configurado tus datos de FTP en  _tools\ftp-config.json
+    (ver el LEEME de la carpeta _tools).
+
+Forma manual (alternativa): subir por FileZilla
+- Si cambiaste NOMBRES:  ruta-productos\JS\producto.js
+- Si cambiaste FOTOS:    la carpeta de fotos + imagenes\herramientas\galeria-manifest.json
 (Si cambiaste un nombre y no lo ves en la web al toque, es la caché del
  navegador: entrá con Ctrl+F5.)
 

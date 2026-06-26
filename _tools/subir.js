@@ -114,20 +114,33 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
       secureOptions: cfg.secure === true ? { rejectUnauthorized: false } : undefined
     });
     console.log('\n Conectado a ' + cfg.host + '. Subiendo ' + cambiados.length + ' archivo(s)...\n');
+    cambiados.sort((a, b) => rel(a).localeCompare(rel(b)));   // agrupa por carpeta (mismo prefijo de ruta)
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    let lastDir = null;
     for (const f of cambiados) {
       const r = rel(f);
       const remotePath = (remoteBase + '/' + r).replace(/\/+/g, '/');
-      try {
-        await client.ensureDir(path.posix.dirname(remotePath));
-        await client.uploadFrom(f, path.posix.basename(remotePath));
-        // ensureDir deja el cwd en la carpeta; volvemos a raíz para el próximo
-        await client.cd('/');
+      const remoteDir = path.posix.dirname(remotePath);
+      let subido = false, ultimoErr;
+      // Reintenta hasta 3 veces: cura hipos transitorios del FTP (timeouts de conexión de datos en modo pasivo)
+      for (let intento = 1; intento <= 3 && !subido; intento++) {
+        try {
+          if (remoteDir !== lastDir) { await client.ensureDir(remoteDir); lastDir = remoteDir; }
+          await client.uploadFrom(f, path.posix.basename(remotePath));
+          subido = true;
+        } catch (e) {
+          ultimoErr = e; lastDir = null;            // forzar re-crear/posicionar carpeta en el reintento
+          if (intento < 3) await sleep(1500);
+        }
+      }
+      if (subido) {
         ledger[r] = fs.statSync(f).mtimeMs;
         ok++;
-        console.log('   ✔ ' + r);
-      } catch (e) {
+        if (ok === 1 || ok % 25 === 0) console.log('   ' + ok + '/' + cambiados.length + '  ' + r);
+        if (ok % 50 === 0) guardarLedger(ledger);   // progreso por si se corta
+      } else {
         fail++;
-        console.log('   [ERROR] ' + r + ' : ' + e.message);
+        console.log('   [ERROR] ' + r + ' : ' + (ultimoErr && ultimoErr.message));
       }
     }
   } catch (e) {

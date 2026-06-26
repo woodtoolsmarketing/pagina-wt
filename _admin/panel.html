@@ -52,6 +52,10 @@
 <header>
   <h1>Panel de productos</h1>
   <span class="tag">USO INTERNO · no publicar</span>
+  <div style="margin-left:auto; display:flex; gap:10px; align-items:center;">
+    <button id="btnDry" style="background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6);">Ver qué subiría</button>
+    <button id="btnPublicar" style="background:#fff; color:#a41e22;">⬆ Publicar al servidor</button>
+  </div>
 </header>
 
 <div id="noSupport" hidden>
@@ -314,6 +318,29 @@ async function actualizarManifest(key){
   await writeText(manParts, JSON.stringify(man));
   log('Índice (manifest) actualizado para '+mkey);
 }
+
+/* ---------- Publicar al servidor (corre subir.js vía el servidor local) ---------- */
+async function publicar(dry){
+  const b1=$('#btnPublicar'), b2=$('#btnDry');
+  b1.disabled=true; b2.disabled=true;
+  log(dry ? '— Previsualizando qué se subiría… —' : '— Publicando al servidor (subiendo cambios)… —');
+  try{
+    const res = await fetch('/api/'+(dry?'subir-dry':'subir'), { method:'POST' });
+    if(!res.ok || !res.body) throw new Error('respuesta inesperada ('+res.status+')');
+    const reader=res.body.getReader(), dec=new TextDecoder(); let buf='';
+    for(;;){
+      const {done,value}=await reader.read(); if(done) break;
+      buf += dec.decode(value,{stream:true});
+      let i; while((i=buf.indexOf('\n'))>=0){ const ln=buf.slice(0,i); buf=buf.slice(i+1); if(ln.trim()) log(ln); }
+    }
+    if(buf.trim()) log(buf);
+    if(!dry) log('✔ Listo. Lo que cambiaste ya está en el servidor.');
+  }catch(e){
+    log('No pude publicar: '+e.message+'  (abrí el panel con "Abrir-panel.bat")', true);
+  }finally{ b1.disabled=false; b2.disabled=false; }
+}
+$('#btnPublicar').onclick=()=>{ if(confirm('¿Subir al servidor los archivos que cambiaste desde la última vez?')) publicar(false); };
+$('#btnDry').onclick=()=>publicar(true);
 
 /* ---------- Hooks de prueba (no afectan el uso normal) ---------- */
 window.__test = { extraerObjeto, parseProductos, renombrarTitulo, ordenarNombres, comprimir };
