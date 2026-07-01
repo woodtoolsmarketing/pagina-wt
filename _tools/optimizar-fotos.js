@@ -40,23 +40,31 @@ function walk(dir, acc = []) {
     try {
       const input = fs.readFileSync(f); // a memoria: evita bloqueo de archivo en Windows
       const meta = await sharp(input, { failOn: 'none' }).metadata();
-      // IDEMPOTENTE: solo tocamos fotos grandes (lado > 1280px), que son las nuevas
-      // sin optimizar. Las que ya están en tamaño web se dejan intactas (no se
-      // re-comprimen en cada corrida, así no pierden calidad).
-      if (meta.width <= MAX && meta.height <= MAX) {
+      // Procesamos fotos GRANDES (lado > 1280px) o PESADAS (> 300KB), que son las
+      // nuevas sin optimizar. Idempotente: al final solo reescribimos si el
+      // resultado queda >15% más liviano; las ya optimizadas dan una reducción
+      // mínima y se dejan intactas (no pierden calidad en corridas repetidas).
+      const grande = meta.width > MAX || meta.height > MAX;
+      const pesada = inSize > 300 * 1024;
+      if (!grande && !pesada) {
         totalOut += inSize;
         saltados++;
         continue;
       }
-      let pipe = sharp(input, { failOn: 'none' }).rotate()
-        .resize({ width: MAX, height: MAX, fit: 'inside', withoutEnlargement: true });
+      let pipe = sharp(input, { failOn: 'none' }).rotate();
+      if (grande) pipe = pipe.resize({ width: MAX, height: MAX, fit: 'inside', withoutEnlargement: true });
       pipe = (ext === '.png')
         ? pipe.png({ compressionLevel: 9, palette: true, quality: 85, effort: 8 })
         : pipe.jpeg({ quality: Q_JPEG, mozjpeg: true });
       const buf = await pipe.toBuffer();
-      fs.writeFileSync(f, buf);
-      totalOut += buf.length;
-      cambiados++;
+      if (buf.length < inSize * 0.85) {   // solo si ahorra >15% (evita degradar lo ya óptimo)
+        fs.writeFileSync(f, buf);
+        totalOut += buf.length;
+        cambiados++;
+      } else {
+        totalOut += inSize;
+        saltados++;
+      }
     } catch (e) {
       totalOut += inSize;
       errores++;
