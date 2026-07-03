@@ -6,9 +6,9 @@
     <link rel="icon" type="image/png" href="../../../imagenes/logos/WoodTools.png">
     <meta name="description" content="Sierra para Madera LU1D - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Sierra para Madera LU1D - Freud | WoodTools</title>
-    <link rel="stylesheet" href="../../../styles.css?v=8">
-    <link rel="stylesheet" href="../../CSS/styles.css?v=8">
-    <link rel="stylesheet" href="../../CSS/producto-detalle.css?v=8">
+    <link rel="stylesheet" href="../../../styles.css?v=9">
+    <link rel="stylesheet" href="../../CSS/styles.css?v=9">
+    <link rel="stylesheet" href="../../CSS/producto-detalle.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -52,6 +52,10 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="header-search">
+                    <button type="button" class="lupa-btn" aria-label="Buscar herramientas" onclick="var w=this.closest('.header-search');w.classList.toggle('abierto');if(w.classList.contains('abierto')){w.querySelector('input').focus();}"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="search" class="lupa-input" placeholder="Buscar herramienta…" data-productos="../productos.html" onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q){window.location.href=this.dataset.productos+'?q='+encodeURIComponent(q);}}">
+                </div>
                 <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">COMPRÁ AHORA</a>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-facebook-f color-fb"></i></a>
@@ -108,6 +112,6 @@
     </footer>
 
     
-    <script src="../../JS/producto.js?v=9"></script>
+    <script src="../../JS/producto.js?v=11"></script>
 </body>
 </html>

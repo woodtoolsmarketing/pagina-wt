@@ -256,7 +256,7 @@ const baseDatosProductos = {
     },
     "SC_Franzoi": {
         codigoBase: "SC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Sierra con racadores Franzoi",
-        titulo: "Sierra Múltiple SC", marca: "Franzoi",
+        titulo: "Sierras para múltiple", marca: "Franzoi",
         caracteristicasBasicas: { "Material": "Metal Duro", "Uso": "Madera (Múltiples)" },
         variantes: [
             { id: "SC2504144F", nombre: "SC2504144F - D: 250mm | B: 4.0mm | Z: 14+4" },
@@ -1676,15 +1676,46 @@ function cargarEstructuraProducto(info) {
     const tituloDOM = document.getElementById("producto-titulo");
     const marcaDOM = document.querySelector(".producto-info .marca");
 
-    if (tituloDOM) {
-        let tituloLimpio = info.titulo.split('(')[0].trim();
-        if (codigoReal && codigoReal !== info.codigoBase) {
-            tituloDOM.innerText = `${tituloLimpio} ${codigoReal}`;
-        } else {
-            tituloDOM.innerText = tituloLimpio;
-        }
+    // Título base SIN código (el código va en el desplegable / medidas)
+    let tituloBase = info.titulo.split('(')[0].trim();
+    if (info.codigoBase) {
+        const reCod = new RegExp('\\s+' + info.codigoBase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*$', 'i');
+        tituloBase = tituloBase.replace(reCod, '').trim();
     }
+    const esSierraOMecha = info.categoriaImg === "Sierras" || info.categoriaImg === "Mechas";
     if (marcaDOM) marcaDOM.innerText = `Marca: ${info.marca}`;
+
+    // --- Extrae medidas desde el "nombre" de una variante ---
+    // Formatos: "D: 250mm | B: 3.2mm | d: 30mm | Z: 80", "D=150 B=22 d=40 Z=4",
+    //           "Y=4mm L=58mm", "RECTA #5mm Z:4", etc.
+    function analizarMedidas(nombre) {
+        const desc = nombre && nombre.includes(' - ') ? nombre.split(' - ').slice(1).join(' - ') : (nombre || '');
+        const g = re => { const m = desc.match(re); return m ? m[1] : null; };
+        return {
+            ext:     g(/\bD\s*[:=]\s*([\d.,]+)/) || g(/\bY\s*[:=]\s*([\d.,]+)/) || g(/#\s*([\d.,]+)/),
+            int:     g(/\bd\s*[:=]\s*([\d.,]+)/),
+            ancho:   g(/\bB\s*[:=]\s*([\d.,]+)/),
+            dientes: g(/\bZ\s*[:=]\s*([\dxX+]+)/),
+            largo:   g(/\bLT\s*[:=]\s*([\d.,]+)/) || g(/\bL\s*[:=]\s*([\d.,]+)/)
+        };
+    }
+    // Etiqueta legible para el desplegable (sin código)
+    function etiquetaVariante(nombre) {
+        const desc = nombre && nombre.includes(' - ') ? nombre.split(' - ').slice(1).join(' - ') : (nombre || '');
+        const m = analizarMedidas(nombre);
+        const partes = [];
+        if (m.ext)     partes.push(`Ø ext ${m.ext}mm`);
+        if (m.int)     partes.push(`Ø int ${m.int}mm`);
+        if (m.ancho)   partes.push(`Ancho ${m.ancho}mm`);
+        if (m.dientes) partes.push(`Z ${m.dientes}`);
+        if (m.largo)   partes.push(`Largo ${m.largo}mm`);
+        // Prefijo descriptivo (palabras sin dígitos ni :/=/#), ej "RECTA"
+        const pref = [];
+        for (const t of desc.split(/\s+/)) { if (/[:=#]/.test(t) || /\d/.test(t)) break; if (t) pref.push(t); }
+        const prefTxt = pref.join(' ').trim();
+        if (partes.length === 0) return desc || "Consultar especificaciones";
+        return (prefTxt ? prefTxt + ' — ' : '') + partes.join(' · ');
+    }
 
     const selector = document.getElementById("variante-selector");
     if (selector) {
@@ -1696,19 +1727,21 @@ function cargarEstructuraProducto(info) {
         }
 
         if (info.variantes.length === 1) {
-            selector.innerHTML = `<option value="${info.variantes[0].id}" data-nombre="${info.variantes[0].nombre}" selected>${info.variantes[0].nombre}</option>`;
+            const v0 = info.variantes[0];
+            selector.innerHTML = `<option value="${v0.id}" data-nombre="${v0.nombre}" selected>${etiquetaVariante(v0.nombre)}</option>`;
         } else {
             if (indicePreseleccion === -1) {
                 selector.innerHTML = `<option value="${info.codigoBase}" disabled selected>-- Elegí una medida / opción --</option>`;
             }
             info.variantes.forEach((v, i) => {
                 let seleccion = (i === indicePreseleccion) ? "selected" : "";
-                selector.innerHTML += `<option value="${v.id}" data-nombre="${v.nombre}" ${seleccion}>${v.nombre}</option>`;
+                selector.innerHTML += `<option value="${v.id}" data-nombre="${v.nombre}" ${seleccion}>${etiquetaVariante(v.nombre)}</option>`;
             });
         }
 
         selector.onchange = function() {
             renderizarGaleria(this.value, info);
+            actualizarMedidas();
         };
     }
 
@@ -1735,6 +1768,33 @@ function cargarEstructuraProducto(info) {
             }
         }
     });
+
+    // Actualiza título (sierras/mechas) y filas de medidas según la variante elegida
+    function actualizarMedidas() {
+        const v = selector ? info.variantes.find(x => x.id === selector.value) : info.variantes[0];
+        const m = analizarMedidas(v ? v.nombre : '');
+        if (tituloDOM) {
+            tituloDOM.innerText = (esSierraOMecha && m.ext) ? `${tituloBase} de ${m.ext}mm` : tituloBase;
+        }
+        const tabla = document.querySelector(".tabla-caracteristicas");
+        if (tabla) {
+            tabla.querySelectorAll("tr.fila-medida").forEach(f => f.remove());
+            [
+                ["Ø exterior", m.ext ? m.ext + " mm" : null],
+                ["Ø interior", m.int ? m.int + " mm" : null],
+                ["Ancho de corte", m.ancho ? m.ancho + " mm" : null],
+                ["Cantidad de dientes", m.dientes || null],
+                ["Largo", m.largo ? m.largo + " mm" : null]
+            ].forEach(([lbl, val]) => {
+                if (!val) return;
+                const tr = document.createElement("tr");
+                tr.className = "fila-medida";
+                tr.innerHTML = `<th class="caracteristica-label">${lbl}</th><td class="caracteristica-value">${val}</td>`;
+                tabla.appendChild(tr);
+            });
+        }
+    }
+    actualizarMedidas();
 }
 
 window.setMainImage = function(elemento) {

@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="../../imagenes/logos/WoodTools.png">
     <meta name="description" content="Contacto - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Contacto - WoodTools S.R.L.</title>
-    <link rel="stylesheet" href="../../styles.css?v=8">
+    <link rel="stylesheet" href="../../styles.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         main { background-color: #f8f8f8; padding: 60px 20px; min-height: 60vh; }
@@ -92,6 +92,10 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="header-search">
+                    <button type="button" class="lupa-btn" aria-label="Buscar herramientas" onclick="var w=this.closest('.header-search');w.classList.toggle('abierto');if(w.classList.contains('abierto')){w.querySelector('input').focus();}"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="search" class="lupa-input" placeholder="Buscar herramienta…" data-productos="../../ruta-productos/HTML/productos.html" onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q){window.location.href=this.dataset.productos+'?q='+encodeURIComponent(q);}}">
+                </div>
                 <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">COMPRÁ AHORA</a>
                 <div class="social-icons" style="display: flex; align-items: center;">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>

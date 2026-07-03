@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="../imagenes/logos/WoodTools.png">
     <meta name="description" content="Discos de Corte - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Discos de Corte - WoodTools S.R.L.</title>
-    <link rel="stylesheet" href="styles_producto_gral.css?v=8">
+    <link rel="stylesheet" href="styles_producto_gral.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -48,6 +48,10 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="header-search">
+                    <button type="button" class="lupa-btn" aria-label="Buscar herramientas" onclick="var w=this.closest('.header-search');w.classList.toggle('abierto');if(w.classList.contains('abierto')){w.querySelector('input').focus();}"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="search" class="lupa-input" placeholder="Buscar herramienta…" data-productos="HTML/productos.html" onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q){window.location.href=this.dataset.productos+'?q='+encodeURIComponent(q);}}">
+                </div>
                 <a href="https://wa.me/5491134609057" target="_blank" class="btn-shop">COMPRÁ AHORA</a>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
@@ -125,6 +129,42 @@
                 <div class="prod-info">
                     <h3>DISCOS DE CORTE FRANZOI</h3>
                     <p>Línea exclusiva Franzoi para trabajos de máxima precisión y exigencia en líneas de producción automatizadas.</p>
+                    <span class="btn-mas"><i class="fa-solid fa-plus"></i></span>
+                </div>
+            </a>
+
+            <a href="HTML/Sierras.html?categoria=seccionadora" class="prod-card" style="text-decoration: none; color: inherit; cursor: pointer; display: block;">
+                <div class="prod-img">
+                    <img src="../imagenes/herramientas/Sierras/Otros.png" alt="Discos de corte para Seccionadora">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <div class="prod-info">
+                    <h3>DISCOS PARA SECCIONADORA</h3>
+                    <p>Discos de alta precisión para máquinas seccionadoras de tableros, melamina y aglomerados.</p>
+                    <span class="btn-mas"><i class="fa-solid fa-plus"></i></span>
+                </div>
+            </a>
+
+            <a href="HTML/Sierras.html?categoria=incisor" class="prod-card" style="text-decoration: none; color: inherit; cursor: pointer; display: block;">
+                <div class="prod-img">
+                    <img src="../imagenes/herramientas/Sierras/Incisor.png" alt="Incisores">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <div class="prod-info">
+                    <h3>INCISORES</h3>
+                    <p>Incisores para el corte previo que evita el astillado en placas recubiertas y melamínicas.</p>
+                    <span class="btn-mas"><i class="fa-solid fa-plus"></i></span>
+                </div>
+            </a>
+
+            <a href="HTML/Sierras.html?categoria=triturador" class="prod-card" style="text-decoration: none; color: inherit; cursor: pointer; display: block;">
+                <div class="prod-img">
+                    <img src="../imagenes/herramientas/Sierras/Otros.png" alt="Discos Trituradores">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <div class="prod-info">
+                    <h3>DISCOS TRITURADORES</h3>
+                    <p>Discos trituradores para el desmenuzado de recortes, despuntes y sobrantes de madera.</p>
                     <span class="btn-mas"><i class="fa-solid fa-plus"></i></span>
                 </div>
             </a>
