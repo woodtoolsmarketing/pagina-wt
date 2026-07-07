@@ -781,7 +781,7 @@ const baseDatosProductos = {
     },
     // --- Machimbre Piso para Grampa (catálogo pág. 7) ---
     "JFMP3416G": {
-        codigoBase: "JFMP3416G", categoriaImg: "Fresas", carpetaImg: "Cepillado",
+        codigoBase: "JFMP3416G", categoriaImg: "Fresas", carpetaImg: "JFMP3416G",
         titulo: "Machimbre Piso para Grampa", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Widia (Metal Duro)" },
         variantes: [
