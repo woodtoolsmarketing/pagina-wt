@@ -589,7 +589,7 @@ const baseDatosProductos = {
     },
     // --- Fresa para Ensamble Cónico HM (catálogo pág. 11) ---
     "JFE81": {
-        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE",
+        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE81",
         titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Widia (Metal Duro)" },
         variantes: [
@@ -1199,8 +1199,8 @@ const baseDatosProductos = {
     },
     "MBDD": {
         codigoBase: "MBDD", categoriaImg: "Diamante", carpetaImg: "Mechas diamante",
-        titulo: "Mecha de Diamante para Bisagra", marca: "Nordutensili",
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Diamante PCD", "Uso": "Bisagras" },
+        titulo: "Mecha de Diamante", marca: "Nordutensili",
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Diamante PCD", "Uso": "Perforaciones de precisión" },
         variantes: [
             { id: "MBDD3557", nombre: "MBDD3557 - D: 35mm | L: 57.5mm" },
             { id: "MBID3557", nombre: "MBID3557 - D: 35mm | L: 57mm" }
@@ -1663,6 +1663,57 @@ function renderizarGaleria(codigoActivo, info) {
     });
 }
 
+// Máquina de destino (punto 7): misma lógica que filtros.js. Se muestra como
+// característica en la ficha de cada producto.
+function maquinaDeProducto(codigo, categoria) {
+    const c = (codigo || '').toUpperCase().replace(/\s+/g, '');
+    if (categoria === 'Diamante') {
+        return /^MB|^MD/.test(c) ? 'Centro de perforado' : 'Escuadradora, mesa de banco o seccionadora horizontal';
+    }
+    const reglas = [
+        [/^F04C/, 'Tupí, machimbradora o moldurera'],
+        [/^F107M/, 'Tupí, machimbradora o moldurera'],
+        [/^FI14M|^F114M/, 'Tupí, machimbradora o moldurera'],
+        [/^FR09W/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+        [/^F2C/, 'Tupí, machimbradora o moldurera'],
+        [/^F1M|^F2M/, 'Machimbradora'],
+        [/^FCPV/, 'Machimbradora o moldurera'],
+        [/^FCT/, 'Machimbradora o moldurera'],
+        [/^FA/, 'Machimbradora o moldurera'],
+        [/^FG46S/, 'Tupí'],
+        [/^FMES|^FME/, 'Tupí'],
+        [/^FMR/, 'Tupí'],
+        [/^FRP|^FPP/, 'CNC o nesting'],
+        [/^FP/, 'Tupí'],
+        [/^FR12/, 'Ingletadora o máquina de mano'],
+        [/^FRG|^FRINR|^FRIR|^FRPI|^FRI|^FRS/, 'Tupí'],
+        [/^FZS/, 'Machimbradora o moldurera'],
+        [/^FR/, 'Machimbradora o moldurera'],
+        [/^GL/, 'Escuadradora'],
+        [/^CB/, 'Cepilladora, moldurera o machimbradora'],
+        [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
+        [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
+        [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+        [/^LSA|^LSB/, 'Seccionadora'],
+        [/^LP/, 'Ingletadora o máquina de mano'],
+        [/^LT|^TR15M/, 'Trituradora'],
+        [/^LI13|^LI16|^LI25/, 'Escuadradora o seccionadora'],
+        [/^MBAD|^MBA/, 'Barreno'],
+        [/^MBD|^MBI|^MB|^MCAR|^MCD|^MCI|^MC1|^MPD|^MPI|^MP1|^AVD|^AVI|^BRDD/, 'Centro de perforado o agujereadora múltiple'],
+        [/^MIDN|^MIDR|^MID|^MIIR|^MI|^PRACTIWALL|^MAM|^PINZA|^ROUTER/, 'Pantógrafo o nesting'],
+        [/^T102M|^T192M|^T194M|^T198M|^TM06M|^TD|^TP|^TW|^TF/, 'Machimbradora, moldurera o cepilladora'],
+    ];
+    for (const r of reglas) if (r[0].test(c)) return r[1];
+    switch (categoria) {
+        case 'Sierras': return 'Escuadradora, mesa de banco o seccionadora horizontal';
+        case 'Fresas': return 'Tupí';
+        case 'Mechas': return 'Centro de perforado o agujereadora múltiple';
+        case 'Cabezales': return 'Machimbradora, moldurera o cepilladora';
+        case 'Cuchillas': return 'Cepilladora, moldurera o machimbradora';
+        default: return null;
+    }
+}
+
 function cargarEstructuraProducto(info) {
     if(!info) {
         info = {
@@ -1683,7 +1734,20 @@ function cargarEstructuraProducto(info) {
         tituloBase = tituloBase.replace(reCod, '').trim();
     }
     const esSierraOMecha = info.categoriaImg === "Sierras" || info.categoriaImg === "Mechas";
-    if (marcaDOM) marcaDOM.innerText = `Marca: ${info.marca}`;
+
+    // Marca a mostrar (puntos 4 y 5): Sierras = marca real (Freud/Franzoi);
+    // Cuchillas = Ilma; Diamante = sin marca; el resto = "Nordutensili" si lo es,
+    // o "Genérica" en cualquier otro caso.
+    let marcaFinal;
+    if (info.categoriaImg === "Diamante") marcaFinal = null;
+    else if (info.categoriaImg === "Sierras") marcaFinal = info.marca;
+    else if (info.categoriaImg === "Cuchillas") marcaFinal = "Ilma";
+    else marcaFinal = /nordutensili/i.test(info.marca || "") ? "Nordutensili" : "Genérica";
+
+    if (marcaDOM) {
+        if (marcaFinal) marcaDOM.innerText = `Marca: ${marcaFinal}`;
+        else marcaDOM.style.display = "none";
+    }
 
     // --- Extrae medidas desde el "nombre" de una variante ---
     // Formatos: "D: 250mm | B: 3.2mm | d: 30mm | Z: 80", "D=150 B=22 d=40 Z=4",
@@ -1753,6 +1817,11 @@ function cargarEstructuraProducto(info) {
         const td = fila.querySelector(".caracteristica-value");
         if (th && td) {
             const etiqueta = th.innerText.trim();
+            if (etiqueta === "Marca") {
+                if (marcaFinal) { td.innerText = marcaFinal; }
+                else { fila.style.display = "none"; }
+                return;
+            }
             if (etiqueta === "Código de artículo") {
                 fila.style.display = "none";
             } else {
@@ -1769,12 +1838,34 @@ function cargarEstructuraProducto(info) {
         }
     });
 
+    // --- Máquina de destino (punto 7): fila fija en características ---
+    const maquinaProd = maquinaDeProducto(info.codigoBase, info.categoriaImg);
+    const tablaMaq = document.querySelector(".tabla-caracteristicas");
+    if (maquinaProd && tablaMaq && !tablaMaq.querySelector(".fila-maquina")) {
+        const trMaq = document.createElement("tr");
+        trMaq.className = "fila-maquina";
+        trMaq.innerHTML = `<th class="caracteristica-label">Máquina</th><td class="caracteristica-value">${maquinaProd}</td>`;
+        tablaMaq.appendChild(trMaq);
+    }
+
     // Actualiza título (sierras/mechas) y filas de medidas según la variante elegida
     function actualizarMedidas() {
         const v = selector ? info.variantes.find(x => x.id === selector.value) : info.variantes[0];
         const m = analizarMedidas(v ? v.nombre : '');
         if (tituloDOM) {
-            tituloDOM.innerText = (esSierraOMecha && m.ext) ? `${tituloBase} de ${m.ext}mm` : tituloBase;
+            const cb = info.caracteristicasBasicas || {};
+            if (info.categoriaImg === "Cuchillas" && cb["Formato"] && cb["Material"]) {
+                // "Cuchilla [tipo] de [material] de [medida]"
+                const tipo = cb["Formato"] === "Chipera" ? "para Chipera" : cb["Formato"];
+                const matRaw = cb["Material"];
+                const mat = /HSS/i.test(matRaw) ? "HSS" : (/(widia|metal duro)/i.test(matRaw) ? "Widia" : matRaw);
+                const medida = v ? v.nombre.split(" - ").slice(1).join(" - ").trim() : "";
+                tituloDOM.innerText = medida ? `Cuchilla ${tipo} de ${mat} de ${medida}` : `Cuchilla ${tipo} de ${mat}`;
+            } else if (esSierraOMecha && m.ext) {
+                tituloDOM.innerText = `${tituloBase} de ${m.ext}mm`;
+            } else {
+                tituloDOM.innerText = tituloBase;
+            }
         }
         const tabla = document.querySelector(".tabla-caracteristicas");
         if (tabla) {

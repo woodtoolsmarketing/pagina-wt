@@ -15,6 +15,98 @@ document.addEventListener("DOMContentLoaded", function() {
     const productos = gridContainer.querySelectorAll('.product-card');
 
     // =====================================================================
+    // 0. OCULTAR PUBLICACIONES SIN FOTOS
+    //    Una card se esconde del público si su carpeta de producto no tiene
+    //    ninguna foto en el manifiesto (ni portada ni galería). Cuando se
+    //    suban fotos y se regenere el manifiesto, la card reaparece sola.
+    // =====================================================================
+    function claveCarpeta(src) {
+        const m = (src || '').match(/herramientas\/(.+)$/);
+        if (!m) return null;
+        const partes = m[1].split('/');
+        if (partes.length < 3) return null; // imagen genérica / suelta: no es carpeta de producto
+        partes.pop();                        // sacar el nombre de archivo
+        return decodeURIComponent(partes.join('/'));
+    }
+    fetch('../../imagenes/herramientas/galeria-manifest.json', { cache: 'no-cache' })
+        .then(r => r.json())
+        .then(manifest => {
+            productos.forEach(producto => {
+                const img = producto.querySelector('img');
+                const key = img ? claveCarpeta(img.getAttribute('src')) : null;
+                const tieneFotos = key && manifest[key] && manifest[key].length > 0;
+                if (!tieneFotos) producto.dataset.sinFoto = '1';
+            });
+            aplicarFiltros();
+        })
+        .catch(() => {}); // si no se puede leer el manifiesto, no escondemos nada
+
+    // =====================================================================
+    // MÁQUINA DE DESTINO (punto 7): resuelve la máquina a partir del código.
+    // (Misma lógica embebida en producto.js para la ficha de características.)
+    // =====================================================================
+    function maquinaDeProducto(codigo, categoria) {
+        const c = (codigo || '').toUpperCase().replace(/\s+/g, '');
+        if (categoria === 'Diamante') {
+            return /^MB|^MD/.test(c) ? 'Centro de perforado' : 'Escuadradora, mesa de banco o seccionadora horizontal';
+        }
+        const reglas = [
+            [/^F04C/, 'Tupí, machimbradora o moldurera'],
+            [/^F107M/, 'Tupí, machimbradora o moldurera'],
+            [/^FI14M|^F114M/, 'Tupí, machimbradora o moldurera'],
+            [/^FR09W/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+            [/^F2C/, 'Tupí, machimbradora o moldurera'],
+            [/^F1M|^F2M/, 'Machimbradora'],
+            [/^FCPV/, 'Machimbradora o moldurera'],
+            [/^FCT/, 'Machimbradora o moldurera'],
+            [/^FA/, 'Machimbradora o moldurera'],
+            [/^FG46S/, 'Tupí'],
+            [/^FMES|^FME/, 'Tupí'],
+            [/^FMR/, 'Tupí'],
+            [/^FRP|^FPP/, 'CNC o nesting'],
+            [/^FP/, 'Tupí'],
+            [/^FR12/, 'Ingletadora o máquina de mano'],
+            [/^FRG|^FRINR|^FRIR|^FRPI|^FRI|^FRS/, 'Tupí'],
+            [/^FZS/, 'Machimbradora o moldurera'],
+            [/^FR/, 'Machimbradora o moldurera'],
+            [/^GL/, 'Escuadradora'],
+            [/^CB/, 'Cepilladora, moldurera o machimbradora'],
+            [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
+            [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
+            [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+            [/^LSA|^LSB/, 'Seccionadora'],
+            [/^LP/, 'Ingletadora o máquina de mano'],
+            [/^LT|^TR15M/, 'Trituradora'],
+            [/^LI13|^LI16|^LI25/, 'Escuadradora o seccionadora'],
+            [/^MBAD|^MBA/, 'Barreno'],
+            [/^MBD|^MBI|^MB|^MCAR|^MCD|^MCI|^MC1|^MPD|^MPI|^MP1|^AVD|^AVI|^BRDD/, 'Centro de perforado o agujereadora múltiple'],
+            [/^MIDN|^MIDR|^MID|^MIIR|^MI|^PRACTIWALL|^MAM|^PINZA|^ROUTER/, 'Pantógrafo o nesting'],
+            [/^T102M|^T192M|^T194M|^T198M|^TM06M|^TD|^TP|^TW|^TF/, 'Machimbradora, moldurera o cepilladora'],
+        ];
+        for (const [re, maq] of reglas) if (re.test(c)) return maq;
+        switch (categoria) {
+            case 'Sierras': return 'Escuadradora, mesa de banco o seccionadora horizontal';
+            case 'Fresas': return 'Tupí';
+            case 'Mechas': return 'Centro de perforado o agujereadora múltiple';
+            case 'Cabezales': return 'Machimbradora, moldurera o cepilladora';
+            case 'Cuchillas': return 'Cepilladora, moldurera o machimbradora';
+            default: return null;
+        }
+    }
+    function maquinaKeywords(str) {
+        const s = (str || '').toLowerCase();
+        const map = [
+            ['tupi', /tup[ií]/], ['machimbradora', /machimbrad/], ['moldurera', /moldurer/],
+            ['cepilladora', /cepillad/], ['escuadradora', /escuadrad/], ['seccionadora', /seccionad/],
+            ['multiple', /máquina múltiple/], ['trituradora', /triturad/], ['barreno', /barreno/],
+            ['perforado', /perforad|agujeread/], ['nesting', /nesting|pantógraf|pantograf|cnc/],
+            ['ingletadora', /ingletadora|mano/]
+        ];
+        return map.filter(function (p) { return p[1].test(s); }).map(function (p) { return p[0]; });
+    }
+    const mapaCarpetaCategoria = { SC: 'Sierras', FR: 'Fresas', MCH: 'Mechas', CH: 'Cuchillas', CBZ: 'Cabezales', DM: 'Diamante' };
+
+    // =====================================================================
     // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas, Mechas, Cuchillas y Diamante)
     // =====================================================================
     const codigosMelamina = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
@@ -60,16 +152,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 ["CB",       "cepillado"],
                 // --- REVESTIMIENTO ---
                 ["JFFI",     "revestimiento"],   // JFFI01
+                ["JFRA",     "revestimiento"],   // JFRA1
                 // --- ABERTURAS ---
                 ["JFMPV14",  "aberturas"],        // JFMPV14
                 ["FRP",      "aberturas"],         // FRP5533
                 // --- MOLDURA ---
                 ["FR104",    "moldura"],
-                ["FMR",      "moldura"],
                 ["F2C",      "moldura"],
                 ["JFPMS",    "moldura"],
                 ["F04C",     "moldura"],
-                ["FP402",    "moldura"],
+                // --- MULTIMOLDURA ---
+                ["FMR",      "multimoldura"],   // FMR04 (multirradio)
+                ["FP",       "multimoldura"],   // FP402 (multimoldura) + FP2226/FP2286/... (palos de escoba)
                 // --- ENCASTRE / FINGER JOINT ---
                 ["JFE8Z",    "encastre"],
                 ["JFE81",    "encastre"],          // incluye JFE8122
@@ -81,9 +175,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 ["JFDSG",    "machimbre"],
                 // (Multimoldura: sin códigos asignados por ahora)
                 // --- REALIZAR CANALES (rectas): resto de códigos que inician con FR ---
-                ["FR",       "canales"],
-                // --- RESTO: cae en MOLDURA ---
-                ["",         "moldura"]
+                ["FR",       "canales"]
+                // SIN catch-all: las fresas que no matchean ninguna regla quedan
+                // SIN tipo (no aparecen en ningún filtro de tipo, solo en "todos").
+                // Así "moldura" contiene EXACTAMENTE los códigos indicados.
             ];
 
             for (const [pref, tipo] of reglasFresas) {
@@ -147,6 +242,15 @@ document.addEventListener("DOMContentLoaded", function() {
             producto.setAttribute('data-categoria', 'mecha');
             producto.setAttribute('data-marca', 'franzoi');
         }
+
+        // --- MÁQUINA DE DESTINO (para el filtro de la página de productos) ---
+        const mMaq = enlace.match(/([A-Za-z]+)\/([^\/]+?)\.html/);
+        if (mMaq) {
+            const catMaq = mapaCarpetaCategoria[mMaq[1].toUpperCase()] || '';
+            let codMaq = mMaq[2]; try { codMaq = decodeURIComponent(codMaq); } catch (e) {}
+            const kws = maquinaKeywords(maquinaDeProducto(codMaq, catMaq));
+            if (kws.length) producto.setAttribute('data-maquina', kws.join(' '));
+        }
     });
 
     // =====================================================================
@@ -180,7 +284,8 @@ document.addEventListener("DOMContentLoaded", function() {
         subtipo: 'todos',
         subcat: 'todos',
         formato: 'todos',
-        material: 'todos'
+        material: 'todos',
+        maquina: 'todos'
     };
 
     // =====================================================================
@@ -208,6 +313,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let productosVisibles = 0;
 
         productos.forEach(producto => {
+            // Publicaciones sin fotos: escondidas siempre, sin importar los filtros.
+            if (producto.dataset.sinFoto === '1') { producto.style.display = 'none'; return; }
+
             const atributos = {
                 categoria: producto.getAttribute('data-categoria'),
                 marca: producto.getAttribute('data-marca'),
@@ -215,7 +323,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtipo: producto.getAttribute('data-subtipo'),
                 subcat: producto.getAttribute('data-subcat'),
                 formato: producto.getAttribute('data-formato'),
-                material: producto.getAttribute('data-material')
+                material: producto.getAttribute('data-material'),
+                maquina: producto.getAttribute('data-maquina')
             };
 
             let mostrar = true;
@@ -229,7 +338,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (valor !== 'todos') {
                     const valorProducto = atributos[filtro];
 
-                    if (Array.isArray(valor)) {
+                    if (filtro === 'maquina') {
+                        // La máquina es multivalor (data-maquina con varias keywords):
+                        // el producto pasa si su lista incluye la máquina elegida.
+                        const toks = (valorProducto || '').split(/\s+/);
+                        if (!toks.includes(valor)) { mostrar = false; break; }
+                    } else if (Array.isArray(valor)) {
                         // Caso alias: el producto debe coincidir con alguno de los valores
                         if (!valorProducto || !valor.some(v => v.toLowerCase() === valorProducto.toLowerCase())) {
                             mostrar = false;
