@@ -196,8 +196,12 @@ document.addEventListener("DOMContentLoaded", function() {
             producto.setAttribute('data-categoria', '301'); 
         } else if (enlace.includes("/MCH/BRDD")) {
             producto.setAttribute('data-categoria', '302'); 
-        } else if (enlace.includes("/MCH/MID") || enlace.includes("/MCH/MIIR") || enlace.includes("/MCH/MI.") || enlace.includes("/MCH/MIDN")) {
-            producto.setAttribute('data-categoria', '303'); 
+        } else if (enlace.includes("MCH/MIDN")) {
+            // Mechas de compresión (nesting): MIDN. Va ANTES que MID porque "MID"
+            // también matchea "MIDN". (Sin barra inicial: los href son relativos.)
+            producto.setAttribute('data-categoria', '310');
+        } else if (enlace.includes("/MCH/MID") || enlace.includes("/MCH/MIIR") || enlace.includes("/MCH/MI.")) {
+            producto.setAttribute('data-categoria', '303');
         } else if (enlace.includes("/MCH/MBD") || enlace.includes("/MCH/MBI") || enlace.includes("/MCH/MB.")) {
             producto.setAttribute('data-categoria', '304'); 
         } else if (enlace.includes("/MCH/MAM") || enlace.includes("/MCH/PINZAER")) {

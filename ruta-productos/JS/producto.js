@@ -18,133 +18,133 @@ const baseDatosProductos = {
     "LG3D": {
         codigoBase: "LG3D", categoriaImg: "Sierras", carpetaImg: "LG3D",
         titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Carburo de tungsteno (HM) Widia", "Uso": "Melamina (Ángulo Positivo - Máquinas Industriales)", "Tipo de diente": "Trapezoidal-Plano / Positivo" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina (Ángulo Positivo - Máquinas Industriales)", "Tipo de diente": "Trapezoidal-Plano / Positivo" },
         variantes: [ { id: "LG3D 0400", nombre: "LG3D 0400 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LG3D 0600", nombre: "LG3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LG3D 0800", nombre: "LG3D 0800 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
     },
     "SSK12": {
         codigoBase: "SSK12", categoriaImg: "Sierras", carpetaImg: "SSK12",
         titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Melamina (Máquinas Industriales)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina (Máquinas Industriales)" },
         variantes: [{ id: "SSK12 001", nombre: "SSK12 001 - Consultar medidas" }]
     },
     "LU3F": {
         codigoBase: "LU3F", categoriaImg: "Sierras", carpetaImg: "LU3F 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aglomerado, MDF, Madera y Melamina", "Tipo de diente": "Ángulo Negativo" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aglomerado, MDF, Madera y Melamina", "Tipo de diente": "Ángulo Negativo" },
         variantes: [ { id: "LU3F 0200", nombre: "LU3F 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU3F 0300", nombre: "LU3F 0300 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LU3F 0400", nombre: "LU3F 0400 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
     },
     "LU3E": {
         codigoBase: "LU3E", categoriaImg: "Sierras", carpetaImg: "LU3E 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Melamina" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina" },
         variantes: [{ id: "LU3E 0200", nombre: "LU3E 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }]
     },
     "FR12L": {
         codigoBase: "FR12L", categoriaImg: "Sierras", carpetaImg: "FR12L",
         titulo: "Sierra para Melamina y Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aglomerado, MDF, Madera y Melamina" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aglomerado, MDF, Madera y Melamina" },
         variantes: [{ id: "FR12L001H", nombre: "FR12L001H - D: 185mm | B: 2.4mm | d: 20mm | Z: 60" }]
     },
     "LU3D": {
         codigoBase: "LU3D", categoriaImg: "Sierras", carpetaImg: "LU3D 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Melamina" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina" },
         variantes: [ { id: "LU3D 0200", nombre: "LU3D 0200 - D: 220mm | B: 3.2mm | d: 30mm | Z: 64" }, { id: "LU3D 0600", nombre: "LU3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
     },
     "F03FS": {
         codigoBase: "F03FS", categoriaImg: "Sierras", carpetaImg: "F03FS",
         titulo: "Sierra Circular Multiuso", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aglomerado, MDF, Madera y Melamina" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aglomerado, MDF, Madera y Melamina" },
         variantes: [{ id: "F03FS09801", nombre: "F03FS09801 - D: 185mm | B: 2.4mm | d: 20mm | Z: 60" }]
     },
     "LSB": {
         codigoBase: "LSB", categoriaImg: "Sierras", carpetaImg: "LSB25003X",
         titulo: "Sierra Circular Extra Silenciosa", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Placas Bilaminadas / Melamina" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Placas Bilaminadas / Melamina" },
         variantes: [ { id: "LSB25003X", nombre: "LSB25003X - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LSB30003X", nombre: "LSB30003X - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LSB35003X", nombre: "LSB35003X - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
     },
     "LG2A": {
         codigoBase: "LG2A", categoriaImg: "Sierras", carpetaImg: "LG2A",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera maciza, blanda y dura", "Tipo de diente": "Alterno" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera maciza, blanda y dura", "Tipo de diente": "Alterno" },
         variantes: [ { id: "LG2A 1700", nombre: "LG2A 1700 - D: 250mm | B: 3.2mm | d: 30mm | Z: 30" }, { id: "LG2A 2100", nombre: "LG2A 2100 - D: 300mm | B: 3.2mm | d: 30mm | Z: 36" }, { id: "LG2A 2800", nombre: "LG2A 2800 - D: 350mm | B: 3.5mm | d: 30mm | Z: 42" } ]
     },
     "LG2B": {
         codigoBase: "LG2B", categoriaImg: "Sierras", carpetaImg: "LG2B",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "LG2B 0800", nombre: "LG2B 0800 - D: 250mm | B: 3.2mm | d: 30mm | Z: 20" }, { id: "LG2B 1100", nombre: "LG2B 1100 - D: 300mm | B: 3.2mm | d: 30mm | Z: 24" } ]
     },
     "LU2A": {
         codigoBase: "LU2A", categoriaImg: "Sierras", carpetaImg: "LU2A",
         titulo: "Sierra para Madera Blanda y Dura", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera blanda y dura a favor/contra de la veta" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera blanda y dura a favor/contra de la veta" },
         variantes: [ { id: "LU2A 1600", nombre: "LU2A 1600 - D: 250mm | B: 3.2mm | d: 30mm | Z: 48" }, { id: "LU2A 2100", nombre: "LU2A 2100 - D: 300mm | B: 3.2mm | d: 30mm | Z: 60" } ]
     },
     "LU2B": {
         codigoBase: "LU2B", categoriaImg: "Sierras", carpetaImg: "LU2B 2100",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "LU2B 0700", nombre: "LU2B 0700 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU2B 1200", nombre: "LU2B 1200 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
     },
     "LU2C": {
         codigoBase: "LU2C", categoriaImg: "Sierras", carpetaImg: "LU2C 1200",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "LU2C 1200", nombre: "LU2C 1200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU2C 1500", nombre: "LU2C 1500 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
     },
     "LU1D": {
         codigoBase: "LU1D", categoriaImg: "Sierras", carpetaImg: "LU1D",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera (Multipunto)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera (Multipunto)" },
         variantes: [ { id: "LU1D 0500", nombre: "LU1D 0500 - D: 250mm | B: 3.2mm | d: 30mm | Z: 48" } ]
     },
     "LU1F": {
         codigoBase: "LU1F", categoriaImg: "Sierras", carpetaImg: "LU1F",
         titulo: "Sierra para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "LU1F 0600", nombre: "LU1F 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 60" } ]
     },
     "FI14M": {
         codigoBase: "FI14M", categoriaImg: "Sierras", carpetaImg: "FI14M AA3",
         titulo: "Sierra de Ranurar", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Ranurado de Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Ranurado de Madera" },
         variantes: [ { id: "FI14M AA3", nombre: "FI14M AA3 - D: 150mm | B: 1.5mm | d: 30mm | Z: 18" }, { id: "FI14M AE3", nombre: "FI14M AE3 - D: 150mm | B: 2.0mm | d: 30mm | Z: 18" } ]
     },
     "FR09W": {
         codigoBase: "FR09W", categoriaImg: "Sierras", carpetaImg: "FR09W003H",
         titulo: "Sierra Fina para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "FR09W003H", nombre: "FR09W003H - D: 184mm | B: 1.5mm | d: 20mm | Z: 40" } ]
     },
     "LP40M": {
         codigoBase: "LP40M", categoriaImg: "Sierras", carpetaImg: "LP40M 016P",
         titulo: "Sierra Fina para Madera", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "LP40M 016P", nombre: "LP40M 016P - D: 184mm | B: 2.4mm | d: 20mm | Z: 40" } ]
     },
     "LU4A": {
         codigoBase: "LU4A", categoriaImg: "Sierras", carpetaImg: "LU4A 0100",
         titulo: "Sierra para Aluminio y Plásticos", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aluminio y Plásticos" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aluminio y Plásticos" },
         variantes: [ { id: "LU4A 0100", nombre: "LU4A 0100 - D: 250mm | B: 2.8mm | d: 30mm | Z: 80" }, { id: "LU4A 0200", nombre: "LU4A 0200 - D: 300mm | B: 2.8mm | d: 30mm | Z: 96" } ]
     },
     "LU5B": {
         codigoBase: "LU5B", categoriaImg: "Sierras", carpetaImg: "LU5B",
         titulo: "Sierra para Aluminio", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aluminio y Metales No Ferrosos" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aluminio y Metales No Ferrosos" },
         variantes: [ { id: "LU5B 0200", nombre: "LU5B 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU5B 0600", nombre: "LU5B 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
     },
     "LU5D": {
         codigoBase: "LU5D", categoriaImg: "Sierras", carpetaImg: "LU5D",
         titulo: "Sierra para Aluminio", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aluminio" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aluminio" },
         variantes: [ { id: "LU5D 0500", nombre: "LU5D 0500 - D: 250mm | B: 3.2mm | d: 32mm | Z: 80" }, { id: "LU5D 1100", nombre: "LU5D 1100 - D: 300mm | B: 3.2mm | d: 32mm | Z: 96" } ]
     },
     "LU5E": {
         codigoBase: "LU5E", categoriaImg: "Sierras", carpetaImg: "LU5E",
         titulo: "Sierra para Aluminio Gruesa", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Aluminio" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aluminio" },
         variantes: [ { id: "LU5E 0100", nombre: "LU5E 0100 - D: 400mm | B: 3.8mm | d: 30mm | Z: 120" }, { id: "LU5E 0200", nombre: "LU5E 0200 - D: 400mm | B: 3.8mm | d: 32mm | Z: 120" } ]
     },
     "LM01": {
@@ -216,13 +216,13 @@ const baseDatosProductos = {
     "TR15MD": {
         codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS",
         titulo: "Triturador Doble", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro" },
         variantes: [{ id: "TR15MD CA3", nombre: "D: 300mm | B: 30mm" }]
     },
     "TR15MS": {
         codigoBase: "TR15MS", categoriaImg: "Sierras", carpetaImg: "TR15MS",
         titulo: "Triturador Simple", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro" },
         variantes: [{ id: "TR15MS CA3", nombre: "D: 300mm | B: 30mm" }]
     },
     // Familia LT (Sierras Trituradoras): LT14 / LT16 / LT18 en giro
@@ -232,7 +232,7 @@ const baseDatosProductos = {
     "LT": {
         codigoBase: "LT", categoriaImg: "Sierras", carpetaImg: "TR15MS",
         titulo: "Sierra Trituradora", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia", "Uso": "Triturador" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Triturador" },
         variantes: [
             { id: "LT14MD", nombre: "LT14MD - Trituradora LT14 Giro Derecho (MD)" },
             { id: "LT14MS", nombre: "LT14MS - Trituradora LT14 Giro Izquierdo (MS)" },
@@ -245,19 +245,19 @@ const baseDatosProductos = {
     "SCC_Freud": {
         codigoBase: "SCC_Freud", categoriaImg: "Sierras", carpetaImg: "Incisor",
         titulo: "Incisor SCC Freud", marca: "Freud",
-        caracteristicasBasicas: { "Material": "Widia", "Uso": "Incisor" },
+        caracteristicasBasicas: { "Material": "Metal duro", "Uso": "Incisor" },
         variantes: [{ id: "1", nombre: "Consultar Medidas" }]
     },
     "SCC_Franzoi": {
         codigoBase: "SCC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Incisor Santi",
         titulo: "Incisor SCC Franzoi", marca: "Franzoi",
-        caracteristicasBasicas: { "Material": "Widia", "Uso": "Incisor" },
+        caracteristicasBasicas: { "Material": "Metal duro", "Uso": "Incisor" },
         variantes: [{ id: "1", nombre: "Consultar Medidas" }]
     },
     "SC_Franzoi": {
         codigoBase: "SC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Sierra con racadores Franzoi",
         titulo: "Sierras para múltiple", marca: "Franzoi",
-        caracteristicasBasicas: { "Material": "Metal Duro", "Uso": "Madera (Múltiples)" },
+        caracteristicasBasicas: { "Material": "Metal duro", "Uso": "Madera (Múltiples)" },
         variantes: [
             { id: "SC2504144F", nombre: "SC2504144F - D: 250mm | B: 4.0mm | Z: 14+4" },
             { id: "SC25042144F", nombre: "SC25042144F - D: 250mm | B: 4.2mm | Z: 14+4" },
@@ -277,7 +277,7 @@ const baseDatosProductos = {
     "FRS": {
         codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "FRS0606",
         titulo: "Fresas Rectas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Metal duro" },
         variantes: [
             { id: "FRS0054", nombre: "FRS0054 - RECTA #5mm Z:4" },
             { id: "FRS0056", nombre: "FRS0056 - RECTA #5mm Z:6" },
@@ -340,7 +340,7 @@ const baseDatosProductos = {
     "FRI": {
         codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "FRI01566",
         titulo: "Fresas Rectas con Incisores HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar sin astillar", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar sin astillar", "Material": "Metal duro" },
         variantes: [
             { id: "FRI01542", nombre: "FRI01542 - C/INCISOR #15mm Z:4+2" },
             { id: "FRI01544", nombre: "FRI01544 - C/INCISOR #15mm Z:4+4" },
@@ -397,7 +397,7 @@ const baseDatosProductos = {
     "F2C": {
         codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "F2C014",
         titulo: "Fresas 1/2 círculo cóncavo y convexo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Metal duro" },
         variantes: [
             { id: "F2C014", nombre: "F2C014 - 1/2 CIRCULO DE 1/2 Z:4" },
             { id: "F2C016", nombre: "F2C016 - 1/2 CIRCULO DE 1/2 Z:6" },
@@ -418,7 +418,7 @@ const baseDatosProductos = {
     "F04C": {
         codigoBase: "F04C", categoriaImg: "Fresas", carpetaImg: "F04C014",
         titulo: "Fresas 1/4 círculo cóncavo y convexo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Metal duro" },
         variantes: [
             { id: "F04C014", nombre: "F04C014 - 1/4 CIRCULO 1/2 A 3/4 Z:4" },
             { id: "F04C016", nombre: "F04C016 - 1/4 CIRCULO 1/2 A 3/4 Z:6" },
@@ -431,7 +431,7 @@ const baseDatosProductos = {
     "FR": {
         codigoBase: "FR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Rinconera Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Rinconera según modelos 1 ó 2", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Rinconera según modelos 1 ó 2", "Material": "Metal duro" },
         variantes: [
             { id: "FR104", nombre: "FR104 - RINCONERA DE 3/4 Z:4" },
             { id: "FR106", nombre: "FR106 - RINCONERA DE 3/4 Z:6" },
@@ -444,7 +444,7 @@ const baseDatosProductos = {
     "FA": {
         codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "FA104",
         titulo: "Fresas en ángulo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar ángulos (α)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar ángulos (α)", "Material": "Metal duro" },
         variantes: [
             { id: "FA104", nombre: "FA104 - ANGULO 25°A 45° 10mm Z:4" },
             { id: "FA106", nombre: "FA106 - ANGULO 25°A 45° 10mm Z:6" },
@@ -471,7 +471,7 @@ const baseDatosProductos = {
     "FMES": {
         codigoBase: "FMES", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Fresa Moldura Perfiles Combinados", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura Prof. 10mm", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura Prof. 10mm", "Material": "Metal duro" },
         variantes: [
             { id: "FMES104", nombre: "FMES104 - MOLDURA 10mm Z:4" },
             { id: "FMES106", nombre: "FMES106 - MOLDURA 10mm Z:6" },
@@ -516,7 +516,7 @@ const baseDatosProductos = {
     "FRG": {
         codigoBase: "FRG", categoriaImg: "Fresas", carpetaImg: "FRG0510",
         titulo: "Fresas para Ranurar Regulables HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranuras, rebajes y espigas", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranuras, rebajes y espigas", "Material": "Metal duro" },
         variantes: [
             { id: "FRG010", nombre: "FRG010 - SUPL. P/REGULABLE #10mm Z=4" },
             { id: "FRG020", nombre: "FRG020 - SUPLEMENTO P/REG. #20 Z=4" },
@@ -530,7 +530,7 @@ const baseDatosProductos = {
     "FP": {
         codigoBase: "FP", categoriaImg: "Fresas", carpetaImg: "FP2226",
         titulo: "Fresa Palos de Escoba / Multimoldura", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Palos de escoba / Perfilado", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Palos de escoba / Perfilado", "Material": "Metal duro" },
         variantes: [
             { id: "FP2226", nombre: "FP2226 - 2 PALOS ESCOBA D=22.5 #60 Z=6" },
             { id: "FP2286", nombre: "FP2286 - 2 PALOS ESCOBA D=28 #75 Z=6" },
@@ -544,7 +544,7 @@ const baseDatosProductos = {
     "F1M": {
         codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "F1M0",
         titulo: "Fresa Despiece de Machimbre (1/2 a 3/4)", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
         variantes: [
             { id: "F1M01", nombre: "F1M01 - FR. MACHO 1/2 A 3/4 Z=4" },
             { id: "F1M03", nombre: "F1M03 - RECTA PARA HEMBRA 1/2 A 3/4 Z=4" },
@@ -561,7 +561,7 @@ const baseDatosProductos = {
     "F2M": {
         codigoBase: "F2M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Fresa Despiece de Machimbre (3/4 a 1 1/4)", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
         variantes: [
             { id: "F2M01", nombre: "F2M01 - FR. MACHO 3/4 A 1 1/4 Z=4" },
             { id: "F2M03", nombre: "F2M03 - FR. HEMBRA 3/4 A 1 1/4 Z=4" },
@@ -574,7 +574,7 @@ const baseDatosProductos = {
     "JFE254": {
         codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
         titulo: "Fresa para Finger HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE254", nombre: "JFE254 - D=150 B=22 d=40 Z=4" }
         ]
@@ -582,7 +582,7 @@ const baseDatosProductos = {
     "JFE5022": {
         codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
         titulo: "Fresa para Finger HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE5022", nombre: "JFE5022 - D=150 B=45 d=40 Z=2+2" }
         ]
@@ -591,7 +591,7 @@ const baseDatosProductos = {
     "JFE81": {
         codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE81",
         titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8122", nombre: "JFE8122 - D=150 B=10-45 d=40 Z=4x4" },
             { id: "JFE8121", nombre: "JFE8121 - D=160 B=3,8 d=40 Z=1x4" }
@@ -601,7 +601,7 @@ const baseDatosProductos = {
     "JFE8Z": {
         codigoBase: "JFE8Z", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
         titulo: "Fresa para Encastre HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8Z122", nombre: "JFE8Z122 - D=180 B=19-40 d=40 Z=3+3 (A)" },
             { id: "JFE8Z124", nombre: "JFE8Z124 - D=180 B=19-40 d=40 Z=3+3 (B)" }
@@ -610,7 +610,7 @@ const baseDatosProductos = {
     "JFME68": {
         codigoBase: "JFME68", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Fresa para Encastre HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFME68", nombre: "JFME68 - D=245 B=22-68 d=40 Z=3+3 (B)" }
         ]
@@ -619,7 +619,7 @@ const baseDatosProductos = {
     "JFE": {
         codigoBase: "JFE", categoriaImg: "Fresas", carpetaImg: "JFE",
         titulo: "Juego de Fresas de Ensamble", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble / Encastre", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble / Encastre", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8Z34", nombre: "JFE8Z34 - ENSAMBLE 90° y 180° 'A' D=150 12 a 22" }
         ]
@@ -629,7 +629,7 @@ const baseDatosProductos = {
     "JFMPV": {
         codigoBase: "JFMPV", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
         titulo: "Moldura de Puertas y Ventanas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Metal duro" },
         variantes: [
             { id: "JFMPV14", nombre: "JFMPV14 - D=150 B=1 1/2 a 2\" d=40 Z=2x4 y 1x6" }
         ]
@@ -639,7 +639,7 @@ const baseDatosProductos = {
     "JFPMS": {
         codigoBase: "JFPMS", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
         titulo: "Puerta de Muebles HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Metal duro" },
         variantes: [
             { id: "JFPMS10", nombre: "JFPMS10 - D=160 B=1\" d=40 Z=1x4 y 1x6" }
         ]
@@ -649,7 +649,7 @@ const baseDatosProductos = {
     "JFDE": {
         codigoBase: "JFDE", categoriaImg: "Fresas", carpetaImg: "JFDE4",
         titulo: "Deck Standard HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Metal duro" },
         variantes: [
             { id: "JFDE4", nombre: "JFDE4 - D=150 B=3/4 a 1\" d=40 Z=2x4" },
             { id: "JFDE6", nombre: "JFDE6 - D=160 B=3/4 a 1\" d=40 Z=2x6" }
@@ -659,7 +659,7 @@ const baseDatosProductos = {
     "JFDSG": {
         codigoBase: "JFDSG", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Deck para Grampa HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck para montaje con grampa plástica (machimbradora)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck para montaje con grampa plástica (machimbradora)", "Material": "Metal duro" },
         variantes: [
             { id: "JFDSG14", nombre: "JFDSG14 - D=160 B=1\" d=40 Z=4x4 y 2x8" },
             { id: "JFDSG16", nombre: "JFDSG16 - D=160 B=1\" d=40 Z=4x6 y 2x12" }
@@ -669,7 +669,7 @@ const baseDatosProductos = {
     "JFDR": {
         codigoBase: "JFDR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Juego de Fresas Deck Regulable", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck regulable", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck regulable", "Material": "Metal duro" },
         variantes: [
             { id: "JFDR4", nombre: "JFDR4 - 2 FR. DECK REGULABLE #10 A 25mm D=150 Z=4" }
         ]
@@ -679,7 +679,7 @@ const baseDatosProductos = {
     "LIMMUE": {
         codigoBase: "LIMMUE", categoriaImg: "Fresas", carpetaImg: "LIMMUE",
         titulo: "Disco Limitador Mueble Cocina", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Limitador", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Limitador", "Material": "Metal duro" },
         variantes: [
             { id: "LIMMUE", nombre: "LIMMUE - DISCO LIMITADOR MUEBLE COCINA Yext=136" }
         ]
@@ -689,7 +689,7 @@ const baseDatosProductos = {
     "FMR": {
         codigoBase: "FMR", categoriaImg: "Fresas", carpetaImg: "FMR04",
         titulo: "Fresa para Radios Múltiples HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Metal duro" },
         variantes: [
             { id: "FMR04", nombre: "FMR04 - D=140 B=35 d=40 Z=4" }
         ]
@@ -699,7 +699,7 @@ const baseDatosProductos = {
     "FRP": {
         codigoBase: "FRP", categoriaImg: "Fresas", carpetaImg: "FRP5533",
         titulo: "Replán de Tablero HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Metal duro" },
         variantes: [
             { id: "FRP5533", nombre: "FRP5533 - D=200 B=55 d=40 Z=3+3 b=20" }
         ]
@@ -709,7 +709,7 @@ const baseDatosProductos = {
     "CB": {
         codigoBase: "CB", categoriaImg: "Fresas", carpetaImg: "CB0750660",
         titulo: "Cabezales Cepilladores HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Metal duro" },
         variantes: [
             { id: "CB0500640", nombre: "CB0500640 - Y=125 #50(6) Z=36 3 ENTRADAS" },
             { id: "CB0750660", nombre: "CB0750660 - Y=125 #75(6) Z=54 3 ENTRADAS" },
@@ -726,7 +726,7 @@ const baseDatosProductos = {
     "FZS": {
         codigoBase: "FZS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Zócalo Simple y Contramarco HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar zócalos y contramarcos", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar zócalos y contramarcos", "Material": "Metal duro" },
         variantes: [
             { id: "FZS128", nombre: "FZS128 - D=150 B=1/2-3/4\" d=40 Z=4 (A y B)" },
             { id: "FZS129", nombre: "FZS129 - D=150 B=1/2-3/4\" d=40 Z=4 (A y A)" }
@@ -736,7 +736,7 @@ const baseDatosProductos = {
     "JFRD": {
         codigoBase: "JFRD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Rinconera Doble HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar Rinconera Doble (modelos 1 ó 2)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar Rinconera Doble (modelos 1 ó 2)", "Material": "Metal duro" },
         variantes: [
             { id: "JFRD", nombre: "JFRD - D=160 B=1\" d=40 Z=2x4 y 1x10" }
         ]
@@ -745,7 +745,7 @@ const baseDatosProductos = {
     "JFFI": {
         codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "JFFI01",
         titulo: "Frente Inglés HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Metal duro" },
         variantes: [
             { id: "JFFI01", nombre: "JFFI01 - D=175 B=1/2-1\" d=40 Z=4x4 (A)" },
             { id: "JFFI05", nombre: "JFFI05 - D=175 B=1/2-1\" d=40 Z=4x4 (B)" }
@@ -755,7 +755,7 @@ const baseDatosProductos = {
     "JFMS": {
         codigoBase: "JFMS", categoriaImg: "Fresas", carpetaImg: "JFMS1234",
         titulo: "Machimbre Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Metal duro" },
         variantes: [
             { id: "JFMS1234", nombre: "JFMS1234 - D=155 B=1/2-3/4\" d=40 Z=5x4 y 1x16" },
             { id: "JFMS34114", nombre: "JFMS34114 - D=155 B=3/4-1 1/4\" d=40 Z=6x4" }
@@ -765,7 +765,7 @@ const baseDatosProductos = {
     "JFMD": {
         codigoBase: "JFMD", categoriaImg: "Fresas", carpetaImg: "JFMD1234",
         titulo: "Machimbre Doble HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Metal duro" },
         variantes: [
             { id: "JFMD1234", nombre: "JFMD1234 - D=155 B=1/2-3/4\" d=40 Z=10x4 y 2x16" }
         ]
@@ -774,7 +774,7 @@ const baseDatosProductos = {
     "JFMP34166M": {
         codigoBase: "JFMP34166M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Machimbre Piso para Grampa y Microbisel", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta, microbisel y aristas redondeadas para grampa de sujeción", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta, microbisel y aristas redondeadas para grampa de sujeción", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP34166M", nombre: "JFMP34166M - D=180 B=5/8-1\" d=40 Z=8x6+6" }
         ]
@@ -783,7 +783,7 @@ const baseDatosProductos = {
     "JFMP3416G": {
         codigoBase: "JFMP3416G", categoriaImg: "Fresas", carpetaImg: "JFMP3416G",
         titulo: "Machimbre Piso para Grampa", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP3416G", nombre: "JFMP3416G - D=180 B=5/8-1\" d=40 Z=4x6+6" }
         ]
@@ -792,7 +792,7 @@ const baseDatosProductos = {
     "JFMP": {
         codigoBase: "JFMP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Machimbre Piso Standard", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta (macho y hembra redondeados)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta (macho y hembra redondeados)", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP3411", nombre: "JFMP3411 - D=150 B=3/4-1 1/4\" d=40 Z=4x4" },
             { id: "JFMP3416", nombre: "JFMP3416 - D=160 B=5/8-1\" d=40 Z=4x6" }
@@ -802,7 +802,7 @@ const baseDatosProductos = {
     "FCPV": {
         codigoBase: "FCPV", categoriaImg: "Fresas", carpetaImg: "Cepillado",
         titulo: "Contramolduras de Puertas y Ventanas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Contramolduras en Espigadoras o Tupíes", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Contramolduras en Espigadoras o Tupíes", "Material": "Metal duro" },
         variantes: [
             { id: "FCPV41", nombre: "FCPV41 - D=150 B=1 1/2 a 2\" d=40 Z=4" },
             { id: "FCPV6", nombre: "FCPV6 - D=250 B=1 1/2 a 2\" d=40 Z=6" },
@@ -813,7 +813,7 @@ const baseDatosProductos = {
     "JFMPVR": {
         codigoBase: "JFMPVR", categoriaImg: "Fresas", carpetaImg: "JFMPVR",
         titulo: "Moldura de Puertas y Ventanas Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFMPVR", nombre: "JFMPVR - D=180 B=35-45 d=40 Z=1x2+2 y 2x4" }
         ]
@@ -822,7 +822,7 @@ const baseDatosProductos = {
     "FP402": {
         codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
         titulo: "Fresa Multimoldura", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Widia (Metal Duro)" },
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Metal duro" },
         variantes: [
             { id: "FP402", nombre: "FP402 - D=150 B=45 d=40 Z=2" }
         ]
@@ -834,7 +834,7 @@ const baseDatosProductos = {
     "MPD": { 
         codigoBase: "MPD", categoriaImg: "Mechas", carpetaImg: "Familias MPD  MPI", 
         titulo: "Mecha Pasante (Derecha)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforaciones Pasantes" }, 
         variantes: [
             { id: "MPD04", nombre: "MPD04 - Y=4mm L=58mm CABO=10x20" },
             { id: "MPD0470", nombre: "MPD0470 - Y=4mm L=70mm CABO=10x20" },
@@ -857,7 +857,7 @@ const baseDatosProductos = {
     "MPI": { 
         codigoBase: "MPI", categoriaImg: "Mechas", carpetaImg: "Familias MPD  MPI", 
         titulo: "Mecha Pasante (Izquierda)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Pasantes" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforaciones Pasantes" }, 
         variantes: [
             { id: "MPI04", nombre: "MPI04 - Y=4mm L=58mm CABO=10x20" },
             { id: "MPI0470", nombre: "MPI0470 - Y=4mm L=70mm CABO=10x20" },
@@ -878,7 +878,7 @@ const baseDatosProductos = {
         ] 
     },
     // Agrupación general para la página "MCD-MCI" genérica
-    "MCD-MCI": { codigoBase: "MCD-MCI", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", titulo: "Mecha Ciega MCD-MCI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, 
+    "MCD-MCI": { codigoBase: "MCD-MCI", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", titulo: "Mecha Ciega MCD-MCI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforaciones Ciegas" }, 
         variantes: [
             { id: "MCD03", nombre: "MCD03 - Y=3mm" }, { id: "MCD04", nombre: "MCD04 - Y=4mm L=57.5 CABO=10x20" }, { id: "MCD0470", nombre: "MCD0470 - Y=4mm L=70mm CABO=10x20" }, { id: "MCD05", nombre: "MCD05 - Y=5mm L=57.5 CABO=10x20" }, { id: "MCD0570", nombre: "MCD0570 - Y=5mm L=70mm CABO=10x20" }, { id: "MCD06", nombre: "MCD06 - Y=6mm L=57.5 CABO=10x20" }, { id: "MCD0670", nombre: "MCD0670 - Y=6mm L=70mm CABO=10x20" }, { id: "MCD0770", nombre: "MCD0770 - Y=7mm LT=70 CABO=10x20" }, { id: "MCD08", nombre: "MCD08 - Y=8mm L=57.5 CABO=10x20" }, { id: "MCD0870", nombre: "MCD0870 - Y=8mm L=70 CABO=10x20" }, { id: "MCD10", nombre: "MCD10 - Y=10mm L=57.5 CABO=10x20" }, { id: "MCD1070", nombre: "MCD1070 - Y=10mm L=70mm CABO=10x20" }, { id: "MCD12", nombre: "MCD12 - Y=12mm L=57.5 CABO=10x20" }, { id: "MCD1270", nombre: "MCD1270 - Y=12mm L=70mm CABO=10x20" }, { id: "MCD1470", nombre: "MCD1470 - Y=14mm L=70mm CABO=10x20" }, { id: "MCD15", nombre: "MCD15 - Y=15mm L=57.5 CABO=10x20" }, { id: "MCD1570", nombre: "MCD1570 - Y=15mm L=70mm CABO=10x20" }, { id: "MCDL05", nombre: "MCDL05 - Y=5 LU=27 LT=57.5 CABO=10x30" }, { id: "MCDL0570", nombre: "MCDL0570 - Y=5 LT=70" }, { id: "MCDL08", nombre: "MCDL08 - Y=8 LU=27 LT=57.5 CABO=10x30" }, { id: "MCDL0870", nombre: "MCDL0870 - Y=8 LT=70" }, { id: "MCDR0570", nombre: "MCDR0570 - Cyflex Skipper Y=5mm LU=45 LT=80" }, { id: "MCDR0670", nombre: "MCDR0670 - Cyflex Skipper Y=6mm LU=45 LT=80" }, { id: "MCDR0870", nombre: "MCDR0870 - Cyflex Skipper Y=8mm LU=45 LT=80" }, { id: "MCE", nombre: "MCE - MECHA ESPECIAL" },
             { id: "MCI03", nombre: "MCI03 - Y=3mm" }, { id: "MCI04", nombre: "MCI04 - Y=4mm L=57.5 CABO=10x20" }, { id: "MCI0470", nombre: "MCI0470 - Y=4mm L=70mm CABO=10x20" }, { id: "MCI05", nombre: "MCI05 - Y=5mm L=57.5mm CABO=10x20" }, { id: "MCI0570", nombre: "MCI0570 - Y=5mm L=70mm CABO=10x20" }, { id: "MCI06", nombre: "MCI06 - Y=6mm L=57.5 CABO=10x20" }, { id: "MCI0670", nombre: "MCI0670 - Y=6mm L=70mm CABO=10x20" }, { id: "MCI0770", nombre: "MCI0770 - Y=7mm LT=70 CABO=10x20" }, { id: "MCI08", nombre: "MCI08 - Y=8mm L=57.5 CABO=10x20" }, { id: "MCI0870", nombre: "MCI0870 - Y=8mm L=70 CABO=10x20" }, { id: "MCI10", nombre: "MCI10 - Y=10mm L=57.5 CABO=10x20" }, { id: "MCI1070", nombre: "MCI1070 - Y=10mm L=70mm CABO=10x20" }, { id: "MCI12", nombre: "MCI12 - Y=12mm L=57.5 CABO=10x20" }, { id: "MCI1270", nombre: "MCI1270 - Y=12mm L=70mm CABO=10x20" }, { id: "MCI1470", nombre: "MCI1470 - Y=14mm L=70mm CABO=10x20" }, { id: "MCI15", nombre: "MCI15 - Y=15mm L=57.5 CABO=10x20" }, { id: "MCI1570", nombre: "MCI1570 - Y=15mm L=70mm CABO=10x20" }, { id: "MCIL05", nombre: "MCIL05 - Y=5 LU=27 LT=57.5 CABO=10x30" }, { id: "MCIL0570", nombre: "MCIL0570 - Y=5 LT=70" }, { id: "MCIL08", nombre: "MCIL08 - Y=8 LU=27 LT=57.5 CABO=10x30" }, { id: "MCIL0870", nombre: "MCIL0870 - Y=8 LT=70" }, { id: "MCIR0570", nombre: "MCIR0570 - Cyflex Skipper Y=5mm LU=45 LT=80" }, { id: "MCIR0670", nombre: "MCIR0670 - Cyflex Skipper Y=6mm LU=45 LT=80" }, { id: "MCIR0870", nombre: "MCIR0870 - Cyflex Skipper Y=8mm LU=45 LT=80" }
@@ -887,7 +887,7 @@ const baseDatosProductos = {
     "MCD": { 
         codigoBase: "MCD", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", 
         titulo: "Mecha Ciega (Derecha)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforaciones Ciegas" }, 
         variantes: [
             { id: "MCD03", nombre: "MCD03 - Y=3mm" },
             { id: "MCD04", nombre: "MCD04 - Y=4mm L=57.5 CABO=10x20" },
@@ -919,7 +919,7 @@ const baseDatosProductos = {
     "MCI": { 
         codigoBase: "MCI", categoriaImg: "Mechas", carpetaImg: "Familias MCD  MCI", 
         titulo: "Mecha Ciega (Izquierda)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforaciones Ciegas" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforaciones Ciegas" }, 
         variantes: [
             { id: "MCI03", nombre: "MCI03 - Y=3mm" },
             { id: "MCI04", nombre: "MCI04 - Y=4mm L=57.5 CABO=10x20" },
@@ -962,7 +962,7 @@ const baseDatosProductos = {
     "MBI": { 
         codigoBase: "MBI", categoriaImg: "Mechas", carpetaImg: "bisagra", 
         titulo: "Fresa Bisagra (Izquierda)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Bisagras" }, 
         variantes: [
             { id: "MBI12", nombre: "MBI12 - Y=12 L=57.5 CABO=10x20" },
             { id: "MBI15", nombre: "MBI15 - Y=15 L=57.5 CABO=10x20" },
@@ -981,7 +981,7 @@ const baseDatosProductos = {
     "MBD": { 
         codigoBase: "MBD", categoriaImg: "Mechas", carpetaImg: "bisagra", 
         titulo: "Fresa Bisagra (Derecha)", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Widia", "Uso": "Bisagras" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Bisagras" }, 
         variantes: [
             { id: "MBD12", nombre: "MBD12 - Y=12 L=57.5 CABO=10x20" },
             { id: "MBD15", nombre: "MBD15 - Y=15 L=57.5 CABO=10x20" },
@@ -1008,13 +1008,13 @@ const baseDatosProductos = {
     "BRDD": { 
         codigoBase: "BRDD", categoriaImg: "Mechas", carpetaImg: "Ciega", 
         titulo: "Broca para Defondadora", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Defondado" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Defondado" }, 
         variantes: [{ id: "BRDD52", nombre: "BRDD52 - L=52mm Z=2 Ycabo=10mm" }] 
     },
     "MIDN": { 
         codigoBase: "MIDN", categoriaImg: "Mechas", carpetaImg: "Familia MIDN", 
         titulo: "Mecha Integral MIDN", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro Integral", "Uso": "Mecanizado CNC" }, 
         variantes: [
             { id: "MIDN0822", nombre: "MIDN0822 - D=8 Z=2+2 LU=22 Compresion" },
             { id: "MIDN1022", nombre: "MIDN1022 - D=10 Z=2+2 LU=22 Compresion" }
@@ -1023,7 +1023,7 @@ const baseDatosProductos = {
     "MID": { 
         codigoBase: "MID", categoriaImg: "Mechas", carpetaImg: "Familia MID", 
         titulo: "Mecha Integral MID", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro Integral", "Uso": "Mecanizado CNC" }, 
         variantes: [
             { id: "MID00412", nombre: "MID00412 - D=4 Z=2 LU=12" },
             { id: "MID00627", nombre: "MID00627 - D=6 Z=2 LU=27" },
@@ -1045,7 +1045,7 @@ const baseDatosProductos = {
     "MIIR": { 
         codigoBase: "MIIR", categoriaImg: "Mechas", carpetaImg: "integral", 
         titulo: "Mecha Integral Recta p/ CNC", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro Integral", "Uso": "Mecanizado CNC" }, 
         variantes: [
             { id: "MIIR01042", nombre: "MIIR01042 - ROMPEVIRUTA Y=10 Z=3 LU=42" },
             { id: "MIIR01242", nombre: "MIIR01242 - ROMPEVIRUTA Y=12 Z=3 LU=42" },
@@ -1053,7 +1053,7 @@ const baseDatosProductos = {
         ] 
     },
     // Agrupación general para la página "MI" genérica
-    "MI": { codigoBase: "MI", categoriaImg: "Mechas", carpetaImg: "Familia MI", titulo: "Mecha Integral MI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro Integral", "Uso": "Mecanizado CNC" }, 
+    "MI": { codigoBase: "MI", categoriaImg: "Mechas", carpetaImg: "Familia MI", titulo: "Mecha Integral MI", marca: "Nordutensili", caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro Integral", "Uso": "Mecanizado CNC" }, 
         variantes: [
             { id: "MID00412", nombre: "MID00412 - D=4 Z=2 LU=12" }, { id: "MID00627", nombre: "MID00627 - D=6 Z=2 LU=27" }, { id: "MID00832", nombre: "MID00832 - D=8 Z=3 LU=32 LT=70" }, { id: "MID01042", nombre: "MID01042 - Y=10 Z=3 LU=42 LT=100" }, { id: "MID01242", nombre: "MID01242 - Y=12 Z=3 LU=42" }, { id: "MID016100", nombre: "MID016100 - Y=16 LU=100 LT=155 Z=3" }, { id: "MID01642", nombre: "MID01642 - Y=16 LU=42 Z=3" }, { id: "MID01652", nombre: "MID01652 - Y=16 LU=52 Z=3" }, { id: "MID01852", nombre: "MID01852 - Y=18 LU=52 Z=3" }, { id: "MID02052", nombre: "MID02052 - Y=20 LU=52 Z=3" }, { id: "MIDR01242", nombre: "MIDR01242 - ROMPEVIRUTA Y=12 Z=3 LU=42" }, { id: "MIDR01642", nombre: "MIDR01642 - ROMPEVIRUTA Y=16 LU=42 Z=3" }, { id: "MIDR01652", nombre: "MIDR01652 - ROMPEVIRUTA Y=16 LU=52 Z=3" }, { id: "MIDR01852", nombre: "MIDR01852 - ROMPEVIRUTA Y=18 LU=52 Z=3" }, { id: "MIDR02053", nombre: "MIDR02053 - ROMPEVIRUTA Y=20 LT=100 LU=53" },
             { id: "MIDN0822", nombre: "MIDN0822 - D=8 Z=2+2 LU=22 Compresion" }, { id: "MIDN1022", nombre: "MIDN1022 - D=10 Z=2+2 LU=22 Compresion" },
@@ -1111,7 +1111,7 @@ const baseDatosProductos = {
     "MCAR": { 
         codigoBase: "MCAR", categoriaImg: "Mechas", carpetaImg: "Ciega", 
         titulo: "Mecha Ciega con Avellanador", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal Duro", "Uso": "Perforado y avellanado simultáneo" }, 
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Perforado y avellanado simultáneo" }, 
         variantes: [
             { id: "MCARD0840", nombre: "MCARD0840 - DER M.D. L=40 Y=8mm CABO RECTO" },
             { id: "MCAR10840", nombre: "MCAR10840 - IZQ M.D. L=40 Y=8mm CABO=10x26" }
@@ -1287,8 +1287,8 @@ const baseDatosProductos = {
     },
     "CHC_MD": { 
         codigoBase: "CHC_MD", categoriaImg: "Cuchillas", carpetaImg: "CHC_MD", 
-        titulo: "Cuchilla Plana Widia CHC", marca: "Ilma", 
-        caracteristicasBasicas: { "Marca": "Ilma", "Material": "Metal Duro (Widia)", "Uso": "Maderas duras y abrasivas", "Formato": "Plana" }, 
+        titulo: "Cuchilla Plana Metal duro CHC", marca: "Ilma", 
+        caracteristicasBasicas: { "Marca": "Ilma", "Material": "Metal duro", "Uso": "Maderas duras y abrasivas", "Formato": "Plana" }, 
         variantes: [
             { id: "CHC03130MD", nombre: "CHC03130MD - 130x30x3" },
             { id: "CHC03150MD", nombre: "CHC03150MD - 150x30x3" },
@@ -1360,8 +1360,8 @@ const baseDatosProductos = {
     },
     "CHCR_MD": { 
         codigoBase: "CHCR_MD", categoriaImg: "Cuchillas", carpetaImg: "CHCR_MD", 
-        titulo: "Cuchilla Dorso Ranurado Widia CHCR", marca: "Ilma", 
-        caracteristicasBasicas: { "Marca": "Ilma", "Material": "Metal Duro (Widia)", "Uso": "Maderas duras y abrasivas", "Formato": "Dorso Ranurado" }, 
+        titulo: "Cuchilla Dorso Ranurado Metal duro CHCR", marca: "Ilma", 
+        caracteristicasBasicas: { "Marca": "Ilma", "Material": "Metal duro", "Uso": "Maderas duras y abrasivas", "Formato": "Dorso Ranurado" }, 
         variantes: [
             { id: "CHCR0060608M", nombre: "CHCR0060608M - 60x60x10 ALT:30mm" },
             { id: "CHCR0100608M", nombre: "CHCR0100608M - 100x60x10 ALT:30mm" },
@@ -1434,7 +1434,7 @@ const baseDatosProductos = {
     "T102M": {
         codigoBase: "T102M", categoriaImg: "Cabezales", carpetaImg: "T102M",
         titulo: "Cabezal Cepillador HM", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Cepillado y aplanado de madera" },
         variantes: [
             { id: "T102M AC3", nombre: "T102M AC3 - Cepillador D=125mm" },
             { id: "T102M AF3", nombre: "T102M AF3 - Cepillador para Aplanar D=125mm" }
@@ -1443,7 +1443,7 @@ const baseDatosProductos = {
     "T194M": {
         codigoBase: "T194M", categoriaImg: "Cabezales", carpetaImg: "T194M-BB3",
         titulo: "Cabezal Cepillador Corte Alterno HM", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Cepillado y aplanado de madera" },
         variantes: [
             { id: "T194M BB3", nombre: "T194M BB3 - Cabezal Cepillador Corte Alterno D=125mm" }
         ]
@@ -1451,7 +1451,7 @@ const baseDatosProductos = {
     "TM06M": {
         codigoBase: "TM06M", categoriaImg: "Cabezales", carpetaImg: "TM06M",
         titulo: "Cabezal Cepillador Helicoidal HM", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Cepillado y aplanado de madera (bajo ruido)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Cepillado y aplanado de madera (bajo ruido)" },
         variantes: [
             { id: "TM06M AB3", nombre: "TM06M AB3 - Cepillador Helicoidal D=125mm" },
             { id: "TM06M AD3", nombre: "TM06M AD3 - Cepillador Helicoidal D=125mm" },
@@ -1465,7 +1465,7 @@ const baseDatosProductos = {
     "T198M": {
         codigoBase: "T198M", categoriaImg: "Cabezales", carpetaImg: "T198M",
         titulo: "Cabezal Ranurador HM", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Ranurado de madera" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Ranurado de madera" },
         variantes: [
             { id: "T198M FC3", nombre: "T198M FC3 - Cabezal Ranurador D=140mm" },
             { id: "T198M GC3", nombre: "T198M GC3 - Cabezal Ranurador D=140mm" }
@@ -1474,7 +1474,7 @@ const baseDatosProductos = {
     "F107M": {
         codigoBase: "F107M", categoriaImg: "Cabezales", carpetaImg: "F107M",
         titulo: "Cabezal para Ranurar Regulable con Precortante", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Ranurado de madera (regulable)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Ranurado de madera (regulable)" },
         variantes: [
             { id: "F107M AB3", nombre: "F107M AB3 - Ranurar Regulable c/Precortante D=150mm" }
         ]
@@ -1484,7 +1484,7 @@ const baseDatosProductos = {
     "TW": {
         codigoBase: "TW", categoriaImg: "Cabezales", carpetaImg: "TW01MAB3",
         titulo: "Cabezal para Juntar (Finger Joint)", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Uniones Finger Joint" },
         variantes: [
             { id: "TW01M AB3", nombre: "TW01M AB3 - Para Juntar Perfil Intercambiable D=136mm" },
             { id: "TW20M BF3", nombre: "TW20M BF3 - Para Juntar D=140mm" }
@@ -1493,7 +1493,7 @@ const baseDatosProductos = {
     "FG46S": {
         codigoBase: "FG46S", categoriaImg: "Cabezales", carpetaImg: "FG46S",
         titulo: "Cabezal Juntas Minizinken", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Uniones Finger Joint (minizinken)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Uniones Finger Joint (minizinken)" },
         variantes: [
             { id: "FG46S CB2", nombre: "FG46S CB2 - Juntas Minizinken D=160mm" }
         ]
@@ -1503,7 +1503,7 @@ const baseDatosProductos = {
     "TP": {
         codigoBase: "TP", categoriaImg: "Cabezales", carpetaImg: "TP23M AB3",
         titulo: "Cabezal Multiperfil", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Multiperfil" },
         variantes: [
             { id: "TP22M AB3", nombre: "TP22M AB3 - 1/2 Círculo Exterior D=120mm" },
             { id: "TP23M AB3", nombre: "TP23M AB3 - 1/2 Círculo Exterior D=120mm" },
@@ -1516,7 +1516,7 @@ const baseDatosProductos = {
     "TD": {
         codigoBase: "TD", categoriaImg: "Cabezales", carpetaImg: "TD51M",
         titulo: "Cabezal Replan para Multiperfil", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (replan)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Multiperfil (replan)" },
         variantes: [
             { id: "TD21M GB3", nombre: "TD21M GB3 - Replan con 5 Perfiles D=140mm" },
             { id: "TD52M HB3", nombre: "TD52M HB3 - Replan D=200mm" }
@@ -1525,7 +1525,7 @@ const baseDatosProductos = {
     "TF04MC": {
         codigoBase: "TF04MC", categoriaImg: "Cabezales", carpetaImg: "TF04MC",
         titulo: "Cabezal Perfil Universal Ch", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil (perfil universal)" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Multiperfil (perfil universal)" },
         variantes: [
             { id: "TF04MC GE3", nombre: "TF04MC GE3 - Perfil Universal Ch Intercambiable D=144mm" },
             { id: "TF04MC GH3", nombre: "TF04MC GH3 - Perfil Universal Ch Afilable D=144mm" }
@@ -1534,7 +1534,7 @@ const baseDatosProductos = {
     "GL20701M": {
         codigoBase: "GL20701M", categoriaImg: "Cabezales", carpetaImg: "GL20701M",
         titulo: "Cabezal Multiperfil Estandar", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Widia (Metal Duro)", "Uso": "Multiperfil" },
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Multiperfil" },
         variantes: [
             { id: "GL20701M", nombre: "GL20701M - Estandar 207 x 30-34" }
         ]
@@ -1734,6 +1734,9 @@ function cargarEstructuraProducto(info) {
         tituloBase = tituloBase.replace(reCod, '').trim();
     }
     const esSierraOMecha = info.categoriaImg === "Sierras" || info.categoriaImg === "Mechas";
+    // Sierras para melamina: título propio "Sierra para Melamina para [máquina] de [Ø]mm y [Z] dientes"
+    const CODIGOS_MELAMINA = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
+    const esMelamina = CODIGOS_MELAMINA.indexOf(info.codigoBase) !== -1;
 
     // Marca a mostrar (puntos 4 y 5): Sierras = marca real (Freud/Franzoi);
     // Cuchillas = Ilma; Diamante = sin marca; el resto = "Nordutensili" si lo es,
@@ -1858,9 +1861,14 @@ function cargarEstructuraProducto(info) {
                 // "Cuchilla [tipo] de [material] de [medida]"
                 const tipo = cb["Formato"] === "Chipera" ? "para Chipera" : cb["Formato"];
                 const matRaw = cb["Material"];
-                const mat = /HSS/i.test(matRaw) ? "HSS" : (/(widia|metal duro)/i.test(matRaw) ? "Widia" : matRaw);
+                const mat = /HSS/i.test(matRaw) ? "HSS" : (/(widia|metal duro)/i.test(matRaw) ? "Metal duro" : matRaw);
                 const medida = v ? v.nombre.split(" - ").slice(1).join(" - ").trim() : "";
                 tituloDOM.innerText = medida ? `Cuchilla ${tipo} de ${mat} de ${medida}` : `Cuchilla ${tipo} de ${mat}`;
+            } else if (esMelamina && m.ext && m.dientes) {
+                // "Sierra para Melamina para [primera máquina] de [Ø ext]mm y [Z] dientes"
+                const maqMel = maquinaDeProducto(info.codigoBase, info.categoriaImg) || "";
+                const primeraMaq = maqMel.split(/,| o /)[0].trim();
+                tituloDOM.innerText = `Sierra para Melamina para ${primeraMaq} de ${m.ext}mm y ${m.dientes} dientes`;
             } else if (esSierraOMecha && m.ext) {
                 tituloDOM.innerText = `${tituloBase} de ${m.ext}mm`;
             } else {
