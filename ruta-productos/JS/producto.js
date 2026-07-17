@@ -1546,7 +1546,7 @@ const baseDatosProductos = {
    ========================================================================== */
 // Ruta dedicada a cotizaciones (separada del formulario de contacto general).
 const ENDPOINT_COTIZACION = "https://servidor-page-wt.onrender.com/enviar-cotizacion";
-const WHATSAPP_NUMERO = "5491134609057";
+const WHATSAPP_NUMERO = "5491157528428";
 
 /* ==========================================================================
    3. LÓGICA DE INTERFAZ Y RENDERIZADO INTELIGENTE
