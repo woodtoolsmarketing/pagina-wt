@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const tieneFotos = key && manifest[key] && manifest[key].length > 0;
                 if (!tieneFotos) producto.dataset.sinFoto = '1';
             });
+            depurarFiltrosVacios();
             aplicarFiltros();
         })
         .catch(() => {}); // si no se puede leer el manifiesto, no escondemos nada
@@ -63,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
             [/^FG46S/, 'Tupí'],
             [/^FMES|^FME/, 'Tupí'],
             [/^FMR/, 'Tupí'],
-            [/^FRP|^FPP/, 'CNC o nesting'],
+            [/^FRP/, 'Tupí, machimbradora o moldurera'],   // fresa de replán de tablero
+            [/^FPP/, 'CNC o nesting'],                     // punta de plegado (mecha)
             [/^FP/, 'Tupí'],
             [/^FR12/, 'Ingletadora o máquina de mano'],
             [/^FRG|^FRINR|^FRIR|^FRPI|^FRI|^FRS/, 'Tupí'],
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             [/^FR/, 'Machimbradora o moldurera'],
             [/^GL/, 'Escuadradora'],
             [/^CB/, 'Cepilladora, moldurera o machimbradora'],
+            [/^JFRA/, 'Machimbradora o moldurera'],        // JFRA1 revestimiento alistonado
             [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
             [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
             [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
@@ -190,29 +193,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // --- MECHAS Y BROCAS ---
-        if (enlace.includes("/MCH/MPD") || enlace.includes("/MCH/MPI")) {
+        if (enlace.includes("MCH/MPD") || enlace.includes("MCH/MPI")) {
             producto.setAttribute('data-categoria', '300'); 
-        } else if (enlace.includes("/MCH/MCD") || enlace.includes("/MCH/MCI")) {
+        } else if (enlace.includes("MCH/MCD") || enlace.includes("MCH/MCI")) {
             producto.setAttribute('data-categoria', '301'); 
-        } else if (enlace.includes("/MCH/BRDD")) {
+        } else if (enlace.includes("MCH/BRDD")) {
             producto.setAttribute('data-categoria', '302'); 
         } else if (enlace.includes("MCH/MIDN")) {
             // Mechas de compresión (nesting): MIDN. Va ANTES que MID porque "MID"
             // también matchea "MIDN". (Sin barra inicial: los href son relativos.)
             producto.setAttribute('data-categoria', '310');
-        } else if (enlace.includes("/MCH/MID") || enlace.includes("/MCH/MIIR") || enlace.includes("/MCH/MI.")) {
+        } else if (enlace.includes("MCH/MID") || enlace.includes("MCH/MIIR") || enlace.includes("MCH/MI.")) {
             producto.setAttribute('data-categoria', '303');
-        } else if (enlace.includes("/MCH/MBD") || enlace.includes("/MCH/MBI") || enlace.includes("/MCH/MB.")) {
+        } else if (enlace.includes("MCH/MBD") || enlace.includes("MCH/MBI") || enlace.includes("MCH/MB.")) {
             producto.setAttribute('data-categoria', '304'); 
-        } else if (enlace.includes("/MCH/MAM") || enlace.includes("/MCH/PINZAER")) {
+        } else if (enlace.includes("MCH/MAM") || enlace.includes("MCH/PINZAER")) {
             producto.setAttribute('data-categoria', '305'); 
-        } else if (enlace.includes("/MCH/MCAR")) {
+        } else if (enlace.includes("MCH/MCAR")) {
             producto.setAttribute('data-categoria', '306'); 
-        } else if (enlace.includes("/MCH/MBA")) {
+        } else if (enlace.includes("MCH/MBA")) {
             producto.setAttribute('data-categoria', '307'); 
-        } else if (enlace.includes("/MCH/AVD")) {
+        } else if (enlace.includes("MCH/AVD")) {
             producto.setAttribute('data-categoria', '308'); 
-        } else if (enlace.includes("/MCH/Router_Franzoi")) {
+        } else if (enlace.includes("MCH/Router_Franzoi")) {
             producto.setAttribute('data-categoria', '309'); 
         }
 
@@ -291,6 +294,19 @@ document.addEventListener("DOMContentLoaded", function() {
         material: 'todos',
         maquina: 'todos'
     };
+
+    // Memoria del último filtro elegido en esta página. Sirve para que al entrar
+    // a una herramienta y volver atrás, se conserve lo último que eligió el
+    // usuario (incluida la "limpieza" de filtros) en vez de re-aplicar la URL.
+    const CLAVE_ESTADO = 'wt-filtros:' + window.location.pathname;
+    function guardarEstado() {
+        try {
+            sessionStorage.setItem(CLAVE_ESTADO, JSON.stringify({
+                filtros: filtrosActivos,
+                busqueda: typeof textoBusqueda === 'string' ? textoBusqueda : ''
+            }));
+        } catch (e) {}
+    }
 
     // =====================================================================
     // 3b. BUSCADOR POR CÓDIGO O NOMBRE (input #buscador-productos)
@@ -380,6 +396,57 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Oculta CUALQUIER opción de filtro que no tenga ningún producto visible en
+    // esta página (categorías vacías, marcas sin productos, máquinas que nadie usa,
+    // etc.). Si un grupo entero queda sin opciones, se esconde el grupo.
+    // Cuando más adelante se sumen productos/fotos, las opciones reaparecen solas.
+    function depurarFiltrosVacios() {
+        const botones = Array.from(document.querySelectorAll('.filter-btn[data-filter-type][data-filter-value]'));
+        if (!botones.length) return;
+
+        // Valores realmente presentes entre los productos que SÍ se muestran.
+        const presentes = {};
+        productos.forEach(p => {
+            if (p.dataset.sinFoto === '1') return;   // lo escondido no cuenta
+            Object.keys(filtrosActivos).forEach(tipo => {
+                const val = p.getAttribute('data-' + tipo);
+                if (!val) return;
+                if (!presentes[tipo]) presentes[tipo] = new Set();
+                // "maquina" es multivalor (varias keywords separadas por espacio)
+                if (tipo === 'maquina') val.split(/\s+/).forEach(k => { if (k) presentes[tipo].add(k.toLowerCase()); });
+                else presentes[tipo].add(val.toLowerCase());
+            });
+        });
+
+        botones.forEach(b => {
+            const tipo = b.getAttribute('data-filter-type');
+            const valor = (b.getAttribute('data-filter-value') || '').toLowerCase();
+            // Los alias (ej. "discos" = sierra+incisor) se dan por válidos.
+            const esAlias = !!(aliasFiltros[tipo] && aliasFiltros[tipo][valor]);
+            const hay = esAlias || !!(presentes[tipo] && presentes[tipo].has(valor));
+            const item = b.closest('li') || b;
+            item.style.display = hay ? '' : 'none';
+            // Si el filtro activo apuntaba a algo que ya no existe, lo soltamos.
+            if (!hay && b.classList.contains('activo')) {
+                b.classList.remove('activo');
+                filtrosActivos[tipo] = 'todos';
+            }
+        });
+
+        // Esconder los grupos que quedaron sin ninguna opción visible
+        // (nunca los que contienen el botón "Limpiar Filtros").
+        document.querySelectorAll('.filter-group').forEach(grupo => {
+            if (grupo.querySelector('#btn-limpiar')) return;
+            const opciones = grupo.querySelectorAll('.filter-btn[data-filter-type][data-filter-value]');
+            if (!opciones.length) return;
+            const algunaVisible = Array.from(opciones).some(b => {
+                const item = b.closest('li') || b;
+                return item.style.display !== 'none';
+            });
+            grupo.style.display = algunaVisible ? '' : 'none';
+        });
+    }
+
     // Muestra/oculta los submenús contextuales según el filtro padre activo.
     function actualizarSubmenus() {
         const subMol = document.getElementById('submenu-moldura');
@@ -393,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function() {
         inputBusqueda.addEventListener('input', function() {
             textoBusqueda = this.value.trim().toLowerCase();
             aplicarFiltros();
+            guardarEstado();
         });
     }
 
@@ -402,8 +470,32 @@ document.addEventListener("DOMContentLoaded", function() {
     //    el array correspondiente. Si no, se comporta como antes.
     // =====================================================================
     const urlParams = new URLSearchParams(window.location.search);
-    
-    urlParams.forEach((valorUrl, tipoFiltroUrl) => {
+
+    // Si el usuario VUELVE atrás (por ej. desde la ficha de una herramienta),
+    // restauramos el último filtro que había elegido en vez de re-aplicar la URL.
+    let estadoRestaurado = false;
+    try {
+        const nav = performance.getEntriesByType('navigation')[0];
+        if (nav && nav.type === 'back_forward') {
+            const g = JSON.parse(sessionStorage.getItem(CLAVE_ESTADO) || 'null');
+            if (g && g.filtros) {
+                filtrosActivos = g.filtros;
+                textoBusqueda = g.busqueda || '';
+                if (inputBusqueda) inputBusqueda.value = textoBusqueda;
+                Object.keys(filtrosActivos).forEach(tipo => {
+                    const val = filtrosActivos[tipo];
+                    if (val === 'todos') return;
+                    (Array.isArray(val) ? val : [val]).forEach(v => {
+                        const b = document.querySelector('.filter-btn[data-filter-type="' + tipo + '"][data-filter-value="' + v + '"]');
+                        if (b) b.classList.add('activo');
+                    });
+                });
+                estadoRestaurado = true;
+            }
+        }
+    } catch (e) {}
+
+    if (!estadoRestaurado) urlParams.forEach((valorUrl, tipoFiltroUrl) => {
         if (filtrosActivos[tipoFiltroUrl] !== undefined) {
             filtrosActivos[tipoFiltroUrl] = resolverAlias(tipoFiltroUrl, valorUrl);
             
@@ -433,7 +525,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Búsqueda desde la lupa del header: viene como ?q=texto en la URL.
     const qParam = urlParams.get('q');
-    if (qParam && inputBusqueda) {
+    if (!estadoRestaurado && qParam && inputBusqueda) {
         inputBusqueda.value = qParam;
         textoBusqueda = qParam.trim().toLowerCase();
     }
@@ -475,6 +567,7 @@ document.addEventListener("DOMContentLoaded", function() {
             actualizarSubmenus();
 
             aplicarFiltros();
+            guardarEstado();
         });
     });
 
@@ -501,6 +594,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (inputBusqueda) { inputBusqueda.value = ''; textoBusqueda = ''; }
             window.history.replaceState({}, document.title, window.location.pathname);
             aplicarFiltros();
+            guardarEstado();
         });
     }
 
@@ -509,5 +603,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================================================
     // Si al cargar (por URL) hay un filtro con submenú (moldura o melamina), lo mostramos.
     actualizarSubmenus();
+    depurarFiltrosVacios();
     aplicarFiltros();
 });

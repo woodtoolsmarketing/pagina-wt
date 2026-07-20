@@ -742,6 +742,15 @@ const baseDatosProductos = {
         ]
     },
     // --- Frente Inglés HM (catálogo pág. 6) ---
+    // --- Juego de Fresas Revestimiento Alistonado (JFRA) ---
+    "JFRA1": {
+        codigoBase: "JFRA1", categoriaImg: "Fresas", carpetaImg: "JFRA1",
+        titulo: "Juego de Fresas Revestimiento Alistonado", marca: "WoodTools",
+        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Revestimiento alistonado", "Material": "Metal duro" },
+        variantes: [
+            { id: "JFRA1", nombre: "JFRA1 - JGO. 4 FR. Z=4 c/u + 1 FR. Z=6 #21/25" }
+        ]
+    },
     "JFFI": {
         codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "JFFI01",
         titulo: "Frente Inglés HM", marca: "WoodTools",
@@ -1683,7 +1692,8 @@ function maquinaDeProducto(codigo, categoria) {
         [/^FG46S/, 'Tupí'],
         [/^FMES|^FME/, 'Tupí'],
         [/^FMR/, 'Tupí'],
-        [/^FRP|^FPP/, 'CNC o nesting'],
+        [/^FRP/, 'Tupí, machimbradora o moldurera'],   // fresa de replán de tablero
+        [/^FPP/, 'CNC o nesting'],                     // punta de plegado (mecha)
         [/^FP/, 'Tupí'],
         [/^FR12/, 'Ingletadora o máquina de mano'],
         [/^FRG|^FRINR|^FRIR|^FRPI|^FRI|^FRS/, 'Tupí'],
@@ -1691,6 +1701,7 @@ function maquinaDeProducto(codigo, categoria) {
         [/^FR/, 'Machimbradora o moldurera'],
         [/^GL/, 'Escuadradora'],
         [/^CB/, 'Cepilladora, moldurera o machimbradora'],
+        [/^JFRA/, 'Machimbradora o moldurera'],        // JFRA1 revestimiento alistonado
         [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
         [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
         [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
