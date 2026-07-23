@@ -264,8 +264,21 @@ const baseDatosProductos = {
             { id: "SC3004164F", nombre: "SC3004164F - D: 300mm | B: 4.0mm | d: 30mm | Z: 16+4" },
             { id: "SC30042164F", nombre: "SC30042164F - D: 300mm | B: 4.2mm | Z: 16+4" },
             { id: "SC35045184F", nombre: "SC35045184F - D: 350mm | B: 4.5mm | Z: 18+4" },
+            { id: "SC3505135184F", nombre: "SC3505135184F - D: 350mm | B: 5.1mm | Z: 18+4" },
             { id: "SC35045244F", nombre: "SC35045244F - D: 350mm | B: 4.5mm | Z: 24+4" },
-            { id: "SC60055244F", nombre: "SC60055244F - D: 600mm | B: 5.5mm | d: 30mm | Z: 24+4" }
+            { id: "SC40045184F", nombre: "SC40045184F - D: 400mm | B: 4.5mm | Z: 18+4" },
+            { id: "SC4005135184F", nombre: "SC4005135184F - D: 400mm | B: 5.1mm | Z: 18+4" },
+            { id: "SC4504248F", nombre: "SC4504248F - D: 450mm | B: 4.2mm | Z: 48" },
+            { id: "SC4505204F", nombre: "SC4505204F - D: 450mm | B: 5.1mm | Z: 20+4" },
+            { id: "SC4805204F", nombre: "SC4805204F - D: 480mm | B: 5.1mm | Z: 18+4" },
+            { id: "SC5005184F", nombre: "SC5005184F - D: 500mm | B: 5.1mm | Z: 18+4" },
+            { id: "SC55051204F", nombre: "SC55051204F - D: 550mm | B: 5.1mm | Z: 20+4" },
+            { id: "SC60055244F", nombre: "SC60055244F - D: 600mm | B: 5.5mm | d: 30mm | Z: 24+4" },
+            { id: "SC125324F", nombre: "SC125324F - D: 125mm | B: 3.0mm | d: 30mm | Z: 24 Recto" },
+            { id: "SC125424F", nombre: "SC125424F - D: 125mm | B: 4.0mm | d: 30mm | Z: 24 Recto" },
+            { id: "SC150324F", nombre: "SC150324F - D: 150mm | B: 3.0mm | d: 30mm | Z: 24 Recto" },
+            { id: "SC150424F", nombre: "SC150424F - D: 150mm | B: 4.0mm | d: 30mm | Z: 24 Recto" },
+            { id: "SCC1324", nombre: "SCC1324 - D: 133mm | B: 3.5mm | d: 20mm | Z: 24" }
         ]
     },
 
