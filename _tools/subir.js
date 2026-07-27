@@ -35,7 +35,10 @@ function walk(dir, acc = []) {
       if (EXCLUIR_DIRS.has(e.name)) continue;
       walk(path.join(dir, e.name), acc);
     } else if (e.isFile()) {
-      if (EXCLUIR_ARCH.has(e.name) || e.name.startsWith('.')) continue;
+      if (EXCLUIR_ARCH.has(e.name)) continue;
+      // Saltear archivos ocultos (dotfiles) EXCEPTO .htaccess, que es parte
+      // del sitio (redirects/SEO) y SÍ tiene que subir al servidor.
+      if (e.name.startsWith('.') && e.name !== '.htaccess') continue;
       if (EXCLUIR_EXT.has(path.extname(e.name).toLowerCase())) continue;
       acc.push(path.join(dir, e.name));
     }
