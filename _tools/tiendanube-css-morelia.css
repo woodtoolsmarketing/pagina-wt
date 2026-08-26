@@ -1,0 +1,83 @@
+/* =============================================================================
+   WOODTOOLS - CSS personalizado para Tienda Nube (tema Morelia)
+   -----------------------------------------------------------------------------
+   Va en:  Tienda online > Diseno > Editar diseno actual >
+           Edicion avanzada de CSS  ->  pegar, "Probar CSS", "Publicar cambios".
+
+   ARCHIVO SUPERSEDIDO -> usar _tools/tiendanube/theme-custom.css
+   Ese archivo es la version completa (encabezado, pie, ficha, boton de
+   cotizacion) y ademas corrige un dato que aca estaba MAL: el editor NO
+   borra los selectores descendientes, si los guarda y funcionan. Lo unico
+   que borra son !important, las variables propias y los comentarios.
+   Los comentarios tampoco se guardan: esta copia es la documentada.
+   ============================================================================= */
+
+/* FOTOS DE PRODUCTO: enteras, no recortadas.
+   Morelia trae object-fit:cover y corta la foto. El catalogo son herramientas
+   sobre fondo blanco: se tienen que ver completas, igual que en el sitio. */
+.item-image img,
+.item-image-featured img,
+.item-image-secondary img { object-fit: contain; }
+
+.item-image { background-color: #f9f9f9; padding: 15px; border-bottom: 1px solid #f0f0f0; }
+
+/* TARJETA DE PRODUCTO: como las del sitio */
+.item {
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: box-shadow .2s, border-color .2s;
+}
+.item:hover { box-shadow: 0 3px 12px rgba(0, 0, 0, .12); border-color: #bbbbbb; }
+
+.item-description { padding: 10px 12px; }
+.item-description.text-center { text-align: left; }
+
+/* NOMBRE DEL PRODUCTO.
+   El tema le pone las clases font-small y opacity-80. opacity-80 no lleva
+   !important y se puede pisar; font-small SI lo lleva, asi que el nombre queda
+   en 12px en vez de los 13px del sitio (diferencia imperceptible; cambiarlo
+   obligaria a tocar --font-small, que alimenta 21 reglas mas del tema). */
+.item-name,
+.item-name.font-small {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.4;
+	color: #333333;
+	text-transform: none;
+}
+.item-name.opacity-80 { opacity: 1; }
+
+/* ALINEACION: el tema centra con .text-center{...!important}. No se puede pisar
+   en el padre, pero si poniendo la regla en los hijos, que solo heredan. */
+.item-name { text-align: left; }
+.item-price-container { text-align: left; }
+.item-price { text-align: left; font-weight: 700; color: #333333; }
+
+/* BOTONES: el radio del sitio es 3px */
+.btn, .btn-primary, .js-addtocart {
+	border-radius: 3px;
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+/* ENCABEZADO: la sombra suave del sitio */
+.head-main, .js-head-main { box-shadow: 0 2px 5px rgba(0, 0, 0, .1); }
+
+/* MENU: 14px semi-negrita, sin subrayar */
+.head-main a, .js-head-main a, .nav-list a {
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: none;
+	letter-spacing: normal;
+	text-decoration: none;
+}
+
+/* PIE DE PAGINA */
+.footer-colors, .js-footer { padding-top: 40px; padding-bottom: 40px; border-top: 1px solid #555555; }
+
+/* TITULOS sin mayusculas forzadas, y links sin subrayado */
+h1, h2, h3, h4, h5, h6, .section-title, .title-primary { text-transform: none; letter-spacing: normal; }
+a { text-decoration: none; }

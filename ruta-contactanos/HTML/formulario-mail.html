@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="../../imagenes/logos/WoodTools.png">
     <meta name="description" content="Contacto - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Contacto - WoodTools S.R.L.</title>
-    <link rel="stylesheet" href="../../styles.css?v=9">
+    <link rel="stylesheet" href="../../styles.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         main { background-color: #f8f8f8; padding: 60px 20px; min-height: 60vh; }
@@ -109,7 +109,7 @@
                     <button type="button" class="lupa-btn" aria-label="Buscar herramientas" onclick="var w=this.closest('.header-search');w.classList.toggle('abierto');if(w.classList.contains('abierto')){w.querySelector('input').focus();}"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="search" class="lupa-input" placeholder="Buscar herramienta…" data-productos="../../ruta-productos/HTML/productos.html" onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q){window.location.href=this.dataset.productos+'?q='+encodeURIComponent(q);}}">
                 </div>
-                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">COMPRÁ AHORA</a>
+                <a href="https://tiendadewoodtoolssrl.mitiendanube.com/" target="_blank" class="btn-shop">COMPRÁ AHORA</a>
                 <div class="social-icons" style="display: flex; align-items: center;">
                     <a href="https://www.facebook.com/woodtoolsargentina" target="_blank"><i class="fa-brands fa-square-facebook facebook"></i></a>
                     <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank"><i class="fa-brands fa-youtube youtube"></i></a>
@@ -158,9 +158,17 @@
         <img loading="lazy" src="../../imagenes/marcas/Nordutensili.jpeg" alt="Nordutensili">
     </section>
 
-    <footer>
+    <footer class="footer-wt">
         <div class="footer-contact-bar">
-            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 ó +54 (11) 4218-1701</p>
+            <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 &oacute; +54 (11) 4218-1701 | ventas@woodtools.com.ar</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/woodtoolsargentina" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCsUxQWm2n8BMEhVQsOP_ydw" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/woodtoolssrl/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 WoodTools S.R.L. - WoodTools Marketing</p>
         </div>
     </footer>
 

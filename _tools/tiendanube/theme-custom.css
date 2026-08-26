@@ -1,0 +1,503 @@
+/* =============================================================================
+   WOODTOOLS  -  theme-custom.css
+   Clon visual de www.woodtools.com.ar para Tienda Nube (tema Morelia)
+   -----------------------------------------------------------------------------
+   DONDE VA:
+     Tienda online > Diseno > Editar diseno actual >
+     Edicion avanzada de CSS  ->  pegar todo > "Probar CSS" > "Publicar cambios"
+
+   IMPORTANTE - el editor de Tienda Nube sanitiza lo que pegas:
+     1) Borra las declaraciones con !important y las variables propias (--x).
+        Esto SI o SI hay que tenerlo en cuenta: el tema Morelia usa !important
+        en sus clases utilitarias (.font-small, .text-center), asi que esas
+        no se pueden pisar de frente. La vuelta es poner la regla en el hijo,
+        que solo hereda (ver el bloque del nombre de producto mas abajo).
+     2) Borra los comentarios. Este archivo es la copia documentada; lo que
+        queda guardado en la tienda es el mismo CSS pero sin estos textos.
+
+   NOTA sobre los selectores descendientes (".a .b", con espacio): SI se
+   guardan y SI funcionan. Verificado leyendo la hoja que sirve la tienda:
+   la regla ".head-main a, .js-head-main a, .nav-list a" esta viva en el
+   storefront. (En una version anterior de este archivo decia lo contrario;
+   era un diagnostico equivocado: lo que fallaba era la especificidad contra
+   el !important del tema, no el sanitizador.)
+
+   PALETA TOMADA DE styles.css DEL SITIO:
+     rojo corporativo ....... #a41e22
+     rojo hover ............. #7d161a
+     fondo del sitio ........ #f8f8f8
+     texto .................. #333333
+     texto secundario ....... #777777
+     titulos de seccion ..... #666666
+     fondo del pie .......... #383c40
+     texto del pie .......... #aaaaaa
+     borde del pie .......... #555555
+     tipografia ............. Segoe UI, Tahoma, Geneva, Verdana, sans-serif
+     radio de boton ......... 3px
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. BASE
+   ============================================================================= */
+
+/* El sitio usa la fuente de sistema, no una fuente cargada. Se replica aca.
+   (En "Tipo de letra" del editor no existe Segoe UI, asi que va por CSS.) */
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f8f8f8;
+	color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.title-primary {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+/* El sitio no subraya ningun enlace */
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
+
+/* =============================================================================
+   2. ENCABEZADO
+   El fondo blanco y el color de texto se fijan en:
+   Diseno > Encabezado > Colores  (fondo #ffffff / textos #333333)
+   Aca solo va lo que ese panel no cubre.
+   ============================================================================= */
+
+.head-main,
+.js-head-main {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+	background-color: #ffffff;
+}
+
+/* Menu: 14px semi-negrita, sin mayusculas forzadas ni subrayado */
+.nav-list a,
+.nav-item a,
+.head-main a,
+.js-head-main a {
+	font-size: 14px;
+	font-weight: 600;
+	color: #333333;
+	text-transform: none;
+	letter-spacing: normal;
+	text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-item a:hover,
+.head-main a:hover {
+	color: #a41e22;
+}
+
+/* Submenu desplegable: fondo rojo corporativo y letras blancas, como el sitio */
+.nav-list-inner,
+.nav-dropdown,
+.js-nav-dropdown {
+	background-color: #a41e22;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
+	overflow: hidden;
+	border: none;
+	min-width: 230px;
+}
+
+.nav-list-inner a,
+.nav-dropdown a,
+.js-nav-dropdown a {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 15px 20px;
+	display: block;
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+	transition: background-color .3s ease, padding-left .3s ease;
+}
+
+.nav-list-inner a:hover,
+.nav-dropdown a:hover,
+.js-nav-dropdown a:hover {
+	background-color: #7d161a;
+	color: #ffffff;
+	padding-left: 25px;
+}
+
+/* Iconos de lupa y carrito: rojo al pasar el mouse */
+.head-icon:hover,
+.js-toggle-search:hover,
+.icon-cart:hover {
+	color: #a41e22;
+}
+
+
+/* =============================================================================
+   3. BOTONES
+   El color de fondo se fija en Diseno > Colores de tu marca > Boton principal
+   (#a41e22). Aca va la forma, que ese panel no controla.
+   ============================================================================= */
+
+.btn,
+.btn-primary,
+.btn-default,
+.js-addtocart,
+.btn-add-to-cart {
+	border-radius: 3px;
+	text-transform: none;
+	letter-spacing: normal;
+	font-weight: 700;
+	transition: background-color .3s;
+}
+
+.btn-primary:hover,
+.js-addtocart:hover,
+.btn-add-to-cart:hover {
+	background-color: #7d161a;
+	border-color: #7d161a;
+}
+
+
+/* =============================================================================
+   4. TARJETA DE PRODUCTO (listado)
+   12 propiedades verificadas una a una contra las .card del sitio.
+   ============================================================================= */
+
+/* Las fotos enteras, no recortadas. Morelia trae object-fit:cover y corta la
+   herramienta; el catalogo son piezas sobre fondo blanco y se tienen que ver
+   completas, igual que en el sitio (styles.css: .img-container img). */
+.item-image img,
+.item-image-featured img,
+.item-image-secondary img {
+	object-fit: contain;
+}
+
+.item-image {
+	background-color: #f9f9f9;
+	padding: 15px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.item {
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: box-shadow .2s, border-color .2s, transform .3s ease;
+}
+
+/* El sitio levanta la tarjeta 5px al pasar el mouse (.card:hover) */
+.item:hover {
+	box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
+	border-color: #bbbbbb;
+	transform: translateY(-5px);
+}
+
+.item-description { padding: 10px 12px; }
+.item-description.text-center { text-align: left; }
+
+/* Nombre del producto.
+   El tema le agrega las clases .font-small y .opacity-80.
+   .opacity-80 se puede pisar; .font-small NO (el tema la declara con
+   !important), asi que el nombre queda en 12px en vez de los 13px del sitio.
+   Cambiarlo obligaria a tocar --font-small, que alimenta 21 reglas mas. */
+.item-name,
+.item-name.font-small {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.4;
+	color: #333333;
+	text-transform: none;
+	text-align: left;
+}
+
+.item-name.opacity-80 { opacity: 1; }
+
+/* Alineacion: el tema centra con .text-center{...!important}. No se puede pisar
+   en el padre, pero si poniendo la regla en los hijos, que solo heredan. */
+.item-price-container { text-align: left; }
+
+.item-price {
+	text-align: left;
+	font-weight: 700;
+	color: #333333;
+}
+
+
+/* =============================================================================
+   5. FICHA DE PRODUCTO
+   ============================================================================= */
+
+.product-name,
+.js-product-name {
+	color: #333333;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.product-price,
+.js-price-display {
+	color: #333333;
+	font-weight: 700;
+}
+
+/* Miga de pan discreta, como los textos secundarios del sitio */
+.breadcrumbs,
+.js-breadcrumbs {
+	font-size: 12px;
+	color: #777777;
+}
+
+/* Foto grande de la ficha: tambien entera */
+.product-image img,
+.js-product-image img {
+	object-fit: contain;
+}
+
+
+/* =============================================================================
+   6. BOTON "CONSULTAR COTIZACION POR WHATSAPP"
+   Lo inserta el script del sello (ver sello-woodtools.html).
+   Es la variante secundaria del boton rojo del sitio: contorno rojo sobre
+   blanco, y se rellena de rojo al pasar el mouse. Asi no compite con
+   "Agregar al carrito", que es la accion primaria.
+   ============================================================================= */
+
+.wt-btn-cotizar {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 10px;
+	padding: 11px 20px;
+	background-color: #ffffff;
+	color: #a41e22;
+	border: 2px solid #a41e22;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color .3s, color .3s;
+}
+
+.wt-btn-cotizar:hover {
+	background-color: #a41e22;
+	color: #ffffff;
+	border-color: #a41e22;
+	text-decoration: none;
+}
+
+.wt-btn-cotizar:focus {
+	outline: 2px solid #7d161a;
+	outline-offset: 2px;
+}
+
+/* El glifo de WhatsApp que va adentro del boton */
+.wt-ico-wa {
+	vertical-align: -3px;
+	margin-right: 8px;
+}
+
+/* -----------------------------------------------------------------------------
+   PRODUCTOS SIN PRECIO CARGADO
+   Tienda Nube los marca solo como "contact" y cambia "Agregar al carrito" por
+   "Consultar precio" (abre el formulario de contacto). Con el catalogo
+   importado sin precios eso deja dos botones de consulta uno sobre otro, los
+   dos rojos llenos. Estas reglas ordenan cual manda.
+   La clase la pone el script del sello en el <body>, segun
+   CFG.prioridad_sin_precio.
+   Estos SI son selectores descendientes, y funcionan: verificado en el
+   storefront (ver la nota de la cabecera de este archivo).
+   -------------------------------------------------------------------------- */
+
+/* Default: gana WhatsApp, que es el canal real de ventas. */
+.wt-consultar-whatsapp .wt-btn-cotizar {
+	background-color: #a41e22;
+	color: #ffffff;
+	border-color: #a41e22;
+}
+
+.wt-consultar-whatsapp .wt-btn-cotizar:hover {
+	background-color: #7d161a;
+	border-color: #7d161a;
+	color: #ffffff;
+}
+
+.wt-consultar-whatsapp .btn-add-to-cart {
+	background-color: #ffffff;
+	color: #a41e22;
+	border: 2px solid #a41e22;
+}
+
+.wt-consultar-whatsapp .btn-add-to-cart:hover {
+	background-color: #f5eaea;
+	color: #7d161a;
+	border-color: #7d161a;
+}
+
+/* Alternativa: gana el formulario de Tienda Nube. Se activa poniendo
+   prioridad_sin_precio: 'formulario' en el script del sello; ahi el boton
+   nativo queda como viene (rojo lleno) y no hace falta regla extra. */
+
+/* Aviso chico debajo del boton */
+.wt-nota-catalogo {
+	margin-top: 8px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #777777;
+	text-align: center;
+}
+
+.wt-nota-catalogo a {
+	color: #a41e22;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+
+/* =============================================================================
+   7. TITULOS DE SECCION Y TIRA DE MARCAS
+   ============================================================================= */
+
+/* El sitio usa titulos de seccion finos y grises (.titulo-seccion) */
+.section-title,
+.title-primary,
+.home-title {
+	font-weight: 300;
+	color: #666666;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+/* Logos de marcas enteros y a la misma altura que el sitio (#marcas img) */
+.brands-item img,
+.js-brands img {
+	object-fit: contain;
+	max-height: 60px;
+}
+
+
+/* =============================================================================
+   8. PIE DE PAGINA
+   Los colores (#383c40 de fondo, #aaaaaa de texto) se fijan en:
+   Diseno > Pie de pagina > Colores.  Aca va el resto.
+   ============================================================================= */
+
+.footer-colors,
+.js-footer {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-top: 1px solid #555555;
+	font-size: 14px;
+}
+
+.footer-colors a,
+.js-footer a {
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+.footer-colors a:hover,
+.js-footer a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+
+/* =============================================================================
+   9. FORMULARIOS (buscador, newsletter, checkout)
+   ============================================================================= */
+
+.form-control:focus,
+.input-field:focus {
+	border-color: #a41e22;
+	box-shadow: none;
+	outline: none;
+}
+
+
+/* =============================================================================
+   10. TIRA DE MARCAS EN EL PIE
+   Igual que la seccion #marcas del sitio, que esta en las 184 paginas.
+   La inyecta el script del sello justo antes del <footer>.
+   Las imagenes salen de woodtools.com.ar (no hay proteccion de hotlink, y se
+   comprobo que las 5 cargan por https desde el dominio de la tienda), asi no
+   hay que duplicar archivos ni subirlos a mano.
+   ============================================================================= */
+
+.wt-marcas {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 40px;
+	padding: 40px 5%;
+	background-color: #ffffff;
+}
+
+.wt-marcas img {
+	height: 60px;
+	object-fit: contain;
+}
+
+@media (max-width: 700px) {
+	.wt-marcas { gap: 24px; padding: 28px 5%; }
+	.wt-marcas img { height: 40px; }
+}
+
+
+/* =============================================================================
+   11. IMAGEN DE FAMILIA PARA LAS HERRAMIENTAS SIN FOTO
+   Mientras el catalogo no tenga fotos propias, Tienda Nube dibuja un icono de
+   camara gris. Estas reglas lo reemplazan por la imagen de la familia que ya
+   usa el sitio en imagenes/herramientas/Productos-slide/.
+
+   Como funciona: en un <img>, "content: url(...)" reemplaza lo que se dibuja
+   sin tocar el atributo src. El placeholder se reconoce porque su archivo se
+   llama no-photo-*.webp. Se matchea src Y srcset porque las tarjetas de mas
+   abajo se cargan en diferido y ahi el nombre solo aparece en srcset.
+
+   La clase wt-cat-* la pone el script del sello mirando el nombre del producto
+   y la miga de pan. Si no reconoce la familia, queda el logo de WoodTools.
+   ============================================================================= */
+
+img[src*="no-photo"],
+img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/logos/WoodTools.png");
+	object-fit: contain;
+}
+
+.wt-cat-sierras img[src*="no-photo"],
+.wt-cat-sierras img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Sierras.jpg");
+}
+
+.wt-cat-fresas img[src*="no-photo"],
+.wt-cat-fresas img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Fresas.png");
+}
+
+.wt-cat-cuchillas img[src*="no-photo"],
+.wt-cat-cuchillas img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Cuchillas.png");
+}
+
+.wt-cat-mechas img[src*="no-photo"],
+.wt-cat-mechas img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Mechas.png");
+}
+
+.wt-cat-diamante img[src*="no-photo"],
+.wt-cat-diamante img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Diamante.png");
+}
+
+.wt-cat-cabezales img[src*="no-photo"],
+.wt-cat-cabezales img[srcset*="no-photo"] {
+	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Cabezales.png");
+}

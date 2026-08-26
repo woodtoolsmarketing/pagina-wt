@@ -633,3 +633,53 @@ footer {
 @media (max-width: 480px) {
     .header-search.abierto .lupa-input { flex-basis: 130px; width: 130px; }
 }
+
+
+/* ==========================================================
+   PIE UNIFICADO
+   El mismo pie en las 184 paginas del sitio y en la Tienda Nube:
+   barra de contacto oscura + redes + copyright.
+   footer.footer-wt anula la regla "footer {}" de esta misma hoja,
+   que pintaba el pie de una sola pieza y peleaba con los tres niveles.
+   ========================================================== */
+footer.footer-wt {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-top: none;
+    text-align: center;
+    font-size: inherit;
+}
+
+.footer-contact-bar {
+    background-color: #383c40;
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    background-color: #ffffff;
+    padding: 30px 10px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-social { margin-bottom: 15px; }
+
+.footer-social a {
+    color: #333;
+    font-size: 26px;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.footer-social a:hover { color: #a41e22; }
+
+.footer-bottom p {
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+}

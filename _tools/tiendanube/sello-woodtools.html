@@ -1,0 +1,258 @@
+<!-- =============================================================================
+     WOODTOOLS - Codigo del sello (Tienda Nube / tema Morelia)
+     -----------------------------------------------------------------------------
+     ESTE ARCHIVO ES LA COPIA DOCUMENTADA DE LO QUE YA ESTA INSTALADO EN:
+     (mismo codigo; en la tienda algunos comentarios estan mas condensados)
+       Tienda online > Diseno > Editar diseno actual > Pie de pagina >
+       "Sellos personalizados en el footer" > "Codigo Javascript o HTML del sello"
+
+     Si hay que cambiar algo (el numero de WhatsApp, el texto del boton),
+     se edita aca, se pega el bloque <script> completo en ese campo y se
+     aprieta "Publicar cambios".
+
+     POR QUE VA AHI: es el unico campo de esta cuenta que admite HTML/JS propio
+     en TODAS las paginas de la tienda. "Codigos externos" no sirve para esto:
+     solo tiene campos cerrados (IDs de pixel, meta tags de verificacion) y sus
+     unicos campos de codigo libre corren nada mas que en las paginas de fin de
+     compra. Y el tema no se puede editar por archivo: esta cuenta no tiene
+     "Editar codigo HTML/CSS", y Tienda Nube no da FTP de tema (ver INSTALACION.md).
+
+     QUE HACE:
+       1. Agrega el boton "Consultar cotizacion por WhatsApp" en la ficha de
+          producto, con el nombre del producto, el SKU y el link de la pagina
+          ya escritos en el mensaje.
+       2. Agrega debajo el enlace de vuelta al catalogo completo del sitio.
+       3. Deja preparados (comentados) los bloques de pixeles y de CRM.
+       4. Le pone al body la familia de herramienta, para que los productos sin
+          foto muestren la imagen de su familia en vez del icono de camara.
+       5. Agrega la tira de marcas arriba del pie, como en el sitio.
+
+     El estilo del boton esta en theme-custom.css (.wt-btn-cotizar).
+     Verificado en vivo el 26/08/2026 sobre las 3 fichas de prueba.
+     ============================================================================= -->
+
+<script>
+(function () {
+	'use strict';
+
+	/* CONFIGURACION - lo unico que se toca para mantener esto */
+	var CFG = {
+		whatsapp: '5491157528428',
+		texto_boton: 'Consultar cotización por WhatsApp',
+		plantilla_mensaje: 'Hola WoodTools, necesito una cotización para: {producto}. Link: {link}',
+		/* Que pasa en los productos SIN precio cargado.
+		   Tienda Nube los marca solo como "contact" y cambia "Agregar al
+		   carrito" por "Consultar precio", que abre el formulario de contacto.
+		   Con el catalogo importado sin precios, eso deja DOS botones de
+		   consulta uno arriba del otro. Esta opcion decide cual manda:
+		     'whatsapp'  -> WhatsApp lleno, "Consultar precio" en contorno.
+		                    Es el default porque WhatsApp es el canal real de
+		                    ventas (esta en el header del sitio, en el boton
+		                    flotante y en el de la tienda).
+		     'formulario'-> al reves: gana "Consultar precio".
+		     'ninguno'   -> los deja como vienen, sin tocar nada. */
+		prioridad_sin_precio: 'whatsapp',
+
+		mostrar_nota: true,
+		nota_texto: '¿No encontrás la herramienta? Ver el catálogo completo en ',
+		nota_enlace_texto: 'woodtools.com.ar',
+		nota_enlace_url: 'https://www.woodtools.com.ar/ruta-productos/HTML/productos.html'
+	};
+
+	var ICONO_WA = '<svg class="wt-ico-wa" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.9-1.4-1.3-3-1.3-4.6 0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.7 8.5-8.3 8.5z"/></svg>';
+
+	/* 1. BOTON DE COTIZACION */
+	function buscarSku() {
+		try {
+			if (window.LS && LS.variants && LS.variants.length && LS.variants[0].sku) return String(LS.variants[0].sku);
+			var n = document.querySelector('.js-sku, [itemprop="sku"]');
+			if (n && n.textContent.trim()) return n.textContent.trim();
+		} catch (e) {}
+		return '';
+	}
+
+	function insertarBoton() {
+		if (!window.LS || LS.template !== 'product' || !LS.product) return true;
+		if (document.getElementById('wt-cotizar')) return true;
+		var form = document.querySelector('form.js-product-form');
+		if (!form) return false;
+		var nombre = LS.product.name || document.title;
+		var sku = buscarSku();
+		var etiqueta = nombre + (sku ? ' (código ' + sku + ')' : '');
+		var mensaje = CFG.plantilla_mensaje.replace('{producto}', etiqueta).replace('{link}', window.location.href);
+		var a = document.createElement('a');
+		a.id = 'wt-cotizar';
+		a.className = 'wt-btn-cotizar';
+		a.href = 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(mensaje);
+		a.target = '_blank';
+		a.rel = 'noopener';
+		a.innerHTML = ICONO_WA + CFG.texto_boton;
+		form.appendChild(a);
+
+		// Producto sin precio: Tienda Nube lo marca contact:true y el boton de
+		// compra pasa a decir "Consultar precio". Se le avisa al CSS con una
+		// clase en el <body> para que ordene la jerarquia de los dos botones.
+		try {
+			var esConsulta = !!(LS.variants && LS.variants[0] && LS.variants[0].contact);
+			if (esConsulta && CFG.prioridad_sin_precio !== 'ninguno') {
+				document.body.classList.add('wt-consultar-' + CFG.prioridad_sin_precio);
+			}
+		} catch (e) {}
+		if (CFG.mostrar_nota) {
+			var p = document.createElement('p');
+			p.className = 'wt-nota-catalogo';
+			p.appendChild(document.createTextNode(CFG.nota_texto));
+			var l = document.createElement('a');
+			l.href = CFG.nota_enlace_url;
+			l.textContent = CFG.nota_enlace_texto;
+			p.appendChild(l);
+			form.appendChild(p);
+		}
+		return true;
+	}
+
+	function arrancar() {
+		if (insertarBoton()) return;
+		var intentos = 0;
+		var t = setInterval(function () {
+			intentos++;
+			if (insertarBoton() || intentos >= 20) clearInterval(t);
+		}, 250);
+	}
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancar);
+	else arrancar();
+
+
+	/* ---------------------------------------------------------------------
+	   2. FAMILIA DE HERRAMIENTA -> imagen para los productos sin foto
+	   Le pone al <body> una clase wt-cat-*, y el CSS reemplaza el icono de
+	   camara gris por la imagen de esa familia (las mismas que usa el sitio).
+	   Corre sincronico, no en DOMContentLoaded: este script vive en el pie,
+	   asi que el body ya existe y la clase entra antes de que se dibujen las
+	   fotos de mas abajo. Asi no se ve el parpadeo de la camara.
+	   --------------------------------------------------------------------- */
+	var FAMILIAS = [
+		['sierras',   /sierra/i],
+		['cuchillas', /cuchilla/i],
+		['mechas',    /mecha|broca/i],
+		['diamante',  /diamante/i],
+		['cabezales', /cabezal/i],
+		['fresas',    /fresa/i]
+	];
+
+	function marcarFamilia() {
+		try {
+			// La categoria manda sobre el nombre. Importa: "Inserto / Cuchilla
+			// para Cabezal CG03M" vive en Cabezales, no en Cuchillas, y si se
+			// mirara primero el nombre caeria en la familia equivocada.
+			var porCategoria = [
+				decodeURIComponent(window.location.pathname || ''),
+				(document.querySelector('.breadcrumbs, .js-breadcrumbs') || {}).textContent || ''
+			].join(' ');
+
+			var porNombre = [
+				(window.LS && LS.product && LS.product.name) || '',
+				document.title || ''
+			].join(' ');
+
+			var heno = [porCategoria, porNombre];
+			for (var h = 0; h < heno.length; h++) {
+				for (var i = 0; i < FAMILIAS.length; i++) {
+					if (FAMILIAS[i][1].test(heno[h])) {
+						document.body.classList.add('wt-cat-' + FAMILIAS[i][0]);
+						return FAMILIAS[i][0];
+					}
+				}
+			}
+		} catch (e) {}
+		return null;   // sin familia -> queda el logo de WoodTools
+	}
+
+	if (document.body) marcarFamilia();
+	else document.addEventListener('DOMContentLoaded', marcarFamilia);
+
+
+	/* ---------------------------------------------------------------------
+	   3. TIRA DE MARCAS ARRIBA DEL PIE
+	   La misma seccion #marcas que tiene el sitio en sus 184 paginas.
+	   Las imagenes se sirven desde woodtools.com.ar: no hay proteccion de
+	   hotlink y se verifico que las 5 cargan por https desde este dominio,
+	   asi que no hace falta subirlas de nuevo a Tienda Nube.
+	   --------------------------------------------------------------------- */
+	var MARCAS = [
+		['Ilma',         'Ilma.jpeg'],
+		['Schiavon',     'Schiavon.jpeg'],
+		['Freud',        'Freud.jpeg'],
+		['Franzoi',      'Franzoi.jpeg'],
+		['Nordutensili', 'Nordutensili.jpeg']
+	];
+
+	function ponerMarcas() {
+		if (document.querySelector('.wt-marcas')) return true;
+		var pie = document.querySelector('footer, .js-footer, .footer-colors');
+		if (!pie || !pie.parentNode) return false;
+		var s = document.createElement('section');
+		s.className = 'wt-marcas';
+		MARCAS.forEach(function (m) {
+			var i = document.createElement('img');
+			i.src = 'https://www.woodtools.com.ar/imagenes/marcas/' + m[1];
+			i.alt = m[0];
+			i.loading = 'lazy';
+			s.appendChild(i);
+		});
+		pie.parentNode.insertBefore(s, pie);
+		return true;
+	}
+
+	function arrancarMarcas() {
+		if (ponerMarcas()) return;
+		var n = 0;
+		var t = setInterval(function () { n++; if (ponerMarcas() || n >= 20) clearInterval(t); }, 250);
+	}
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancarMarcas);
+	else arrancarMarcas();
+
+	/* 4. PIXELES DE SEGUIMIENTO
+	   Revisar primero Configuracion > Codigos externos: ahi hay campos NATIVOS
+	   para el pixel de Meta y para Google Analytics 4, y esos ya mandan los
+	   eventos de ecommerce armados por Tienda Nube. El campo nativo va antes
+	   que pegar el pixel a mano aca. Este bloque queda para lo que el nativo no
+	   cubre: Google Tag Manager (su campo nativo pide plan superior) y pixeles
+	   de terceros. El contenedor del sitio es GTM-TCRRTM5. Para activarlo,
+	   borrar esta linea de comentario y el cierre de abajo.
+
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TCRRTM5');
+
+	*/
+
+	/* 5. CRM - captura del lead de cotizacion
+	   El click en el boton es el lead B2B. Descomentar y completar el endpoint.
+
+	document.addEventListener('click', function (ev) {
+		var b = ev.target.closest ? ev.target.closest('#wt-cotizar') : null;
+		if (!b) return;
+		var lead = {
+			producto:    (window.LS && LS.product) ? LS.product.name : document.title,
+			producto_id: (window.LS && LS.product) ? LS.product.id   : null,
+			sku:         buscarSku(),
+			url:         window.location.href,
+			origen:      'tiendanube-cotizacion'
+		};
+		// a) dataLayer, si se activo GTM arriba:
+		// window.dataLayer = window.dataLayer || [];
+		// window.dataLayer.push(Object.assign({event: 'solicitud_cotizacion'}, lead));
+		// b) endpoint propio del CRM (keepalive: sobrevive al salto a WhatsApp):
+		// fetch('https://CRM/endpoint', {method:'POST',
+		//   headers:{'Content-Type':'application/json'},
+		//   body: JSON.stringify(lead), keepalive: true}).catch(function(){});
+	});
+
+	*/
+})();
+</script>
