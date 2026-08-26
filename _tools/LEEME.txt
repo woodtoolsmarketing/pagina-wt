@@ -19,9 +19,12 @@ PASO A PASO (lo normal)
    Hace todo de una: achica las fotos pesadas y regenera el índice.
    (La PRIMERA vez instala una herramienta y tarda ~1 minuto con internet.)
 
-3) Subí por FTP al servidor:
-   - la(s) carpeta(s) de fotos nuevas, y
-   - el archivo  imagenes\herramientas\galeria-manifest.json
+3) DOBLE CLIC en:
+      Subir-cambios-al-servidor.bat
+   Sube al servidor SOLO lo que cambiaste (fotos nuevas + índice).
+   (La PRIMERA vez hay que cargar los datos de FTP: ver "SUBIR CAMBIOS POR FTP"
+    más abajo. Si preferís hacerlo a mano con FileZilla, subí las carpetas de
+    fotos nuevas y el archivo imagenes\herramientas\galeria-manifest.json.)
 
 LISTO. Las fotos aparecen solas y livianas. No hay que tocar código.
 
@@ -32,7 +35,21 @@ LOS BOTONES
 * Regenerar-fotos-galeria.bat     -> SOLO regenera el índice (sin tocar las
                                      fotos). Útil si solo borraste/renombraste.
 * Subir-cambios-al-servidor.bat   -> sube por FTP SOLO lo que cambió. (ver abajo)
-* Marcar-todo-como-subido.bat     -> marca todo como ya subido, sin subir.
+* Marcar-todo-como-subido.bat     -> marca todo como ya subido, SIN subir nada.
+                                     Pide confirmación (hay que escribir SI).
+
+HERRAMIENTAS SUELTAS (sin botón, se corren desde la consola)
+------------------------------------------------------------
+Abrí una consola en esta carpeta (clic derecho > "Abrir en Terminal") y escribí:
+
+* node optimizar-carpeta.js "Fresas/JFMP3416G"
+    Achica las fotos de UNA carpeta puntual, incluso las que el optimizador
+    general considera que ya están bien. Solo reescribe si ahorra de verdad,
+    así que podés correrlo las veces que quieras sin arruinar las fotos.
+
+* node listar-ftp.js
+    Solo lectura: te muestra qué carpetas hay en tu FTP. Sirve para saber cuál
+    es la carpeta del sitio (la que va en "remoteDir"). No sube ni borra nada.
 
 SUBIR CAMBIOS POR FTP (en lugar de arrastrar a mano en FileZilla)
 -----------------------------------------------------------------
@@ -61,7 +78,11 @@ IMPORTANTE
 ----------
 - NO subas la carpeta "_tools" ni "_admin" al servidor: son solo para tu PC.
   (El botón "Subir cambios" ya las excluye automáticamente.)
-- El archivo  ftp-config.json  tiene tu contraseña: queda SOLO en tu PC,
-  nunca se sube (el subidor lo excluye).
+- El archivo  ftp-config.json  tiene tu contraseña.
+  El botón "Subir cambios" NO lo manda al servidor web (lo excluye solo).
+  Tampoco tiene que entrar en las copias de código (git / GitHub): para eso
+  está anotado en el archivo  .gitignore  de la carpeta principal.
+  Si alguna vez llegó a subirse a GitHub, cambiá la contraseña del FTP en el
+  panel de tu hosting: sacarla del repositorio no la vuelve secreta otra vez.
 - Si una foto no aparece en el sitio, fijate que la carpeta tenga el nombre
   EXACTO del código y volvé a correr el .bat.

@@ -1,7 +1,24 @@
-/* SOLO LECTURA: lista la estructura del FTP para confirmar dónde está el web
-   root (WordPress) antes de migrar. No sube, no borra, no modifica nada. */
-const ftp = require('basic-ftp');
-const cfg = require('./ftp-config.json');
+/* SOLO LECTURA: lista qué hay en tu FTP, para confirmar cuál es la carpeta del
+   sitio (la que va en "remoteDir"). No sube, no borra, no modifica nada.
+
+   Uso:  node listar-ftp.js            -> lista "/" y tu remoteDir
+         node listar-ftp.js /carpeta   -> lista además esa carpeta            */
+let ftp, cfg;
+try { ftp = require('basic-ftp'); }
+catch {
+  console.log('Falta la herramienta de FTP. Ejecutá una vez en esta carpeta:  npm install');
+  process.exit(1);
+}
+try { cfg = require('./ftp-config.json'); }
+catch {
+  console.log('No encuentro _tools/ftp-config.json (o está mal escrito).');
+  console.log('Copiá "ftp-config.example.json" como "ftp-config.json" y completá tus datos de FTP.');
+  process.exit(1);
+}
+if (!cfg.host || cfg.host === 'ftp.tudominio.com' || !cfg.user) {
+  console.log('Completá tus datos reales en _tools/ftp-config.json (host, user, password, remoteDir).');
+  process.exit(1);
+}
 
 const MARCADORES_WP = ['index.php', 'wp-config.php', 'wp-content', 'wp-admin', 'wp-includes', 'wp-login.php', '.htaccess', 'sitemap.xml', 'xmlrpc.php'];
 
@@ -40,16 +57,20 @@ async function listar(client, dir) {
     const pwd = await client.pwd();
     console.log('Directorio home del FTP (pwd): ' + pwd);
 
-    await listar(client, '/');
-    await listar(client, '/prueba1');
-    await listar(client, '/prueba1/pagina-wt');
-    // por si el web root fuera público bajo public_html/htdocs/www
-    const raiz = await client.list('/').then(l => l.map(i => i.name)).catch(() => []);
+    const raiz = await listar(client, '/');
+    // La carpeta que tenés configurada como sitio, si no es la raíz
+    const remoto = (cfg.remoteDir || '/').replace(/\\/g, '/');
+    if (remoto !== '/' && remoto !== '') await listar(client, remoto);
+    // Una carpeta puntual, si la pasaste por parámetro
+    if (process.argv[2]) await listar(client, process.argv[2]);
+    // Candidatas habituales de web root, por si remoteDir todavía no está bien puesto
     for (const cand of ['public_html', 'htdocs', 'www', 'httpdocs', 'web']) {
-      if (raiz.includes(cand)) await listar(client, '/' + cand);
+      if (raiz.includes(cand) && '/' + cand !== remoto) await listar(client, '/' + cand);
     }
   } catch (e) {
     console.log('ERROR de conexión: ' + e.message);
+    console.log('Revisá host/usuario/contraseña/puerto y si tu hosting usa "FTP con TLS" (secure: true).');
+    process.exitCode = 1;
   } finally {
     client.close();
   }

@@ -88,6 +88,9 @@ const logEl = $('#log');
 function log(msg, err){ const l=document.createElement('div'); l.textContent=(err?'⚠ ':'• ')+msg; if(err)l.style.color='#ef9a9a'; logEl.appendChild(l); logEl.scrollTop=logEl.scrollHeight; }
 
 let root=null, srcProducto='', productos={}, current=null;
+let manifestGlobal={};            // índice de fotos, para saber qué carpetas tienen fotos
+let carpetasCompartidas={};       // "Categoria/Carpeta" -> familias que la usan
+const MANIFEST_PARTS=['imagenes','herramientas','galeria-manifest.json'];
 
 if(!window.showDirectoryPicker){ $('#noSupport').hidden=false; }
 
@@ -99,7 +102,9 @@ async function writeText(parts, str){ const fh=await getFileHandle(parts,true); 
 async function writeBlob(parts, blob){ const fh=await getFileHandle(parts,true); const w=await fh.createWritable(); await w.write(blob); await w.close(); }
 
 /* ---------- Parseo de producto.js ---------- */
-// Recorta el objeto baseDatosProductos respetando llaves dentro de strings.
+// Recorta el objeto baseDatosProductos respetando llaves dentro de strings Y dentro de
+// comentarios. Sin saltear comentarios, un // con un apóstrofe suelto (ej: "de 5' ") o
+// con una llave dejaba el panel sin poder abrir el proyecto.
 function extraerObjeto(src){
   const i=src.indexOf('baseDatosProductos'); if(i<0) throw new Error('No encontré baseDatosProductos');
   const start=src.indexOf('{', src.indexOf('=', i));
@@ -107,6 +112,12 @@ function extraerObjeto(src){
   for(let j=start;j<src.length;j++){
     const c=src[j];
     if(str){ if(esc){esc=false;} else if(c==='\\'){esc=true;} else if(c===str){str=null;} continue; }
+    if(c==='/' && src[j+1]==='/'){                       // comentario de una línea
+      const nl=src.indexOf('\n', j); if(nl<0) break; j=nl; continue;
+    }
+    if(c==='/' && src[j+1]==='*'){                       // comentario de varias líneas
+      const fin=src.indexOf('*/', j+2); if(fin<0) break; j=fin+1; continue;
+    }
     if(c==='"'||c==="'"||c==='`'){ str=c; continue; }
     if(c==='{') depth++;
     else if(c==='}'){ depth--; if(depth===0) return src.slice(start, j+1); }
@@ -128,14 +139,18 @@ function renombrarTitulo(src, key, nuevo){
 }
 
 /* ---------- Orden de fotos (igual que el generador de manifest) ---------- */
-function ordenarNombres(arr){
-  return arr.slice().sort((a,b)=>{
-    const na=parseInt((String(a).match(/^(\d+)/)||[])[1]||'9999',10);
-    const nb=parseInt((String(b).match(/^(\d+)/)||[])[1]||'9999',10);
-    if(na!==nb) return na-nb;
-    return String(a).localeCompare(String(b));
-  });
+const COL = new Intl.Collator('es', { numeric:true });
+function cmpNombres(a,b){
+  const na=parseInt((String(a).match(/^(\d+)/)||[])[1]||'9999',10);
+  const nb=parseInt((String(b).match(/^(\d+)/)||[])[1]||'9999',10);
+  if(na!==nb) return na-nb;
+  return COL.compare(String(a), String(b));
 }
+function ordenarNombres(arr){ return arr.slice().sort(cmpNombres); }
+
+/* ---------- Escapado para meter texto dentro de HTML ---------- */
+const esc = s => String(s ?? '')
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 /* ---------- Compresión a un peso objetivo (KB) ---------- */
 async function comprimir(file, maxLado, targetKB){
@@ -151,9 +166,13 @@ async function comprimir(file, maxLado, targetKB){
     ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h);   // fondo blanco: JPEG no tiene transparencia (evita fondo negro en PNG)
     ctx.drawImage(bmp,0,0,w,h);
     const toBlob=q=>new Promise(res=>c.toBlob(res,'image/jpeg',q));
+    // Si ya entra con calidad máxima, no hace falta buscar nada.
+    const b0=await toBlob(0.95);
+    if(b0 && b0.size/1024<=targetKB) return b0;
     let lo=0.30, hi=0.95, best=null;
     for(let i=0;i<7;i++){ const q=(lo+hi)/2; const b=await toBlob(q); if(b && b.size/1024<=targetKB){ best=b; lo=q; } else { hi=q; } }
     if(!best) best=await toBlob(0.30);   // no se pudo alcanzar el objetivo: mejor esfuerzo
+    if(!best || !best.size) throw new Error('No pude comprimir la imagen (quedó vacía)');
     return best;
   } finally { if(bmp && bmp.close) bmp.close(); }   // libera memoria del bitmap
 }
@@ -169,12 +188,25 @@ $('#btnAbrir').onclick = async ()=>{
     await cargarProductos();
     $('#app').hidden=false;
     log('Proyecto abierto: '+root.name);
+    const sinFotos=Object.keys(productos).filter(k=>!((manifestGlobal[carpetaBaseDe(k)]||[]).length));
+    if(sinFotos.length){
+      log('Hay '+sinFotos.length+' producto(s) SIN FOTOS: el sitio los esconde hasta que les cargues una.');
+      log('Están marcados con "sin fotos" en la lista de la izquierda.');
+    }
   }catch(e){ if(e && e.name!=='AbortError') log('No se pudo abrir: '+e.message, true); }
 };
 
 async function cargarProductos(){
   srcProducto = await readText(['ruta-productos','JS','producto.js']);
   productos = parseProductos(srcProducto);
+  try{ manifestGlobal = JSON.parse(await readText(MANIFEST_PARTS)); }catch{ manifestGlobal = {}; }
+  // Varias familias pueden apuntar a la MISMA carpeta de fotos: hay que avisarlo antes
+  // de que alguien saque una foto creyendo que solo afecta al producto que está viendo.
+  carpetasCompartidas={};
+  Object.keys(productos).forEach(k=>{
+    const c=carpetaBaseDe(k);
+    (carpetasCompartidas[c]=carpetasCompartidas[c]||[]).push(k);
+  });
   renderLista();
 }
 
@@ -187,7 +219,10 @@ function renderLista(){
     if(filtro && !txt.includes(filtro)) return;
     const li=document.createElement('li');
     if(current===key) li.className='activo';
-    li.innerHTML=`<b>${key}</b><small>${(p.titulo||'').replace(/</g,'&lt;')} · ${p.categoriaImg||''}</small>`;
+    // Aviso: sin fotos, el sitio ESCONDE la publicación. Se apaga solo al cargar fotos.
+    const sinFotos = !((manifestGlobal[carpetaBaseDe(key)]||[]).length);
+    const aviso = sinFotos ? ` <span class="badge" style="background:#ffe0b2;color:#8a6d00">sin fotos</span>` : '';
+    li.innerHTML=`<b>${esc(key)}</b>${aviso}<small>${esc(p.titulo||'')} · ${esc(p.categoriaImg||'')}</small>`;
     li.onclick=()=>seleccionar(key);
     ul.appendChild(li);
   });
@@ -196,17 +231,32 @@ $('#buscar').oninput=renderLista;
 
 /* ---------- Detalle de un producto ---------- */
 async function seleccionar(key){
+  // Liberamos las miniaturas del producto anterior antes de tirar el HTML a la basura.
+  const viejo=$('#fotos');
+  if(viejo) viejo.querySelectorAll('img').forEach(img=>{ if(img.src && img.src.startsWith('blob:')) URL.revokeObjectURL(img.src); });
+
   current=key; renderLista();
   const p=productos[key];
   const d=$('#detalle');
+  const carpetas=carpetasDe(key);
+  const base=carpetaBaseDe(key);
+  const otras=(carpetasCompartidas[base]||[]).filter(k=>k!==key);
+  const opciones=carpetas.map(c=>
+    `<option value="${esc(c)}">${esc(c)}${c===base?'  (principal)':'  (variante)'}</option>`).join('');
+
   d.innerHTML=`
-    <h2>${key} <span class="badge">${p.categoriaImg||''}</span></h2>
+    <h2>${esc(key)} <span class="badge">${esc(p.categoriaImg||'')}</span></h2>
     <div class="campo">
       <label>Nombre del producto (título)</label>
-      <input type="text" id="inpNombre" value="${(p.titulo||'').replace(/"/g,'&quot;')}" style="width:min(520px,100%)">
+      <input type="text" id="inpNombre" style="width:min(520px,100%)">
       <button id="btnNombre" style="margin-left:8px">Guardar nombre</button>
     </div>
-    <div class="muted">Carpeta de fotos: <code>imagenes/herramientas/${p.categoriaImg}/${p.carpetaImg}</code></div>
+    <div class="campo">
+      <label>Carpeta de fotos</label>
+      <select id="selCarpeta" style="padding:8px 10px;border:1px solid var(--bd);border-radius:6px;font-size:14px;max-width:100%">${opciones}</select>
+      <div class="muted" style="margin-top:6px">Dentro de <code>imagenes/herramientas/</code></div>
+      ${otras.length ? `<div class="muted" style="margin-top:6px;color:#8a6d00">⚠ Esta carpeta la comparten también: <b>${esc(otras.join(', '))}</b>. Lo que agregues o saques se ve en todos.</div>` : ''}
+    </div>
     <div class="controls">
       <div class="c"><label>Peso máx. por foto (KB)</label><input type="number" id="inpKB" value="200" min="20" max="2000"></div>
       <div class="c"><label>Lado máx. (px)</label><input type="number" id="inpMax" value="1280" min="300" max="3000"></div>
@@ -215,36 +265,97 @@ async function seleccionar(key){
     </div>
     <div id="fotos" class="grid"><p class="muted">Cargando fotos…</p></div>
   `;
+  // El título va por propiedad, no por HTML: así un "&" o unas comillas se guardan tal cual.
+  $('#inpNombre').value = p.titulo || '';
   $('#btnNombre').onclick=()=>guardarNombre(key);
   $('#btnAgregar').onclick=()=>agregarFotos(key);
-  await refrescarFotos(key);
+  $('#selCarpeta').onchange=()=>refrescarFotos(key).catch(mostrarErrorFotos);
+  await refrescarFotos(key).catch(mostrarErrorFotos);
+}
+
+function mostrarErrorFotos(e){
+  const c=$('#fotos');
+  if(c) c.innerHTML='<p class="muted">No pude leer la carpeta de fotos: '+esc(e.message)+'</p>';
+  log('No pude leer la carpeta de fotos: '+e.message, true);
 }
 
 async function guardarNombre(key){
   const nuevo=$('#inpNombre').value.replace(/[\r\n\t]+/g,' ').trim();
   if(!nuevo){ alert('El nombre no puede quedar vacío.'); return; }
+
+  // producto.js pudo cambiar (VS Code, otra pestaña del panel) desde que abrimos: si
+  // guardáramos nuestra copia vieja, esos cambios se perderían sin aviso.
+  const actual = await readText(['ruta-productos','JS','producto.js']);
+  if(actual !== srcProducto){
+    srcProducto = actual;
+    productos = parseProductos(actual);
+    renderLista();
+    await seleccionar(key);
+    alert('producto.js cambió desde que abriste el panel. Recargué la lista; volvé a escribir el nombre.');
+    return;
+  }
+
   const nuevoSrc=renombrarTitulo(srcProducto, key, nuevo);
   if(!nuevoSrc){ log('No pude ubicar el título de '+key+' en producto.js', true); return; }
+
+  // Red de seguridad: comprobamos que la edición cayó donde correspondía ANTES de escribir.
+  let check;
+  try{ check=parseProductos(nuevoSrc); }catch{ check=null; }
+  if(!check || Object.keys(check).length!==Object.keys(productos).length || check[key]?.titulo!==nuevo){
+    alert('No toqué el archivo: la edición no quedó donde correspondía. Avisá antes de seguir.');
+    log('renombrarTitulo apuntó mal para '+key+': no se guardó nada.', true);
+    return;
+  }
+
   await writeText(['ruta-productos','JS','producto.js'], nuevoSrc);
   srcProducto=nuevoSrc; productos[key].titulo=nuevo; renderLista();
   log('Nombre guardado: '+key+' → "'+nuevo+'"');
-  alert('Nombre guardado. Acordate de subir producto.js por FTP.');
+  alert('Nombre guardado. Cuando termines, apreta "Publicar al servidor".');
 }
 
-function carpetaDe(key){ const p=productos[key]; return ['imagenes','herramientas',p.categoriaImg,p.carpetaImg]; }
+// Clave del índice y carpeta base de una familia ("Sierras/LU3F 0200").
+function carpetaBaseDe(key){ const p=productos[key]; return p.categoriaImg+'/'+p.carpetaImg; }
 
-async function listarFotos(key, conURL){
-  const parts=carpetaDe(key);
+// El sitio busca primero una carpeta con el CÓDIGO EXACTO de la variante elegida y, si no
+// existe, la carpeta base. Ofrecemos las que ya tienen fotos en el índice para poder editarlas.
+function carpetasDe(key){
+  const p=productos[key];
+  const lista=[carpetaBaseDe(key)];
+  (p.variantes||[]).forEach(v=>{
+    const k=p.categoriaImg+'/'+v.id;
+    if(manifestGlobal[k] && !lista.includes(k)) lista.push(k);
+  });
+  return lista;
+}
+function carpetaActual(key){
+  const s=$('#selCarpeta');
+  const v=s && s.value;
+  return (v && carpetasDe(key).includes(v)) ? v : carpetaBaseDe(key);
+}
+// carpetaImg puede traer barras ("Familias MAM  PINZA/mandril para 3mm"): hay que partirlas
+// o el navegador busca una carpeta con la barra en el nombre y no encuentra nada.
+function carpetaDe(key, carpeta){
+  const c = carpeta || carpetaBaseDe(key);
+  return ['imagenes','herramientas', ...String(c).split('/')].filter(Boolean);
+}
+
+async function listarFotos(key, conURL, carpeta){
+  const parts=carpetaDe(key, carpeta);
   let dir;
-  try{ dir=await getDir(parts,false); }catch{ return []; }
+  // "todavía no existe" = 0 fotos. Cualquier otro error (permisos, disco) se propaga:
+  // si no, el índice se reescribía borrando la galería del producto.
+  try{ dir=await getDir(parts,false); }
+  catch(e){ if(e && e.name==='NotFoundError') return []; throw e; }
   const out=[];
   for await (const [name,h] of dir.entries()){
     if(h.kind==='file' && /\.(jpe?g|png|webp)$/i.test(name)){
-      const f=await h.getFile();
-      out.push({name, size:f.size, url: conURL ? URL.createObjectURL(f) : null});
+      try{
+        const f=await h.getFile();
+        out.push({name, size:f.size, url: conURL ? URL.createObjectURL(f) : null});
+      }catch(e){ log('No pude leer '+name+': '+e.message, true); }
     }
   }
-  out.sort((a,b)=>ordenarNombres([a.name,b.name])[0]===a.name?-1:1);
+  out.sort((a,b)=>cmpNombres(a.name,b.name));
   return out;
 }
 
@@ -253,12 +364,13 @@ async function refrescarFotos(key){
   const cont=$('#fotos'); if(!cont) return;
   // revocar las Object URLs anteriores para no acumular memoria
   cont.querySelectorAll('img').forEach(img=>{ if(img.src && img.src.startsWith('blob:')) URL.revokeObjectURL(img.src); });
-  const fotos=await listarFotos(key, true);
-  if(!fotos.length){ cont.innerHTML='<p class="muted">Sin fotos todavía. Agregá con el botón de arriba.</p>'; return; }
+  const carpeta=carpetaActual(key);
+  const fotos=await listarFotos(key, true, carpeta);
+  if(!fotos.length){ cont.innerHTML='<p class="muted">Sin fotos todavía en <code>'+esc(carpeta)+'</code>. Agregá con el botón de arriba.</p>'; return; }
   cont.innerHTML='';
   fotos.forEach((f,i)=>{
     const div=document.createElement('div'); div.className='foto';
-    div.innerHTML=`<img src="${f.url}"><div class="n">${f.name}${i===0?' <span class="badge">principal</span>':''}</div><div class="kb">${Math.round(f.size/1024)} KB</div>`;
+    div.innerHTML=`<img src="${esc(f.url)}"><div class="n">${esc(f.name)}${i===0?' <span class="badge">principal</span>':''}</div><div class="kb">${Math.round(f.size/1024)} KB</div>`;
     const btn=document.createElement('button'); btn.className='del'; btn.textContent='Quitar';
     btn.onclick=()=>quitarFoto(key, f.name);
     div.appendChild(btn); cont.appendChild(div);
@@ -270,26 +382,35 @@ async function agregarFotos(key){
   if(!files.length){ alert('Elegí una o más fotos primero.'); return; }
   const targetKB=Math.max(20, parseInt($('#inpKB').value||'200',10));
   const maxLado=Math.max(300, parseInt($('#inpMax').value||'1280',10));
-  const parts=carpetaDe(key);
-  const existentes=await listarFotos(key);
-  let maxN=existentes.reduce((m,f)=>{const n=parseInt(f.name); return isNaN(n)?m:Math.max(m,n);},0);
+  const carpeta=carpetaActual(key);
+  const parts=carpetaDe(key, carpeta);
   $('#btnAgregar').disabled=true;
-  for(const file of files){
-    try{
-      const blob=await comprimir(file, maxLado, targetKB);
-      maxN++; const nombre=maxN+'.jpg';
-      await writeBlob(parts.concat(nombre), blob);
-      const kb=Math.round(blob.size/1024);
-      log(`+ ${nombre} (${kb} KB)`+(kb>targetKB?` — no bajó de ${targetKB}KB, quedó en lo mínimo`:''));
-    }catch(e){ log('Error con '+file.name+': '+e.message, true); }
-  }
+  let ok=0;
   try{
-    await actualizarManifest(key);
-    await refrescarFotos(key);
-    alert('Fotos agregadas. Acordate de subir por FTP la carpeta de fotos y el galeria-manifest.json.');
-  }catch(e){
-    log('Las fotos se guardaron, pero falló actualizar el índice: '+e.message, true);
-    alert('Se guardaron las fotos, pero hubo un problema al actualizar el índice. Reabrí el producto; si hace falta, corré Regenerar-fotos-galeria.bat.');
+    const existentes=await listarFotos(key, false, carpeta);
+    let maxN=existentes.reduce((m,f)=>{const n=parseInt(f.name); return isNaN(n)?m:Math.max(m,n);},0);
+    for(const file of files){
+      try{
+        const blob=await comprimir(file, maxLado, targetKB);
+        maxN++; const nombre=maxN+'.jpg';
+        await writeBlob(parts.concat(nombre), blob);
+        ok++;
+        const kb=Math.round(blob.size/1024);
+        log(`+ ${nombre} (${kb} KB)`+(kb>targetKB?` — no bajó de ${targetKB}KB, quedó en lo mínimo`:''));
+      }catch(e){ log('Error con '+file.name+': '+e.message, true); }
+    }
+    if(!ok){
+      alert('No se pudo agregar ninguna foto. Mirá el detalle en la barra negra de abajo.');
+      return;                                  // no tocamos el índice si no se guardó nada
+    }
+    try{
+      await actualizarManifest(key, carpeta);
+      await refrescarFotos(key);
+      alert(ok+' foto(s) agregada(s). Cuando termines, apreta "Publicar al servidor".');
+    }catch(e){
+      log('Las fotos se guardaron, pero falló actualizar el índice: '+e.message, true);
+      alert('Se guardaron las fotos, pero hubo un problema al actualizar el índice. Reabrí el producto; si hace falta, corré Regenerar-fotos-galeria.bat.');
+    }
   }finally{
     $('#btnAgregar').disabled=false;
     $('#inpFiles').value='';
@@ -297,25 +418,35 @@ async function agregarFotos(key){
 }
 
 async function quitarFoto(key, nombre){
-  if(!confirm('¿Quitar la foto '+nombre+'? (se borra del proyecto)')) return;
+  const carpeta=carpetaActual(key);
+  const otras=(carpetasCompartidas[carpeta]||[]).filter(k=>k!==key);
+  const aviso=otras.length ? '\n\nOJO: esta carpeta también la usan '+otras.join(', ')+'.' : '';
+  if(!confirm('¿Quitar la foto '+nombre+' de '+carpeta+'? (se borra del proyecto)'+aviso)) return;
   try{
-    const dir=await getDir(carpetaDe(key),false);
+    const dir=await getDir(carpetaDe(key, carpeta),false);
     await dir.removeEntry(nombre);
-    await actualizarManifest(key);
+    await actualizarManifest(key, carpeta);
     await refrescarFotos(key);
     log('Quitada: '+nombre);
   }catch(e){ log('No se pudo quitar '+nombre+': '+e.message, true); }
 }
 
-async function actualizarManifest(key){
-  const p=productos[key];
-  const manParts=['imagenes','herramientas','galeria-manifest.json'];
-  let man={};
-  try{ man=JSON.parse(await readText(manParts)); }catch{ man={}; }
-  const lista=(await listarFotos(key)).map(f=>f.name);
-  const mkey=p.categoriaImg+'/'+p.carpetaImg;
+async function actualizarManifest(key, carpeta){
+  const mkey = carpeta || carpetaBaseDe(key);
+  // Leer el índice con cuidado: si existe pero no se puede leer/parsear, ABORTAMOS.
+  // Antes se arrancaba de {} y se reescribía el archivo entero con una sola entrada,
+  // borrando la galería de todos los demás productos.
+  let man={}, txt=null;
+  try{ txt=await readText(MANIFEST_PARTS); }
+  catch(e){ if(e.name!=='NotFoundError') throw new Error('No pude leer galeria-manifest.json: '+e.message); }
+  if(txt!==null){
+    try{ man=JSON.parse(txt); }
+    catch{ throw new Error('galeria-manifest.json está dañado. Corré Regenerar-fotos-galeria.bat y volvé a intentar.'); }
+  }
+  const lista=(await listarFotos(key, false, mkey)).map(f=>f.name);
   if(lista.length) man[mkey]=ordenarNombres(lista); else delete man[mkey];
-  await writeText(manParts, JSON.stringify(man));
+  await writeText(MANIFEST_PARTS, JSON.stringify(man));
+  manifestGlobal=man;
   log('Índice (manifest) actualizado para '+mkey);
 }
 
@@ -343,7 +474,7 @@ $('#btnPublicar').onclick=()=>{ if(confirm('¿Subir al servidor los archivos que
 $('#btnDry').onclick=()=>publicar(true);
 
 /* ---------- Hooks de prueba (no afectan el uso normal) ---------- */
-window.__test = { extraerObjeto, parseProductos, renombrarTitulo, ordenarNombres, comprimir };
+window.__test = { extraerObjeto, parseProductos, renombrarTitulo, ordenarNombres, cmpNombres, comprimir, esc };
 </script>
 </body>
 </html>

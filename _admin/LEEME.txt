@@ -3,7 +3,8 @@ PANEL DE PRODUCTOS (uso interno) — NO PUBLICAR
 
 Es una página secreta que corre en TU computadora para editar el nombre y
 las fotos de los productos, y comprimir las fotos al peso que vos elijas.
-Edita los archivos del proyecto en tu PC; después subís por FTP como siempre.
+Edita los archivos del proyecto en tu PC y después publicás con el botón
+"Publicar al servidor" del mismo panel (ver más abajo).
 
 REQUISITOS
 ----------
@@ -20,9 +21,14 @@ CÓMO ABRIRLO
 QUÉ PODÉS HACER
 ---------------
 - EDITAR EL NOMBRE de un producto y guardarlo.
+- ELEGIR LA CARPETA DE FOTOS: arriba de las fotos hay una lista desplegable.
+  Casi siempre alcanza con la que dice "(principal)". Si un producto tiene
+  fotos propias para alguna medida, esa carpeta aparece como "(variante)".
 - AGREGAR FOTOS: elegís las fotos, ponés el "Peso máx. por foto (KB)" (ej. 200)
   y el panel las comprime y achica solas antes de guardarlas.
 - QUITAR FOTOS.
+- Si varios productos comparten la misma carpeta de fotos, el panel te avisa
+  en rojo: lo que agregues o saques ahí se ve en todos ellos.
 - El índice de la galería (galeria-manifest.json) se actualiza solo.
 - PUBLICAR: botón "⬆ Publicar al servidor" (arriba a la derecha) que sube por
   FTP todo lo que cambiaste, sin salir del panel.

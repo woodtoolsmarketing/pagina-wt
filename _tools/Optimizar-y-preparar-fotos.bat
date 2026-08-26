@@ -26,17 +26,33 @@ if not exist "node_modules\sharp\" (
 REM --- 1) Achicar/comprimir las fotos pesadas ---
 echo Paso 1 de 2: optimizando fotos...
 node optimizar-fotos.js
+if errorlevel 1 (
+  echo.
+  echo *** Hubo un problema optimizando las fotos. ***
+  echo Verifica que Node este instalado ^(node -v^).
+  echo.
+  pause
+  exit /b 1
+)
 echo.
 
 REM --- 2) Regenerar el indice de la galeria ---
 echo Paso 2 de 2: regenerando el indice de fotos...
 node generar-manifest.js
+if errorlevel 1 (
+  echo.
+  echo *** Hubo un problema regenerando el indice de fotos. ***
+  echo Las fotos se optimizaron, pero el indice NO se actualizo.
+  echo.
+  pause
+  exit /b 1
+)
 echo.
 
 echo ============================================================
-echo  LISTO. Ahora subi por FTP al servidor:
-echo    - las carpetas de fotos nuevas, y
-echo    - imagenes\herramientas\galeria-manifest.json
+echo  LISTO.
+echo  Ahora hace doble clic en  Subir-cambios-al-servidor.bat
+echo  para publicar los cambios en el sitio.
 echo ============================================================
 echo.
 echo Podes cerrar esta ventana.

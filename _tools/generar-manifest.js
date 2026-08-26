@@ -7,7 +7,7 @@
 
    CUÁNDO CORRERLO: cada vez que AGREGUES, SAQUES o RENOMBRES fotos.
    CÓMO: doble clic en "Regenerar-fotos-galeria.bat" (o: node generar-manifest.js)
-   DESPUÉS: subí por FTP el archivo imagenes/herramientas/galeria-manifest.json
+   DESPUÉS: doble clic en "Subir-cambios-al-servidor.bat" para publicarlo.
    ===================================================================== */
 const fs = require('fs');
 const path = require('path');
@@ -15,15 +15,19 @@ const path = require('path');
 // Base = <proyecto>/imagenes/herramientas  (relativo a este script en _tools/)
 const BASE = path.join(__dirname, '..', 'imagenes', 'herramientas');
 const SALIDA = path.join(BASE, 'galeria-manifest.json');
-const esImagen = n => /\.(jpe?g|png)$/i.test(n);
+// webp incluido: el panel de _admin permite cargar fotos .webp y sin esto el
+// .bat las borraba del índice (desaparecían del sitio hasta volver a agregarlas).
+const esImagen = n => /\.(jpe?g|png|webp)$/i.test(n);
 
-// Orden: por número inicial (1,2,3...), con "1 (1)" antes que "1.", luego alfabético.
+// Orden: por número inicial (1,2,3...), con "1 (1)" antes que "1.", luego alfabético
+// con números "de verdad" (así "1 (2)" va antes que "1 (10)", no al revés).
+const COL = new Intl.Collator('es', { numeric: true });
 function ordenar(arr) {
   return arr.sort((a, b) => {
     const na = parseInt((a.match(/^(\d+)/) || [])[1] || '9999', 10);
     const nb = parseInt((b.match(/^(\d+)/) || [])[1] || '9999', 10);
     if (na !== nb) return na - nb;
-    return a.localeCompare(b);
+    return COL.compare(a, b);
   });
 }
 
@@ -33,7 +37,9 @@ function recorrer(dir) {
   const imgs = entradas.filter(e => e.isFile() && esImagen(e.name)).map(e => e.name);
   if (imgs.length) {
     const clave = path.relative(BASE, dir).replace(/\\/g, '/');
-    manifest[clave] = ordenar(imgs);
+    // Solo carpetas de producto (Categoría/Carpeta...). Las imágenes sueltas de
+    // categoría no las consulta nadie: el sitio siempre pide Categoría/Carpeta.
+    if (clave.split('/').length >= 2) manifest[clave] = ordenar(imgs);
   }
   for (const e of entradas) if (e.isDirectory()) recorrer(path.join(dir, e.name));
 }
@@ -54,7 +60,7 @@ try {
   console.log(' Fotos en total     : ' + fotos);
   console.log(' Archivo            : imagenes/herramientas/galeria-manifest.json');
   console.log('=====================================================');
-  console.log(' ACORDATE de subir ese archivo por FTP al servidor.');
+  console.log(' Para publicarlo: doble clic en Subir-cambios-al-servidor.bat');
   console.log('=====================================================');
 } catch (e) {
   console.error('ERROR al generar el manifiesto:', e.message);

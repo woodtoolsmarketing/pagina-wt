@@ -289,8 +289,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 016: Fresas Rectas Simples ---
     "FRS": {
         codigoBase: "FRS", categoriaImg: "Fresas", carpetaImg: "FRS0606",
-        titulo: "Fresas Rectas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Metal duro" },
+        titulo: "Fresas Rectas HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurar, cepillar o realizar rebajes", "Material": "Metal duro" },
         variantes: [
             { id: "FRS0054", nombre: "FRS0054 - RECTA #5mm Z:4" },
             { id: "FRS0056", nombre: "FRS0056 - RECTA #5mm Z:6" },
@@ -352,8 +352,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 017: Fresas Rectas con Incisores ---
     "FRI": {
         codigoBase: "FRI", categoriaImg: "Fresas", carpetaImg: "FRI01566",
-        titulo: "Fresas Rectas con Incisores HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranurar sin astillar", "Material": "Metal duro" },
+        titulo: "Fresas Rectas con Incisores HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranurar sin astillar", "Material": "Metal duro" },
         variantes: [
             { id: "FRI01542", nombre: "FRI01542 - C/INCISOR #15mm Z:4+2" },
             { id: "FRI01544", nombre: "FRI01544 - C/INCISOR #15mm Z:4+4" },
@@ -409,8 +409,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Fresas 1/2 Círculo (Molduras) ---
     "F2C": {
         codigoBase: "F2C", categoriaImg: "Fresas", carpetaImg: "F2C014",
-        titulo: "Fresas 1/2 círculo cóncavo y convexo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Metal duro" },
+        titulo: "Fresas 1/2 círculo cóncavo y convexo HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "1/2 círculo cóncavo o convexo", "Material": "Metal duro" },
         variantes: [
             { id: "F2C014", nombre: "F2C014 - 1/2 CIRCULO DE 1/2 Z:4" },
             { id: "F2C016", nombre: "F2C016 - 1/2 CIRCULO DE 1/2 Z:6" },
@@ -430,8 +430,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Fresas 1/4 Círculo ---
     "F04C": {
         codigoBase: "F04C", categoriaImg: "Fresas", carpetaImg: "F04C014",
-        titulo: "Fresas 1/4 círculo cóncavo y convexo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Metal duro" },
+        titulo: "Fresas 1/4 círculo cóncavo y convexo HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "1/4 círculo cóncavo o convexo", "Material": "Metal duro" },
         variantes: [
             { id: "F04C014", nombre: "F04C014 - 1/4 CIRCULO 1/2 A 3/4 Z:4" },
             { id: "F04C016", nombre: "F04C016 - 1/4 CIRCULO 1/2 A 3/4 Z:6" },
@@ -443,8 +443,8 @@ const baseDatosProductos = {
     // --- Rinconera Simple HM (catálogo pág. 5) ---
     "FR": {
         codigoBase: "FR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Rinconera Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Rinconera según modelos 1 ó 2", "Material": "Metal duro" },
+        titulo: "Rinconera Simple HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Rinconera según modelos 1 ó 2", "Material": "Metal duro" },
         variantes: [
             { id: "FR104", nombre: "FR104 - RINCONERA DE 3/4 Z:4" },
             { id: "FR106", nombre: "FR106 - RINCONERA DE 3/4 Z:6" },
@@ -456,8 +456,8 @@ const baseDatosProductos = {
     // --- Fresas en ángulo HM (catálogo pág. 4) ---
     "FA": {
         codigoBase: "FA", categoriaImg: "Fresas", carpetaImg: "FA104",
-        titulo: "Fresas en ángulo HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar ángulos (α)", "Material": "Metal duro" },
+        titulo: "Fresas en ángulo HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Efectuar ángulos (α)", "Material": "Metal duro" },
         variantes: [
             { id: "FA104", nombre: "FA104 - ANGULO 25°A 45° 10mm Z:4" },
             { id: "FA106", nombre: "FA106 - ANGULO 25°A 45° 10mm Z:6" },
@@ -483,8 +483,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 013: Fresas Moldura Perf. Combinados (FMES) ---
     "FMES": {
         codigoBase: "FMES", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa Moldura Perfiles Combinados", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura Prof. 10mm", "Material": "Metal duro" },
+        titulo: "Fresa Moldura Perfiles Combinados", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Moldura Prof. 10mm", "Material": "Metal duro" },
         variantes: [
             { id: "FMES104", nombre: "FMES104 - MOLDURA 10mm Z:4" },
             { id: "FMES106", nombre: "FMES106 - MOLDURA 10mm Z:6" },
@@ -528,8 +528,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 015: Fresas Regulables (suplementos) ---
     "FRG": {
         codigoBase: "FRG", categoriaImg: "Fresas", carpetaImg: "FRG0510",
-        titulo: "Fresas para Ranurar Regulables HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ranuras, rebajes y espigas", "Material": "Metal duro" },
+        titulo: "Fresas para Ranurar Regulables HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ranuras, rebajes y espigas", "Material": "Metal duro" },
         variantes: [
             { id: "FRG010", nombre: "FRG010 - SUPL. P/REGULABLE #10mm Z=4" },
             { id: "FRG020", nombre: "FRG020 - SUPLEMENTO P/REG. #20 Z=4" },
@@ -542,8 +542,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Fresas Palos de Escoba (FP) ---
     "FP": {
         codigoBase: "FP", categoriaImg: "Fresas", carpetaImg: "FP2226",
-        titulo: "Fresa Palos de Escoba / Multimoldura", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Palos de escoba / Perfilado", "Material": "Metal duro" },
+        titulo: "Fresa Palos de Escoba / Multimoldura", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Palos de escoba / Perfilado", "Material": "Metal duro" },
         variantes: [
             { id: "FP2226", nombre: "FP2226 - 2 PALOS ESCOBA D=22.5 #60 Z=6" },
             { id: "FP2286", nombre: "FP2286 - 2 PALOS ESCOBA D=28 #75 Z=6" },
@@ -556,8 +556,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 009: Despiece de Machimbre (F1M) ---
     "F1M": {
         codigoBase: "F1M", categoriaImg: "Fresas", carpetaImg: "F1M0",
-        titulo: "Fresa Despiece de Machimbre (1/2 a 3/4)", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
+        titulo: "Fresa Despiece de Machimbre (1/2 a 3/4)", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
         variantes: [
             { id: "F1M01", nombre: "F1M01 - FR. MACHO 1/2 A 3/4 Z=4" },
             { id: "F1M03", nombre: "F1M03 - RECTA PARA HEMBRA 1/2 A 3/4 Z=4" },
@@ -573,8 +573,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 009: Despiece de Machimbre (F2M, 3/4 a 1 1/4) ---
     "F2M": {
         codigoBase: "F2M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa Despiece de Machimbre (3/4 a 1 1/4)", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
+        titulo: "Fresa Despiece de Machimbre (3/4 a 1 1/4)", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Despiece de Machimbre", "Material": "Metal duro" },
         variantes: [
             { id: "F2M01", nombre: "F2M01 - FR. MACHO 3/4 A 1 1/4 Z=4" },
             { id: "F2M03", nombre: "F2M03 - FR. HEMBRA 3/4 A 1 1/4 Z=4" },
@@ -586,16 +586,16 @@ const baseDatosProductos = {
     // --- Fresa para Finger HM (catálogo pág. 11) ---
     "JFE254": {
         codigoBase: "JFE254", categoriaImg: "Fresas", carpetaImg: "JFE254",
-        titulo: "Fresa para Finger HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Metal duro" },
+        titulo: "Fresa para Finger HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Finger en maderas de hasta 22 mm (tupí / moldureras)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE254", nombre: "JFE254 - D=150 B=22 d=40 Z=4" }
         ]
     },
     "JFE5022": {
         codigoBase: "JFE5022", categoriaImg: "Fresas", carpetaImg: "JFE5022",
-        titulo: "Fresa para Finger HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Metal duro" },
+        titulo: "Fresa para Finger HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Finger en maderas de hasta 45 mm (tupí / moldureras)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE5022", nombre: "JFE5022 - D=150 B=45 d=40 Z=2+2" }
         ]
@@ -603,8 +603,8 @@ const baseDatosProductos = {
     // --- Fresa para Ensamble Cónico HM (catálogo pág. 11) ---
     "JFE81": {
         codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE81",
-        titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Metal duro" },
+        titulo: "Fresa para Ensamble Cónico HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8122", nombre: "JFE8122 - D=150 B=10-45 d=40 Z=4x4" },
             { id: "JFE8121", nombre: "JFE8121 - D=160 B=3,8 d=40 Z=1x4" }
@@ -613,8 +613,8 @@ const baseDatosProductos = {
     // --- Fresa para Encastre HM (catálogo pág. 12) ---
     "JFE8Z": {
         codigoBase: "JFE8Z", categoriaImg: "Fresas", carpetaImg: "JFE8Z124",
-        titulo: "Fresa para Encastre HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
+        titulo: "Fresa para Encastre HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8Z122", nombre: "JFE8Z122 - D=180 B=19-40 d=40 Z=3+3 (A)" },
             { id: "JFE8Z124", nombre: "JFE8Z124 - D=180 B=19-40 d=40 Z=3+3 (B)" }
@@ -622,8 +622,8 @@ const baseDatosProductos = {
     },
     "JFME68": {
         codigoBase: "JFME68", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Fresa para Encastre HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
+        titulo: "Fresa para Encastre HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ensamble a 90° y 180° (unión de marcos en puertas y ventanas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFME68", nombre: "JFME68 - D=245 B=22-68 d=40 Z=3+3 (B)" }
         ]
@@ -631,8 +631,8 @@ const baseDatosProductos = {
     // --- Otros juegos de ensamble (no listados individualmente en pág. 5-14) ---
     "JFE": {
         codigoBase: "JFE", categoriaImg: "Fresas", carpetaImg: "JFE",
-        titulo: "Juego de Fresas de Ensamble", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Ensamble / Encastre", "Material": "Metal duro" },
+        titulo: "Juego de Fresas de Ensamble", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Ensamble / Encastre", "Material": "Metal duro" },
         variantes: [
             { id: "JFE8Z34", nombre: "JFE8Z34 - ENSAMBLE 90° y 180° 'A' D=150 12 a 22" }
         ]
@@ -641,8 +641,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 012: Moldura Puertas y Ventanas (JFMPV) ---
     "JFMPV": {
         codigoBase: "JFMPV", categoriaImg: "Fresas", carpetaImg: "JFMPV14",
-        titulo: "Moldura de Puertas y Ventanas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Metal duro" },
+        titulo: "Moldura de Puertas y Ventanas HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Molduras de puertas y ventanas con ranura para tableros o vidrios", "Material": "Metal duro" },
         variantes: [
             { id: "JFMPV14", nombre: "JFMPV14 - D=150 B=1 1/2 a 2\" d=40 Z=2x4 y 1x6" }
         ]
@@ -651,8 +651,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 012: Puerta Mueble de Cocina (JFPMS) ---
     "JFPMS": {
         codigoBase: "JFPMS", categoriaImg: "Fresas", carpetaImg: "JFPMS10",
-        titulo: "Puerta de Muebles HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Metal duro" },
+        titulo: "Puerta de Muebles HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Moldura, contramoldura y replan de puertas de muebles de cocina y vanitorís", "Material": "Metal duro" },
         variantes: [
             { id: "JFPMS10", nombre: "JFPMS10 - D=160 B=1\" d=40 Z=1x4 y 1x6" }
         ]
@@ -661,8 +661,8 @@ const baseDatosProductos = {
     // --- Deck Standard HM (catálogo pág. 8) ---
     "JFDE": {
         codigoBase: "JFDE", categoriaImg: "Fresas", carpetaImg: "JFDE4",
-        titulo: "Deck Standard HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Metal duro" },
+        titulo: "Deck Standard HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Deck tradicional en machimbradora (regulable según espesor)", "Material": "Metal duro" },
         variantes: [
             { id: "JFDE4", nombre: "JFDE4 - D=150 B=3/4 a 1\" d=40 Z=2x4" },
             { id: "JFDE6", nombre: "JFDE6 - D=160 B=3/4 a 1\" d=40 Z=2x6" }
@@ -671,8 +671,8 @@ const baseDatosProductos = {
     // --- Deck para Grampa HM (catálogo pág. 8) ---
     "JFDSG": {
         codigoBase: "JFDSG", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Deck para Grampa HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck para montaje con grampa plástica (machimbradora)", "Material": "Metal duro" },
+        titulo: "Deck para Grampa HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Deck para montaje con grampa plástica (machimbradora)", "Material": "Metal duro" },
         variantes: [
             { id: "JFDSG14", nombre: "JFDSG14 - D=160 B=1\" d=40 Z=4x4 y 2x8" },
             { id: "JFDSG16", nombre: "JFDSG16 - D=160 B=1\" d=40 Z=4x6 y 2x12" }
@@ -681,8 +681,8 @@ const baseDatosProductos = {
     // --- Deck regulable (no listado individualmente en pág. 5-14) ---
     "JFDR": {
         codigoBase: "JFDR", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Juego de Fresas Deck Regulable", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Deck regulable", "Material": "Metal duro" },
+        titulo: "Juego de Fresas Deck Regulable", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Deck regulable", "Material": "Metal duro" },
         variantes: [
             { id: "JFDR4", nombre: "JFDR4 - 2 FR. DECK REGULABLE #10 A 25mm D=150 Z=4" }
         ]
@@ -691,8 +691,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 011: Limitador Mueble (LIMMUE) ---
     "LIMMUE": {
         codigoBase: "LIMMUE", categoriaImg: "Fresas", carpetaImg: "LIMMUE",
-        titulo: "Disco Limitador Mueble Cocina", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Limitador", "Material": "Metal duro" },
+        titulo: "Disco Limitador Mueble Cocina", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Limitador", "Material": "Metal duro" },
         variantes: [
             { id: "LIMMUE", nombre: "LIMMUE - DISCO LIMITADOR MUEBLE COCINA Yext=136" }
         ]
@@ -701,8 +701,8 @@ const baseDatosProductos = {
     // --- Fresa para Radios Múltiples HM (catálogo pág. 12) ---
     "FMR": {
         codigoBase: "FMR", categoriaImg: "Fresas", carpetaImg: "FMR04",
-        titulo: "Fresa para Radios Múltiples HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Metal duro" },
+        titulo: "Fresa para Radios Múltiples HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Realizar Multi-Radios de 4 a 10 mm", "Material": "Metal duro" },
         variantes: [
             { id: "FMR04", nombre: "FMR04 - D=140 B=35 d=40 Z=4" }
         ]
@@ -711,8 +711,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 013: Replan Tablero (FRP) ---
     "FRP": {
         codigoBase: "FRP", categoriaImg: "Fresas", carpetaImg: "FRP5533",
-        titulo: "Replán de Tablero HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Metal duro" },
+        titulo: "Replán de Tablero HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Replán de Tablero (fresa sobre madera / madera sobre fresa)", "Material": "Metal duro" },
         variantes: [
             { id: "FRP5533", nombre: "FRP5533 - D=200 B=55 d=40 Z=3+3 b=20" }
         ]
@@ -721,8 +721,8 @@ const baseDatosProductos = {
     // --- Sub-rubro 018: Cabezales Cepilladores (CB) ---
     "CB": {
         codigoBase: "CB", categoriaImg: "Fresas", carpetaImg: "CB0750660",
-        titulo: "Cabezales Cepilladores HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Metal duro" },
+        titulo: "Cabezales Cepilladores HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Cepillar o espigar (bajo ruido)", "Material": "Metal duro" },
         variantes: [
             { id: "CB0500640", nombre: "CB0500640 - Y=125 #50(6) Z=36 3 ENTRADAS" },
             { id: "CB0750660", nombre: "CB0750660 - Y=125 #75(6) Z=54 3 ENTRADAS" },
@@ -738,8 +738,8 @@ const baseDatosProductos = {
     // --- Zócalo Simple y Contramarco HM (catálogo pág. 5) ---
     "FZS": {
         codigoBase: "FZS", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Zócalo Simple y Contramarco HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar zócalos y contramarcos", "Material": "Metal duro" },
+        titulo: "Zócalo Simple y Contramarco HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Efectuar zócalos y contramarcos", "Material": "Metal duro" },
         variantes: [
             { id: "FZS128", nombre: "FZS128 - D=150 B=1/2-3/4\" d=40 Z=4 (A y B)" },
             { id: "FZS129", nombre: "FZS129 - D=150 B=1/2-3/4\" d=40 Z=4 (A y A)" }
@@ -748,8 +748,8 @@ const baseDatosProductos = {
     // --- Rinconera Doble HM (catálogo pág. 6) ---
     "JFRD": {
         codigoBase: "JFRD", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Rinconera Doble HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Efectuar Rinconera Doble (modelos 1 ó 2)", "Material": "Metal duro" },
+        titulo: "Rinconera Doble HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Efectuar Rinconera Doble (modelos 1 ó 2)", "Material": "Metal duro" },
         variantes: [
             { id: "JFRD", nombre: "JFRD - D=160 B=1\" d=40 Z=2x4 y 1x10" }
         ]
@@ -758,16 +758,16 @@ const baseDatosProductos = {
     // --- Juego de Fresas Revestimiento Alistonado (JFRA) ---
     "JFRA1": {
         codigoBase: "JFRA1", categoriaImg: "Fresas", carpetaImg: "JFRA1",
-        titulo: "Juego de Fresas Revestimiento Alistonado", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Revestimiento alistonado", "Material": "Metal duro" },
+        titulo: "Juego de Fresas Revestimiento Alistonado", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Revestimiento alistonado", "Material": "Metal duro" },
         variantes: [
             { id: "JFRA1", nombre: "JFRA1 - JGO. 4 FR. Z=4 c/u + 1 FR. Z=6 #21/25" }
         ]
     },
     "JFFI": {
         codigoBase: "JFFI", categoriaImg: "Fresas", carpetaImg: "JFFI01",
-        titulo: "Frente Inglés HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Metal duro" },
+        titulo: "Frente Inglés HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Frente Inglés Simple y Machimbrado", "Material": "Metal duro" },
         variantes: [
             { id: "JFFI01", nombre: "JFFI01 - D=175 B=1/2-1\" d=40 Z=4x4 (A)" },
             { id: "JFFI05", nombre: "JFFI05 - D=175 B=1/2-1\" d=40 Z=4x4 (B)" }
@@ -776,8 +776,8 @@ const baseDatosProductos = {
     // --- Machimbre Simple HM (catálogo pág. 6) ---
     "JFMS": {
         codigoBase: "JFMS", categoriaImg: "Fresas", carpetaImg: "JFMS1234",
-        titulo: "Machimbre Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Metal duro" },
+        titulo: "Machimbre Simple HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Machimbre Simple Biselado o Bajo Fondo", "Material": "Metal duro" },
         variantes: [
             { id: "JFMS1234", nombre: "JFMS1234 - D=155 B=1/2-3/4\" d=40 Z=5x4 y 1x16" },
             { id: "JFMS34114", nombre: "JFMS34114 - D=155 B=3/4-1 1/4\" d=40 Z=6x4" }
@@ -786,8 +786,8 @@ const baseDatosProductos = {
     // --- Machimbre Doble HM (catálogo pág. 7) ---
     "JFMD": {
         codigoBase: "JFMD", categoriaImg: "Fresas", carpetaImg: "JFMD1234",
-        titulo: "Machimbre Doble HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Metal duro" },
+        titulo: "Machimbre Doble HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Machimbre Doble con Chanfle o Bajo Fondo", "Material": "Metal duro" },
         variantes: [
             { id: "JFMD1234", nombre: "JFMD1234 - D=155 B=1/2-3/4\" d=40 Z=10x4 y 2x16" }
         ]
@@ -795,8 +795,8 @@ const baseDatosProductos = {
     // --- Machimbre Piso para Grampa y Microbisel (catálogo pág. 8) ---
     "JFMP34166M": {
         codigoBase: "JFMP34166M", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Machimbre Piso para Grampa y Microbisel", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta, microbisel y aristas redondeadas para grampa de sujeción", "Material": "Metal duro" },
+        titulo: "Machimbre Piso para Grampa y Microbisel", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Machimbre de piso con junta abierta, microbisel y aristas redondeadas para grampa de sujeción", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP34166M", nombre: "JFMP34166M - D=180 B=5/8-1\" d=40 Z=8x6+6" }
         ]
@@ -804,8 +804,8 @@ const baseDatosProductos = {
     // --- Machimbre Piso para Grampa (catálogo pág. 7) ---
     "JFMP3416G": {
         codigoBase: "JFMP3416G", categoriaImg: "Fresas", carpetaImg: "JFMP3416G",
-        titulo: "Machimbre Piso para Grampa", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Metal duro" },
+        titulo: "Machimbre Piso para Grampa", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Machimbre de piso con junta abierta e incisión para grampa de sujeción", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP3416G", nombre: "JFMP3416G - D=180 B=5/8-1\" d=40 Z=4x6+6" }
         ]
@@ -813,8 +813,8 @@ const baseDatosProductos = {
     // --- Machimbre Piso Standard (catálogo pág. 7) ---
     "JFMP": {
         codigoBase: "JFMP", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Machimbre Piso Standard", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Machimbre de piso con junta abierta (macho y hembra redondeados)", "Material": "Metal duro" },
+        titulo: "Machimbre Piso Standard", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Machimbre de piso con junta abierta (macho y hembra redondeados)", "Material": "Metal duro" },
         variantes: [
             { id: "JFMP3411", nombre: "JFMP3411 - D=150 B=3/4-1 1/4\" d=40 Z=4x4" },
             { id: "JFMP3416", nombre: "JFMP3416 - D=160 B=5/8-1\" d=40 Z=4x6" }
@@ -823,8 +823,8 @@ const baseDatosProductos = {
     // --- Contramolduras de Puertas y Ventanas HM (catálogo pág. 9) ---
     "FCPV": {
         codigoBase: "FCPV", categoriaImg: "Fresas", carpetaImg: "Cepillado",
-        titulo: "Contramolduras de Puertas y Ventanas HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Contramolduras en Espigadoras o Tupíes", "Material": "Metal duro" },
+        titulo: "Contramolduras de Puertas y Ventanas HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Contramolduras en Espigadoras o Tupíes", "Material": "Metal duro" },
         variantes: [
             { id: "FCPV41", nombre: "FCPV41 - D=150 B=1 1/2 a 2\" d=40 Z=4" },
             { id: "FCPV6", nombre: "FCPV6 - D=250 B=1 1/2 a 2\" d=40 Z=6" },
@@ -834,8 +834,8 @@ const baseDatosProductos = {
     // --- Moldura de Puertas y Ventanas Simple HM (catálogo pág. 10) ---
     "JFMPVR": {
         codigoBase: "JFMPVR", categoriaImg: "Fresas", carpetaImg: "JFMPVR",
-        titulo: "Moldura de Puertas y Ventanas Simple HM", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Metal duro" },
+        titulo: "Moldura de Puertas y Ventanas Simple HM", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Molduras, contramolduras y replan (1 fresa tipo replán y 2 fresas rectas)", "Material": "Metal duro" },
         variantes: [
             { id: "JFMPVR", nombre: "JFMPVR - D=180 B=35-45 d=40 Z=1x2+2 y 2x4" }
         ]
@@ -843,8 +843,8 @@ const baseDatosProductos = {
     // --- Fresa Multimoldura (catálogo pág. 12) ---
     "FP402": {
         codigoBase: "FP402", categoriaImg: "Fresas", carpetaImg: "FP402",
-        titulo: "Fresa Multimoldura", marca: "WoodTools",
-        caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Metal duro" },
+        titulo: "Fresa Multimoldura", marca: "Franzoi",
+        caracteristicasBasicas: { "Marca": "Franzoi", "Uso": "Distintos tipos de molduras sin cambiar insertos (subiendo/bajando el eje del tupí)", "Material": "Metal duro" },
         variantes: [
             { id: "FP402", nombre: "FP402 - D=150 B=45 d=40 Z=2" }
         ]
@@ -1560,6 +1560,141 @@ const baseDatosProductos = {
         variantes: [
             { id: "GL20701M", nombre: "GL20701M - Estandar 207 x 30-34" }
         ]
+    },
+
+    // --- Insertos y repuestos para cabezales ---
+    //  Estas 22 páginas existían en HTML/CBZ/ pero no tenían familia acá, así que
+    //  renderizaban vacías ("Cargando Producto..." para siempre). La marca y el tipo
+    //  (inserto / repuesto) salen de la clasificación del propio catálogo
+    //  (data-marca y data-categoria de las tarjetas de Cabezales.html).
+    //  LAS MEDIDAS NO ESTÁN CARGADAS: dicen "Consultar medidas" hasta que se completen.
+    //  Mientras no tengan fotos, el sitio las mantiene ocultas igual que al resto.
+
+    "CG03M": {
+        codigoBase: "CG03M", categoriaImg: "Cabezales", carpetaImg: "CG03M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CG03M AA3", nombre: "CG03M AA3 — consultar medidas" }]
+    },
+    "CG05M": {
+        codigoBase: "CG05M", categoriaImg: "Cabezales", carpetaImg: "CG05M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [
+            { id: "CG05M BA3", nombre: "CG05M BA3 — consultar medidas" },
+            { id: "CG05M FC3", nombre: "CG05M FC3 — consultar medidas" }
+        ]
+    },
+    "CG08M": {
+        codigoBase: "CG08M", categoriaImg: "Cabezales", carpetaImg: "CG08M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CG08M FA3", nombre: "CG08M FA3 — consultar medidas" }]
+    },
+    "CG50M": {
+        codigoBase: "CG50M", categoriaImg: "Cabezales", carpetaImg: "CG50M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CG50M AA3", nombre: "CG50M AA3 — consultar medidas" }]
+    },
+    "CP22M": {
+        codigoBase: "CP22M", categoriaImg: "Cabezales", carpetaImg: "CP22M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CP22M A080", nombre: "CP22M A080 — consultar medidas" }]
+    },
+    "CP31M": {
+        codigoBase: "CP31M", categoriaImg: "Cabezales", carpetaImg: "CP31M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CP31M C100", nombre: "CP31M C100 — consultar medidas" }]
+    },
+    "CP40M": {
+        codigoBase: "CP40M", categoriaImg: "Cabezales", carpetaImg: "CP40M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CP40M AA3", nombre: "CP40M AA3 — consultar medidas" }]
+    },
+    "CPSCM": {
+        codigoBase: "CPSCM", categoriaImg: "Cabezales", carpetaImg: "CPSCM",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CPSCM BB3", nombre: "CPSCM BB3 — consultar medidas" }]
+    },
+    "CT52M": {
+        codigoBase: "CT52M", categoriaImg: "Cabezales", carpetaImg: "CT52M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CT52M DA3", nombre: "CT52M DA3 — consultar medidas" }]
+    },
+    "CW10M": {
+        codigoBase: "CW10M", categoriaImg: "Cabezales", carpetaImg: "CW10M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CW10M AA3", nombre: "CW10M AA3 — consultar medidas" }]
+    },
+    "CW16M": {
+        codigoBase: "CW16M", categoriaImg: "Cabezales", carpetaImg: "CW16M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CW16M AA3", nombre: "CW16M AA3 — consultar medidas" }]
+    },
+    "CW28MA": {
+        codigoBase: "CW28MA", categoriaImg: "Cabezales", carpetaImg: "CW28MA",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "CW28MA AA3", nombre: "CW28MA AA3 — consultar medidas" }]
+    },
+    "IG01M": {
+        codigoBase: "IG01M", categoriaImg: "Cabezales", carpetaImg: "IG01M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "IG01M AA3", nombre: "IG01M AA3 — consultar medidas" }]
+    },
+    "RG01M": {
+        codigoBase: "RG01M", categoriaImg: "Cabezales", carpetaImg: "RG01M",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "RG01M AA3", nombre: "RG01M AA3 — consultar medidas" }]
+    },
+    "INSRAS1": {
+        codigoBase: "INSRAS1", categoriaImg: "Cabezales", carpetaImg: "INSRAS1",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "INSRAS1", nombre: "INSRAS1 — consultar medidas" }]
+    },
+    "INSREF3A": {
+        codigoBase: "INSREF3A", categoriaImg: "Cabezales", carpetaImg: "INSREF3A",
+        titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
+        variantes: [{ id: "INSREF3A", nombre: "INSREF3A — consultar medidas" }]
+    },
+    "AT03M": {
+        codigoBase: "AT03M", categoriaImg: "Cabezales", carpetaImg: "AT03M",
+        titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
+        variantes: [
+            { id: "AT03M AA9", nombre: "AT03M AA9 — consultar medidas" },
+            { id: "AT03M AD9", nombre: "AT03M AD9 — consultar medidas" }
+        ]
+    },
+    "SD01M": {
+        codigoBase: "SD01M", categoriaImg: "Cabezales", carpetaImg: "SD01M",
+        titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
+        variantes: [{ id: "SD01M DG9", nombre: "SD01M DG9 — consultar medidas" }]
+    },
+    "SD02M": {
+        codigoBase: "SD02M", categoriaImg: "Cabezales", carpetaImg: "SD02M",
+        titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
+        variantes: [{ id: "SD02M AA9", nombre: "SD02M AA9 — consultar medidas" }]
+    },
+    "SD04MA": {
+        codigoBase: "SD04MA", categoriaImg: "Cabezales", carpetaImg: "SD04MA",
+        titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
+        variantes: [{ id: "SD04MA AA9", nombre: "SD04MA AA9 — consultar medidas" }]
     }
 };
 
@@ -1618,9 +1753,12 @@ function cargarGaleriaManifest() {
         // 'no-cache' = el navegador revalida con el servidor en cada carga (304 si no
         // cambió, liviano). Así, al regenerar y subir el manifiesto, las fotos nuevas
         // aparecen sin necesidad de cambiar versiones ni tocar código.
+        // Devuelve null si NO se pudo leer el índice (a diferencia de {}, que significa
+        // "se leyó y está vacío"). La galería trata a los dos igual, pero el noindex de
+        // más abajo necesita distinguirlos para no esconder una ficha por un hipo de red.
         _galeriaManifestPromise = fetch('../../../imagenes/herramientas/galeria-manifest.json', { cache: 'no-cache' })
-            .then(r => r.ok ? r.json() : {})
-            .catch(() => ({}));
+            .then(r => r.ok ? r.json() : null)
+            .catch(() => null);
     }
     return _galeriaManifestPromise;
 }
@@ -1648,8 +1786,11 @@ function renderizarGaleria(codigoActivo, info) {
     // Si el código activo coincide con la carpeta base, evitamos duplicar la galería
     carpetasImg = [...new Set(carpetasImg)];
 
-    // Fallback: SOLO se usa si la carpeta no figura en el manifiesto (foto nueva
-    // todavía no indexada, o manifiesto ausente). Set acotado de nombres comunes.
+    // Fallback: SOLO se usa si el manifiesto entero no se pudo cargar (ausente o red
+    // caída). Si el manifiesto cargó bien pero la carpeta no figura en él, NO se sondea
+    // nada: se asume que esa carpeta no tiene fotos (así se evitan decenas de 404).
+    // Es decir: si subís fotos nuevas y no regenerás el índice, no se ven.
+    // Set acotado de nombres comunes.
     const combinacionesSeguras = [
         "1 (1).jpg", "1 (1).png", "1.jpg", "1.jpeg", "1.png", "1 (2).jpg", "1 (3).jpg", "Incisor.png",
         "2.jpg", "2.jpeg", "2.png", "3.jpg", "3.jpeg", "3.png", "4.jpg", "4.jpeg", "4.png",
@@ -1661,12 +1802,15 @@ function renderizarGaleria(codigoActivo, info) {
         // Si el manifiesto cargó bien, confiamos en él: las carpetas que no figuran
         // NO existen en disco -> se saltean (cero pedidos 404). El sondeo por nombres
         // comunes solo se usa si el manifiesto no se pudo cargar (ausente/red caída).
+        const manifestLeido = manifest !== null;      // false = no se pudo leer el archivo
         const manifestOk = manifest && Object.keys(manifest).length > 0;
+        let fotosEncontradas = 0;
         let galeriaHTML = `<div class="galeria-miniaturas">`;
         carpetasImg.forEach(carpeta => {
             const basePath = `../../../imagenes/herramientas/${info.categoriaImg}/${carpeta}/`;
             const key = `${info.categoriaImg}/${carpeta}`;
             const lista = manifestOk ? (manifest[key] || []) : combinacionesSeguras;
+            fotosEncontradas += lista.length;
             lista.forEach(nombre => {
                 galeriaHTML += `<img src="${basePath}${nombre}" class="mini-img"
                     onload="window.setMainImage(this)"
@@ -1682,7 +1826,28 @@ function renderizarGaleria(codigoActivo, info) {
         `;
         contenedorImagen.innerHTML = galeriaHTML;
         setTimeout(activarZoom, 200);
+        marcarNoIndexSiNoHayFotos(manifestLeido, fotosEncontradas);
     });
+}
+
+// Una publicación sin NINGUNA foto no tiene que aparecer en Google. En vez de mantener
+// una lista a mano, lo decide la propia ficha: si el índice se pudo leer y no salió ni una
+// foto, se agrega <meta name="robots" content="noindex">. Cuando se cargan las fotos y se
+// regenera el índice, la página vuelve a ser indexable sola, sin tocar código.
+let _noIndexEvaluado = false;
+function marcarNoIndexSiNoHayFotos(manifestLeido, fotosEncontradas) {
+    // Se decide UNA sola vez: renderizarGaleria se vuelve a ejecutar cada vez que el
+    // visitante cambia de medida, y una medida sin fotos no debe desindexar la ficha.
+    if (_noIndexEvaluado) return;
+    _noIndexEvaluado = true;
+    // Si el índice no se pudo leer, no marcamos nada: preferimos indexar de más antes
+    // que borrar de Google 167 fichas por una caída de red.
+    if (!manifestLeido || fotosEncontradas > 0) return;
+    if (document.querySelector('meta[name="robots"]')) return;
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex';
+    document.head.appendChild(meta);
 }
 
 // Máquina de destino (punto 7): misma lógica que filtros.js. Se muestra como
@@ -1762,14 +1927,17 @@ function cargarEstructuraProducto(info) {
     const CODIGOS_MELAMINA = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
     const esMelamina = CODIGOS_MELAMINA.indexOf(info.codigoBase) !== -1;
 
-    // Marca a mostrar (puntos 4 y 5): Sierras = marca real (Freud/Franzoi);
-    // Cuchillas = Ilma; Diamante = sin marca; el resto = "Nordutensili" si lo es,
-    // o "Genérica" en cualquier otro caso.
+    // Marca a mostrar (puntos 4 y 5): Diamante = sin marca; Cuchillas = siempre Ilma;
+    // todo lo demás = la marca real cargada en baseDatosProductos
+    // (Sierras Freud/Franzoi, Cabezales Freud, Fresas Franzoi, Mechas Nordutensili).
     let marcaFinal;
     if (info.categoriaImg === "Diamante") marcaFinal = null;
-    else if (info.categoriaImg === "Sierras") marcaFinal = info.marca;
     else if (info.categoriaImg === "Cuchillas") marcaFinal = "Ilma";
-    else marcaFinal = /nordutensili/i.test(info.marca || "") ? "Nordutensili" : "Genérica";
+    // El resto muestra la marca REAL cargada en baseDatosProductos. Antes, todo lo que
+    // no fuera Sierras/Cuchillas/Diamante caía en "Genérica" salvo Nordutensili, así que
+    // los cabezales Freud y las fresas Franzoi se publicaban como "Genérica".
+    // "Genérica" queda solo como red de seguridad si a una familia le falta la marca.
+    else marcaFinal = info.marca || "Genérica";
 
     if (marcaDOM) {
         if (marcaFinal) marcaDOM.innerText = `Marca: ${marcaFinal}`;

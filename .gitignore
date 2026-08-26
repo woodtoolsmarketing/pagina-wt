@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------
+# Archivos que NO deben viajar al repositorio (es publico en GitHub)
+# ---------------------------------------------------------------
+
+# Credenciales del FTP: contiene host, usuario y CONTRASEÑA.
+# Solo debe existir en tu PC. Nunca subirlo.
+_tools/ftp-config.json
+
+# Dependencias de Node: se reinstalan solas con "npm install".
+node_modules/
+
+# Registro local de "que archivos ya subi por FTP". Es de tu PC.
+_tools/.subido.json
+
+# Basura del sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store

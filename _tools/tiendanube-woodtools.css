@@ -1,0 +1,545 @@
+/* =============================================================================
+   WOODTOOLS — ESTILO PARA TIENDA NUBE
+   -----------------------------------------------------------------------------
+   Deja la tienda con el mismo diseño que woodtools.com.ar: mismos colores,
+   misma tipografía, mismo botón rojo, mismas tarjetas de producto y mismo footer.
+
+   CÓMO INSTALARLO (5 minutos, no hay que programar)
+   -------------------------------------------------
+   1) Entrá al panel de Tienda Nube.
+   2) Andá a  Mi tienda online  >  Diseño.
+   3) Abajo de todo, entrá en  "Configuración avanzada"  (o "Personalizar diseño
+      con CSS", según la versión que tengas).
+   4) Pegá TODO este archivo en el recuadro de CSS.
+   5) Guardá y mirá la tienda. Si algo no cambió, ver "SI ALGO NO TOMA" al final.
+
+   IMPORTANTE
+   ----------
+   - Cambiar este CSS NO rompe nada: si algo no te gusta, borrás el bloque y listo.
+   - Todos los colores están arriba de todo, en un solo lugar (PALETA). Si algún
+     día cambia el rojo de la marca, se toca ahí y se actualiza toda la tienda.
+   - Los valores salieron medidos del sitio real, no son aproximados.
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. PALETA Y MEDIDAS  —  el único lugar donde tocar colores
+   ============================================================================= */
+:root {
+  /* Colores de marca */
+  --wt-rojo:            #a41e22;   /* rojo principal (botón "Comprá ahora")     */
+  --wt-rojo-hover:      #7d161a;   /* el mismo rojo, más oscuro, al pasar el mouse */
+  --wt-rojo-cta:        #d32f2f;   /* rojo del botón "Más información" de las tarjetas */
+
+  /* Fondos */
+  --wt-fondo:           #f8f8f8;   /* fondo general de la página               */
+  --wt-blanco:          #ffffff;   /* header, tarjetas, barra de marcas        */
+  --wt-fondo-imagen:    #f9f9f9;   /* fondo del recuadro de la foto del producto */
+
+  /* Textos */
+  --wt-texto:           #333333;   /* texto principal                          */
+  --wt-texto-suave:     #666666;   /* textos secundarios                       */
+  --wt-texto-tenue:     #999999;
+
+  /* Bordes */
+  --wt-borde:           #dddddd;
+  --wt-borde-hover:     #bbbbbb;
+  --wt-borde-suave:     #f0f0f0;
+
+  /* Footer */
+  --wt-footer-fondo:    #383c40;
+  --wt-footer-texto:    #aaaaaa;
+  --wt-footer-borde:    #555555;
+
+  /* Tipografía: la misma pila que usa woodtools.com.ar */
+  --wt-fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Medidas */
+  --wt-radio:           3px;       /* redondeo de botones                      */
+  --wt-radio-tarjeta:   4px;       /* redondeo de tarjetas                     */
+  --wt-sombra-header:   0 2px 5px rgba(0, 0, 0, 0.1);
+  --wt-sombra-tarjeta:  0 3px 12px rgba(0, 0, 0, 0.12);
+  --wt-ancho-max:       1400px;
+}
+
+
+/* =============================================================================
+   2. BASE — tipografía, fondo y color de texto en toda la tienda
+   ============================================================================= */
+body,
+body input,
+body select,
+body textarea,
+body button {
+  font-family: var(--wt-fuente) !important;
+}
+
+body {
+  background-color: var(--wt-fondo) !important;
+  color: var(--wt-texto) !important;
+}
+
+/* Los títulos del sitio no van en mayúsculas ni con letra expandida */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.title-primary {
+  color: var(--wt-texto);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Links: en el sitio no van subrayados y toman el color del texto */
+a { color: var(--wt-texto); text-decoration: none; }
+a:hover { color: var(--wt-rojo); }
+
+
+/* =============================================================================
+   3. HEADER Y NAVEGACIÓN
+   El sitio tiene el header blanco, fijo arriba al hacer scroll y con una
+   sombra suave. Los links del menú son gris oscuro, 14px, semi-negrita.
+   ============================================================================= */
+.header,
+#header,
+.navbar,
+.js-head,
+header {
+  background-color: var(--wt-blanco) !important;
+  box-shadow: var(--wt-sombra-header);
+  border-bottom: none;
+}
+
+/* Header pegado arriba al bajar la página (igual que en el sitio) */
+.js-head,
+.header-main,
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor interno del header */
+.header .container,
+#header .container,
+.navbar .container {
+  max-width: var(--wt-ancho-max);
+}
+
+/* Links del menú principal */
+.nav-list a,
+.navbar-nav a,
+.js-menu a,
+.nav-primary a,
+.menu-item a,
+nav a {
+  color: var(--wt-texto) !important;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  text-decoration: none !important;   /* en el sitio el menú no va subrayado */
+}
+
+.nav-list a:hover,
+.navbar-nav a:hover,
+.js-menu a:hover,
+.menu-item a:hover,
+nav a:hover {
+  color: var(--wt-rojo) !important;
+}
+
+/* Submenús desplegables: fondo blanco, borde suave */
+.nav-list ul,
+.dropdown-menu,
+.js-submenu {
+  background-color: var(--wt-blanco);
+  border: 1px solid var(--wt-borde);
+  box-shadow: var(--wt-sombra-header);
+  border-radius: var(--wt-radio-tarjeta);
+}
+
+
+/* =============================================================================
+   4. BOTONES
+   Rojo #a41e22, texto blanco, esquinas apenas redondeadas (3px) y en negrita.
+   Al pasar el mouse se oscurece. Es el botón "Comprá ahora" del sitio.
+   ============================================================================= */
+.btn,
+.btn-primary,
+.btn-default,
+.js-addtocart,
+.js-prod-submit-form,
+.btn-cart,
+button[type="submit"],
+input[type="submit"] {
+  background-color: var(--wt-rojo) !important;
+  border-color: var(--wt-rojo) !important;
+  color: var(--wt-blanco) !important;
+  border-radius: var(--wt-radio) !important;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: normal;
+  text-decoration: none !important;
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-default:hover,
+.js-addtocart:hover,
+.js-prod-submit-form:hover,
+.btn-cart:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--wt-rojo-hover) !important;
+  border-color: var(--wt-rojo-hover) !important;
+  color: var(--wt-blanco) !important;
+}
+
+/* Botón secundario: contorno rojo sobre fondo blanco */
+.btn-secondary,
+.btn-outline,
+.btn-link {
+  background-color: transparent !important;
+  border: 1px solid var(--wt-rojo) !important;
+  color: var(--wt-rojo) !important;
+  border-radius: var(--wt-radio) !important;
+  font-weight: bold;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover,
+.btn-link:hover {
+  background-color: var(--wt-rojo) !important;
+  color: var(--wt-blanco) !important;
+}
+
+
+/* =============================================================================
+   5. TARJETAS DE PRODUCTO (la grilla del catálogo)
+   En el sitio: fondo blanco, borde gris fino, esquinas 4px. Al pasar el mouse
+   levanta una sombra y el borde se oscurece. La foto va sobre un recuadro gris
+   muy claro, siempre entera (nunca recortada).
+   ============================================================================= */
+.js-item-product,
+.item-product,
+.product-item,
+.item {
+  background: var(--wt-blanco);
+  border: 1px solid var(--wt-borde);
+  border-radius: var(--wt-radio-tarjeta);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.js-item-product:hover,
+.item-product:hover,
+.product-item:hover,
+.item:hover {
+  box-shadow: var(--wt-sombra-tarjeta);
+  border-color: var(--wt-borde-hover);
+}
+
+/* Recuadro de la foto */
+.item-image,
+.js-item-image,
+.product-image,
+.item-product .image {
+  background-color: var(--wt-fondo-imagen);
+  border-bottom: 1px solid var(--wt-borde-suave);
+  padding: 15px;
+}
+
+/* La foto entera, nunca recortada (el catálogo tiene fotos con fondo blanco) */
+.item-image img,
+.js-item-image img,
+.product-image img,
+.item-product img {
+  object-fit: contain !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Nombre del producto */
+.item-name,
+.js-item-name,
+.product-name,
+.item-title {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--wt-texto);
+  text-transform: none;
+}
+
+/* Precio */
+.item-price,
+.js-price-display,
+.product-price {
+  color: var(--wt-texto);
+  font-weight: 700;
+}
+
+/* Precio anterior tachado */
+.item-price-compare,
+.js-compare-price-display {
+  color: var(--wt-texto-tenue);
+  font-weight: 400;
+}
+
+/* Botón de la tarjeta ("Más información" en el sitio) */
+.item-buy-button,
+.js-item-buy-button,
+.item .btn {
+  background-color: var(--wt-rojo-cta) !important;
+  color: var(--wt-blanco) !important;
+  border-radius: var(--wt-radio-tarjeta) !important;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.item-buy-button:hover,
+.js-item-buy-button:hover,
+.item .btn:hover {
+  background-color: var(--wt-rojo-hover) !important;
+}
+
+
+/* =============================================================================
+   6. FICHA DE PRODUCTO
+   Caja blanca centrada, con esquinas redondeadas y una sombra muy suave.
+   ============================================================================= */
+.product-detail,
+.js-product-detail,
+.product-page .container,
+.single-product {
+  background-color: var(--wt-blanco);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Tabla de características / atributos */
+.product-attributes table,
+.js-product-table,
+table.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-attributes th,
+table.table th {
+  color: var(--wt-texto);
+  font-weight: 600;
+  text-align: left;
+  background-color: var(--wt-fondo);
+}
+
+.product-attributes td,
+.product-attributes th,
+table.table td,
+table.table th {
+  border: 1px solid var(--wt-borde-suave);
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+/* Selector de variante (medida / modelo) */
+.js-variations select,
+.product-variants select,
+select.form-control {
+  border: 1px solid var(--wt-borde);
+  border-radius: var(--wt-radio);
+  padding: 8px 10px;
+  font-size: 14px;
+  color: var(--wt-texto);
+  background-color: var(--wt-blanco);
+}
+
+
+/* =============================================================================
+   7. FOOTER
+   Gris oscuro #383c40 con texto gris claro, centrado, y una línea arriba.
+   Es lo que más se nota si falta: da el cierre visual de todas las páginas.
+   ============================================================================= */
+.footer,
+#footer,
+.footer-main,
+footer {
+  background-color: var(--wt-footer-fondo) !important;
+  color: var(--wt-footer-texto) !important;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--wt-footer-borde);
+}
+
+.footer a,
+#footer a,
+.footer-main a,
+footer a {
+  color: var(--wt-footer-texto) !important;
+  text-decoration: none;
+}
+
+.footer a:hover,
+#footer a:hover,
+footer a:hover {
+  color: var(--wt-blanco) !important;
+}
+
+.footer h1, .footer h2, .footer h3, .footer h4,
+#footer h1, #footer h2, #footer h3, #footer h4,
+footer h1, footer h2, footer h3, footer h4 {
+  color: var(--wt-blanco);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* Barra de contacto: la franja con dirección y teléfonos */
+.footer-contact-bar {
+  background-color: var(--wt-footer-fondo);
+  color: var(--wt-blanco);
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* =============================================================================
+   8. BARRA DE MARCAS (Ilma · Schiavon · Freud · Franzoi · Nordutensili)
+   Si en Tienda Nube armás una sección de logos de marcas, esto la deja igual
+   que la del sitio: fondo blanco, logos de 60px de alto y bien separados.
+   ============================================================================= */
+.brands-bar,
+#marcas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 5%;
+  background-color: var(--wt-blanco);
+}
+
+.brands-bar img,
+#marcas img {
+  height: 60px;
+  object-fit: contain;
+}
+
+
+/* =============================================================================
+   9. BOTÓN FLOTANTE DE WHATSAPP
+   Abajo a la derecha, redondo, siempre visible. Igual que en el sitio.
+   ============================================================================= */
+.floating-buttons,
+.js-whatsapp-button,
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
+}
+
+.floating-buttons a,
+.whatsapp-float a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+/* =============================================================================
+   10. CARRITO Y CHECKOUT
+   Solo los acentos de color, para que no aparezca el azul por defecto.
+   ============================================================================= */
+.cart-total,
+.js-cart-total,
+.cart-summary strong {
+  color: var(--wt-texto);
+  font-weight: 700;
+}
+
+.badge,
+.cart-count,
+.js-cart-widget-amount {
+  background-color: var(--wt-rojo) !important;
+  color: var(--wt-blanco) !important;
+}
+
+/* Mensajes de "producto agregado", avisos, etc. */
+.alert-success,
+.js-cart-notification {
+  border-left: 3px solid var(--wt-rojo);
+}
+
+
+/* =============================================================================
+   11. CELULARES Y TABLETS
+   El sitio achica el botón rojo y junta los logos de marcas. Mismo criterio.
+   ============================================================================= */
+@media (max-width: 900px) {
+  .btn,
+  .btn-primary,
+  .js-addtocart {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .brands-bar,
+  #marcas {
+    gap: 24px;
+    padding: 35px 5%;
+  }
+
+  .brands-bar img,
+  #marcas img {
+    height: 45px;
+  }
+
+  .footer,
+  #footer,
+  footer {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-name,
+  .js-item-name,
+  .product-name {
+    font-size: 12px;
+  }
+
+  .item-buy-button,
+  .js-item-buy-button {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+}
+
+
+/* =============================================================================
+   SI ALGO NO TOMA
+   -----------------------------------------------------------------------------
+   Tienda Nube tiene varias plantillas y cada una le pone un nombre distinto a
+   las mismas cosas. Este archivo cubre los nombres más comunes, pero si algo
+   quedó sin cambiar:
+
+   1) Abrí la tienda en Chrome, hacé clic derecho sobre lo que no cambió y
+      elegí "Inspeccionar".
+   2) En el panel que se abre, arriba de todo va a estar resaltada la línea del
+      elemento. Fijate el texto que dice  class="..."
+   3) Pasame ese texto (o mandame el link de tu tienda) y te agrego la regla
+      exacta en el bloque que corresponda.
+
+   Si algo cambió DE MÁS y no te gusta, buscá el bloque numerado (1 a 11) donde
+   está y borralo: el resto sigue funcionando igual.
+   ============================================================================= */

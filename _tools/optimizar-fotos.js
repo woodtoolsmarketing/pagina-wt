@@ -1,12 +1,13 @@
 /* =====================================================================
    OPTIMIZADOR DE FOTOS (achica/comprime para que el sitio cargue rápido)
    ---------------------------------------------------------------------
-   Recorre la carpeta imagenes/ y, para cada foto:
-     - la redimensiona a 1280px máx. de lado (suficiente para la web),
-     - la recomprime (JPEG calidad 82 / PNG optimizado),
-     - corrige la orientación de fotos de celular.
-   Solo reescribe si la foto queda al menos 5% más liviana, así las fotos
-   ya optimizadas NO se vuelven a tocar (se puede correr las veces que quieras).
+   Recorre la carpeta imagenes/ y revisa las fotos GRANDES (más de 1280px de lado)
+   o PESADAS (más de 300KB), que son las nuevas sin optimizar. A esas:
+     - las redimensiona a 1280px máx. de lado (suficiente para la web),
+     - las recomprime (JPEG calidad 82 / PNG sin pérdida de color),
+     - les corrige la orientación de fotos de celular.
+   Solo reescribe si la foto queda al menos 15% más liviana, así las fotos ya
+   optimizadas NO se vuelven a tocar (se puede correr las veces que quieras).
    NO cambia nombres ni rutas.
    ===================================================================== */
 const sharp = require('sharp');
@@ -34,10 +35,13 @@ function walk(dir, acc = []) {
   const files = walk(BASE);
   let totalIn = 0, totalOut = 0, cambiados = 0, saltados = 0, errores = 0;
   for (const f of files) {
-    const inSize = fs.statSync(f).size;
-    totalIn += inSize;
+    let inSize = 0;
     const ext = path.extname(f).toLowerCase();
     try {
+      // statSync dentro del try: si borrás una foto mientras esto corre, se saltea
+      // esa sola en vez de abortar toda la optimización.
+      inSize = fs.statSync(f).size;
+      totalIn += inSize;
       const input = fs.readFileSync(f); // a memoria: evita bloqueo de archivo en Windows
       const meta = await sharp(input, { failOn: 'none' }).metadata();
       // Procesamos fotos GRANDES (lado > 1280px) o PESADAS (> 300KB), que son las
@@ -53,8 +57,10 @@ function walk(dir, acc = []) {
       }
       let pipe = sharp(input, { failOn: 'none' }).rotate();
       if (grande) pipe = pipe.resize({ width: MAX, height: MAX, fit: 'inside', withoutEnlargement: true });
+      // PNG sin pérdida: con palette:true sharp cuantizaba a 256 colores y pisaba el
+      // original sin respaldo. El ahorro real de los PNG grandes lo da el resize.
       pipe = (ext === '.png')
-        ? pipe.png({ compressionLevel: 9, palette: true, quality: 85, effort: 8 })
+        ? pipe.png({ compressionLevel: 9, effort: 8 })
         : pipe.jpeg({ quality: Q_JPEG, mozjpeg: true });
       const buf = await pipe.toBuffer();
       if (buf.length < inSize * 0.85) {   // solo si ahorra >15% (evita degradar lo ya óptimo)
@@ -80,4 +86,7 @@ function walk(dir, acc = []) {
   if (errores) console.log(' Con error (saltadas): ' + errores);
   console.log(' Peso total         : ' + mb(totalIn) + '  ->  ' + mb(totalOut));
   console.log('=====================================================');
-})();
+})().catch(e => {
+  console.error('ERROR al optimizar las fotos: ' + e.message);
+  process.exitCode = 1;
+});

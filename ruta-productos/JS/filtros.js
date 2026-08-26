@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch('../../imagenes/herramientas/galeria-manifest.json', { cache: 'no-cache' })
         .then(r => r.json())
         .then(manifest => {
+            // Si el índice llegó vacío o truncado (por ejemplo, una subida por FTP
+            // cortada a la mitad), NO escondemos nada: preferimos mostrar de más antes
+            // que dejar la grilla en blanco. Misma guarda que usa producto.js.
+            if (!manifest || Object.keys(manifest).length === 0) return;
             productos.forEach(producto => {
                 const img = producto.querySelector('img');
                 const key = img ? claveCarpeta(img.getAttribute('src')) : null;

@@ -46,32 +46,74 @@ function walk(dir, acc = []) {
   return acc;
 }
 
-function cargarLedger() { try { return JSON.parse(fs.readFileSync(LEDGER, 'utf8')); } catch { return {}; } }
-function guardarLedger(l) { fs.writeFileSync(LEDGER, JSON.stringify(l, null, 0)); }
+// El Bloc de notas de Windows puede guardar el archivo con una marca invisible al
+// principio (BOM). Sin sacarla, JSON.parse falla y parecía que faltaba la configuración.
+function leerJson(archivo) { return JSON.parse(fs.readFileSync(archivo, 'utf8').replace(/^﻿/, '')); }
+
+function cargarLedger() {
+  if (!fs.existsSync(LEDGER)) return {};                 // primera vez: sube todo (normal)
+  try { return leerJson(LEDGER); }
+  catch {
+    console.log(' AVISO: el registro de subidas estaba dañado. Voy a subir todo el sitio de nuevo');
+    console.log(' (no se pierde nada, solo tarda mas esta vez).');
+    return {};
+  }
+}
+// Escritura atomica: primero a un .tmp y despues renombrar. Si se corta la luz a mitad,
+// el registro viejo queda intacto en vez de quedar truncado e ilegible.
+function guardarLedger(l) {
+  const tmp = LEDGER + '.tmp';
+  try { fs.writeFileSync(tmp, JSON.stringify(l)); fs.renameSync(tmp, LEDGER); }
+  catch { fs.writeFileSync(LEDGER, JSON.stringify(l)); }
+}
 const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
 
 (async () => {
   const ledger = cargarLedger();
   const archivos = walk(ROOT);
+  // Guardamos el mtime del ESCANEO. Si el archivo cambia mientras se transfiere, el
+  // registro queda "atrasado" y la proxima corrida lo vuelve a subir (que es lo correcto).
+  const mtimes = new Map();
   const cambiados = archivos.filter(f => {
     const r = rel(f);
     const m = fs.statSync(f).mtimeMs;
-    return ledger[r] === undefined || ledger[r] !== m;
+    mtimes.set(r, m);
+    return ledger[r] !== m;
   });
+
+  // Archivos que borraste de tu PC pero siguen anotados como subidos: los sacamos del
+  // registro para que no crezca para siempre. (Del servidor no se borra nada nunca.)
+  // En modo --dry no se toca nada, ni siquiera esto.
+  const vivos = new Set(archivos.map(rel));
+  const muertos = Object.keys(ledger).filter(k => !vivos.has(k));
+  if (muertos.length && !DRY) {
+    muertos.forEach(k => delete ledger[k]);
+    guardarLedger(ledger);
+  }
 
   console.log('============================================================');
   console.log(' SUBIR CAMBIOS AL SERVIDOR' + (DRY ? '  (PRUEBA: no sube nada)' : MARCAR ? '  (marcar como subido)' : ''));
   console.log('============================================================');
   console.log(' Archivos del sitio: ' + archivos.length + ' | a actualizar: ' + cambiados.length);
+  if (muertos.length) {
+    console.log(' Nota: ' + muertos.length + ' archivo(s) que borraste de tu PC siguen en el servidor');
+    console.log('       (esta herramienta nunca borra). Si los querés sacar, usá FileZilla.');
+  }
 
   if (cambiados.length === 0) { console.log('\n Todo está al día. No hay nada para subir.'); return; }
 
-  // --marcar: registra todo como subido sin conectarse
-  if (MARCAR) {
-    const l = {}; for (const f of archivos) l[rel(f)] = fs.statSync(f).mtimeMs;
+  // --marcar: registra todo como subido sin conectarse. Con --dry gana --dry (no toca nada).
+  if (MARCAR && !DRY) {
+    // Copia de seguridad por si fue un doble clic equivocado (la primera vez no hay nada que copiar)
+    let hayCopia = false;
+    try { fs.copyFileSync(LEDGER, LEDGER + '.bak'); hayCopia = true; } catch {}
+    const l = {}; for (const f of archivos) l[rel(f)] = mtimes.get(rel(f)) ?? fs.statSync(f).mtimeMs;
     guardarLedger(l);
     console.log('\n Listo: marqué los ' + archivos.length + ' archivos como ya subidos.');
     console.log(' La próxima vez, "Subir cambios" enviará solo lo que edites de ahora en más.');
+    if (hayCopia) {
+      console.log('\n ¿Te equivocaste? Borrá  _tools\\.subido.json  y renombrá  .subido.json.bak  a  .subido.json');
+    }
     return;
   }
 
@@ -86,11 +128,17 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
 
   // --- Subida real ---
   let cfg;
-  try { cfg = JSON.parse(fs.readFileSync(CONFIG, 'utf8')); }
-  catch {
-    console.log('\n FALTA CONFIGURACIÓN.');
-    console.log(' Copiá "ftp-config.example.json" a "ftp-config.json" y completá tus datos de FTP');
-    console.log(' (los mismos que usás en FileZilla: host, usuario, contraseña y carpeta remota).');
+  try { cfg = leerJson(CONFIG); }
+  catch (e) {
+    if (fs.existsSync(CONFIG)) {
+      console.log('\n No pude leer _tools/ftp-config.json: ' + e.message);
+      console.log(' Revisá que no le falte una coma o una comilla. Si lo editaste con el Bloc de');
+      console.log(' notas, guardalo como "UTF-8" (no "UTF-8 con BOM") o usá el Bloc de notas normal.');
+    } else {
+      console.log('\n FALTA CONFIGURACIÓN.');
+      console.log(' Copiá "ftp-config.example.json" a "ftp-config.json" y completá tus datos de FTP');
+      console.log(' (los mismos que usás en FileZilla: host, usuario, contraseña y carpeta remota).');
+    }
     process.exit(1);
   }
   if (!cfg.host || cfg.host === 'ftp.tudominio.com' || !cfg.user) {
@@ -107,7 +155,11 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
 
   const client = new ftp.Client(30000);
   client.ftp.verbose = false;
-  const remoteBase = (cfg.remoteDir || '/').replace(/\\/g, '/').replace(/\/+$/, '') || '';
+  // La ruta remota SIEMPRE tiene que ser absoluta: si no arranca con "/", basic-ftp no
+  // vuelve a la raíz entre carpeta y carpeta y el sitio se va anidando solo
+  // (/public_html/public_html/imagenes/...). Con "/" el resultado es idéntico al de antes.
+  let remoteBase = (cfg.remoteDir || '/').replace(/\\/g, '/').replace(/\/+$/, '');
+  if (!remoteBase.startsWith('/')) remoteBase = '/' + remoteBase;
   let ok = 0, fail = 0;
   try {
     await client.access({
@@ -133,11 +185,12 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
           subido = true;
         } catch (e) {
           ultimoErr = e; lastDir = null;            // forzar re-crear/posicionar carpeta en el reintento
+          if (client.closed) break;                 // conexión caída: reintentar es al pedo
           if (intento < 3) await sleep(1500);
         }
       }
       if (subido) {
-        ledger[r] = fs.statSync(f).mtimeMs;
+        ledger[r] = mtimes.get(r);
         ok++;
         if (ok === 1 || ok % 25 === 0) console.log('   ' + ok + '/' + cambiados.length + '  ' + r);
         if (ok % 50 === 0) guardarLedger(ledger);   // progreso por si se corta
@@ -145,10 +198,19 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
         fail++;
         console.log('   [ERROR] ' + r + ' : ' + (ultimoErr && ultimoErr.message));
       }
+      // Si se corta la conexión, cortamos acá en vez de escupir un [ERROR] por cada
+      // archivo restante. Lo ya subido queda anotado y la próxima corrida sigue de ahí.
+      if (client.closed) {
+        console.log('\n Se cortó la conexión con el servidor.');
+        console.log(' Volvé a hacer doble clic en "Subir cambios" cuando tengas internet:');
+        console.log(' sigue desde donde quedó, no vuelve a subir lo que ya subió.');
+        break;
+      }
     }
   } catch (e) {
     console.log('\n No me pude conectar al FTP: ' + e.message);
     console.log(' Revisá host/usuario/contraseña/puerto y si tu hosting usa "FTP con TLS" (poné "secure": true).');
+    process.exitCode = 1;   // que el .bat pueda avisar que NO salió bien
   } finally {
     client.close();
     guardarLedger(ledger);
@@ -156,5 +218,8 @@ const rel = f => path.relative(ROOT, f).replace(/\\/g, '/');
   console.log('\n============================================================');
   console.log(' Subidos: ' + ok + (fail ? ' | con error: ' + fail : ''));
   console.log('============================================================');
-  if (fail) console.log(' Los que fallaron se reintentan la próxima vez (no se marcaron como subidos).');
+  if (fail) {
+    process.exitCode = 1;
+    console.log(' Los que fallaron se reintentan la próxima vez (no se marcaron como subidos).');
+  }
 })();
