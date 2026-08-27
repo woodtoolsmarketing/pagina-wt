@@ -120,7 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const codigosMadera = ["LU1F", "LU1D"]; 
 
     productos.forEach(producto => {
-        const enlace = producto.getAttribute('href') || "";
+        // Misma razon que en textoDeProducto: si la tarjeta apunta a la tienda,
+        // la ruta original con el codigo esta en data-ficha.
+        const enlace = producto.getAttribute('data-ficha') || producto.getAttribute('href') || "";
         
         // --- SIERRAS ---
         if (codigosMadera.some(codigo => enlace.includes(codigo))) {
@@ -324,7 +326,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function textoDeProducto(producto) {
         const tituloEl = producto.querySelector('.product-title');
         const titulo = tituloEl ? tituloEl.innerText : '';
-        let codigo = (producto.getAttribute('href') || '').split('/').pop().replace('.html', '');
+        // El codigo sale de la ruta de la ficha. Si la tarjeta fue reapuntada a
+        // Tienda Nube, esa ruta quedo guardada en data-ficha y el href ya no la
+        // tiene: sin esto, buscar por codigo (LG3D, TM06M...) no encuentra nada.
+        const ruta = producto.getAttribute('data-ficha') || producto.getAttribute('href') || '';
+        let codigo = ruta.split('/').pop().replace('.html', '');
         try { codigo = decodeURIComponent(codigo); } catch (e) {}
         return (titulo + ' ' + codigo).toLowerCase();
     }

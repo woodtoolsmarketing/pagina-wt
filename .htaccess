@@ -111,3 +111,16 @@ RewriteRule ^(.+)$ / [R=301,L]
   ExpiresByType text/css     "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
 </IfModule>
+
+# ============================================================================
+#  CORS para las fotos de herramientas
+#  Lo necesita el administrador de Tienda Nube: para cargar una foto en un
+#  producto hay que leerla desde el navegador y armar el archivo en memoria, y
+#  sin esta cabecera el navegador bloquea esa lectura por ser otro dominio.
+#  Alcance: solo imagenes, solo lectura. No expone nada que no sea ya publico.
+# ============================================================================
+<IfModule mod_headers.c>
+  <FilesMatch "(?i)\.(jpe?g|png|gif|webp|svg)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>

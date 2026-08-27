@@ -1,0 +1,271 @@
+/* ==========================================
+   RESET Y VARIABLES GENERALES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 171px;
+    margin-top: -21px;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    padding: 10px 0;
+}
+
+/* MENÚ DESPLEGABLE VERTICAL */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #a41e22;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2000;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    display: block;
+}
+
+.dropdown-menu li a {
+    color: #ffffff;
+    padding: 15px 20px;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+/* BOTÓN TIENDA Y ACCIONES */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-shop {
+    background-color: #a41e22;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* ==========================================
+   SECCIÓN DE MARCAS (NUEVA)
+   ========================================== */
+#marcas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 60px 5%;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+#marcas img {
+    height: 55px;
+    object-fit: contain;
+}
+
+/* ==========================================
+   FOOTER (ESTILO TRIPLE NIVEL)
+   ========================================== */
+.footer-contact-bar {
+    background-color: #383c40; /* Gris oscuro del banner */
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    background-color: #ffffff;
+    padding: 30px 10px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-social {
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    color: #333;
+    font-size: 26px;
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* BOTONES FLOTANTES */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.floating-buttons img {
+    width: 50px;
+    height: 50px;
+}
+/* ICONOS DE HERRAMIENTAS EN EL MENÚ PRODUCTOS */
+.dropdown-menu li a img.menu-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+/* Menú desplegado por clic (1er toque en celular / 1er clic) */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE - HEADER Y NAVEGACIÓN
+   ========================================================== */
+@media (max-width: 900px) {
+    .header-container {
+        flex-wrap: wrap;
+        padding: 10px 4%;
+        row-gap: 4px;
+    }
+    .logo { order: 1; }
+    .logo img { width: 110px; margin-top: 0; }
+    .header-actions { order: 2; gap: 10px; }
+    .btn-shop { padding: 8px 12px; font-size: 12px; }
+    .social-icons a { font-size: 20px; margin-left: 8px; }
+    nav { order: 3; width: 100%; }
+    nav > ul, nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px 14px;
+    }
+    nav a { font-size: 13px; padding: 8px 4px; white-space: nowrap; }
+    nav > ul > li, nav ul li { position: static; }
+    .dropdown-menu {
+        left: 3%;
+        right: 3%;
+        min-width: 0;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+    #marcas { gap: 24px; padding: 35px 5%; }
+    #marcas img { height: 40px; }
+    .floating-buttons { bottom: 15px; right: 15px; gap: 10px; }
+    .floating-buttons img { width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
+    .logo img { width: 95px; }
+    .social-icons { display: none; }
+    .btn-shop { font-size: 11px; padding: 7px 10px; }
+    nav > ul, nav ul { gap: 0 10px; }
+    nav a { font-size: 12.5px; }
+}
+
+/* ==========================================================
+   LUPA / BUSCADOR EN EL HEADER
+   ========================================================== */
+.header-search { display: flex; align-items: center; }
+.header-search .lupa-btn {
+    background: none; border: none; color: #333; font-size: 18px;
+    cursor: pointer; padding: 6px 8px; line-height: 1;
+}
+.header-search .lupa-btn:hover { color: #a41e22; }
+.header-search .lupa-input {
+    flex: 0 0 0; width: 0; padding: 0; border: 1px solid transparent; opacity: 0;
+    font-size: 14px; box-sizing: border-box;
+    transition: flex-basis .25s ease, opacity .2s ease, padding .25s ease;
+}
+.header-search.abierto .lupa-input {
+    flex: 0 0 190px; width: 190px; padding: 7px 10px; opacity: 1;
+    border: 1px solid #a41e22; border-radius: 6px; outline: none;
+}
+@media (max-width: 480px) {
+    .header-search.abierto .lupa-input { flex-basis: 130px; width: 130px; }
+}
+
+
+footer.footer-wt {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-top: none;
+}
+
+.footer-social a:hover { color: #a41e22; }

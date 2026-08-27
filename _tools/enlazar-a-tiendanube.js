@@ -20,8 +20,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const RAIZ = path.join(__dirname, '..');
+// Raiz sobre la que se trabaja. Por defecto el sitio; con --raiz=RUTA se puede
+// apuntar a una copia (por ejemplo el directorio de prueba) y dejar el sitio intacto.
+const _argRaiz = (process.argv.find(a => a.startsWith('--raiz=')) || '').slice(7);
+const RAIZ = _argRaiz ? path.resolve(_argRaiz) : path.join(__dirname, '..');
 const CSV = path.join(__dirname, 'tiendanube-productos-con-precios.csv');
+// Indice codigo de medida -> variante exacta, generado por cosechar-variantes.js.
+// Sin el, cada tarjeta de medida caia en el producto-familia con la primera
+// medida seleccionada; con el, cae en la suya y con su precio.
+const IDX_VARIANTES = path.join(__dirname, 'variantes-tienda.json');
 const TIENDA = 'https://tiendadewoodtoolssrl.mitiendanube.com/productos/';
 const ESCRIBIR = process.argv.includes('--escribir');
 const REVERTIR = process.argv.includes('--revertir');
@@ -59,6 +66,10 @@ const cab = parseLinea(filas[0]);
 const iU = cab.indexOf('Identificador de URL');
 const iV = cab.indexOf('Valor de propiedad 1');
 
+let VARIANTES = {};
+try { VARIANTES = JSON.parse(fs.readFileSync(IDX_VARIANTES, 'utf8')); }
+catch (e) { console.log('AVISO: no encontre variantes-tienda.json; enlazo solo a nivel producto.'); }
+
 const identificadores = new Set();
 const porCodigo = {};                       // codigo de variante -> identificador
 const norm = s => String(s).toUpperCase().replace(/[\s_\-]/g, '');
@@ -77,6 +88,11 @@ function resolver(href) {
 	const fam = FAMILIA[partes[0]];
 	if (!fam) return null;
 	const codigo = partes[partes.length - 1].replace(/\.html$/i, '');
+
+	// 0) variante exacta: la tarjeta del sitio es por medida, y en la tienda
+	//    esa medida es una variante concreta del producto-familia.
+	const v = VARIANTES[norm(codigo)];
+	if (v) return v.handle + '/?variant=' + v.variant;
 
 	// 1) construccion directa: CH/CHC_HSS.html -> cuchillas-chc-hss
 	const directo = fam + '-' + codigo.toLowerCase().replace(/[\s_]+/g, '-');
@@ -108,12 +124,18 @@ LISTADOS.forEach(function (rel) {
 			function (m, attrs, ficha) { revertidos++; return '<a href="' + ficha + '" class="product-card"' + attrs; });
 	} else {
 		h = h.replace(/<a href="([^"]+)" class="product-card"([^>]*)>/g, function (m, href, attrs) {
+			// Si ya la reescribimos antes, la ruta original quedo en data-ficha:
+			// se usa esa para poder recalcular (por ejemplo, al pasar de enlace
+			// por producto a enlace por variante).
+			const df = attrs.match(/ data-ficha="([^"]+)"/);
+			if (df) { href = df[1]; attrs = attrs.replace(/ data-ficha="[^"]+"/, ''); }
 			if (/^https?:/i.test(href)) return m;               // ya apunta afuera
 			const id = resolver(href);
 			if (!id) { seQuedan++; quedanEnSitio.push(rel.split('/').pop() + ' :: ' + href); return m; }
 			aTienda++;
 			// data-ficha guarda la ruta original para poder revertir
-			return '<a href="' + TIENDA + id + '/" class="product-card"' + attrs + ' data-ficha="' + href + '">';
+			const url = TIENDA + (id.indexOf('?') >= 0 ? id : id + '/');
+			return '<a href="' + url + '" class="product-card"' + attrs + ' data-ficha="' + href + '">';
 		});
 	}
 

@@ -14,6 +14,12 @@
         que solo hereda (ver el bloque del nombre de producto mas abajo).
      2) Borra los comentarios. Este archivo es la copia documentada; lo que
         queda guardado en la tienda es el mismo CSS pero sin estos textos.
+     3) NO GUARDA lo que se escribe en el campo por script. Se puede setear el
+        valor del textarea, "Probar CSS" lo toma y hasta se ve aplicado en la
+        vista previa, pero "Publicar cambios" guarda igual la version anterior.
+        Hay que TIPEAR el texto. Por eso, para cambios chicos, conviene pegar
+        las reglas nuevas al final del campo: pisan a las de arriba por orden
+        de cascada y son pocas lineas para escribir a mano.
 
    NOTA sobre los selectores descendientes (".a .b", con espacio): SI se
    guardan y SI funcionan. Verificado leyendo la hoja que sirve la tienda:
@@ -178,6 +184,8 @@ a:hover { text-decoration: none; }
 	background-color: #f9f9f9;
 	padding: 15px;
 	border-bottom: 1px solid #f0f0f0;
+	height: 180px;
+	box-sizing: border-box;
 }
 
 .item {
@@ -185,24 +193,26 @@ a:hover { text-decoration: none; }
 	border: 1px solid #dddddd;
 	border-radius: 4px;
 	overflow: hidden;
-	transition: box-shadow .2s, border-color .2s, transform .3s ease;
+	transition: box-shadow .2s, border-color .2s;
 }
 
-/* El sitio levanta la tarjeta 5px al pasar el mouse (.card:hover) */
+/* Hover igual al del listado filtrable del sitio (.product-card:hover):
+   sombra y borde, sin levantar la tarjeta. Las .card de la portada si
+   levantan 5px, pero la pantalla que se compara es la del filtro. */
 .item:hover {
 	box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
 	border-color: #bbbbbb;
-	transform: translateY(-5px);
 }
 
-.item-description { padding: 10px 12px; }
+.item-description { padding: 12px 15px; }
 .item-description.text-center { text-align: left; }
 
-/* Nombre del producto.
-   El tema le agrega las clases .font-small y .opacity-80.
-   .opacity-80 se puede pisar; .font-small NO (el tema la declara con
-   !important), asi que el nombre queda en 12px en vez de los 13px del sitio.
-   Cambiarlo obligaria a tocar --font-small, que alimenta 21 reglas mas. */
+/* Nombre del producto: 13px, igual que .product-title del listado del sitio.
+   El tema le agrega .font-small y la declara con !important, asi que desde
+   aca era imposible pisarla (el editor borra los !important propios y las
+   variables). Se resolvio del otro lado: el script del sello le saca las
+   clases .font-small y .opacity-80 al nombre, y entonces manda esta regla.
+   Si algun dia se desactiva el sello, el nombre vuelve a 12px y nada mas. */
 .item-name,
 .item-name.font-small {
 	font-size: 13px;
@@ -233,9 +243,16 @@ a:hover { text-decoration: none; }
 .product-name,
 .js-product-name {
 	color: #333333;
-	font-weight: 400;
+	font-size: 24px;
+	font-weight: 600;
 	text-transform: none;
 }
+
+/* La ficha del sitio (producto-detalle.css) usa un gris apenas mas oscuro que
+   el resto del sitio: #ebebeb contra #f8f8f8. Morelia marca el tipo de pagina
+   con una clase en el <body>, asi que se puede replicar solo en la ficha y
+   dejar el listado en #f8f8f8, que es lo que usa el listado del sitio. */
+body.template-product { background-color: #ebebeb; }
 
 .product-price,
 .js-price-display {
@@ -270,12 +287,12 @@ a:hover { text-decoration: none; }
 	width: 100%;
 	box-sizing: border-box;
 	margin-top: 10px;
-	padding: 11px 20px;
+	padding: 13px 20px;
 	background-color: #ffffff;
 	color: #a41e22;
 	border: 2px solid #a41e22;
-	border-radius: 3px;
-	font-size: 14px;
+	border-radius: 4px;
+	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.2;
 	text-align: center;
@@ -501,3 +518,29 @@ img[srcset*="no-photo"] {
 .wt-cat-cabezales img[srcset*="no-photo"] {
 	content: url("https://www.woodtools.com.ar/imagenes/herramientas/Productos-slide/Cabezales.png");
 }
+
+
+/* =============================================================================
+   12. CIERRE DE TARJETA "MAS INFORMACION"
+   En la grilla filtrable del sitio cada tarjeta termina con un bloque rojo
+   (.product-more-info). Aca la tarjeta terminaba en el precio, y las dos
+   grillas se veian distintas. El script del sello agrega el bloque y estas
+   reglas lo dejan identico: medido contra el sitio, no inventado.
+     fondo #a41e22 | blanco | 8px 12px | radio 4px | 13px | 700
+   El precio queda arriba, que es lo que una tienda tiene que mostrar.
+   ============================================================================= */
+
+.wt-mas-info {
+	margin-top: 10px;
+	padding: 8px 12px;
+	background-color: #a41e22;
+	color: #ffffff;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.3;
+	transition: background-color .2s;
+}
+
+.item:hover .wt-mas-info { background-color: #7d161a; }

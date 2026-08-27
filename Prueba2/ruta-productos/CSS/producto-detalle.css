@@ -1,0 +1,376 @@
+/* ======================================================
+   ESTILO FINAL TIPO MERCADO LIBRE (Con fotos al costado)
+   ====================================================== */
+
+body {
+    background-color: #ebebeb; 
+    font-family: "Proxima Nova", -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor Principal: La Tarjeta Blanca */
+.producto-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que la tabla baje */
+    gap: 0;
+}
+
+/* ======================================================
+   SECCIÓN IZQUIERDA: IMAGEN Y GALERÍA (Estilo ML)
+   ====================================================== */
+.producto-imagen {
+    width: 55%;
+    display: flex;
+    flex-direction: row; /* Coloca las miniaturas a la izquierda y la foto grande a la derecha */
+    align-items: flex-start;
+    padding-right: 40px;
+    box-sizing: border-box;
+    gap: 20px; /* Separación entre miniaturas y foto principal */
+}
+
+/* Contenedor de las fotos chiquitas (a la izquierda) */
+.galeria-miniaturas {
+    display: flex;
+    flex-direction: column; /* Apila las miniaturas verticalmente */
+    justify-content: flex-start;
+    gap: 10px;
+    width: 50px;
+    flex-shrink: 0; /* Evita que las miniaturas se encojan */
+}
+
+.mini-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.mini-img:hover {
+    border-color: #999;
+}
+
+/* Clase de la miniatura activa */
+.mini-img.activa {
+    border-color: #3483fa; /* Azul ML, podés cambiarlo a #a41e22 (rojo) si preferís */
+}
+
+/* Caja de la foto principal (Donde ocurre el Zoom) */
+.zoom-container {
+    flex: 1; /* Ocupa el resto del espacio a la derecha */
+    width: 100%;
+    max-width: 500px; 
+    height: 400px;    
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease-out; /* Suaviza el inicio del zoom */
+}
+
+
+/* ======================================================
+   SECCIÓN DERECHA: INFO Y BOTÓN
+   ====================================================== */
+.producto-info {
+    width: 45%;
+    padding-left: 40px;
+    border-left: 1px solid #eee;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-info .marca {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#producto-titulo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 20px 0;
+}
+
+/* RECUADRO DEL SELECTOR */
+.selector-modelo {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.selector-modelo label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.selector-modelo select {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+.selector-modelo select:hover {
+    border-color: rgba(0,0,0,.3);
+}
+
+.selector-modelo select:focus {
+    border-color: #3483fa; 
+    box-shadow: 0 0 0 2px rgba(52,131,250,.2);
+}
+
+/* BOTÓN WHATSAPP */
+.btn-comprar {
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.btn-comprar:hover { 
+    background-color: #1ebd5a; 
+}
+
+.btn-comprar img { 
+    width: 20px; 
+}
+
+/* ======================================================
+   TABLA DE CARACTERÍSTICAS
+   ====================================================== */
+.caracteristicas-principales {
+    width: 100%;
+    margin-top: 50px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.caracteristicas-principales h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.tabla-caracteristicas {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ededed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-caracteristicas tr {
+    border-bottom: 1px solid #ededed;
+}
+
+.tabla-caracteristicas tr:last-child {
+    border-bottom: none;
+}
+
+.caracteristica-label {
+    background-color: #f5f5f5;
+    width: 30%;
+    padding: 16px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+.caracteristica-value {
+    padding: 16px;
+    color: #666;
+    background-color: #fff;
+}
+
+/* ======================================================
+   FOOTER OSCURO CON MARCAS
+   ====================================================== */
+.footer-moderno {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 60px 20px 30px;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.footer-main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links-col { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    flex: 1;
+    align-items: flex-start;
+}
+
+.footer-links-col a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 700; 
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-links-col a:hover {
+    color: #a41e22; 
+}
+
+.footer-marcas-right { 
+    display: flex; 
+    gap: 15px; 
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-marcas-right img { 
+    height: 35px; 
+    background-color: white; 
+    border-radius: 4px; 
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-marcas-right img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom-info {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 25px;
+    margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom-info p {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 4px 0;
+}
+
+/* ======================================================
+   RESPONSIVE: ADAPTACIÓN A CELULARES Y TABLETS
+   ====================================================== */
+@media (max-width: 768px) {
+    .producto-container { 
+        flex-direction: column; 
+        padding: 20px; 
+        margin: 20px 10px;
+    }
+    
+    .producto-imagen { 
+        width: 100%; 
+        padding: 0; 
+        border: none; 
+        flex-direction: column-reverse; /* En celular: la foto grande va arriba y las miniaturas abajo */
+    }
+
+    .galeria-miniaturas {
+        flex-direction: row; /* Las miniaturas en horizontal para celular */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .producto-info { 
+        width: 100%;
+        padding-left: 0;
+        padding-top: 20px; 
+        border-top: 1px solid #eee; 
+        border-left: none;
+    }
+
+    .caracteristicas-principales {
+        margin-top: 30px;
+    }
+    
+    .footer-main-content { 
+        flex-direction: column; 
+        gap: 30px; 
+        text-align: center; 
+    }
+
+    .footer-links-col {
+        align-items: center; 
+    }
+
+    .footer-marcas-right {
+        justify-content: center; 
+    }
+}
+/* ==========================================================
+   RESPONSIVE MOBILE - AJUSTES FINOS PÁGINA DE PRODUCTO
+   ========================================================== */
+@media (max-width: 768px) {
+    .producto-container {
+        margin: 15px 8px;
+        padding: 16px;
+    }
+    .zoom-container { height: 300px; max-width: 100%; }
+    #producto-titulo { font-size: 20px; }
+    .galeria-miniaturas { flex-wrap: wrap; }
+    .selector-modelo { padding: 14px; }
+    .caracteristicas-principales { padding-top: 20px; }
+    .caracteristicas-principales h2 { font-size: 20px; }
+    .caracteristica-label, .caracteristica-value { padding: 12px; font-size: 14px; }
+    .caracteristica-label { width: 38%; }
+}

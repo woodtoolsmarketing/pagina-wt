@@ -1,0 +1,255 @@
+/* Contenedor gris de fondo */
+body {
+    background-color: #ebebeb;
+}
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 15px auto;
+    font-size: 14px;
+    color: #333;
+}
+
+.breadcrumb a {
+    color: #3483fa;
+    text-decoration: none;
+}
+
+.detalle-container {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+    padding: 20px;
+}
+
+.detalle-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Columna Izquierda: Galería y Zoom */
+.detalle-galeria {
+    flex: 1 1 60%;
+    display: flex;
+    gap: 15px;
+    min-width: 400px;
+}
+
+.galeria-miniaturas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mini-img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    object-fit: contain;
+    padding: 2px;
+}
+
+.mini-img.activa, .mini-img:hover {
+    border-color: #3483fa;
+    border-width: 2px;
+}
+
+.imagen-principal-contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Clave para que el zoom no se salga de la caja */
+    cursor: zoom-in;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    height: 500px;
+}
+
+.imagen-principal {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.1s ease; /* Transición suave al mover el mouse */
+}
+
+/* Columna Derecha: Información */
+.detalle-info {
+    flex: 1 1 35%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-left: 1px solid #eee;
+}
+
+.producto-estado {
+    font-size: 14px;
+    color: #0000008c;
+    margin-bottom: 5px;
+}
+
+.producto-titulo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.producto-precio-bloque {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.precio-simbolo {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.precio-entero {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.precio-decimal {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.precio-iva {
+    font-size: 14px;
+    color: #00a650;
+    margin-left: 10px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.producto-envio {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.producto-envio i {
+    color: #00a650;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.envio-titulo {
+    color: #00a650;
+    font-weight: 600;
+    margin: 0 0 3px 0;
+}
+
+.envio-sub {
+    color: #0000008c;
+    font-size: 14px;
+    margin: 0;
+}
+
+.producto-stock {
+    margin-bottom: 25px;
+}
+
+.producto-stock p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cantidad-selector select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.producto-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-comprar, .btn-carrito {
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-comprar {
+    background-color: #3483fa;
+    color: #fff;
+}
+
+.btn-comprar:hover { background-color: #2968c8; }
+
+.btn-carrito {
+    background-color: rgba(65,137,230,.15);
+    color: #3483fa;
+}
+
+.btn-carrito:hover { background-color: rgba(65,137,230,.2); }
+
+.producto-garantia {
+    font-size: 14px;
+    color: #0000008c;
+    margin-bottom: 30px;
+}
+
+.producto-garantia i { color: #3483fa; }
+
+.producto-specs {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.producto-specs h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.producto-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.producto-specs li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+}
+
+.detalle-descripcion {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    width: 60%;
+}
+
+.detalle-descripcion h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.detalle-descripcion p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.5;
+}

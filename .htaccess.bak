@@ -1,0 +1,113 @@
+# ============================================================================
+#  WoodTools S.R.L. — Migración del WordPress (2019) al sitio estático nuevo
+#  Este .htaccess va en la RAÍZ del dominio (reemplaza al de WordPress).
+#  Objetivo: que todo el posicionamiento orgánico viejo (URLs indexadas en
+#  Google del WP con plugin All in One SEO) caiga con 301 en la página nueva
+#  equivalente, sin 404s.
+# ============================================================================
+
+Options +FollowSymLinks
+RewriteEngine On
+
+# En la raíz conviven index.html (sitio nuevo) e index.php (WordPress viejo):
+# forzamos que se sirva PRIMERO el index.html del sitio estático.
+DirectoryIndex index.html index.php
+
+# Bloquear acceso web a carpetas/archivos internos por si quedaran en el server
+# (herramientas, control de versiones, credenciales).
+RedirectMatch 404 (?i)/(\.git|_tools|_admin|\.claude)(/|$)
+<FilesMatch "(?i)(ftp-config\.json|\.subido\.json|subir\.js|\.sh)$">
+  Require all denied
+</FilesMatch>
+
+# ----------------------------------------------------------------------------
+# 1) Canonical de dominio: forzar HTTPS + www (una sola versión para Google)
+# ----------------------------------------------------------------------------
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.woodtools.com.ar%{REQUEST_URI} [L,R=301]
+
+# ----------------------------------------------------------------------------
+# 2) El sitio nuevo estuvo publicado en /prueba1/pagina-wt/ durante el armado.
+#    Cualquier link a esa ruta se manda a la raíz.
+# ----------------------------------------------------------------------------
+RewriteRule ^prueba1/pagina-wt/?(.*)$ /$1 [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 3) Restos de WordPress: quien entre a /wp-admin, /wp-login, /?p=, feeds, etc.
+#    se manda al home (evita 404 y páginas de login muertas).
+# ----------------------------------------------------------------------------
+RewriteRule ^(wp-admin|wp-login\.php|wp-json|xmlrpc\.php)(/.*)?$ / [R=301,L,NC]
+RewriteRule ^(feed|comments/feed)/?$ / [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 4) Páginas institucionales del WP viejo
+# ----------------------------------------------------------------------------
+RewriteRule ^nosotros/?$                 /ruta-contactanos/HTML/Quienes-somos.html   [R=301,L,NC]
+RewriteRule ^contacto/?$                 /ruta-contactanos/HTML/formulario-mail.html  [R=301,L,NC]
+RewriteRule ^trabaja-con-nosotros/?$     /ruta-contactanos/HTML/formulario-mail.html  [R=301,L,NC]
+RewriteRule ^service-y-reparacion(/.*)?$ /ruta-contactanos/HTML/Service.html          [R=301,L,NC]
+RewriteRule ^promociones-y-novedades/?$  /ruta-productos/HTML/productos.html          [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 5) Categorías del WP viejo (home-productos/* y tipo-producto/*)
+#    -> páginas de catálogo del sitio nuevo
+# ----------------------------------------------------------------------------
+RewriteRule ^(home-productos|tipo-producto)/sierras[^/]*(/.*)?$        /ruta-productos/HTML/Sierras.html    [R=301,L,NC]
+RewriteRule ^(home-productos|tipo-producto)/fresas[^/]*(/.*)?$         /ruta-productos/HTML/fresas.html     [R=301,L,NC]
+RewriteRule ^(home-productos|tipo-producto)/mechas[^/]*(/.*)?$         /ruta-productos/HTML/mechas.html     [R=301,L,NC]
+RewriteRule ^(home-productos|tipo-producto)/cuchillas[^/]*(/.*)?$      /ruta-productos/HTML/Cuchillas.html  [R=301,L,NC]
+RewriteRule ^(home-productos|tipo-producto)/cabezales[^/]*(/.*)?$      /ruta-productos/HTML/Cabezales.html  [R=301,L,NC]
+RewriteRule ^(home-productos|tipo-producto)/(herramientas-de-diamante|diamante)[^/]*(/.*)?$ /ruta-productos/HTML/Diamante.html [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 6) Productos del WP viejo (/productos/<slug-descriptivo>/...)
+#    Se redirige por PALABRA CLAVE del slug a la categoría nueva. El ORDEN
+#    importa: primero lo específico (pcd, cabezal, cuchilla) para que no lo
+#    capture una regla más general.
+# ----------------------------------------------------------------------------
+# Diamante (PCD) — antes que sierra/triturador porque el slug los contiene
+RewriteRule ^productos/[^/]*(pcd|diamante)[^/]*(/.*)?$                                     /ruta-productos/HTML/Diamante.html   [R=301,L,NC]
+# Cabezales — antes que cuchilla/fresa (cabezal-portacuchillas-..., -finger-joint, -replanar)
+RewriteRule ^productos/[^/]*cabezal[^/]*(/.*)?$                                            /ruta-productos/HTML/Cabezales.html  [R=301,L,NC]
+# Cuchillas
+RewriteRule ^productos/[^/]*cuchilla[^/]*(/.*)?$                                           /ruta-productos/HTML/Cuchillas.html  [R=301,L,NC]
+# Mechas y accesorios de perforado
+RewriteRule ^productos/[^/]*(mecha|avellanador|mandril|integral|bisagra|pasante|ciega|barreno|broca|pinza)[^/]*(/.*)?$ /ruta-productos/HTML/mechas.html [R=301,L,NC]
+# Sierras / discos
+RewriteRule ^productos/[^/]*(sierra|triturador|incisora|no-ferroso|plastico|maquina-multiple|seleccionadora|compensada|solida)[^/]*(/.*)?$ /ruta-productos/HTML/Sierras.html [R=301,L,NC]
+# Fresas y perfilería
+RewriteRule ^productos/[^/]*(fresa|machimbre|rinconera|deck|zocalo|moldura|contramoldura|replan|finger|encastre|ensamble|radio|puerta|frente-ingles|circulo|angulo)[^/]*(/.*)?$ /ruta-productos/HTML/fresas.html [R=301,L,NC]
+# Cualquier otro producto viejo -> catálogo general
+RewriteRule ^productos(/.*)?$                                                              /ruta-productos/HTML/productos.html  [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 7) Adjuntos/imágenes sueltas del WP (logos, banners, /slideshow_home/, etc.)
+#    -> home, para que no queden 404 con link equity perdido.
+# ----------------------------------------------------------------------------
+RewriteRule ^slideshow_home(/.*)?$ / [R=301,L,NC]
+
+# ----------------------------------------------------------------------------
+# 8) CATCH-ALL: cualquier URL vieja que NO exista como archivo/carpeta real
+#    del sitio nuevo se manda al home con 301. Así no queda ningún 404 de
+#    posicionamiento viejo (logos, adjuntos, permalinks raros de WP, etc.).
+#    Los archivos reales del sitio nuevo (-f / -d) NO entran acá.
+# ----------------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ / [R=301,L]
+
+# ----------------------------------------------------------------------------
+# 9) Rendimiento: caché larga para estáticos, compresión
+# ----------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg   "access plus 1 month"
+  ExpiresByType image/png    "access plus 1 month"
+  ExpiresByType image/webp   "access plus 1 month"
+  ExpiresByType text/css     "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

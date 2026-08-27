@@ -53,6 +53,11 @@
 		     'ninguno'   -> los deja como vienen, sin tocar nada. */
 		prioridad_sin_precio: 'whatsapp',
 
+		/* Paridad con la grilla filtrable del sitio: cerrar cada tarjeta con
+		   el mismo bloque rojo. Poner en false para dejar solo el precio. */
+		boton_mas_info: true,
+		texto_mas_info: 'Más información',
+
 		mostrar_nota: true,
 		nota_texto: '¿No encontrás la herramienta? Ver el catálogo completo en ',
 		nota_enlace_texto: 'woodtools.com.ar',
@@ -213,6 +218,55 @@
 
 	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancarMarcas);
 	else arrancarMarcas();
+
+
+	/* ---------------------------------------------------------------------
+	   4. PARIDAD CON LA GRILLA FILTRABLE DEL SITIO
+	   Medido tarjeta contra tarjeta: casi todo ya coincide por CSS. Quedan
+	   dos cosas que el CSS solo no puede resolver.
+
+	   a) El nombre. El tema le pone .font-small y .opacity-80 y declara
+	      .font-small{font-size:var(--font-small) !important}. Como el editor
+	      de Tienda Nube borra los !important que uno escribe, no hay forma de
+	      pisarlo desde el CSS: gana siempre el tema y el nombre queda en 12px
+	      en vez de los 13px del sitio. La salida es sacarle la clase; sin
+	      .font-small manda la regla de theme-custom.css.
+
+	   b) El cierre de la tarjeta. En el sitio cada tarjeta termina con un
+	      bloque rojo "Mas informacion"; aca terminaba en el precio. Se agrega
+	      el mismo bloque para que las dos grillas cierren igual. El precio
+	      queda arriba, que es lo que una tienda tiene que mostrar.
+	   --------------------------------------------------------------------- */
+	function emparejarTarjetas() {
+		var nombres = document.querySelectorAll('.item-name');
+		for (var i = 0; i < nombres.length; i++) {
+			nombres[i].classList.remove('font-small');
+			nombres[i].classList.remove('opacity-80');
+		}
+		if (!CFG.boton_mas_info) return;
+		var items = document.querySelectorAll('.item');
+		for (var j = 0; j < items.length; j++) {
+			if (items[j].querySelector('.wt-mas-info')) continue;
+			var d = document.createElement('div');
+			d.className = 'wt-mas-info';
+			d.textContent = CFG.texto_mas_info;
+			(items[j].querySelector('.item-description') || items[j]).appendChild(d);
+		}
+	}
+
+	function arrancarParidad() {
+		emparejarTarjetas();
+		// El listado se repinta solo con la carga infinita, los filtros y la
+		// compra rapida. El observer vuelve a emparejar lo que aparezca.
+		try {
+			var grilla = document.querySelector('.js-product-list, .js-masonry-grid, main') || document.body;
+			var mo = new MutationObserver(function () { emparejarTarjetas(); });
+			mo.observe(grilla, { childList: true, subtree: true });
+		} catch (e) {}
+	}
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancarParidad);
+	else arrancarParidad();
 
 	/* 4. PIXELES DE SEGUIMIENTO
 	   Revisar primero Configuracion > Codigos externos: ahi hay campos NATIVOS

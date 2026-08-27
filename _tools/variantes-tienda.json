@@ -1,0 +1,4727 @@
+{
+ "1": {
+  "handle": "sierras-scc-freud",
+  "variant": 1585442831,
+  "sku": "1",
+  "medida": "1",
+  "precio": 19930000
+ },
+ "82425063521": {
+  "handle": "mechas-824",
+  "variant": 1585442476,
+  "sku": "82425063521",
+  "medida": "82425063521",
+  "precio": 2380000
+ },
+ "92505063521": {
+  "handle": "mechas-925",
+  "variant": 1585442491,
+  "sku": "92505063521",
+  "medida": "92505063521",
+  "precio": 3020000
+ },
+ "92515063521": {
+  "handle": "mechas-925",
+  "variant": 1585442495,
+  "sku": "92515063521",
+  "medida": "92515063521",
+  "precio": 2990000
+ },
+ "92708063521": {
+  "handle": "mechas-927",
+  "variant": 1585442497,
+  "sku": "92708063521",
+  "medida": "92708063521",
+  "precio": 4070000
+ },
+ "92906063521": {
+  "handle": "mechas-929",
+  "variant": 1585442500,
+  "sku": "92906063521",
+  "medida": "92906063521",
+  "precio": 2300000
+ },
+ "93206063521": {
+  "handle": "mechas-932",
+  "variant": 1585442506,
+  "sku": "93206063521",
+  "medida": "93206063521",
+  "precio": 2860000
+ },
+ "LG3D0400": {
+  "handle": "sierras-lg3d",
+  "variant": 1585442521,
+  "sku": "LG3D 0400",
+  "medida": "LG3D 0400",
+  "precio": 15780000
+ },
+ "LG3D0600": {
+  "handle": "sierras-lg3d",
+  "variant": 1585442535,
+  "sku": "LG3D 0600",
+  "medida": "LG3D 0600",
+  "precio": 21330000
+ },
+ "LG3D0800": {
+  "handle": "sierras-lg3d",
+  "variant": 1585442539,
+  "sku": "LG3D 0800",
+  "medida": "LG3D 0800",
+  "precio": 26890000
+ },
+ "SSK12001": {
+  "handle": "sierras-ssk12",
+  "variant": 1585442542,
+  "sku": "SSK12 001",
+  "medida": "SSK12 001",
+  "precio": 31760000
+ },
+ "LU3F0200": {
+  "handle": "sierras-lu3f",
+  "variant": 1585442545,
+  "sku": "LU3F 0200",
+  "medida": "LU3F 0200",
+  "precio": 10220000
+ },
+ "LU3F0300": {
+  "handle": "sierras-lu3f",
+  "variant": 1585442548,
+  "sku": "LU3F 0300",
+  "medida": "LU3F 0300",
+  "precio": 13000000
+ },
+ "LU3F0400": {
+  "handle": "sierras-lu3f",
+  "variant": 1585442551,
+  "sku": "LU3F 0400",
+  "medida": "LU3F 0400",
+  "precio": 15780000
+ },
+ "LU3E0200": {
+  "handle": "sierras-lu3e",
+  "variant": 1585442553,
+  "sku": "LU3E 0200",
+  "medida": "LU3E 0200",
+  "precio": 10220000
+ },
+ "FR12L001H": {
+  "handle": "sierras-fr12l",
+  "variant": 1585442565,
+  "sku": "FR12L001H",
+  "medida": "FR12L001H",
+  "precio": 36730000
+ },
+ "LU3D0200": {
+  "handle": "sierras-lu3d",
+  "variant": 1585442570,
+  "sku": "LU3D 0200",
+  "medida": "LU3D 0200",
+  "precio": 10220000
+ },
+ "LU3D0600": {
+  "handle": "sierras-lu3d",
+  "variant": 1585442574,
+  "sku": "LU3D 0600",
+  "medida": "LU3D 0600",
+  "precio": 21330000
+ },
+ "F03FS09801": {
+  "handle": "sierras-f03fs",
+  "variant": 1585442579,
+  "sku": "F03FS09801",
+  "medida": "F03FS09801",
+  "precio": 29000000
+ },
+ "LSB25003X": {
+  "handle": "sierras-lsb",
+  "variant": 1585442581,
+  "sku": "LSB25003X",
+  "medida": "LSB25003X",
+  "precio": 13820000
+ },
+ "LSB30003X": {
+  "handle": "sierras-lsb",
+  "variant": 1585442583,
+  "sku": "LSB30003X",
+  "medida": "LSB30003X",
+  "precio": 12460000
+ },
+ "LSB35003X": {
+  "handle": "sierras-lsb",
+  "variant": 1585442589,
+  "sku": "LSB35003X",
+  "medida": "LSB35003X",
+  "precio": 16780000
+ },
+ "LG2A1700": {
+  "handle": "sierras-lg2a",
+  "variant": 1585442592,
+  "sku": "LG2A 1700",
+  "medida": "LG2A 1700",
+  "precio": 28800000
+ },
+ "LG2A2100": {
+  "handle": "sierras-lg2a",
+  "variant": 1585442596,
+  "sku": "LG2A 2100",
+  "medida": "LG2A 2100",
+  "precio": 14280000
+ },
+ "LG2A2800": {
+  "handle": "sierras-lg2a",
+  "variant": 1585442603,
+  "sku": "LG2A 2800",
+  "medida": "LG2A 2800",
+  "precio": 13590000
+ },
+ "LG2B0800": {
+  "handle": "sierras-lg2b",
+  "variant": 1585442607,
+  "sku": "LG2B 0800",
+  "medida": "LG2B 0800",
+  "precio": 26890000
+ },
+ "LG2B1100": {
+  "handle": "sierras-lg2b",
+  "variant": 1585442609,
+  "sku": "LG2B 1100",
+  "medida": "LG2B 1100",
+  "precio": 35220000
+ },
+ "LU2A1600": {
+  "handle": "sierras-lu2a",
+  "variant": 1585442611,
+  "sku": "LU2A 1600",
+  "medida": "LU2A 1600",
+  "precio": 6350000
+ },
+ "LU2A2100": {
+  "handle": "sierras-lu2a",
+  "variant": 1585442615,
+  "sku": "LU2A 2100",
+  "medida": "LU2A 2100",
+  "precio": 37740000
+ },
+ "LU2B0700": {
+  "handle": "sierras-lu2b",
+  "variant": 1585442618,
+  "sku": "LU2B 0700",
+  "medida": "LU2B 0700",
+  "precio": 24110000
+ },
+ "LU2B1200": {
+  "handle": "sierras-lu2b",
+  "variant": 1585442627,
+  "sku": "LU2B 1200",
+  "medida": "LU2B 1200",
+  "precio": 38000000
+ },
+ "LU2C1200": {
+  "handle": "sierras-lu2c",
+  "variant": 1585442630,
+  "sku": "LU2C 1200",
+  "medida": "LU2C 1200",
+  "precio": 38000000
+ },
+ "LU2C1500": {
+  "handle": "sierras-lu2c",
+  "variant": 1585442637,
+  "sku": "LU2C 1500",
+  "medida": "LU2C 1500",
+  "precio": 23210000
+ },
+ "LU1D0500": {
+  "handle": "sierras-lu1d",
+  "variant": 1585442639,
+  "sku": "LU1D 0500",
+  "medida": "LU1D 0500",
+  "precio": 18560000
+ },
+ "LU1F0600": {
+  "handle": "sierras-lu1f",
+  "variant": 1585442646,
+  "sku": "LU1F 0600",
+  "medida": "LU1F 0600",
+  "precio": 21330000
+ },
+ "FI14MAA3": {
+  "handle": "sierras-fi14m",
+  "variant": 1585442655,
+  "sku": "FI14M AA3",
+  "medida": "FI14M AA3",
+  "precio": 28670000
+ },
+ "FI14MAE3": {
+  "handle": "sierras-fi14m",
+  "variant": 1585442665,
+  "sku": "FI14M AE3",
+  "medida": "FI14M AE3",
+  "precio": 9300000
+ },
+ "FR09W003H": {
+  "handle": "sierras-fr09w",
+  "variant": 1585442671,
+  "sku": "FR09W003H",
+  "medida": "FR09W003H",
+  "precio": 14340000
+ },
+ "LP40M016P": {
+  "handle": "sierras-lp40m",
+  "variant": 1585442679,
+  "sku": "LP40M 016P",
+  "medida": "LP40M 016P",
+  "precio": 37120000
+ },
+ "LU4A0100": {
+  "handle": "sierras-lu4a",
+  "variant": 1585442686,
+  "sku": "LU4A 0100",
+  "medida": "LU4A 0100",
+  "precio": 7440000
+ },
+ "LU4A0200": {
+  "handle": "sierras-lu4a",
+  "variant": 1585442690,
+  "sku": "LU4A 0200",
+  "medida": "LU4A 0200",
+  "precio": 10220000
+ },
+ "LU5B0200": {
+  "handle": "sierras-lu5b",
+  "variant": 1585442693,
+  "sku": "LU5B 0200",
+  "medida": "LU5B 0200",
+  "precio": 10220000
+ },
+ "LU5B0600": {
+  "handle": "sierras-lu5b",
+  "variant": 1585442700,
+  "sku": "LU5B 0600",
+  "medida": "LU5B 0600",
+  "precio": 21330000
+ },
+ "LU5D0500": {
+  "handle": "sierras-lu5d",
+  "variant": 1585442716,
+  "sku": "LU5D 0500",
+  "medida": "LU5D 0500",
+  "precio": 18560000
+ },
+ "LU5D1100": {
+  "handle": "sierras-lu5d",
+  "variant": 1585442730,
+  "sku": "LU5D 1100",
+  "medida": "LU5D 1100",
+  "precio": 35220000
+ },
+ "LU5E0100": {
+  "handle": "sierras-lu5e",
+  "variant": 1585442735,
+  "sku": "LU5E 0100",
+  "medida": "LU5E 0100",
+  "precio": 7440000
+ },
+ "LU5E0200": {
+  "handle": "sierras-lu5e",
+  "variant": 1585442739,
+  "sku": "LU5E 0200",
+  "medida": "LU5E 0200",
+  "precio": 10220000
+ },
+ "LM013200": {
+  "handle": "sierras-lm01",
+  "variant": 1585442742,
+  "sku": "LM01 3200",
+  "medida": "LM01 3200",
+  "precio": 10120000
+ },
+ "LM023200": {
+  "handle": "sierras-lm02",
+  "variant": 1585442747,
+  "sku": "LM02 3200",
+  "medida": "LM02 3200",
+  "precio": 13200000
+ },
+ "LM043100": {
+  "handle": "sierras-lm04",
+  "variant": 1585442753,
+  "sku": "LM04 3100",
+  "medida": "LM04 3100",
+  "precio": 17400000
+ },
+ "LM053100": {
+  "handle": "sierras-lm05",
+  "variant": 1585442759,
+  "sku": "LM05 3100",
+  "medida": "LM05 3100",
+  "precio": 8520000
+ },
+ "LM063100": {
+  "handle": "sierras-lm06",
+  "variant": 1585442764,
+  "sku": "LM06 3100",
+  "medida": "LM06 3100",
+  "precio": 26300000
+ },
+ "LM63MCC3": {
+  "handle": "sierras-lm63m",
+  "variant": 1585442766,
+  "sku": "LM63M CC3",
+  "medida": "LM63M CC3",
+  "precio": 21910000
+ },
+ "LSA30003X": {
+  "handle": "sierras-lsa",
+  "variant": 1585442769,
+  "sku": "LSA 30003X",
+  "medida": "LSA 30003X",
+  "precio": 12810000
+ },
+ "LSA35003X": {
+  "handle": "sierras-lsa",
+  "variant": 1585442773,
+  "sku": "LSA 35003X",
+  "medida": "LSA 35003X",
+  "precio": 16360000
+ },
+ "LI13MDBA3": {
+  "handle": "sierras-li13md",
+  "variant": 1585442777,
+  "sku": "LI13MD BA3",
+  "medida": "LI13MD BA3",
+  "precio": 13530000
+ },
+ "LI13MDCA3": {
+  "handle": "sierras-li13md",
+  "variant": 1585442783,
+  "sku": "LI13MD CA3",
+  "medida": "LI13MD CA3",
+  "precio": 32220000
+ },
+ "LI13MSBA3": {
+  "handle": "sierras-li13ms",
+  "variant": 1585442784,
+  "sku": "LI13MS BA3",
+  "medida": "LI13MS BA3",
+  "precio": 11610000
+ },
+ "LI13MSCA3": {
+  "handle": "sierras-li13ms",
+  "variant": 1585442786,
+  "sku": "LI13MS CA3",
+  "medida": "LI13MS CA3",
+  "precio": 36540000
+ },
+ "LI16MAA3": {
+  "handle": "sierras-li16m",
+  "variant": 1585442791,
+  "sku": "LI16M AA3",
+  "medida": "LI16M AA3",
+  "precio": 11380000
+ },
+ "LI16MBA3": {
+  "handle": "sierras-li16m",
+  "variant": 1585442793,
+  "sku": "LI16M BA3",
+  "medida": "LI16M BA3",
+  "precio": 7260000
+ },
+ "LI25M28BA3": {
+  "handle": "sierras-li25m",
+  "variant": 1585442797,
+  "sku": "LI25M 28 BA3",
+  "medida": "LI25M 28 BA3",
+  "precio": 18050000
+ },
+ "LI25M31CA3": {
+  "handle": "sierras-li25m",
+  "variant": 1585442803,
+  "sku": "LI25M 31 CA3",
+  "medida": "LI25M 31 CA3",
+  "precio": 14960000
+ },
+ "TR15MDCA3": {
+  "handle": "sierras-tr15md",
+  "variant": 1585442805,
+  "sku": "TR15MD CA3",
+  "medida": "TR15MD CA3",
+  "precio": 31010000
+ },
+ "TR15MSCA3": {
+  "handle": "sierras-tr15ms",
+  "variant": 1585442810,
+  "sku": "TR15MS CA3",
+  "medida": "TR15MS CA3",
+  "precio": 7710000
+ },
+ "LT14MD": {
+  "handle": "sierras-lt",
+  "variant": 1585442815,
+  "sku": "LT14MD",
+  "medida": "LT14MD",
+  "precio": 10410000
+ },
+ "LT14MS": {
+  "handle": "sierras-lt",
+  "variant": 1585442817,
+  "sku": "LT14MS",
+  "medida": "LT14MS",
+  "precio": 19670000
+ },
+ "LT16MD": {
+  "handle": "sierras-lt",
+  "variant": 1585442819,
+  "sku": "LT16MD",
+  "medida": "LT16MD",
+  "precio": 14630000
+ },
+ "LT16MS": {
+  "handle": "sierras-lt",
+  "variant": 1585442822,
+  "sku": "LT16MS",
+  "medida": "LT16MS",
+  "precio": 6870000
+ },
+ "LT18MD": {
+  "handle": "sierras-lt",
+  "variant": 1585442825,
+  "sku": "LT18MD",
+  "medida": "LT18MD",
+  "precio": 11640000
+ },
+ "LT18MS": {
+  "handle": "sierras-lt",
+  "variant": 1585442828,
+  "sku": "LT18MS",
+  "medida": "LT18MS",
+  "precio": 30200000
+ },
+ "SCCFRANZOI1": {
+  "handle": "sierras-scc-franzoi",
+  "variant": 1585442833,
+  "sku": "SCC_Franzoi-1",
+  "medida": "1",
+  "precio": 19930000
+ },
+ "SC2504144F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442835,
+  "sku": "SC2504144F",
+  "medida": "SC2504144F",
+  "precio": 26790000
+ },
+ "SC25042144F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442840,
+  "sku": "SC25042144F",
+  "medida": "SC25042144F",
+  "precio": 21780000
+ },
+ "SC3004164F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442843,
+  "sku": "SC3004164F",
+  "medida": "SC3004164F",
+  "precio": 25030000
+ },
+ "SC30042164F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442846,
+  "sku": "SC30042164F",
+  "medida": "SC30042164F",
+  "precio": 14370000
+ },
+ "SC35045184F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442849,
+  "sku": "SC35045184F",
+  "medida": "SC35045184F",
+  "precio": 35370000
+ },
+ "SC3505135184F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442851,
+  "sku": "SC3505135184F",
+  "medida": "SC3505135184F",
+  "precio": 16680000
+ },
+ "SC35045244F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442853,
+  "sku": "SC35045244F",
+  "medida": "SC35045244F",
+  "precio": 37030000
+ },
+ "SC40045184F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442855,
+  "sku": "SC40045184F",
+  "medida": "SC40045184F",
+  "precio": 37450000
+ },
+ "SC4005135184F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442858,
+  "sku": "SC4005135184F",
+  "medida": "SC4005135184F",
+  "precio": 17460000
+ },
+ "SC4504248F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442873,
+  "sku": "SC4504248F",
+  "medida": "SC4504248F",
+  "precio": 25520000
+ },
+ "SC4505204F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442894,
+  "sku": "SC4505204F",
+  "medida": "SC4505204F",
+  "precio": 5530000
+ },
+ "SC4805204F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442913,
+  "sku": "SC4805204F",
+  "medida": "SC4805204F",
+  "precio": 17850000
+ },
+ "SC5005184F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442928,
+  "sku": "SC5005184F",
+  "medida": "SC5005184F",
+  "precio": 18180000
+ },
+ "SC55051204F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442930,
+  "sku": "SC55051204F",
+  "medida": "SC55051204F",
+  "precio": 21780000
+ },
+ "SC60055244F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442932,
+  "sku": "SC60055244F",
+  "medida": "SC60055244F",
+  "precio": 6120000
+ },
+ "SC125324F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442934,
+  "sku": "SC125324F",
+  "medida": "SC125324F",
+  "precio": 6800000
+ },
+ "SC125424F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442937,
+  "sku": "SC125424F",
+  "medida": "SC125424F",
+  "precio": 25750000
+ },
+ "SC150324F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442943,
+  "sku": "SC150324F",
+  "medida": "SC150324F",
+  "precio": 22400000
+ },
+ "SC150424F": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442946,
+  "sku": "SC150424F",
+  "medida": "SC150424F",
+  "precio": 22690000
+ },
+ "SCC1324": {
+  "handle": "sierras-sc-franzoi",
+  "variant": 1585442948,
+  "sku": "SCC1324",
+  "medida": "SCC1324",
+  "precio": 24810000
+ },
+ "FRS0054": {
+  "handle": "fresas-frs",
+  "variant": 1585442950,
+  "sku": "FRS0054",
+  "medida": "FRS0054",
+  "precio": 8940000
+ },
+ "FRS0056": {
+  "handle": "fresas-frs",
+  "variant": 1585442960,
+  "sku": "FRS0056",
+  "medida": "FRS0056",
+  "precio": 3070000
+ },
+ "FRS0064": {
+  "handle": "fresas-frs",
+  "variant": 1585442973,
+  "sku": "FRS0064",
+  "medida": "FRS0064",
+  "precio": 5650000
+ },
+ "FRS0066": {
+  "handle": "fresas-frs",
+  "variant": 1585442975,
+  "sku": "FRS0066",
+  "medida": "FRS0066",
+  "precio": 7480000
+ },
+ "FRS0074": {
+  "handle": "fresas-frs",
+  "variant": 1585442978,
+  "sku": "FRS0074",
+  "medida": "FRS0074",
+  "precio": 4180000
+ },
+ "FRS0076": {
+  "handle": "fresas-frs",
+  "variant": 1585442982,
+  "sku": "FRS0076",
+  "medida": "FRS0076",
+  "precio": 2350000
+ },
+ "FRS0084": {
+  "handle": "fresas-frs",
+  "variant": 1585442989,
+  "sku": "FRS0084",
+  "medida": "FRS0084",
+  "precio": 6000000
+ },
+ "FRS0086": {
+  "handle": "fresas-frs",
+  "variant": 1585442993,
+  "sku": "FRS0086",
+  "medida": "FRS0086",
+  "precio": 4170000
+ },
+ "FRS0094": {
+  "handle": "fresas-frs",
+  "variant": 1585442996,
+  "sku": "FRS0094",
+  "medida": "FRS0094",
+  "precio": 4900000
+ },
+ "FRS0096": {
+  "handle": "fresas-frs",
+  "variant": 1585443012,
+  "sku": "FRS0096",
+  "medida": "FRS0096",
+  "precio": 6740000
+ },
+ "FRS0104": {
+  "handle": "fresas-frs",
+  "variant": 1585443014,
+  "sku": "FRS0104",
+  "medida": "FRS0104",
+  "precio": 2890000
+ },
+ "FRS0106": {
+  "handle": "fresas-frs",
+  "variant": 1585443017,
+  "sku": "FRS0106",
+  "medida": "FRS0106",
+  "precio": 8750000
+ },
+ "FRS0114": {
+  "handle": "fresas-frs",
+  "variant": 1585443023,
+  "sku": "FRS0114",
+  "medida": "FRS0114",
+  "precio": 4360000
+ },
+ "FRS0116": {
+  "handle": "fresas-frs",
+  "variant": 1585443025,
+  "sku": "FRS0116",
+  "medida": "FRS0116",
+  "precio": 6190000
+ },
+ "FRS0124": {
+  "handle": "fresas-frs",
+  "variant": 1585443031,
+  "sku": "FRS0124",
+  "medida": "FRS0124",
+  "precio": 2670000
+ },
+ "FRS0126": {
+  "handle": "fresas-frs",
+  "variant": 1585443033,
+  "sku": "FRS0126",
+  "medida": "FRS0126",
+  "precio": 8540000
+ },
+ "FRS0134": {
+  "handle": "fresas-frs",
+  "variant": 1585443036,
+  "sku": "FRS0134",
+  "medida": "FRS0134",
+  "precio": 2310000
+ },
+ "FRS0136": {
+  "handle": "fresas-frs",
+  "variant": 1585443038,
+  "sku": "FRS0136",
+  "medida": "FRS0136",
+  "precio": 4140000
+ },
+ "FRS0144": {
+  "handle": "fresas-frs",
+  "variant": 1585443041,
+  "sku": "FRS0144",
+  "medida": "FRS0144",
+  "precio": 7840000
+ },
+ "FRS0146": {
+  "handle": "fresas-frs",
+  "variant": 1585443044,
+  "sku": "FRS0146",
+  "medida": "FRS0146",
+  "precio": 6010000
+ },
+ "FRS0154": {
+  "handle": "fresas-frs",
+  "variant": 1585443046,
+  "sku": "FRS0154",
+  "medida": "FRS0154",
+  "precio": 3770000
+ },
+ "FRS0156": {
+  "handle": "fresas-frs",
+  "variant": 1585443054,
+  "sku": "FRS0156",
+  "medida": "FRS0156",
+  "precio": 1940000
+ },
+ "FRS0164": {
+  "handle": "fresas-frs",
+  "variant": 1585443056,
+  "sku": "FRS0164",
+  "medida": "FRS0164",
+  "precio": 4900000
+ },
+ "FRS0166": {
+  "handle": "fresas-frs",
+  "variant": 1585443060,
+  "sku": "FRS0166",
+  "medida": "FRS0166",
+  "precio": 6740000
+ },
+ "FRS0174": {
+  "handle": "fresas-frs",
+  "variant": 1585443061,
+  "sku": "FRS0174",
+  "medida": "FRS0174",
+  "precio": 6000000
+ },
+ "FRS0176": {
+  "handle": "fresas-frs",
+  "variant": 1585443063,
+  "sku": "FRS0176",
+  "medida": "FRS0176",
+  "precio": 4170000
+ },
+ "FRS0184": {
+  "handle": "fresas-frs",
+  "variant": 1585443065,
+  "sku": "FRS0184",
+  "medida": "FRS0184",
+  "precio": 4180000
+ },
+ "FRS0186": {
+  "handle": "fresas-frs",
+  "variant": 1585443067,
+  "sku": "FRS0186",
+  "medida": "FRS0186",
+  "precio": 2350000
+ },
+ "FRS0194": {
+  "handle": "fresas-frs",
+  "variant": 1585443069,
+  "sku": "FRS0194",
+  "medida": "FRS0194",
+  "precio": 5650000
+ },
+ "FRS0196": {
+  "handle": "fresas-frs",
+  "variant": 1585443073,
+  "sku": "FRS0196",
+  "medida": "FRS0196",
+  "precio": 7480000
+ },
+ "FRS0204": {
+  "handle": "fresas-frs",
+  "variant": 1585443078,
+  "sku": "FRS0204",
+  "medida": "FRS0204",
+  "precio": 2020000
+ },
+ "FRS0206": {
+  "handle": "fresas-frs",
+  "variant": 1585443082,
+  "sku": "FRS0206",
+  "medida": "FRS0206",
+  "precio": 7880000
+ },
+ "FRS0254": {
+  "handle": "fresas-frs",
+  "variant": 1585443084,
+  "sku": "FRS0254",
+  "medida": "FRS0254",
+  "precio": 9490000
+ },
+ "FRS0256": {
+  "handle": "fresas-frs",
+  "variant": 1585443086,
+  "sku": "FRS0256",
+  "medida": "FRS0256",
+  "precio": 3620000
+ },
+ "FRS0304": {
+  "handle": "fresas-frs",
+  "variant": 1585443088,
+  "sku": "FRS0304",
+  "medida": "FRS0304",
+  "precio": 3950000
+ },
+ "FRS0306": {
+  "handle": "fresas-frs",
+  "variant": 1585443091,
+  "sku": "FRS0306",
+  "medida": "FRS0306",
+  "precio": 5780000
+ },
+ "FRS0354": {
+  "handle": "fresas-frs",
+  "variant": 1585443103,
+  "sku": "FRS0354",
+  "medida": "FRS0354",
+  "precio": 3080000
+ },
+ "FRS0356": {
+  "handle": "fresas-frs",
+  "variant": 1585443109,
+  "sku": "FRS0356",
+  "medida": "FRS0356",
+  "precio": 4910000
+ },
+ "FRS0404": {
+  "handle": "fresas-frs",
+  "variant": 1585443112,
+  "sku": "FRS0404",
+  "medida": "FRS0404",
+  "precio": 4830000
+ },
+ "FRS0406": {
+  "handle": "fresas-frs",
+  "variant": 1585443115,
+  "sku": "FRS0406",
+  "medida": "FRS0406",
+  "precio": 6670000
+ },
+ "FRS0454": {
+  "handle": "fresas-frs",
+  "variant": 1585443118,
+  "sku": "FRS0454",
+  "medida": "FRS0454",
+  "precio": 9420000
+ },
+ "FRS0456": {
+  "handle": "fresas-frs",
+  "variant": 1585443121,
+  "sku": "FRS0456",
+  "medida": "FRS0456",
+  "precio": 7580000
+ },
+ "FRS0504": {
+  "handle": "fresas-frs",
+  "variant": 1585443124,
+  "sku": "FRS0504",
+  "medida": "FRS0504",
+  "precio": 8830000
+ },
+ "FRS0506": {
+  "handle": "fresas-frs",
+  "variant": 1585443128,
+  "sku": "FRS0506",
+  "medida": "FRS0506",
+  "precio": 7000000
+ },
+ "FRS0604": {
+  "handle": "fresas-frs",
+  "variant": 1585443130,
+  "sku": "FRS0604",
+  "medida": "FRS0604",
+  "precio": 6600000
+ },
+ "FRS0606": {
+  "handle": "fresas-frs",
+  "variant": 1585443138,
+  "sku": "FRS0606",
+  "medida": "FRS0606",
+  "precio": 8440000
+ },
+ "FRS0704": {
+  "handle": "fresas-frs",
+  "variant": 1585443158,
+  "sku": "FRS0704",
+  "medida": "FRS0704",
+  "precio": 4610000
+ },
+ "FRS0706": {
+  "handle": "fresas-frs",
+  "variant": 1585443164,
+  "sku": "FRS0706",
+  "medida": "FRS0706",
+  "precio": 2780000
+ },
+ "FRS0804": {
+  "handle": "fresas-frs",
+  "variant": 1585443169,
+  "sku": "FRS0804",
+  "medida": "FRS0804",
+  "precio": 3050000
+ },
+ "FRS0806": {
+  "handle": "fresas-frs",
+  "variant": 1585443182,
+  "sku": "FRS0806",
+  "medida": "FRS0806",
+  "precio": 8910000
+ },
+ "FRS0904": {
+  "handle": "fresas-frs",
+  "variant": 1585443195,
+  "sku": "FRS0904",
+  "medida": "FRS0904",
+  "precio": 7320000
+ },
+ "FRS0906": {
+  "handle": "fresas-frs",
+  "variant": 1585443200,
+  "sku": "FRS0906",
+  "medida": "FRS0906",
+  "precio": 5490000
+ },
+ "FRS1004": {
+  "handle": "fresas-frs",
+  "variant": 1585443209,
+  "sku": "FRS1004",
+  "medida": "FRS1004",
+  "precio": 3730000
+ },
+ "FRS1006": {
+  "handle": "fresas-frs",
+  "variant": 1585443222,
+  "sku": "FRS1006",
+  "medida": "FRS1006",
+  "precio": 5570000
+ },
+ "FRI01542": {
+  "handle": "fresas-fri",
+  "variant": 1585443233,
+  "sku": "FRI01542",
+  "medida": "FRI01542",
+  "precio": 2720000
+ },
+ "FRI01544": {
+  "handle": "fresas-fri",
+  "variant": 1585443249,
+  "sku": "FRI01544",
+  "medida": "FRI01544",
+  "precio": 8220000
+ },
+ "FRI01563": {
+  "handle": "fresas-fri",
+  "variant": 1585443261,
+  "sku": "FRI01563",
+  "medida": "FRI01563",
+  "precio": 6690000
+ },
+ "FRI01566": {
+  "handle": "fresas-fri",
+  "variant": 1585443268,
+  "sku": "FRI01566",
+  "medida": "FRI01566",
+  "precio": 7420000
+ },
+ "FRI02042": {
+  "handle": "fresas-fri",
+  "variant": 1585443274,
+  "sku": "FRI02042",
+  "medida": "FRI02042",
+  "precio": 9070000
+ },
+ "FRI02044": {
+  "handle": "fresas-fri",
+  "variant": 1585443281,
+  "sku": "FRI02044",
+  "medida": "FRI02044",
+  "precio": 3570000
+ },
+ "FRI02063": {
+  "handle": "fresas-fri",
+  "variant": 1585443289,
+  "sku": "FRI02063",
+  "medida": "FRI02063",
+  "precio": 8180000
+ },
+ "FRI02066": {
+  "handle": "fresas-fri",
+  "variant": 1585443295,
+  "sku": "FRI02066",
+  "medida": "FRI02066",
+  "precio": 7450000
+ },
+ "FRI02542": {
+  "handle": "fresas-fri",
+  "variant": 1585443306,
+  "sku": "FRI02542",
+  "medida": "FRI02542",
+  "precio": 9430000
+ },
+ "FRI02544": {
+  "handle": "fresas-fri",
+  "variant": 1585443311,
+  "sku": "FRI02544",
+  "medida": "FRI02544",
+  "precio": 7600000
+ },
+ "FRI02563": {
+  "handle": "fresas-fri",
+  "variant": 1585443318,
+  "sku": "FRI02563",
+  "medida": "FRI02563",
+  "precio": 6870000
+ },
+ "FRI02566": {
+  "handle": "fresas-fri",
+  "variant": 1585443326,
+  "sku": "FRI02566",
+  "medida": "FRI02566",
+  "precio": 7970000
+ },
+ "FRI03042": {
+  "handle": "fresas-fri",
+  "variant": 1585443332,
+  "sku": "FRI03042",
+  "medida": "FRI03042",
+  "precio": 3300000
+ },
+ "FRI03044": {
+  "handle": "fresas-fri",
+  "variant": 1585443339,
+  "sku": "FRI03044",
+  "medida": "FRI03044",
+  "precio": 8800000
+ },
+ "FRI03063": {
+  "handle": "fresas-fri",
+  "variant": 1585443346,
+  "sku": "FRI03063",
+  "medida": "FRI03063",
+  "precio": 4360000
+ },
+ "FRI03066": {
+  "handle": "fresas-fri",
+  "variant": 1585443351,
+  "sku": "FRI03066",
+  "medida": "FRI03066",
+  "precio": 3260000
+ },
+ "FRI03542": {
+  "handle": "fresas-fri",
+  "variant": 1585443360,
+  "sku": "FRI03542",
+  "medida": "FRI03542",
+  "precio": 7880000
+ },
+ "FRI03544": {
+  "handle": "fresas-fri",
+  "variant": 1585443368,
+  "sku": "FRI03544",
+  "medida": "FRI03544",
+  "precio": 2020000
+ },
+ "FRI03563": {
+  "handle": "fresas-fri",
+  "variant": 1585443375,
+  "sku": "FRI03563",
+  "medida": "FRI03563",
+  "precio": 6040000
+ },
+ "FRI03566": {
+  "handle": "fresas-fri",
+  "variant": 1585443390,
+  "sku": "FRI03566",
+  "medida": "FRI03566",
+  "precio": 5310000
+ },
+ "FRI04042": {
+  "handle": "fresas-fri",
+  "variant": 1585443398,
+  "sku": "FRI04042",
+  "medida": "FRI04042",
+  "precio": 5360000
+ },
+ "FRI04044": {
+  "handle": "fresas-fri",
+  "variant": 1585443406,
+  "sku": "FRI04044",
+  "medida": "FRI04044",
+  "precio": 7190000
+ },
+ "FRI04063": {
+  "handle": "fresas-fri",
+  "variant": 1585443415,
+  "sku": "FRI04063",
+  "medida": "FRI04063",
+  "precio": 8280000
+ },
+ "FRI04066": {
+  "handle": "fresas-fri",
+  "variant": 1585443424,
+  "sku": "FRI04066",
+  "medida": "FRI04066",
+  "precio": 9010000
+ },
+ "FRI04542": {
+  "handle": "fresas-fri",
+  "variant": 1585443431,
+  "sku": "FRI04542",
+  "medida": "FRI04542",
+  "precio": 8540000
+ },
+ "FRI04544": {
+  "handle": "fresas-fri",
+  "variant": 1585443439,
+  "sku": "FRI04544",
+  "medida": "FRI04544",
+  "precio": 6340000
+ },
+ "FRI04563": {
+  "handle": "fresas-fri",
+  "variant": 1585443441,
+  "sku": "FRI04563",
+  "medida": "FRI04563",
+  "precio": 3990000
+ },
+ "FRI04566": {
+  "handle": "fresas-fri",
+  "variant": 1585443446,
+  "sku": "FRI04566",
+  "medida": "FRI04566",
+  "precio": 5090000
+ },
+ "FRI05042": {
+  "handle": "fresas-fri",
+  "variant": 1585443452,
+  "sku": "FRI05042",
+  "medida": "FRI05042",
+  "precio": 6690000
+ },
+ "FRI05044": {
+  "handle": "fresas-fri",
+  "variant": 1585443458,
+  "sku": "FRI05044",
+  "medida": "FRI05044",
+  "precio": 4490000
+ },
+ "FRI05063": {
+  "handle": "fresas-fri",
+  "variant": 1585443465,
+  "sku": "FRI05063",
+  "medida": "FRI05063",
+  "precio": 9150000
+ },
+ "FRI05066": {
+  "handle": "fresas-fri",
+  "variant": 1585443471,
+  "sku": "FRI05066",
+  "medida": "FRI05066",
+  "precio": 8410000
+ },
+ "FRI06042": {
+  "handle": "fresas-fri",
+  "variant": 1585443478,
+  "sku": "FRI06042",
+  "medida": "FRI06042",
+  "precio": 9040000
+ },
+ "FRI06044": {
+  "handle": "fresas-fri",
+  "variant": 1585443484,
+  "sku": "FRI06044",
+  "medida": "FRI06044",
+  "precio": 3170000
+ },
+ "FRI06063": {
+  "handle": "fresas-fri",
+  "variant": 1585443492,
+  "sku": "FRI06063",
+  "medida": "FRI06063",
+  "precio": 6430000
+ },
+ "FRI06066": {
+  "handle": "fresas-fri",
+  "variant": 1585443499,
+  "sku": "FRI06066",
+  "medida": "FRI06066",
+  "precio": 5330000
+ },
+ "FRI07042": {
+  "handle": "fresas-fri",
+  "variant": 1585443504,
+  "sku": "FRI07042",
+  "medida": "FRI07042",
+  "precio": 6180000
+ },
+ "FRI07063": {
+  "handle": "fresas-fri",
+  "variant": 1585443510,
+  "sku": "FRI07063",
+  "medida": "FRI07063",
+  "precio": 8390000
+ },
+ "FRI08042": {
+  "handle": "fresas-fri",
+  "variant": 1585443515,
+  "sku": "FRI08042",
+  "medida": "FRI08042",
+  "precio": 6770000
+ },
+ "FRI08063": {
+  "handle": "fresas-fri",
+  "variant": 1585443528,
+  "sku": "FRI08063",
+  "medida": "FRI08063",
+  "precio": 5950000
+ },
+ "FRI09042": {
+  "handle": "fresas-fri",
+  "variant": 1585443539,
+  "sku": "FRI09042",
+  "medida": "FRI09042",
+  "precio": 7890000
+ },
+ "FRI09044": {
+  "handle": "fresas-fri",
+  "variant": 1585443545,
+  "sku": "FRI09044",
+  "medida": "FRI09044",
+  "precio": 6060000
+ },
+ "FRI09063": {
+  "handle": "fresas-fri",
+  "variant": 1585443552,
+  "sku": "FRI09063",
+  "medida": "FRI09063",
+  "precio": 7940000
+ },
+ "FRI09066": {
+  "handle": "fresas-fri",
+  "variant": 1585443558,
+  "sku": "FRI09066",
+  "medida": "FRI09066",
+  "precio": 6840000
+ },
+ "FRI10042": {
+  "handle": "fresas-fri",
+  "variant": 1585443568,
+  "sku": "FRI10042",
+  "medida": "FRI10042",
+  "precio": 5830000
+ },
+ "FRI10044": {
+  "handle": "fresas-fri",
+  "variant": 1585443573,
+  "sku": "FRI10044",
+  "medida": "FRI10044",
+  "precio": 3620000
+ },
+ "FRI10063": {
+  "handle": "fresas-fri",
+  "variant": 1585443582,
+  "sku": "FRI10063",
+  "medida": "FRI10063",
+  "precio": 6700000
+ },
+ "FRI10066": {
+  "handle": "fresas-fri",
+  "variant": 1585443590,
+  "sku": "FRI10066",
+  "medida": "FRI10066",
+  "precio": 7800000
+ },
+ "MPD04": {
+  "handle": "mechas-mpd",
+  "variant": 1585443599,
+  "sku": "MPD04",
+  "medida": "MPD04",
+  "precio": 3600000
+ },
+ "MPD0470": {
+  "handle": "mechas-mpd",
+  "variant": 1585443618,
+  "sku": "MPD0470",
+  "medida": "MPD0470",
+  "precio": 3420000
+ },
+ "MPD05": {
+  "handle": "mechas-mpd",
+  "variant": 1585443627,
+  "sku": "MPD05",
+  "medida": "MPD05",
+  "precio": 1500000
+ },
+ "MPD0570": {
+  "handle": "mechas-mpd",
+  "variant": 1585443637,
+  "sku": "MPD0570",
+  "medida": "MPD0570",
+  "precio": 2660000
+ },
+ "MPD0670": {
+  "handle": "mechas-mpd",
+  "variant": 1585443643,
+  "sku": "MPD0670",
+  "medida": "MPD0670",
+  "precio": 3850000
+ },
+ "MPD0770": {
+  "handle": "mechas-mpd",
+  "variant": 1585443648,
+  "sku": "MPD0770",
+  "medida": "MPD0770",
+  "precio": 3110000
+ },
+ "MPD08": {
+  "handle": "mechas-mpd",
+  "variant": 1585443657,
+  "sku": "MPD08",
+  "medida": "MPD08",
+  "precio": 1820000
+ },
+ "MPD0870": {
+  "handle": "mechas-mpd",
+  "variant": 1585443666,
+  "sku": "MPD0870",
+  "medida": "MPD0870",
+  "precio": 4100000
+ },
+ "MPD10": {
+  "handle": "mechas-mpd",
+  "variant": 1585443675,
+  "sku": "MPD10",
+  "medida": "MPD10",
+  "precio": 2630000
+ },
+ "MPD1070": {
+  "handle": "mechas-mpd",
+  "variant": 1585443687,
+  "sku": "MPD1070",
+  "medida": "MPD1070",
+  "precio": 1980000
+ },
+ "MPD12": {
+  "handle": "mechas-mpd",
+  "variant": 1585443693,
+  "sku": "MPD12",
+  "medida": "MPD12",
+  "precio": 3440000
+ },
+ "MPD1270": {
+  "handle": "mechas-mpd",
+  "variant": 1585443699,
+  "sku": "MPD1270",
+  "medida": "MPD1270",
+  "precio": 1940000
+ },
+ "MPDL05": {
+  "handle": "mechas-mpd",
+  "variant": 1585443707,
+  "sku": "MPDL05",
+  "medida": "MPDL05",
+  "precio": 3250000
+ },
+ "MPDL0570": {
+  "handle": "mechas-mpd",
+  "variant": 1585443713,
+  "sku": "MPDL0570",
+  "medida": "MPDL0570",
+  "precio": 4610000
+ },
+ "MPDL08": {
+  "handle": "mechas-mpd",
+  "variant": 1585443721,
+  "sku": "MPDL08",
+  "medida": "MPDL08",
+  "precio": 3410000
+ },
+ "MPDL0870": {
+  "handle": "mechas-mpd",
+  "variant": 1585443727,
+  "sku": "MPDL0870",
+  "medida": "MPDL0870",
+  "precio": 3870000
+ },
+ "MPI04": {
+  "handle": "mechas-mpi",
+  "variant": 1585443733,
+  "sku": "MPI04",
+  "medida": "MPI04",
+  "precio": 4090000
+ },
+ "MPI0470": {
+  "handle": "mechas-mpi",
+  "variant": 1585443745,
+  "sku": "MPI0470",
+  "medida": "MPI0470",
+  "precio": 2870000
+ },
+ "MPI05": {
+  "handle": "mechas-mpi",
+  "variant": 1585443755,
+  "sku": "MPI05",
+  "medida": "MPI05",
+  "precio": 1980000
+ },
+ "MPI0570": {
+  "handle": "mechas-mpi",
+  "variant": 1585443764,
+  "sku": "MPI0570",
+  "medida": "MPI0570",
+  "precio": 2890000
+ },
+ "MPI0670": {
+  "handle": "mechas-mpi",
+  "variant": 1585443771,
+  "sku": "MPI0670",
+  "medida": "MPI0670",
+  "precio": 4410000
+ },
+ "MPI0770": {
+  "handle": "mechas-mpi",
+  "variant": 1585443776,
+  "sku": "MPI0770",
+  "medida": "MPI0770",
+  "precio": 2480000
+ },
+ "MPI08": {
+  "handle": "mechas-mpi",
+  "variant": 1585443782,
+  "sku": "MPI08",
+  "medida": "MPI08",
+  "precio": 2630000
+ },
+ "MPI0870": {
+  "handle": "mechas-mpi",
+  "variant": 1585443787,
+  "sku": "MPI0870",
+  "medida": "MPI0870",
+  "precio": 2530000
+ },
+ "MPI10": {
+  "handle": "mechas-mpi",
+  "variant": 1585443793,
+  "sku": "MPI10",
+  "medida": "MPI10",
+  "precio": 3870000
+ },
+ "MPI1070": {
+  "handle": "mechas-mpi",
+  "variant": 1585443799,
+  "sku": "MPI1070",
+  "medida": "MPI1070",
+  "precio": 4080000
+ },
+ "MPI12": {
+  "handle": "mechas-mpi",
+  "variant": 1585443805,
+  "sku": "MPI12",
+  "medida": "MPI12",
+  "precio": 4680000
+ },
+ "MPI1270": {
+  "handle": "mechas-mpi",
+  "variant": 1585443814,
+  "sku": "MPI1270",
+  "medida": "MPI1270",
+  "precio": 4190000
+ },
+ "MPIL05": {
+  "handle": "mechas-mpi",
+  "variant": 1585443831,
+  "sku": "MPIL05",
+  "medida": "MPIL05",
+  "precio": 4660000
+ },
+ "MPIL0570": {
+  "handle": "mechas-mpi",
+  "variant": 1585443849,
+  "sku": "MPIL0570",
+  "medida": "MPIL0570",
+  "precio": 1940000
+ },
+ "MPIL08": {
+  "handle": "mechas-mpi",
+  "variant": 1585443868,
+  "sku": "MPIL08",
+  "medida": "MPIL08",
+  "precio": 1420000
+ },
+ "MPIL0870": {
+  "handle": "mechas-mpi",
+  "variant": 1585443879,
+  "sku": "MPIL0870",
+  "medida": "MPIL0870",
+  "precio": 2370000
+ },
+ "MCD03": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443885,
+  "sku": "MCD03",
+  "medida": "MCD03",
+  "precio": 4680000
+ },
+ "MCD04": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443896,
+  "sku": "MCD04",
+  "medida": "MCD04",
+  "precio": 1610000
+ },
+ "MCD0470": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443903,
+  "sku": "MCD0470",
+  "medida": "MCD0470",
+  "precio": 3920000
+ },
+ "MCD05": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443914,
+  "sku": "MCD05",
+  "medida": "MCD05",
+  "precio": 3710000
+ },
+ "MCD0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443924,
+  "sku": "MCD0570",
+  "medida": "MCD0570",
+  "precio": 4040000
+ },
+ "MCD06": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443930,
+  "sku": "MCD06",
+  "medida": "MCD06",
+  "precio": 4200000
+ },
+ "MCD0670": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443937,
+  "sku": "MCD0670",
+  "medida": "MCD0670",
+  "precio": 2480000
+ },
+ "MCD0770": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443942,
+  "sku": "MCD0770",
+  "medida": "MCD0770",
+  "precio": 2970000
+ },
+ "MCD08": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443948,
+  "sku": "MCD08",
+  "medida": "MCD08",
+  "precio": 3230000
+ },
+ "MCD0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443954,
+  "sku": "MCD0870",
+  "medida": "MCD0870",
+  "precio": 2220000
+ },
+ "MCD10": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443960,
+  "sku": "MCD10",
+  "medida": "MCD10",
+  "precio": 2740000
+ },
+ "MCD1070": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443966,
+  "sku": "MCD1070",
+  "medida": "MCD1070",
+  "precio": 4060000
+ },
+ "MCD12": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443972,
+  "sku": "MCD12",
+  "medida": "MCD12",
+  "precio": 3550000
+ },
+ "MCD1270": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443978,
+  "sku": "MCD1270",
+  "medida": "MCD1270",
+  "precio": 1730000
+ },
+ "MCD1470": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585443994,
+  "sku": "MCD1470",
+  "medida": "MCD1470",
+  "precio": 4680000
+ },
+ "MCD15": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444009,
+  "sku": "MCD15",
+  "medida": "MCD15",
+  "precio": 2420000
+ },
+ "MCD1570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444016,
+  "sku": "MCD1570",
+  "medida": "MCD1570",
+  "precio": 2580000
+ },
+ "MCDL05": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444024,
+  "sku": "MCDL05",
+  "medida": "MCDL05",
+  "precio": 2110000
+ },
+ "MCDL0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444031,
+  "sku": "MCDL0570",
+  "medida": "MCDL0570",
+  "precio": 3530000
+ },
+ "MCDL08": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444038,
+  "sku": "MCDL08",
+  "medida": "MCDL08",
+  "precio": 2760000
+ },
+ "MCDL0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444045,
+  "sku": "MCDL0870",
+  "medida": "MCDL0870",
+  "precio": 3170000
+ },
+ "MCDR0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444050,
+  "sku": "MCDR0570",
+  "medida": "MCDR0570",
+  "precio": 2350000
+ },
+ "MCDR0670": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444064,
+  "sku": "MCDR0670",
+  "medida": "MCDR0670",
+  "precio": 4220000
+ },
+ "MCDR0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444071,
+  "sku": "MCDR0870",
+  "medida": "MCDR0870",
+  "precio": 4260000
+ },
+ "MCE": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444078,
+  "sku": "MCE",
+  "medida": "MCE",
+  "precio": 4680000
+ },
+ "MCI03": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444084,
+  "sku": "MCI03",
+  "medida": "MCI03",
+  "precio": 4750000
+ },
+ "MCI04": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444092,
+  "sku": "MCI04",
+  "medida": "MCI04",
+  "precio": 3450000
+ },
+ "MCI0470": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444099,
+  "sku": "MCI0470",
+  "medida": "MCI0470",
+  "precio": 3480000
+ },
+ "MCI05": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444106,
+  "sku": "MCI05",
+  "medida": "MCI05",
+  "precio": 2160000
+ },
+ "MCI0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444114,
+  "sku": "MCI0570",
+  "medida": "MCI0570",
+  "precio": 2730000
+ },
+ "MCI06": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444121,
+  "sku": "MCI06",
+  "medida": "MCI06",
+  "precio": 4260000
+ },
+ "MCI0670": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444127,
+  "sku": "MCI0670",
+  "medida": "MCI0670",
+  "precio": 1930000
+ },
+ "MCI0770": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444133,
+  "sku": "MCI0770",
+  "medida": "MCI0770",
+  "precio": 4590000
+ },
+ "MCI08": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444136,
+  "sku": "MCI08",
+  "medida": "MCI08",
+  "precio": 2000000
+ },
+ "MCI0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444138,
+  "sku": "MCI0870",
+  "medida": "MCI0870",
+  "precio": 3440000
+ },
+ "MCI10": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444140,
+  "sku": "MCI10",
+  "medida": "MCI10",
+  "precio": 1830000
+ },
+ "MCI1070": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444142,
+  "sku": "MCI1070",
+  "medida": "MCI1070",
+  "precio": 3010000
+ },
+ "MCI12": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444143,
+  "sku": "MCI12",
+  "medida": "MCI12",
+  "precio": 2640000
+ },
+ "MCI1270": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444145,
+  "sku": "MCI1270",
+  "medida": "MCI1270",
+  "precio": 1580000
+ },
+ "MCI1470": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444147,
+  "sku": "MCI1470",
+  "medida": "MCI1470",
+  "precio": 1980000
+ },
+ "MCI15": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444155,
+  "sku": "MCI15",
+  "medida": "MCI15",
+  "precio": 2320000
+ },
+ "MCI1570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444157,
+  "sku": "MCI1570",
+  "medida": "MCI1570",
+  "precio": 4540000
+ },
+ "MCIL05": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444158,
+  "sku": "MCIL05",
+  "medida": "MCIL05",
+  "precio": 2260000
+ },
+ "MCIL0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444161,
+  "sku": "MCIL0570",
+  "medida": "MCIL0570",
+  "precio": 2750000
+ },
+ "MCIL08": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444162,
+  "sku": "MCIL08",
+  "medida": "MCIL08",
+  "precio": 2910000
+ },
+ "MCIL0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444165,
+  "sku": "MCIL0870",
+  "medida": "MCIL0870",
+  "precio": 3810000
+ },
+ "MCIR0570": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444167,
+  "sku": "MCIR0570",
+  "medida": "MCIR0570",
+  "precio": 4000000
+ },
+ "MCIR0670": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444169,
+  "sku": "MCIR0670",
+  "medida": "MCIR0670",
+  "precio": 4730000
+ },
+ "MCIR0870": {
+  "handle": "mechas-mcd-mci",
+  "variant": 1585444170,
+  "sku": "MCIR0870",
+  "medida": "MCIR0870",
+  "precio": 4770000
+ },
+ "MCDMCD03": {
+  "handle": "mechas-mcd",
+  "variant": 1585444172,
+  "sku": "MCD-MCD03",
+  "medida": "MCD03",
+  "precio": 4680000
+ },
+ "MCDMCD04": {
+  "handle": "mechas-mcd",
+  "variant": 1585444176,
+  "sku": "MCD-MCD04",
+  "medida": "MCD04",
+  "precio": 1610000
+ },
+ "MCDMCD0470": {
+  "handle": "mechas-mcd",
+  "variant": 1585444180,
+  "sku": "MCD-MCD0470",
+  "medida": "MCD0470",
+  "precio": 3920000
+ },
+ "MCDMCD05": {
+  "handle": "mechas-mcd",
+  "variant": 1585444188,
+  "sku": "MCD-MCD05",
+  "medida": "MCD05",
+  "precio": 3710000
+ },
+ "MCDMCD0570": {
+  "handle": "mechas-mcd",
+  "variant": 1585444191,
+  "sku": "MCD-MCD0570",
+  "medida": "MCD0570",
+  "precio": 4040000
+ },
+ "MCDMCD06": {
+  "handle": "mechas-mcd",
+  "variant": 1585444195,
+  "sku": "MCD-MCD06",
+  "medida": "MCD06",
+  "precio": 4200000
+ },
+ "MCDMCD0670": {
+  "handle": "mechas-mcd",
+  "variant": 1585444201,
+  "sku": "MCD-MCD0670",
+  "medida": "MCD0670",
+  "precio": 2480000
+ },
+ "MCDMCD0770": {
+  "handle": "mechas-mcd",
+  "variant": 1585444207,
+  "sku": "MCD-MCD0770",
+  "medida": "MCD0770",
+  "precio": 2970000
+ },
+ "MCDMCD08": {
+  "handle": "mechas-mcd",
+  "variant": 1585444208,
+  "sku": "MCD-MCD08",
+  "medida": "MCD08",
+  "precio": 3230000
+ },
+ "MCDMCD0870": {
+  "handle": "mechas-mcd",
+  "variant": 1585444210,
+  "sku": "MCD-MCD0870",
+  "medida": "MCD0870",
+  "precio": 2220000
+ },
+ "MCDMCD10": {
+  "handle": "mechas-mcd",
+  "variant": 1585444211,
+  "sku": "MCD-MCD10",
+  "medida": "MCD10",
+  "precio": 2740000
+ },
+ "MCDMCD1070": {
+  "handle": "mechas-mcd",
+  "variant": 1585444214,
+  "sku": "MCD-MCD1070",
+  "medida": "MCD1070",
+  "precio": 4060000
+ },
+ "MCDMCD12": {
+  "handle": "mechas-mcd",
+  "variant": 1585444217,
+  "sku": "MCD-MCD12",
+  "medida": "MCD12",
+  "precio": 3550000
+ },
+ "MCDMCD1270": {
+  "handle": "mechas-mcd",
+  "variant": 1585444221,
+  "sku": "MCD-MCD1270",
+  "medida": "MCD1270",
+  "precio": 1730000
+ },
+ "MCDMCD1470": {
+  "handle": "mechas-mcd",
+  "variant": 1585444223,
+  "sku": "MCD-MCD1470",
+  "medida": "MCD1470",
+  "precio": 4680000
+ },
+ "MCDMCD15": {
+  "handle": "mechas-mcd",
+  "variant": 1585444224,
+  "sku": "MCD-MCD15",
+  "medida": "MCD15",
+  "precio": 2420000
+ },
+ "MCDMCD1570": {
+  "handle": "mechas-mcd",
+  "variant": 1585444226,
+  "sku": "MCD-MCD1570",
+  "medida": "MCD1570",
+  "precio": 2580000
+ },
+ "MCDMCDL05": {
+  "handle": "mechas-mcd",
+  "variant": 1585444227,
+  "sku": "MCD-MCDL05",
+  "medida": "MCDL05",
+  "precio": 2110000
+ },
+ "MCDMCDL0570": {
+  "handle": "mechas-mcd",
+  "variant": 1585444230,
+  "sku": "MCD-MCDL0570",
+  "medida": "MCDL0570",
+  "precio": 3530000
+ },
+ "MCDMCDL08": {
+  "handle": "mechas-mcd",
+  "variant": 1585444231,
+  "sku": "MCD-MCDL08",
+  "medida": "MCDL08",
+  "precio": 2760000
+ },
+ "MCDMCDL0870": {
+  "handle": "mechas-mcd",
+  "variant": 1585444233,
+  "sku": "MCD-MCDL0870",
+  "medida": "MCDL0870",
+  "precio": 3170000
+ },
+ "MCDMCDR0570": {
+  "handle": "mechas-mcd",
+  "variant": 1585444236,
+  "sku": "MCD-MCDR0570",
+  "medida": "MCDR0570",
+  "precio": 2350000
+ },
+ "MCDMCDR0670": {
+  "handle": "mechas-mcd",
+  "variant": 1585444239,
+  "sku": "MCD-MCDR0670",
+  "medida": "MCDR0670",
+  "precio": 4220000
+ },
+ "MCDMCDR0870": {
+  "handle": "mechas-mcd",
+  "variant": 1585444241,
+  "sku": "MCD-MCDR0870",
+  "medida": "MCDR0870",
+  "precio": 4260000
+ },
+ "MCDMCE": {
+  "handle": "mechas-mcd",
+  "variant": 1585444242,
+  "sku": "MCD-MCE",
+  "medida": "MCE",
+  "precio": 4680000
+ },
+ "MCIMCI03": {
+  "handle": "mechas-mci",
+  "variant": 1585444246,
+  "sku": "MCI-MCI03",
+  "medida": "MCI03",
+  "precio": 4750000
+ },
+ "MCIMCI04": {
+  "handle": "mechas-mci",
+  "variant": 1585444260,
+  "sku": "MCI-MCI04",
+  "medida": "MCI04",
+  "precio": 3450000
+ },
+ "MCIMCI0470": {
+  "handle": "mechas-mci",
+  "variant": 1585444264,
+  "sku": "MCI-MCI0470",
+  "medida": "MCI0470",
+  "precio": 3480000
+ },
+ "MCIMCI05": {
+  "handle": "mechas-mci",
+  "variant": 1585444267,
+  "sku": "MCI-MCI05",
+  "medida": "MCI05",
+  "precio": 2160000
+ },
+ "MCIMCI0570": {
+  "handle": "mechas-mci",
+  "variant": 1585444269,
+  "sku": "MCI-MCI0570",
+  "medida": "MCI0570",
+  "precio": 2730000
+ },
+ "MCIMCI06": {
+  "handle": "mechas-mci",
+  "variant": 1585444271,
+  "sku": "MCI-MCI06",
+  "medida": "MCI06",
+  "precio": 4260000
+ },
+ "MCIMCI0670": {
+  "handle": "mechas-mci",
+  "variant": 1585444274,
+  "sku": "MCI-MCI0670",
+  "medida": "MCI0670",
+  "precio": 1930000
+ },
+ "MCIMCI0770": {
+  "handle": "mechas-mci",
+  "variant": 1585444275,
+  "sku": "MCI-MCI0770",
+  "medida": "MCI0770",
+  "precio": 4590000
+ },
+ "MCIMCI08": {
+  "handle": "mechas-mci",
+  "variant": 1585444278,
+  "sku": "MCI-MCI08",
+  "medida": "MCI08",
+  "precio": 2000000
+ },
+ "MCIMCI0870": {
+  "handle": "mechas-mci",
+  "variant": 1585444279,
+  "sku": "MCI-MCI0870",
+  "medida": "MCI0870",
+  "precio": 3440000
+ },
+ "MCIMCI10": {
+  "handle": "mechas-mci",
+  "variant": 1585444281,
+  "sku": "MCI-MCI10",
+  "medida": "MCI10",
+  "precio": 1830000
+ },
+ "MCIMCI1070": {
+  "handle": "mechas-mci",
+  "variant": 1585444284,
+  "sku": "MCI-MCI1070",
+  "medida": "MCI1070",
+  "precio": 3010000
+ },
+ "MCIMCI12": {
+  "handle": "mechas-mci",
+  "variant": 1585444285,
+  "sku": "MCI-MCI12",
+  "medida": "MCI12",
+  "precio": 2640000
+ },
+ "MCIMCI1270": {
+  "handle": "mechas-mci",
+  "variant": 1585444289,
+  "sku": "MCI-MCI1270",
+  "medida": "MCI1270",
+  "precio": 1580000
+ },
+ "MCIMCI1470": {
+  "handle": "mechas-mci",
+  "variant": 1585444290,
+  "sku": "MCI-MCI1470",
+  "medida": "MCI1470",
+  "precio": 1980000
+ },
+ "MCIMCI15": {
+  "handle": "mechas-mci",
+  "variant": 1585444292,
+  "sku": "MCI-MCI15",
+  "medida": "MCI15",
+  "precio": 2320000
+ },
+ "MCIMCI1570": {
+  "handle": "mechas-mci",
+  "variant": 1585444295,
+  "sku": "MCI-MCI1570",
+  "medida": "MCI1570",
+  "precio": 4540000
+ },
+ "MCIMCIL05": {
+  "handle": "mechas-mci",
+  "variant": 1585444297,
+  "sku": "MCI-MCIL05",
+  "medida": "MCIL05",
+  "precio": 2260000
+ },
+ "MCIMCIL0570": {
+  "handle": "mechas-mci",
+  "variant": 1585444301,
+  "sku": "MCI-MCIL0570",
+  "medida": "MCIL0570",
+  "precio": 2750000
+ },
+ "MCIMCIL08": {
+  "handle": "mechas-mci",
+  "variant": 1585444302,
+  "sku": "MCI-MCIL08",
+  "medida": "MCIL08",
+  "precio": 2910000
+ },
+ "MCIMCIL0870": {
+  "handle": "mechas-mci",
+  "variant": 1585444304,
+  "sku": "MCI-MCIL0870",
+  "medida": "MCIL0870",
+  "precio": 3810000
+ },
+ "MCIMCIR0570": {
+  "handle": "mechas-mci",
+  "variant": 1585444306,
+  "sku": "MCI-MCIR0570",
+  "medida": "MCIR0570",
+  "precio": 4000000
+ },
+ "MCIMCIR0670": {
+  "handle": "mechas-mci",
+  "variant": 1585444308,
+  "sku": "MCI-MCIR0670",
+  "medida": "MCIR0670",
+  "precio": 4730000
+ },
+ "MCIMCIR0870": {
+  "handle": "mechas-mci",
+  "variant": 1585444309,
+  "sku": "MCI-MCIR0870",
+  "medida": "MCIR0870",
+  "precio": 4770000
+ },
+ "FPP452": {
+  "handle": "mechas-fpp",
+  "variant": 1585444311,
+  "sku": "FPP452",
+  "medida": "FPP452",
+  "precio": 4430000
+ },
+ "PRACTIWALL": {
+  "handle": "mechas-practiwall",
+  "variant": 1585444315,
+  "sku": "PRACTIWALL",
+  "medida": "PRACTIWALL",
+  "precio": 2760000
+ },
+ "MBI12": {
+  "handle": "mechas-mbi",
+  "variant": 1585444320,
+  "sku": "MBI12",
+  "medida": "MBI12",
+  "precio": 2360000
+ },
+ "MBI15": {
+  "handle": "mechas-mbi",
+  "variant": 1585444335,
+  "sku": "MBI15",
+  "medida": "MBI15",
+  "precio": 2040000
+ },
+ "MBI1570": {
+  "handle": "mechas-mbi",
+  "variant": 1585444348,
+  "sku": "MBI1570",
+  "medida": "MBI1570",
+  "precio": 3510000
+ },
+ "MBI20": {
+  "handle": "mechas-mbi",
+  "variant": 1585444351,
+  "sku": "MBI20",
+  "medida": "MBI20",
+  "precio": 2760000
+ },
+ "MBI2070": {
+  "handle": "mechas-mbi",
+  "variant": 1585444356,
+  "sku": "MBI2070",
+  "medida": "MBI2070",
+  "precio": 1970000
+ },
+ "MBI25": {
+  "handle": "mechas-mbi",
+  "variant": 1585444360,
+  "sku": "MBI25",
+  "medida": "MBI25",
+  "precio": 3090000
+ },
+ "MBI26": {
+  "handle": "mechas-mbi",
+  "variant": 1585444361,
+  "sku": "MBI26",
+  "medida": "MBI26",
+  "precio": 3570000
+ },
+ "MBI2670": {
+  "handle": "mechas-mbi",
+  "variant": 1585444364,
+  "sku": "MBI2670",
+  "medida": "MBI2670",
+  "precio": 3450000
+ },
+ "MBI30": {
+  "handle": "mechas-mbi",
+  "variant": 1585444365,
+  "sku": "MBI30",
+  "medida": "MBI30",
+  "precio": 2110000
+ },
+ "MBI3070": {
+  "handle": "mechas-mbi",
+  "variant": 1585444370,
+  "sku": "MBI3070",
+  "medida": "MBI3070",
+  "precio": 2270000
+ },
+ "MBI35": {
+  "handle": "mechas-mbi",
+  "variant": 1585444373,
+  "sku": "MBI35",
+  "medida": "MBI35",
+  "precio": 1790000
+ },
+ "MBI3570": {
+  "handle": "mechas-mbi",
+  "variant": 1585444376,
+  "sku": "MBI3570",
+  "medida": "MBI3570",
+  "precio": 2290000
+ },
+ "MBD12": {
+  "handle": "mechas-mbd",
+  "variant": 1585444377,
+  "sku": "MBD12",
+  "medida": "MBD12",
+  "precio": 4130000
+ },
+ "MBD15": {
+  "handle": "mechas-mbd",
+  "variant": 1585444379,
+  "sku": "MBD15",
+  "medida": "MBD15",
+  "precio": 1860000
+ },
+ "MBD1570": {
+  "handle": "mechas-mbd",
+  "variant": 1585444382,
+  "sku": "MBD1570",
+  "medida": "MBD1570",
+  "precio": 2600000
+ },
+ "MBD20": {
+  "handle": "mechas-mbd",
+  "variant": 1585444384,
+  "sku": "MBD20",
+  "medida": "MBD20",
+  "precio": 2990000
+ },
+ "MBD2070": {
+  "handle": "mechas-mbd",
+  "variant": 1585444386,
+  "sku": "MBD2070",
+  "medida": "MBD2070",
+  "precio": 2940000
+ },
+ "MBD25": {
+  "handle": "mechas-mbd",
+  "variant": 1585444388,
+  "sku": "MBD25",
+  "medida": "MBD25",
+  "precio": 2510000
+ },
+ "MBD26": {
+  "handle": "mechas-mbd",
+  "variant": 1585444391,
+  "sku": "MBD26",
+  "medida": "MBD26",
+  "precio": 3800000
+ },
+ "MBD2670": {
+  "handle": "mechas-mbd",
+  "variant": 1585444395,
+  "sku": "MBD2670",
+  "medida": "MBD2670",
+  "precio": 2490000
+ },
+ "MBD30": {
+  "handle": "mechas-mbd",
+  "variant": 1585444397,
+  "sku": "MBD30",
+  "medida": "MBD30",
+  "precio": 3640000
+ },
+ "MBD3070": {
+  "handle": "mechas-mbd",
+  "variant": 1585444399,
+  "sku": "MBD3070",
+  "medida": "MBD3070",
+  "precio": 4020000
+ },
+ "MBD35": {
+  "handle": "mechas-mbd",
+  "variant": 1585444405,
+  "sku": "MBD35",
+  "medida": "MBD35",
+  "precio": 3960000
+ },
+ "MBD3570": {
+  "handle": "mechas-mbd",
+  "variant": 1585444406,
+  "sku": "MBD3570",
+  "medida": "MBD3570",
+  "precio": 4780000
+ },
+ "MBD40": {
+  "handle": "mechas-mbd",
+  "variant": 1585444412,
+  "sku": "MBD40",
+  "medida": "MBD40",
+  "precio": 4070000
+ },
+ "MBMBD12": {
+  "handle": "mechas-mb",
+  "variant": 1585444415,
+  "sku": "MB-MBD12",
+  "medida": "MBD12",
+  "precio": 4130000
+ },
+ "MBMBD15": {
+  "handle": "mechas-mb",
+  "variant": 1585444420,
+  "sku": "MB-MBD15",
+  "medida": "MBD15",
+  "precio": 1860000
+ },
+ "MBMBD1570": {
+  "handle": "mechas-mb",
+  "variant": 1585444423,
+  "sku": "MB-MBD1570",
+  "medida": "MBD1570",
+  "precio": 2600000
+ },
+ "MBMBD20": {
+  "handle": "mechas-mb",
+  "variant": 1585444424,
+  "sku": "MB-MBD20",
+  "medida": "MBD20",
+  "precio": 2990000
+ },
+ "MBMBD2070": {
+  "handle": "mechas-mb",
+  "variant": 1585444430,
+  "sku": "MB-MBD2070",
+  "medida": "MBD2070",
+  "precio": 2940000
+ },
+ "MBMBD25": {
+  "handle": "mechas-mb",
+  "variant": 1585444434,
+  "sku": "MB-MBD25",
+  "medida": "MBD25",
+  "precio": 2510000
+ },
+ "MBMBD26": {
+  "handle": "mechas-mb",
+  "variant": 1585444436,
+  "sku": "MB-MBD26",
+  "medida": "MBD26",
+  "precio": 3800000
+ },
+ "MBMBD2670": {
+  "handle": "mechas-mb",
+  "variant": 1585444443,
+  "sku": "MB-MBD2670",
+  "medida": "MBD2670",
+  "precio": 2490000
+ },
+ "MBMBD30": {
+  "handle": "mechas-mb",
+  "variant": 1585444459,
+  "sku": "MB-MBD30",
+  "medida": "MBD30",
+  "precio": 3640000
+ },
+ "MBMBD3070": {
+  "handle": "mechas-mb",
+  "variant": 1585444466,
+  "sku": "MB-MBD3070",
+  "medida": "MBD3070",
+  "precio": 4020000
+ },
+ "MBMBD35": {
+  "handle": "mechas-mb",
+  "variant": 1585444471,
+  "sku": "MB-MBD35",
+  "medida": "MBD35",
+  "precio": 3960000
+ },
+ "MBMBD3570": {
+  "handle": "mechas-mb",
+  "variant": 1585444474,
+  "sku": "MB-MBD3570",
+  "medida": "MBD3570",
+  "precio": 4780000
+ },
+ "MBMBD40": {
+  "handle": "mechas-mb",
+  "variant": 1585444479,
+  "sku": "MB-MBD40",
+  "medida": "MBD40",
+  "precio": 4070000
+ },
+ "MBMBI12": {
+  "handle": "mechas-mb",
+  "variant": 1585444487,
+  "sku": "MB-MBI12",
+  "medida": "MBI12",
+  "precio": 2360000
+ },
+ "MBMBI15": {
+  "handle": "mechas-mb",
+  "variant": 1585444491,
+  "sku": "MB-MBI15",
+  "medida": "MBI15",
+  "precio": 2040000
+ },
+ "MBMBI1570": {
+  "handle": "mechas-mb",
+  "variant": 1585444494,
+  "sku": "MB-MBI1570",
+  "medida": "MBI1570",
+  "precio": 3510000
+ },
+ "MBMBI20": {
+  "handle": "mechas-mb",
+  "variant": 1585444497,
+  "sku": "MB-MBI20",
+  "medida": "MBI20",
+  "precio": 2760000
+ },
+ "MBMBI2070": {
+  "handle": "mechas-mb",
+  "variant": 1585444503,
+  "sku": "MB-MBI2070",
+  "medida": "MBI2070",
+  "precio": 1970000
+ },
+ "MBMBI25": {
+  "handle": "mechas-mb",
+  "variant": 1585444507,
+  "sku": "MB-MBI25",
+  "medida": "MBI25",
+  "precio": 3090000
+ },
+ "MBMBI26": {
+  "handle": "mechas-mb",
+  "variant": 1585444508,
+  "sku": "MB-MBI26",
+  "medida": "MBI26",
+  "precio": 3570000
+ },
+ "MBMBI2670": {
+  "handle": "mechas-mb",
+  "variant": 1585444510,
+  "sku": "MB-MBI2670",
+  "medida": "MBI2670",
+  "precio": 3450000
+ },
+ "MBMBI30": {
+  "handle": "mechas-mb",
+  "variant": 1585444513,
+  "sku": "MB-MBI30",
+  "medida": "MBI30",
+  "precio": 2110000
+ },
+ "MBMBI3070": {
+  "handle": "mechas-mb",
+  "variant": 1585444517,
+  "sku": "MB-MBI3070",
+  "medida": "MBI3070",
+  "precio": 2270000
+ },
+ "MBMBI35": {
+  "handle": "mechas-mb",
+  "variant": 1585444518,
+  "sku": "MB-MBI35",
+  "medida": "MBI35",
+  "precio": 1790000
+ },
+ "MBMBI3570": {
+  "handle": "mechas-mb",
+  "variant": 1585444522,
+  "sku": "MB-MBI3570",
+  "medida": "MBI3570",
+  "precio": 2290000
+ },
+ "BRDD52": {
+  "handle": "mechas-brdd",
+  "variant": 1585444525,
+  "sku": "BRDD52",
+  "medida": "BRDD52",
+  "precio": 2260000
+ },
+ "MIDN0822": {
+  "handle": "mechas-midn",
+  "variant": 1585444527,
+  "sku": "MIDN0822",
+  "medida": "MIDN0822",
+  "precio": 2730000
+ },
+ "MIDN1022": {
+  "handle": "mechas-midn",
+  "variant": 1585444530,
+  "sku": "MIDN1022",
+  "medida": "MIDN1022",
+  "precio": 2370000
+ },
+ "MID00412": {
+  "handle": "mechas-mid",
+  "variant": 1585444531,
+  "sku": "MID00412",
+  "medida": "MID00412",
+  "precio": 3810000
+ },
+ "MID00627": {
+  "handle": "mechas-mid",
+  "variant": 1585444535,
+  "sku": "MID00627",
+  "medida": "MID00627",
+  "precio": 3750000
+ },
+ "MID00832": {
+  "handle": "mechas-mid",
+  "variant": 1585444536,
+  "sku": "MID00832",
+  "medida": "MID00832",
+  "precio": 3850000
+ },
+ "MID01042": {
+  "handle": "mechas-mid",
+  "variant": 1585444539,
+  "sku": "MID01042",
+  "medida": "MID01042",
+  "precio": 1410000
+ },
+ "MID01242": {
+  "handle": "mechas-mid",
+  "variant": 1585444540,
+  "sku": "MID01242",
+  "medida": "MID01242",
+  "precio": 1640000
+ },
+ "MID016100": {
+  "handle": "mechas-mid",
+  "variant": 1585444543,
+  "sku": "MID016100",
+  "medida": "MID016100",
+  "precio": 2320000
+ },
+ "MID01642": {
+  "handle": "mechas-mid",
+  "variant": 1585444544,
+  "sku": "MID01642",
+  "medida": "MID01642",
+  "precio": 2790000
+ },
+ "MID01652": {
+  "handle": "mechas-mid",
+  "variant": 1585444546,
+  "sku": "MID01652",
+  "medida": "MID01652",
+  "precio": 1930000
+ },
+ "MID01852": {
+  "handle": "mechas-mid",
+  "variant": 1585444550,
+  "sku": "MID01852",
+  "medida": "MID01852",
+  "precio": 2060000
+ },
+ "MID02052": {
+  "handle": "mechas-mid",
+  "variant": 1585444556,
+  "sku": "MID02052",
+  "medida": "MID02052",
+  "precio": 2020000
+ },
+ "MIDR01242": {
+  "handle": "mechas-mid",
+  "variant": 1585444558,
+  "sku": "MIDR01242",
+  "medida": "MIDR01242",
+  "precio": 2350000
+ },
+ "MIDR01642": {
+  "handle": "mechas-mid",
+  "variant": 1585444560,
+  "sku": "MIDR01642",
+  "medida": "MIDR01642",
+  "precio": 2710000
+ },
+ "MIDR01652": {
+  "handle": "mechas-mid",
+  "variant": 1585444562,
+  "sku": "MIDR01652",
+  "medida": "MIDR01652",
+  "precio": 1580000
+ },
+ "MIDR01852": {
+  "handle": "mechas-mid",
+  "variant": 1585444565,
+  "sku": "MIDR01852",
+  "medida": "MIDR01852",
+  "precio": 1670000
+ },
+ "MIDR02053": {
+  "handle": "mechas-mid",
+  "variant": 1585444569,
+  "sku": "MIDR02053",
+  "medida": "MIDR02053",
+  "precio": 2780000
+ },
+ "MIIR01042": {
+  "handle": "mechas-miir",
+  "variant": 1585444574,
+  "sku": "MIIR01042",
+  "medida": "MIIR01042",
+  "precio": 3720000
+ },
+ "MIIR01242": {
+  "handle": "mechas-miir",
+  "variant": 1585444580,
+  "sku": "MIIR01242",
+  "medida": "MIIR01242",
+  "precio": 1590000
+ },
+ "MIIR01642": {
+  "handle": "mechas-miir",
+  "variant": 1585444583,
+  "sku": "MIIR01642",
+  "medida": "MIIR01642",
+  "precio": 2780000
+ },
+ "MIMID00412": {
+  "handle": "mechas-mi",
+  "variant": 1585444588,
+  "sku": "MI-MID00412",
+  "medida": "MID00412",
+  "precio": 3810000
+ },
+ "MIMID00627": {
+  "handle": "mechas-mi",
+  "variant": 1585444594,
+  "sku": "MI-MID00627",
+  "medida": "MID00627",
+  "precio": 3750000
+ },
+ "MIMID00832": {
+  "handle": "mechas-mi",
+  "variant": 1585444597,
+  "sku": "MI-MID00832",
+  "medida": "MID00832",
+  "precio": 3850000
+ },
+ "MIMID01042": {
+  "handle": "mechas-mi",
+  "variant": 1585444606,
+  "sku": "MI-MID01042",
+  "medida": "MID01042",
+  "precio": 1410000
+ },
+ "MIMID01242": {
+  "handle": "mechas-mi",
+  "variant": 1585444608,
+  "sku": "MI-MID01242",
+  "medida": "MID01242",
+  "precio": 1640000
+ },
+ "MIMID016100": {
+  "handle": "mechas-mi",
+  "variant": 1585444612,
+  "sku": "MI-MID016100",
+  "medida": "MID016100",
+  "precio": 2320000
+ },
+ "MIMID01642": {
+  "handle": "mechas-mi",
+  "variant": 1585444614,
+  "sku": "MI-MID01642",
+  "medida": "MID01642",
+  "precio": 2790000
+ },
+ "MIMID01652": {
+  "handle": "mechas-mi",
+  "variant": 1585444618,
+  "sku": "MI-MID01652",
+  "medida": "MID01652",
+  "precio": 1930000
+ },
+ "MIMID01852": {
+  "handle": "mechas-mi",
+  "variant": 1585444620,
+  "sku": "MI-MID01852",
+  "medida": "MID01852",
+  "precio": 2060000
+ },
+ "MIMID02052": {
+  "handle": "mechas-mi",
+  "variant": 1585444623,
+  "sku": "MI-MID02052",
+  "medida": "MID02052",
+  "precio": 2020000
+ },
+ "MIMIDR01242": {
+  "handle": "mechas-mi",
+  "variant": 1585444627,
+  "sku": "MI-MIDR01242",
+  "medida": "MIDR01242",
+  "precio": 2350000
+ },
+ "MIMIDR01642": {
+  "handle": "mechas-mi",
+  "variant": 1585444630,
+  "sku": "MI-MIDR01642",
+  "medida": "MIDR01642",
+  "precio": 2710000
+ },
+ "MIMIDR01652": {
+  "handle": "mechas-mi",
+  "variant": 1585444633,
+  "sku": "MI-MIDR01652",
+  "medida": "MIDR01652",
+  "precio": 1580000
+ },
+ "MIMIDR01852": {
+  "handle": "mechas-mi",
+  "variant": 1585444635,
+  "sku": "MI-MIDR01852",
+  "medida": "MIDR01852",
+  "precio": 1670000
+ },
+ "MIMIDR02053": {
+  "handle": "mechas-mi",
+  "variant": 1585444637,
+  "sku": "MI-MIDR02053",
+  "medida": "MIDR02053",
+  "precio": 2780000
+ },
+ "MIMIDN0822": {
+  "handle": "mechas-mi",
+  "variant": 1585444639,
+  "sku": "MI-MIDN0822",
+  "medida": "MIDN0822",
+  "precio": 2730000
+ },
+ "MIMIDN1022": {
+  "handle": "mechas-mi",
+  "variant": 1585444643,
+  "sku": "MI-MIDN1022",
+  "medida": "MIDN1022",
+  "precio": 2370000
+ },
+ "MIMIIR01042": {
+  "handle": "mechas-mi",
+  "variant": 1585444646,
+  "sku": "MI-MIIR01042",
+  "medida": "MIIR01042",
+  "precio": 3720000
+ },
+ "MIMIIR01242": {
+  "handle": "mechas-mi",
+  "variant": 1585444662,
+  "sku": "MI-MIIR01242",
+  "medida": "MIIR01242",
+  "precio": 1590000
+ },
+ "MIMIIR01642": {
+  "handle": "mechas-mi",
+  "variant": 1585444664,
+  "sku": "MI-MIIR01642",
+  "medida": "MIIR01642",
+  "precio": 2780000
+ },
+ "MAM35": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444667,
+  "sku": "MAM35",
+  "medida": "MAM35",
+  "precio": 4250000
+ },
+ "MAM40": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444673,
+  "sku": "MAM40",
+  "medida": "MAM40",
+  "precio": 4030000
+ },
+ "MAM42": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444676,
+  "sku": "MAM42",
+  "medida": "MAM42",
+  "precio": 3220000
+ },
+ "MAM43": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444678,
+  "sku": "MAM43",
+  "medida": "MAM43",
+  "precio": 1930000
+ },
+ "MAMD010": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444680,
+  "sku": "MAMD010",
+  "medida": "MAMD010",
+  "precio": 2360000
+ },
+ "MAMDC010": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444683,
+  "sku": "MAMDC010",
+  "medida": "MAMDC010",
+  "precio": 2950000
+ },
+ "MAMHSK32": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444684,
+  "sku": "MAMHSK32",
+  "medida": "MAMHSK32",
+  "precio": 3590000
+ },
+ "MAMI010": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444687,
+  "sku": "MAMI010",
+  "medida": "MAMI010",
+  "precio": 2510000
+ },
+ "MAMIC010": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444690,
+  "sku": "MAMIC010",
+  "medida": "MAMIC010",
+  "precio": 4540000
+ },
+ "PINZADIN638": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444691,
+  "sku": "PINZADIN638",
+  "medida": "PINZADIN638",
+  "precio": 1460000
+ },
+ "PINZAER3204": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444693,
+  "sku": "PINZAER3204",
+  "medida": "PINZAER3204",
+  "precio": 4280000
+ },
+ "PINZAER3206": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444695,
+  "sku": "PINZAER3206",
+  "medida": "PINZAER3206",
+  "precio": 1690000
+ },
+ "PINZAER3208": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444699,
+  "sku": "PINZAER3208",
+  "medida": "PINZAER3208",
+  "precio": 2500000
+ },
+ "PINZAER3210": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444701,
+  "sku": "PINZAER3210",
+  "medida": "PINZAER3210",
+  "precio": 4330000
+ },
+ "PINZAER3212": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444705,
+  "sku": "PINZAER3212",
+  "medida": "PINZAER3212",
+  "precio": 1740000
+ },
+ "PINZAER3216": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444709,
+  "sku": "PINZAER3216",
+  "medida": "PINZAER3216",
+  "precio": 3360000
+ },
+ "PINZAER3218": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444713,
+  "sku": "PINZAER3218",
+  "medida": "PINZAER3218",
+  "precio": 4170000
+ },
+ "PINZAER3220": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444717,
+  "sku": "PINZAER3220",
+  "medida": "PINZAER3220",
+  "precio": 3680000
+ },
+ "PINZAER4012": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444720,
+  "sku": "PINZAER4012",
+  "medida": "PINZAER4012",
+  "precio": 4000000
+ },
+ "PINZAER4016": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444722,
+  "sku": "PINZAER4016",
+  "medida": "PINZAER4016",
+  "precio": 2380000
+ },
+ "PINZAER4018": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444724,
+  "sku": "PINZAER4018",
+  "medida": "PINZAER4018",
+  "precio": 3360000
+ },
+ "PINZAER4020": {
+  "handle": "mechas-mam-pinza",
+  "variant": 1585444727,
+  "sku": "PINZAER4020",
+  "medida": "PINZAER4020",
+  "precio": 1740000
+ },
+ "MAMMAM35": {
+  "handle": "mechas-mam",
+  "variant": 1585444734,
+  "sku": "MAM-MAM35",
+  "medida": "MAM35",
+  "precio": 4250000
+ },
+ "MAMMAM40": {
+  "handle": "mechas-mam",
+  "variant": 1585444738,
+  "sku": "MAM-MAM40",
+  "medida": "MAM40",
+  "precio": 4030000
+ },
+ "MAMMAM42": {
+  "handle": "mechas-mam",
+  "variant": 1585444742,
+  "sku": "MAM-MAM42",
+  "medida": "MAM42",
+  "precio": 3220000
+ },
+ "MAMMAM43": {
+  "handle": "mechas-mam",
+  "variant": 1585444745,
+  "sku": "MAM-MAM43",
+  "medida": "MAM43",
+  "precio": 1930000
+ },
+ "MAMMAMD010": {
+  "handle": "mechas-mam",
+  "variant": 1585444747,
+  "sku": "MAM-MAMD010",
+  "medida": "MAMD010",
+  "precio": 2360000
+ },
+ "MAMMAMDC010": {
+  "handle": "mechas-mam",
+  "variant": 1585444749,
+  "sku": "MAM-MAMDC010",
+  "medida": "MAMDC010",
+  "precio": 2950000
+ },
+ "MAMMAMHSK32": {
+  "handle": "mechas-mam",
+  "variant": 1585444752,
+  "sku": "MAM-MAMHSK32",
+  "medida": "MAMHSK32",
+  "precio": 3590000
+ },
+ "MAMMAMI010": {
+  "handle": "mechas-mam",
+  "variant": 1585444755,
+  "sku": "MAM-MAMI010",
+  "medida": "MAMI010",
+  "precio": 2510000
+ },
+ "MAMMAMIC010": {
+  "handle": "mechas-mam",
+  "variant": 1585444759,
+  "sku": "MAM-MAMIC010",
+  "medida": "MAMIC010",
+  "precio": 4540000
+ },
+ "PINZAERPINZAER3204": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444761,
+  "sku": "PINZAER-PINZAER3204",
+  "medida": "PINZAER3204",
+  "precio": 4280000
+ },
+ "PINZAERPINZAER3206": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444768,
+  "sku": "PINZAER-PINZAER3206",
+  "medida": "PINZAER3206",
+  "precio": 1690000
+ },
+ "PINZAERPINZAER3208": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444770,
+  "sku": "PINZAER-PINZAER3208",
+  "medida": "PINZAER3208",
+  "precio": 2500000
+ },
+ "PINZAERPINZAER3210": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444771,
+  "sku": "PINZAER-PINZAER3210",
+  "medida": "PINZAER3210",
+  "precio": 4330000
+ },
+ "PINZAERPINZAER3212": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444776,
+  "sku": "PINZAER-PINZAER3212",
+  "medida": "PINZAER3212",
+  "precio": 1740000
+ },
+ "PINZAERPINZAER3216": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444780,
+  "sku": "PINZAER-PINZAER3216",
+  "medida": "PINZAER3216",
+  "precio": 3360000
+ },
+ "PINZAERPINZAER3218": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444784,
+  "sku": "PINZAER-PINZAER3218",
+  "medida": "PINZAER3218",
+  "precio": 4170000
+ },
+ "PINZAERPINZAER3220": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444786,
+  "sku": "PINZAER-PINZAER3220",
+  "medida": "PINZAER3220",
+  "precio": 3680000
+ },
+ "PINZAERPINZAER4012": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444788,
+  "sku": "PINZAER-PINZAER4012",
+  "medida": "PINZAER4012",
+  "precio": 4000000
+ },
+ "PINZAERPINZAER4016": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444790,
+  "sku": "PINZAER-PINZAER4016",
+  "medida": "PINZAER4016",
+  "precio": 2380000
+ },
+ "PINZAERPINZAER4018": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444791,
+  "sku": "PINZAER-PINZAER4018",
+  "medida": "PINZAER4018",
+  "precio": 3360000
+ },
+ "PINZAERPINZAER4020": {
+  "handle": "mechas-pinzaer",
+  "variant": 1585444802,
+  "sku": "PINZAER-PINZAER4020",
+  "medida": "PINZAER4020",
+  "precio": 1740000
+ },
+ "PINZADINPINZADIN638": {
+  "handle": "mechas-pinzadin",
+  "variant": 1585444809,
+  "sku": "PINZADIN-PINZADIN638",
+  "medida": "PINZADIN638",
+  "precio": 1460000
+ },
+ "MCARD0840": {
+  "handle": "mechas-mcar",
+  "variant": 1585444814,
+  "sku": "MCARD0840",
+  "medida": "MCARD0840",
+  "precio": 4530000
+ },
+ "MCAR10840": {
+  "handle": "mechas-mcar",
+  "variant": 1585444824,
+  "sku": "MCAR10840",
+  "medida": "MCAR10840",
+  "precio": 3600000
+ },
+ "MBA018HSS": {
+  "handle": "mechas-mba",
+  "variant": 1585444828,
+  "sku": "MBA018HSS",
+  "medida": "MBA018HSS",
+  "precio": 2680000
+ },
+ "MBAD010HS": {
+  "handle": "mechas-mba",
+  "variant": 1585444830,
+  "sku": "MBAD010HS",
+  "medida": "MBAD010HS",
+  "precio": 4470000
+ },
+ "MBAD012HS": {
+  "handle": "mechas-mba",
+  "variant": 1585444834,
+  "sku": "MBAD012HS",
+  "medida": "MBAD012HS",
+  "precio": 4550000
+ },
+ "MBAD014HS": {
+  "handle": "mechas-mba",
+  "variant": 1585444837,
+  "sku": "MBAD014HS",
+  "medida": "MBAD014HS",
+  "precio": 3590000
+ },
+ "MBAD020HS": {
+  "handle": "mechas-mba",
+  "variant": 1585444841,
+  "sku": "MBAD020HS",
+  "medida": "MBAD020HS",
+  "precio": 2010000
+ },
+ "AVD0510": {
+  "handle": "mechas-avd",
+  "variant": 1585444843,
+  "sku": "AVD0510",
+  "medida": "AVD0510",
+  "precio": 2580000
+ },
+ "AVI0510": {
+  "handle": "mechas-avi",
+  "variant": 1585444853,
+  "sku": "AVI0510",
+  "medida": "AVI0510",
+  "precio": 4670000
+ },
+ "ROUTERFRANZOI82425063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444863,
+  "sku": "Router_Franzoi-82425063521",
+  "medida": "82425063521",
+  "precio": 2380000
+ },
+ "ROUTERFRANZOI92505063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444873,
+  "sku": "Router_Franzoi-92505063521",
+  "medida": "92505063521",
+  "precio": 3020000
+ },
+ "ROUTERFRANZOI92515063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444878,
+  "sku": "Router_Franzoi-92515063521",
+  "medida": "92515063521",
+  "precio": 2990000
+ },
+ "ROUTERFRANZOI92708063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444879,
+  "sku": "Router_Franzoi-92708063521",
+  "medida": "92708063521",
+  "precio": 4070000
+ },
+ "ROUTERFRANZOI92906063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444883,
+  "sku": "Router_Franzoi-92906063521",
+  "medida": "92906063521",
+  "precio": 2300000
+ },
+ "ROUTERFRANZOI93206063521": {
+  "handle": "mechas-router-franzoi",
+  "variant": 1585444885,
+  "sku": "Router_Franzoi-93206063521",
+  "medida": "93206063521",
+  "precio": 2860000
+ },
+ "SCCD150322": {
+  "handle": "diamante-sccd",
+  "variant": 1585444889,
+  "sku": "SCCD150322",
+  "medida": "SCCD150322",
+  "precio": 69490000
+ },
+ "SCCD150323": {
+  "handle": "diamante-sccd",
+  "variant": 1585444899,
+  "sku": "SCCD150323",
+  "medida": "SCCD150323",
+  "precio": 38620000
+ },
+ "SCID1": {
+  "handle": "diamante-scid",
+  "variant": 1585444900,
+  "sku": "SCID-1",
+  "medida": "1",
+  "precio": 49960000
+ },
+ "SCSD350447": {
+  "handle": "diamante-sced",
+  "variant": 1585444905,
+  "sku": "SCSD350447",
+  "medida": "SCSD350447",
+  "precio": 57010000
+ },
+ "MBDD3557": {
+  "handle": "diamante-mbdd",
+  "variant": 1585444913,
+  "sku": "MBDD3557",
+  "medida": "MBDD3557",
+  "precio": 20970000
+ },
+ "MBID3557": {
+  "handle": "diamante-mbdd",
+  "variant": 1585444917,
+  "sku": "MBID3557",
+  "medida": "MBID3557",
+  "precio": 77750000
+ },
+ "MDD1225H": {
+  "handle": "diamante-mdd",
+  "variant": 1585444925,
+  "sku": "MDD1225H",
+  "medida": "MDD1225H",
+  "precio": 33930000
+ },
+ "MDD1643H": {
+  "handle": "diamante-mdd",
+  "variant": 1585444927,
+  "sku": "MDD1643H",
+  "medida": "MDD1643H",
+  "precio": 68590000
+ },
+ "CHC030100HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444929,
+  "sku": "CHC030100HSS",
+  "medida": "CHC030100HSS",
+  "precio": 8730000
+ },
+ "CHC030120HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444935,
+  "sku": "CHC030120HSS",
+  "medida": "CHC030120HSS",
+  "precio": 11760000
+ },
+ "CHC030130HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444937,
+  "sku": "CHC030130HSS",
+  "medida": "CHC030130HSS",
+  "precio": 4450000
+ },
+ "CHC030150HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444941,
+  "sku": "CHC030150HSS",
+  "medida": "CHC030150HSS",
+  "precio": 4470000
+ },
+ "CHC030160HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444944,
+  "sku": "CHC030160HSS",
+  "medida": "CHC030160HSS",
+  "precio": 5320000
+ },
+ "CHC030180HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444948,
+  "sku": "CHC030180HSS",
+  "medida": "CHC030180HSS",
+  "precio": 9600000
+ },
+ "CHC030200HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444955,
+  "sku": "CHC030200HSS",
+  "medida": "CHC030200HSS",
+  "precio": 8920000
+ },
+ "CHC030210HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444958,
+  "sku": "CHC030210HSS",
+  "medida": "CHC030210HSS",
+  "precio": 2770000
+ },
+ "CHC030230HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444960,
+  "sku": "CHC030230HSS",
+  "medida": "CHC030230HSS",
+  "precio": 12250000
+ },
+ "CHC030240HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444965,
+  "sku": "CHC030240HSS",
+  "medida": "CHC030240HSS",
+  "precio": 6240000
+ },
+ "CHC030300HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444968,
+  "sku": "CHC030300HSS",
+  "medida": "CHC030300HSS",
+  "precio": 10180000
+ },
+ "CHC030310HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444971,
+  "sku": "CHC030310HSS",
+  "medida": "CHC030310HSS",
+  "precio": 7640000
+ },
+ "CHC030320HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444978,
+  "sku": "CHC030320HSS",
+  "medida": "CHC030320HSS",
+  "precio": 9840000
+ },
+ "CHC030330HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585444994,
+  "sku": "CHC030330HSS",
+  "medida": "CHC030330HSS",
+  "precio": 5680000
+ },
+ "CHC030360HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445003,
+  "sku": "CHC030360HSS",
+  "medida": "CHC030360HSS",
+  "precio": 7030000
+ },
+ "CHC030370HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445009,
+  "sku": "CHC030370HSS",
+  "medida": "CHC030370HSS",
+  "precio": 10560000
+ },
+ "CHC030400HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445011,
+  "sku": "CHC030400HSS",
+  "medida": "CHC030400HSS",
+  "precio": 3500000
+ },
+ "CHC030410HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445013,
+  "sku": "CHC030410HSS",
+  "medida": "CHC030410HSS",
+  "precio": 12620000
+ },
+ "CHC030420HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445015,
+  "sku": "CHC030420HSS",
+  "medida": "CHC030420HSS",
+  "precio": 9440000
+ },
+ "CHC030460HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445021,
+  "sku": "CHC030460HSS",
+  "medida": "CHC030460HSS",
+  "precio": 5420000
+ },
+ "CHC030500HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445023,
+  "sku": "CHC030500HSS",
+  "medida": "CHC030500HSS",
+  "precio": 4030000
+ },
+ "CHC030510HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445026,
+  "sku": "CHC030510HSS",
+  "medida": "CHC030510HSS",
+  "precio": 3650000
+ },
+ "CHC030600HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445028,
+  "sku": "CHC030600HSS",
+  "medida": "CHC030600HSS",
+  "precio": 5120000
+ },
+ "CHC030610HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445030,
+  "sku": "CHC030610HSS",
+  "medida": "CHC030610HSS",
+  "precio": 8350000
+ },
+ "CHC030640HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445033,
+  "sku": "CHC030640HSS",
+  "medida": "CHC030640HSS",
+  "precio": 4550000
+ },
+ "CHC030810HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445035,
+  "sku": "CHC030810HSS",
+  "medida": "CHC030810HSS",
+  "precio": 10050000
+ },
+ "CHC031070HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445037,
+  "sku": "CHC031070HSS",
+  "medida": "CHC031070HSS",
+  "precio": 9260000
+ },
+ "CHC050100HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445040,
+  "sku": "CHC050100HSS",
+  "medida": "CHC050100HSS",
+  "precio": 6600000
+ },
+ "CHC050130HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445042,
+  "sku": "CHC050130HSS",
+  "medida": "CHC050130HSS",
+  "precio": 7450000
+ },
+ "CHC050135HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445045,
+  "sku": "CHC050135HSS",
+  "medida": "CHC050135HSS",
+  "precio": 3980000
+ },
+ "CHC050150HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445048,
+  "sku": "CHC050150HSS",
+  "medida": "CHC050150HSS",
+  "precio": 7730000
+ },
+ "CHC050160HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445050,
+  "sku": "CHC050160HSS",
+  "medida": "CHC050160HSS",
+  "precio": 5450000
+ },
+ "CHC050170HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445052,
+  "sku": "CHC050170HSS",
+  "medida": "CHC050170HSS",
+  "precio": 6890000
+ },
+ "CHC050180HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445056,
+  "sku": "CHC050180HSS",
+  "medida": "CHC050180HSS",
+  "precio": 8760000
+ },
+ "CHC050200HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445058,
+  "sku": "CHC050200HSS",
+  "medida": "CHC050200HSS",
+  "precio": 4450000
+ },
+ "CHC050210HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445062,
+  "sku": "CHC050210HSS",
+  "medida": "CHC050210HSS",
+  "precio": 3810000
+ },
+ "CHC050230HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445064,
+  "sku": "CHC050230HSS",
+  "medida": "CHC050230HSS",
+  "precio": 10980000
+ },
+ "CHC050250HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445067,
+  "sku": "CHC050250HSS",
+  "medida": "CHC050250HSS",
+  "precio": 3330000
+ },
+ "CHC050300HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445069,
+  "sku": "CHC050300HSS",
+  "medida": "CHC050300HSS",
+  "precio": 4030000
+ },
+ "CHC050310HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445077,
+  "sku": "CHC050310HSS",
+  "medida": "CHC050310HSS",
+  "precio": 12240000
+ },
+ "CHC050320HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445091,
+  "sku": "CHC050320HSS",
+  "medida": "CHC050320HSS",
+  "precio": 7030000
+ },
+ "CHC050330HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445095,
+  "sku": "CHC050330HSS",
+  "medida": "CHC050330HSS",
+  "precio": 12440000
+ },
+ "CHC050350HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445098,
+  "sku": "CHC050350HSS",
+  "medida": "CHC050350HSS",
+  "precio": 6410000
+ },
+ "CHC050360HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445103,
+  "sku": "CHC050360HSS",
+  "medida": "CHC050360HSS",
+  "precio": 9320000
+ },
+ "CHC050400HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445104,
+  "sku": "CHC050400HSS",
+  "medida": "CHC050400HSS",
+  "precio": 4080000
+ },
+ "CHC050410HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445107,
+  "sku": "CHC050410HSS",
+  "medida": "CHC050410HSS",
+  "precio": 11650000
+ },
+ "CHC050420HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445108,
+  "sku": "CHC050420HSS",
+  "medida": "CHC050420HSS",
+  "precio": 10930000
+ },
+ "CHC050430HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445112,
+  "sku": "CHC050430HSS",
+  "medida": "CHC050430HSS",
+  "precio": 2860000
+ },
+ "CHC050450HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445114,
+  "sku": "CHC050450HSS",
+  "medida": "CHC050450HSS",
+  "precio": 6360000
+ },
+ "CHC050460HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445119,
+  "sku": "CHC050460HSS",
+  "medida": "CHC050460HSS",
+  "precio": 8290000
+ },
+ "CHC050500HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445121,
+  "sku": "CHC050500HSS",
+  "medida": "CHC050500HSS",
+  "precio": 3790000
+ },
+ "CHC050510HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445125,
+  "sku": "CHC050510HSS",
+  "medida": "CHC050510HSS",
+  "precio": 2630000
+ },
+ "CHC050520HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445127,
+  "sku": "CHC050520HSS",
+  "medida": "CHC050520HSS",
+  "precio": 5110000
+ },
+ "CHC050600HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445130,
+  "sku": "CHC050600HSS",
+  "medida": "CHC050600HSS",
+  "precio": 9240000
+ },
+ "CHC050610HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445132,
+  "sku": "CHC050610HSS",
+  "medida": "CHC050610HSS",
+  "precio": 7830000
+ },
+ "CHC050640HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445134,
+  "sku": "CHC050640HSS",
+  "medida": "CHC050640HSS",
+  "precio": 11440000
+ },
+ "CHC050700HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445136,
+  "sku": "CHC050700HSS",
+  "medida": "CHC050700HSS",
+  "precio": 12510000
+ },
+ "CHC050810HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445140,
+  "sku": "CHC050810HSS",
+  "medida": "CHC050810HSS",
+  "precio": 8860000
+ },
+ "CHC051040HSS": {
+  "handle": "cuchillas-chc-hss",
+  "variant": 1585445143,
+  "sku": "CHC051040HSS",
+  "medida": "CHC051040HSS",
+  "precio": 5080000
+ },
+ "CHC03130MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445145,
+  "sku": "CHC03130MD",
+  "medida": "CHC03130MD",
+  "precio": 4590000
+ },
+ "CHC03150MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445151,
+  "sku": "CHC03150MD",
+  "medida": "CHC03150MD",
+  "precio": 7780000
+ },
+ "CHC03180MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445154,
+  "sku": "CHC03180MD",
+  "medida": "CHC03180MD",
+  "precio": 8080000
+ },
+ "CHC03230MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445157,
+  "sku": "CHC03230MD",
+  "medida": "CHC03230MD",
+  "precio": 5850000
+ },
+ "CHC03310MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445159,
+  "sku": "CHC03310MD",
+  "medida": "CHC03310MD",
+  "precio": 7180000
+ },
+ "CHC03410MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445170,
+  "sku": "CHC03410MD",
+  "medida": "CHC03410MD",
+  "precio": 6240000
+ },
+ "CHC03510MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445176,
+  "sku": "CHC03510MD",
+  "medida": "CHC03510MD",
+  "precio": 12970000
+ },
+ "CHC0360MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445179,
+  "sku": "CHC0360MD",
+  "medida": "CHC0360MD",
+  "precio": 9940000
+ },
+ "CHC03610MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445181,
+  "sku": "CHC03610MD",
+  "medida": "CHC03610MD",
+  "precio": 5010000
+ },
+ "CHC03630MD": {
+  "handle": "cuchillas-chc-md",
+  "variant": 1585445186,
+  "sku": "CHC03630MD",
+  "medida": "CHC03630MD",
+  "precio": 4600000
+ },
+ "CHCR0025608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445194,
+  "sku": "CHCR0025608",
+  "medida": "CHCR0025608",
+  "precio": 3150000
+ },
+ "CHCR0030508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445206,
+  "sku": "CHCR0030508",
+  "medida": "CHCR0030508",
+  "precio": 6920000
+ },
+ "CHCR0040508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445210,
+  "sku": "CHCR0040508",
+  "medida": "CHCR0040508",
+  "precio": 6110000
+ },
+ "CHCR0040608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445212,
+  "sku": "CHCR0040608",
+  "medida": "CHCR0040608",
+  "precio": 2640000
+ },
+ "CHCR0050508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445218,
+  "sku": "CHCR0050508",
+  "medida": "CHCR0050508",
+  "precio": 4500000
+ },
+ "CHCR0060405": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445224,
+  "sku": "CHCR0060405",
+  "medida": "CHCR0060405",
+  "precio": 6520000
+ },
+ "CHCR0060408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445227,
+  "sku": "CHCR0060408",
+  "medida": "CHCR0060408",
+  "precio": 7030000
+ },
+ "CHCR0060505": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445233,
+  "sku": "CHCR0060505",
+  "medida": "CHCR0060505",
+  "precio": 4390000
+ },
+ "CHCR0060508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445235,
+  "sku": "CHCR0060508",
+  "medida": "CHCR0060508",
+  "precio": 3370000
+ },
+ "CHCR0060608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445239,
+  "sku": "CHCR0060608",
+  "medida": "CHCR0060608",
+  "precio": 9660000
+ },
+ "CHCR0080404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445240,
+  "sku": "CHCR0080404",
+  "medida": "CHCR0080404",
+  "precio": 10440000
+ },
+ "CHCR0080508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445243,
+  "sku": "CHCR0080508",
+  "medida": "CHCR0080508",
+  "precio": 9780000
+ },
+ "CHCR0080608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445248,
+  "sku": "CHCR0080608",
+  "medida": "CHCR0080608",
+  "precio": 9770000
+ },
+ "CHCR0100404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445259,
+  "sku": "CHCR0100404",
+  "medida": "CHCR0100404",
+  "precio": 10280000
+ },
+ "CHCR0100408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445263,
+  "sku": "CHCR0100408",
+  "medida": "CHCR0100408",
+  "precio": 5140000
+ },
+ "CHCR0100505": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445266,
+  "sku": "CHCR0100505",
+  "medida": "CHCR0100505",
+  "precio": 12350000
+ },
+ "CHCR0100506": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445269,
+  "sku": "CHCR0100506",
+  "medida": "CHCR0100506",
+  "precio": 10810000
+ },
+ "CHCR0100508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445271,
+  "sku": "CHCR0100508",
+  "medida": "CHCR0100508",
+  "precio": 11590000
+ },
+ "CHCR0100608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445273,
+  "sku": "CHCR0100608",
+  "medida": "CHCR0100608",
+  "precio": 7970000
+ },
+ "CHCR0130408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445276,
+  "sku": "CHCR0130408",
+  "medida": "CHCR0130408",
+  "precio": 3050000
+ },
+ "CHCR0130508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445277,
+  "sku": "CHCR0130508",
+  "medida": "CHCR0130508",
+  "precio": 5890000
+ },
+ "CHCR0130608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445280,
+  "sku": "CHCR0130608",
+  "medida": "CHCR0130608",
+  "precio": 2860000
+ },
+ "CHCR0150408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445282,
+  "sku": "CHCR0150408",
+  "medida": "CHCR0150408",
+  "precio": 10660000
+ },
+ "CHCR0150505": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445292,
+  "sku": "CHCR0150505",
+  "medida": "CHCR0150505",
+  "precio": 7870000
+ },
+ "CHCR0150508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445301,
+  "sku": "CHCR0150508",
+  "medida": "CHCR0150508",
+  "precio": 8900000
+ },
+ "CHCR0150608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445305,
+  "sku": "CHCR0150608",
+  "medida": "CHCR0150608",
+  "precio": 11670000
+ },
+ "CHCR0160404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445309,
+  "sku": "CHCR0160404",
+  "medida": "CHCR0160404",
+  "precio": 8960000
+ },
+ "CHCR0160405": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445313,
+  "sku": "CHCR0160405",
+  "medida": "CHCR0160405",
+  "precio": 2280000
+ },
+ "CHCR0160506": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445315,
+  "sku": "CHCR0160506",
+  "medida": "CHCR0160506",
+  "precio": 10790000
+ },
+ "CHCR0180404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445322,
+  "sku": "CHCR0180404",
+  "medida": "CHCR0180404",
+  "precio": 6300000
+ },
+ "CHCR0180408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445327,
+  "sku": "CHCR0180408",
+  "medida": "CHCR0180408",
+  "precio": 12480000
+ },
+ "CHCR0180505": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445334,
+  "sku": "CHCR0180505",
+  "medida": "CHCR0180505",
+  "precio": 2590000
+ },
+ "CHCR0180508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445339,
+  "sku": "CHCR0180508",
+  "medida": "CHCR0180508",
+  "precio": 12360000
+ },
+ "CHCR0180608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445344,
+  "sku": "CHCR0180608",
+  "medida": "CHCR0180608",
+  "precio": 4210000
+ },
+ "CHCR0230404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445348,
+  "sku": "CHCR0230404",
+  "medida": "CHCR0230404",
+  "precio": 11810000
+ },
+ "CHCR0230405": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445354,
+  "sku": "CHCR0230405",
+  "medida": "CHCR0230405",
+  "precio": 7700000
+ },
+ "CHCR0230408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445359,
+  "sku": "CHCR0230408",
+  "medida": "CHCR0230408",
+  "precio": 7190000
+ },
+ "CHCR0230508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445363,
+  "sku": "CHCR0230508",
+  "medida": "CHCR0230508",
+  "precio": 12150000
+ },
+ "CHCR0230608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445366,
+  "sku": "CHCR0230608",
+  "medida": "CHCR0230608",
+  "precio": 8680000
+ },
+ "CHCR0240608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445369,
+  "sku": "CHCR0240608",
+  "medida": "CHCR0240608",
+  "precio": 5710000
+ },
+ "CHCR0320404": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445371,
+  "sku": "CHCR0320404",
+  "medida": "CHCR0320404",
+  "precio": 8420000
+ },
+ "CHCR0320508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445373,
+  "sku": "CHCR0320508",
+  "medida": "CHCR0320508",
+  "precio": 10760000
+ },
+ "CHCR0630608": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445376,
+  "sku": "CHCR0630608",
+  "medida": "CHCR0630608",
+  "precio": 11570000
+ },
+ "CHCR0650405": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445384,
+  "sku": "CHCR0650405",
+  "medida": "CHCR0650405",
+  "precio": 10830000
+ },
+ "CHCR0650408": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445390,
+  "sku": "CHCR0650408",
+  "medida": "CHCR0650408",
+  "precio": 9280000
+ },
+ "CHCR0650505": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445397,
+  "sku": "CHCR0650505",
+  "medida": "CHCR0650505",
+  "precio": 6820000
+ },
+ "CHCR0650508": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445403,
+  "sku": "CHCR0650508",
+  "medida": "CHCR0650508",
+  "precio": 4760000
+ },
+ "CHCR0650556": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445408,
+  "sku": "CHCR0650556",
+  "medida": "CHCR0650556",
+  "precio": 10880000
+ },
+ "CHCR0650708": {
+  "handle": "cuchillas-chcr-hss",
+  "variant": 1585445417,
+  "sku": "CHCR0650708",
+  "medida": "CHCR0650708",
+  "precio": 8350000
+ },
+ "CHCR0060608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445429,
+  "sku": "CHCR0060608M",
+  "medida": "CHCR0060608M",
+  "precio": 12310000
+ },
+ "CHCR0100608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445444,
+  "sku": "CHCR0100608M",
+  "medida": "CHCR0100608M",
+  "precio": 9040000
+ },
+ "CHCR0130608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445451,
+  "sku": "CHCR0130608M",
+  "medida": "CHCR0130608M",
+  "precio": 3130000
+ },
+ "CHCR0150608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445459,
+  "sku": "CHCR0150608M",
+  "medida": "CHCR0150608M",
+  "precio": 11100000
+ },
+ "CHCR0180608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445469,
+  "sku": "CHCR0180608M",
+  "medida": "CHCR0180608M",
+  "precio": 5930000
+ },
+ "CHCR0320608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445472,
+  "sku": "CHCR0320608M",
+  "medida": "CHCR0320608M",
+  "precio": 7010000
+ },
+ "CHCR06504010": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445475,
+  "sku": "CHCR06504010",
+  "medida": "CHCR06504010",
+  "precio": 2210000
+ },
+ "CHCR06505010": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445477,
+  "sku": "CHCR06505010",
+  "medida": "CHCR06505010",
+  "precio": 11620000
+ },
+ "CHCR0650608M": {
+  "handle": "cuchillas-chcr-md",
+  "variant": 1585445483,
+  "sku": "CHCR0650608M",
+  "medida": "CHCR0650608M",
+  "precio": 12580000
+ },
+ "CHCECH300152": {
+  "handle": "cuchillas-chcech",
+  "variant": 1585445485,
+  "sku": "CHCECH300152",
+  "medida": "CHCECH300152",
+  "precio": 8270000
+ },
+ "CHCECH530851": {
+  "handle": "cuchillas-chcech",
+  "variant": 1585445489,
+  "sku": "CHCECH530851",
+  "medida": "CHCECH530851",
+  "precio": 12820000
+ },
+ "CBP1200804": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445493,
+  "sku": "CBP1200804",
+  "medida": "CBP1200804",
+  "precio": 4590000
+ },
+ "CBP1201004": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445498,
+  "sku": "CBP1201004",
+  "medida": "CBP1201004",
+  "precio": 11060000
+ },
+ "CBP1201304": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445501,
+  "sku": "CBP1201304",
+  "medida": "CBP1201304",
+  "precio": 6550000
+ },
+ "CBP1201604": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445502,
+  "sku": "CBP1201604",
+  "medida": "CBP1201604",
+  "precio": 8010000
+ },
+ "CBP1201804": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445506,
+  "sku": "CBP1201804",
+  "medida": "CBP1201804",
+  "precio": 5090000
+ },
+ "CBP1202204": {
+  "handle": "cuchillas-cbp",
+  "variant": 1585445507,
+  "sku": "CBP1202204",
+  "medida": "CBP1202204",
+  "precio": 12600000
+ },
+ "CBRH1": {
+  "handle": "cuchillas-cbrh",
+  "variant": 1585445510,
+  "sku": "CBRH-1",
+  "medida": "1",
+  "precio": 7000000
+ },
+ "CBR1220604": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445518,
+  "sku": "CBR1220604",
+  "medida": "CBR1220604",
+  "precio": 2280000
+ },
+ "CBR1221004": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445525,
+  "sku": "CBR1221004",
+  "medida": "CBR1221004",
+  "precio": 5140000
+ },
+ "CBR1221304": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445538,
+  "sku": "CBR1221304",
+  "medida": "CBR1221304",
+  "precio": 5670000
+ },
+ "CBR1221504": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445543,
+  "sku": "CBR1221504",
+  "medida": "CBR1221504",
+  "precio": 8090000
+ },
+ "CBR1221804": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445548,
+  "sku": "CBR1221804",
+  "medida": "CBR1221804",
+  "precio": 4620000
+ },
+ "CBR1222304": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445551,
+  "sku": "CBR1222304",
+  "medida": "CBR1222304",
+  "precio": 8400000
+ },
+ "CBR1222404": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445559,
+  "sku": "CBR1222404",
+  "medida": "CBR1222404",
+  "precio": 9730000
+ },
+ "PRESET": {
+  "handle": "cuchillas-cbr",
+  "variant": 1585445562,
+  "sku": "PRESET",
+  "medida": "PRESET",
+  "precio": 11510000
+ },
+ "T102MAC3": {
+  "handle": "cabezales-t102m",
+  "variant": 1585445565,
+  "sku": "T102M AC3",
+  "medida": "T102M AC3",
+  "precio": 132430000
+ },
+ "T102MAF3": {
+  "handle": "cabezales-t102m",
+  "variant": 1585445571,
+  "sku": "T102M AF3",
+  "medida": "T102M AF3",
+  "precio": 88870000
+ },
+ "T194MBB3": {
+  "handle": "cabezales-t194m",
+  "variant": 1585445574,
+  "sku": "T194M BB3",
+  "medida": "T194M BB3",
+  "precio": 126210000
+ },
+ "TM06MAB3": {
+  "handle": "cabezales-tm06m",
+  "variant": 1585445580,
+  "sku": "TM06M AB3",
+  "medida": "TM06M AB3",
+  "precio": 91070000
+ },
+ "TM06MAD3": {
+  "handle": "cabezales-tm06m",
+  "variant": 1585445601,
+  "sku": "TM06M AD3",
+  "medida": "TM06M AD3",
+  "precio": 123030000
+ },
+ "TM06MAH3": {
+  "handle": "cabezales-tm06m",
+  "variant": 1585445607,
+  "sku": "TM06M AH3",
+  "medida": "TM06M AH3",
+  "precio": 53250000
+ },
+ "TM06MAL3": {
+  "handle": "cabezales-tm06m",
+  "variant": 1585445611,
+  "sku": "TM06M AL3",
+  "medida": "TM06M AL3",
+  "precio": 102540000
+ },
+ "TM06MCG3": {
+  "handle": "cabezales-tm06m",
+  "variant": 1585445622,
+  "sku": "TM06M CG3",
+  "medida": "TM06M CG3",
+  "precio": 111690000
+ },
+ "T198MFC3": {
+  "handle": "cabezales-t198m",
+  "variant": 1585445627,
+  "sku": "T198M FC3",
+  "medida": "T198M FC3",
+  "precio": 104120000
+ },
+ "T198MGC3": {
+  "handle": "cabezales-t198m",
+  "variant": 1585445632,
+  "sku": "T198M GC3",
+  "medida": "T198M GC3",
+  "precio": 143040000
+ },
+ "F107MAB3": {
+  "handle": "cabezales-f107m",
+  "variant": 1585445635,
+  "sku": "F107M AB3",
+  "medida": "F107M AB3",
+  "precio": 50690000
+ },
+ "TW01MAB3": {
+  "handle": "cabezales-tw",
+  "variant": 1585445638,
+  "sku": "TW01M AB3",
+  "medida": "TW01M AB3",
+  "precio": 134380000
+ },
+ "TW20MBF3": {
+  "handle": "cabezales-tw",
+  "variant": 1585445641,
+  "sku": "TW20M BF3",
+  "medida": "TW20M BF3",
+  "precio": 91190000
+ },
+ "FG46SCB2": {
+  "handle": "cabezales-fg46s",
+  "variant": 1585445645,
+  "sku": "FG46S CB2",
+  "medida": "FG46S CB2",
+  "precio": 88750000
+ },
+ "TP22MAB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445648,
+  "sku": "TP22M AB3",
+  "medida": "TP22M AB3",
+  "precio": 76550000
+ },
+ "TP23MAB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445658,
+  "sku": "TP23M AB3",
+  "medida": "TP23M AB3",
+  "precio": 156460000
+ },
+ "TP31MAB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445659,
+  "sku": "TP31M AB3",
+  "medida": "TP31M AB3",
+  "precio": 53620000
+ },
+ "TP31MCB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445663,
+  "sku": "TP31M CB3",
+  "medida": "TP31M CB3",
+  "precio": 146090000
+ },
+ "TP40MAB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445665,
+  "sku": "TP40M AB3",
+  "medida": "TP40M AB3",
+  "precio": 108270000
+ },
+ "TPSCMAB3": {
+  "handle": "cabezales-tp",
+  "variant": 1585445667,
+  "sku": "TPSCM AB3",
+  "medida": "TPSCM AB3",
+  "precio": 67520000
+ },
+ "TD21MGB3": {
+  "handle": "cabezales-td",
+  "variant": 1585445670,
+  "sku": "TD21M GB3",
+  "medida": "TD21M GB3",
+  "precio": 101560000
+ },
+ "TD52MHB3": {
+  "handle": "cabezales-td",
+  "variant": 1585445684,
+  "sku": "TD52M HB3",
+  "medida": "TD52M HB3",
+  "precio": 85580000
+ },
+ "TF04MCGE3": {
+  "handle": "cabezales-tf04mc",
+  "variant": 1585445688,
+  "sku": "TF04MC GE3",
+  "medida": "TF04MC GE3",
+  "precio": 145600000
+ },
+ "TF04MCGH3": {
+  "handle": "cabezales-tf04mc",
+  "variant": 1585445698,
+  "sku": "TF04MC GH3",
+  "medida": "TF04MC GH3",
+  "precio": 87650000
+ },
+ "GL20701M": {
+  "handle": "cabezales-gl20701m",
+  "variant": 1585445700,
+  "sku": "GL20701M",
+  "medida": "GL20701M",
+  "precio": 66430000
+ },
+ "CG03MAA3": {
+  "handle": "cabezales-cg03m",
+  "variant": 1585445707,
+  "sku": "CG03M AA3",
+  "medida": "CG03M AA3",
+  "precio": 50930000
+ },
+ "CG05MBA3": {
+  "handle": "cabezales-cg05m",
+  "variant": 1585445712,
+  "sku": "CG05M BA3",
+  "medida": "CG05M BA3",
+  "precio": 60810000
+ },
+ "CG05MFC3": {
+  "handle": "cabezales-cg05m",
+  "variant": 1585445717,
+  "sku": "CG05M FC3",
+  "medida": "CG05M FC3",
+  "precio": 152070000
+ },
+ "CG08MFA3": {
+  "handle": "cabezales-cg08m",
+  "variant": 1585445719,
+  "sku": "CG08M FA3",
+  "medida": "CG08M FA3",
+  "precio": 137060000
+ },
+ "CG50MAA3": {
+  "handle": "cabezales-cg50m",
+  "variant": 1585445725,
+  "sku": "CG50M AA3",
+  "medida": "CG50M AA3",
+  "precio": 82650000
+ },
+ "CP22MA080": {
+  "handle": "cabezales-cp22m",
+  "variant": 1585445730,
+  "sku": "CP22M A080",
+  "medida": "CP22M A080",
+  "precio": 63130000
+ },
+ "CP31MC100": {
+  "handle": "cabezales-cp31m",
+  "variant": 1585445735,
+  "sku": "CP31M C100",
+  "medida": "CP31M C100",
+  "precio": 85700000
+ },
+ "CP40MAA3": {
+  "handle": "cabezales-cp40m",
+  "variant": 1585445740,
+  "sku": "CP40M AA3",
+  "medida": "CP40M AA3",
+  "precio": 116810000
+ },
+ "CPSCMBB3": {
+  "handle": "cabezales-cpscm",
+  "variant": 1585445748,
+  "sku": "CPSCM BB3",
+  "medida": "CPSCM BB3",
+  "precio": 102170000
+ },
+ "CT52MDA3": {
+  "handle": "cabezales-ct52m",
+  "variant": 1585445752,
+  "sku": "CT52M DA3",
+  "medida": "CT52M DA3",
+  "precio": 75580000
+ },
+ "CW10MAA3": {
+  "handle": "cabezales-cw10m",
+  "variant": 1585445756,
+  "sku": "CW10M AA3",
+  "medida": "CW10M AA3",
+  "precio": 89480000
+ },
+ "CW16MAA3": {
+  "handle": "cabezales-cw16m",
+  "variant": 1585445762,
+  "sku": "CW16M AA3",
+  "medida": "CW16M AA3",
+  "precio": 92660000
+ },
+ "CW28MAAA3": {
+  "handle": "cabezales-cw28ma",
+  "variant": 1585445765,
+  "sku": "CW28MA AA3",
+  "medida": "CW28MA AA3",
+  "precio": 150240000
+ },
+ "IG01MAA3": {
+  "handle": "cabezales-ig01m",
+  "variant": 1585445769,
+  "sku": "IG01M AA3",
+  "medida": "IG01M AA3",
+  "precio": 115350000
+ },
+ "RG01MAA3": {
+  "handle": "cabezales-rg01m",
+  "variant": 1585445787,
+  "sku": "RG01M AA3",
+  "medida": "RG01M AA3",
+  "precio": 119370000
+ },
+ "INSRAS1": {
+  "handle": "cabezales-insras1",
+  "variant": 1585445798,
+  "sku": "INSRAS1",
+  "medida": "INSRAS1",
+  "precio": 64600000
+ },
+ "INSREF3A": {
+  "handle": "cabezales-insref3a",
+  "variant": 1585445804,
+  "sku": "INSREF3A",
+  "medida": "INSREF3A",
+  "precio": 47760000
+ },
+ "AT03MAA9": {
+  "handle": "cabezales-at03m",
+  "variant": 1585445815,
+  "sku": "AT03M AA9",
+  "medida": "AT03M AA9",
+  "precio": 43980000
+ },
+ "AT03MAD9": {
+  "handle": "cabezales-at03m",
+  "variant": 1585445822,
+  "sku": "AT03M AD9",
+  "medida": "AT03M AD9",
+  "precio": 153170000
+ },
+ "SD01MDG9": {
+  "handle": "cabezales-sd01m",
+  "variant": 1585445827,
+  "sku": "SD01M DG9",
+  "medida": "SD01M DG9",
+  "precio": 40930000
+ },
+ "SD02MAA9": {
+  "handle": "cabezales-sd02m",
+  "variant": 1585445834,
+  "sku": "SD02M AA9",
+  "medida": "SD02M AA9",
+  "precio": 78260000
+ },
+ "SD04MAAA9": {
+  "handle": "cabezales-sd04ma",
+  "variant": 1585445839,
+  "sku": "SD04MA AA9",
+  "medida": "SD04MA AA9",
+  "precio": 148900000
+ }
+}

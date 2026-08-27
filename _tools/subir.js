@@ -20,7 +20,11 @@ const TOOLS = __dirname;
 const ROOT = path.join(TOOLS, '..');                 // raíz del proyecto
 const LEDGER = path.join(TOOLS, '.subido.json');
 const CONFIG = path.join(TOOLS, 'ftp-config.json');
-const EXCLUIR_DIRS = new Set(['_tools', '_admin', '.git', 'node_modules', '.claude']);
+// prueba/, Prueba2/ y tienda/ son entornos de prueba: se suben con su propio
+// script (armar-prueba2.js), no con este. Si no se excluyen, cada subida del
+// sitio arrastra 200 archivos de mas. Excluirlos es seguro: esta herramienta
+// nunca borra del servidor, solo limpia su registro local.
+const EXCLUIR_DIRS = new Set(['_tools', '_admin', '.git', 'node_modules', '.claude', 'prueba', 'Prueba2', 'tienda']);
 const EXCLUIR_ARCH = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini']);
 // Extensiones de desarrollo que NO son parte del sitio público (no se suben).
 const EXCLUIR_EXT = new Set(['.sh', '.bat', '.md', '.markdown', '.log', '.map', '.zip']);
