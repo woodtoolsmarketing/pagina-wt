@@ -308,5 +308,49 @@
 	});
 
 	*/
+
+	/* 6. CATEGORIAS DE LA PORTADA - hacerlas clickeables.
+	   Morelia arma la seccion "Categorias" de la home con una tira de imagenes
+	   sueltas: no las envuelve en un enlace ni les pone el nombre. Quedan seis
+	   fotos que no llevan a ningun lado. El panel del tema tampoco ofrece un
+	   campo de link por imagen (el lapiz solo reemplaza el archivo), asi que el
+	   enlace se agrega aca POR POSICION: el orden de esta lista tiene que ser el
+	   mismo en que estan cargadas las imagenes en Pagina de inicio >
+	   Categorias principales. Si alla se reordenan (se arrastran), reordenar aca. */
+	var CATEGORIAS_HOME = [
+		{ url: '/sierras/',   nombre: 'Sierras' },
+		{ url: '/cuchillas/', nombre: 'Cuchillas' },
+		{ url: '/mechas/',    nombre: 'Mechas' },
+		{ url: '/diamante/',  nombre: 'Diamante' },
+		{ url: '/fresas/',    nombre: 'Fresas' },
+		{ url: '/cabezales/', nombre: 'Cabezales' }
+	];
+
+	function enlazarCategoriasHome() {
+		var tiles = document.querySelectorAll('.section-categories-home .home-category');
+		for (var i = 0; i < tiles.length && i < CATEGORIAS_HOME.length; i++) {
+			var t = tiles[i];
+			if (t.getAttribute('data-wt-link')) continue;
+			t.setAttribute('data-wt-link', '1');
+			var c = CATEGORIAS_HOME[i];
+			var a = document.createElement('a');
+			a.href = c.url;
+			a.setAttribute('aria-label', c.nombre);
+			a.style.cssText = 'display:block;text-decoration:none;color:inherit;';
+			t.parentNode.insertBefore(a, t);
+			a.appendChild(t);
+			var n = document.createElement('span');
+			n.textContent = c.nombre;
+			n.style.cssText = 'display:block;margin-top:8px;font-size:13px;font-weight:600;color:#333;text-align:center;';
+			t.appendChild(n);
+		}
+	}
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', enlazarCategoriasHome);
+	else enlazarCategoriasHome();
+	// el swiper reacomoda los slides despues de iniciar; una segunda pasada alcanza
+	setTimeout(enlazarCategoriasHome, 1500);
+	setTimeout(enlazarCategoriasHome, 4000);
+
 })();
 </script>

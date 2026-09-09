@@ -1,0 +1,56 @@
+Hola {{contact_name}}, tu pedido #{{order.id}} en {{store_name}} fue actualizado.
+
+{% for item in order.items %}{% if item.is_kit %}{{ item.quantity }} x {{item.name}} por {{ item.priceFormat }} cada uno.
+{% for component in item.components %}  {{ component.name }} {{ component.variationName }} x {{ component.total_quantity }}
+{% endfor %}{% else %}{{ item.quantity }} x {{item.name ~ item.variationName}} por {{ item.priceFormat }} cada uno.
+{% endif %}{% endfor %}
+
+{% for promotion in order.promotional_discount.promotions_applied %}
+    {% if promotion.discount_script_type == "NAtX%off" %}{{ promotion.selected_threshold.discount_decimal_percentage * 100 }}% OFF{% elseif promotion.discount_script_type == "CrossSelling" %}Descuento{% elseif promotion.discount_script_type == "%off" %}Descuento {{ promotion.percentage_off }}% OFF{% elseif promotion.coupon_activated %}Descuento del cupón{% elseif promotion.is_cart_discount %}{% if promotion.cart_discount.is_percentage %}Descuento {{ promotion.cart_discount.value | round }}% OFF{% else %}Descuento{% endif %}{% else %}Promoción {{ promotion.discount_script_type }}{% endif %} {% if promotion.scope_value_name and not promotion.is_cart_discount %}en {{ promotion.scope_value_name }}{% endif %} {% if promotion.discount_script_type == "NAtX%off" %}comprando {{ promotion.selected_threshold.quantity }} o más.{% endif %}: -{{promotion.total_discount_amount_short}}
+{% endfor %} 
+
+{% if order.shipping_pickup_type != 'non-shippable' %}
+{% if order.shipping_pickup_type == 'ship' %}Costo de envío: {% else %}Costo de entrega: {% endif %}{% if order.show_shipping_price %}{% if order.shipping == 0 %}Gratis{% else %}{{order.shippingFormat}}{% endif %}{% else %}A convenir{% endif %}
+{% endif %}
+
+{% if order.discountCoupon > 0 %}
+Descuento ({{order.coupon}}): {{order.discountCouponFormat}}
+{% endif %}
+{% if order.discountGateway > 0 %}
+Descuento por {{order.paymentMethod}}: {{order.discountGatewayFormat}}
+{% endif %}
+
+Total: {{order.totalFormat}}
+
+{% if order.shipping_pickup_type == 'non-shippable' %}
+{% elseif order.shipping_pickup_type == 'ship' %}
+Datos de envío:
+
+Dirección: {{order.shipping_address}}
+{% if order.shipping_floor %}
+Piso: {{order.shipping_floor}}
+{% endif %}
+{% if order.shipping_locality %}
+Localidad: {{order.shipping_locality}}
+{% endif %}
+Ciudad: {{order.shipping_city}}
+Código postal: {{order.shipping_zipcode}}
+País: {{order.shipping_country}}
+Provincia/Estado: {{order.shipping_province}}
+{% elseif order.shipping_pickup_type == 'pickup' and order.shipping_extra.store_branch %}
+Dirección de retiro: 
+{{ order.shipping_extra.store_branch.name }} / {{ order.shipping_extra.store_branch.extra }}
+{% elseif order.shipping_option %}
+{{ order.shipping_option }}
+{% endif %}
+
+{% if order.statusPageUrl %}
+Seguí el estado de tu pedido desde este link:
+{{ order.statusPageUrl }}
+{% endif %}
+
+Saludos,
+{{store_name}}
+
+* * *
+Si no hiciste esta compra o simplemente estabas probando nuestro sitio, por favor desconsiderá este e-mail.
