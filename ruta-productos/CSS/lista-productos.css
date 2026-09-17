@@ -519,10 +519,12 @@ select {
    RESPONSIVE MOBILE - FILTROS COMO CHIPS Y GRILLA 2 COLUMNAS
    (antes el sidebar se ocultaba en celular; ahora los filtros
    se muestran compactos arriba de la grilla)
+   Los chips arrancan en 768px y no en 480: entre 481 y 768 (tablets
+   verticales, celulares grandes acostados) los filtros eran listas
+   verticales a todo el ancho y el primer producto quedaba a 960px de
+   altura, fuera de la pantalla.
    ========================================================== */
-@media (max-width: 480px) {
-    .main-container { margin: 15px auto; }
-
+@media (max-width: 768px) {
     .filters-sidebar { display: block; }
     .filters-sidebar h2 { font-size: 17px; margin-bottom: 10px; }
     .filter-group { margin-bottom: 12px; }
@@ -546,6 +548,30 @@ select {
         padding-left: 0;
         margin: 4px 0;
     }
+
+    /* Submenu (Molduras / Melamina) abierto: filtros.js le pone
+       display:block inline y quedaba adentro del chip padre, con los
+       subchips apilados y montados encima. Ahora el chip padre ocupa la
+       fila entera y los subchips van en fila debajo. */
+    .filter-group ul li:has(> .submenu-moldura[style*="block"]) {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+    }
+    .filter-group .submenu-moldura[style*="block"] {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: auto;
+        margin: 0;
+    }
+    .filter-group .submenu-moldura li { margin-bottom: 0; }
+}
+
+@media (max-width: 480px) {
+    .main-container { margin: 15px auto; }
 
     /* Grilla estilo e-commerce: 2 columnas compactas */
     .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -571,4 +597,79 @@ select {
     margin: 0 0 10px;
     cursor: inherit;
     text-decoration: none;
+}
+
+/* ==========================================================
+   FILTROS PLEGABLES EN CELULAR Y TABLET VERTICAL
+   Aun como chips, los filtros median ~460px de alto: en un telefono
+   el primer producto quedaba a 750-820px, abajo de la primera
+   pantalla. Hasta 768px quedan plegados detras del boton "Filtrar"
+   (lo arma filtros.js, que ademas muestra cuantos hay activos).
+   Solo con la clase .js en <html>: sin JavaScript no habria forma de
+   abrirlos, asi que se muestran abiertos como antes.
+   El buscador por codigo no esta en este panel y queda siempre visible.
+   ========================================================== */
+.filtros-toggle { display: none; }
+
+@media (max-width: 768px) {
+    .js .filters-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 12px;
+    }
+    .js .filters-sidebar > h2 { margin-bottom: 0; }
+    .js .filters-sidebar > .filter-group { flex-basis: 100%; }
+    .js .filters-sidebar > .filter-group:first-of-type { margin-top: 12px; }
+
+    .js .filtros-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1px solid #ccc;
+        border-radius: 22px;
+        background: #fff;
+        color: #333;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+    }
+    .js .filtros-toggle::after {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-2px) rotate(45deg);
+        transition: transform 0.2s;
+    }
+    .js .filtros-toggle[aria-expanded="true"]::after { transform: translateY(2px) rotate(-135deg); }
+    .js .filtros-toggle.con-filtros { border-color: #d32f2f; color: #d32f2f; background: #fdf0f0; }
+
+    .js .filters-sidebar:not(.abierto) > .filter-group { display: none; }
+}
+
+/* ==========================================================
+   CHIPS TOCABLES CON EL DEDO
+   Median 29-30px de alto. .filter-btn ya es display:block y trae
+   padding con !important, por eso se agranda con min-height.
+   ========================================================== */
+@media (pointer: coarse) {
+    .filter-group ul li .filter-btn { display: flex; align-items: center; min-height: 40px; }
+    #btn-limpiar { display: inline-flex !important; align-items: center; min-height: 40px; }
+}
+
+/* ==========================================================
+   TITULOS DE LAS TARJETAS
+   Con 2 renglones, en la grilla de 2 columnas (celular) y en la de 3
+   con la barra de filtros al lado (~900-1199px) se cortaba justo la
+   medida o los dientes, que es lo que distingue una sierra de otra.
+   Desde 1200px queda como antes.
+   ========================================================== */
+@media (max-width: 1199px) {
+    .product-title { -webkit-line-clamp: 3; max-height: calc(1.4em * 3); }
 }

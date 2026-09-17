@@ -975,11 +975,17 @@ const baseDatosProductos = {
         caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Bisagras / Plegado" }, 
         variantes: [{ id: "FPP452", nombre: "FPP452 - Punta Plegado D=45 Lu=19 Z=2" }] 
     },
-    "PRACTIWALL": { 
-        codigoBase: "PRACTIWALL", categoriaImg: "Mechas", carpetaImg: "bisagra", 
-        titulo: "Mecha Bisagra Practiwall", marca: "Nordutensili", 
-        caracteristicasBasicas: { "Marca": "Nordutensili", "Uso": "Bisagras" }, 
-        variantes: [{ id: "PRACTIWALL", nombre: "PRACTIWALL - D=35 Cabo 12x45 LT=65 Z=2" }] 
+    "PRACTIWALL": {
+        codigoBase: "PRACTIWALL", categoriaImg: "Mechas", carpetaImg: "Practiwall",
+        titulo: "Mecha Practiwall", tituloFijo: "Mecha Practiwall", marca: "Nordutensili",
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Bisagras Practiwall" },
+        variantes: [{ id: "PRACTIWALL", nombre: "PRACTIWALL - D=35 Cabo 12x45 LT=65 Z=2" }]
+    },
+    "PLEGADO": {
+        codigoBase: "PLEGADO", categoriaImg: "Mechas", carpetaImg: "Plegado",
+        titulo: "Mecha de Plegado", tituloFijo: "Mecha de Plegado", marca: "Nordutensili",
+        caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Plegado" },
+        variantes: [{ id: "PLEGADO", nombre: "PLEGADO - 12mm x R30mm" }]
     },
     "MBI": { 
         codigoBase: "MBI", categoriaImg: "Mechas", carpetaImg: "bisagra", 
@@ -2049,7 +2055,11 @@ function cargarEstructuraProducto(info) {
         const m = analizarMedidas(v ? v.nombre : '');
         if (tituloDOM) {
             const cb = info.caracteristicasBasicas || {};
-            if (info.categoriaImg === "Cuchillas" && cb["Formato"] && cb["Material"]) {
+            if (info.tituloFijo) {
+                // Nombre propio: se muestra tal cual, sin armar "{tipo} de {Ø}mm"
+                // (las medidas siguen apareciendo en el desplegable y la tabla).
+                tituloDOM.innerText = info.tituloFijo;
+            } else if (info.categoriaImg === "Cuchillas" && cb["Formato"] && cb["Material"]) {
                 // "Cuchilla [tipo] de [material] de [medida]"
                 const tipo = cb["Formato"] === "Chipera" ? "para Chipera" : cb["Formato"];
                 const matRaw = cb["Material"];
@@ -2102,7 +2112,11 @@ function activarZoom() {
     const imagenPrincipal = document.getElementById("main-image");
 
     if (contenedorZoom && imagenPrincipal) {
-        contenedorZoom.addEventListener("mousemove", function(e) {
+        // Solo con mouse. En celular el toque dispara un "mousemove" de
+        // compatibilidad que ampliaba la foto 2.5x, y el "mouseleave" no llega
+        // hasta tocar otra cosa: la foto quedaba ampliada y recortada.
+        contenedorZoom.addEventListener("pointermove", function(e) {
+            if (e.pointerType !== "mouse") return;
             if(!imagenPrincipal.src.includes('WoodTools.png')) {
                 const rect = contenedorZoom.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -2112,7 +2126,7 @@ function activarZoom() {
             }
         });
 
-        contenedorZoom.addEventListener("mouseleave", function() {
+        contenedorZoom.addEventListener("pointerleave", function() {
             imagenPrincipal.style.transformOrigin = "center center";
             imagenPrincipal.style.transform = "scale(1)";
         });
@@ -2233,6 +2247,7 @@ function inyectarBotonYModalCotizacion() {
             .wt-modal {
                 background: #fff; border-radius: 8px; width: 100%; max-width: 480px;
                 max-height: 90vh; overflow-y: auto; padding: 26px;
+                position: relative; overscroll-behavior: contain;
                 border-top: 4px solid #a41e22; box-shadow: 0 10px 40px rgba(0,0,0,0.25);
                 font-family: inherit;
             }
@@ -2269,8 +2284,31 @@ function inyectarBotonYModalCotizacion() {
                 background: none; border: none; font-size: 24px; color: #999;
                 cursor: pointer; float: right; line-height: 1; margin-top: -8px;
             }
+            /* Celular, tablet y ventanas angostas (en escritorio con mouse queda
+               como antes): la X media 14x24px, porque el reset "* { padding:0 }"
+               del sitio le saca el padding del navegador; muy chica para el dedo.
+               Y el alto maximo sigue al alto visible, no a 90vh, que en celular
+               cuenta la barra del navegador. */
+            @media (pointer: coarse), (max-width: 1279.98px) {
+                .wt-modal { max-height: 100%; }
+                .wt-cerrar {
+                    float: none; position: absolute; top: 4px; right: 4px;
+                    width: 44px; height: 44px; display: flex; align-items: center;
+                    justify-content: center; font-size: 28px; margin: 0;
+                }
+                .wt-modal h2 { padding: 0 34px; }
+            }
             .wt-estado { text-align: center; font-weight: bold; margin-top: 14px; display: none; }
             @media (max-width: 520px) { .wt-row { flex-direction: column; gap: 0; } }
+            @media (max-width: 400px) {
+                .wt-modal { padding: 20px 16px; }
+                .wt-acciones { flex-direction: column; }
+            }
+            /* Safari de iPhone agranda la pagina al enfocar campos de menos de
+               16px y no la vuelve a achicar al cerrar el formulario. */
+            @media (pointer: coarse) {
+                .wt-field input, .wt-field select { font-size: 16px; }
+            }
         `;
         document.head.appendChild(estilos);
     }
@@ -2339,6 +2377,9 @@ function inyectarBotonYModalCotizacion() {
 
         // --- Eventos del modal ---
         document.getElementById("wt-cerrar").addEventListener("click", cerrarModalCotizacion);
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") cerrarModalCotizacion();
+        });
         overlay.addEventListener("click", function(e) {
             if (e.target === overlay) cerrarModalCotizacion();
         });

@@ -24,9 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
         const m = (src || '').match(/herramientas\/(.+)$/);
         if (!m) return null;
         const partes = m[1].split('/');
-        if (partes.length < 3) return null; // imagen genérica / suelta: no es carpeta de producto
-        partes.pop();                        // sacar el nombre de archivo
-        return decodeURIComponent(partes.join('/'));
+        if (partes.length >= 3) {
+            partes.pop();                    // sacar el nombre de archivo
+            return decodeURIComponent(partes.join('/'));
+        }
+        // Imagen de portada suelta (Categoria/Nombre.ext): si al lado hay una
+        // carpeta de producto con el mismo nombre (Categoria/Nombre), esa es su
+        // galería, así que la card cuenta como "con fotos". Ej: Mechas/Practiwall.png
+        // -> Mechas/Practiwall. Si esa carpeta no existe en el manifiesto (ej. el
+        // placeholder Cabezales/simple.png), sigue quedando como sin fotos.
+        if (partes.length === 2) {
+            return decodeURIComponent(partes[0] + '/' + partes[1].replace(/\.[^./]+$/, ''));
+        }
+        return null;
     }
     fetch('../../imagenes/herramientas/galeria-manifest.json', { cache: 'no-cache' })
         .then(r => r.json())
@@ -222,7 +232,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (enlace.includes("MCH/AVD")) {
             producto.setAttribute('data-categoria', '308'); 
         } else if (enlace.includes("MCH/Router_Franzoi")) {
-            producto.setAttribute('data-categoria', '309'); 
+            producto.setAttribute('data-categoria', '309');
+        } else if (enlace.includes("MCH/PRACTIWALL") || enlace.includes("MCH/PLEGADO")) {
+            producto.setAttribute('data-categoria', '311'); // Otras
         }
 
         // --- CUCHILLAS ---
@@ -336,6 +348,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // =====================================================================
+    // 3c. BOTÓN "FILTRAR" (celular y tablet vertical)
+    //     Hasta 768px el panel de filtros va plegado (lista-productos.css) y
+    //     este botón lo abre y lo cierra. Muestra cuántos filtros hay activos
+    //     para que se note que la grilla está filtrada aunque el panel esté
+    //     cerrado. El plegado es solo por clase y en CSS: si se gira el
+    //     teléfono o se agranda la ventana, en escritorio el panel se ve igual.
+    // =====================================================================
+    const btnFiltrar = document.querySelector('.filtros-toggle');
+    const panelFiltros = document.querySelector('.filters-sidebar');
+
+    if (btnFiltrar && panelFiltros) {
+        btnFiltrar.addEventListener('click', function() {
+            const abierto = panelFiltros.classList.toggle('abierto');
+            btnFiltrar.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+        });
+    }
+
+    function actualizarBotonFiltrar() {
+        if (!btnFiltrar) return;
+        // subtipo y subcat son el submenú de un filtro que ya cuenta
+        const n = Object.keys(filtrosActivos).filter(k =>
+            k !== 'subtipo' && k !== 'subcat' && filtrosActivos[k] && filtrosActivos[k] !== 'todos'
+        ).length;
+        btnFiltrar.textContent = n ? 'Filtrar (' + n + ')' : 'Filtrar';
+        btnFiltrar.classList.toggle('con-filtros', n > 0);
+    }
+
+    // =====================================================================
     // 4. LÓGICA PRINCIPAL DE FILTRADO
     //    Soporta tanto strings (lógica original) como arrays (alias).
     // =====================================================================
@@ -404,6 +444,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 noResultsDiv.style.display = 'none';
             }
         }
+
+        actualizarBotonFiltrar();
     }
 
     // Oculta CUALQUIER opción de filtro que no tenga ningún producto visible en
@@ -489,7 +531,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nav && nav.type === 'back_forward') {
             const g = JSON.parse(sessionStorage.getItem(CLAVE_ESTADO) || 'null');
             if (g && g.filtros) {
-                filtrosActivos = g.filtros;
+                // Se completa con los valores por defecto: un estado guardado
+                // por una version anterior puede no traer todas las claves.
+                filtrosActivos = Object.assign({
+                    categoria: 'todos', marca: 'todos', tipo: 'todos', subtipo: 'todos',
+                    subcat: 'todos', formato: 'todos', material: 'todos', maquina: 'todos'
+                }, g.filtros);
                 textoBusqueda = g.busqueda || '';
                 if (inputBusqueda) inputBusqueda.value = textoBusqueda;
                 Object.keys(filtrosActivos).forEach(tipo => {
@@ -588,6 +635,9 @@ document.addEventListener("DOMContentLoaded", function() {
         btnLimpiar.addEventListener('click', function(e) {
             e.preventDefault();
             
+            // "maquina" tiene que estar: sin esa clave, al volver atras
+            // depurarFiltrosVacios() no la recorria y escondia el grupo
+            // MÁQUINAS entero.
             filtrosActivos = {
                 categoria: 'todos',
                 marca: 'todos',
@@ -595,7 +645,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtipo: 'todos',
                 subcat: 'todos',
                 formato: 'todos',
-                material: 'todos'
+                material: 'todos',
+                maquina: 'todos'
             };
 
             filterButtons.forEach(btn => btn.classList.remove('activo'));

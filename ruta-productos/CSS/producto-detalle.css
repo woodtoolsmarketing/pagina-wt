@@ -374,3 +374,47 @@ body {
     .caracteristica-label, .caracteristica-value { padding: 12px; font-size: 14px; }
     .caracteristica-label { width: 38%; }
 }
+
+/* ==========================================================================
+   RESPONSIVE - AJUSTES DE TABLET, CELULAR ACOSTADO Y PANTALLAS TACTILES
+   ========================================================================== */
+
+/* Miniaturas de la galeria: producto.js arma una por cada foto de la carpeta
+   y hay carpetas de 11-15 fotos. En celular pasaban a 3-5 filas que empujaban
+   el titulo y el boton de cotizar media pantalla abajo. Ahora van en una sola
+   fila que se desliza con el dedo. flex-start y no center: con desborde,
+   "center" deja las primeras miniaturas fuera de alcance. */
+@media (max-width: 768px) {
+    .galeria-miniaturas {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        padding-bottom: 6px;
+    }
+    .mini-img { flex: 0 0 50px; scroll-snap-align: start; }
+}
+
+/* Entre 769 y 1139px la tarjeta blanca (max-width 1100) iba de borde a borde
+   de la pantalla, con las esquinas y la sombra pegadas al borde. */
+@media (min-width: 769px) and (max-width: 1139px) {
+    .producto-container { margin-left: 20px; margin-right: 20px; }
+}
+
+/* Celular grande o tablet acostados: la foto conservaba 400px de alto en una
+   pantalla de 360-500px. */
+@media (min-width: 769px) and (max-height: 500px) and (pointer: coarse) {
+    .zoom-container { height: 70vh; height: 70svh; }
+}
+
+/* El selector de modelo: el texto largo pasaba por debajo de la flecha. */
+@media (max-width: 1024px) {
+    .selector-modelo select { padding-right: 2.2em; }
+}
+
+/* Sin mouse no hay zoom con el puntero (producto.js lo ignora en tactil):
+   el cursor de lupa no corresponde. */
+@media (hover: none) {
+    .zoom-container { cursor: default; }
+}

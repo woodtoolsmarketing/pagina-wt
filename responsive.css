@@ -1,0 +1,225 @@
+/* ==========================================================================
+   RESPONSIVE — HOJA COMUN A TODO EL SITIO
+   --------------------------------------------------------------------------
+   Va enlazada como ULTIMA hoja en las 186 paginas. Tiene que ser la ultima:
+   la cabecera, el pie y los botones flotantes estan repetidos en tres hojas
+   (styles.css, ruta-productos/CSS/styles.css y
+   ruta-productos/styles_producto_gral.css), los listados y fichas cargan la
+   de ruta-productos DESPUES de la raiz, las fichas CBZ ni siquiera cargan la
+   raiz y las landings solo cargan styles_producto_gral.css. Con la misma
+   especificidad gana la ultima hoja: por eso todo lo responsive comun vive
+   aca y no en alguna de esas tres.
+
+   Regla de oro: en escritorio con mouse desde 1280px el sitio se ve IGUAL que
+   antes. Todo lo de aca esta dentro de una media query que no se cumple ahi,
+   salvo la red de seguridad de imagenes (punto 0), que no mueve nada.
+
+   Como comprobarlo: _tools/responsive/escaner.js (instrucciones adentro).
+   ========================================================================== */
+
+
+/* 0. RED DE SEGURIDAD
+   Ninguna imagen, video ni mapa puede ser mas ancho que su contenedor.
+   No se toca el alto: hay imagenes con alto fijo y object-fit. El logo y los
+   iconitos del menu quedan afuera porque tienen ancho fijo a proposito. */
+img, video, iframe { max-width: 100%; }
+.logo img, .dropdown-menu img.menu-icon { max-width: none; }
+
+
+/* 1. CABECERA
+   La cabecera de escritorio (logo, menu y acciones en una sola fila) recien
+   entra desde ~1205px con Segoe UI, que es la fuente de Windows. En Mac cae en
+   Tahoma y necesita ~1277px; en iPhone/iPad cae en Verdana y ~1340px. Por
+   debajo los items del menu se partian en 2-3 renglones ("SERVICIO / DE /
+   AFILADO"), "COMPRA AHORA" en dos, los iconos sociales se apilaban y en las
+   institucionales la cabecera se salia de la pantalla. Hasta 1279px va en dos
+   filas: logo + acciones arriba, menu a todo el ancho abajo. */
+@media (max-width: 1279.98px) {
+    .header-container { flex-wrap: wrap; row-gap: 4px; }
+    .logo { order: 1; }
+    .header-actions { order: 2; }
+    nav { order: 3; width: 100%; }
+    nav > ul { flex-wrap: wrap; justify-content: center; }
+    nav > ul > li > a { white-space: nowrap; }
+}
+
+/* Entre 901 y 1279 el menu entra en una fila y los desplegables siguen
+   colgando de su item, como en escritorio. De 900 para abajo ya hay reglas
+   propias en cada hoja (logo mas chico, desplegable a todo el ancho). */
+@media (min-width: 900.02px) and (max-width: 1279.98px) {
+    .header-container { padding: 10px 4%; }
+    .logo img { width: 120px; margin-top: 0; }
+    nav > ul { gap: 4px 28px; }
+}
+
+/* La cabecera fija se comia la pantalla: 187-221px en un celular vertical
+   (hasta 39% de la pantalla), 171px en uno acostado (48%). En celulares,
+   tablets tactiles y pantallas bajas deja de ser fija y sube con la pagina. */
+@media (max-width: 900px),
+       (max-width: 1279.98px) and (pointer: coarse),
+       (max-height: 500px) and (pointer: coarse) {
+    header { position: relative; }
+}
+
+/* En las institucionales .social-icons trae display:flex en un style inline,
+   que le ganaba al display:none de celular: solo !important le gana a un
+   style inline. Hasta 600px se esconden (siguen en el pie): con los botones
+   tactiles de 40px no entran en la fila del logo. */
+@media (max-width: 600px) {
+    .social-icons { display: none !important; }
+}
+
+@media (max-width: 480px) {
+    .btn-shop { font-size: 12px; }
+    /* Con el buscador abierto no entran logo + buscador + "COMPRA AHORA" en
+       una fila: el boton se esconde mientras se escribe. Son hermanos y el
+       buscador va primero, asi que alcanza con "~". */
+    .header-search.abierto ~ .btn-shop { display: none; }
+}
+
+
+/* 2. MENU DESPLEGABLE
+   (a) En <=900 las hojas le aplican "nav ul { flex-wrap:wrap;
+   justify-content:center }" tambien al ul.dropdown-menu: cuando los items no
+   entraban en el 60% de la pantalla (celular acostado) armaban una segunda
+   columna recortada y no se llegaba a "Mechas", "Diamante" ni "Cabezales".
+   (b) En pantallas tactiles el menu se abre SOLO con la clase .open, que
+   pone y saca /menu.js. El :hover emulado del toque lo dejaba abierto sin
+   forma de cerrarlo. */
+@media (max-width: 900px) {
+    .dropdown-menu {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        max-height: 60vh;
+        max-height: 60dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+}
+
+@media (hover: none) {
+    .dropdown:not(.open):hover .dropdown-menu { display: none; }
+}
+
+/* El header forma su propio contexto de apilamiento con z-index 1000, y los
+   botones flotantes (tambien 1000, despues en el HTML) quedaban pintados
+   encima del menu abierto. */
+.floating-buttons { z-index: 999; }
+
+
+/* 3. OBJETIVOS TACTILES Y ZOOM DE iOS
+   Solo con dedo (pointer: coarse): con mouse no cambia nada.
+   - Minimo 40-44px para lo que se toca.
+   - Los campos de texto a 16px: con menos, Safari de iPhone agranda la
+     pagina al enfocarlos y la deja corrida. */
+@media (pointer: coarse) {
+    .header-search .lupa-input { font-size: 16px; }
+    #buscador-productos { font-size: 16px !important; }   /* trae style inline */
+    .footer-social a {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 44px; min-height: 44px;
+    }
+    /* los puntos del slider miden 11-15px: se agranda la zona tocable sin
+       agrandar el punto */
+    .dot { position: relative; }
+    .dot::after { content: ""; position: absolute; inset: -14px -5px; }
+    /* mientras se completa un formulario, los botones flotantes tapaban el
+       boton de enviar */
+    body:has(input:focus, textarea:focus, select:focus) .floating-buttons { display: none; }
+}
+
+/* Los botones de la cabecera se agrandan solo donde la cabecera ya va en dos
+   filas. Desde 1280px (iPad Pro acostado, tablets grandes) va en una sola fila
+   que con Verdana entra justo: 60px mas la volvian a partir. */
+@media (pointer: coarse) and (max-width: 1279.98px) {
+    .header-search .lupa-btn { min-width: 44px; min-height: 44px; }
+    .btn-shop { display: inline-flex; align-items: center; min-height: 40px; }
+    .social-icons a {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 40px; min-height: 40px;
+    }
+}
+
+
+/* 4. :HOVER "PEGADO" EN PANTALLAS TACTILES
+   En tactil el ultimo elemento tocado queda en :hover. Donde eso confunde: */
+@media (hover: none) {
+    /* dos puntos rojos a la vez cuando el slider avanza solo */
+    .dot:not(.active):hover { background-color: #ffffff; }
+    /* tarjetas que quedan levantadas y con el velo negro al volver atras */
+    .card:hover, .prod-card:hover { transform: none; }
+    .card:hover .overlay, .prod-card:hover .overlay { opacity: 0; }
+    .floating-buttons a:hover { transform: none; }
+    /* un filtro recien desactivado seguia pintado del mismo rojo que el activo */
+    .filter-group > ul > li > .filter-btn:not(.activo):not(#btn-limpiar):hover { color: #0066cc !important; text-decoration: none; }
+    #btn-limpiar:hover { color: #a41e22 !important; text-decoration: none; }
+    .submenu-moldura .filter-btn:not(.activo):hover { color: #0066cc !important; }
+}
+
+
+/* 5. PIE: QUE LOS BOTONES FLOTANTES NO TAPEN EL COPYRIGHT
+   Solo en las paginas que tienen botones flotantes (las fichas y casa-central
+   no los tienen). En los listados van en columna (2 x 44px + separacion), en
+   el resto en fila. Tiene que ir despues del "padding: 30px 10px" que las
+   hojas ponen al final: por eso esta aca. */
+@media (max-width: 900px) {
+    body:has(.floating-buttons) .footer-bottom { padding-bottom: 84px; }
+    body:has(.filters-sidebar):has(.floating-buttons) .footer-bottom { padding-bottom: 136px; }
+}
+
+
+/* 6. BANNERS */
+
+/* Home, celular: el recuadro de texto quedaba debajo de las flechas y, en los
+   slides largos, encima de los puntos. Las flechas bajan a las esquinas, a la
+   altura de los puntos, y el recuadro se centra en el espacio de arriba sin
+   poder crecer hasta los puntos. */
+@media (max-width: 480px) {
+    .slide-content {
+        top: 50%;
+        transform: translateY(calc(-50% - 16px));
+        max-height: calc(100% - 64px);
+        overflow: hidden;
+    }
+    /* z-index: la franja de los puntos ocupa todo el ancho, va despues en el
+       HTML con el mismo z-index y tapaba las flechas al tocarlas */
+    .prev, .next {
+        top: auto;
+        bottom: 10px;
+        margin-top: 0;
+        padding: 6px 12px;
+        font-size: 16px;
+        z-index: 11;
+    }
+    /* con Verdana (iPhone) a 320px el parrafo largo empujaba el boton fuera
+       del recuadro */
+    .slide-content p { line-height: 1.35; }
+    .slide-content .btn-slider { margin-top: 12px; }
+}
+
+/* Landings: el banner tenia alto fijo con el texto centrado; si el titulo se
+   parte en mas renglones (celular angosto, fuente mas ancha) se sale por
+   arriba y por abajo. Minimo en vez de fijo: con el texto de siempre mide lo
+   mismo que antes. */
+.categoria-hero { height: auto; min-height: 250px; }
+@media (min-width: 600px) {
+    .categoria-hero { height: auto; min-height: 350px; }
+}
+
+/* Celular acostado: los banners median 350-380px en una pantalla de 360px. */
+@media (max-height: 500px) and (pointer: coarse) {
+    #hero { height: min(380px, 100vh); height: min(380px, 100svh); }
+    .slide-content h1 { font-size: 1.8rem; }
+    .slide-content p { font-size: 1rem; }
+    .categoria-hero { min-height: 0; padding: 16px 20px; }
+    .categoria-hero-content h1 { font-size: 1.6rem; }
+    .categoria-hero-content p { margin-bottom: 12px; }
+}
+
+
+/* 7. HOME: VIDEOS
+   .video-block no tiene margen lateral: por debajo de 800px los titulos iban
+   de borde a borde de la pantalla. */
+@media (max-width: 840px) {
+    .video-block h2 { padding: 0 16px; font-size: 1.25rem; }
+}

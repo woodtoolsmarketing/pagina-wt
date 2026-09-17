@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="../../styles.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../responsive.css?v=2">
     
     <style>
         main {
@@ -138,6 +139,27 @@
         }
         .faq-link:hover {
             text-decoration: underline;
+        }
+
+        /* Celular: titulos que escalan con la pantalla, texto alineado a la
+           izquierda (justificado dejaba huecos enormes entre palabras) y la
+           flecha de cada pregunta separada del texto. */
+        @media (max-width: 600px) {
+            .service-intro h1 { font-size: clamp(26px, 7.5vw, 36px); }
+            .service-intro h2 { font-size: clamp(18px, 5vw, 22px); }
+            .service-intro p { text-align: left; }
+            .faq-section h3 { font-size: clamp(22px, 6vw, 28px); }
+            .faq-question { gap: 12px; }
+            .faq-question i { flex-shrink: 0; }
+        }
+
+        @media (pointer: coarse) {
+            .faq-link { display: inline-block; padding: 10px 0; }
+        }
+        /* en tactil el :hover queda pegado y deja en bordo una pregunta cerrada */
+        @media (hover: none) {
+            .faq-item:hover { box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+            .faq-question:hover { background-color: transparent; color: #333; }
         }
     </style>
     <link rel="canonical" href="https://www.woodtools.com.ar/ruta-contactanos/HTML/Service.html">
@@ -323,7 +345,18 @@
                     }
                 });
             });
+
+            // Si cambia el ancho con una respuesta abierta (girar el celular),
+            // el texto ocupa otros renglones: se vuelve a medir para que no
+            // quede cortado.
+            window.addEventListener('resize', function() {
+                document.querySelectorAll('.faq-question.active').forEach(function(q) {
+                    const a = q.nextElementSibling;
+                    a.style.maxHeight = a.scrollHeight + "px";
+                });
+            });
         });
     </script>
+    <script src="../../menu.js?v=2" defer></script>
 </body>
 </html>

@@ -90,6 +90,8 @@ crear_pagina () {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link rel="stylesheet" href="../../../responsive.css?v=2">
+
 </head>
 
 <body>
@@ -284,7 +286,8 @@ crear_pagina () {
 
     
 
-    <script src="../../JS/producto.js?v=6"></script>
+    <script src="../../JS/producto.js?v=19"></script>
+    <script src="../../../menu.js?v=2" defer></script>
 
 </body>
 

@@ -16,6 +16,7 @@
     <title>Casa Central - WoodTools S.R.L.</title>
     <link rel="stylesheet" href="../../styles.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../responsive.css?v=2">
     <style>
         main { background-color: #f8f8f8; padding: 60px 20px; }
         .contact-container {
@@ -45,7 +46,23 @@
         }
 
         @media (max-width: 850px) {
-            .contact-container { grid-template-columns: 1fr; }
+            /* minmax(0,1fr) y no 1fr: con 1fr la columna no baja del ancho de
+               "ventas@woodtools.com.ar" y en pantallas angostas se sale */
+            .contact-container { grid-template-columns: minmax(0, 1fr); }
+            .map-side iframe { display: block; height: 300px; }
+            @supports (aspect-ratio: 1) {
+                .map-side iframe { height: auto; aspect-ratio: 4 / 3; max-height: min(400px, 70vh); }
+            }
+        }
+        @media (max-width: 480px) {
+            main { padding: 30px 12px; }
+            .contact-container { padding: 24px 16px; gap: 24px; }
+            .info-side p { font-size: 16px; }
+            .info-side .contact-item > a { min-width: 0; overflow-wrap: anywhere; }
+        }
+        /* telefonos y mail: renglones de 21px, muy juntos para tocarlos con el dedo */
+        @media (pointer: coarse) {
+            .info-side .contact-item a { display: inline-block; padding: 8px 0; }
         }
     </style>
     <link rel="canonical" href="https://www.woodtools.com.ar/ruta-contactanos/HTML/casa-central.html">
@@ -152,6 +169,7 @@
             <p>&copy; 2026 WoodTools S.R.L. - WoodTools Marketing</p>
         </div>
     </footer>
+    <script src="../../menu.js?v=2" defer></script>
 </body>
 
 </html>

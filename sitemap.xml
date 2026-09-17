@@ -46,6 +46,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/PRACTIWALL.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/PLEGADO.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/MI.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="../../styles.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../responsive.css?v=2">
     
     <style>
         main {
@@ -118,6 +119,24 @@
             .pillar-container {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Celular: titulos que escalan con la pantalla (36px ocupaban 3
+           renglones en 320px) y texto alineado a la izquierda: justificado en
+           una columna angosta dejaba huecos enormes entre palabras. */
+        @media (max-width: 600px) {
+            .service-intro h1 { font-size: clamp(26px, 7.5vw, 36px); }
+            .service-intro h2 { font-size: clamp(18px, 5vw, 22px); }
+            .service-intro p, .bio-card p { text-align: left; }
+        }
+
+        /* En una columna, "1fr" no deja achicar la tarjeta por debajo de su
+           contenido mas ancho (icono + "Comercializacion" en 22px): con fuentes
+           mas anchas que Segoe UI (iPhone) se salia de la pantalla. */
+        @media (max-width: 480px) {
+            .pillar-container { grid-template-columns: minmax(0, 1fr); }
+            .bio-card { padding: 25px 18px; }
+            .bio-card h3 { font-size: 20px; gap: 10px; overflow-wrap: anywhere; }
         }
     </style>
     <link rel="canonical" href="https://www.woodtools.com.ar/ruta-contactanos/HTML/Quienes-somos.html">
@@ -247,5 +266,6 @@
         <a href="https://wa.me/5491157528428" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
+    <script src="../../menu.js?v=2" defer></script>
 </body>
 </html>
