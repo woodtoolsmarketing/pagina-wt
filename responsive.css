@@ -61,20 +61,22 @@ img, video, iframe { max-width: 100%; }
     header { position: relative; }
 }
 
-/* En las institucionales .social-icons trae display:flex en un style inline,
-   que le ganaba al display:none de celular: solo !important le gana a un
-   style inline. Hasta 600px se esconden (siguen en el pie): con los botones
-   tactiles de 40px no entran en la fila del logo. */
+/* Iconos de redes en la cabecera, tambien en celular. Antes se escondian hasta
+   600px porque estaban repetidos en el pie; ahora el pie ya no los tiene, asi
+   que se muestran en la fila de acciones (buscador + COMPRA AHORA + redes). El
+   !important le gana al display:none de las hojas base (<=480, sin !important)
+   y al display:flex inline de las institucionales. */
 @media (max-width: 600px) {
-    .social-icons { display: none !important; }
+    .social-icons { display: inline-flex !important; align-items: center; }
 }
 
 @media (max-width: 480px) {
     .btn-shop { font-size: 12px; }
-    /* Con el buscador abierto no entran logo + buscador + "COMPRA AHORA" en
-       una fila: el boton se esconde mientras se escribe. Son hermanos y el
-       buscador va primero, asi que alcanza con "~". */
+    /* Con el buscador abierto no entran logo + buscador + "COMPRA AHORA" + redes
+       en una fila: se esconden el boton y los iconos mientras se escribe. Son
+       hermanos posteriores al buscador, asi que alcanza con "~". */
     .header-search.abierto ~ .btn-shop { display: none; }
+    .header-search.abierto ~ .social-icons { display: none !important; }
 }
 
 
