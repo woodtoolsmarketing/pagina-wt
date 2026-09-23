@@ -987,6 +987,40 @@ const baseDatosProductos = {
         caracteristicasBasicas: { "Marca": "Nordutensili", "Material": "Metal duro", "Uso": "Plegado" },
         variantes: [{ id: "PLEGADO", nombre: "PLEGADO - 12mm x R30mm" }]
     },
+    // "Otras" (sub-rubro 311): fresas WT con inserto. La ficha usa una tabla de
+    // caracteristicas propia (ver los HTML): las claves de aca coinciden con los
+    // <th> de esa tabla. La variante es descriptiva (sin D=/Z=) a proposito, asi
+    // NO se agregan filas de medida automaticas y las medidas van en la tabla.
+    "FRPDIBUJO": {
+        codigoBase: "FRPDIBUJO", categoriaImg: "Mechas", carpetaImg: "FRPDIBUJO",
+        titulo: "Fresa Punta 45° para Dibujar", tituloFijo: "Fresa Punta 45° para Dibujar", marca: "WoodTools",
+        caracteristicasBasicas: {
+            "Marca": "WoodTools",
+            "Descripción": "Punta 45° para dibujar con inserto WT",
+            "Diámetro (D)": "24 mm",
+            "Longitud útil (Lu)": "70 mm",
+            "Dientes (Z)": "1",
+            "Ángulo": "45°",
+            "Sentido de corte": "Derecha",
+            "Código": "FRPDIBUJO"
+        },
+        variantes: [{ id: "FRPDIBUJO", nombre: "FRPDIBUJO - Punta 45° para dibujar con inserto WT" }]
+    },
+    "FRINR0804": {
+        codigoBase: "FRINR0804", categoriaImg: "Mechas", carpetaImg: "FRINR0804",
+        titulo: "Fresa con Insertos para Rectificar", tituloFijo: "Fresa con Insertos para Rectificar", marca: "WoodTools",
+        caracteristicasBasicas: {
+            "Marca": "WoodTools",
+            "Descripción": "Punta con insertos para rectificar WT",
+            "Diámetro (D)": "80 mm",
+            "Cabo / Vástago": "20x50 mm",
+            "Dientes (Z)": "3",
+            "Sentido de corte": "Derecha",
+            "Insertos": "InsZ4",
+            "Código": "FRINR0804"
+        },
+        variantes: [{ id: "FRINR0804", nombre: "FRINR0804 - Punta con insertos para rectificar WT" }]
+    },
     "MBI": { 
         codigoBase: "MBI", categoriaImg: "Mechas", carpetaImg: "bisagra", 
         titulo: "Fresa Bisagra (Izquierda)", marca: "Nordutensili", 

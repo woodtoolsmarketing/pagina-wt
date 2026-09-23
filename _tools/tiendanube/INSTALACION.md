@@ -261,6 +261,7 @@ buena es sin `www`.
 ```
 _tools/tiendanube/
 ├── INSTALACION.md              este archivo
+├── stock.md                    CÓMO habilitar/deshabilitar stock de productos
 ├── theme-custom.css            INSTALADO - Edición avanzada de CSS
 ├── sello-woodtools.html        INSTALADO - Código del sello del pie
 └── liquid/                     NO instalable hoy: sólo con tema propio

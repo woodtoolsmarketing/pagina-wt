@@ -6,6 +6,13 @@
 # Solo debe existir en tu PC. Nunca subirlo.
 _tools/ftp-config.json
 
+# Token de la API de Tienda Nube (regla de auto-ocultar sin stock).
+# Es una credencial: solo en tu PC, nunca al repo publico.
+_tools/tiendanube/api-config.json
+
+# Registro de la ultima corrida de la regla auto-ocultar (local, de tu PC).
+_tools/tiendanube/auto-ocultar-stock.log
+
 # Dependencias de Node: se reinstalan solas con "npm install".
 node_modules/
 

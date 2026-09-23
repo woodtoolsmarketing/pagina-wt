@@ -56,6 +56,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/FRPDIBUJO.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/FRINR0804.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.woodtools.com.ar/ruta-productos/HTML/MCH/MI.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

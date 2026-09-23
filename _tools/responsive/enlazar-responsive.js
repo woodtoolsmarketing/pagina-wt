@@ -32,8 +32,12 @@ const V_MENU = 2;
 // (historial: 1a pasada lista 12->13, filtros 19->20, producto-detalle 10->11,
 //  producto.js 17->18; correccion tras la revision producto.js 18->19;
 //  alta mecha Practiwall + Plegado (sub-rubro "Otras") producto.js 19->20,
-//  filtros.js 20->21; iconos de redes en cabecera para celular responsive.css 2->3)
-const VERSIONES = {};
+//  filtros.js 20->21; iconos de redes en cabecera para celular responsive.css 2->3;
+//  alta fresas FRPDIBUJO + FRINR0804 en "Otras" producto.js 20->21, filtros.js 21->22)
+const VERSIONES = {
+	'producto.js': [20, 21],
+	'filtros.js': [21, 22]
+};
 
 const EXCLUIR = new Set(['Prueba2', 'prueba', 'tienda', '_tools', '_admin', '.git', '.claude', 'node_modules', 'imagenes']);
 

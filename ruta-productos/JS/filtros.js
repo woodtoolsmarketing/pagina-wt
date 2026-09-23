@@ -233,7 +233,8 @@ document.addEventListener("DOMContentLoaded", function() {
             producto.setAttribute('data-categoria', '308'); 
         } else if (enlace.includes("MCH/Router_Franzoi")) {
             producto.setAttribute('data-categoria', '309');
-        } else if (enlace.includes("MCH/PRACTIWALL") || enlace.includes("MCH/PLEGADO")) {
+        } else if (enlace.includes("MCH/PRACTIWALL") || enlace.includes("MCH/PLEGADO") ||
+                   enlace.includes("MCH/FRPDIBUJO") || enlace.includes("MCH/FRINR0804")) {
             producto.setAttribute('data-categoria', '311'); // Otras
         }
 
