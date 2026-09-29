@@ -90,7 +90,14 @@ async function traerTodosLosProductos() {
   for (;;) {
     const url = BASE + '/products?page=' + page + '&per_page=' + per +
                 '&fields=id,name,published,variants';
-    const res = await api('GET', url);
+    let res;
+    try {
+      res = await api('GET', url);
+    } catch (e) {
+      // Con exactamente 200, 400... productos, la pagina siguiente da 404: es el final.
+      if (page > 1 && / -> 404 /.test(e.message)) break;
+      throw e;
+    }
     const lote = await res.json();
     productos.push(...lote);
     if (lote.length < per) break;   // última página
@@ -144,4 +151,5 @@ function nombre(p) {
     await dormir(550);   // ~2 req/s, dentro del límite de la API
   }
   console.log('\nAplicados: ' + ok + (err ? ' | con error: ' + err : ''));
+  if (err) process.exitCode = 1;   // que la tarea horaria lo anote como ERROR
 })().catch(e => { console.error('FALLÓ:', e.message); process.exit(1); });

@@ -169,6 +169,17 @@ img, video, iframe { max-width: 100%; }
     body:has(.filters-sidebar):has(.floating-buttons) .footer-bottom { padding-bottom: 136px; }
 }
 
+/* Link a la politica de cambios, devoluciones y reembolsos (la pagina vive en
+   la Tienda Nube). Gris como el copyright y rojo de la marca al pasar. */
+.footer-bottom .footer-legal { margin-top: 8px; }
+.footer-bottom .footer-legal a {
+    color: #666;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color .3s;
+}
+.footer-bottom .footer-legal a:hover { color: #a41e22; }
+
 
 /* 6. BANNERS */
 

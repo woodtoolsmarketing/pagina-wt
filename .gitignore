@@ -13,6 +13,11 @@ _tools/tiendanube/api-config.json
 # Registro de la ultima corrida de la regla auto-ocultar (local, de tu PC).
 _tools/tiendanube/auto-ocultar-stock.log
 
+# Tarjetas del sitio -> tienda segun stock: lo genera y sube cada hora
+# _tools/tiendanube/stock-sitio.js (cambia seguido; no tiene sentido versionarlo).
+stock-tienda.json
+_tools/tiendanube/stock-historial.log
+
 # Dependencias de Node: se reinstalan solas con "npm install".
 node_modules/
 

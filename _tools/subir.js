@@ -25,7 +25,9 @@ const CONFIG = path.join(TOOLS, 'ftp-config.json');
 // sitio arrastra 200 archivos de mas. Excluirlos es seguro: esta herramienta
 // nunca borra del servidor, solo limpia su registro local.
 const EXCLUIR_DIRS = new Set(['_tools', '_admin', '.git', 'node_modules', '.claude', 'prueba', 'Prueba2', 'tienda']);
-const EXCLUIR_ARCH = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini']);
+// stock-tienda.json lo genera y lo sube cada hora _tools/tiendanube/stock-sitio.js;
+// si lo subiera tambien este script, podria pisar el del servidor con uno viejo.
+const EXCLUIR_ARCH = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini', 'stock-tienda.json']);
 // Extensiones de desarrollo que NO son parte del sitio público (no se suben).
 const EXCLUIR_EXT = new Set(['.sh', '.bat', '.md', '.markdown', '.log', '.map', '.zip']);
 

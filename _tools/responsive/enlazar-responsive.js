@@ -25,7 +25,7 @@ const path = require('path');
 
 const RAIZ = path.join(__dirname, '..', '..');
 const ESCRIBIR = process.argv.includes('--escribir');
-const V_RESPONSIVE = 3;
+const V_RESPONSIVE = 4;
 const V_MENU = 2;
 
 // archivo que cambio -> [version vieja, version nueva]
@@ -33,7 +33,8 @@ const V_MENU = 2;
 //  producto.js 17->18; correccion tras la revision producto.js 18->19;
 //  alta mecha Practiwall + Plegado (sub-rubro "Otras") producto.js 19->20,
 //  filtros.js 20->21; iconos de redes en cabecera para celular responsive.css 2->3;
-//  alta fresas FRPDIBUJO + FRINR0804 en "Otras" producto.js 20->21, filtros.js 21->22)
+//  alta fresas FRPDIBUJO + FRINR0804 en "Otras" producto.js 20->21, filtros.js 21->22;
+//  link a la politica de cambios en el pie (.footer-legal) responsive.css 3->4)
 const VERSIONES = {
 	'producto.js': [20, 21],
 	'filtros.js': [21, 22]

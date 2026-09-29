@@ -214,6 +214,79 @@ schtasks /Create /TN "WoodTools Auto-ocultar-stock" ^
 
 ---
 
+## E) Tarjetas del sitio -> tienda segun stock (`stock-sitio.js`)
+
+En los listados de www.woodtools.com.ar (Sierras, Fresas, Mechas, Cuchillas,
+Cabezales, Diamante y "Todos los productos"), la tarjeta de un producto:
+- **con stock en la tienda** -> lleva al producto de Tienda Nube
+  (`https://woodtools.ar/productos/<handle>/?variant=<id>`);
+- **sin stock** -> lleva a la ficha del sitio, como siempre.
+
+La tarjeta **no muestra ni precio ni stock**: solo cambia a donde lleva.
+
+### Como funciona
+1. Cada hora (`auto-ocultar-stock.cmd`), **primero** corre `stock-sitio.js`:
+   lee el stock por la API (solo lectura), arma `stock-tienda.json` en la raiz
+   del sitio con las fichas que hoy se pueden comprar y lo sube por FTP.
+2. **Despues**, y **solo si el paso 1 salio bien**, corre la regla
+   `auto-ocultar-stock.js --aplicar` (oculta/publica en la tienda).
+   Por que en ese orden: un producto que se agota sale de los enlaces del sitio
+   ANTES de ocultarse, asi ninguna tarjeta lleva a una pagina 404. Si falla la
+   API o el FTP, esa hora no se oculta nada (el producto queda en la tienda
+   con "Sin stock", que es mejor que un 404).
+3. En los listados, `ruta-productos/JS/stock-tienda.js` lee ese archivo y
+   cambia el destino de esas tarjetas. Si el archivo no esta, falla, o tiene
+   **mas de 7 dias** (la tarea dejo de correr), todas van a la ficha. Tambien
+   lo vuelve a leer al volver con "atras" o a una pestaña abierta hace rato.
+
+Una ficha va a la tienda si su producto esta **publicado** y:
+- ficha de una medida (tiene `variante` en el mapa) -> **esa** variante esta
+  visible y tiene stock;
+- ficha de familia (`variante: null`) -> **alguna** variante la tiene.
+
+**Demoras:** cuando un producto recibe stock, la regla lo publica en la corrida
+siguiente y la tarjeta lo enlaza en la otra: **hasta ~2 horas** (a proposito,
+para darle tiempo a la cache de la tienda). Cuando se agota, la tarjeta vuelve
+a la ficha en la corrida siguiente (hasta ~1 hora; mientras tanto la tienda
+lo muestra "Sin stock", no da 404). La PC tiene que estar prendida: de noche
+o el fin de semana no corre, y todo sigue como quedo en la ultima corrida.
+
+**Como ver si anda:** `stock-historial.log` (misma carpeta) tiene una linea
+por corrida: `OK` o `ERROR ...`. El detalle de la ultima corrida esta en
+`auto-ocultar-stock.log`.
+
+### Que ficha corresponde a que producto: `mapa-tarjetas.json`
+129 fichas mapeadas (verificadas contra la tienda el 25/09/2026). Las fichas
+que no estan en el mapa (fresas no rectas, Plegado, FRPDIBUJO, FRINR0804) no
+tienen producto en la tienda y siempre van a la ficha.
+
+**Si se agrega un producto nuevo al sitio y a la tienda**, sumar su entrada:
+```
+"MCH/NUEVA.html": { "handle": "mechas-nueva", "variante": 1234567890 }
+```
+(`handle` = Identificador de URL del producto; `variante` = id de la variante,
+o `null` si la tarjeta es de familia). Los ids se ven en la API o en el link
+"?variant=" de la tienda. Si una entrada apunta a algo que no existe,
+`stock-sitio.js` lo avisa en el log. Tambien avisa ("tarjetas ... sin entrada
+en mapa-tarjetas.json") cuando hay una tarjeta en los listados que no esta en
+el mapa ni en `sin_tienda` (la lista de tarjetas sin producto en la tienda).
+
+**Ojo con los productos agregados de Mechas** (mechas-mb, mechas-mi,
+mechas-mcd-mci, mechas-mam-pinza, mechas-router-franzoi): repiten variantes de
+otros productos con SKU propio. El stock se mira en el producto al que apunta
+el mapa: hay que cargarlo ahi para que la tarjeta lleve a la tienda.
+
+### Comandos
+```
+node _tools/tiendanube/stock-sitio.js --dry        # que haria, sin escribir ni subir
+node _tools/tiendanube/stock-sitio.js              # genera y sube
+node _tools/tiendanube/stock-sitio.js --probar "SC/LG3D 0400.html" --salida prueba.json
+                                                    # prueba sin tocar la tienda ni el sitio
+```
+`subir.js` **no** sube `stock-tienda.json` (lo sube solo `stock-sitio.js`).
+
+---
+
 ## Notas / trampas encontradas (22/09/2026)
 
 - La **sesión del panel caduca**: si el navegador no está logueado, no se puede

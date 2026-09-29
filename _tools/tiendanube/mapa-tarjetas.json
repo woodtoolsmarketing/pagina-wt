@@ -1,0 +1,554 @@
+{
+ "_nota": "Que producto de Tienda Nube corresponde a cada ficha del sitio (ruta relativa a ruta-productos/HTML/). 'variante' = id de variante cuando la ficha es una medida puntual; null cuando la ficha es de familia (se mira si CUALQUIER variante del producto tiene stock). 'sin_tienda' = tarjetas de los listados que NO tienen producto en la tienda (siempre van a la ficha); estan anotadas para que stock-sitio.js no las avise como nuevas. Lo usa stock-sitio.js. Para sumar una ficha nueva: ver stock.md, seccion E.",
+ "fichas": {
+  "CBZ/AT03M AA9.html": {
+   "handle": "cabezales-at03m",
+   "variante": 1585445815
+  },
+  "CBZ/AT03M AD9.html": {
+   "handle": "cabezales-at03m",
+   "variante": 1585445822
+  },
+  "CBZ/CG03M AA3.html": {
+   "handle": "cabezales-cg03m",
+   "variante": 1585445707
+  },
+  "CBZ/CG05M BA3.html": {
+   "handle": "cabezales-cg05m",
+   "variante": 1585445712
+  },
+  "CBZ/CG05M FC3.html": {
+   "handle": "cabezales-cg05m",
+   "variante": 1585445717
+  },
+  "CBZ/CG08M FA3.html": {
+   "handle": "cabezales-cg08m",
+   "variante": 1585445719
+  },
+  "CBZ/CG50M AA3.html": {
+   "handle": "cabezales-cg50m",
+   "variante": 1585445725
+  },
+  "CBZ/CP22M A080.html": {
+   "handle": "cabezales-cp22m",
+   "variante": 1585445730
+  },
+  "CBZ/CP31M C100.html": {
+   "handle": "cabezales-cp31m",
+   "variante": 1585445735
+  },
+  "CBZ/CP40M AA3.html": {
+   "handle": "cabezales-cp40m",
+   "variante": 1585445740
+  },
+  "CBZ/CPSCM BB3.html": {
+   "handle": "cabezales-cpscm",
+   "variante": 1585445748
+  },
+  "CBZ/CT52M DA3.html": {
+   "handle": "cabezales-ct52m",
+   "variante": 1585445752
+  },
+  "CBZ/CW10M AA3.html": {
+   "handle": "cabezales-cw10m",
+   "variante": 1585445756
+  },
+  "CBZ/CW16M AA3.html": {
+   "handle": "cabezales-cw16m",
+   "variante": 1585445762
+  },
+  "CBZ/CW28MA AA3.html": {
+   "handle": "cabezales-cw28ma",
+   "variante": 1585445765
+  },
+  "CBZ/F107M AB3.html": {
+   "handle": "cabezales-f107m",
+   "variante": 1585445635
+  },
+  "CBZ/FG46S CB2.html": {
+   "handle": "cabezales-fg46s",
+   "variante": 1585445645
+  },
+  "CBZ/GL20701M.html": {
+   "handle": "cabezales-gl20701m",
+   "variante": 1585445700
+  },
+  "CBZ/IG01M AA3.html": {
+   "handle": "cabezales-ig01m",
+   "variante": 1585445769
+  },
+  "CBZ/INSRAS1.html": {
+   "handle": "cabezales-insras1",
+   "variante": 1585445798
+  },
+  "CBZ/INSREF3A.html": {
+   "handle": "cabezales-insref3a",
+   "variante": 1585445804
+  },
+  "CBZ/RG01M AA3.html": {
+   "handle": "cabezales-rg01m",
+   "variante": 1585445787
+  },
+  "CBZ/SD01M DG9.html": {
+   "handle": "cabezales-sd01m",
+   "variante": 1585445827
+  },
+  "CBZ/SD02M AA9.html": {
+   "handle": "cabezales-sd02m",
+   "variante": 1585445834
+  },
+  "CBZ/SD04MA AA9.html": {
+   "handle": "cabezales-sd04ma",
+   "variante": 1585445839
+  },
+  "CBZ/T102M AC3.html": {
+   "handle": "cabezales-t102m",
+   "variante": 1585445565
+  },
+  "CBZ/T102M AF3.html": {
+   "handle": "cabezales-t102m",
+   "variante": 1585445571
+  },
+  "CBZ/T194M BB3.html": {
+   "handle": "cabezales-t194m",
+   "variante": 1585445574
+  },
+  "CBZ/T198M FC3.html": {
+   "handle": "cabezales-t198m",
+   "variante": 1585445627
+  },
+  "CBZ/T198M GC3.html": {
+   "handle": "cabezales-t198m",
+   "variante": 1585445632
+  },
+  "CBZ/TD21M GB3.html": {
+   "handle": "cabezales-td",
+   "variante": 1585445670
+  },
+  "CBZ/TD52M HB3.html": {
+   "handle": "cabezales-td",
+   "variante": 1585445684
+  },
+  "CBZ/TF04MC GE3.html": {
+   "handle": "cabezales-tf04mc",
+   "variante": 1585445688
+  },
+  "CBZ/TF04MC GH3.html": {
+   "handle": "cabezales-tf04mc",
+   "variante": 1585445698
+  },
+  "CBZ/TM06M AB3.html": {
+   "handle": "cabezales-tm06m",
+   "variante": 1585445580
+  },
+  "CBZ/TM06M AD3.html": {
+   "handle": "cabezales-tm06m",
+   "variante": 1585445601
+  },
+  "CBZ/TM06M AH3.html": {
+   "handle": "cabezales-tm06m",
+   "variante": 1585445607
+  },
+  "CBZ/TM06M AL3.html": {
+   "handle": "cabezales-tm06m",
+   "variante": 1585445611
+  },
+  "CBZ/TM06M CG3.html": {
+   "handle": "cabezales-tm06m",
+   "variante": 1585445622
+  },
+  "CBZ/TP22M AB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445648
+  },
+  "CBZ/TP23M AB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445658
+  },
+  "CBZ/TP31M AB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445659
+  },
+  "CBZ/TP31M CB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445663
+  },
+  "CBZ/TP40M AB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445665
+  },
+  "CBZ/TPSCM AB3.html": {
+   "handle": "cabezales-tp",
+   "variante": 1585445667
+  },
+  "CBZ/TW01M AB3.html": {
+   "handle": "cabezales-tw",
+   "variante": 1585445638
+  },
+  "CBZ/TW20M BF3.html": {
+   "handle": "cabezales-tw",
+   "variante": 1585445641
+  },
+  "CH/CBP.html": {
+   "handle": "cuchillas-cbp",
+   "variante": null
+  },
+  "CH/CBR.html": {
+   "handle": "cuchillas-cbr",
+   "variante": null
+  },
+  "CH/CBRH.html": {
+   "handle": "cuchillas-cbrh",
+   "variante": null
+  },
+  "CH/CHCECH.html": {
+   "handle": "cuchillas-chcech",
+   "variante": null
+  },
+  "CH/CHCR_HSS.html": {
+   "handle": "cuchillas-chcr-hss",
+   "variante": null
+  },
+  "CH/CHCR_MD.html": {
+   "handle": "cuchillas-chcr-md",
+   "variante": null
+  },
+  "CH/CHC_HSS.html": {
+   "handle": "cuchillas-chc-hss",
+   "variante": null
+  },
+  "CH/CHC_MD.html": {
+   "handle": "cuchillas-chc-md",
+   "variante": null
+  },
+  "DM/MBDD.html": {
+   "handle": "diamante-mbdd",
+   "variante": null
+  },
+  "DM/MDD.html": {
+   "handle": "diamante-mdd",
+   "variante": null
+  },
+  "DM/SCCD.html": {
+   "handle": "diamante-sccd",
+   "variante": null
+  },
+  "DM/SCED.html": {
+   "handle": "diamante-sced",
+   "variante": null
+  },
+  "FR/FRI01566.html": {
+   "handle": "fresas-fri",
+   "variante": 1585443268
+  },
+  "FR/FRS0104.html": {
+   "handle": "fresas-frs",
+   "variante": 1585443014
+  },
+  "FR/FRS0106.html": {
+   "handle": "fresas-frs",
+   "variante": 1585443017
+  },
+  "FR/FRS0606.html": {
+   "handle": "fresas-frs",
+   "variante": 1585443138
+  },
+  "FR/FRS0704.html": {
+   "handle": "fresas-frs",
+   "variante": 1585443158
+  },
+  "MCH/MAM-PINZA.html": {
+   "handle": "mechas-mam-pinza",
+   "variante": null
+  },
+  "MCH/MB.html": {
+   "handle": "mechas-mb",
+   "variante": null
+  },
+  "MCH/MBA.html": {
+   "handle": "mechas-mba",
+   "variante": null
+  },
+  "MCH/MCD-MCI.html": {
+   "handle": "mechas-mcd-mci",
+   "variante": null
+  },
+  "MCH/MI.html": {
+   "handle": "mechas-mi",
+   "variante": null
+  },
+  "MCH/MID.html": {
+   "handle": "mechas-mid",
+   "variante": null
+  },
+  "MCH/MIDN.html": {
+   "handle": "mechas-midn",
+   "variante": null
+  },
+  "MCH/MPD.html": {
+   "handle": "mechas-mpd",
+   "variante": null
+  },
+  "MCH/PRACTIWALL.html": {
+   "handle": "mechas-practiwall",
+   "variante": 1585444315
+  },
+  "SC/FI14M.html": {
+   "handle": "sierras-fi14m",
+   "variante": null
+  },
+  "SC/FR09W.html": {
+   "handle": "sierras-fr09w",
+   "variante": null
+  },
+  "SC/LG2A.html": {
+   "handle": "sierras-lg2a",
+   "variante": null
+  },
+  "SC/LG2B.html": {
+   "handle": "sierras-lg2b",
+   "variante": null
+  },
+  "SC/LG3D 0400.html": {
+   "handle": "sierras-lg3d",
+   "variante": 1585442521
+  },
+  "SC/LG3D 0600.html": {
+   "handle": "sierras-lg3d",
+   "variante": 1585442535
+  },
+  "SC/LG3D 0800.html": {
+   "handle": "sierras-lg3d",
+   "variante": 1585442539
+  },
+  "SC/LG3D.html": {
+   "handle": "sierras-lg3d",
+   "variante": null
+  },
+  "SC/LI13MD.html": {
+   "handle": "sierras-li13md",
+   "variante": null
+  },
+  "SC/LI13MS.html": {
+   "handle": "sierras-li13ms",
+   "variante": null
+  },
+  "SC/LI16M.html": {
+   "handle": "sierras-li16m",
+   "variante": null
+  },
+  "SC/LI25M.html": {
+   "handle": "sierras-li25m",
+   "variante": null
+  },
+  "SC/LM01.html": {
+   "handle": "sierras-lm01",
+   "variante": null
+  },
+  "SC/LM02.html": {
+   "handle": "sierras-lm02",
+   "variante": null
+  },
+  "SC/LM04.html": {
+   "handle": "sierras-lm04",
+   "variante": null
+  },
+  "SC/LM05.html": {
+   "handle": "sierras-lm05",
+   "variante": null
+  },
+  "SC/LM06.html": {
+   "handle": "sierras-lm06",
+   "variante": null
+  },
+  "SC/LM63M.html": {
+   "handle": "sierras-lm63m",
+   "variante": null
+  },
+  "SC/LP40M.html": {
+   "handle": "sierras-lp40m",
+   "variante": null
+  },
+  "SC/LSA.html": {
+   "handle": "sierras-lsa",
+   "variante": null
+  },
+  "SC/LSB.html": {
+   "handle": "sierras-lsb",
+   "variante": null
+  },
+  "SC/LSB25003X.html": {
+   "handle": "sierras-lsb",
+   "variante": 1585442581
+  },
+  "SC/LSB30003X.html": {
+   "handle": "sierras-lsb",
+   "variante": 1585442583
+  },
+  "SC/LSB35003X.html": {
+   "handle": "sierras-lsb",
+   "variante": 1585442589
+  },
+  "SC/LT14MD.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442815
+  },
+  "SC/LT14MS.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442817
+  },
+  "SC/LT16MD.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442819
+  },
+  "SC/LT16MS.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442822
+  },
+  "SC/LT18MD.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442825
+  },
+  "SC/LT18MS.html": {
+   "handle": "sierras-lt",
+   "variante": 1585442828
+  },
+  "SC/LU1D.html": {
+   "handle": "sierras-lu1d",
+   "variante": null
+  },
+  "SC/LU1F.html": {
+   "handle": "sierras-lu1f",
+   "variante": null
+  },
+  "SC/LU2A.html": {
+   "handle": "sierras-lu2a",
+   "variante": null
+  },
+  "SC/LU2B.html": {
+   "handle": "sierras-lu2b",
+   "variante": null
+  },
+  "SC/LU2C 1200.html": {
+   "handle": "sierras-lu2c",
+   "variante": 1585442630
+  },
+  "SC/LU2C 1500.html": {
+   "handle": "sierras-lu2c",
+   "variante": 1585442637
+  },
+  "SC/LU2C.html": {
+   "handle": "sierras-lu2c",
+   "variante": null
+  },
+  "SC/LU3D 0200.html": {
+   "handle": "sierras-lu3d",
+   "variante": 1585442570
+  },
+  "SC/LU3D 0600.html": {
+   "handle": "sierras-lu3d",
+   "variante": 1585442574
+  },
+  "SC/LU3D.html": {
+   "handle": "sierras-lu3d",
+   "variante": null
+  },
+  "SC/LU3E 0200.html": {
+   "handle": "sierras-lu3e",
+   "variante": 1585442553
+  },
+  "SC/LU3E.html": {
+   "handle": "sierras-lu3e",
+   "variante": null
+  },
+  "SC/LU3F 0200.html": {
+   "handle": "sierras-lu3f",
+   "variante": 1585442545
+  },
+  "SC/LU3F 0300.html": {
+   "handle": "sierras-lu3f",
+   "variante": 1585442548
+  },
+  "SC/LU3F 0400.html": {
+   "handle": "sierras-lu3f",
+   "variante": 1585442551
+  },
+  "SC/LU3F.html": {
+   "handle": "sierras-lu3f",
+   "variante": null
+  },
+  "SC/LU4A.html": {
+   "handle": "sierras-lu4a",
+   "variante": null
+  },
+  "SC/LU5B.html": {
+   "handle": "sierras-lu5b",
+   "variante": null
+  },
+  "SC/LU5D.html": {
+   "handle": "sierras-lu5d",
+   "variante": null
+  },
+  "SC/LU5E.html": {
+   "handle": "sierras-lu5e",
+   "variante": null
+  },
+  "SC/SC.html": {
+   "handle": "sierras-sc-franzoi",
+   "variante": null
+  },
+  "SC/SCC_Franzoi.html": {
+   "handle": "sierras-scc-franzoi",
+   "variante": null
+  },
+  "SC/SCC_Freud.html": {
+   "handle": "sierras-scc-freud",
+   "variante": null
+  },
+  "SC/SC_Franzoi.html": {
+   "handle": "sierras-sc-franzoi",
+   "variante": null
+  },
+  "SC/TR15MD.html": {
+   "handle": "sierras-tr15md",
+   "variante": null
+  },
+  "SC/TR15MS.html": {
+   "handle": "sierras-tr15ms",
+   "variante": null
+  }
+ },
+ "sin_tienda": [
+  "FR/CB0750660.html",
+  "FR/F04C014.html",
+  "FR/F2C014.html",
+  "FR/FA104.html",
+  "FR/FMR04.html",
+  "FR/FP2226.html",
+  "FR/FP402.html",
+  "FR/FR104.html",
+  "FR/FRG0510.html",
+  "FR/FRP5533.html",
+  "FR/FZS128.html",
+  "FR/JFDE4.html",
+  "FR/JFDSG14.html",
+  "FR/JFE254.html",
+  "FR/JFE8122.html",
+  "FR/JFFI01.html",
+  "FR/JFMD1234.html",
+  "FR/JFME68.html",
+  "FR/JFMP3411.html",
+  "FR/JFMP34166M.html",
+  "FR/JFMP3416G.html",
+  "FR/JFMPV14.html",
+  "FR/JFMPVR.html",
+  "FR/JFMS1234.html",
+  "FR/JFPMS10.html",
+  "FR/JFRA1.html",
+  "FR/JFRD.html",
+  "FR/LIMMUE.html",
+  "MCH/FRINR0804.html",
+  "MCH/FRPDIBUJO.html",
+  "MCH/PLEGADO.html"
+ ]
+}

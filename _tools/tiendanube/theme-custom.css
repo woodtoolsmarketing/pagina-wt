@@ -20,6 +20,21 @@
         Hay que TIPEAR el texto. Por eso, para cambios chicos, conviene pegar
         las reglas nuevas al final del campo: pisan a las de arriba por orden
         de cascada y son pocas lineas para escribir a mano.
+     4) Borra clamp() (y hay que suponer lo mismo de min()/max()): la regla
+        queda vacia. Para tamanos distintos en celular usar @media.
+        Tambien borra "text-wrap: balance" (probado 25/09/2026): en la tienda
+        quedo una regla vacia ".template-page .page-header h1, ... h2 {}",
+        inofensiva.
+     5) Tipeando por automatizacion, la "@" no sale (el tipeo entero falla, y
+        shift+2 escribe "2"). Lo que funciono (25/09/2026): insertar solo la
+        "@" con document.execCommand('insertText', false, '@') con el foco en
+        el campo, y tipear a mano el resto de la regla; asi se guarda.
+        Las comillas dobles (") tampoco se pueden tipear: se inserta el texto
+        entero con execCommand('insertText') y despues se tipea algo real
+        (por ejemplo el resto de otra regla) para que el editor lo registre.
+        El foco tiene que venir de un clic REAL dentro del campo.
+     6) "Publicar cambios" solo guarda con un clic REAL. Con boton.click() por
+        script el panel parece aceptar, pero en la tienda no cambia nada.
 
    NOTA sobre los selectores descendientes (".a .b", con espacio): SI se
    guardan y SI funcionan. Verificado leyendo la hoja que sirve la tienda:
@@ -31,6 +46,7 @@
    PALETA TOMADA DE styles.css DEL SITIO:
      rojo corporativo ....... #a41e22
      rojo hover ............. #7d161a
+     rojo del logo .......... #c90b0f  (solo titulos de paginas, seccion 13)
      fondo del sitio ........ #f8f8f8
      texto .................. #333333
      texto secundario ....... #777777
@@ -544,3 +560,134 @@ img[srcset*="no-photo"] {
 }
 
 .item:hover .wt-mas-info { background-color: #7d161a; }
+
+
+/* =============================================================================
+   13. PAGINAS DE CONTENIDO (Politicas de cambios, devoluciones y reembolsos)
+   Titulos en negrita y en el rojo del logo: #c90b0f, medido en
+   imagenes/logos/WoodTools.png (no es el #a41e22 de los botones).
+   body.template-page solo esta en las paginas de "Tienda online > Paginas",
+   asi que no toca las descripciones de producto, que usan el mismo
+   .user-content. El titulo de la pagina es un h1 con la clase .h4 del tema:
+   por eso va con .page-header delante.
+   En la tienda esta regla se TIPEO al final del campo (ver punto 3 arriba).
+   ============================================================================= */
+
+.template-page .page-header h1,
+.template-page .user-content h2,
+.template-page .user-content h3 {
+	color: #c90b0f;
+	font-weight: 700;
+}
+
+/* El titulo de la pagina venia en 18px (la clase .h4 del tema), mas chico
+   que los h2 de las secciones (24px). Queda como el mas grande de la pagina:
+   32px en compu (entra en una linea) y 26px en celular (3 lineas). */
+.template-page .page-header h1 {
+	font-size: 32px;
+	line-height: 1.25;
+}
+
+@media (max-width: 767px) {
+	.template-page .page-header h1 { font-size: 26px; }
+}
+
+/* Links dentro del texto de la pagina (el del "Boton de arrepentimiento"):
+   el tema los dejaba en #333 y sin subrayado, iguales al texto, y en el
+   celular no se sabia que se podian tocar. Misma convencion que los links
+   de .wt-nota-catalogo: bordo corporativo, 600 y subrayado. */
+.template-page .user-content a {
+	color: #a41e22;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+/* En compu el tema pone el texto en una columna .col-md-8 (2/3) pegada a la
+   izquierda, debajo de un titulo centrado: quedaba torcido, con el tercio
+   derecho vacio (medido: centro del texto ~165px a la izquierda del centro
+   del titulo en 1024-1920). La fila es flex, asi que se centra la columna.
+   En celular no cambia nada: ahi la columna ya ocupa todo el ancho. */
+.template-page .user-content .row {
+	justify-content: center;
+}
+
+/* Retoques de lectura (25/09/2026). Antes el titulo de seccion quedaba a
+   14px de la seccion anterior y a 20px de su propio texto, o sea "pegado"
+   a lo de arriba: ahora 36px antes y 12px despues. Las viñetas tenian 10px
+   entre si y renglon de 22px (mas sueltas que los parrafos, de 20px). */
+.template-page .user-content h2 {
+	margin-top: 36px;
+	margin-bottom: 12px;
+}
+
+.template-page .user-content li {
+	margin-bottom: 6px;
+	line-height: 20px;
+}
+
+/* En celular los h2 quedaban en 24px, casi como el titulo (26px), y
+   "Derecho de arrepentimiento (Boton de arrepentimiento)" ocupaba 4
+   renglones a 320px. A 20px: 3 renglones a 320, 2 a 375/414. En compu
+   siguen en 24px. */
+@media (max-width: 767px) {
+	.template-page .user-content h2 {
+		font-size: 20px;
+		line-height: 1.25;
+	}
+}
+
+/* El titulo "Derecho de arrepentimiento (Boton de arrepentimiento)" lleva
+   un <br> en el HTML de la pagina antes del parentesis: en compu corta en
+   "Derecho de arrepentimiento" / "(Boton de arrepentimiento)". En celular
+   se oculta y corta solo, como antes (a 320px no entraria la primera linea).
+   (Primero se probo un <span class="wt-nobr">, pero el editor de Paginas
+   no conserva la clase; la regla .wt-nobr quedo publicada y no hace nada.) */
+@media (max-width: 767px) {
+	.template-page .user-content h2 br {
+		display: none;
+	}
+}
+
+
+/* =============================================================================
+   14. CABECERA Y PIE DE TODA LA TIENDA (25/09/2026)
+   ============================================================================= */
+
+/* WhatsApp del pie: el tema mostraba solo "5491157528428". El campo tiene
+   que seguir en digitos (arma el link wa.me), asi que se cambia solo lo que
+   se ve. El boton verde flotante esta fuera del footer y no se toca. */
+.js-footer .contact-link[href*="wa.me"] {
+	font-size: 0;
+}
+
+.js-footer .contact-link[href*="wa.me"]::before {
+	content: "WhatsApp: +54 9 11 5752-8428";
+	font-size: 12px;
+}
+
+/* La direccion (li sin link) salia en blanco, mas resaltada que los
+   contactos clickeables (#aaa). */
+.js-footer .list.font-small li {
+	color: #aaa;
+}
+
+/* Logo mas grande en compu: 70px -> 100px (el tema lo achica igual a 40px
+   cuando la cabecera se comprime al bajar). En celular sigue en 60px. */
+@media (min-width: 768px) {
+	.head-main .logo-img-medium {
+		max-height: 100px;
+	}
+
+	.template-page .user-content .wt-nobr {
+		white-space: nowrap;
+	}
+}
+
+/* El menu marca la pagina en la que estas: el tema ya le pone la clase
+   .selected al link (arriba en compu y en el menu del celular, los dos con
+   fondo claro; el pie no la usa) pero no le daba color. Mismo bordo que el
+   hover del menu. Es global, pero solo pinta donde el tema marca .selected
+   (verificado: en el inicio y en /productos/ no cambia nada). */
+.nav-list-link.selected {
+	color: #a41e22;
+}

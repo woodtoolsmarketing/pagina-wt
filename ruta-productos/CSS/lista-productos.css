@@ -673,3 +673,24 @@ select {
 @media (max-width: 1199px) {
     .product-title { -webkit-line-clamp: 3; max-height: calc(1.4em * 3); }
 }
+/* En el telefono mas angosto (320-375px) los nombres largos de Fresas
+   perdian "(varias medidas)" con 3 renglones. */
+@media (max-width: 480px) {
+    .product-title { -webkit-line-clamp: 4; max-height: calc(1.4em * 4); }
+}
+
+/* ==========================================================
+   BOTON "MAS INFORMACION" SIEMPRE AL PIE DE LA TARJETA
+   El titulo crece para empujar el boton abajo, pero tiene tope de
+   renglones (max-height). Si un titulo ya lleno comparte fila con una
+   tarjeta mas alta (ej. con "Ver medidas"), el boton quedaba mas arriba
+   que los de al lado. margin-top:auto se lleva ese sobrante.
+   - !important: cada boton trae margin-top:10px escrito en el HTML.
+   - Los margin-bottom de abajo reponen esos 10px, asi la tarjeta mide
+     lo mismo que antes (titulo 10+10, "Ver medidas" 8+10).
+   - No sacar el max-height del titulo: si la caja crece, el navegador
+     muestra los renglones que siguen al "..." debajo del corte.
+   ========================================================== */
+.product-info > .product-more-info { margin-top: auto !important; }
+.product-info > .product-title:has(+ .product-more-info) { margin-bottom: 20px; }
+.product-info > p:has(+ .product-more-info) { margin-bottom: 18px; }
