@@ -1766,6 +1766,50 @@ function detectarFamilia(codigo) {
     return null;
 }
 
+// --- Especificaciones técnicas desde el Excel (ruta-productos/JS/especificaciones.json) ---
+// Fuente de verdad de las medidas (Ø ext, Ø int, ancho de corte, Z, largo). Lo genera
+// _tools/especificaciones/generar-especificaciones.py desde datos-tecnicos.xlsx. Si no se
+// puede leer, las fichas siguen mostrando lo parseado del nombre (no se rompe nada).
+let especificacionesExcel = null;    // { "CODIGO": {ext,int,ancho,dientes,largo} }
+let especificacionesCompact = null;  // mismo mapa con clave compacta (sin espacios, mayúsculas)
+let _reRenderMedidas = null;         // vuelve a dibujar las medidas cuando llega el JSON
+let _especificacionesPromise = null;
+function cargarEspecificaciones() {
+    if (!_especificacionesPromise) {
+        // 'no-cache' = el navegador revalida con el servidor en cada carga (304 si no cambió).
+        // Así, al regenerar y subir el JSON, las medidas nuevas aparecen sin tocar versiones.
+        _especificacionesPromise = fetch('../../JS/especificaciones.json', { cache: 'no-cache' })
+            .then(r => r.ok ? r.json() : null)
+            .then(d => {
+                const mapa = d && (d.medidas || d);
+                if (mapa && typeof mapa === 'object') {
+                    especificacionesExcel = mapa;
+                    especificacionesCompact = {};
+                    for (const k in mapa) {
+                        if (k === '_meta') continue;
+                        especificacionesCompact[k.replace(/\s+/g, '').toUpperCase()] = mapa[k];
+                    }
+                }
+            })
+            .catch(() => {});   // sin conexión: se queda con el parseo del nombre
+    }
+    return _especificacionesPromise;
+}
+// Devuelve {ext,int,ancho,dientes,largo} del Excel para un código (o null si no está
+// o no tiene ninguna medida, para caer al comportamiento anterior sin vaciar la ficha).
+function medidasDeEspecificacion(id) {
+    if (!especificacionesExcel || !id) return null;
+    const med = especificacionesExcel[id] ||
+        (especificacionesCompact && especificacionesCompact[('' + id).replace(/\s+/g, '').toUpperCase()]);
+    if (!med) return null;
+    const r = {
+        ext: med.ext || null, int: med.int || null, ancho: med.ancho || null,
+        dientes: med.dientes || null, largo: med.largo || null
+    };
+    if (!r.ext && !r.int && !r.ancho && !r.dientes && !r.largo) return null;
+    return r;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     let ruta = window.location.pathname;
@@ -1775,6 +1819,10 @@ document.addEventListener("DOMContentLoaded", function() {
     codigoReal = codigoLimpio;
 
     productoActualInfo = detectarFamilia(codigoReal);
+
+    // Arranca la descarga de medidas (no bloquea el render): cuando llega, se
+    // vuelven a dibujar las medidas con los datos del Excel.
+    cargarEspecificaciones().then(() => { if (_reRenderMedidas) _reRenderMedidas(); });
 
     cargarEstructuraProducto(productoActualInfo);
 
@@ -1991,9 +2039,10 @@ function cargarEstructuraProducto(info) {
         const desc = nombre && nombre.includes(' - ') ? nombre.split(' - ').slice(1).join(' - ') : (nombre || '');
         const g = re => { const m = desc.match(re); return m ? m[1] : null; };
         return {
-            ext:     g(/\bD\s*[:=]\s*([\d.,]+)/) || g(/\bY\s*[:=]\s*([\d.,]+)/) || g(/#\s*([\d.,]+)/),
+            ext:     g(/\bD\s*[:=]\s*([\d.,]+)/) || g(/\bY\s*[:=]\s*([\d.,]+)/),
             int:     g(/\bd\s*[:=]\s*([\d.,]+)/),
-            ancho:   g(/\bB\s*[:=]\s*([\d.,]+)/),
+            // "#" es ancho de corte / medida del perfil, NO un diámetro: va en Ancho.
+            ancho:   g(/\bB\s*[:=]\s*([\d.,]+)/) || g(/#\s*([\d.,]+)/),
             dientes: g(/\bZ\s*[:=]\s*([\dxX+]+)/),
             largo:   g(/\bLT\s*[:=]\s*([\d.,]+)/) || g(/\bL\s*[:=]\s*([\d.,]+)/)
         };
@@ -2086,7 +2135,20 @@ function cargarEstructuraProducto(info) {
     // Actualiza título (sierras/mechas) y filas de medidas según la variante elegida
     function actualizarMedidas() {
         const v = selector ? info.variantes.find(x => x.id === selector.value) : info.variantes[0];
-        const m = analizarMedidas(v ? v.nombre : '');
+        const idSel = v ? v.id : (selector ? selector.value : null);
+        // Mezcla por campo: el Excel manda donde tiene dato; el nombre solo rellena
+        // los huecos que el Excel deja vacíos. Así no desaparece ninguna medida que
+        // ya se mostraba, aunque el Excel cubra el código a medias (ej. fresas de
+        // ensamble que traen Z pero no el agujero).
+        const nm = analizarMedidas(v ? v.nombre : '');
+        const ex = medidasDeEspecificacion(idSel) || {};
+        const m = {
+            ext:     ex.ext     || nm.ext,
+            int:     ex.int     || nm.int,
+            ancho:   ex.ancho   || nm.ancho,
+            dientes: ex.dientes || nm.dientes,
+            largo:   ex.largo   || nm.largo
+        };
         if (tituloDOM) {
             const cb = info.caracteristicasBasicas || {};
             if (info.tituloFijo) {
@@ -2129,6 +2191,7 @@ function cargarEstructuraProducto(info) {
             });
         }
     }
+    _reRenderMedidas = actualizarMedidas;
     actualizarMedidas();
 }
 

@@ -29,7 +29,7 @@ const EXCLUIR_DIRS = new Set(['_tools', '_admin', '.git', 'node_modules', '.clau
 // si lo subiera tambien este script, podria pisar el del servidor con uno viejo.
 const EXCLUIR_ARCH = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini', 'stock-tienda.json']);
 // Extensiones de desarrollo que NO son parte del sitio público (no se suben).
-const EXCLUIR_EXT = new Set(['.sh', '.bat', '.md', '.markdown', '.log', '.map', '.zip']);
+const EXCLUIR_EXT = new Set(['.sh', '.bat', '.md', '.markdown', '.log', '.map', '.zip', '.xlsx', '.xls']);
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry');

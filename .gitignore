@@ -10,6 +10,11 @@ _tools/ftp-config.json
 # Es una credencial: solo en tu PC, nunca al repo publico.
 _tools/tiendanube/api-config.json
 
+# Excel de datos tecnicos (fuente de las especificaciones de las fichas).
+# Tiene notas internas y las listas de origen: queda solo en tu PC. El JSON
+# publicable lo genera generar-especificaciones.py en ruta-productos/JS/.
+_tools/especificaciones/datos-tecnicos.xlsx
+
 # Registro de la ultima corrida de la regla auto-ocultar (local, de tu PC).
 _tools/tiendanube/auto-ocultar-stock.log
 
