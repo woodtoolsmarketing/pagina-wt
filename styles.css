@@ -35,7 +35,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 0; /* el espacio entre ítems lo da ahora el padding de cada <a> (para el recuadro del hover) */
 }
 
 nav ul li {
@@ -48,35 +48,59 @@ nav a {
     font-weight: 600;
     font-size: 14px;
     display: block;
-    padding: 10px 0; /* Agregado para hacer un área de hover más cómoda */
+    padding: 7px 10px; /* padding horizontal para el recuadro del hover; el responsive lo ajusta en móvil */
 }
 
 nav a i {
     font-size: 12px;
 }
 
+/* Hover de los ítems del menú principal (los que están entre el logo y COMPRÁ
+   AHORA): recuadro rojo del logo + texto del mismo rojo. El borde transparente
+   por defecto reserva el espacio, así no se mueve el layout al pasar el mouse. */
+nav > ul > li > a {
+    border-radius: 10px;
+    transition: color .22s ease, background-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+nav > ul > li > a:hover {
+    color: #c90b0f;
+    font-weight: 700; /* negrita en hover */
+    background-color: rgba(201, 11, 15, 0.09); /* fondo levemente teñido */
+    box-shadow: 0 4px 16px rgba(201, 11, 15, 0.30); /* sombra tenue pero visible, como las tarjetas */
+    transform: scale(1.07); /* se acerca levemente */
+}
+
 /* ==========================================
    ESTILOS PARA EL MENÚ DESPLEGABLE (DROPDOWN) 
    ========================================== */
 .dropdown-menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     position: absolute;
     top: 100%; /* Justo debajo del ítem del menú principal */
     left: 0;
     background-color: #a41e22; /* Color corporativo Woodtools */
     min-width: 230px; /* Ancho del menú desplegable */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(201, 11, 15, 0.30); /* sombra tenue roja, igual que las tarjetas y el hover */
     z-index: 2000;
     padding: 0;
     border-radius: 4px;
     overflow: hidden; /* Para respetar el borde redondeado */
+    /* Despliegue de arriba hacia abajo (se revela como una cortina) */
+    opacity: 0;
+    visibility: hidden;
+    clip-path: inset(0 0 100% 0);
+    transition: opacity .25s ease, clip-path .3s ease, visibility .3s;
+    pointer-events: none;
 }
 
 /* Mostrar el menú cuando el mouse pasa por encima del "li" principal */
 .dropdown:hover .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    opacity: 1;
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+    pointer-events: auto;
 }
 
 .dropdown-menu li {
@@ -131,6 +155,23 @@ nav a i {
 
 .btn-shop:hover {
     background-color: #7d161a;
+}
+
+/* Link "Política de devoluciones y reembolsos" en el header (2 líneas, centrado) */
+.header-politicas {
+    display: inline-block;
+    text-align: center;
+    font-size: 11.5px;
+    line-height: 1.25;
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .2px;
+    transition: color .2s ease;
+}
+.header-politicas:hover {
+    color: #a41e22;
+    text-decoration: underline;
 }
 
 /* HERO BANNER */
@@ -280,7 +321,7 @@ nav a i {
     background: #fff;
     border-radius: 5px;
     padding-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(201, 11, 15, 0.18); /* sombra roja del logo */
     transition: transform 0.3s ease;
 }
 
@@ -527,17 +568,15 @@ footer {
     object-fit: contain;
     vertical-align: middle;
     margin-right: 10px;
-    background: #ffffff;
-    border-radius: 4px;
-    padding: 2px;
-    box-sizing: border-box;
+    background: none; /* sin fondo blanco: el icono va directo sobre el panel rojo */
 }
 
 /* Menú desplegado por clic (1er toque en celular / 1er clic) */
 .dropdown.open .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    opacity: 1;
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+    pointer-events: auto;
 }
 
 /* ==========================================================
@@ -555,6 +594,7 @@ footer {
     .logo img { width: 110px; margin-top: 0; }
     .header-actions { order: 2; gap: 10px; }
     .btn-shop { padding: 8px 12px; font-size: 12px; }
+    .header-politicas { font-size: 10.5px; }
     .social-icons a { font-size: 20px; margin-left: 8px; }
     nav { order: 3; width: 100%; }
     nav > ul, nav ul {
@@ -619,8 +659,14 @@ footer {
 .header-search .lupa-btn {
     background: none; border: none; color: #333; font-size: 18px;
     cursor: pointer; padding: 6px 8px; line-height: 1;
+    border-radius: 8px;
+    transition: color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-.header-search .lupa-btn:hover { color: #a41e22; }
+.header-search .lupa-btn:hover {
+    color: #c90b0f;
+    box-shadow: 0 4px 16px rgba(201, 11, 15, 0.30); /* sombra tenue roja, como el resto */
+    transform: scale(1.07);
+}
 .header-search .lupa-input {
     flex: 0 0 0; width: 0; padding: 0; border: 1px solid transparent; opacity: 0;
     font-size: 14px; box-sizing: border-box;
@@ -643,12 +689,7 @@ footer {
    que pintaba el pie de una sola pieza y peleaba con los tres niveles.
    ========================================================== */
 footer.footer-wt {
-    background: none;
-    color: inherit;
-    padding: 0;
-    border-top: none;
-    text-align: center;
-    font-size: inherit;
+    display: none;   /* pie quitado de todo el sitio (pedido del usuario 2026-10-20) */
 }
 
 .footer-contact-bar {

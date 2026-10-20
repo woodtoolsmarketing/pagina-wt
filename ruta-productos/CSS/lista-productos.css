@@ -186,8 +186,8 @@
     height: 100%;
 }
 
-.product-card:hover { 
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+.product-card:hover {
+    box-shadow: 0 4px 16px rgba(201, 11, 15, 0.30); /* sombra en el rojo del logo */
     border-color: #bbb;
 }
 

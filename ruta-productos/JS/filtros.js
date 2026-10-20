@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
             [/^F107M/, 'Tupí, machimbradora o moldurera'],
             [/^FI14M|^F114M/, 'Tupí, machimbradora o moldurera'],
             [/^FR09W/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+            [/^FR14W/, 'Ingletadora o máquina de mano'],
             [/^F2C/, 'Tupí, machimbradora o moldurera'],
             [/^F1M|^F2M/, 'Machimbradora'],
             [/^FCPV/, 'Machimbradora o moldurera'],
@@ -336,16 +337,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const inputBusqueda = document.getElementById('buscador-productos');
     let textoBusqueda = '';
 
+    // Normaliza para buscar: minusculas y SIN acentos (asi "moldura"/"maquina"
+    // matchean aunque se escriba con o sin tilde).
+    function normalizarBusqueda(s) {
+        return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
     function textoDeProducto(producto) {
         const tituloEl = producto.querySelector('.product-title');
-        const titulo = tituloEl ? tituloEl.innerText : '';
+        // textContent (no innerText): devuelve el texto aunque la tarjeta este
+        // oculta (display:none). Con innerText, una card ya filtrada devolvia ''
+        // y dejaba de matchear por nombre en busquedas encadenadas.
+        const titulo = tituloEl ? tituloEl.textContent : '';
         // El codigo sale de la ruta de la ficha. Si la tarjeta fue reapuntada a
         // Tienda Nube, esa ruta quedo guardada en data-ficha y el href ya no la
         // tiene: sin esto, buscar por codigo (LG3D, TM06M...) no encuentra nada.
         const ruta = producto.getAttribute('data-ficha') || producto.getAttribute('href') || '';
         let codigo = ruta.split('/').pop().replace('.html', '');
         try { codigo = decodeURIComponent(codigo); } catch (e) {}
-        return (titulo + ' ' + codigo).toLowerCase();
+        return normalizarBusqueda(titulo + ' ' + codigo);
     }
 
     // =====================================================================
@@ -511,7 +521,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- Conexión del buscador (si la página tiene el input) ---
     if (inputBusqueda) {
         inputBusqueda.addEventListener('input', function() {
-            textoBusqueda = this.value.trim().toLowerCase();
+            textoBusqueda = normalizarBusqueda(this.value.trim());
             aplicarFiltros();
             guardarEstado();
         });
@@ -585,7 +595,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const qParam = urlParams.get('q');
     if (!estadoRestaurado && qParam && inputBusqueda) {
         inputBusqueda.value = qParam;
-        textoBusqueda = qParam.trim().toLowerCase();
+        textoBusqueda = normalizarBusqueda(qParam.trim());
     }
 
     // =====================================================================

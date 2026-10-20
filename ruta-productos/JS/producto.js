@@ -31,7 +31,9 @@ const baseDatosProductos = {
         codigoBase: "LU3F", categoriaImg: "Sierras", carpetaImg: "LU3F 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Aglomerado, MDF, Madera y Melamina", "Tipo de diente": "Ángulo Negativo" },
-        variantes: [ { id: "LU3F 0200", nombre: "LU3F 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU3F 0300", nombre: "LU3F 0300 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LU3F 0400", nombre: "LU3F 0400 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
+        variantes: [ { id: "LU3F 0200", nombre: "LU3F 0200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU3F 0300", nombre: "LU3F 0300 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LU3F 0400", nombre: "LU3F 0400 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" },
+            { id: "LU3F 0100", nombre: "LU3F 0100 - D: 220mm | B: 3.2mm | d: 30mm | Z: 64" }
+        ]
     },
     "LU3E": {
         codigoBase: "LU3E", categoriaImg: "Sierras", carpetaImg: "LU3E 0200",
@@ -49,7 +51,10 @@ const baseDatosProductos = {
         codigoBase: "LU3D", categoriaImg: "Sierras", carpetaImg: "LU3D 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina" },
-        variantes: [ { id: "LU3D 0200", nombre: "LU3D 0200 - D: 220mm | B: 3.2mm | d: 30mm | Z: 64" }, { id: "LU3D 0600", nombre: "LU3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
+        variantes: [ { id: "LU3D 0200", nombre: "LU3D 0200 - D: 220mm | B: 3.2mm | d: 30mm | Z: 64" }, { id: "LU3D 0600", nombre: "LU3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" },
+            { id: "LU3D 0400", nombre: "LU3D 0400 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" },
+            { id: "LU3D 1700", nombre: "LU3D 1700 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" }
+        ]
     },
     "F03FS": {
         codigoBase: "F03FS", categoriaImg: "Sierras", carpetaImg: "F03FS",
@@ -61,7 +66,14 @@ const baseDatosProductos = {
         codigoBase: "LSB", categoriaImg: "Sierras", carpetaImg: "LSB25003X",
         titulo: "Sierra Circular Extra Silenciosa", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Placas Bilaminadas / Melamina" },
-        variantes: [ { id: "LSB25003X", nombre: "LSB25003X - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LSB30003X", nombre: "LSB30003X - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LSB35003X", nombre: "LSB35003X - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
+        variantes: [ { id: "LSB25003X", nombre: "LSB25003X - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LSB30003X", nombre: "LSB30003X - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LSB35003X", nombre: "LSB35003X - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" },
+            { id: "LSB32001X", nombre: "LSB32001X - D: 320mm | B: 4.4mm | d: 65mm | Z: 72" },
+            { id: "LSB38002X", nombre: "LSB38002X - D: 380mm | B: 4.4mm | d: 60mm | Z: 72" },
+            { id: "LSB40016X", nombre: "LSB40016X - Consultar medidas" },
+            { id: "LSB4007X", nombre: "LSB40007X - D: 400mm | B: 4.4mm | d: 30mm | Z: 72" },
+            { id: "LSB43007X", nombre: "LSB43007X - D: 430mm | B: 4.4mm | d: 30mm | Z: 72" },
+            { id: "LSB45007X", nombre: "LSB45007X - D: 450mm | B: 4.4mm | d: 30mm | Z: 72" }
+        ]
     },
     "LG2A": {
         codigoBase: "LG2A", categoriaImg: "Sierras", carpetaImg: "LG2A",
@@ -91,7 +103,10 @@ const baseDatosProductos = {
         codigoBase: "LU2C", categoriaImg: "Sierras", carpetaImg: "LU2C 1200",
         titulo: "Sierra para Madera", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
-        variantes: [ { id: "LU2C 1200", nombre: "LU2C 1200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU2C 1500", nombre: "LU2C 1500 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" } ]
+        variantes: [ { id: "LU2C 1200", nombre: "LU2C 1200 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LU2C 1500", nombre: "LU2C 1500 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" },
+            { id: "LU2C 2000", nombre: "LU2C 2000 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" },
+            { id: "LU2C 2100", nombre: "LU2C 2100 - D: 400mm | B: 3.8mm | d: 30mm | Z: 120" }
+        ]
     },
     "LU1D": {
         codigoBase: "LU1D", categoriaImg: "Sierras", carpetaImg: "LU1D",
@@ -109,13 +124,27 @@ const baseDatosProductos = {
         codigoBase: "FI14M", categoriaImg: "Sierras", carpetaImg: "FI14M AA3",
         titulo: "Sierra de Ranurar", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Ranurado de Madera" },
-        variantes: [ { id: "FI14M AA3", nombre: "FI14M AA3 - D: 150mm | B: 1.5mm | d: 30mm | Z: 18" }, { id: "FI14M AE3", nombre: "FI14M AE3 - D: 150mm | B: 2.0mm | d: 30mm | Z: 18" } ]
+        variantes: [ { id: "FI14M AA3", nombre: "FI14M AA3 - D: 150mm | B: 1.5mm | d: 30mm | Z: 18" }, { id: "FI14M AE3", nombre: "FI14M AE3 - D: 150mm | B: 2.0mm | d: 30mm | Z: 18" },
+            { id: "FI14M CE3", nombre: "FI14M CE3 - D: 125mm | B: 2mm | d: 30mm | Z: 12" }
+        ]
     },
     "FR09W": {
         codigoBase: "FR09W", categoriaImg: "Sierras", carpetaImg: "FR09W003H",
         titulo: "Sierra Fina para Madera", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera" },
         variantes: [ { id: "FR09W003H", nombre: "FR09W003H - D: 184mm | B: 1.5mm | d: 20mm | Z: 40" } ]
+    },
+    "FR14W002H": {
+        codigoBase: "FR14W002H", categoriaImg: "Sierras", carpetaImg: "FR14W002H",
+        titulo: "Sierra Circular para Máquina Portátil", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Madera (máquina portátil)" },
+        variantes: [{ id: "FR14W002H", nombre: "FR14W002H - D: 200mm | B: 2.8mm | d: 30mm | Z: 48" }]
+    },
+    "LCL3M02312": {
+        codigoBase: "LCL3M02312", categoriaImg: "Sierras", carpetaImg: "LCL 3M0321",
+        titulo: "Sierra para múltiple Freud plateada", marca: "Freud",
+        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Corte Múltiple" },
+        variantes: [{ id: "LCL3M02312", nombre: "LCL3M02312 - D: 250mm | B: 2.5mm | d: 30mm | Z: 30+4" }]
     },
     "LP40M": {
         codigoBase: "LP40M", categoriaImg: "Sierras", carpetaImg: "LP40M 016P",
@@ -149,37 +178,57 @@ const baseDatosProductos = {
     },
     "LM01": {
         codigoBase: "LM01", categoriaImg: "Sierras", carpetaImg: "LM01",
-        titulo: "Sierra Múltiple", marca: "Freud",
+        titulo: "Sierra para múltiple Freud roja", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
-        variantes: [{ id: "LM01 3200", nombre: "LM01 3200 - D: 300mm" }]
+        variantes: [
+            { id: "LM01 0100", nombre: "LM01 0100 - D: 180mm | B: 2.2mm | d: 40mm | Z: 16+2" },
+            { id: "LM01 0200", nombre: "LM01 0200 - D: 200mm | B: 2.2mm | d: 40mm | Z: 16+2" },
+            { id: "LM01 0600", nombre: "LM01 0600 - D: 250mm | B: 2.2mm | d: 30mm | Z: 20+2" },
+            { id: "LM01 0700", nombre: "LM01 0700 - D: 250mm | B: 2.2mm | d: 60mm | Z: 20+2" }
+        ]
     },
     "LM02": {
         codigoBase: "LM02", categoriaImg: "Sierras", carpetaImg: "LM02",
-        titulo: "Sierra Múltiple", marca: "Freud",
+        titulo: "Sierra para múltiple Freud roja", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
-        variantes: [{ id: "LM02 3200", nombre: "LM02 3200 - D: 350mm" }]
+        variantes: [
+            { id: "LM02 0100", nombre: "LM02 0100 - D: 250mm | B: 2.8mm | d: 30mm | Z: 16+2" },
+            { id: "LM02 0600", nombre: "LM02 0600 - D: 300mm | B: 2.8mm | d: 30mm | Z: 20+2" },
+            { id: "LM02 1200", nombre: "LM02 1200 - D: 350mm | B: 3mm | d: 30mm | Z: 24+4" }
+        ]
     },
     "LM04": {
         codigoBase: "LM04", categoriaImg: "Sierras", carpetaImg: "LM04",
-        titulo: "Sierra Múltiple", marca: "Freud",
+        titulo: "Sierra para múltiple Freud plateada", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
-        variantes: [{ id: "LM04 3100", nombre: "LM04 3100 - D: 300mm" }]
+        variantes: [
+            { id: "LM04 0103", nombre: "LM04 0103 - D: 250mm | B: 3.2mm | d: 30mm | Z: 30+4" },
+            { id: "LM04 1500", nombre: "LM04 1500 - D: 400mm | B: 4mm | d: 30mm | Z: 28+6" }
+        ]
     },
     "LM05": {
         codigoBase: "LM05", categoriaImg: "Sierras", carpetaImg: "LM05",
-        titulo: "Sierra Múltiple", marca: "Freud",
+        titulo: "Sierra para múltiple Freud roja", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
-        variantes: [{ id: "LM05 3100", nombre: "LM05 3100 - D: 300mm" }]
+        variantes: [
+            { id: "LM05 0100", nombre: "LM05 0100 - D: 250mm | B: 3.4mm | d: 30mm | Z: 16+4" },
+            { id: "LM05 0500", nombre: "LM05 0500 - D: 300mm | B: 3.4mm | d: 30mm | Z: 20+4" },
+            { id: "LM05 1100", nombre: "LM05 1100 - D: 350mm | B: 3.7mm | d: 30mm | Z: 20+6" }
+        ]
     },
     "LM06": {
         codigoBase: "LM06", categoriaImg: "Sierras", carpetaImg: "LM06",
-        titulo: "Sierra Múltiple con Limpiadores", marca: "Freud",
+        titulo: "Sierra para múltiple Freud roja", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
-        variantes: [{ id: "LM06 3100", nombre: "LM06 3100 - D: 300mm" }]
+        variantes: [
+            { id: "LM06 0100", nombre: "LM06 0100 - D: 250mm | B: 4.2mm | d: 30mm | Z: 16+4" },
+            { id: "LM06 0500", nombre: "LM06 0500 - D: 300mm | B: 4.2mm | d: 30mm | Z: 20+4" },
+            { id: "LM06 1100", nombre: "LM06 1100 - D: 350mm | B: 4.2mm | d: 30mm | Z: 20+6" }
+        ]
     },
     "LM63M": {
         codigoBase: "LM63M", categoriaImg: "Sierras", carpetaImg: "LM63M",
-        titulo: "Sierra Múltiple", marca: "Freud",
+        titulo: "Sierra para múltiple Freud plateada", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Corte Múltiple" },
         variantes: [{ id: "LM63M CC3", nombre: "LM63M CC3 - D: 300mm" }]
     },
@@ -205,13 +254,26 @@ const baseDatosProductos = {
         codigoBase: "LI16M", categoriaImg: "Sierras", carpetaImg: "LI16M AA3",
         titulo: "Incisor Cónico", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Escuadradoras y Seccionadoras" },
-        variantes: [{ id: "LI16M AA3", nombre: "LI16M AA3 - D: 100mm" }, { id: "LI16M BA3", nombre: "LI16M BA3 - D: 120mm" }]
+        variantes: [{ id: "LI16M AA3", nombre: "LI16M AA3 - D: 100mm" }, { id: "LI16M BA3", nombre: "LI16M BA3 - D: 120mm" },
+            { id: "LI16MHA3", nombre: "LI16M HA3 - D: 80mm | B: 2.8-3.6mm | d: 20mm | Z: 10+10" }
+        ]
     },
     "LI25M": {
         codigoBase: "LI25M", categoriaImg: "Sierras", carpetaImg: "LI25M31BA3",
         titulo: "Incisor Doble Regulable Diente Alterno", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Máquinas Seccionadoras" },
-        variantes: [{ id: "LI25M 28 BA3", nombre: "LI25M 28 BA3 - D: 120mm" }, { id: "LI25M 31 CA3", nombre: "LI25M 31 CA3 - D: 125mm" }]
+        variantes: [{ id: "LI25M 28 BA3", nombre: "LI25M 28 BA3 - D: 120mm" }, { id: "LI25M 31 CA3", nombre: "LI25M 31 CA3 - D: 125mm" },
+            { id: "LI25M31DA3", nombre: "LI25M 31DA3 - D: 115mm | B: 3.1mm | d: 20mm | Z: 24" },
+            { id: "LI25M31FA3", nombre: "LI25M 31FA3 - D: 125mm | B: 3.1mm | d: 20mm | Z: 24" },
+            { id: "LI25M34FA3", nombre: "LI25M 34FA3 - D: 125mm | B: 3.4mm | d: 20mm | Z: 24" },
+            { id: "LI25M41DE3", nombre: "LI25M 41DE3 - D: 115mm | B: 4.1mm | d: 45mm | Z: 24" },
+            { id: "LI25M45FA3", nombre: "LI25M 45FA3 - D: 125mm | B: 4.5-5.7mm | d: 20mm | Z: 24" },
+            { id: "LI25M45KC3", nombre: "LI25M 45KC3 - D: 150mm | B: 4.5-5.7mm | d: 30mm | Z: 36" },
+            { id: "LI25M45LG3", nombre: "LI25M 45LG3 - D: 160mm | B: 4.5mm | d: 55mm | Z: 36" },
+            { id: "LI25M45NA3", nombre: "LI25M 45NA3 - D: 180mm | B: 4.5-5.7mm | d: 20mm | Z: 36" },
+            { id: "LI25M45PB3", nombre: "LI25M 45PB3 - D: 200mm | B: 4.5-5.7mm | d: 22mm | Z: 36" },
+            { id: "LI25MSDA3", nombre: "LI25M SDA3 - Consultar medidas" }
+        ]
     },
     "TR15MD": {
         codigoBase: "TR15MD", categoriaImg: "Sierras", carpetaImg: "TR15MS",
@@ -256,7 +318,7 @@ const baseDatosProductos = {
     },
     "SC_Franzoi": {
         codigoBase: "SC_Franzoi", categoriaImg: "Sierras", carpetaImg: "Sierra con racadores Franzoi",
-        titulo: "Sierras para múltiple", marca: "Franzoi",
+        titulo: "Sierra para múltiple Franzoi", marca: "Franzoi",
         caracteristicasBasicas: { "Material": "Metal duro", "Uso": "Madera (Múltiples)" },
         variantes: [
             { id: "SC2504144F", nombre: "SC2504144F - D: 250mm | B: 4.0mm | Z: 14+4" },
@@ -602,7 +664,7 @@ const baseDatosProductos = {
     },
     // --- Fresa para Ensamble Cónico HM (catálogo pág. 11) ---
     "JFE81": {
-        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE81",
+        codigoBase: "JFE81", categoriaImg: "Fresas", carpetaImg: "JFE8122",
         titulo: "Fresa para Ensamble Cónico HM", marca: "WoodTools",
         caracteristicasBasicas: { "Marca": "WoodTools", "Uso": "Unir madera. Profundidades: 10-11, 8-9 y 12 mm", "Material": "Metal duro" },
         variantes: [
@@ -1865,6 +1927,9 @@ function renderizarGaleria(codigoActivo, info) {
     } else if (codigoActivo && codigoActivo.startsWith("TW20M")) {
         // Familia TW (cabezales para juntar): cada modelo tiene carpeta propia
         carpetaBase = "TW20M BF3";
+    } else if (codigoActivo === "MAM35") {
+        // Mandril para 3mm (MAM35): tiene carpeta de fotos propia aparte del general
+        carpetaBase = "Familias MAM  PINZA/mandril para 3mm";
     }
 
     let carpetasImg = [carpetaBase];
@@ -1950,6 +2015,7 @@ function maquinaDeProducto(codigo, categoria) {
         [/^F107M/, 'Tupí, machimbradora o moldurera'],
         [/^FI14M|^F114M/, 'Tupí, machimbradora o moldurera'],
         [/^FR09W/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+        [/^FR14W/, 'Ingletadora o máquina de mano'],
         [/^F2C/, 'Tupí, machimbradora o moldurera'],
         [/^F1M|^F2M/, 'Machimbradora'],
         [/^FCPV/, 'Machimbradora o moldurera'],
@@ -2176,11 +2242,21 @@ function cargarEstructuraProducto(info) {
         const tabla = document.querySelector(".tabla-caracteristicas");
         if (tabla) {
             tabla.querySelectorAll("tr.fila-medida").forEach(f => f.remove());
+            // En las sierras para múltiple, el "+N" del Z es la cantidad de rascadores
+            // (limpiadores): se separa en su propia fila. En el resto se deja el Z tal cual.
+            const esMultiple = /m[úu]ltiple/i.test(info.titulo || "");
+            let dientesVal = m.dientes || null, rascadoresVal = null;
+            if (esMultiple && m.dientes && String(m.dientes).indexOf("+") >= 0) {
+                const p = String(m.dientes).split("+");
+                dientesVal = p[0];
+                rascadoresVal = p.slice(1).join("+");
+            }
             [
                 ["Ø exterior", m.ext ? m.ext + " mm" : null],
                 ["Ø interior", m.int ? m.int + " mm" : null],
                 ["Ancho de corte", m.ancho ? m.ancho + " mm" : null],
-                ["Cantidad de dientes", m.dientes || null],
+                ["Cantidad de dientes", dientesVal],
+                ["Rascadores", rascadoresVal],
                 ["Largo", m.largo ? m.largo + " mm" : null]
             ].forEach(([lbl, val]) => {
                 if (!val) return;

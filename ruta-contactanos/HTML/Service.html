@@ -15,7 +15,7 @@
     <meta name="description" content="Service y Reparación - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Service y Reparación - WoodTools S.R.L.</title>
     
-    <link rel="stylesheet" href="../../styles.css?v=10">
+    <link rel="stylesheet" href="../../styles.css?v=22">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../responsive.css?v=4">
     
@@ -72,7 +72,7 @@
         }
         .faq-section h3 {
             text-align: center;
-            color: #333;
+            color: #a41e22;
             margin-bottom: 40px;
             font-size: 28px;
         }
@@ -86,11 +86,11 @@
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(201, 11, 15, 0.16); /* sombra roja del logo */
             transition: all 0.3s ease;
         }
         .faq-item:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 14px rgba(201, 11, 15, 0.30); /* sombra roja del logo */
         }
         .faq-question {
             width: 100%;
@@ -158,8 +158,20 @@
         }
         /* en tactil el :hover queda pegado y deja en bordo una pregunta cerrada */
         @media (hover: none) {
-            .faq-item:hover { box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+            .faq-item:hover { box-shadow: 0 4px 10px rgba(201, 11, 15, 0.16); }
             .faq-question:hover { background-color: transparent; color: #333; }
+        }
+
+        /* Video de la sección de afilado: fondo claro (como el resto de la
+           página, sin la banda gris) y título rojo + negrita como el h1 de arriba.
+           Scoped a esta página: no afecta la sección #videos del index. */
+        #videos {
+            background-color: #f8f8f8;
+        }
+        #videos .video-block h2 {
+            color: #a41e22;
+            font-weight: bold;
+            font-size: clamp(22px, 5vw, 32px);
         }
     </style>
     <link rel="canonical" href="https://www.woodtools.com.ar/ruta-contactanos/HTML/Service.html">
@@ -184,7 +196,7 @@
                     <li class="dropdown">
                         <a href="../../ruta-productos/HTML/productos.html" onclick="if(!this.dataset.abierto){this.dataset.abierto='1';this.parentElement.classList.add('open');return false;}">PRODUCTOS <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../../ruta-productos/sc-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.jpg" alt="" class="menu-icon">Sierras circulares</a></li>
+                            <li><a href="../../ruta-productos/sc-en-hm.html"><img src="../../imagenes/herramientas/Productos-slide/Sierras.png" alt="" class="menu-icon">Sierras circulares</a></li>
                             <li><a href="../../ruta-productos/fresas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Fresas.png" alt="" class="menu-icon">Fresas</a></li>
                             <li><a href="../../ruta-productos/cuchillas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Cuchillas.png" alt="" class="menu-icon">Cuchillas</a></li>
                             <li><a href="../../ruta-productos/mechas-madera.html"><img src="../../imagenes/herramientas/Productos-slide/Mechas.png" alt="" class="menu-icon">Mechas y Brocas</a></li>
@@ -231,6 +243,18 @@
             <p>Mantener sus sierras, fresas y brocas con el filo en óptimas condiciones mediante nuestro servicio técnico <span class="highlight">evita la deformación prematura de la herramienta y prolonga drásticamente su vida útil</span>. Un afilado realizado a tiempo, con la geometría de corte exacta y la refrigeración adecuada, le permite obtener el máximo retorno de su inversión, asegurando que su producción nunca se detenga por herramientas fatigadas o de bajo rendimiento.</p>
             
             <div class="divisor"></div>
+        </section>
+
+        <section id="videos">
+            <div class="video-block">
+                <h2>Sistema de Reparación y Afilado de Sierras para Madera</h2>
+                <div class="video-wrapper">
+                    <div class="youtube-thumbnail" onclick="playVideo(this, 'W3QvFSr8INQ')">
+                        <img src="https://img.youtube.com/vi/W3QvFSr8INQ/hqdefault.jpg" alt="Sistema de Reparación y Afilado de Sierras para Madera">
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="faq-section">
@@ -314,7 +338,6 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; WoodTools S.R.L.</p>
-            <p class="footer-legal"><a href="https://woodtools.ar/politicas-de-cambios-devoluciones-y-reembolsos/" target="_blank" rel="noopener">Pol&iacute;ticas de cambios, devoluciones y reembolsos</a></p>
         </div>
     </footer>
 
@@ -324,6 +347,21 @@
     </div>
 
     <script>
+        // Carga diferida del video de YouTube: crea el iframe recién al hacer clic.
+        function playVideo(element, videoId) {
+            const iframe = document.createElement("iframe");
+            iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?autoplay=1");
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+            iframe.setAttribute("allowfullscreen", "true");
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            element.parentNode.replaceChild(iframe, element);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -354,5 +392,6 @@
         });
     </script>
     <script src="../../menu.js?v=2" defer></script>
+<script src="../../social-cards.js?v=2" defer></script>
 </body>
 </html>
