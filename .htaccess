@@ -110,6 +110,12 @@ RewriteRule ^(.+)$ / [R=301,L]
   ExpiresByType image/webp   "access plus 1 month"
   ExpiresByType text/css     "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
+  # El HTML NO se cachea viejo: se revalida siempre. Así, apenas se publica un
+  # cambio (que llega con un ?v= nuevo en CSS/JS), el navegador baja el HTML
+  # fresco y con él la versión nueva de los estilos/scripts. Sin esto, algunos
+  # celulares (Samsung Internet, etc.) servían una página vieja de su caché y no
+  # se veían los cambios ni las animaciones.
+  ExpiresByType text/html    "access plus 0 seconds"
 </IfModule>
 
 # ============================================================================
@@ -122,5 +128,11 @@ RewriteRule ^(.+)$ / [R=301,L]
 <IfModule mod_headers.c>
   <FilesMatch "(?i)\.(jpe?g|png|gif|webp|svg)$">
     Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  # El HTML se revalida en cada visita (complementa al bloque de arriba): el
+  # navegador pregunta "¿cambió?" y, si no, reusa el suyo (304, rápido), pero si
+  # cambió baja la versión nueva. Evita que quede pegada una página vieja.
+  <FilesMatch "(?i)\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>

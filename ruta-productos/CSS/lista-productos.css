@@ -28,11 +28,11 @@
     margin-bottom: 25px; 
 }
 
-.filter-group h3 { 
-    font-size: 14px; 
-    margin-bottom: 12px; 
-    font-weight: 600;
-    color: #333;
+.filter-group h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #a41e22; /* TÍTULOS de sección en rojo de marca; las opciones/estados van en gris */
 }
 
 .filter-group ul { 
@@ -48,7 +48,7 @@
 .filter-group ul li a,
 .filter-group ul li .filter-btn {
     text-decoration: none;
-    color: #0066cc;
+    color: #5f5f5e;
     font-size: 13px;
     cursor: pointer;
     transition: color 0.2s;
@@ -58,13 +58,13 @@
 
 .filter-group ul li a:hover,
 .filter-group ul li .filter-btn:hover {
-    color: #d32f2f;
+    color: #333;
     text-decoration: underline;
 }
 
 /* BOTÓN LIMPIAR FILTROS */
 #btn-limpiar {
-    color: #d32f2f;
+    color: #5f5f5e;
     font-weight: 700;
     font-size: 13px;
     background: none;
@@ -77,7 +77,7 @@
 }
 
 #btn-limpiar:hover {
-    color: #a41e22;
+    color: #333;
     text-decoration: underline;
 }
 
@@ -89,13 +89,13 @@
     padding: 0 !important;
 }
 
-.filter-btn:hover { 
-    color: #d32f2f !important;
+.filter-btn:hover {
+    color: #333 !important;
 }
 
-.filter-btn.activo { 
+.filter-btn.activo {
     font-weight: 700 !important;
-    color: #d32f2f !important;
+    color: #333 !important; /* seleccionado: gris oscuro + negrita (rojo queda solo para los títulos) */
 }
 
 /* BUSCADOR DE CÓDIGO */
@@ -111,9 +111,35 @@
 
 .ml-sidebar-search:focus {
     outline: none;
-    border-color: #0066cc;
+    border-color: #a41e22;
     box-shadow: 0 0 4px rgba(0, 102, 204, 0.3);
 }
+
+/* BOTÓN "VOLVER" DEL GRID (vuelve al menú general de tipos de la categoría,
+   p. ej. sc-en-hm.html para sierras). Mismo look que el "Volver" de las fichas. */
+.volver-grid { margin: 0 0 16px 0; }
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #a41e22;
+    border: 2px solid #a41e22;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(201, 11, 15, 0.14);
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.btn-volver:hover {
+    background: #a41e22;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(201, 11, 15, 0.28);
+    transform: translateY(-1px);
+}
+.btn-volver i { font-size: 13px; }
 
 /* SECCIÓN PRINCIPAL DE CONTENIDO */
 .products-content {
@@ -142,7 +168,7 @@
 
 .ml-sort-select:focus {
     outline: none;
-    border-color: #0066cc;
+    border-color: #a41e22;
 }
 
 /* GRILLA DE PRODUCTOS - AGNÓSTICA */
@@ -221,7 +247,7 @@
 }
 
 .fav-icon:hover {
-    color: #d32f2f;
+    color: #a41e22;
 }
 
 /* INFORMACIÓN DEL PRODUCTO */
@@ -254,7 +280,7 @@
 }
 
 .product-more-info {
-    background-color: #d32f2f;
+    background-color: #a41e22;
     color: #ffffff;
     padding: 10px 12px;
     border-radius: 4px;
@@ -278,7 +304,7 @@
 .product-info > p {
     text-align: center;
     font-size: 12px;
-    color: #0066cc;
+    color: #a41e22;
     margin: 8px 0;
     cursor: pointer;
     text-decoration: none;
@@ -389,7 +415,7 @@
 }
 
 .ml-breadcrumbs a {
-    color: #0066cc;
+    color: #a41e22;
     text-decoration: none;
 }
 
@@ -404,14 +430,14 @@
 
 .filter-item a {
     text-decoration: none;
-    color: #0066cc;
+    color: #a41e22;
     font-size: 13px;
     cursor: pointer;
     transition: color 0.2s;
 }
 
 .filter-item a:hover {
-    color: #d32f2f;
+    color: #a41e22;
     text-decoration: underline;
 }
 
@@ -498,12 +524,12 @@ select {
 
 .submenu-moldura li a:hover,
 .submenu-moldura li .filter-btn:hover {
-    color: #d32f2f;
+    color: #333;
 }
 
 .submenu-moldura .filter-btn.activo {
     font-weight: 700 !important;
-    color: #d32f2f !important;
+    color: #333 !important;
 }
 
 /* Animación suave al desplegarse el submenú */
@@ -540,7 +566,7 @@ select {
         font-size: 12px;
     }
     .filter-group ul li a:hover { text-decoration: none; }
-    .filter-btn.activo { border-color: #d32f2f; background: #fdf0f0; }
+    .filter-btn.activo { border-color: #bbbbbb; background: #f0f0f0; }
     #btn-limpiar { border: none; background: none; padding: 6px 4px !important; }
     .submenu-moldura {
         width: 100%;
@@ -648,7 +674,7 @@ select {
         transition: transform 0.2s;
     }
     .js .filtros-toggle[aria-expanded="true"]::after { transform: translateY(2px) rotate(-135deg); }
-    .js .filtros-toggle.con-filtros { border-color: #d32f2f; color: #d32f2f; background: #fdf0f0; }
+    .js .filtros-toggle.con-filtros { border-color: #a41e22; color: #a41e22; background: #fdf0f0; }
 
     .js .filters-sidebar:not(.abierto) > .filter-group { display: none; }
 }

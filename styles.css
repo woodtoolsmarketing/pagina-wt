@@ -63,11 +63,12 @@ nav > ul > li > a {
     transition: color .22s ease, background-color .22s ease, box-shadow .22s ease, transform .22s ease;
 }
 nav > ul > li > a:hover {
-    color: #c90b0f;
-    font-weight: 700; /* negrita en hover */
-    background-color: rgba(201, 11, 15, 0.09); /* fondo levemente teñido */
+    /* Al pasar el cursor: rojo de los títulos + negrita, con la sombra tenue que
+       lo levanta (sin fondo teñido). */
+    color: #a41e22; /* rojo de los títulos */
+    font-weight: 700; /* negrita */
     box-shadow: 0 4px 16px rgba(201, 11, 15, 0.30); /* sombra tenue pero visible, como las tarjetas */
-    transform: scale(1.07); /* se acerca levemente */
+    transform: scale(1.05); /* leve acercamiento que acompaña la sombra */
 }
 
 /* ==========================================
@@ -302,8 +303,8 @@ nav > ul > li > a:hover {
 }
 
 .titulo-seccion {
-    font-weight: 300;
-    color: #666;
+    font-weight: 700;
+    color: #a41e22; /* "Nuestros Productos": negrita + rojo de los títulos */
     margin-bottom: 50px;
     font-size: 2.5rem;
 }
@@ -322,10 +323,15 @@ nav > ul > li > a:hover {
     border-radius: 5px;
     padding-bottom: 20px;
     box-shadow: 0 2px 10px rgba(201, 11, 15, 0.18); /* sombra roja del logo */
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover { transform: translateY(-5px); }
+/* Al pasar el mouse se levanta y la sombra crece (solo la sombra, la tarjeta no
+   se tiñe de rojo). */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(201, 11, 15, 0.22);
+}
 
 .img-container {
     position: relative;
@@ -357,14 +363,14 @@ nav > ul > li > a:hover {
 
 .card h1 {
     font-size: 1.2rem;
-    color: #333;
+    color: #a41e22; /* rojo de los títulos (tarjetas de categoría de la home) */
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .card p {
     font-size: 0.95rem;
-    color: #777;
+    color: #595959;
     line-height: 1.5;
     padding: 0 15px;
 }
@@ -431,8 +437,8 @@ nav > ul > li > a:hover {
 }
 
 .video-block h2 {
-    font-weight: 300;
-    color: #555;
+    font-weight: 700;
+    color: #a41e22; /* títulos de los videos del index: negrita + rojo de los títulos */
     margin-bottom: 20px;
 }
 
@@ -668,13 +674,21 @@ footer {
     transform: scale(1.07);
 }
 .header-search .lupa-input {
-    flex: 0 0 0; width: 0; padding: 0; border: 1px solid transparent; opacity: 0;
-    font-size: 14px; box-sizing: border-box;
-    transition: flex-basis .25s ease, opacity .2s ease, padding .25s ease;
+    flex: 0 0 0; width: 0; min-width: 0; padding: 0; opacity: 0;
+    border: 1px solid transparent; border-radius: 6px;
+    transform: translateX(-14px); transform-origin: left center;
+    font-size: 14px; box-sizing: border-box; will-change: flex-basis, transform, opacity;
+    transition: flex-basis .42s cubic-bezier(.22, 1, .36, 1),
+                width .42s cubic-bezier(.22, 1, .36, 1),
+                padding .42s cubic-bezier(.22, 1, .36, 1),
+                transform .42s cubic-bezier(.22, 1, .36, 1),
+                opacity .3s ease,
+                border-color .3s ease;
 }
 .header-search.abierto .lupa-input {
     flex: 0 0 190px; width: 190px; padding: 7px 10px; opacity: 1;
-    border: 1px solid #a41e22; border-radius: 6px; outline: none;
+    transform: translateX(0);
+    border-color: #a41e22; outline: none;
 }
 @media (max-width: 480px) {
     .header-search.abierto .lupa-input { flex-basis: 130px; width: 130px; }

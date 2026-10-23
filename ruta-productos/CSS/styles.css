@@ -266,13 +266,21 @@ nav a {
     transform: scale(1.07);
 }
 .header-search .lupa-input {
-    flex: 0 0 0; width: 0; padding: 0; border: 1px solid transparent; opacity: 0;
-    font-size: 14px; box-sizing: border-box;
-    transition: flex-basis .25s ease, opacity .2s ease, padding .25s ease;
+    flex: 0 0 0; width: 0; min-width: 0; padding: 0; opacity: 0;
+    border: 1px solid transparent; border-radius: 6px;
+    transform: translateX(-14px); transform-origin: left center;
+    font-size: 14px; box-sizing: border-box; will-change: flex-basis, transform, opacity;
+    transition: flex-basis .42s cubic-bezier(.22, 1, .36, 1),
+                width .42s cubic-bezier(.22, 1, .36, 1),
+                padding .42s cubic-bezier(.22, 1, .36, 1),
+                transform .42s cubic-bezier(.22, 1, .36, 1),
+                opacity .3s ease,
+                border-color .3s ease;
 }
 .header-search.abierto .lupa-input {
     flex: 0 0 190px; width: 190px; padding: 7px 10px; opacity: 1;
-    border: 1px solid #a41e22; border-radius: 6px; outline: none;
+    transform: translateX(0);
+    border-color: #a41e22; outline: none;
 }
 @media (max-width: 480px) {
     .header-search.abierto .lupa-input { flex-basis: 130px; width: 130px; }

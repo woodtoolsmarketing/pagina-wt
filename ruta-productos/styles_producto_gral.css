@@ -301,7 +301,7 @@ nav > ul > li > a:hover {
 
 .prod-info h3 {
     font-size: 1.2rem;
-    color: #333;
+    color: #a41e22; /* rojo de los títulos (tarjetas de las landings de categoría) */
     margin-bottom: 10px;
     font-weight: 700;
 }

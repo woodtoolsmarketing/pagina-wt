@@ -22,6 +22,40 @@ body {
     gap: 0;
 }
 
+/* Botón "Volver" arriba de la ficha (vuelve a la lista de donde se vino) */
+.volver-container {
+    max-width: 1100px;
+    margin: 28px auto -12px auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #a41e22;
+    border: 2px solid #a41e22;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(201, 11, 15, 0.14);
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.btn-volver:hover {
+    background: #a41e22;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(201, 11, 15, 0.28);
+    transform: translateY(-1px);
+}
+.btn-volver i { font-size: 13px; }
+@media (max-width: 700px) {
+    .volver-container { margin: 18px 10px -6px; padding: 0; }
+    .btn-volver { font-size: 13px; padding: 8px 14px; }
+}
+
 /* ======================================================
    SECCIÓN IZQUIERDA: IMAGEN Y GALERÍA (Estilo ML)
    ====================================================== */
@@ -62,7 +96,7 @@ body {
 
 /* Clase de la miniatura activa */
 .mini-img.activa {
-    border-color: #3483fa; /* Azul ML, podés cambiarlo a #a41e22 (rojo) si preferís */
+    border-color: #a41e22; /* Azul ML, podés cambiarlo a #a41e22 (rojo) si preferís */
 }
 
 /* Caja de la foto principal (Donde ocurre el Zoom) */
@@ -155,7 +189,7 @@ body {
 }
 
 .selector-modelo select:focus {
-    border-color: #3483fa; 
+    border-color: #a41e22; 
     box-shadow: 0 0 0 2px rgba(52,131,250,.2);
 }
 

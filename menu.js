@@ -6,9 +6,9 @@
  * ni siquiera tenia onclick: su href="#" mandaba al principio de la pagina.
  *
  * Comportamiento (igual con mouse que con dedo):
- *   - primer toque/clic en el titulo: abre ese menu y cierra el otro
- *   - segundo toque en PRODUCTOS: navega a productos.html (como antes)
- *   - segundo toque en CONTACTANOS (href="#"): cierra
+ *   - clic en el TEXTO de PRODUCTOS: va a productos.html (catalogo general)
+ *   - clic en la FLECHA de PRODUCTOS: abre/cierra el submenu (no navega)
+ *   - clic en CONTACTANOS (texto o flecha, href="#"): abre/cierra el submenu
  *   - tocar en cualquier otro lado, Escape, o volver atras: cierra
  *
  * Escucha en fase de captura, asi decide antes que el onclick inline del <a>
@@ -29,23 +29,28 @@
 		var a = e.target.closest ? e.target.closest('nav .dropdown > a') : null;
 		if (!a) return;
 		var li = a.parentElement;
+		var href = a.getAttribute('href') || '';
+		var tienePagina = href && href !== '#';            // PRODUCTOS si; CONTACTANOS (href="#") no
+		var icon = a.querySelector('i, svg');              // la flecha (caret)
+		var enFlecha = !!(icon && (e.target === icon || (icon.contains && icon.contains(e.target))));
 
-		if (li.classList.contains('open')) {
-			if (a.getAttribute('href') === '#') {
-				e.preventDefault();
-				e.stopPropagation();
-				cerrar();
-			}
-			// PRODUCTOS: se deja pasar. El onclick inline ve dataset.abierto
-			// puesto, no frena el clic y el enlace navega.
+		// Decidimos nosotros: bloqueamos la navegacion por defecto y el onclick
+		// inline del <a>, y elegimos si togglear o navegar.
+		e.preventDefault();
+		e.stopPropagation();
+
+		// La FLECHA abre/cierra el submenu (NUNCA navega). Un titulo sin pagina
+		// (CONTACTANOS, href="#") tambien togglea al tocar el texto.
+		if (enFlecha || !tienePagina) {
+			if (li.classList.contains('open')) cerrar();           // segundo toque: cierra
+			else { cerrar(li); li.classList.add('open'); a.dataset.abierto = '1'; }  // abre
 			return;
 		}
 
-		e.preventDefault();
-		e.stopPropagation();          // el onclick inline no llega a correr
-		cerrar(li);
-		li.classList.add('open');
-		a.dataset.abierto = '1';
+		// Click en el TEXTO de un titulo CON pagina (PRODUCTOS): va al catalogo
+		// general (productos.html), tanto en celular como en escritorio.
+		cerrar();
+		window.location.href = a.href;
 	}, true);
 
 	// pointerdown y no click: Safari de iPhone no manda "click" al documento
@@ -74,4 +79,79 @@
 	// abierto. Solo en ese caso (persisted): "pageshow" tambien se dispara al
 	// terminar la carga normal, y cerraba un menu que el usuario ya habia abierto.
 	window.addEventListener('pageshow', function (e) { if (e.persisted) cerrar(); });
+})();
+
+/* ==========================================================================
+ * MENU HAMBURGUESA (celular, <=900px)
+ * Inyecta el boton en TODAS las paginas (sin tocar los HTML) y convierte el
+ * <nav> en un cajon que se abre/cierra. En escritorio el boton esta oculto por
+ * CSS (responsive.css) y el nav se ve normal. El toggle de los desplegables lo
+ * sigue manejando la IIFE de arriba (clase .open); aca solo se agrega el cajon.
+ * ========================================================================== */
+(function () {
+	var cont = document.querySelector('header .header-container');
+	var nav = cont && cont.querySelector('nav');
+	if (!cont || !nav) return;
+	if (cont.querySelector('.nav-toggle')) return;   // idempotente
+
+	nav.id = nav.id || 'menu-principal';
+	var btn = document.createElement('button');
+	btn.type = 'button';
+	btn.className = 'nav-toggle';
+	btn.setAttribute('aria-label', 'Abrir menú');
+	btn.setAttribute('aria-expanded', 'false');
+	btn.setAttribute('aria-controls', nav.id);
+	btn.innerHTML = '<span></span><span></span><span></span>';
+	cont.appendChild(btn);   // el CSS lo ubica a la derecha en celular
+
+	function abrir(v) {
+		document.body.classList.toggle('nav-abierto', v);
+		btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+		btn.setAttribute('aria-label', v ? 'Cerrar menú' : 'Abrir menú');
+	}
+	btn.addEventListener('click', function (e) {
+		e.stopPropagation();
+		abrir(!document.body.classList.contains('nav-abierto'));
+	});
+	// Tocar un enlace del nav cierra el cajon. Excepcion: el <a> padre de un
+	// desplegable (PRODUCTOS/CONTACTANOS) es un toggle del submenu -> no cerrar.
+	nav.addEventListener('click', function (e) {
+		var a = e.target.closest ? e.target.closest('a') : null;
+		if (!a) return;
+		var li = a.parentElement;
+		if (li && li.classList.contains('dropdown')) return;
+		abrir(false);
+	});
+	// Tocar fuera del header cierra el cajon.
+	document.addEventListener('click', function (e) {
+		if (!document.body.classList.contains('nav-abierto')) return;
+		if (e.target.closest && e.target.closest('header')) return;
+		abrir(false);
+	});
+	document.addEventListener('keydown', function (e) { if (e.key === 'Escape') abrir(false); });
+	window.addEventListener('pageshow', function (e) { if (e.persisted) abrir(false); });
+	// Si se agranda a escritorio con el cajon abierto, se cierra para no dejarlo pegado.
+	window.addEventListener('resize', function () { if (window.innerWidth > 900) abrir(false); });
+})();
+
+/* ==========================================================================
+ * BOTONES FLOTANTES (WhatsApp/Gmail) SCROLL-AWARE (celular)
+ * En celular tapaban contenido y CTAs. Ahora, debajo de 900px, se ocultan al
+ * bajar (mientras se lee/escanea) y reaparecen al subir o al frenar. En
+ * escritorio no cambian. No hace nada en paginas sin botones flotantes.
+ * ========================================================================== */
+(function () {
+	var fab = document.querySelector('.floating-buttons');
+	if (!fab) return;
+	var ultimo = window.pageYOffset || 0, oculto = false, t;
+	function set(v) { if (v === oculto) return; oculto = v; fab.classList.toggle('fab-oculto', v); }
+	window.addEventListener('scroll', function () {
+		if (window.innerWidth > 900) { set(false); return; }
+		var y = window.pageYOffset || 0;
+		if (y > ultimo + 6 && y > 140) set(true);        // bajando -> ocultar
+		else if (y < ultimo - 6) set(false);             // subiendo -> mostrar
+		ultimo = y;
+		clearTimeout(t);
+		t = setTimeout(function () { set(false); }, 900); // al frenar, reaparecen
+	}, { passive: true });
 })();

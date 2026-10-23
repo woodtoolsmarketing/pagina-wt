@@ -1920,7 +1920,13 @@ function renderizarGaleria(codigoActivo, info) {
     const defaultLogo = "../../../imagenes/logos/WoodTools.png";
     let carpetaBase = info.carpetaImg;
 
-    if (codigoActivo && (codigoActivo.startsWith("MCD03") || codigoActivo.startsWith("MCI03"))) {
+    if (codigoActivo === "MCD-MCI2") {
+        // Ficha "MCD-MCI 2": tiene su propia carpeta de fotos (antes mostraba las de la variante 1)
+        carpetaBase = "Familias MCD  MCI 2";
+    } else if (codigoActivo === "MCD-MCI3") {
+        // Ficha "MCD-MCI 3": idem, carpeta propia
+        carpetaBase = "Familias MCD  MCI 3";
+    } else if (codigoActivo && (codigoActivo.startsWith("MCD03") || codigoActivo.startsWith("MCI03"))) {
         carpetaBase = "Familias MCD  MCI 3";
     } else if (codigoActivo && (codigoActivo.startsWith("MCD15") || codigoActivo.startsWith("MCI15"))) {
         carpetaBase = "Familias MCD  MCI 2";

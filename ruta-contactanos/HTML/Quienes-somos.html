@@ -15,9 +15,9 @@
     <meta name="description" content="Quiénes Somos - WoodTools S.R.L., distribuidor Freud en Argentina. Sierras, fresas, cuchillas, mechas, cabezales y herramientas de diamante para la industria de la madera.">
     <title>Quiénes Somos - WoodTools S.R.L.</title>
     
-    <link rel="stylesheet" href="../../styles.css?v=22">
+    <link rel="stylesheet" href="../../styles.css?v=29">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../responsive.css?v=4">
+    <link rel="stylesheet" href="../../responsive.css?v=13">
     
     <style>
         main {
@@ -138,6 +138,89 @@
             .bio-card { padding: 25px 18px; }
             .bio-card h3 { font-size: 20px; gap: 10px; overflow-wrap: anywhere; }
         }
+
+        /* --- TARJETAS DESPLEGABLES (se activan solo con JS: .colapsable) --- */
+        /* Sin JS la flecha no se muestra y el contenido queda a la vista. */
+        .bio-card .card-toggle { display: none; }
+
+        /* Cada tarjeta toma su alto propio: al expandir una no se estira su par. */
+        .pillar-container.colapsable { align-items: start; }
+
+        .pillar-container.colapsable .bio-card {
+            position: relative;
+            cursor: pointer;
+            padding-bottom: 42px;
+        }
+
+        /* Colapsada: solo el título a la vista */
+        .pillar-container.colapsable .bio-card h3 { margin-bottom: 0; }
+
+        .pillar-container.colapsable .bio-card .card-body {
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            margin-top: 0;
+            transition: grid-template-rows .5s cubic-bezier(.22, 1, .36, 1),
+                        opacity .35s ease,
+                        margin-top .45s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .pillar-container.colapsable .bio-card .card-body-inner {
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* Expandida: mientras el mouse esté encima, o fijada con un clic.
+           La transición acá definida gobierna la APERTURA (más lenta y suave);
+           la del estado base gobierna el cierre. */
+        .pillar-container.colapsable .bio-card:not(.sin-hover):hover .card-body,
+        .pillar-container.colapsable .bio-card.abierta .card-body {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: 20px;
+            transition: grid-template-rows .85s cubic-bezier(.16, 1, .3, 1),
+                        opacity .6s ease .05s,
+                        margin-top .85s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        /* Flecha para comprimir (abajo a la derecha) */
+        .pillar-container.colapsable .bio-card .card-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 12px;
+            bottom: 8px;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            color: #a41e22;
+            font-size: 17px;
+            cursor: pointer;
+            opacity: 0;
+            transform: rotate(0deg);
+            transition: opacity .3s ease,
+                        transform .45s cubic-bezier(.22, 1, .36, 1),
+                        background .2s ease;
+        }
+
+        /* Fijada abierta: flecha visible apuntando hacia arriba (comprime al tocarla) */
+        .pillar-container.colapsable .bio-card.abierta .card-toggle {
+            opacity: 1;
+            transform: rotate(180deg);
+        }
+        .pillar-container.colapsable .bio-card.abierta .card-toggle:hover {
+            background: rgba(164, 30, 34, 0.10);
+        }
+
+        /* En dispositivos táctiles (sin hover) la flecha se muestra siempre como pista */
+        @media (hover: none) {
+            .pillar-container.colapsable .bio-card .card-toggle { opacity: .5; }
+            .pillar-container.colapsable .bio-card.abierta .card-toggle { opacity: 1; }
+        }
     </style>
     <link rel="canonical" href="https://www.woodtools.com.ar/ruta-contactanos/HTML/Quienes-somos.html">
 </head>
@@ -203,7 +286,13 @@
             <h1>Somos Wood Tools S.R.L.</h1>
             <h2>Expertos en la fabricación y comercialización de herramientas de corte</h2>
             
-            <p style="text-align: center;">Nuestra empresa está <span class="highlight">hace 29 años</span> en el mercado de la fabricación y comercialización de herramientas de corte para la elaboración de la madera. A lo largo de esta trayectoria, hemos mantenido el compromiso inquebrantable de ofrecer siempre la máxima calidad y precisión en cada solución. Son estas casi tres décadas de experiencia sostenida las que nos avalan y consolidan como líderes dentro del rubro, garantizando un rendimiento superior y confiabilidad absoluta para la industria.</p>
+            <p style="text-align: justify;">Bienvenidos a <span class="highlight">Wood Tools S.R.L.</span> Somos una empresa especializada en proveer herramientas, sierras y accesorios de corte de máxima precisión para el sector maderero, metalúrgico y manufacturero, buscando la evolución constante.</p>
+
+            <p style="text-align: justify;">A través de nuestra red de ventas formada por representantes y vendedores propios cubrimos el <span class="highlight">100% del territorio argentino</span>, pudiendo brindar así un servicio personalizado a cada uno de nuestros clientes y colaborando en la resolución de problemas gracias al conocimiento técnico y a capacitaciones constantes.</p>
+
+            <p style="text-align: justify;">Ubicados en <span class="highlight">Avellaneda, Prov. de Buenos Aires</span>, nos enorgullece ser un eslabón fundamental que impulsa a la industria argentina. Día a día acompañamos a carpinterías, pymes y trabajadores, brindándoles las mejores soluciones para seguir construyendo el futuro.</p>
+
+            <p style="text-align:center; font-weight:bold; color:#a41e22; font-size:18px; margin-top:10px;">WoodTools S.R.L. — Equipando tu trabajo con precisión y calidad.</p>
             
             <div class="divisor"></div>
         </section>
@@ -212,27 +301,57 @@
             <div class="pillar-container">
                 
                 <div class="bio-card">
-                    <h3><i class="fa-solid fa-route"></i> Trayectoria</h3>
-                    <p>A través de nuestra red de ventas formada por representantes y vendedores propios cubrimos el 70% del territorio Argentino con una presencia de nuestro personal casi permanente.</p>
-                    <p>Pudiendo brindar así un servicio personalizado a cada uno de nuestros clientes. Colaborando en la resolución de problemas gracias al conocimiento técnico de nuestros vendedores.</p>
+                    <h3><i class="fa-solid fa-lightbulb"></i> Innovación y Calidad</h3>
+                    <div class="card-body"><div class="card-body-inner">
+                    <p>Bajo nuestro lema "Celebrando nuestra historia e innovando para el futuro", combinamos nuestra vasta experiencia con la más alta tecnología del sector:</p>
+                    <ul style="color:#555; line-height:1.7; font-size:16px; margin:0; padding-left:22px; text-align:left;">
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Catálogo especializado:</strong> Ofrecemos una amplia gama de sierras circulares, discos incisores, cuchillas, fresas y accesorios para todo tipo de maquinarias.</li>
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Estándares internacionales:</strong> Trabajamos con tecnología y precisión italiana, ofreciendo herramientas de alta durabilidad para garantizar cortes limpios y exactos.</li>
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Servicio de afilado de vanguardia:</strong> Incorporamos tecnología de punta, como nuestra afiladora automática asistida por robot, para brindar un servicio de afilado industrial inigualable.</li>
+                        <li><strong style="color:#333;">Respuesta inmediata:</strong> Contamos con stock permanente para asegurar entregas rápidas a todo el país.</li>
+                    </ul>
+                    </div></div>
+                    <button type="button" class="card-toggle" aria-label="Expandir o comprimir la tarjeta"><i class="fa-solid fa-chevron-down"></i></button>
                 </div>
 
                 <div class="bio-card">
-                    <h3><i class="fa-solid fa-industry"></i> Fabricación</h3>
-                    <p>Contamos con una amplia gama de productos que se producen en nuestra planta industrial. Tenemos una línea de productos standard de los cuales contamos con stock permanente.</p>
-                    <p>Además, gracias a nuestro departamento técnico desarrollamos cualquier herramienta especial que nuestros clientes necesiten. Haciéndoles llegar un plano con el diseño para ser aprobado, con el que luego se dará comienzo a la fabricación de la herramienta solicitada.</p>
+                    <h3><i class="fa-solid fa-industry"></i> Fabricación y Desarrollos a Medida</h3>
+                    <div class="card-body"><div class="card-body-inner">
+                    <p>En nuestra planta industrial producimos una amplia gama de soluciones para el sector. Mantenemos stock permanente de nuestra línea de productos estándar, lo que nos permite garantizar una respuesta ágil y eficiente para equipar su taller sin demoras.</p>
+                    <p style="font-weight:600; color:#333; margin:14px 0 4px;">Ingeniería y Herramientas Especiales</p>
+                    <p>Comprendemos que los desafíos de la industria a menudo exigen soluciones que van más allá del catálogo tradicional. Gracias a nuestro departamento técnico, tenemos la capacidad de desarrollar cualquier herramienta especial que nuestros clientes necesiten, bajo un proceso de trabajo riguroso y personalizado:</p>
+                    <ul style="color:#555; line-height:1.7; font-size:16px; margin:0; padding-left:22px; text-align:left;">
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Diseño a medida:</strong> Analizamos los requerimientos técnicos y productivos de su proyecto.</li>
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Aprobación de planos:</strong> Elaboramos y enviamos un plano detallado con el diseño exacto de la pieza para su evaluación y conformidad.</li>
+                        <li><strong style="color:#333;">Producción de precisión:</strong> Una vez aprobado el diseño, damos comienzo a la fabricación de la herramienta solicitada, asegurando los más altos estándares de calidad y rendimiento.</li>
+                    </ul>
+                    </div></div>
+                    <button type="button" class="card-toggle" aria-label="Expandir o comprimir la tarjeta"><i class="fa-solid fa-chevron-down"></i></button>
                 </div>
 
                 <div class="bio-card">
-                    <h3><i class="fa-solid fa-handshake"></i> Comercialización</h3>
-                    <p>Desde hace más de 10 años nuestra empresa representa a las mejores marcas de Europa con las cuales sostenemos una estrecha relación.</p>
-                    <p>Comercializamos sierras circulares, cabezales con insertos, cuchillas de la más alta calidad, garantizando el mejor asesoramiento técnico y un stock permanente para una entrega inmediata.</p>
+                    <h3><i class="fa-solid fa-handshake"></i> Comercialización y Alianzas Estratégicas</h3>
+                    <div class="card-body"><div class="card-body-inner">
+                    <p>En WoodTools S.R.L., nuestra trayectoria de 30 años nos ha permitido forjar y sostener sólidas alianzas con las marcas más prestigiosas de Europa. Esta estrecha relación internacional nos posiciona como representantes de confianza, acercando a la industria nacional la tecnología y la precisión de los fabricantes líderes a nivel global.</p>
+                    <p style="font-weight:600; color:#333; margin:14px 0 4px;">Catálogo de Calidad Superior</p>
+                    <p>Comercializamos una línea de productos premium diseñada para soportar las mayores exigencias de la industria. Nuestro catálogo incluye sierras circulares, cabezales con insertos y cuchillas de la más alta calidad, garantizando siempre un rendimiento excepcional y acabados impecables en cada corte.</p>
+                    <p style="font-weight:600; color:#333; margin:14px 0 4px;">Respaldo Técnico y Disponibilidad</p>
+                    <p>Entendemos que el tiempo y la precisión son factores críticos en su producción. Por ello, nuestro modelo de comercialización se apoya en dos pilares fundamentales:</p>
+                    <ul style="color:#555; line-height:1.7; font-size:16px; margin:0; padding-left:22px; text-align:left;">
+                        <li style="margin-bottom:8px;"><strong style="color:#333;">Asesoramiento experto:</strong> Ponemos a su disposición todo el conocimiento de nuestro departamento técnico para ayudarlo a seleccionar la herramienta exacta que resolverá sus necesidades y optimizará su maquinaria.</li>
+                        <li><strong style="color:#333;">Respuesta inmediata:</strong> Mantenemos un stock permanente de nuestras líneas de productos, lo que nos permite garantizar entregas inmediatas a cualquier punto del país para que su cadena de trabajo nunca se detenga.</li>
+                    </ul>
+                    </div></div>
+                    <button type="button" class="card-toggle" aria-label="Expandir o comprimir la tarjeta"><i class="fa-solid fa-chevron-down"></i></button>
                 </div>
 
                 <div class="bio-card">
                     <h3><i class="fa-solid fa-medal"></i> Calidad</h3>
-                    <p>Gracias a la materia prima seleccionada, la evaluación permanente de nuestros proveedores, conjugados con la incorporación constante de nueva tecnología y capacitación de nuestro personal, Wood Tools obtiene productos de altísima confiabilidad.</p>
-                    <p>El control de los diferentes procesos de fabricación hacen que las herramientas obtenidas cuenten con el más alto rendimiento en el momento de ser usadas.</p>
+                    <div class="card-body"><div class="card-body-inner">
+                    <p>La rigurosa selección de materias primas y la evaluación continua de nuestros proveedores, combinadas con la constante actualización tecnológica y la especialización de nuestro equipo, permiten a WoodTools S.R.L. desarrollar soluciones de máxima confiabilidad.</p>
+                    <p>El exhaustivo control aplicado en cada etapa del proceso de fabricación garantiza que nuestras herramientas ofrezcan siempre el más alto rendimiento, durabilidad y precisión industrial en el momento de su uso.</p>
+                    </div></div>
+                    <button type="button" class="card-toggle" aria-label="Expandir o comprimir la tarjeta"><i class="fa-solid fa-chevron-down"></i></button>
                 </div>
 
             </div>
@@ -251,17 +370,42 @@
         <div class="footer-contact-bar">
             <p>Cabildo 61 - CP (1870) - Avellaneda - Buenos Aires - Argentina | +54 (11) 4218-1700 &oacute; +54 (11) 4218-1701 | ventas@woodtools.com.ar</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; WoodTools S.R.L.</p>
-        </div>
-    </footer>
+</footer>
 
     <div class="floating-buttons">
         <a href="mailto:ventas@woodtools.com.ar" target="_blank"><img src="../../imagenes/logos/mail.png" alt="Email"></a>
         <a href="https://wa.me/5491157528428" target="_blank"><img src="../../imagenes/logos/Whatsapp.png" alt="WhatsApp"></a>
     </div>
 
-    <script src="../../menu.js?v=2" defer></script>
+    <script src="../../menu.js?v=7" defer></script>
 <script src="../../social-cards.js?v=2" defer></script>
+<script>
+    /* Tarjetas desplegables de "Quiénes somos":
+       - colapsadas muestran solo el título
+       - al pasar el mouse se expanden mientras el cursor esté encima
+       - un clic las fija abiertas (flecha hacia arriba); otro clic las comprime */
+    (function () {
+        var cont = document.querySelector('.pillar-container');
+        if (!cont) return;
+        cont.classList.add('colapsable'); // sin JS el contenido queda visible
+        cont.querySelectorAll('.bio-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                // no alternar si el usuario estaba seleccionando texto
+                if (window.getSelection && String(window.getSelection())) return;
+                var abierta = card.classList.toggle('abierta');
+                if (abierta) {
+                    card.classList.remove('sin-hover');
+                } else {
+                    // se cerró con el mouse encima: evitar que el hover la reabra
+                    card.classList.add('sin-hover');
+                }
+            });
+            // al salir la tarjeta, el hover vuelve a funcionar normalmente
+            card.addEventListener('mouseleave', function () {
+                card.classList.remove('sin-hover');
+            });
+        });
+    })();
+</script>
 </body>
 </html>

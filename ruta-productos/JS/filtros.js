@@ -124,6 +124,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     const mapaCarpetaCategoria = { SC: 'Sierras', FR: 'Fresas', MCH: 'Mechas', CH: 'Cuchillas', CBZ: 'Cabezales', DM: 'Diamante' };
 
+    // Máquinas que corresponden a cada categoría de herramienta (su "familia"). En el
+    // filtro de una sección (grid de una sola categoría) solo se muestran estas máquinas;
+    // así no aparece una máquina de otra familia por un producto suelto (ej. FI14M, una
+    // sierra de ranurar, técnicamente va en tupí, pero en la sección Sierras NO se
+    // muestra "tupí"). En "productos.html" (todas las categorías juntas) no se restringe.
+    const maquinasPorCategoria = {
+        Sierras:   ['escuadradora', 'seccionadora', 'multiple', 'trituradora', 'ingletadora'],
+        Fresas:    ['tupi', 'machimbradora', 'moldurera', 'cepilladora'],
+        Cuchillas: ['cepilladora', 'moldurera', 'machimbradora'],
+        Cabezales: ['machimbradora', 'moldurera', 'cepilladora', 'tupi'],
+        Mechas:    ['perforado', 'nesting', 'barreno'],
+        Diamante:  ['perforado', 'escuadradora', 'seccionadora']
+    };
+
     // =====================================================================
     // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas, Mechas, Cuchillas y Diamante)
     // =====================================================================
@@ -390,6 +404,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 4. LÓGICA PRINCIPAL DE FILTRADO
     //    Soporta tanto strings (lógica original) como arrays (alias).
     // =====================================================================
+    let _reFiltrandoMaq = false;   // guarda anti-recursión al soltar la máquina activa
     function aplicarFiltros() {
         let productosVisibles = 0;
 
@@ -456,6 +471,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
+        // Acota el filtro de máquina según los otros filtros activos. Si su opción activa
+        // desapareció, la suelta y re-filtra una sola vez (guarda anti-recursión).
+        const soltoMaq = actualizarMaquinasContextual();
+        if (soltoMaq && !_reFiltrandoMaq) {
+            _reFiltrandoMaq = true;
+            aplicarFiltros();
+            _reFiltrandoMaq = false;
+            return;
+        }
+
         actualizarBotonFiltrar();
     }
 
@@ -483,6 +508,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         botones.forEach(b => {
             const tipo = b.getAttribute('data-filter-type');
+            // El filtro de máquina lo maneja actualizarMaquinasContextual() (whitelist por
+            // sección, y se acota al filtrar por categoría/marca/búsqueda). Acá no se toca.
+            if (tipo === 'maquina') return;
             const valor = (b.getAttribute('data-filter-value') || '').toLowerCase();
             // Los alias (ej. "discos" = sierra+incisor) se dan por válidos.
             const esAlias = !!(aliasFiltros[tipo] && aliasFiltros[tipo][valor]);
@@ -500,6 +528,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // (nunca los que contienen el botón "Limpiar Filtros").
         document.querySelectorAll('.filter-group').forEach(grupo => {
             if (grupo.querySelector('#btn-limpiar')) return;
+            // El grupo de máquina lo maneja actualizarMaquinasContextual().
+            if (grupo.querySelector('.filter-btn[data-filter-type="maquina"]')) return;
             const opciones = grupo.querySelectorAll('.filter-btn[data-filter-type][data-filter-value]');
             if (!opciones.length) return;
             const algunaVisible = Array.from(opciones).some(b => {
@@ -508,6 +538,75 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             grupo.style.display = algunaVisible ? '' : 'none';
         });
+    }
+
+    // Actualiza el filtro "Para tipos de máquina" según los OTROS filtros activos
+    // (categoría, marca, subcat, búsqueda, etc.):
+    //  - Sin filtros que acoten: muestra TODAS las máquinas de la familia de la sección
+    //    (whitelist), aunque alguna no tenga producto visible (ej. "Tupí" en Cabezales).
+    //  - Con algún filtro/búsqueda activo: esconde las máquinas que no tienen ningún
+    //    producto dentro de ese subconjunto. En "productos.html" (varias categorías) no
+    //    hay whitelist: la base es "máquinas presentes en toda la página".
+    // Devuelve true si tuvo que soltar la máquina activa (para re-filtrar una vez).
+    function actualizarMaquinasContextual() {
+        const botonesMaq = Array.from(document.querySelectorAll('.filter-btn[data-filter-type="maquina"][data-filter-value]'));
+        if (!botonesMaq.length) return false;
+
+        // Categoría(s) de la sección (por la carpeta del href) + máquinas presentes en toda la página.
+        const cats = new Set();
+        const presentesTodas = new Set();
+        productos.forEach(p => {
+            if (p.dataset.sinFoto === '1') return;
+            const folder = (p.getAttribute('href') || '').split('/')[0];
+            if (mapaCarpetaCategoria[folder]) cats.add(mapaCarpetaCategoria[folder]);
+            const m = p.getAttribute('data-maquina');
+            if (m) m.split(/\s+/).forEach(k => { if (k) presentesTodas.add(k.toLowerCase()); });
+        });
+        const restringir = cats.size === 1;
+        const permitidas = restringir ? new Set(maquinasPorCategoria[[...cats][0]] || []) : null;
+
+        // ¿Hay algún filtro que acote (que no sea el de máquina) o texto de búsqueda?
+        const acota = !!textoBusqueda || Object.keys(filtrosActivos).some(k =>
+            k !== 'maquina' && filtrosActivos[k] && filtrosActivos[k] !== 'todos');
+
+        // Máquinas con al menos un producto que pasa los OTROS filtros (+ búsqueda).
+        const disponibles = new Set();
+        if (acota) {
+            productos.forEach(p => {
+                if (p.dataset.sinFoto === '1') return;
+                if (textoBusqueda && !textoDeProducto(p).includes(textoBusqueda)) return;
+                for (const [f, v] of Object.entries(filtrosActivos)) {
+                    if (f === 'maquina' || !v || v === 'todos') continue;
+                    const vp = p.getAttribute('data-' + f);
+                    if (Array.isArray(v)) { if (!vp || !v.some(x => x.toLowerCase() === vp.toLowerCase())) return; }
+                    else { if (!vp || vp.toLowerCase() !== ('' + v).toLowerCase()) return; }
+                }
+                const m = p.getAttribute('data-maquina');
+                if (m) m.split(/\s+/).forEach(k => { if (k) disponibles.add(k.toLowerCase()); });
+            });
+        }
+
+        let soltoActiva = false;
+        botonesMaq.forEach(b => {
+            const V = (b.getAttribute('data-filter-value') || '').toLowerCase();
+            const base = restringir ? !!(permitidas && permitidas.has(V)) : presentesTodas.has(V);
+            const mostrar = base && (!acota || disponibles.has(V));
+            const item = b.closest('li') || b;
+            item.style.display = mostrar ? '' : 'none';
+            if (!mostrar && b.classList.contains('activo')) {
+                b.classList.remove('activo');
+                filtrosActivos['maquina'] = 'todos';
+                soltoActiva = true;
+            }
+        });
+
+        // Esconder el grupo de máquina si no quedó ninguna opción visible.
+        const grupoMaq = botonesMaq[0].closest('.filter-group');
+        if (grupoMaq && !grupoMaq.querySelector('#btn-limpiar')) {
+            const algunaVisible = botonesMaq.some(b => (b.closest('li') || b).style.display !== 'none');
+            grupoMaq.style.display = algunaVisible ? '' : 'none';
+        }
+        return soltoActiva;
     }
 
     // Muestra/oculta los submenús contextuales según el filtro padre activo.

@@ -18,11 +18,36 @@
    ========================================================================== */
 
 
+/* Tipografia de marca para TITULOS (Montserrat). Debe ir antes de cualquier
+   regla (los @import van primero). Solo se aplica a encabezados mas abajo, para
+   no tocar el nav ni el cuerpo y no mover los breakpoints del header. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
+
 /* 0. RED DE SEGURIDAD
    Ninguna imagen, video ni mapa puede ser mas ancho que su contenedor.
    No se toca el alto: hay imagenes con alto fijo y object-fit. El logo y los
    iconitos del menu quedan afuera porque tienen ancho fijo a proposito. */
 img, video, iframe { max-width: 100%; }
+
+/* TITULOS en Montserrat (da caracter de marca sin tocar nav/cuerpo). El reset
+   universal "* { font-family }" los ponia en la fuente del sistema; esto lo
+   pisa solo para encabezados y titulos de producto. */
+h1, h2, h3,
+.product-title, .producto-titulo, .slide-content h1, .categoria-hero-content h1 {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Franja de marcas representadas (#marcas): logos muy dispares (proporciones,
+   colores, taglines incrustados). Tratamiento de "muro de partners" uniforme:
+   ancho acotado, leve desaturacion y, en desktop, color + zoom al pasar. */
+#marcas img {
+    max-width: 140px; width: auto;
+    filter: grayscale(35%); opacity: .9;
+    transition: filter .3s ease, opacity .3s ease, transform .25s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+    #marcas img:hover { filter: none; opacity: 1; transform: scale(1.05); }
+}
 .logo img, .dropdown-menu img.menu-icon { max-width: none; }
 
 
@@ -109,6 +134,100 @@ img, video, iframe { max-width: 100%; }
 .floating-buttons { z-index: 999; }
 
 
+/* ==========================================================================
+   1c. MENU HAMBURGUESA / CAJON (<=900px)
+   La hamburguesa la inyecta menu.js en TODAS las paginas. Debajo de 900px el
+   <nav> deja de ocupar filas en la barra y pasa a ser un cajon que se abre con
+   el boton; la barra queda slim (logo + hamburguesa, acciones en una fila
+   debajo). Va DESPUES de todas las reglas de nav de arriba (y como responsive
+   es la ultima hoja) para ganar por orden de fuente; los submenus se overridean
+   con mayor especificidad ("nav .dropdown-menu"). En escritorio el boton no se
+   ve (regla de abajo) y nada cambia. */
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+    .header-container { position: relative; align-items: center; }
+    .logo { order: 1; flex: 1 1 auto; }
+
+    .nav-toggle {
+        order: 2;
+        display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 46px; height: 46px; padding: 12px; margin-left: 8px;
+        background: none; border: 0; border-radius: 8px; cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .nav-toggle span {
+        display: block; width: 100%; height: 3px; border-radius: 2px;
+        background: #a41e22; transition: transform .25s ease, opacity .2s ease;
+    }
+    body.nav-abierto .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    body.nav-abierto .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-abierto .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .header-actions { order: 3; width: 100%; justify-content: center; }
+
+    /* El nav pasa a ser un cajon, oculto por defecto, debajo de la barra. */
+    nav {
+        order: 4;
+        position: absolute; top: 100%; left: 0; right: 0; width: 100%;
+        background: #fff; border-top: 2px solid #a41e22;
+        box-shadow: 0 12px 24px rgba(0,0,0,.16);
+        max-height: 0; overflow: hidden;
+        transition: max-height .3s ease;
+        z-index: 1200;
+    }
+    body.nav-abierto nav { max-height: 85vh; max-height: 85dvh; overflow-y: auto; overscroll-behavior: contain; }
+
+    nav > ul {
+        flex-direction: column; flex-wrap: nowrap; align-items: stretch;
+        gap: 0; width: 100%; padding: 0;
+    }
+    nav > ul > li { width: 100%; position: static; border-bottom: 1px solid #eee; }
+    nav > ul > li > a {
+        display: flex; align-items: center;
+        padding: 18px 22px; min-height: 62px; box-sizing: border-box;
+        font-size: 16px; font-weight: 600; white-space: normal; border-radius: 0;
+    }
+    /* dentro del cajon, sin el recuadro/zoom del hover de escritorio */
+    nav > ul > li > a:hover { transform: none; box-shadow: none; background: rgba(201,11,15,.06); color: #a41e22; }
+
+    /* Submenus: en linea, desplegandose DENTRO del cajon (no flotantes). */
+    nav .dropdown-menu {
+        position: static; left: auto; right: auto; min-width: 0;
+        clip-path: none; opacity: 1; visibility: visible; pointer-events: auto;
+        box-shadow: none; border-radius: 0;
+        max-height: 0; overflow: hidden; transition: max-height .25s ease;
+    }
+    nav .dropdown.open > .dropdown-menu { max-height: 80vh; overflow-y: auto; }
+    nav .dropdown-menu li a { padding-left: 42px; min-height: 48px; }
+    /* La flecha (caret) del padre: zona tactil GRANDE (toda la altura de la fila
+       y hasta el borde derecho) para que se pueda tocar facil en celular y abra/
+       cierre el submenu. Gira cuando esta abierto. */
+    nav > ul > li.dropdown > a i {
+        margin-left: auto;
+        margin-top: -18px; margin-bottom: -18px;  /* cubre el padding vertical del <a> sin agrandar la fila */
+        margin-right: -22px;            /* cancela el padding derecho del <a>: la zona llega al borde */
+        align-self: stretch;            /* ocupa TODA la altura de la fila */
+        min-width: 30px;                /* + padding => zona tactil ancha (~74px) */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 22px;
+        font-size: 18px;
+        transition: transform .3s ease;
+    }
+    nav > ul > li.dropdown.open > a i { transform: rotate(180deg); }
+}
+
+/* Listado en celular: el texto clave que diferencia productos casi iguales
+   estaba en 11-12px. Se sube para que se lea de un vistazo (contexto taller). */
+@media (max-width: 480px) {
+    .product-card .product-title { font-size: 14.5px !important; }
+    .ml-brand-badge { font-size: 12.5px !important; }
+    .product-card p { font-size: 13.5px !important; }   /* "Ver medidas" (tiene font-size inline) */
+}
+
+
 /* 3. OBJETIVOS TACTILES Y ZOOM DE iOS
    Solo con dedo (pointer: coarse): con mouse no cambia nada.
    - Minimo 40-44px para lo que se toca.
@@ -153,9 +272,9 @@ img, video, iframe { max-width: 100%; }
     .card:hover .overlay, .prod-card:hover .overlay { opacity: 0; }
     .floating-buttons a:hover { transform: none; }
     /* un filtro recien desactivado seguia pintado del mismo rojo que el activo */
-    .filter-group > ul > li > .filter-btn:not(.activo):not(#btn-limpiar):hover { color: #0066cc !important; text-decoration: none; }
+    .filter-group > ul > li > .filter-btn:not(.activo):not(#btn-limpiar):hover { color: #a41e22 !important; text-decoration: none; }
     #btn-limpiar:hover { color: #a41e22 !important; text-decoration: none; }
-    .submenu-moldura .filter-btn:not(.activo):hover { color: #0066cc !important; }
+    .submenu-moldura .filter-btn:not(.activo):hover { color: #a41e22 !important; }
 }
 
 
@@ -235,4 +354,83 @@ img, video, iframe { max-width: 100%; }
    de borde a borde de la pantalla. */
 @media (max-width: 840px) {
     .video-block h2 { padding: 0 16px; font-size: 1.25rem; }
+}
+
+
+/* ==========================================================================
+   8. LISTADO EN CELULAR: UNA COLUMNA CON FOTO GRANDE
+   A <=480px el listado estaba en 2 columnas con foto de 130px: sierras casi
+   iguales no se distinguian. Pasa a 1 columna con foto grande (se ve el disco
+   completo). Entre 481 y 899 sigue en 2 columnas (hay mas ancho). Gana sobre
+   lista-productos.css por ser responsive la ultima hoja. */
+@media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr; gap: 14px; }
+    .product-img { height: 230px; padding: 16px; }
+}
+
+
+/* ==========================================================================
+   9. CABECERA SLIM FIJA (celular alto)
+   Ahora que en celular la cabecera quedo baja (logo + hamburguesa + una fila de
+   acciones), vuelve a ser fija para tener el menu y la lupa siempre a mano al
+   recorrer el catalogo. Solo en pantallas altas (>=700px): en celular acostado
+   o pantallas bajas sigue subiendo con la pagina (regla de arriba). */
+@media (max-width: 900px) and (min-height: 700px) {
+    header { position: sticky; top: 0; }
+}
+
+
+/* ==========================================================================
+   10. BOTONES FLOTANTES SCROLL-AWARE (celular)
+   menu.js les pone .fab-oculto al bajar; aca la transicion para que bajen y
+   suban suave sin tapar el contenido. */
+.floating-buttons { transition: transform .3s ease, opacity .3s ease; }
+.floating-buttons.fab-oculto { transform: translateY(160%); opacity: 0; pointer-events: none; }
+
+
+/* ==========================================================================
+   11. LUPA / BUSCADOR FLUIDO EN CELULAR
+   En la fila de acciones (nowrap) no entraba el input abierto: flex colapsaba
+   COMPRA AHORA y las redes a 0 de golpe (saltaban) mientras el input se abria en
+   0.42s -> se veia cortado. Solucion: en celular el input se despliega como CAPA
+   por encima de la fila (no empuja ni colapsa a nadie). La lupa queda anclada a
+   la izquierda y el campo se revela de izquierda a derecha (clip-path) con la
+   misma curva fluida que en escritorio; al cerrar se repliega y reaparecen los
+   botones de abajo. */
+@media (max-width: 900px) {
+    .header-actions { position: relative; justify-content: flex-start; }
+    .header-search { position: static; }
+    .header-search .lupa-input {
+        position: absolute;
+        top: 0; bottom: 0; margin: auto 0;           /* centrado vertical en la fila */
+        left: 46px; right: 8px;                      /* de la lupa al borde derecho */
+        width: auto; height: 40px; padding: 0 12px; box-sizing: border-box;
+        background: #fff; z-index: 6; overflow: hidden;
+        opacity: 0; pointer-events: none;
+        border: 1px solid transparent; border-radius: 6px;
+        transform: none;
+        will-change: clip-path, opacity;
+        -webkit-clip-path: inset(0 100% 0 0 round 6px);  /* prefijo: Samsung Internet viejo */
+        clip-path: inset(0 100% 0 0 round 6px);      /* oculto: recortado desde la derecha */
+        transition: -webkit-clip-path .42s cubic-bezier(.22, 1, .36, 1),
+                    clip-path .42s cubic-bezier(.22, 1, .36, 1),
+                    opacity .28s ease, border-color .3s ease;
+    }
+    .header-search.abierto .lupa-input {
+        width: auto;                                 /* pisa el width:130px de la regla 480px */
+        opacity: 1; pointer-events: auto;
+        border-color: #a41e22;
+        -webkit-clip-path: inset(0 0 0 0 round 6px);
+        clip-path: inset(0 0 0 0 round 6px);         /* se revela hacia la derecha */
+    }
+}
+
+
+/* ==========================================================================
+   12. TARJETAS DEL HOME: SOMBRA VISIBLE EN CELULAR
+   En celular no hay mouse (no hay :hover), asi que la sombra que en escritorio
+   aparece al pasar el mouse no se veia nunca: las tarjetas quedaban planas. En
+   pantallas chicas se muestra SIEMPRE, para que tengan la misma profundidad. */
+@media (max-width: 900px) {
+    .card { box-shadow: 0 8px 22px rgba(201, 11, 15, 0.20); }
 }
