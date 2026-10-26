@@ -9,14 +9,18 @@ Editar diseno actual > Pagina de inicio > Mensaje de bienvenida.
 
 | Campo           | Valor |
 |-----------------|-------|
-| Subtitulo       | Mas de 40 anos fabricando y afilando en Avellaneda. |
+| Subtitulo       | Mas de 25 anos fabricando y afilando en Avellaneda. |
 | Titulo          | Herramientas de corte para la industria de la madera |
 | Link            | /productos |
 | Texto del boton | Ver catalogo |
 
-Lo de "mas de 40 anos" sale de Quienes-somos del sitio, no es inventado:
-"Nuestra empresa cuenta con la experiencia de mas de 40 anos en el mercado de
-la fabricacion y comercializacion de herramientas de corte".
+El subtitulo decia "mas de 40 anos" (venia del viejo Quienes-somos del sitio).
+El 2026-10-26, a pedido del usuario, se cambio a **"Mas de 25 anos..."**. Se edito
+en el editor de diseno: el campo es el input `theme[i18n][welcome_message][es]`
+(se seteo por JS con el native value setter + eventos input/change, y "Publicar
+cambios"). El storefront cachea el home unos minutos antes de mostrarlo.
+NOTA de consistencia: index.html del sitio dice "mas de 25 anos", pero
+Quienes-somos.html dice "trayectoria de 30 anos" (sin unificar).
 
 ## Categorias principales
 
