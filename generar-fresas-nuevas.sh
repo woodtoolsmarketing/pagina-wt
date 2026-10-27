@@ -176,7 +176,7 @@ crear_pagina () {
 
             <div class="header-actions">
 
-                <a href="https://www.mercadolibre.com.ar/pagina/woodtools#from=share_eshop" target="_blank" class="btn-shop">SHOP NOW</a>
+                <a href="https://woodtools.ar/" target="_blank" class="btn-shop">SHOP NOW</a>
 
                 <div class="social-icons">
 
