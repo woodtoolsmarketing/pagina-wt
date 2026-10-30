@@ -1,0 +1,36 @@
+#!/bin/sh
+# Pre-commit · WoodTools: evita filtrar secretos de la sync de stock al repo (es PÚBLICO).
+# Se activa una sola vez con:  git config core.hooksPath .githooks
+#
+# Qué bloquea:
+#  1) Commitear fuente-stock.json / api-config.json / ftp-config.json (tienen el
+#     token de stock_para_tienda, la anon key y el access_token de Tiendanube) —
+#     aunque alguien los fuerce con `git add -f` saltando el .gitignore.
+#  2) Un secreto pegado por error en cualquier archivo: un JWT de Supabase
+#     (anon/service key, empieza con eyJ...) o un "access_token": "<valor largo>".
+# Saltear a propósito (no recomendado): git commit --no-verify
+fail=0
+
+for f in $(git diff --cached --name-only --diff-filter=ACM); do
+  case "$(basename "$f")" in
+    fuente-stock.json|api-config.json|ftp-config.json)
+      echo "pre-commit BLOQUEADO: $f tiene secretos y NO va al repo (es publico)." >&2
+      fail=1 ;;
+  esac
+done
+
+hallazgos=$(git diff --cached -U0 --diff-filter=ACM -- . ':(exclude)*.example.json' \
+  | grep '^+' \
+  | grep -vE 'PEGAR|EJEMPLO|example' \
+  | grep -nE 'eyJhbGciOi[A-Za-z0-9_.-]{20,}|"access_token"[[:space:]]*:[[:space:]]*"[A-Za-z0-9._-]{20,}"')
+if [ -n "$hallazgos" ]; then
+  echo "pre-commit BLOQUEADO: parece un secreto (JWT de Supabase / access_token de Tiendanube) en lo staged:" >&2
+  echo "$hallazgos" | head -5 >&2
+  fail=1
+fi
+
+if [ "$fail" != 0 ]; then
+  echo "Sacalo o movelo a un archivo gitignored. (Saltear a proposito: git commit --no-verify)" >&2
+  exit 1
+fi
+exit 0
