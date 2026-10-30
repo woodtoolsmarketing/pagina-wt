@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
             [/^JFRA/, 'Machimbradora o moldurera'],        // JFRA1 revestimiento alistonado
             [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
             [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
-            [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+            [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
             [/^LSA|^LSB/, 'Seccionadora'],
             [/^LP/, 'Ingletadora o máquina de mano'],
             [/^LT|^TR15M/, 'Trituradora'],
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================================================
     // 1. PARCHE DE CATEGORÍAS (Sierras, Fresas, Mechas, Cuchillas y Diamante)
     // =====================================================================
-    const codigosMelamina = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
+    const codigosMelamina = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "F03FS"];
     const codigosMadera = ["LU1F", "LU1D"]; 
 
     productos.forEach(producto => {

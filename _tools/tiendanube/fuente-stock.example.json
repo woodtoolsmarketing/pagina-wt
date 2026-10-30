@@ -1,0 +1,6 @@
+{
+  "_nota": "Fuente del stock para empujar-stock.js. Copia este archivo a fuente-stock.json (en la misma carpeta) y completa anon_key y token. El token sale de la tabla configuracion (clave 'stock_tienda_token') en la base del sistema de empleados. fuente-stock.json NO va al repo (es publico): solo viaja este .example.",
+  "supabase_url": "https://wafszjoebefmbuufmula.supabase.co",
+  "anon_key": "PEGAR_ANON_KEY",
+  "token": "PEGAR_TOKEN"
+}

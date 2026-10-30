@@ -10,6 +10,10 @@ _tools/ftp-config.json
 # Es una credencial: solo en tu PC, nunca al repo publico.
 _tools/tiendanube/api-config.json
 
+# Fuente del stock para empujar-stock.js (supabase anon key + token del sistema
+# de empleados). Es una credencial: solo en tu PC, nunca al repo publico.
+_tools/tiendanube/fuente-stock.json
+
 # Excel de datos tecnicos (fuente de las especificaciones de las fichas).
 # Tiene notas internas y las listas de origen: queda solo en tu PC. El JSON
 # publicable lo genera generar-especificaciones.py en ruta-productos/JS/.

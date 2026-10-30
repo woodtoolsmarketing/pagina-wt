@@ -21,12 +21,6 @@ const baseDatosProductos = {
         caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina (Ángulo Positivo - Máquinas Industriales)", "Tipo de diente": "Trapezoidal-Plano / Positivo" },
         variantes: [ { id: "LG3D 0400", nombre: "LG3D 0400 - D: 250mm | B: 3.2mm | d: 30mm | Z: 80" }, { id: "LG3D 0600", nombre: "LG3D 0600 - D: 300mm | B: 3.2mm | d: 30mm | Z: 96" }, { id: "LG3D 0800", nombre: "LG3D 0800 - D: 350mm | B: 3.5mm | d: 30mm | Z: 108" } ]
     },
-    "SSK12": {
-        codigoBase: "SSK12", categoriaImg: "Sierras", carpetaImg: "SSK12",
-        titulo: "Sierra para Melamina", marca: "Freud",
-        caracteristicasBasicas: { "Marca": "Freud", "Material": "Metal duro", "Uso": "Melamina (Máquinas Industriales)" },
-        variantes: [{ id: "SSK12 001", nombre: "SSK12 001 - Consultar medidas" }]
-    },
     "LU3F": {
         codigoBase: "LU3F", categoriaImg: "Sierras", carpetaImg: "LU3F 0200",
         titulo: "Sierra para Melamina", marca: "Freud",
@@ -2042,7 +2036,7 @@ function maquinaDeProducto(codigo, categoria) {
         [/^JFRA/, 'Machimbradora o moldurera'],        // JFRA1 revestimiento alistonado
         [/^JCMPVI|^JFC|^JFD|^JFE|^JFF|^JFM|^JFP|^JFQ|^JFR|^JFT|^JFV|^JF/, 'Tupí, machimbradora o moldurera'],
         [/^LCL3M|^LM0|^LM50M|^LM63M|^SCC|^SCE|^SCI|^SC_|^SC/, 'Máquina múltiple'],
-        [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^SSK|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
+        [/^LG2A|^LG2B|^LG3D|^LU1|^LU2|^LU3|^LU4|^LU5|^F03FS/, 'Escuadradora, mesa de banco o seccionadora horizontal'],
         [/^LSA|^LSB/, 'Seccionadora'],
         [/^LP/, 'Ingletadora o máquina de mano'],
         [/^LT|^TR15M/, 'Trituradora'],
@@ -2084,7 +2078,7 @@ function cargarEstructuraProducto(info) {
     }
     const esSierraOMecha = info.categoriaImg === "Sierras" || info.categoriaImg === "Mechas";
     // Sierras para melamina: título propio "Sierra para Melamina para [máquina] de [Ø]mm y [Z] dientes"
-    const CODIGOS_MELAMINA = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "SSK12", "F03FS"];
+    const CODIGOS_MELAMINA = ["LU2C", "LU3D", "LU3E", "LU3F", "LSB", "FR12L", "LG3D", "F03FS"];
     const esMelamina = CODIGOS_MELAMINA.indexOf(info.codigoBase) !== -1;
 
     // Marca a mostrar (puntos 4 y 5): Diamante = sin marca; Cuchillas = siempre Ilma;
