@@ -359,7 +359,7 @@ nav > ul > li > a:hover {
 }
 
 .card:hover .overlay { opacity: 1; }
-.overlay i { color: white; font-size: 3rem; }
+.overlay i { color: #e21f26; font-size: 3rem; text-shadow: 0 0 8px rgba(255,255,255,0.55), 0 0 3px rgba(255,255,255,0.35); }
 
 .card h1 {
     font-size: 1.2rem;
