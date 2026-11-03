@@ -1,15 +1,16 @@
 /* =====================================================================
-   REGLA AUTOMÁTICA: ocultar productos sin stock (Tienda Nube API)
+   REGLA AUTOMÁTICA: ocultar productos sin stock o sin foto (Tienda Nube API)
    ---------------------------------------------------------------------
-   Recorre TODOS los productos de la tienda y ajusta su visibilidad según
-   el stock:
-     - sin stock (todas las variantes controladas y en 0)  -> OCULTO
-     - con stock (alguna variante con stock > 0 o "infinito") -> VISIBLE
+   Recorre TODOS los productos de la tienda y ajusta su visibilidad.
+   Un producto es VISIBLE solo si cumple LAS DOS condiciones:
+     - tiene stock   (alguna variante con stock > 0 o "infinito"), y
+     - tiene foto    (al menos una imagen cargada en Tienda Nube).
+   Si le falta cualquiera de las dos (sin stock, o sin foto) -> OCULTO.
 
    Solo cambia la visibilidad de los productos que estén "al revés": no
-   toca precio, descripción ni stock. Como también MUESTRA los que tienen
-   stock, alcanza con cargarle stock a un producto (en el panel o por CSV)
-   y en la próxima corrida reaparece solo.
+   toca precio, descripción, stock ni imágenes. Como también MUESTRA los que
+   cumplen las dos, alcanza con cargarle stock Y una foto a un producto (en el
+   panel o por CSV/imagen) y en la próxima corrida reaparece solo.
 
    USO:
      node auto-ocultar-stock.js            (simulacro: informa, no cambia nada)
@@ -83,13 +84,18 @@ function varianteConStock(v) {
   return Number(v.stock) > 0;
 }
 
+// Un producto "tiene foto" si trae al menos una imagen cargada en Tienda Nube.
+function tieneFoto(p) {
+  return Array.isArray(p.images) && p.images.length > 0;
+}
+
 async function traerTodosLosProductos() {
   const productos = [];
   let page = 1;
   const per = 200;
   for (;;) {
     const url = BASE + '/products?page=' + page + '&per_page=' + per +
-                '&fields=id,name,published,variants';
+                '&fields=id,name,published,variants,images';
     let res;
     try {
       res = await api('GET', url);
@@ -122,13 +128,13 @@ function nombre(p) {
   const aOcultar = [], aMostrar = [];
   for (const p of productos) {
     const conStock = (p.variants || []).some(varianteConStock);
-    const deseado = conStock;             // published deseado
-    if (p.published === deseado) continue; // ya está bien
+    const deseado = conStock && tieneFoto(p);   // visible solo con stock Y foto
+    if (p.published === deseado) continue;        // ya está bien
     (deseado ? aMostrar : aOcultar).push(p);
   }
 
-  console.log('A OCULTAR (sin stock y hoy visibles) : ' + aOcultar.length);
-  console.log('A MOSTRAR (con stock y hoy ocultos)  : ' + aMostrar.length);
+  console.log('A OCULTAR (sin stock o sin foto, hoy visibles) : ' + aOcultar.length);
+  console.log('A MOSTRAR (con stock y foto, hoy ocultos)      : ' + aMostrar.length);
   const muestra = [...aOcultar.slice(0, 5).map(p => '  ocultar  ' + nombre(p)),
                    ...aMostrar.slice(0, 5).map(p => '  mostrar  ' + nombre(p))];
   if (muestra.length) console.log(muestra.join('\n'));
