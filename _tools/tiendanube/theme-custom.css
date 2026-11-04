@@ -204,6 +204,16 @@ a:hover { text-decoration: none; }
 	box-sizing: border-box;
 }
 
+/* RECUADRO PAREJO (pedido 04/11/2026): el tema le da a cada tarjeta una caja
+   del alto de SU foto (padding-bottom inline = aspecto de la imagen), asi que
+   quedaban desparejas. Se uniforma a cuadrado y el recuadro se pasa a blanco
+   (las fotos ya son todas sobre blanco, asi no queda franja). NO se puede
+   hacer desde aca: el padding-bottom va inline y el editor de Tienda Nube
+   borra los !important. Se resuelve por JS en el sello (sello-woodtools.html,
+   emparejarTarjetas): pone .js-item-image-padding{padding-bottom:100%} y
+   .item-image{background:#fff} por estilo inline. Si se desactiva el sello,
+   las tarjetas vuelven a verse desparejas y con el recuadro #f9f9f9 de arriba. */
+
 .item {
 	background-color: #ffffff;
 	border: 1px solid #dddddd;

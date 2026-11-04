@@ -270,7 +270,7 @@
    "variante": null
   },
   "MCH/MCD-MCI.html": {
-   "handle": "mechas-mcd-mci",
+   "handle": "mechas-mcd",
    "variante": null
   },
   "MCH/MI.html": {
@@ -278,11 +278,11 @@
    "variante": null
   },
   "MCH/MID.html": {
-   "handle": "mechas-mid",
+   "handle": "mechas-mi",
    "variante": null
   },
   "MCH/MIDN.html": {
-   "handle": "mechas-midn",
+   "handle": "mechas-mi",
    "variante": null
   },
   "MCH/MPD.html": {
@@ -299,6 +299,10 @@
   },
   "SC/FR09W.html": {
    "handle": "sierras-fr09w",
+   "variante": null
+  },
+  "SC/FR12L.html": {
+   "handle": "sierras-fr12l",
    "variante": null
   },
   "SC/LG2A.html": {
@@ -319,7 +323,7 @@
   },
   "SC/LG3D 0800.html": {
    "handle": "sierras-lg3d",
-   "variante": 1585442539
+   "variante": null
   },
   "SC/LG3D.html": {
    "handle": "sierras-lg3d",
@@ -383,7 +387,7 @@
   },
   "SC/LSB30003X.html": {
    "handle": "sierras-lsb",
-   "variante": 1585442583
+   "variante": null
   },
   "SC/LSB35003X.html": {
    "handle": "sierras-lsb",
@@ -391,27 +395,27 @@
   },
   "SC/LT14MD.html": {
    "handle": "sierras-lt",
-   "variante": 1585442815
+   "variante": null
   },
   "SC/LT14MS.html": {
    "handle": "sierras-lt",
-   "variante": 1585442817
+   "variante": null
   },
   "SC/LT16MD.html": {
    "handle": "sierras-lt",
-   "variante": 1585442819
+   "variante": null
   },
   "SC/LT16MS.html": {
    "handle": "sierras-lt",
-   "variante": 1585442822
+   "variante": null
   },
   "SC/LT18MD.html": {
    "handle": "sierras-lt",
-   "variante": 1585442825
+   "variante": null
   },
   "SC/LT18MS.html": {
    "handle": "sierras-lt",
-   "variante": 1585442828
+   "variante": null
   },
   "SC/LU1D.html": {
    "handle": "sierras-lu1d",

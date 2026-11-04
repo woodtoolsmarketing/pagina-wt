@@ -10,6 +10,17 @@
      se edita aca, se pega el bloque <script> completo en ese campo y se
      aprieta "Publicar cambios".
 
+     OJO - EL CAMPO EN LA TIENDA TIENE UNA LINEA EXTRA QUE NO ESTA EN ESTE
+     ARCHIVO: despues de este </script> hay, en la tienda, un
+       <script src="https://www.woodtools.com.ar/tienda/fotos.js" defer></script>
+     Si se reemplaza TODO el campo por este bloque, se pierde ese fotos.js.
+     Por eso conviene editar de a poco (insercion quirurgica) o volver a
+     pegar ese <script src> al final. El campo es un <textarea> plano
+     (id text-custom_seal_code); el seteo por .value NO persiste al publicar,
+     pero document.execCommand('insertText') SI (con foco por clic real) y
+     "Publicar cambios" guarda con un clic real. Asi se aplico el recuadro
+     parejo el 04/11/2026 (ver seccion 4, emparejarTarjetas).
+
      POR QUE VA AHI: es el unico campo de esta cuenta que admite HTML/JS propio
      en TODAS las paginas de la tienda. "Codigos externos" no sirve para esto:
      solo tiene campos cerrados (IDs de pixel, meta tags de verificacion) y sus
@@ -243,6 +254,27 @@
 			nombres[i].classList.remove('font-small');
 			nombres[i].classList.remove('opacity-80');
 		}
+
+		/* RECUADRO DE IMAGEN UNIFORME (cuadrado + blanco). Pedido 04/11/2026.
+		   El tema Morelia le da a cada tarjeta una caja del ALTO de su propia
+		   foto: le pone al .js-item-image-padding un padding-bottom = al aspecto
+		   de la imagen (foto vertical -> caja alta; horizontal -> baja). Por eso
+		   las tarjetas quedaban desparejas (unas altas, otras bajas). Se uniforma
+		   a cuadrado (100%) con la foto centrada (el tema ya la pone
+		   object-fit:contain). Como TODAS las fotos del catalogo estan sobre
+		   fondo blanco (255,255,255), el recuadro va en blanco y no queda ninguna
+		   franja. Ese padding-bottom lo pone el tema INLINE, y el editor de CSS
+		   de Tienda Nube borra los !important, asi que la unica forma de pisarlo
+		   es por JS: va aca. */
+		var cajas = document.querySelectorAll('.item-image .js-item-image-padding');
+		for (var c = 0; c < cajas.length; c++) {
+			if (cajas[c].style.paddingBottom !== '100%') cajas[c].style.paddingBottom = '100%';
+		}
+		var recuadros = document.querySelectorAll('.item-image');
+		for (var r = 0; r < recuadros.length; r++) {
+			if (recuadros[r].style.backgroundColor === '') recuadros[r].style.backgroundColor = '#ffffff';
+		}
+
 		if (!CFG.boton_mas_info) return;
 		var items = document.querySelectorAll('.item');
 		for (var j = 0; j < items.length; j++) {
