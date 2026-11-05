@@ -82,6 +82,30 @@
 })();
 
 /* ==========================================================================
+ * ITEM "INSERTOS" EN EL DESPLEGABLE "PRODUCTOS" (todas las paginas, sin tocar
+ * los 186 HTML). Clona el <li> de "Cabezales" (asi hereda el prefijo relativo
+ * correcto segun la profundidad de la pagina y el icono) y lo apunta a la
+ * grilla de insertos. Aparece tanto en el desplegable de escritorio como en
+ * el cajon de celular (es el mismo <nav>).
+ * ========================================================================== */
+(function () {
+	var cabLink = document.querySelector('nav .dropdown-menu a[href$="cabezales.html"]');
+	if (!cabLink) return;
+	var cabLi = cabLink.closest('li');
+	if (!cabLi || !cabLi.parentNode) return;
+	if (cabLi.parentNode.querySelector('a[href$="HTML/Insertos.html"]')) return;   // idempotente
+	var nuevo = cabLi.cloneNode(true);
+	var a = nuevo.querySelector('a');
+	a.setAttribute('href', cabLink.getAttribute('href').replace(/cabezales\.html$/, 'HTML/Insertos.html'));
+	// Cambiar el texto "Cabezales" por "Insertos" (el ultimo nodo de texto del <a>).
+	for (var n = a.lastChild; n; n = n.previousSibling) {
+		if (n.nodeType === 3 && n.nodeValue.trim()) { n.nodeValue = 'Insertos'; break; }
+	}
+	var img = a.querySelector('img'); if (img) img.setAttribute('alt', '');
+	cabLi.parentNode.insertBefore(nuevo, cabLi.nextSibling);
+})();
+
+/* ==========================================================================
  * MENU HAMBURGUESA (celular, <=900px)
  * Inyecta el boton en TODAS las paginas (sin tocar los HTML) y convierte el
  * <nav> en un cajon que se abre/cierra. En escritorio el boton esta oculto por
