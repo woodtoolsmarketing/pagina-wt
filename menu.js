@@ -110,7 +110,7 @@
 	}
 	// Usar el icono propio de Insertos (en vez del de Cabezales clonado); mantiene el prefijo relativo.
 	var img = a.querySelector('img');
-	if (img) { img.setAttribute('alt', 'Insertos'); img.setAttribute('src', img.getAttribute('src').replace(/Cabezales\.png$/i, 'Insertos.png')); }
+	if (img) { img.setAttribute('alt', 'Insertos'); img.setAttribute('src', img.getAttribute('src').replace(/Cabezales\.png$/i, 'Insertos.png?v=2')); }
 	cabLi.parentNode.insertBefore(nuevo, cabLi.nextSibling);
 })();
 
