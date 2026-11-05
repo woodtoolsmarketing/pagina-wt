@@ -1667,13 +1667,13 @@ const baseDatosProductos = {
     //  Mientras no tengan fotos, el sitio las mantiene ocultas igual que al resto.
 
     "CG03M": {
-        codigoBase: "CG03M", categoriaImg: "Cabezales", carpetaImg: "CG03M",
+        codigoBase: "CG03M", categoriaImg: "Insertos", carpetaImg: "CG03M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CG03M AA3", nombre: "CG03M AA3 — consultar medidas" }]
     },
     "CG05M": {
-        codigoBase: "CG05M", categoriaImg: "Cabezales", carpetaImg: "CG05M",
+        codigoBase: "CG05M", categoriaImg: "Insertos", carpetaImg: "CG05M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [
@@ -1682,91 +1682,91 @@ const baseDatosProductos = {
         ]
     },
     "CG08M": {
-        codigoBase: "CG08M", categoriaImg: "Cabezales", carpetaImg: "CG08M",
+        codigoBase: "CG08M", categoriaImg: "Insertos", carpetaImg: "CG08M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CG08M FA3", nombre: "CG08M FA3 — consultar medidas" }]
     },
     "CG50M": {
-        codigoBase: "CG50M", categoriaImg: "Cabezales", carpetaImg: "CG50M",
+        codigoBase: "CG50M", categoriaImg: "Insertos", carpetaImg: "CG50M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CG50M AA3", nombre: "CG50M AA3 — consultar medidas" }]
     },
     "CP22M": {
-        codigoBase: "CP22M", categoriaImg: "Cabezales", carpetaImg: "CP22M",
+        codigoBase: "CP22M", categoriaImg: "Insertos", carpetaImg: "CP22M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CP22M A080", nombre: "CP22M A080 — consultar medidas" }]
     },
     "CP31M": {
-        codigoBase: "CP31M", categoriaImg: "Cabezales", carpetaImg: "CP31M",
+        codigoBase: "CP31M", categoriaImg: "Insertos", carpetaImg: "CP31M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CP31M C100", nombre: "CP31M C100 — consultar medidas" }]
     },
     "CP40M": {
-        codigoBase: "CP40M", categoriaImg: "Cabezales", carpetaImg: "CP40M",
+        codigoBase: "CP40M", categoriaImg: "Insertos", carpetaImg: "CP40M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CP40M AA3", nombre: "CP40M AA3 — consultar medidas" }]
     },
     "CPSCM": {
-        codigoBase: "CPSCM", categoriaImg: "Cabezales", carpetaImg: "CPSCM",
+        codigoBase: "CPSCM", categoriaImg: "Insertos", carpetaImg: "CPSCM",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CPSCM BB3", nombre: "CPSCM BB3 — consultar medidas" }]
     },
     "CT52M": {
-        codigoBase: "CT52M", categoriaImg: "Cabezales", carpetaImg: "CT52M",
+        codigoBase: "CT52M", categoriaImg: "Insertos", carpetaImg: "CT52M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CT52M DA3", nombre: "CT52M DA3 — consultar medidas" }]
     },
     "CW10M": {
-        codigoBase: "CW10M", categoriaImg: "Cabezales", carpetaImg: "CW10M",
+        codigoBase: "CW10M", categoriaImg: "Insertos", carpetaImg: "CW10M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CW10M AA3", nombre: "CW10M AA3 — consultar medidas" }]
     },
     "CW16M": {
-        codigoBase: "CW16M", categoriaImg: "Cabezales", carpetaImg: "CW16M",
+        codigoBase: "CW16M", categoriaImg: "Insertos", carpetaImg: "CW16M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CW16M AA3", nombre: "CW16M AA3 — consultar medidas" }]
     },
     "CW28MA": {
-        codigoBase: "CW28MA", categoriaImg: "Cabezales", carpetaImg: "CW28MA",
+        codigoBase: "CW28MA", categoriaImg: "Insertos", carpetaImg: "CW28MA",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "CW28MA AA3", nombre: "CW28MA AA3 — consultar medidas" }]
     },
     "IG01M": {
-        codigoBase: "IG01M", categoriaImg: "Cabezales", carpetaImg: "IG01M",
+        codigoBase: "IG01M", categoriaImg: "Insertos", carpetaImg: "IG01M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "IG01M AA3", nombre: "IG01M AA3 — consultar medidas" }]
     },
     "RG01M": {
-        codigoBase: "RG01M", categoriaImg: "Cabezales", carpetaImg: "RG01M",
+        codigoBase: "RG01M", categoriaImg: "Insertos", carpetaImg: "RG01M",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "RG01M AA3", nombre: "RG01M AA3 — consultar medidas" }]
     },
     "INSRAS1": {
-        codigoBase: "INSRAS1", categoriaImg: "Cabezales", carpetaImg: "INSRAS1",
+        codigoBase: "INSRAS1", categoriaImg: "Insertos", carpetaImg: "INSRAS1",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "INSRAS1", nombre: "INSRAS1 — consultar medidas" }]
     },
     "INSREF3A": {
-        codigoBase: "INSREF3A", categoriaImg: "Cabezales", carpetaImg: "INSREF3A",
+        codigoBase: "INSREF3A", categoriaImg: "Insertos", carpetaImg: "INSREF3A",
         titulo: "Inserto / Cuchilla para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Inserto de recambio para cabezales Freud" },
         variantes: [{ id: "INSREF3A", nombre: "INSREF3A — consultar medidas" }]
     },
     "AT03M": {
-        codigoBase: "AT03M", categoriaImg: "Cabezales", carpetaImg: "AT03M",
+        codigoBase: "AT03M", categoriaImg: "Insertos", carpetaImg: "AT03M",
         titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
         variantes: [
@@ -1775,19 +1775,19 @@ const baseDatosProductos = {
         ]
     },
     "SD01M": {
-        codigoBase: "SD01M", categoriaImg: "Cabezales", carpetaImg: "SD01M",
+        codigoBase: "SD01M", categoriaImg: "Insertos", carpetaImg: "SD01M",
         titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
         variantes: [{ id: "SD01M DG9", nombre: "SD01M DG9 — consultar medidas" }]
     },
     "SD02M": {
-        codigoBase: "SD02M", categoriaImg: "Cabezales", carpetaImg: "SD02M",
+        codigoBase: "SD02M", categoriaImg: "Insertos", carpetaImg: "SD02M",
         titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
         variantes: [{ id: "SD02M AA9", nombre: "SD02M AA9 — consultar medidas" }]
     },
     "SD04MA": {
-        codigoBase: "SD04MA", categoriaImg: "Cabezales", carpetaImg: "SD04MA",
+        codigoBase: "SD04MA", categoriaImg: "Insertos", carpetaImg: "SD04MA",
         titulo: "Accesorio / Repuesto para Cabezal", marca: "Freud",
         caracteristicasBasicas: { "Marca": "Freud", "Uso": "Repuesto para cabezales Freud" },
         variantes: [{ id: "SD04MA AA9", nombre: "SD04MA AA9 — consultar medidas" }]
