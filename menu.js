@@ -89,19 +89,28 @@
  * el cajon de celular (es el mismo <nav>).
  * ========================================================================== */
 (function () {
-	var cabLink = document.querySelector('nav .dropdown-menu a[href$="cabezales.html"]');
+	// Buscar el <li> de "Cabezales" por TEXTO (robusto: en algunas paginas el href
+	// es "cabezales.html" y en otras "Cabezales.html" -> un selector por href fallaba).
+	var links = document.querySelectorAll('nav .dropdown-menu a');
+	var cabLink = null;
+	for (var i = 0; i < links.length; i++) {
+		if ((links[i].textContent || '').trim().toLowerCase() === 'cabezales') { cabLink = links[i]; break; }
+	}
 	if (!cabLink) return;
 	var cabLi = cabLink.closest('li');
 	if (!cabLi || !cabLi.parentNode) return;
 	if (cabLi.parentNode.querySelector('a[href$="HTML/Insertos.html"]')) return;   // idempotente
 	var nuevo = cabLi.cloneNode(true);
 	var a = nuevo.querySelector('a');
-	a.setAttribute('href', cabLink.getAttribute('href').replace(/cabezales\.html$/, 'HTML/Insertos.html'));
+	// Ruta ABSOLUTA: anda desde cualquier pagina sin importar la profundidad.
+	a.setAttribute('href', '/ruta-productos/HTML/Insertos.html');
 	// Cambiar el texto "Cabezales" por "Insertos" (el ultimo nodo de texto del <a>).
 	for (var n = a.lastChild; n; n = n.previousSibling) {
 		if (n.nodeType === 3 && n.nodeValue.trim()) { n.nodeValue = 'Insertos'; break; }
 	}
-	var img = a.querySelector('img'); if (img) img.setAttribute('alt', '');
+	// Usar el icono propio de Insertos (en vez del de Cabezales clonado); mantiene el prefijo relativo.
+	var img = a.querySelector('img');
+	if (img) { img.setAttribute('alt', 'Insertos'); img.setAttribute('src', img.getAttribute('src').replace(/Cabezales\.png$/i, 'Insertos.png')); }
 	cabLi.parentNode.insertBefore(nuevo, cabLi.nextSibling);
 })();
 
